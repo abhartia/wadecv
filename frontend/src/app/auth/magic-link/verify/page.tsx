@@ -19,8 +19,10 @@ function VerifyContent() {
   useEffect(() => {
     const token = searchParams.get("token");
     if (!token) {
-      setStatus("error");
-      setError("No token provided");
+      queueMicrotask(() => {
+        setStatus("error");
+        setError("No token provided");
+      });
       return;
     }
 

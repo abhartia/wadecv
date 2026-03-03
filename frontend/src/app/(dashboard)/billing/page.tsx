@@ -60,7 +60,7 @@ function BillingContent() {
     setCheckoutLoading(packId);
     try {
       const { checkout_url } = await api.createCheckout(packId, token);
-      window.location.href = checkout_url;
+      window.location.assign(checkout_url);
     } catch (err: unknown) {
       toast.error((err as Error).message || "Failed to create checkout");
       setCheckoutLoading(null);

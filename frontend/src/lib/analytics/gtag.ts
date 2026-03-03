@@ -3,7 +3,7 @@ import { GA_MEASUREMENT_ID, isAnalyticsEnabled } from "@/lib/analytics";
 declare global {
   interface Window {
     dataLayer?: unknown[];
-    gtag?: (...args: any[]) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -44,17 +44,11 @@ function getGtag() {
 export function pageview(path: string) {
   const gtag = getGtag();
   if (!gtag) {
-    if (debug) {
-      // eslint-disable-next-line no-console
-      console.log("[analytics] pageview (noop)", { path });
-    }
+    if (debug) console.log("[analytics] pageview (noop)", { path });
     return;
   }
 
-  if (debug) {
-    // eslint-disable-next-line no-console
-    console.log("[analytics] pageview", { path });
-  }
+  if (debug) console.log("[analytics] pageview", { path });
 
   gtag("config", GA_MEASUREMENT_ID, {
     page_path: path,
@@ -64,17 +58,11 @@ export function pageview(path: string) {
 export function trackEvent(name: GAEventName, params?: GAEventParams) {
   const gtag = getGtag();
   if (!gtag) {
-    if (debug) {
-      // eslint-disable-next-line no-console
-      console.log("[analytics] event (noop)", { name, params });
-    }
+    if (debug) console.log("[analytics] event (noop)", { name, params });
     return;
   }
 
-  if (debug) {
-    // eslint-disable-next-line no-console
-    console.log("[analytics] event", { name, params });
-  }
+  if (debug) console.log("[analytics] event", { name, params });
 
   gtag("event", name, params || {});
 }
@@ -82,17 +70,11 @@ export function trackEvent(name: GAEventName, params?: GAEventParams) {
 export function setUserProperties(props: GAEventParams) {
   const gtag = getGtag();
   if (!gtag) {
-    if (debug) {
-      // eslint-disable-next-line no-console
-      console.log("[analytics] setUserProperties (noop)", props);
-    }
+    if (debug) console.log("[analytics] setUserProperties (noop)", props);
     return;
   }
 
-  if (debug) {
-    // eslint-disable-next-line no-console
-    console.log("[analytics] setUserProperties", props);
-  }
+  if (debug) console.log("[analytics] setUserProperties", props);
 
   gtag("set", "user_properties", props);
 }

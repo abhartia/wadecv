@@ -18,8 +18,10 @@ export function AnalyticsConsentProvider({ children }: { children: React.ReactNo
     if (typeof window === "undefined") return;
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY);
-      if (stored === "true") setHasAnalyticsConsent(true);
-      if (stored === "false") setHasAnalyticsConsent(false);
+      queueMicrotask(() => {
+        if (stored === "true") setHasAnalyticsConsent(true);
+        if (stored === "false") setHasAnalyticsConsent(false);
+      });
     } catch {
       // ignore
     }

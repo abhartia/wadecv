@@ -160,8 +160,6 @@ export default function ApplicationsPage() {
         return;
       }
       const blob = await response.blob();
-      // eslint-disable-next-line no-console
-      console.log("Downloaded CV blob", { size: blob.size, type: blob.type });
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;

@@ -281,9 +281,6 @@ function TailorContent() {
         return;
       }
       const blob = await response.blob();
-      // Useful for debugging file issues in the browser
-      // eslint-disable-next-line no-console
-      console.log("Downloaded CV blob", { size: blob.size, type: blob.type });
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
@@ -702,7 +699,7 @@ function TailorContent() {
                   ? "Strong match for this role"
                   : fitAnalysis.fit_score >= 40
                     ? "Moderate match — feedback can help"
-                    : "This role may be a stretch, but let's see"}
+                    : "This role may be a stretch, but let&apos;s see"}
               </p>
             </CardContent>
           </Card>
@@ -712,7 +709,7 @@ function TailorContent() {
               <CardHeader className="pb-3">
                 <CardTitle className="text-base flex items-center gap-2">
                   <CheckCircle2 className="h-5 w-5 text-green-500" />
-                  Why You're a Good Fit
+                  Why You&apos;re a Good Fit
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -736,7 +733,7 @@ function TailorContent() {
                   Potential Gaps
                 </CardTitle>
                 <CardDescription>
-                  Think any of these are wrong? Tell us why and we'll refine your CV for free and update your memory bank so future CV generations know this about you.
+                  Think any of these are wrong? Tell us why and we&apos;ll refine your CV for free and update your memory bank so future CV generations know this about you.
                 </CardDescription>
               </CardHeader>
               <CardContent>
