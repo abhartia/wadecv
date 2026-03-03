@@ -7,136 +7,167 @@ on:
   workflow_dispatch:
 
 env:
-  # Azure Container Registry
   ACR_NAME: wadecvacr
   ACR_LOGIN_SERVER: wadecvacr.azurecr.io
-
-  # App Service (Container) names and resource group
   AZURE_RESOURCE_GROUP: wadecv_group
-
   AZURE_WEBAPP_BACKEND: wadecv-backend
   AZURE_WEBAPP_BACKEND_SLOT: staging
-
   AZURE_WEBAPP_FRONTEND: wadecv
   AZURE_WEBAPP_FRONTEND_SLOT: staging
-
   BACKEND_IMAGE_NAME: wadecv-backend
   FRONTEND_IMAGE_NAME: wadecv-frontend
 
 jobs:
-  # Basic sanity checks before building images
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      backend: ${{ steps.filter.outputs.backend || steps.manual.outputs.backend }}
+      frontend: ${{ steps.filter.outputs.frontend || steps.manual.outputs.frontend }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set both for manual run
+        id: manual
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          echo "backend=true" >> $GITHUB_OUTPUT
+          echo "frontend=true" >> $GITHUB_OUTPUT
+      - name: Detect changed paths
+        id: filter
+        if: github.event_name == 'push'
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            backend:
+              - 'backend/**'
+            frontend:
+              - 'frontend/**'
+          base: ${{ github.event.before }}
+          ref: ${{ github.sha }}
+
   test-backend:
     runs-on: ubuntu-latest
+    needs: changes
+    if: needs.changes.outputs.backend == 'true'
     defaults:
       run:
         working-directory: backend
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Add pytest or other test commands here if/when available
-
   test-frontend:
     runs-on: ubuntu-latest
+    needs: changes
+    if: needs.changes.outputs.frontend == 'true'
     defaults:
       run:
         working-directory: frontend
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
           cache-dependency-path: "frontend/package-lock.json"
-
       - name: Install deps
         run: npm ci
-
       - name: Lint / build
         run: |
           npm run lint
           npm run build
 
-  build-and-push-images:
+  build-backend:
     runs-on: ubuntu-latest
-    needs:
-      - test-backend
-    # front-end build already ran in test-frontend; we only need sources here
-      - test-frontend
+    needs: [changes, test-backend]
+    if: always() && needs.changes.outputs.backend == 'true' && needs.test-backend.result == 'success'
+    outputs:
+      IMAGE_TAG: ${{ steps.tag.outputs.IMAGE_TAG }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Azure login
         uses: azure/login@v2
         with:
-          # Create this secret containing the JSON output of:
-          # az ad sp create-for-rbac --name "github-actions" --sdk-auth ...
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: Login to Azure Container Registry
+      - name: Login to ACR
         run: az acr login --name $ACR_NAME
-
       - name: Build and push backend image
         run: |
-          BACKEND_TAG=${GITHUB_SHA}
-          docker build -t $ACR_LOGIN_SERVER/$BACKEND_IMAGE_NAME:$BACKEND_TAG ./backend
-          docker push $ACR_LOGIN_SERVER/$BACKEND_IMAGE_NAME:$BACKEND_TAG
-          echo "BACKEND_IMAGE_TAG=$BACKEND_TAG" >> $GITHUB_ENV
+          docker build -t $ACR_LOGIN_SERVER/$BACKEND_IMAGE_NAME:$GITHUB_SHA ./backend
+          docker push $ACR_LOGIN_SERVER/$BACKEND_IMAGE_NAME:$GITHUB_SHA
+      - name: Set image tag
+        id: tag
+        run: echo "IMAGE_TAG=$GITHUB_SHA" >> $GITHUB_OUTPUT
 
+  build-frontend:
+    runs-on: ubuntu-latest
+    needs: [changes, test-frontend]
+    if: always() && needs.changes.outputs.frontend == 'true' && needs.test-frontend.result == 'success'
+    outputs:
+      IMAGE_TAG: ${{ steps.tag.outputs.IMAGE_TAG }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Login to ACR
+        run: az acr login --name $ACR_NAME
       - name: Build and push frontend image
         run: |
-          FRONTEND_TAG=${GITHUB_SHA}
-          docker build -t $ACR_LOGIN_SERVER/$FRONTEND_IMAGE_NAME:$FRONTEND_TAG ./frontend
-          docker push $ACR_LOGIN_SERVER/$FRONTEND_IMAGE_NAME:$FRONTEND_TAG
-          echo "FRONTEND_IMAGE_TAG=$FRONTEND_TAG" >> $GITHUB_ENV
+          docker build -t $ACR_LOGIN_SERVER/$FRONTEND_IMAGE_NAME:$GITHUB_SHA ./frontend
+          docker push $ACR_LOGIN_SERVER/$FRONTEND_IMAGE_NAME:$GITHUB_SHA
+      - name: Set image tag
+        id: tag
+        run: echo "IMAGE_TAG=$GITHUB_SHA" >> $GITHUB_OUTPUT
 
   deploy:
     runs-on: ubuntu-latest
-    needs:
-      - build-and-push-images
+    needs: [changes, build-backend, build-frontend]
+    if: always() && (needs.build-backend.result == 'success' || needs.build-frontend.result == 'success')
     steps:
       - name: Azure login
         uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-
       - name: Deploy backend to staging slot
+        if: needs.build-backend.result == 'success'
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.AZURE_WEBAPP_BACKEND }}
           slot-name: ${{ env.AZURE_WEBAPP_BACKEND_SLOT }}
-          images: ${{ env.ACR_LOGIN_SERVER }}/${{ env.BACKEND_IMAGE_NAME }}:${{ env.BACKEND_IMAGE_TAG }}
-
-      - name: Deploy frontend to staging slot
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: ${{ env.AZURE_WEBAPP_FRONTEND }}
-          slot-name: ${{ env.AZURE_WEBAPP_FRONTEND_SLOT }}
-          images: ${{ env.ACR_LOGIN_SERVER }}/${{ env.FRONTEND_IMAGE_NAME }}:${{ env.FRONTEND_IMAGE_TAG }}
-
-      - name: Swap backend staging slot into production
+          images: ${{ env.ACR_LOGIN_SERVER }}/${{ env.BACKEND_IMAGE_NAME }}:${{ needs.build-backend.outputs.IMAGE_TAG }}
+      - name: Swap backend staging into production
+        if: needs.build-backend.result == 'success'
         run: |
           az webapp deployment slot swap \
             --resource-group $AZURE_RESOURCE_GROUP \
             --name $AZURE_WEBAPP_BACKEND \
             --slot $AZURE_WEBAPP_BACKEND_SLOT \
             --target-slot production
-
-      - name: Swap frontend staging slot into production
+      - name: Deploy frontend to staging slot
+        if: needs.build-frontend.result == 'success'
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_FRONTEND }}
+          slot-name: ${{ env.AZURE_WEBAPP_FRONTEND_SLOT }}
+          images: ${{ env.ACR_LOGIN_SERVER }}/${{ env.FRONTEND_IMAGE_NAME }}:${{ needs.build-frontend.outputs.IMAGE_TAG }}
+      - name: Swap frontend staging into production
+        if: needs.build-frontend.result == 'success'
         run: |
           az webapp deployment slot swap \
             --resource-group $AZURE_RESOURCE_GROUP \

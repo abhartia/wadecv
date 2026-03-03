@@ -17,7 +17,7 @@ export default function LandingPage() {
           <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/5 via-background to-background" />
           <div className="container mx-auto px-4 text-center">
             <Badge variant="secondary" className="mb-6">
-              <Sparkles className="mr-1 h-3 w-3" /> AI-Powered CV Tailoring!
+              <Sparkles className="mr-1 h-3 w-3" /> AI-Powered CV Tailoring!!!!
             </Badge>
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl mb-6">
               Land your dream job with a
