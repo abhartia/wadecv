@@ -4,6 +4,21 @@ import { useState, useCallback, Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import { api, ApiError } from "@/lib/api";
+import {
+  trackCvDownload,
+  trackCvEmailSent,
+  trackCvImportFailure,
+  trackCvImportStarted,
+  trackCvImportSuccess,
+  trackCvSectionEdited,
+  trackCvTailorApplied,
+  trackCvTailorStarted,
+  trackDashboardViewed,
+  trackFeatureClicked,
+  trackJobScrapeFailure,
+  trackJobScrapeStarted,
+  trackJobScrapeSuccess,
+} from "@/lib/analytics/events";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -79,6 +94,7 @@ function TailorContent() {
   const progress = ((stepIdx + 1) / steps.length) * 100;
 
   useEffect(() => {
+    trackDashboardViewed();
     const preferred = user?.cv_page_limit;
     if (preferred === 1 || preferred === 2) setPageLimit(preferred);
   }, [user?.cv_page_limit]);
@@ -123,6 +139,7 @@ function TailorContent() {
 
   const handleUpload = useCallback(async () => {
     if (!file || !token) return;
+    trackCvImportStarted("upload");
     setLoading(true);
     try {
       const result = await api.uploadCV(file, token);
@@ -131,7 +148,9 @@ function TailorContent() {
       await refreshUser();
       setStep("enhance");
       toast.success("CV uploaded successfully!");
+      trackCvImportSuccess("upload");
     } catch (err: unknown) {
+      trackCvImportFailure("upload", (err as Error).name || "error");
       toast.error((err as Error).message || "Upload failed");
     } finally {
       setLoading(false);
@@ -148,19 +167,26 @@ function TailorContent() {
       return;
     }
     setScraping(true);
+    trackJobScrapeStarted();
     try {
       const result = await api.scrapeJob(jobUrl, token);
       const success = result.success ?? true;
-      if (success) {
+      // Always put the returned job_description into the box (backend sends cleaned when available)
+      if (result.job_description) {
         setJobDescription(result.job_description);
+      }
+      if (success) {
         toast.success("Job description extracted!");
+        trackJobScrapeSuccess();
       } else {
         const reason = result.reason || "We couldn't reliably extract this job description automatically.";
         setScrapeError(reason);
         toast.error(reason);
+        trackJobScrapeFailure("not_confident");
       }
     } catch {
       toast.error("Could not scrape URL. Please paste the job description manually.");
+      trackJobScrapeFailure("network_or_server");
     } finally {
       setScraping(false);
     }
@@ -178,6 +204,7 @@ function TailorContent() {
     }
     setLoading(true);
     setStep("generate");
+    trackCvTailorStarted();
     try {
       const result = await api.generateCV({
         cv_id: cvId || undefined,
@@ -220,6 +247,7 @@ function TailorContent() {
     try {
       await api.updateCV(cvId, { generated_cv_data: cvData }, token);
       toast.success("Changes saved!");
+      trackCvTailorApplied();
     } catch {
       toast.error("Failed to save changes");
     } finally {
@@ -266,6 +294,7 @@ function TailorContent() {
       window.URL.revokeObjectURL(url);
       if (step === "edit") setStep("cover_letter");
       toast.success("CV downloaded!");
+      trackCvDownload(format);
     } catch {
       toast.error("Download failed");
     } finally {

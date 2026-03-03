@@ -78,10 +78,29 @@ export default function PrivacyPage() {
         <li><strong>Object:</strong> Contact us to object to specific data processing activities.</li>
       </ul>
 
-      <h2>7. Cookies</h2>
+      <h2>7. Cookies and Analytics</h2>
       <p>
-        We use essential cookies only: authentication tokens (httpOnly, secure) and theme preference.
-        We do not use tracking cookies or third-party analytics.
+        We use essential cookies to keep you signed in (authentication tokens stored as httpOnly, secure
+        cookies) and to remember your theme preference.
+      </p>
+      <p>
+        We also use Google Analytics 4 (&quot;GA4&quot;) to understand how WadeCV is used so we can improve
+        the product. GA4 collects pseudonymous usage data such as page views, feature engagement (for example,
+        when you tailor a CV, generate a new version, or download a document), approximate location (based on
+        your IP address as processed by Google), device and browser information, and technical event metadata
+        (such as error states or failed requests). We do not use this data to build marketing profiles of
+        individual users.
+      </p>
+      <p>
+        Analytics cookies and related tracking are controlled via an in-product banner and settings. You can
+        choose to accept or decline analytics on your first visit, and you can change this choice later in the
+        app. If you decline, only essential cookies will be used and we will not send non-essential analytics
+        events to Google.
+      </p>
+      <p>
+        For more information about how Google Analytics handles data, please see Google&apos;s documentation on
+        &quot;How Google uses information from sites or apps that use our services&quot; and the
+        &quot;Safeguarding your data in Google Analytics&quot; page.
       </p>
 
       <h2>8. Children&apos;s Privacy</h2>

@@ -1,0 +1,146 @@
+name: CI/CD - Azure App Service (zero downtime)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  # Azure Container Registry
+  ACR_NAME: wadecvacr
+  ACR_LOGIN_SERVER: wadecvacr.azurecr.io
+
+  # App Service (Container) names and resource group
+  AZURE_RESOURCE_GROUP: wadecv_group
+
+  AZURE_WEBAPP_BACKEND: wadecv-backend
+  AZURE_WEBAPP_BACKEND_SLOT: staging
+
+  AZURE_WEBAPP_FRONTEND: wadecv
+  AZURE_WEBAPP_FRONTEND_SLOT: staging
+
+  BACKEND_IMAGE_NAME: wadecv-backend
+  FRONTEND_IMAGE_NAME: wadecv-frontend
+
+jobs:
+  # Basic sanity checks before building images
+  test-backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Add pytest or other test commands here if/when available
+
+  test-frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: "frontend/package-lock.json"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Lint / build
+        run: |
+          npm run lint
+          npm run build
+
+  build-and-push-images:
+    runs-on: ubuntu-latest
+    needs:
+      - test-backend
+    # front-end build already ran in test-frontend; we only need sources here
+      - test-frontend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          # Create this secret containing the JSON output of:
+          # az ad sp create-for-rbac --name "github-actions" --sdk-auth ...
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Login to Azure Container Registry
+        run: az acr login --name $ACR_NAME
+
+      - name: Build and push backend image
+        run: |
+          BACKEND_TAG=${GITHUB_SHA}
+          docker build -t $ACR_LOGIN_SERVER/$BACKEND_IMAGE_NAME:$BACKEND_TAG ./backend
+          docker push $ACR_LOGIN_SERVER/$BACKEND_IMAGE_NAME:$BACKEND_TAG
+          echo "BACKEND_IMAGE_TAG=$BACKEND_TAG" >> $GITHUB_ENV
+
+      - name: Build and push frontend image
+        run: |
+          FRONTEND_TAG=${GITHUB_SHA}
+          docker build -t $ACR_LOGIN_SERVER/$FRONTEND_IMAGE_NAME:$FRONTEND_TAG ./frontend
+          docker push $ACR_LOGIN_SERVER/$FRONTEND_IMAGE_NAME:$FRONTEND_TAG
+          echo "FRONTEND_IMAGE_TAG=$FRONTEND_TAG" >> $GITHUB_ENV
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs:
+      - build-and-push-images
+    steps:
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy backend to staging slot
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_BACKEND }}
+          slot-name: ${{ env.AZURE_WEBAPP_BACKEND_SLOT }}
+          images: ${{ env.ACR_LOGIN_SERVER }}/${{ env.BACKEND_IMAGE_NAME }}:${{ env.BACKEND_IMAGE_TAG }}
+
+      - name: Deploy frontend to staging slot
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_FRONTEND }}
+          slot-name: ${{ env.AZURE_WEBAPP_FRONTEND_SLOT }}
+          images: ${{ env.ACR_LOGIN_SERVER }}/${{ env.FRONTEND_IMAGE_NAME }}:${{ env.FRONTEND_IMAGE_TAG }}
+
+      - name: Swap backend staging slot into production
+        run: |
+          az webapp deployment slot swap \
+            --resource-group $AZURE_RESOURCE_GROUP \
+            --name $AZURE_WEBAPP_BACKEND \
+            --slot $AZURE_WEBAPP_BACKEND_SLOT \
+            --target-slot production
+
+      - name: Swap frontend staging slot into production
+        run: |
+          az webapp deployment slot swap \
+            --resource-group $AZURE_RESOURCE_GROUP \
+            --name $AZURE_WEBAPP_FRONTEND \
+            --slot $AZURE_WEBAPP_FRONTEND_SLOT \
+            --target-slot production
+

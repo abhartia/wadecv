@@ -6,6 +6,7 @@ import { useAuth } from "@/lib/auth";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Loader2 } from "lucide-react";
+import { PageviewListener } from "@/components/analytics/pageview-listener";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -31,6 +32,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   return (
     <div className="flex min-h-screen flex-col">
+      <PageviewListener />
       <Navbar />
       <main className="flex-1 container mx-auto px-4 py-8">
         {children}

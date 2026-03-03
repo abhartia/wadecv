@@ -1,4 +1,5 @@
 import resend
+from typing import Any, Dict, List, Optional, Union
 
 from app.config import get_settings
 
@@ -67,3 +68,52 @@ def send_deletion_confirmation(to_email: str):
         </div>
         """,
     })
+
+
+def forward_inbound_support_email(payload: Dict[str, Any]):
+    client = _get_client()
+
+    original_from: Optional[str] = payload.get("from")
+    original_to: Optional[Union[str, List[str]]] = payload.get("to")
+    subject: Optional[str] = payload.get("subject")
+    text: Optional[str] = payload.get("text")
+    html: Optional[str] = payload.get("html")
+    message_id: Optional[str] = payload.get("id") or payload.get("message_id")
+
+    if isinstance(original_to, list):
+        original_to_str = ", ".join(original_to)
+    else:
+        original_to_str = original_to or ""
+
+    meta_lines = []
+    if original_from:
+        meta_lines.append(f"Original From: {original_from}")
+    if original_to_str:
+        meta_lines.append(f"Original To: {original_to_str}")
+    if message_id:
+        meta_lines.append(f"Resend Message-ID: {message_id}")
+
+    meta_block = "\n".join(meta_lines) if meta_lines else "Inbound support email via Resend"
+
+    effective_subject = subject or "New support message"
+    target = settings.support_forward_to
+
+    if html:
+        meta_html = meta_block.replace("\n", "<br />")
+        body_html = f"<p>{meta_html}</p><hr />{html}"
+        body_text = f"{meta_block}\n\n{text or ''}"
+        client.Emails.send({
+            "from": settings.email_from,
+            "to": [target],
+            "subject": f"[Support] {effective_subject}",
+            "text": body_text,
+            "html": body_html,
+        })
+    else:
+        body_text = f"{meta_block}\n\n{text or ''}"
+        client.Emails.send({
+            "from": settings.email_from,
+            "to": [target],
+            "subject": f"[Support] {effective_subject}",
+            "text": body_text,
+        })

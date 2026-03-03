@@ -108,8 +108,6 @@ async def generate_completion(
         **extra_args,
     )
 
-    print(response)
-
     message = response.choices[0].message
 
     if json_mode:

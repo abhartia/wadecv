@@ -34,6 +34,7 @@ class Settings(BaseSettings):
     # Email (Resend)
     email_api_key: str = ""
     email_from: str = "WadeCV <noreply@wadecv.com>"
+    support_forward_to: str = "bhartta@gmail.com"
 
     # URLs
     frontend_url: str = "http://localhost:3000"

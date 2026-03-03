@@ -8,7 +8,7 @@ from reportlab.lib.enums import TA_CENTER, TA_LEFT
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
-from reportlab.platypus import ListFlowable, ListItem, Paragraph, SimpleDocTemplate, Spacer
+from reportlab.platypus import ListFlowable, ListItem, Paragraph, SimpleDocTemplate, Spacer, Table
 
 
 _CONTROL_CHARS_RE = re.compile(
@@ -84,11 +84,15 @@ def build_cv_docx(cv_data: dict, page_limit: int = 2) -> bytes:
     # Compact (1-page): smaller fonts and margins so content fits on one page
     margin_in = 0.4 if compact else 0.6
     margin_side = 0.5 if compact else 0.75
-    name_pt = 16 if compact else 22
-    contact_pt = 8 if compact else 10
-    body_pt = 9 if compact else 11
-    meta_pt = 8 if compact else 9
-    heading_pt = 10 if compact else 13
+    # For 1-page CVs we can use larger fonts – still compact but reduces excess whitespace.
+    name_pt = 18 if compact else 22
+    contact_pt = 9 if compact else 10
+    body_pt = 10 if compact else 11
+    meta_pt = 9 if compact else 9
+    heading_pt = 11 if compact else 13
+    # Make job and education header lines stand out slightly more on compact (1-page) CVs
+    exp_header_pt = body_pt + 1 if compact else body_pt
+    edu_header_pt = body_pt + 1 if compact else body_pt
     space_after_body = 0 if compact else 2
     space_after_bullet = 0 if compact else 1
     separator_before = 0 if compact else 2
@@ -151,7 +155,9 @@ def build_cv_docx(cv_data: dict, page_limit: int = 2) -> bytes:
             run = p.add_run(title_line)
             run.bold = True
             run.font.name = "Calibri"
-            run.font.size = Pt(body_pt)
+            run.font.size = Pt(exp_header_pt)
+            if compact:
+                run.font.color.rgb = RGBColor(0x1E, 0x29, 0x3B)
             if company:
                 run = p.add_run(f"  |  {company}")
                 run.font.name = "Calibri"
@@ -184,7 +190,9 @@ def build_cv_docx(cv_data: dict, page_limit: int = 2) -> bytes:
             run = p.add_run(degree)
             run.bold = True
             run.font.name = "Calibri"
-            run.font.size = Pt(body_pt)
+            run.font.size = Pt(edu_header_pt)
+            if compact:
+                run.font.color.rgb = RGBColor(0x1E, 0x29, 0x3B)
             if institution:
                 run = p.add_run(f"  |  {institution}")
                 run.font.name = "Calibri"
@@ -224,6 +232,16 @@ def build_cv_docx(cv_data: dict, page_limit: int = 2) -> bytes:
                 run.font.name = "Calibri"
                 run.font.size = Pt(body_pt)
 
+    interests_raw = cv_data.get("interests")
+    if interests_raw is not None:
+        if isinstance(interests_raw, str):
+            interests_list = [interests_raw.strip()] if interests_raw.strip() else []
+        else:
+            interests_list = [_clean_text(str(item)).strip() for item in (interests_raw or []) if _clean_text(str(item)).strip()]
+        if interests_list:
+            _add_heading(doc, "Interests", level=2, heading_pt=heading_pt)
+            _add_paragraph(doc, ", ".join(interests_list), size=body_pt, space_after=space_after_body)
+
     buf = io.BytesIO()
     doc.save(buf)
     return buf.getvalue()
@@ -237,11 +255,14 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
     compact = page_limit == 1
     margin_in = 0.4 if compact else 0.6
     margin_side = 0.5 if compact else 0.75
-    name_font = 16 if compact else 22
-    contact_font = 7 if compact else 9
-    heading_font = 10 if compact else 13
-    body_font = 9 if compact else 11
-    meta_font = 7 if compact else 9
+    # Larger fonts on 1-page CVs to use available whitespace while staying compact
+    name_font = 18 if compact else 22
+    contact_font = 8 if compact else 9
+    heading_font = 11 if compact else 13
+    body_font = 10 if compact else 11
+    meta_font = 8 if compact else 9
+    # Slightly larger job/education header lines on compact (1-page) CVs
+    header_font = body_font + 1 if compact else body_font
     body_leading = 11 if compact else 14
     space_after = 2 if compact else 4
     space_before_heading = 4 if compact else 10
@@ -264,7 +285,8 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
             parent=styles["Heading1"],
             alignment=TA_CENTER,
             fontSize=name_font,
-            spaceAfter=4 if compact else 6,
+            fontName="Helvetica-Bold",
+            spaceAfter=2 if compact else 4,
             textColor=colors.HexColor("#1E293B"),
         )
     )
@@ -274,14 +296,15 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
             parent=styles["Normal"],
             alignment=TA_CENTER,
             fontSize=contact_font,
-            textColor=colors.HexColor("#6B7280"),
-            spaceAfter=6 if compact else 10,
+            textColor=colors.HexColor("#64748B"),
+            spaceAfter=4 if compact else 6,
         )
     )
     styles.add(
         ParagraphStyle(
             name="CvHeading",
             parent=styles["Heading2"],
+            fontName="Helvetica-Bold",
             fontSize=heading_font,
             textColor=colors.HexColor("#1E293B"),
             spaceBefore=space_before_heading,
@@ -302,7 +325,7 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
             name="CvMeta",
             parent=styles["Normal"],
             fontSize=meta_font,
-            textColor=colors.HexColor("#6B7280"),
+            textColor=colors.HexColor("#64748B"),
             spaceAfter=space_after,
         )
     )
@@ -322,6 +345,14 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
     if contact_parts:
         story.append(Paragraph("  |  ".join(contact_parts), styles["CvContact"]))
 
+    # Horizontal rule under header
+    content_width = (A4[0] / 72.0 - 2 * margin_side) * inch
+    rule_table = Table([[""]], colWidths=[content_width], rowHeights=[1])
+    rule_table.setStyle([("LINEBELOW", (0, 0), (-1, 0), 0.5, colors.HexColor("#94A3B8"))])
+    story.append(Spacer(1, 2))
+    story.append(rule_table)
+    story.append(Spacer(1, 6 if compact else 8))
+
     summary = _clean_text(cv_data.get("professional_summary", ""))
     if summary:
         story.append(Paragraph("Professional Summary", styles["CvHeading"]))
@@ -339,12 +370,23 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
             location = _clean_text(exp.get("location", ""))
             dates = f"{exp.get('start_date', '')} - {exp.get('end_date', '')}".strip(" -")
 
-            line_parts = [p for p in [title_line, company] if p]
+            line_parts: list[str] = []
+            if title_line:
+                title_html = _pdf_esc(title_line)
+                # Emphasize job headers a bit more, especially on compact (1-page) CVs
+                if compact:
+                    title_html = '<b><font size="%d">%s</font></b>' % (header_font, title_html)
+                else:
+                    title_html = "<b>%s</b>" % title_html
+                line_parts.append(title_html)
+            if company:
+                line_parts.append(_pdf_esc(company))
             meta_parts = [p for p in [location, dates] if p]
             if line_parts:
-                line = "  |  ".join(_pdf_esc(p) for p in line_parts)
+                # Don't escape line_parts here—they already contain safe markup (tags + escaped text)
+                line = "  |  ".join(line_parts)
                 if meta_parts:
-                    line += "  |  <i><font color='#6B7280' size='%d'>" % meta_font + "  |  ".join(_pdf_esc(p) for p in meta_parts) + "</font></i>"
+                    line += '  |  <i><font color="#64748B" size="%d">' % meta_font + "  |  ".join(_pdf_esc(p) for p in meta_parts) + "</font></i>"
                 story.append(Paragraph(line, styles["CvBody"]))
 
             bullets = [b for b in (exp.get("bullets") or []) if b]
@@ -374,11 +416,21 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
             institution = _clean_text(edu.get("institution", ""))
             dates = f"{edu.get('start_date', '')} - {edu.get('end_date', '')}".strip(" -")
 
-            line_parts = [p for p in [degree, institution] if p]
+            line_parts: list[str] = []
+            if degree:
+                degree_html = _pdf_esc(degree)
+                if compact:
+                    degree_html = '<b><font size="%d">%s</font></b>' % (header_font, degree_html)
+                else:
+                    degree_html = "<b>%s</b>" % degree_html
+                line_parts.append(degree_html)
+            if institution:
+                line_parts.append(_pdf_esc(institution))
             if line_parts:
-                line = "  |  ".join(_pdf_esc(p) for p in line_parts)
+                # Don't escape line_parts—they already contain safe markup (tags + escaped text)
+                line = "  |  ".join(line_parts)
                 if dates:
-                    line += "  |  <i><font color='#6B7280' size='%d'>" % meta_font + _pdf_esc(dates) + "</font></i>"
+                    line += '  |  <i><font color="#64748B" size="%d">' % meta_font + _pdf_esc(dates) + "</font></i>"
                 story.append(Paragraph(line, styles["CvBody"]))
 
             details = _clean_text(edu.get("details", ""))
@@ -403,6 +455,17 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
                 story.append(
                     Paragraph(f"{label}: " + ", ".join(items), styles["CvBody"])
                 )
+
+    interests_raw = cv_data.get("interests")
+    if interests_raw is not None:
+        if isinstance(interests_raw, str):
+            interests_list = [interests_raw.strip()] if interests_raw.strip() else []
+        else:
+            interests_list = [_clean_text(str(item)).strip() for item in (interests_raw or []) if _clean_text(str(item)).strip()]
+        if interests_list:
+            story.append(Spacer(1, 6))
+            story.append(Paragraph("Interests", styles["CvHeading"]))
+            story.append(Paragraph(", ".join(_pdf_esc(t) for t in interests_list), styles["CvBody"]))
 
     if not story:
         story.append(Paragraph("CV data is not available.", styles["CvBody"]))

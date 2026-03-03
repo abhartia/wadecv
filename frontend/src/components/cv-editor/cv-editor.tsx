@@ -6,7 +6,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Plus, Trash2, User, Briefcase, GraduationCap, Wrench } from "lucide-react";
+import { Plus, Trash2, User, Briefcase, GraduationCap, Wrench, Heart } from "lucide-react";
+import { trackCvSectionEdited } from "@/lib/analytics/events";
 
 interface CVData {
   personal_info?: {
@@ -40,6 +41,7 @@ interface CVData {
     languages?: string[];
     certifications?: string[];
   };
+  interests?: string[];
 }
 
 interface CVEditorProps {
@@ -61,6 +63,10 @@ export function CVEditor({ data, onChange }: CVEditorProps) {
     }
     current[path[path.length - 1]] = value;
     onChange(newData);
+    const section = path[0];
+    if (typeof section === "string") {
+      trackCvSectionEdited(section);
+    }
   };
 
   const addExperience = () => {
@@ -298,6 +304,26 @@ export function CVEditor({ data, onChange }: CVEditorProps) {
               />
             </div>
           ))}
+        </CardContent>
+      </Card>
+
+      {/* Interests */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-lg">
+            <Heart className="h-5 w-5" /> Interests
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Textarea
+            rows={2}
+            placeholder="Comma-separated interests, e.g. Running, open-source, photography"
+            value={(cv.interests || []).join(", ")}
+            onChange={(e) => {
+              const items = e.target.value.split(",").map((s) => s.trim()).filter(Boolean);
+              update(["interests"], items.length ? items : []);
+            }}
+          />
         </CardContent>
       </Card>
     </div>

@@ -61,7 +61,8 @@ Return ONLY a valid JSON object with this exact structure:
     "soft": [""],
     "languages": [""],
     "certifications": [""]
-  }
+  },
+  "interests": []
 }
 
 Guidelines:
@@ -72,7 +73,8 @@ Guidelines:
 - Keep the CV truthful - only enhance presentation, never fabricate experience
 - Use concise, impactful language
 - Ensure ATS compatibility with standard section headers
-- If additional info is provided, incorporate it naturally into the relevant sections"""
+- If additional info is provided, incorporate it naturally into the relevant sections
+- If the original CV or additional info mentions interests, hobbies, or extracurriculars, include an "interests" array with 1–5 short items; otherwise omit or leave empty."""
 
 
 PAGE_LIMIT_ONE_PROMPT = """
@@ -159,6 +161,7 @@ async def generate_cv(
                 "languages": [],
                 "certifications": [],
             },
+            "interests": [],
         }
 
     return json.loads(cleaned)
