@@ -170,7 +170,7 @@ export default function DashboardPage() {
 
       {!user?.has_profile && (
         <Card className="border-primary/30 bg-gradient-to-r from-primary/5 to-primary/10">
-          <CardContent className="pt-6">
+          <CardContent className="py-6">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 shrink-0">
                 <Sparkles className="h-6 w-6 text-primary" />

@@ -12,9 +12,15 @@ app = FastAPI(
     version="1.0.0",
 )
 
+allowed_origins = [
+    settings.frontend_url,
+    "https://wadecv.com",
+    "https://www.wadecv.com",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[settings.frontend_url],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
