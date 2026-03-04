@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, Suspense, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import { api, ApiError } from "@/lib/api";
 import {
@@ -62,6 +62,7 @@ const isLinkedInJobUrl = (url: string): boolean => {
 };
 
 function TailorContent() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const { token, user, refreshUser } = useAuth();
   const jobParam = searchParams.get("job");
@@ -92,6 +93,37 @@ function TailorContent() {
 
   const stepIdx = steps.indexOf(step);
   const progress = ((stepIdx + 1) / steps.length) * 100;
+
+  const startNewApplication = () => {
+    // Clear URL-based job context so we don't immediately reload the old application
+    if (searchParams.get("job")) {
+      router.push("/tailor");
+    }
+
+    // Reset all local state for a fresh flow
+    setStep(profileFlow ? "job" : "upload");
+    setFile(null);
+    setCvId("");
+    setOriginalContent("");
+    setAdditionalInfo("");
+    setJobUrl("");
+    setJobDescription("");
+    setJobId("");
+    setCvData(null);
+    setFitAnalysis(null);
+    setGapFeedback({});
+    setCoverLetterContent("");
+    setCoverLetterGenerated(false);
+    setPageLimit((user?.cv_page_limit === 1 || user?.cv_page_limit === 2) ? user.cv_page_limit : 2);
+    setLoading(false);
+    setRefining(false);
+    setScraping(false);
+    setClLoading(false);
+    setClSaving(false);
+    setScrapeError(null);
+
+    trackFeatureClicked("start_new_application");
+  };
 
   useEffect(() => {
     trackDashboardViewed();
@@ -455,14 +487,24 @@ function TailorContent() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold">Tailor Your CV</h1>
           <p className="text-muted-foreground mt-1">Create a tailored CV for your target job</p>
         </div>
-        <Badge variant="outline" className="gap-1">
-          <Coins className="h-3 w-3" />{user?.credits ?? 0} credits
-        </Badge>
+        <div className="flex items-center gap-3">
+          <Badge variant="outline" className="gap-1">
+            <Coins className="h-3 w-3" />{user?.credits ?? 0} credits
+          </Badge>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={startNewApplication}
+          >
+            <RefreshCw className="mr-1 h-3 w-3" />
+            Start New
+          </Button>
+        </div>
       </div>
 
       {profileFlow && step === "job" && (

@@ -96,6 +96,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     init();
   }, []);
 
+  useEffect(() => {
+    if (!token) return;
+
+    const interval = setInterval(async () => {
+      const refreshToken = localStorage.getItem("refresh_token");
+      if (!refreshToken) return;
+
+      try {
+        const tokens = await api.refreshToken(refreshToken);
+        saveTokens(tokens.access_token, tokens.refresh_token);
+        const u = await api.getMe(tokens.access_token);
+        setUser(u);
+      } catch {
+        clearTokens();
+      }
+    }, 10 * 60 * 1000);
+
+    return () => clearInterval(interval);
+  }, [token]);
+
   const login = async (email: string, password: string) => {
     const tokens = await api.login(email, password);
     saveTokens(tokens.access_token, tokens.refresh_token);

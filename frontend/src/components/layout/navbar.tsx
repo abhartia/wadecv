@@ -20,6 +20,8 @@ export function Navbar() {
   const { user, logout } = useAuth();
   const [open, setOpen] = useState(false);
 
+  const creditLabel = user ? `${user.credits} ${user.credits === 1 ? "credit" : "credits"}` : "";
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -43,7 +45,7 @@ export function Navbar() {
               <Link href="/billing" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 <span className="flex items-center gap-1.5">
                   <Coins className="h-4 w-4" />
-                  {user.credits} credits
+                  {creditLabel}
                 </span>
               </Link>
             </nav>
@@ -60,7 +62,7 @@ export function Navbar() {
                   <div className="px-2 py-1.5">
                     <p className="text-sm font-medium">{user.email}</p>
                     <p className="text-xs text-muted-foreground">
-                      <Badge variant="secondary" className="mt-1">{user.credits} credits</Badge>
+                      <Badge variant="secondary" className="mt-1">{creditLabel}</Badge>
                     </p>
                   </div>
                   <DropdownMenuSeparator />
@@ -90,7 +92,7 @@ export function Navbar() {
                   <Link href="/dashboard" onClick={() => setOpen(false)} className="text-sm font-medium">Dashboard</Link>
                   <Link href="/tailor" onClick={() => setOpen(false)} className="text-sm font-medium">Tailor CV</Link>
                   <Link href="/applications" onClick={() => setOpen(false)} className="text-sm font-medium">Applications</Link>
-                  <Link href="/billing" onClick={() => setOpen(false)} className="text-sm font-medium">Billing ({user.credits} credits)</Link>
+                  <Link href="/billing" onClick={() => setOpen(false)} className="text-sm font-medium">Billing ({creditLabel})</Link>
                   <Link href="/settings" onClick={() => setOpen(false)} className="text-sm font-medium">Settings</Link>
                   <hr />
                   <button onClick={() => { logout(); setOpen(false); }} className="text-sm font-medium text-left text-destructive">Log out</button>
