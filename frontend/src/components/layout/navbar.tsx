@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { FileText, User, LogOut, CreditCard, Settings, LayoutDashboard, Coins, Menu } from "lucide-react";
+import { User, LogOut, CreditCard, Settings, LayoutDashboard, Coins, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
 import { ThemeToggle } from "./theme-toggle";
@@ -25,9 +25,15 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href={user ? "/dashboard" : "/"} className="flex items-center gap-2">
-          <FileText className="h-6 w-6 text-primary" />
-          <span className="text-xl font-bold">WadeCV</span>
+        <Link href={user ? "/dashboard" : "/"} className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="WadeCV"
+            width={56}
+            height={56}
+            className="shrink-0"
+            priority
+          />
         </Link>
 
         {user ? (
@@ -61,8 +67,8 @@ export function Navbar() {
                 <DropdownMenuContent align="end" className="w-56">
                   <div className="px-2 py-1.5">
                     <p className="text-sm font-medium">{user.email}</p>
-                    <p className="text-xs text-muted-foreground">
-                      <Badge variant="secondary" className="mt-1">{creditLabel}</Badge>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Credits: {creditLabel}
                     </p>
                   </div>
                   <DropdownMenuSeparator />

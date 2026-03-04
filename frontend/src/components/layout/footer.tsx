@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FileText } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -8,7 +8,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <FileText className="h-5 w-5 text-primary" />
+              <Image
+                src="/logo.png"
+                alt="WadeCV logo"
+                width={44}
+                height={44}
+                className="shrink-0"
+              />
               <span className="font-bold">WadeCV</span>
             </div>
             <p className="text-sm text-muted-foreground">
