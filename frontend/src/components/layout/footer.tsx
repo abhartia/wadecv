@@ -13,7 +13,7 @@ export function Footer() {
                 alt="WadeCV logo"
                 width={44}
                 height={44}
-                className="shrink-0"
+                className="shrink-0 w-11 h-11"
               />
               <span className="font-bold">WadeCV</span>
             </div>

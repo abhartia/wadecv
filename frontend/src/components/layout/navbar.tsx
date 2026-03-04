@@ -26,14 +26,15 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href={user ? "/dashboard" : "/"} className="flex items-center">
-          <Image
-            src="/logo.png"
-            alt="WadeCV"
-            width={56}
-            height={56}
-            className="shrink-0"
-            priority
-          />
+          <div className="relative h-10 w-10 shrink-0">
+            <Image
+              src="/logo.png"
+              alt="WadeCV"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </Link>
 
         {user ? (
