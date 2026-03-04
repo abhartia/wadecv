@@ -73,6 +73,7 @@ def send_deletion_confirmation(to_email: str):
 def forward_inbound_support_email(payload: Dict[str, Any]):
     client = _get_client()
 
+    email_id: Optional[str] = payload.get("email_id")
     original_from: Optional[str] = payload.get("from")
     original_to: Optional[Union[str, List[str]]] = payload.get("to")
     subject: Optional[str] = payload.get("subject")
@@ -84,6 +85,15 @@ def forward_inbound_support_email(payload: Dict[str, Any]):
         original_to_str = ", ".join(original_to)
     else:
         original_to_str = original_to or ""
+
+    if email_id and (not text and not html):
+        try:
+            email = client.Emails.get(email_id=email_id)  # type: ignore[arg-type]
+            text = email.get("text")  # type: ignore[assignment]
+            html = email.get("html")  # type: ignore[assignment]
+        except Exception:
+            # If fetching full content fails, continue with whatever we have.
+            pass
 
     meta_lines = []
     if original_from:

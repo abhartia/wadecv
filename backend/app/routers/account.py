@@ -39,6 +39,12 @@ async def set_password(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
+    if user.password_hash:
+        raise HTTPException(
+            status_code=400,
+            detail="You already have a password. Use the change password form instead.",
+        )
+
     password = req.get("password", "")
     if len(password) < 8:
         raise HTTPException(status_code=400, detail="Password must be at least 8 characters")
@@ -72,6 +78,7 @@ async def get_profile(user: User = Depends(get_current_user)):
         email_verified=user.email_verified,
         credits=user.credits,
         has_profile=bool(user.base_cv_content),
+        has_password=bool(user.password_hash),
         base_cv_content=user.base_cv_content,
         additional_info=user.additional_info,
         cv_page_limit=getattr(user, "cv_page_limit", 2) or 2,
@@ -98,6 +105,7 @@ async def update_profile(
         email_verified=user.email_verified,
         credits=user.credits,
         has_profile=bool(user.base_cv_content),
+        has_password=bool(user.password_hash),
         base_cv_content=user.base_cv_content,
         additional_info=user.additional_info,
         cv_page_limit=getattr(user, "cv_page_limit", 2) or 2,
@@ -135,6 +143,7 @@ async def upload_profile_cv(
         email_verified=user.email_verified,
         credits=user.credits,
         has_profile=bool(user.base_cv_content),
+        has_password=bool(user.password_hash),
         base_cv_content=user.base_cv_content,
         additional_info=user.additional_info,
         cv_page_limit=getattr(user, "cv_page_limit", 2) or 2,

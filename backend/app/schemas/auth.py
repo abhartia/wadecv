@@ -43,6 +43,7 @@ class UserResponse(BaseModel):
     email_verified: bool
     credits: int
     has_profile: bool = False
+    has_password: bool = False
     base_cv_content: str | None = None
     additional_info: str | None = None
     cv_page_limit: int = 2

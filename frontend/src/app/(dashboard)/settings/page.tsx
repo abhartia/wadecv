@@ -23,7 +23,6 @@ export default function SettingsPage() {
   const [passwordLoading, setPasswordLoading] = useState(false);
   const [deleteOpen, setDeleteOpen] = useState(false);
   const [deleteLoading, setDeleteLoading] = useState(false);
-  const [setPasswordMode, setSetPasswordMode] = useState(false);
   const [newSetPassword, setNewSetPassword] = useState("");
   const [profileAdditionalInfo, setProfileAdditionalInfo] = useState(user?.additional_info || "");
   const [profileLoading, setProfileLoading] = useState(false);
@@ -62,7 +61,7 @@ export default function SettingsPage() {
       await api.setPassword(newSetPassword, token);
       toast.success("Password set successfully");
       setNewSetPassword("");
-      setSetPasswordMode(false);
+      await refreshUser();
     } catch (err: unknown) {
       toast.error((err as Error).message || "Failed to set password");
     } finally {
@@ -215,35 +214,13 @@ export default function SettingsPage() {
             <Lock className="h-5 w-5" /> Password
           </CardTitle>
           <CardDescription>
-            {user?.email_verified ? "Change your password" : "Set a password for your account"}
+            {user?.has_password
+              ? "Change the password you use to sign in."
+              : "You currently sign in with email links. Set a password if you'd like to sign in with email + password as well."}
           </CardDescription>
         </CardHeader>
         <CardContent>
-          {setPasswordMode ? (
-            <form onSubmit={handleSetPassword} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="set-password">New Password</Label>
-                <Input
-                  id="set-password"
-                  type="password"
-                  placeholder="At least 8 characters"
-                  value={newSetPassword}
-                  onChange={(e) => setNewSetPassword(e.target.value)}
-                  required
-                  minLength={8}
-                />
-              </div>
-              <div className="flex gap-2">
-                <Button type="submit" disabled={passwordLoading}>
-                  {passwordLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                  Set Password
-                </Button>
-                <Button type="button" variant="ghost" onClick={() => setSetPasswordMode(false)}>
-                  Cancel
-                </Button>
-              </div>
-            </form>
-          ) : (
+          {user?.has_password ? (
             <form onSubmit={handleChangePassword} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="current-password">Current Password</Label>
@@ -272,8 +249,29 @@ export default function SettingsPage() {
                   {passwordLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                   Update Password
                 </Button>
-                <Button type="button" variant="ghost" onClick={() => setSetPasswordMode(true)}>
-                  Set new password instead
+              </div>
+            </form>
+          ) : (
+            <form onSubmit={handleSetPassword} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="set-password">Create password</Label>
+                <Input
+                  id="set-password"
+                  type="password"
+                  placeholder="At least 8 characters"
+                  value={newSetPassword}
+                  onChange={(e) => setNewSetPassword(e.target.value)}
+                  required
+                  minLength={8}
+                />
+                <p className="text-xs text-muted-foreground">
+                  You can still sign in with magic links after adding a password.
+                </p>
+              </div>
+              <div className="flex gap-2">
+                <Button type="submit" disabled={passwordLoading}>
+                  {passwordLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                  Set Password
                 </Button>
               </div>
             </form>

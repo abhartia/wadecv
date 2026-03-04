@@ -83,7 +83,18 @@ export const api = {
     }),
 
   getMe: (token: string) =>
-    request<{ id: string; email: string; email_verified: boolean; credits: number; has_profile: boolean; base_cv_content: string | null; additional_info: string | null; cv_page_limit: number; created_at: string }>("/api/auth/me", { token }),
+    request<{
+      id: string;
+      email: string;
+      email_verified: boolean;
+      credits: number;
+      has_profile: boolean;
+      has_password: boolean;
+      base_cv_content: string | null;
+      additional_info: string | null;
+      cv_page_limit: number;
+      created_at: string;
+    }>("/api/auth/me", { token }),
 
   logout: () =>
     request("/api/auth/logout", { method: "POST" }),
@@ -266,7 +277,18 @@ export const api = {
 
   // Profile
   updateProfile: (data: { base_cv_content?: string; additional_info?: string; cv_page_limit?: 1 | 2 }, token: string) =>
-    request<{ id: string; email: string; email_verified: boolean; credits: number; has_profile: boolean; base_cv_content: string | null; additional_info: string | null; cv_page_limit: number; created_at: string }>(
+    request<{
+      id: string;
+      email: string;
+      email_verified: boolean;
+      credits: number;
+      has_profile: boolean;
+      has_password: boolean;
+      base_cv_content: string | null;
+      additional_info: string | null;
+      cv_page_limit: number;
+      created_at: string;
+    }>(
       "/api/account/profile",
       { method: "PUT", body: JSON.stringify(data), token }
     ),
@@ -274,7 +296,18 @@ export const api = {
   uploadProfile: (file: File, token: string) => {
     const formData = new FormData();
     formData.append("file", file);
-    return request<{ id: string; email: string; email_verified: boolean; credits: number; has_profile: boolean; base_cv_content: string | null; additional_info: string | null; cv_page_limit: number; created_at: string }>(
+    return request<{
+      id: string;
+      email: string;
+      email_verified: boolean;
+      credits: number;
+      has_profile: boolean;
+      has_password: boolean;
+      base_cv_content: string | null;
+      additional_info: string | null;
+      cv_page_limit: number;
+      created_at: string;
+    }>(
       "/api/account/profile/upload",
       { method: "POST", body: formData, token }
     );

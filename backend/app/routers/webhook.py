@@ -39,27 +39,32 @@ async def stripe_webhook(request: Request):
     return {"status": "ok"}
 
 
-class ResendInboundEmail(BaseModel):
-    id: Optional[str] = None
+class ResendEmailReceivedData(BaseModel):
+    email_id: str
     from_: Optional[str] = Field(None, alias="from")
-    to: Optional[Union[str, List[str]]] = None
+    to: Optional[List[str]] = None
     subject: Optional[str] = None
-    text: Optional[str] = None
-    html: Optional[str] = None
-    headers: Optional[Dict[str, Any]] = None
+    message_id: Optional[str] = None
 
     model_config = {"populate_by_name": True, "extra": "allow"}
 
 
+class ResendEmailReceivedEvent(BaseModel):
+    type: str
+    data: ResendEmailReceivedData
+
+    model_config = {"extra": "allow"}
+
+
 @router.post("/resend/inbound-support")
-async def resend_inbound_support_webhook(payload: ResendInboundEmail):
+async def resend_inbound_support_webhook(event: ResendEmailReceivedEvent):
     try:
-        data = payload.model_dump(by_alias=True)
+        payload = event.data.model_dump(by_alias=True)
     except Exception:
         raise HTTPException(status_code=400, detail="Invalid payload")
 
     try:
-        await run_in_threadpool(forward_inbound_support_email, data)
+        await run_in_threadpool(forward_inbound_support_email, payload)
     except Exception:
         logger.exception("Failed to forward inbound support email via Resend")
         raise HTTPException(status_code=502, detail="Failed to forward inbound email")

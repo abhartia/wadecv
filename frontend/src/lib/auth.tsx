@@ -9,6 +9,7 @@ interface User {
   email_verified: boolean;
   credits: number;
   has_profile: boolean;
+  has_password: boolean;
   base_cv_content: string | null;
   additional_info: string | null;
   cv_page_limit?: number;
