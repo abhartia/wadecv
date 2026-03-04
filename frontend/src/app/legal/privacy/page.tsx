@@ -32,6 +32,7 @@ export default function PrivacyPage() {
       </ul>
 
       <h2>2. How We Use Your Data</h2>
+      <p>We do not advertise using your data, and we do not sell your personal data to third parties.</p>
       <ul>
         <li><strong>CV Generation:</strong> Your CV content and job descriptions are sent to Azure OpenAI to generate tailored CVs and cover letters.</li>
         <li><strong>Account Management:</strong> Your email is used for authentication, magic links, email verification, and account-related communications.</li>
