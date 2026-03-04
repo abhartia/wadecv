@@ -17,7 +17,7 @@ export default function LandingPage() {
           <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/5 via-background to-background" />
           <div className="container mx-auto px-4 text-center">
             <Badge variant="secondary" className="mb-6">
-              <Sparkles className="mr-1 h-3 w-3" /> AI-Powered CV Tailoring!
+              <Sparkles className="mr-1 h-3 w-3" /> AI-Powered CV Tailoring
             </Badge>
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl mb-6">
               Land your dream job with a
@@ -25,7 +25,7 @@ export default function LandingPage() {
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground mb-8">
               Upload your CV, paste a job link, and let AI help you surface and reframe the strongest parts of your
-              real experience for a specific role. This isn&apos;t a hacky shortcut—it keeps your story honest so that
+              real experience for a specific role. This isn&apos;t a hacky shortcut; it keeps your story honest so that
               when you do get the interview, you&apos;re still leaning on your own track record.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -100,7 +100,7 @@ export default function LandingPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold sm:text-4xl mb-4">Why WadeCV?</h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                A tailored CV that actually sounds like you—rooted in your real experience, not made‑up bullet points.
+                A tailored CV that actually sounds like you and is rooted in your real experience, not made‑up bullet points.
               </p>
             </div>
 

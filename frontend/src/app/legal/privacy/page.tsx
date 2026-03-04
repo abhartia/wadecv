@@ -22,7 +22,7 @@ export default function PrivacyPage() {
       <h3>Payment Information</h3>
       <ul>
         <li>Stripe customer ID and transaction records</li>
-        <li>We do not store credit card numbers — all payment processing is handled by Stripe</li>
+        <li>We do not store credit card numbers; all payment processing is handled by Stripe</li>
       </ul>
 
       <h3>Usage Data</h3>
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
         <li><strong>CV Generation:</strong> Your CV content and job descriptions are sent to Azure OpenAI to generate tailored CVs and cover letters.</li>
         <li><strong>Account Management:</strong> Your email is used for authentication, magic links, email verification, and account-related communications.</li>
         <li><strong>Payment Processing:</strong> Transaction data is used to manage your credit balance.</li>
-        <li><strong>Service Improvement:</strong> AI usage metrics (via Langfuse) help us monitor and improve generation quality. These logs do not contain your personal data — only prompt structure and token counts.</li>
+        <li><strong>Service Improvement:</strong> AI usage metrics (via Langfuse) help us monitor and improve generation quality. These logs do not contain your personal data; only prompt structure and token counts.</li>
       </ul>
 
       <h2>3. Data Processing and Third Parties</h2>

@@ -236,7 +236,7 @@ export default function ApplicationsPage() {
                         )}
                       </div>
                     </TableCell>
-                    <TableCell>{job.company_name || "—"}</TableCell>
+                    <TableCell>{job.company_name || "Unknown"}</TableCell>
                     <TableCell>
                       {job.fit_score != null ? (
                         <Badge
@@ -252,7 +252,7 @@ export default function ApplicationsPage() {
                           {job.fit_score}%
                         </Badge>
                       ) : (
-                        <span className="text-muted-foreground text-xs">—</span>
+                        <span className="text-muted-foreground text-xs">N/A</span>
                       )}
                     </TableCell>
                     <TableCell>

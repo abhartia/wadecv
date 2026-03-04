@@ -38,7 +38,7 @@ export default function AIDisclosurePage() {
       <ul>
         <li>AI-generated content may contain errors, misinterpretations, or inaccuracies.</li>
         <li><strong>You are responsible</strong> for reviewing all generated content before using it in job applications.</li>
-        <li>AI may rephrase your experience in ways that don&apos;t accurately reflect your actual role — always verify.</li>
+        <li>AI may rephrase your experience in ways that don&apos;t accurately reflect your actual role, so always verify.</li>
         <li>Generated cover letters are a starting point and should be personalized with specific details about the company.</li>
         <li>AI output quality depends on the quality and completeness of the input you provide.</li>
       </ul>

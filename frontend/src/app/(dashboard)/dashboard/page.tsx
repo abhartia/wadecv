@@ -156,7 +156,7 @@ export default function DashboardPage() {
               <div>
                 <p className="text-sm text-muted-foreground">% Success</p>
                 <p className="text-3xl font-bold">
-                  {successRate === null ? "—" : `${successRate}%`}
+                  {successRate === null ? "N/A" : `${successRate}%`}
                 </p>
                 <p className="text-xs text-muted-foreground mt-1">
                   Based on CV Accepted vs CV Rejected applications

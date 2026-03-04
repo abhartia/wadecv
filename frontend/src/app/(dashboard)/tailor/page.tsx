@@ -694,13 +694,13 @@ function TailorContent() {
                   <span className="text-3xl font-bold">{fitAnalysis.fit_score}%</span>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
                 {fitAnalysis.fit_score >= 70
                   ? "Strong match for this role"
                   : fitAnalysis.fit_score >= 40
-                    ? "Moderate match — feedback can help"
+                    ? "Moderate match; your feedback can help"
                     : "This role may be a stretch, but let&apos;s see"}
-              </p>
+            </p>
             </CardContent>
           </Card>
 
