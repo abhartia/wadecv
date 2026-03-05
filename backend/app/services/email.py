@@ -1,3 +1,5 @@
+from datetime import datetime, timezone
+
 import resend
 from typing import Any, Dict, List, Optional, Union
 
@@ -67,6 +69,35 @@ def send_deletion_confirmation(to_email: str):
             <p>If you did not request this, please contact us immediately.</p>
         </div>
         """,
+    })
+
+
+def send_signup_notification(
+    user_email: str,
+    signup_method: str = "password_register",
+    user_id: Optional[str] = None,
+) -> None:
+    """Notify the site owner (support_forward_to) when a new user signs up."""
+    to = settings.support_forward_to
+    if not to:
+        return
+    client = _get_client()
+    timestamp = datetime.now(timezone.utc).isoformat()
+    id_line = f"<p><strong>User ID:</strong> {user_id}</p>" if user_id else ""
+    html = f"""
+    <div style="font-family: sans-serif; max-width: 480px; margin: 0 auto;">
+        <h2>New WadeCV signup</h2>
+        <p><strong>Email:</strong> {user_email}</p>
+        {id_line}
+        <p><strong>Signup method:</strong> {signup_method}</p>
+        <p><strong>Signed up at:</strong> {timestamp}</p>
+    </div>
+    """
+    client.Emails.send({
+        "from": settings.email_from,
+        "to": [to],
+        "subject": "New WadeCV signup",
+        "html": html,
     })
 
 

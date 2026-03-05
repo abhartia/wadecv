@@ -13,6 +13,7 @@ from app.models.cv import CV
 from app.models.cover_letter import CoverLetter
 from app.schemas.cover_letter import CoverLetterGenerateRequest, CoverLetterUpdateRequest, CoverLetterResponse
 from app.utils.auth import get_current_user
+from app.utils.filename import job_suffix_for_filename
 from app.services.cover_letter import generate_cover_letter
 from app.services.docx_builder import build_cover_letter_docx, build_cover_letter_pdf
 
@@ -157,12 +158,17 @@ async def download_cover_letter(
             first_name = parts[0]
             last_name = parts[-1]
     date_str = cl.created_at.date().isoformat()
-    if first_name and last_name:
-        base = f"{last_name}_{first_name}_Cover_Letter_{date_str}"
-    elif first_name:
-        base = f"{first_name}_Cover_Letter_{date_str}"
+    job_suffix = job_suffix_for_filename(job.company_name, job.job_title)
+    if job_suffix:
+        mid = f"_{job_suffix}_"
     else:
-        base = f"Cover_Letter_{date_str}"
+        mid = "_"
+    if first_name and last_name:
+        base = f"{last_name}_{first_name}_Cover_Letter{mid}{date_str}"
+    elif first_name:
+        base = f"{first_name}_Cover_Letter{mid}{date_str}"
+    else:
+        base = f"Cover_Letter{mid}{date_str}"
     safe_base = base.replace(" ", "_")
 
     if format == "pdf":

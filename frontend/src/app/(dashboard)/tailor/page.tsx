@@ -85,6 +85,7 @@ function TailorContent() {
   const [coverLetterGenerated, setCoverLetterGenerated] = useState(false);
   const [pageLimit, setPageLimit] = useState<1 | 2>(2);
   const [loading, setLoading] = useState(false);
+  const [downloadLoading, setDownloadLoading] = useState(false);
   const [refining, setRefining] = useState(false);
   const [scraping, setScraping] = useState(false);
   const [clLoading, setClLoading] = useState(false);
@@ -116,6 +117,7 @@ function TailorContent() {
     setCoverLetterGenerated(false);
     setPageLimit((user?.cv_page_limit === 1 || user?.cv_page_limit === 2) ? user.cv_page_limit : 2);
     setLoading(false);
+    setDownloadLoading(false);
     setRefining(false);
     setScraping(false);
     setClLoading(false);
@@ -289,8 +291,12 @@ function TailorContent() {
 
   const handleDownload = async (format: "docx" | "pdf") => {
     if (!token || !cvId) return;
-    setLoading(true);
+    setDownloadLoading(true);
     try {
+      // Persist current editor state so the downloaded file matches what the user sees
+      if (cvData) {
+        await api.updateCV(cvId, { generated_cv_data: cvData }, token);
+      }
       const response = await api.downloadCV(cvId, token, format);
       const contentType = response.headers.get("content-type") || "";
       const expected = format === "pdf" ? "application/pdf" : "officedocument.wordprocessingml.document";
@@ -327,7 +333,7 @@ function TailorContent() {
     } catch {
       toast.error("Download failed");
     } finally {
-      setLoading(false);
+      setDownloadLoading(false);
     }
   };
 
@@ -858,8 +864,8 @@ function TailorContent() {
               </Button>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="outline" disabled={loading}>
-                    {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                  <Button variant="outline" disabled={downloadLoading}>
+                    {downloadLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                     <Download className="mr-2 h-4 w-4" />
                     Download
                     <ChevronDown className="ml-1 h-3 w-3" />

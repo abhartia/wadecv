@@ -15,6 +15,7 @@ from app.models.cv import CV
 from app.models.job import Job
 from app.schemas.cv import CVUploadResponse, CVGenerateRequest, CVUpdateRequest, CVRefineRequest, CVResponse, CVListItem
 from app.utils.auth import get_current_user
+from app.utils.filename import job_suffix_for_filename
 from app.utils.parsing import parse_cv_file
 from app.services.cv_generator import generate_cv, generate_fit_analysis
 from app.services.job_metadata import extract_job_metadata
@@ -461,12 +462,20 @@ async def download_cv(
             first_name = parts[0]
             last_name = parts[-1]
     date_str = cv.created_at.date().isoformat()
-    if first_name and last_name:
-        base = f"{last_name}_{first_name}_Resume_{date_str}"
-    elif first_name:
-        base = f"{first_name}_Resume_{date_str}"
+    job_suffix = ""
+    if cv.jobs:
+        job = cv.jobs[0]
+        job_suffix = job_suffix_for_filename(job.company_name, job.job_title)
+    if job_suffix:
+        mid = f"_{job_suffix}_"
     else:
-        base = f"Resume_{date_str}"
+        mid = "_"
+    if first_name and last_name:
+        base = f"{last_name}_{first_name}_Resume{mid}{date_str}"
+    elif first_name:
+        base = f"{first_name}_Resume{mid}{date_str}"
+    else:
+        base = f"Resume{mid}{date_str}"
     safe_base = base.replace(" ", "_")
 
     if format == "pdf":

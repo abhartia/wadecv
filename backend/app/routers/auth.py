@@ -17,7 +17,7 @@ from app.utils.auth import (
     create_refresh_token, create_magic_link_token, decode_token, get_current_user,
 )
 from app.config import get_settings
-from app.services.email import send_magic_link, send_verification_email
+from app.services.email import send_magic_link, send_signup_notification, send_verification_email
 
 router = APIRouter()
 settings = get_settings()
@@ -55,6 +55,11 @@ async def register(req: RegisterRequest, db: AsyncSession = Depends(get_db)):
         except Exception:
             pass
 
+    try:
+        send_signup_notification(user.email, signup_method="password_register", user_id=str(user.id))
+    except Exception:
+        pass
+
     access = create_access_token(str(user.id))
     refresh = create_refresh_token(str(user.id))
     return TokenResponse(access_token=access, refresh_token=refresh)
@@ -87,6 +92,10 @@ async def request_magic_link(req: MagicLinkRequest, db: AsyncSession = Depends(g
             user_id=user.id, amount=1, type="signup_bonus", description="Free signup credit"
         )
         db.add(tx)
+        try:
+            send_signup_notification(user.email, signup_method="magic_link", user_id=str(user.id))
+        except Exception:
+            pass
 
     token = create_magic_link_token()
     ml = MagicLink(
