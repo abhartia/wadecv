@@ -1,8 +1,9 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getSkillBySlug, getSkills } from "@/lib/seo-content";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SeoCta } from "@/components/seo/seo-cta";
+import { FaqSection } from "@/components/seo/faq-section";
+import { RelatedGuides } from "@/components/seo/related-guides";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -54,9 +55,28 @@ export default async function SkillPage({ params }: Props) {
 
       <section className="mb-8">
         <div className="prose dark:prose-invert max-w-none text-muted-foreground">
-          <p className="whitespace-pre-wrap">{skill.body}</p>
+          {skill.body.split(/\n\n+/).map((p, i) => (
+            <p key={i} className="mb-4 last:mb-0">
+              {p.trim()}
+            </p>
+          ))}
         </div>
       </section>
+
+      {skill.commonMistakes && skill.commonMistakes.length > 0 && (
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">Common mistakes to avoid</h2>
+          <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+            {skill.commonMistakes.map((m, i) => (
+              <li key={i}>{m}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {skill.faq && <FaqSection faq={skill.faq} />}
+
+      <RelatedGuides relatedSlugs={skill.relatedSlugs} category="skills" currentSlug={slug} />
 
       <Card>
         <CardHeader>

@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { getAtsBySlug, getAtsList } from "@/lib/seo-content";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SeoCta } from "@/components/seo/seo-cta";
+import { FaqSection } from "@/components/seo/faq-section";
+import { RelatedGuides } from "@/components/seo/related-guides";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -51,9 +53,17 @@ export default async function AtsPage({ params }: Props) {
 
       <section className="mb-8">
         <div className="prose dark:prose-invert max-w-none text-muted-foreground">
-          <p className="whitespace-pre-wrap">{entry.body}</p>
+          {entry.body.split(/\n\n+/).map((p, i) => (
+            <p key={i} className="mb-4 last:mb-0">
+              {p.trim()}
+            </p>
+          ))}
         </div>
       </section>
+
+      {entry.faq && <FaqSection faq={entry.faq} />}
+
+      <RelatedGuides relatedSlugs={entry.relatedSlugs} category="ats" currentSlug={slug} />
 
       <Card>
         <CardHeader>

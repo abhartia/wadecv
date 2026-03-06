@@ -13,7 +13,12 @@
       "Add relevant PM skills: basics of agile, discovery, or data literacy if you have them; otherwise consider a short course or certification to list.",
       "Tailor each application to the company and role; emphasise the parts of your teaching experience that align with the job description."
     ],
-    "body": "Your resume should make the bridge explicit. Use a profile or summary at the top, then structure your experience bullets to show impact (e.g. 'Designed and rolled out X programme for Y students; improved Z outcome'). Where possible, use language that echoes product work—stakeholders, outcomes, iteration, and user needs. A tailored resume that connects your teaching experience to PM responsibilities will stand out. WadeCV can help you reframe your teaching background into a product-manager-focused resume that matches job descriptions and highlights your transferable strengths."
+    "body": "Your resume should make the bridge explicit. Use a profile or summary at the top, then structure your experience bullets to show impact (e.g. 'Designed and rolled out X programme for Y students; improved Z outcome').\n\nWhere possible, use language that echoes product work—stakeholders, outcomes, iteration, and user needs. A tailored resume that connects your teaching experience to PM responsibilities will stand out. WadeCV can help you reframe your teaching background into a product-manager-focused resume that matches job descriptions and highlights your transferable strengths.",
+    "faq": [
+      { "question": "Can teachers become product managers?", "answer": "Yes. Teaching involves curriculum design (roadmap), assessment (metrics), and stakeholder management (parents, admins)—all transferable to PM. Frame your experience in product terms and highlight outcomes." }
+    ],
+    "commonMistakes": ["Using only education jargon; translate to product/outcome language", "Skipping a summary that states the transition", "Not quantifying impact (students, programmes, outcomes)"],
+    "relatedSlugs": ["consulting-to-tech", "admin-to-product-manager"]
   },
   {
     "slug": "consulting-to-tech",
@@ -45,6 +50,150 @@
       "Emphasise outcomes: accuracy of models, decisions influenced, time saved, or errors reduced through analysis.",
       "Tailor each application to the role (e.g. more ML vs more analytics) and industry; use keywords from the job description."
     ],
-    "body": "Your resume should make the quantitative thread obvious. Highlight any programming, scripting, or advanced Excel work; list relevant courses or side projects in data science or ML. Use bullets that show you worked with data, built or validated models, and drove decisions. Tailoring your resume to the specific data science role (e.g. ML engineer vs analyst) will improve fit. WadeCV can help you reframe your finance experience into a data-science-oriented resume that matches job descriptions and showcases your analytical and technical strengths."
+    "body": "Your resume should make the quantitative thread obvious. Highlight any programming, scripting, or advanced Excel work; list relevant courses or side projects in data science or ML.\n\nUse bullets that show you worked with data, built or validated models, and drove decisions. Tailoring your resume to the specific data science role (e.g. ML engineer vs analyst) will improve fit. WadeCV can help you reframe your finance experience into a data-science-oriented resume that matches job descriptions and showcases your analytical and technical strengths."
+  },
+  {
+    "slug": "nurse-to-healthcare-admin",
+    "title": "Nurse to Healthcare Admin Resume",
+    "metaDescription": "How to write a resume when transitioning from nursing to healthcare administration. Tips to highlight transferable clinical and leadership skills.",
+    "intro": "Nurses moving into healthcare administration bring clinical knowledge, patient focus, and operational experience. This guide covers how to position your nursing background for admin, operations, or care management roles.",
+    "fromRole": "Registered Nurse / Clinical",
+    "toRole": "Healthcare Administration / Operations",
+    "tips": [
+      "Lead with a summary that states your transition and highlights leadership, quality, or process work from nursing.",
+      "Reframe clinical experience in admin terms: unit initiatives as 'process improvement'; coordination as 'stakeholder management'; quality metrics as 'operational outcomes'.",
+      "Highlight any leadership, committee, or project work (e.g. quality councils, policy, training).",
+      "List relevant skills: compliance, budgeting, data/reporting, or systems you used.",
+      "Tailor to the type of admin role (operations, quality, care management) and use keywords from the job description."
+    ],
+    "body": "Your resume should show how your clinical experience translates to administration: quality, process, and outcomes. Use bullets that emphasise scope (beds, patients, team) and impact (metrics, compliance, efficiency). WadeCV can help you reframe your nursing experience for healthcare admin job descriptions."
+  },
+  {
+    "slug": "military-to-project-manager",
+    "title": "Military to Project Manager Resume",
+    "metaDescription": "How to write a resume when transitioning from military to project management. Tips to translate leadership and execution skills.",
+    "intro": "Military experience translates well to project management: leadership, planning, and execution under pressure. This guide covers how to frame your service on your resume for PM and operations roles.",
+    "fromRole": "Military",
+    "toRole": "Project Manager / Operations",
+    "tips": [
+      "Open with a summary that states your transition and highlights leadership, planning, and delivery.",
+      "Reframe military experience in project terms: missions as 'projects'; personnel as 'team size'; logistics as 'resource management'; timelines and constraints as 'delivery under pressure'.",
+      "Use civilian-friendly language; avoid acronyms without context or spell them out.",
+      "Quantify scope: team size, budget, timeline, and outcomes.",
+      "Tailor to the industry (defence, construction, tech) and use keywords from the job description."
+    ],
+    "body": "Your resume should show scope and outcomes in terms civilian hiring managers understand. Emphasise leadership, planning, and delivery. WadeCV can help you translate your military experience into a project-manager-focused resume that matches job descriptions."
+  },
+  {
+    "slug": "retail-to-corporate",
+    "title": "Retail to Corporate Resume",
+    "metaDescription": "How to transition from retail to corporate roles. Resume tips to highlight customer focus, operations, and leadership.",
+    "intro": "Retail experience builds customer focus, operations, and often P&L and team leadership. This guide covers how to position your retail background for corporate roles in operations, customer success, or sales.",
+    "fromRole": "Retail / Store Management",
+    "toRole": "Corporate (Operations, Customer Success, Sales)",
+    "tips": [
+      "Lead with a summary that states your transition and highlights transferable skills (customer focus, operations, P&L, team leadership).",
+      "Reframe retail in corporate terms: store metrics as 'revenue and margin'; customer service as 'customer success'; scheduling and inventory as 'operations and planning'.",
+      "Quantify: revenue, team size, improvement in metrics (sales, turnover, compliance).",
+      "Highlight any corporate-facing work: reporting, vendor management, or multi-store coordination.",
+      "Tailor to the target role (operations, CS, sales) and use keywords from the job description."
+    ],
+    "body": "Your resume should show business impact and scale. Use numbers (revenue, team size, metrics improved) and language that resonates in corporate settings. WadeCV can help you reframe your retail experience for corporate job descriptions."
+  },
+  {
+    "slug": "admin-to-product-manager",
+    "title": "Admin to Product Manager Resume",
+    "metaDescription": "How to transition from administrative roles to product management. Resume tips to highlight coordination, stakeholder management, and initiative.",
+    "intro": "Administrative and executive assistant experience builds coordination, stakeholder management, and often exposure to strategy and operations. This guide covers how to position that background for PM roles.",
+    "fromRole": "Administrative / Executive Assistant",
+    "toRole": "Product Manager",
+    "tips": [
+      "Lead with a summary that states your transition and highlights product-relevant skills (coordination, stakeholder management, initiative, exposure to product/strategy).",
+      "Reframe admin work in product terms: coordinating initiatives as 'managing stakeholders'; improving processes as 'process improvement' or 'operational impact'; exposure to leadership decisions as 'understanding business context'.",
+      "Include any side projects, tools you adopted, or initiatives you led that show product-mindedness.",
+      "Add relevant PM skills: agile basics, discovery, or data literacy if you have them; consider a course or certification.",
+      "Tailor each application to the company and role; emphasise the parts of your experience that align with PM responsibilities."
+    ],
+    "body": "Your resume should make the bridge from support to product clear. Use bullets that show scope, stakeholder interaction, and outcomes. WadeCV can help you reframe your admin experience for product manager job descriptions."
+  },
+  {
+    "slug": "teacher-to-edtech",
+    "title": "Teacher to EdTech Resume",
+    "metaDescription": "How to transition from teaching to EdTech. Resume tips to highlight pedagogy, user perspective, and curriculum experience.",
+    "intro": "Teachers moving into EdTech bring pedagogy, user perspective, and curriculum knowledge. This guide covers how to position your teaching experience for product, content, or customer success roles in education technology.",
+    "fromRole": "Teacher / Educator",
+    "toRole": "EdTech (Product, Content, Customer Success)",
+    "tips": [
+      "Lead with a summary that states your transition and highlights relevance (pedagogy, student outcomes, curriculum, user perspective).",
+      "Reframe teaching in EdTech terms: curriculum design as 'content' or 'product'; student data as 'usage' or 'outcomes'; parent/colleague collaboration as 'stakeholder management'.",
+      "Highlight any EdTech tools you used or initiatives you led (e.g. adoption of a platform, pilot).",
+      "List relevant skills: learning design, assessment, data, or product familiarity.",
+      "Tailor to the role (product, content, CS) and use keywords from the job description."
+    ],
+    "body": "Your resume should show how your teaching experience translates to EdTech: user perspective, content, and outcomes. Use bullets that emphasise impact and scope. WadeCV can help you reframe your teaching experience for EdTech job descriptions."
+  },
+  {
+    "slug": "accountant-to-fpanda",
+    "title": "Accountant to FP&A Resume",
+    "metaDescription": "How to transition from accounting to FP&A. Resume tips to highlight modelling, analysis, and business partnership.",
+    "intro": "Accountants moving into FP&A bring strong fundamentals in reporting, controls, and numbers. This guide covers how to position your accounting experience for financial planning and analysis roles.",
+    "fromRole": "Accountant / Audit",
+    "toRole": "FP&A / Financial Planning and Analysis",
+    "tips": [
+      "Lead with a summary that states your transition and highlights modelling, analysis, and business partnership.",
+      "Reframe accounting work in FP&A terms: variance analysis as 'forecasting and analysis'; close process as 'reporting and insights'; audit support as 'controls and accuracy'.",
+      "Emphasise any budgeting, forecasting, or ad hoc analysis you did.",
+      "List relevant skills: Excel, modelling, ERP, and reporting tools.",
+      "Tailor to the industry and use keywords from the job description."
+    ],
+    "body": "Your resume should show analytical and business-partnering impact. Use bullets that emphasise scope (entities, accounts) and outcomes (accuracy, efficiency, insights). WadeCV can help you reframe your accounting experience for FP&A job descriptions."
+  },
+  {
+    "slug": "operations-to-product",
+    "title": "Operations to Product Manager Resume",
+    "metaDescription": "How to transition from operations to product management. Resume tips to highlight process, scale, and stakeholder work.",
+    "intro": "Operations experience builds process thinking, scale, and cross-functional coordination—all relevant to product. This guide covers how to position your ops background for PM roles.",
+    "fromRole": "Operations / Supply Chain / Ops",
+    "toRole": "Product Manager",
+    "tips": [
+      "Lead with a summary that states your transition and highlights product-relevant skills (process, scale, stakeholders, outcomes).",
+      "Reframe ops in product terms: process design as 'product' or 'workflow'; scale and metrics as 'impact'; cross-functional coordination as 'stakeholder management'.",
+      "Highlight any tool or system rollouts, process improvements, or data-driven decisions.",
+      "Add relevant PM skills: agile, discovery, or data literacy if you have them.",
+      "Tailor to the company and role; use keywords from the job description."
+    ],
+    "body": "Your resume should show how ops experience translates to product: process, scale, and outcomes. Use clear bullets with metrics. WadeCV can help you reframe your operations experience for product manager job descriptions."
+  },
+  {
+    "slug": "hospitality-to-project-management",
+    "title": "Hospitality to Project Management Resume",
+    "metaDescription": "How to transition from hospitality to project management. Resume tips to highlight coordination, events, and operations.",
+    "intro": "Hospitality builds coordination, event management, and customer focus—skills that transfer to project management. This guide covers how to position your hospitality experience for PM and coordination roles.",
+    "fromRole": "Hospitality / Hotel / Events",
+    "toRole": "Project Manager / Coordinator",
+    "tips": [
+      "Lead with a summary that states your transition and highlights coordination, timeline management, and stakeholder work.",
+      "Reframe hospitality in project terms: events as 'projects'; vendors and staff as 'stakeholders'; timelines and budget as 'delivery'.",
+      "Quantify: event size, revenue, team size, and satisfaction or repeat business.",
+      "Highlight any process improvement, training, or multi-site coordination.",
+      "Tailor to the target industry and use keywords from the job description."
+    ],
+    "body": "Your resume should show project-like scope and outcomes. Use bullets that emphasise coordination, scale, and results. WadeCV can help you reframe your hospitality experience for project management job descriptions."
+  },
+  {
+    "slug": "journalism-to-content-marketing",
+    "title": "Journalism to Content Marketing Resume",
+    "metaDescription": "How to transition from journalism to content marketing. Resume tips to highlight writing, research, and audience focus.",
+    "intro": "Journalists bring strong writing, research, and audience understanding—all valuable in content marketing. This guide covers how to position your journalism experience for content, brand, or marketing roles.",
+    "fromRole": "Journalism / Media",
+    "toRole": "Content Marketing / Brand / Marketing",
+    "tips": [
+      "Lead with a summary that states your transition and highlights writing, research, and audience/reach.",
+      "Reframe journalism in content/marketing terms: stories as 'content'; audience metrics as 'engagement' or 'reach'; research as 'content strategy' or 'SEO'.",
+      "Highlight any digital, SEO, or social experience.",
+      "List relevant skills: CMS, analytics, SEO, social platforms.",
+      "Tailor to the type of content role (B2B, B2C, brand) and use keywords from the job description."
+    ],
+    "body": "Your resume should show writing and audience impact. Use metrics (reach, engagement, frequency) and language that resonates in marketing. WadeCV can help you reframe your journalism experience for content marketing job descriptions."
   }
 ]

@@ -13,9 +13,17 @@ export default function ResumeBulletsIndexPage() {
   return (
     <article>
       <h1 className="text-3xl font-bold mb-4">Resume Bullet Examples by Role</h1>
-      <p className="text-muted-foreground mb-8">
-        Strong resume bullets show impact with clear action and results. Browse examples and formulas by role, then use WadeCV to generate tailored bullets for your target job.
-      </p>
+      <div className="text-muted-foreground mb-8 space-y-4">
+        <p>
+          Strong resume bullets show impact: what you did, for whom, and what improved. Vague task lists get skipped; concrete outcomes with numbers and scope get noticed. The right structure and action verbs also help your resume pass ATS and stick in a recruiter’s mind.
+        </p>
+        <p>
+          These guides give you bullet examples and impact formulas by role—software engineering, sales, project management, customer service, and more. Use them to rewrite your experience bullets, then let WadeCV generate tailored bullets for your target job and company.
+        </p>
+        <p>
+          Whether you’re early in your career or senior, you’ll find patterns you can adapt so every bullet works harder for you.
+        </p>
+      </div>
       <ul className="space-y-3">
         {bullets.map((b) => (
           <li key={b.slug}>

@@ -39,7 +39,7 @@ async function tryRefreshTokens(): Promise<string | null> {
 async function fetchWithAuth(url: string, init: RequestInit, token: string | null): Promise<Response> {
   const headers = new Headers(init.headers);
   if (token) headers.set("Authorization", `Bearer ${token}`);
-  let res = await fetch(url, { ...init, headers, credentials: "include" });
+  const res = await fetch(url, { ...init, headers, credentials: "include" });
   if (res.status !== 401 || !token) return res;
   const newToken = await tryRefreshTokens();
   if (!newToken) return res;

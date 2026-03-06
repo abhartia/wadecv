@@ -16,7 +16,12 @@
       "Scope + outcome (e.g. 'Led migration affecting Z services'; 'Adopted by N teams')",
       "Problem + solution + result (e.g. 'Identified bottleneck; implemented fix; cut cost by X%')"
     ],
-    "body": "Use the same language as the job description where it fits—keywords help ATS and recruiters. Prefer active verbs (designed, built, led, reduced, improved) and concrete numbers. One strong bullet is better than three vague ones. Tailoring your bullets to each role will highlight the most relevant experience. WadeCV can help you reframe your software engineering experience into tailored resume bullets that match specific job descriptions."
+    "body": "Use the same language as the job description where it fits—keywords help ATS and recruiters. Prefer active verbs (designed, built, led, reduced, improved) and concrete numbers.\n\nOne strong bullet is better than three vague ones. Tailoring your bullets to each role will highlight the most relevant experience. WadeCV can help you reframe your software engineering experience into tailored resume bullets that match specific job descriptions.",
+    "relatedSlugs": ["sales", "project-manager", "customer-service"],
+    "faq": [
+      { "question": "How many bullet points per job on a resume?", "answer": "Aim for 3–5 strong bullets per role. Quality and relevance matter more than quantity; use impact and metrics in each." }
+    ],
+    "commonMistakes": ["Vague bullets without metrics or scope", "Starting every bullet with 'Responsible for'", "Listing duties instead of outcomes"]
   },
   {
     "slug": "sales",
@@ -35,7 +40,8 @@
       "Revenue + scope (e.g. 'Closed $X in new business', 'Grew ARR by Y%')",
       "Activity + outcome (e.g. 'Generated pipeline of $X', 'Converted Y% to closed-won')"
     ],
-    "body": "Lead with numbers: quota attainment, revenue, deal count, retention, and pipeline. Use role-appropriate metrics—SDRs focus on pipeline and activity; account executives on closed revenue and retention. Tailoring your resume to the company's segment (SMB, enterprise, industry) will improve fit. WadeCV can help you align your sales experience with job descriptions and highlight your strongest results."
+    "body": "Lead with numbers: quota attainment, revenue, deal count, retention, and pipeline.\n\nUse role-appropriate metrics—SDRs focus on pipeline and activity; account executives on closed revenue and retention. Tailoring your resume to the company's segment (SMB, enterprise, industry) will improve fit. WadeCV can help you align your sales experience with job descriptions and highlight your strongest results.",
+    "relatedSlugs": ["software-engineer", "project-manager", "customer-service"]
   },
   {
     "slug": "project-manager",
@@ -73,6 +79,93 @@
       "Improvement + scope (e.g. 'Reduced handle time by X%'; 'Cut repeat contacts by Y%')",
       "Leadership + outcome (e.g. 'Trained N agents'; 'Led rollout affecting X users')"
     ],
-    "body": "Use metrics that matter to the role: contact volume, CSAT, resolution rate, handle time, and any process or training impact. Show progression—taking on harder cases, training others, or improving tools and playbooks. Tailoring your resume to the channel (phone, chat, email) and industry will help. WadeCV can help you align your customer service experience with job descriptions and highlight your strongest contributions."
+    "body": "Use metrics that matter to the role: contact volume, CSAT, resolution rate, handle time, and any process or training impact. Show progression—taking on harder cases, training others, or improving tools and playbooks.\n\nTailoring your resume to the channel (phone, chat, email) and industry will help. WadeCV can help you align your customer service experience with job descriptions and highlight your strongest contributions."
+  },
+  {
+    "slug": "nurse",
+    "title": "Nurse Resume Bullet Points",
+    "metaDescription": "Nurse resume bullet examples and impact formulas. How to show clinical impact and patient outcomes on your resume.",
+    "intro": "Nursing resume bullets should show clinical scope, patient outcomes, and any quality or safety impact. This guide gives you examples and formulas so your experience reads as impact-focused.",
+    "bulletExamples": [
+      "Provided direct care for 6–8 patients per shift on med-surg unit; maintained 100% documentation compliance and zero medication errors in 2 years.",
+      "Trained 3 new RNs on unit protocols and EMR; supported orientation and reduced time-to-independence by 2 weeks.",
+      "Led quality initiative that reduced central line infections by 25%; presented at unit council and hospital-wide."
+    ],
+    "impactFormulas": [
+      "Scope + compliance (e.g. 'Cared for X patients per shift'; '100% documentation compliance')",
+      "Training + outcome (e.g. 'Trained N nurses'; 'Reduced time-to-independence')",
+      "Initiative + result (e.g. 'Led initiative that reduced X by Y%')"
+    ],
+    "body": "Lead with patient load, setting, and outcomes. Highlight credentials and any quality or safety initiatives. Tailor to the setting and specialty in the job description. WadeCV can help you align your nursing experience with job descriptions."
+  },
+  {
+    "slug": "achievement-examples",
+    "title": "Achievement-Based Resume Bullet Examples",
+    "metaDescription": "How to write achievement-focused resume bullets with examples across roles. Turn duties into outcomes.",
+    "intro": "Achievement-based bullets focus on what you accomplished, not just what you were responsible for. This guide gives you patterns and examples so you can rewrite duties as outcomes.",
+    "bulletExamples": [
+      "Increased conversion rate by 22% through A/B-tested landing page changes and improved checkout flow.",
+      "Reduced customer churn by 15% by implementing proactive outreach and success playbooks for at-risk accounts.",
+      "Cut operational costs by $500K annually through process automation and vendor renegotiation.",
+      "Launched new product line that generated $2M revenue in first year; led cross-functional team of 8."
+    ],
+    "impactFormulas": [
+      "Metric + action (e.g. 'Increased X by Y% through Z')",
+      "Problem + solution + result (e.g. 'Reduced X by implementing Y; outcome Z')",
+      "Scope + outcome (e.g. 'Launched X that generated Y')"
+    ],
+    "body": "Start with the result, then briefly how you got there. Use numbers wherever possible. Tailor achievements to the role you want. WadeCV can help you reframe your experience into achievement-focused bullets that match job descriptions."
+  },
+  {
+    "slug": "action-verbs",
+    "title": "Action Verbs for Resume Bullets",
+    "metaDescription": "Strong action verbs for resume bullets by category. How to start each bullet for maximum impact.",
+    "intro": "Starting resume bullets with strong action verbs makes your experience more dynamic and scannable. This guide groups verbs by type and shows how to use them in real bullets.",
+    "bulletExamples": [
+      "Led cross-functional team of 12 to deliver migration project 2 weeks ahead of schedule.",
+      "Designed and implemented new reporting suite that reduced manual effort by 20 hours per month.",
+      "Streamlined approval process; cut cycle time from 5 days to 2 and improved stakeholder satisfaction.",
+      "Mentored 4 junior team members; 2 promoted within 18 months."
+    ],
+    "impactFormulas": [
+      "Led / Directed / Owned — for leadership and ownership",
+      "Designed / Built / Implemented — for technical or process creation",
+      "Reduced / Improved / Increased — for measurable outcomes",
+      "Mentored / Trained / Developed — for people impact"
+    ],
+    "body": "Vary your verbs so bullets don't all start the same way. Match the level of the role—senior roles often use 'Led', 'Drove', 'Owned'. Tailoring your bullets to the job description will help. WadeCV can help you generate bullets that use strong action verbs and match the role."
+  },
+  {
+    "slug": "teacher",
+    "title": "Teacher Resume Bullet Points",
+    "metaDescription": "Teacher resume bullet examples and impact formulas. How to show student outcomes and classroom impact.",
+    "intro": "Teacher resume bullets should show student growth, classroom scope, and professional impact. This guide gives you examples and formulas for K-12 and education roles.",
+    "bulletExamples": [
+      "Taught 4th grade ELA to 24 students; 85% met or exceeded growth targets on state assessment.",
+      "Led grade-level PLC; developed common assessments and shared strategies that raised proficiency by 12%.",
+      "Differentiated instruction for diverse learners; reduced achievement gap in math by 15% through small-group and 1:1 support."
+    ],
+    "impactFormulas": [
+      "Scope + outcome (e.g. 'Taught X students'; 'Y% met growth targets')",
+      "Initiative + result (e.g. 'Led X'; 'Raised Y by Z%')",
+      "Problem + approach + result (e.g. 'Reduced gap by X through Y')"
+    ],
+    "body": "Lead with grade level or subject, class size, and student outcomes. Use clear metrics (growth, proficiency, engagement). Tailor to the district and role. WadeCV can help you align your teaching experience with job descriptions."
+  },
+  {
+    "slug": "marketing-manager",
+    "title": "Marketing Manager Resume Bullet Points",
+    "metaDescription": "Marketing manager resume bullet examples. How to show campaign and pipeline impact.",
+    "intro": "Marketing manager bullets should show campaign scope, pipeline, and ROI. This guide gives you examples and formulas for demand gen, brand, and content roles.",
+    "bulletExamples": [
+      "Ran demand gen campaigns that generated $2M pipeline; improved MQL-to-SQL conversion by 20% through lead scoring and nurture.",
+      "Launched new brand campaign across 4 channels; increased unaided awareness by 15% in target segment.",
+      "Built content engine producing 30+ assets per quarter; SEO traffic grew 40% YoY."
+    ],
+    "impactFormulas": [
+      "Campaign + pipeline/conversion (e.g. 'Generated $X pipeline'; 'Improved conversion by Y%')",
+      "Initiative + metric (e.g. 'Launched X'; 'Increased Y by Z%')"
+    ],
+    "body": "Lead with pipeline, conversion, or brand metrics. Use clear numbers and channel scope. Tailor to B2B vs B2C. WadeCV can help you align your marketing experience with job descriptions."
   }
 ]

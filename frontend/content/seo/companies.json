@@ -13,7 +13,12 @@
     ],
     "keywords": ["impact", "scale", "cross-functional", "user", "data-driven", "experiment", "launch", "ownership", "leadership", "collaboration", "ambiguity", "metrics", "efficiency", "quality"],
     "sampleSnippet": "Led migration of core service to new platform, reducing p99 latency by 40% and improving reliability for 10M+ daily active users. Drove cross-functional alignment with product, SRE, and support teams and documented runbooks for on-call.",
-    "body": "Google recruiters and hiring managers look for impact, scope, and how you work with others. Use concrete metrics and avoid vague language. Match the level of the role—junior roles need evidence of growth and ownership; senior roles need system-level or org-level impact. Keep formatting simple so ATS and human reviewers can parse your resume easily. Tailoring your resume to each specific job description at Google will improve your chances. WadeCV can help you reframe your experience to align with Google-style job posts and surface your strongest bullets."
+    "body": "Google recruiters and hiring managers look for impact, scope, and how you work with others. Use concrete metrics and avoid vague language. Match the level of the role—junior roles need evidence of growth and ownership; senior roles need system-level or org-level impact.\n\nKeep formatting simple so ATS and human reviewers can parse your resume easily. Tailoring your resume to each specific job description at Google will improve your chances. WadeCV can help you reframe your experience to align with Google-style job posts and surface your strongest bullets.",
+    "faq": [
+      { "question": "How do I tailor my resume for Google?", "answer": "Match the language in the job description, emphasise impact with metrics (scale, users, performance), and show collaboration and ownership. Use clean formatting and avoid keyword stuffing." }
+    ],
+    "commonMistakes": ["Vague bullets without metrics or scope", "Overly long resume; keep to 1-2 pages", "Generic language that doesn't reflect the role"],
+    "relatedSlugs": ["amazon", "meta", "microsoft"]
   },
   {
     "slug": "amazon",
@@ -62,5 +67,95 @@
     "keywords": ["analysis", "financial", "modelling", "client", "team", "due diligence", "transaction", "valuation", "markets", "risk", "compliance", "presentation", "Excel", "data", "stakeholder", "deadline"],
     "sampleSnippet": "Supported M&A execution for 3 live deals (combined value $2B+); built operating model and valuation materials for client C-suite. Coordinated with legal, tax, and diligence teams across 2 countries.",
     "body": "Goldman resumes should be precise and outcome-focused. Use numbers—deal sizes, team size, time saved, or scope of analysis. Formatting should be clean and consistent so recruiters can scan quickly. Tailor your resume to the division and level you are applying for. WadeCV can help you align your experience with Goldman-style job descriptions and emphasise the most relevant achievements."
+  },
+  {
+    "slug": "meta",
+    "name": "Meta",
+    "metaDescription": "Meta (Facebook) resume example and hiring bar. Keywords and tips for engineering, product, and business roles.",
+    "intro": "Meta hires across engineering, product, design, and business. The bar is high and the process is competitive. This guide covers what Meta looks for and how to tailor your resume for their roles and culture.",
+    "hiringRequirements": ["Strong technical or domain skills relevant to the role", "Evidence of impact at scale", "Collaboration and communication", "Growth mindset and ability to move fast", "Relevant experience or projects"],
+    "keywords": ["scale", "impact", "user", "data", "experiment", "ship", "cross-functional", "ownership", "metrics", "growth", "iteration"],
+    "sampleSnippet": "Shipped ranking change that improved engagement by 12% for 50M+ users. Led A/B tests and worked with product and DS to define success metrics and rollout plan.",
+    "body": "Meta values impact at scale and speed. Use metrics and show how you shipped and iterated. Tailor your resume to the team and level. WadeCV can help you align your experience with Meta-style job descriptions."
+  },
+  {
+    "slug": "microsoft",
+    "name": "Microsoft",
+    "metaDescription": "Microsoft resume example and hiring expectations. Keywords and structure for software and business roles.",
+    "intro": "Microsoft hires for product, engineering, sales, and support across many divisions. This guide covers typical hiring expectations and how to tailor your resume for Microsoft roles.",
+    "hiringRequirements": ["Relevant technical or business experience", "Collaboration and growth mindset", "Customer or user focus", "Clear communication and impact", "Alignment with role level"],
+    "keywords": ["customer", "impact", "collaboration", "growth mindset", "cloud", "enterprise", "platform", "scale", "delivery"],
+    "sampleSnippet": "Drove adoption of cloud platform across 20+ internal teams; reduced time-to-production by 30% through documentation and onboarding. Partnered with product and support on roadmap.",
+    "body": "Microsoft looks for impact and collaboration. Use clear bullets with outcomes and scope. Tailor to the division (Azure, Office, etc.) and level. WadeCV can help you align your experience with Microsoft job descriptions."
+  },
+  {
+    "slug": "netflix",
+    "name": "Netflix",
+    "metaDescription": "Netflix resume example and culture. How to tailor your resume for Netflix's high-performance, freedom-and-responsibility culture.",
+    "intro": "Netflix is known for a culture of freedom and responsibility and a high bar for talent. This guide covers what they look for and how to present your experience for Netflix roles.",
+    "hiringRequirements": ["Exceptional judgment and impact in your domain", "Self-direction and ownership", "Clear communication", "Relevant experience at scale", "Fit with freedom-and-responsibility culture"],
+    "keywords": ["judgment", "impact", "ownership", "freedom", "responsibility", "context", "alignment", "scale", "excellence"],
+    "sampleSnippet": "Owned end-to-end strategy for content discovery feature used by 200M+ members; defined metrics, ran experiments, and drove 8% improvement in engagement. Operated with high context and minimal process.",
+    "body": "Netflix values judgment, impact, and ownership. Resumes should show scope and outcomes with minimal fluff. Tailor to the team and be prepared to discuss decision-making and trade-offs. WadeCV can help you align your experience with Netflix-style job descriptions."
+  },
+  {
+    "slug": "stripe",
+    "name": "Stripe",
+    "metaDescription": "Stripe resume example and hiring bar. Keywords and tips for engineering, product, and sales roles at Stripe.",
+    "intro": "Stripe hires for engineering, product, sales, and support with a focus on rigour and user experience. This guide covers what Stripe looks for and how to tailor your resume.",
+    "hiringRequirements": ["Strong technical or domain skills", "User and developer focus", "Clarity of thought and communication", "Relevant experience in payments, infra, or product", "Ability to work in a high-quality bar environment"],
+    "keywords": ["developer", "API", "payments", "infrastructure", "user", "rigour", "scale", "reliability", "documentation"],
+    "sampleSnippet": "Designed and shipped new API version used by 5K+ developers; improved latency by 25% and reduced support tickets by 40%. Wrote public docs and worked with support on rollout.",
+    "body": "Stripe values clarity and user focus. Use precise language and show impact for developers or users. Tailor to the team (payments, infra, etc.) and level. WadeCV can help you align your experience with Stripe job descriptions."
+  },
+  {
+    "slug": "deloitte",
+    "name": "Deloitte",
+    "metaDescription": "Deloitte resume example and hiring expectations. Keywords and structure for consulting and advisory roles.",
+    "intro": "Deloitte hires across consulting, audit, tax, and advisory. This guide covers typical hiring expectations and how to tailor your resume for Deloitte roles.",
+    "hiringRequirements": ["Strong academic record", "Analytical and problem-solving skills", "Communication and teamwork", "Relevant experience or internships", "Professionalism and integrity"],
+    "keywords": ["client", "analysis", "advisory", "stakeholder", "project", "recommendation", "team", "impact", "consulting"],
+    "sampleSnippet": "Supported client engagement for global retailer; built financial model and conducted market analysis. Presented findings to senior client stakeholders and contributed to final deliverable.",
+    "body": "Deloitte values analytical rigour and client focus. Use clear bullets with project scope and outcomes. Tailor to the practice (strategy, technology, etc.) and level. WadeCV can help you align your experience with Deloitte job descriptions."
+  },
+  {
+    "slug": "bcg",
+    "name": "BCG",
+    "metaDescription": "BCG resume example and what they look for. How to structure your resume for BCG consulting applications.",
+    "intro": "BCG looks for problem-solvers with strong analytical and communication skills. This guide covers what BCG values and how to tailor your resume for their process.",
+    "hiringRequirements": ["Outstanding academic and analytical ability", "Structured problem-solving", "Leadership and teamwork", "Communication with senior audiences", "Relevant experience or extracurriculars"],
+    "keywords": ["strategy", "analysis", "client", "framework", "impact", "team", "recommendation", "quantitative", "stakeholder"],
+    "sampleSnippet": "Led workstream on growth strategy for FTSE 100 client; developed market sizing and option analysis. Co-facilitated executive workshop and contributed to final recommendation.",
+    "body": "BCG resumes should show impact and structure. Quantify projects and outcomes. Tailor to the practice (e.g. technology, public sector) and level. WadeCV can help you align your experience with BCG job descriptions."
+  },
+  {
+    "slug": "bain",
+    "name": "Bain & Company",
+    "metaDescription": "Bain resume example and hiring bar. Keywords and tips for Bain consulting applications.",
+    "intro": "Bain values results-oriented problem-solvers with strong client focus. This guide covers what Bain looks for and how to tailor your resume.",
+    "hiringRequirements": ["Strong academic and analytical background", "Client and results focus", "Team collaboration", "Communication and presence", "Evidence of impact"],
+    "keywords": ["client", "results", "impact", "analysis", "team", "strategy", "recommendation", "stakeholder", "quantitative"],
+    "sampleSnippet": "Supported private equity due diligence; built commercial model and identified key value drivers. Delivered findings to partner and client within tight timeline.",
+    "body": "Bain resumes should emphasise results and client impact. Use clear bullets with scope and outcomes. Tailor to the practice and level. WadeCV can help you align your experience with Bain job descriptions."
+  },
+  {
+    "slug": "jp-morgan",
+    "name": "JPMorgan Chase",
+    "metaDescription": "JPMorgan resume example and hiring expectations. Keywords for investment banking, markets, and corporate roles.",
+    "intro": "JPMorgan hires across investment banking, asset management, markets, and technology. This guide covers typical hiring expectations and how to tailor your resume.",
+    "hiringRequirements": ["Strong academic record", "Relevant experience or internships", "Attention to detail and rigour", "Teamwork and communication", "Integrity and compliance mindset"],
+    "keywords": ["client", "analysis", "financial", "markets", "transaction", "team", "modelling", "due diligence", "presentation"],
+    "sampleSnippet": "Analyst on M&A and capital markets transactions; built models and prepared materials for client presentations. Coordinated with senior team and other groups on execution.",
+    "body": "JPMorgan resumes should be precise and outcome-focused. Use numbers and clear structure. Tailor to the division and level. WadeCV can help you align your experience with JPMorgan job descriptions."
+  },
+  {
+    "slug": "citi",
+    "name": "Citi",
+    "metaDescription": "Citi resume example and hiring expectations. Keywords for banking, markets, and technology roles.",
+    "intro": "Citi hires for banking, markets, technology, and operations globally. This guide covers what Citi looks for and how to tailor your resume.",
+    "hiringRequirements": ["Strong academic and analytical foundation", "Relevant experience or interest in financial services", "Collaboration and communication", "Attention to detail", "Diversity of thought and background"],
+    "keywords": ["client", "markets", "analysis", "team", "financial", "transaction", "risk", "compliance", "global"],
+    "sampleSnippet": "Supported trading desk on risk and P&L reporting; automated daily reports and improved accuracy. Worked with front office and middle office on ad hoc requests.",
+    "body": "Citi values global perspective and teamwork. Use clear bullets with scope and outcomes. Tailor to the division and level. WadeCV can help you align your experience with Citi job descriptions."
   }
 ]

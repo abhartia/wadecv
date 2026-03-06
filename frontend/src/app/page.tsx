@@ -207,9 +207,9 @@ export default function LandingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {[
-                { name: "Starter", credits: 10, price: "$10", per: "$1.00", popular: false },
-                { name: "Value", credits: 20, price: "$15", per: "$0.75", popular: true },
-                { name: "Pro", credits: 50, price: "$20", per: "$0.40", popular: false },
+                { name: "Starter", credits: 20, price: "$10", per: "$0.50", popular: false },
+                { name: "Value", credits: 50, price: "$15", per: "$0.30", popular: true },
+                { name: "Pro", credits: 100, price: "$20", per: "$0.20", popular: false },
               ].map((plan) => (
                 <Card key={plan.name} className={`relative ${plan.popular ? "border-primary shadow-lg scale-105" : ""}`}>
                   {plan.popular && (

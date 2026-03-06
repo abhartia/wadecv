@@ -20,7 +20,7 @@ export default function TermsPage() {
       <ul>
         <li>WadeCV operates on a credit-based system. Each CV generation costs 1 credit.</li>
         <li>New accounts receive 1 free credit upon registration.</li>
-        <li>Credits can be purchased in packs: 10 credits for $10, 20 credits for $15, or 50 credits for $20.</li>
+        <li>Credits can be purchased in packs: 20 credits for $10, 50 credits for $15, or 100 credits for $20.</li>
         <li>Credits do not expire and are non-transferable.</li>
         <li>All payments are processed securely through Stripe.</li>
         <li>Cover letter generation is free and does not consume credits.</li>

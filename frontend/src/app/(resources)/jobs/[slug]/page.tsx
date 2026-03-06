@@ -1,10 +1,10 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getJobBySlug, getJobs } from "@/lib/seo-content";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { SeoCta } from "@/components/seo/seo-cta";
+import { FaqSection } from "@/components/seo/faq-section";
+import { RelatedGuides } from "@/components/seo/related-guides";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -77,9 +77,39 @@ export default async function JobPage({ params }: Props) {
 
       <section className="mb-8">
         <div className="prose dark:prose-invert max-w-none text-muted-foreground">
-          <p className="whitespace-pre-wrap">{job.body}</p>
+          {job.body.split(/\n\n+/).map((p, i) => (
+            <p key={i} className="mb-4 last:mb-0">
+              {p.trim()}
+            </p>
+          ))}
         </div>
       </section>
+
+      {job.commonMistakes && job.commonMistakes.length > 0 && (
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">Common mistakes to avoid</h2>
+          <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+            {job.commonMistakes.map((m, i) => (
+              <li key={i}>{m}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {job.interviewTips && job.interviewTips.length > 0 && (
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">Interview tips for this role</h2>
+          <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+            {job.interviewTips.map((t, i) => (
+              <li key={i}>{t}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {job.faq && <FaqSection faq={job.faq} />}
+
+      <RelatedGuides relatedSlugs={job.relatedSlugs} category="jobs" currentSlug={slug} />
 
       <Card>
         <CardHeader>

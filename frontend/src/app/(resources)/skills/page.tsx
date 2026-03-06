@@ -13,9 +13,17 @@ export default function SkillsIndexPage() {
   return (
     <article>
       <h1 className="text-3xl font-bold mb-4">Skills for Your Resume by Role</h1>
-      <p className="text-muted-foreground mb-8">
-        Different roles emphasise different skill clusters. Use these guides to see which skills and bullet examples fit your target job—then tailor your CV with WadeCV.
-      </p>
+      <div className="text-muted-foreground mb-8 space-y-4">
+        <p>
+          Every role has a different mix of technical, soft, and domain skills. Listing the right skills—and backing them up with strong bullet points—helps ATS and recruiters see you as a match. Generic skill lists rarely stand out; role-specific clusters and examples do.
+        </p>
+        <p>
+          These guides break down skills by job type: what to put on your resume, how to group them, and bullet examples that show impact. Use them to refine your skills section and experience bullets, then tailor your full CV to each role with WadeCV.
+        </p>
+        <p>
+          Whether you’re in tech, customer-facing roles, healthcare, or creative fields, you’ll find actionable skill clusters and phrasing that fits your target job.
+        </p>
+      </div>
       <ul className="space-y-3">
         {skills.map((s) => (
           <li key={s.slug}>

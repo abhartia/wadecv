@@ -136,9 +136,9 @@ stripe listen --forward-to localhost:8000/api/webhook/stripe
 
 | Pack | Credits | Price | Per CV |
 |------|---------|-------|--------|
-| Starter | 10 | $10 | $1.00 |
-| Value | 20 | $15 | $0.75 |
-| Pro | 50 | $20 | $0.40 |
+| Starter | 20 | $10 | $0.50 |
+| Value | 50 | $15 | $0.30 |
+| Pro | 100 | $20 | $0.20 |
 
 New users get 1 free credit on signup.
 

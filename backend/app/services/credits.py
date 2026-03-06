@@ -7,9 +7,9 @@ from app.models.credit import CreditTransaction
 
 
 CREDIT_PACKS = {
-    "starter": {"name": "Starter", "credits": 10, "price_cents": 1000, "price_display": "$10"},
-    "value": {"name": "Value", "credits": 20, "price_cents": 1500, "price_display": "$15"},
-    "pro": {"name": "Pro", "credits": 50, "price_cents": 2000, "price_display": "$20"},
+    "starter": {"name": "Starter", "credits": 20, "price_cents": 1000, "price_display": "$10"},
+    "value": {"name": "Value", "credits": 50, "price_cents": 1500, "price_display": "$15"},
+    "pro": {"name": "Pro", "credits": 100, "price_cents": 2000, "price_display": "$20"},
 }
 
 

@@ -15,7 +15,12 @@
       "Led migration of legacy monolith to microservices; cut deployment time from 2 hours to 15 minutes and improved reliability.",
       "Mentored 3 junior engineers; established code review guidelines and on-call runbooks adopted across the team."
     ],
-    "body": "List skills in a dedicated section and reinforce them in your experience bullets. Use the same terms as the job description where they genuinely apply—ATS and recruiters look for keyword match. Prefer impact-focused bullets (what you built, for whom, and what improved) over task lists. Tailoring your resume to each role will surface the right mix of languages, systems, and soft skills. WadeCV can help you align your existing experience with software engineer job descriptions and highlight your strongest technical and collaborative wins."
+    "body": "List skills in a dedicated section and reinforce them in your experience bullets. Use the same terms as the job description where they genuinely apply—ATS and recruiters look for keyword match.\n\nPrefer impact-focused bullets (what you built, for whom, and what improved) over task lists. Tailoring your resume to each role will surface the right mix of languages, systems, and soft skills. WadeCV can help you align your existing experience with software engineer job descriptions and highlight your strongest technical and collaborative wins.",
+    "relatedSlugs": ["product-manager", "data-analyst", "frontend-developer"],
+    "faq": [
+      { "question": "How many skills should I list on a software engineer resume?", "answer": "Focus on 10–15 relevant technical skills plus a few soft skills. Match the job description and reinforce them in your experience bullets rather than listing every technology you've touched." }
+    ],
+    "commonMistakes": ["Listing outdated or irrelevant technologies", "Generic soft skills without evidence in bullets", "Keyword stuffing; keep language natural"]
   },
   {
     "slug": "product-manager",
@@ -33,7 +38,8 @@
       "Led discovery and prioritization for 3 product areas; aligned engineering, design, and leadership on quarterly OKRs.",
       "Drove go-to-market for new feature with 50K+ users in first quarter; presented results to C-suite and board."
     ],
-    "body": "PM resumes should emphasise outcomes: adoption, revenue, retention, or efficiency gains. Use metrics in every bullet where possible. Balance strategic work (roadmap, discovery) with execution (shipping, stakeholder management). Tailoring your resume to the company's stage and product type will improve fit. WadeCV can help you reframe your PM experience to match job descriptions and surface your strongest impact."
+    "body": "PM resumes should emphasise outcomes: adoption, revenue, retention, or efficiency gains. Use metrics in every bullet where possible.\n\nBalance strategic work (roadmap, discovery) with execution (shipping, stakeholder management). Tailoring your resume to the company's stage and product type will improve fit. WadeCV can help you reframe your PM experience to match job descriptions and surface your strongest impact.",
+    "relatedSlugs": ["software-engineer", "data-analyst", "customer-service"]
   },
   {
     "slug": "customer-service",
@@ -69,6 +75,261 @@
       "Analysed conversion funnel with SQL and Python; identified drop-off points and recommended tests that increased sign-up completion by 18%.",
       "Standardised definitions and documentation for core metrics; aligned 5 teams on single source of truth and reduced reporting errors."
     ],
-    "body": "Emphasise the impact of your work: reports adopted, decisions influenced, and metrics improved. List tools and languages clearly so ATS and hiring managers can see technical fit. Tailoring your resume to the industry (e.g. product, marketing, finance, healthcare) will strengthen your application. WadeCV can help you align your analyst experience with data analyst job descriptions and surface your best outcomes."
+    "body": "Emphasise the impact of your work: reports adopted, decisions influenced, and metrics improved. List tools and languages clearly so ATS and hiring managers can see technical fit.\n\nTailoring your resume to the industry (e.g. product, marketing, finance, healthcare) will strengthen your application. WadeCV can help you align your analyst experience with data analyst job descriptions and surface your best outcomes."
+  },
+  {
+    "slug": "nurse",
+    "title": "Skills for Nurse Resume",
+    "metaDescription": "Skills to put on a nurse resume: clinical, communication, and soft skills. Bullet examples and keywords for RN and LPN roles.",
+    "intro": "Nursing resumes need to show clinical competence, credentials, and the ability to work under pressure. This guide outlines skill clusters and bullet examples that resonate with hiring managers in hospitals, clinics, and other settings.",
+    "skillClusters": [
+      { "name": "Clinical", "items": ["Patient assessment", "Medication administration", "Vital signs", "Documentation", "Care plans", "BLS/ACLS"] },
+      { "name": "Communication", "items": ["Patient and family education", "Handoff", "Interdisciplinary communication", "Empathy"] },
+      { "name": "Technical", "items": ["EMR/EHR", "IV", "Equipment", "Compliance"] }
+    ],
+    "bulletExamples": [
+      "Provided direct care for 6–8 patients per shift on med-surg unit; maintained 100% documentation compliance and zero medication errors.",
+      "Trained 3 new RNs on unit protocols and EMR; supported orientation and preceptorship.",
+      "Led quality initiative that reduced central line infections by 25%; presented at unit council."
+    ],
+    "body": "Lead with licence and certifications, then clinical setting and patient focus. Use bullets that show patient load, types of care, and any quality or safety outcomes. Tailor to the setting and specialty in the job description. WadeCV can help you align your nursing experience with job descriptions."
+  },
+  {
+    "slug": "teacher",
+    "title": "Skills for Teacher Resume",
+    "metaDescription": "Skills to put on a teacher resume: pedagogy, classroom management, and communication. Bullet examples for K-12 roles.",
+    "intro": "Teaching resumes need to show certification, classroom experience, and evidence of student growth. This guide outlines skill clusters and bullet examples that resonate with principals and hiring committees.",
+    "skillClusters": [
+      { "name": "Instruction", "items": ["Lesson planning", "Differentiation", "Assessment", "Curriculum alignment", "Standards"] },
+      { "name": "Classroom", "items": ["Classroom management", "Positive behaviour support", "Engagement", "Routines"] },
+      { "name": "Collaboration", "items": ["Parent communication", "PLC", "Professional development", "Data-driven instruction"] }
+    ],
+    "bulletExamples": [
+      "Taught 4th grade ELA; 85% of students met or exceeded growth targets on state assessment.",
+      "Led grade-level PLC; developed common assessments and shared strategies that raised proficiency by 12%.",
+      "Differentiated instruction for diverse learners; reduced achievement gap in math by 15% through small-group and 1:1 support."
+    ],
+    "body": "Highlight certification, grade level or subject, and student outcomes. Use clear bullets that show scope (class size, subjects) and impact (growth, pass rates). Tailor to the district and role. WadeCV can help you align your teaching experience with job descriptions."
+  },
+  {
+    "slug": "administrative-assistant",
+    "title": "Skills for Administrative Assistant Resume",
+    "metaDescription": "Administrative assistant resume skills: organisation, communication, and tools. Bullet examples and keywords for admin roles.",
+    "intro": "Administrative assistants keep offices running: scheduling, correspondence, and support. This guide outlines skill clusters and bullet examples that resonate with hiring managers.",
+    "skillClusters": [
+      { "name": "Organisation", "items": ["Scheduling", "Filing", "Travel", "Expense reports", "Meeting coordination"] },
+      { "name": "Communication", "items": ["Email", "Phone", "Written correspondence", "Discretion"] },
+      { "name": "Tools", "items": ["Microsoft Office", "Google Workspace", "CRM", "Confluence"] }
+    ],
+    "bulletExamples": [
+      "Supported C-suite of 5; managed calendars, travel, and expenses for 3 executives. Reduced meeting conflicts by 30% through improved scheduling.",
+      "Coordinated onboarding for 50+ new hires; prepared materials and tracked completion. Cut onboarding time by 2 days.",
+      "Managed office supplies and vendor relationships; reduced costs by 15% through bulk ordering and preferred contracts."
+    ],
+    "body": "Lead with scope: number of executives or team supported, types of tasks, and any efficiency gains. Use keywords from the job description (tools, industry). WadeCV can help you align your admin experience with job descriptions."
+  },
+  {
+    "slug": "marketing-manager",
+    "title": "Skills for Marketing Manager Resume",
+    "metaDescription": "Marketing manager resume skills: channels, analytics, and campaign management. Bullet examples for growth and brand roles.",
+    "intro": "Marketing managers own campaigns, channels, or segments. This guide outlines skill clusters and bullet examples that show impact for demand gen, brand, and content roles.",
+    "skillClusters": [
+      { "name": "Channels", "items": ["Email", "Paid media", "SEO", "Content", "Social", "Events"] },
+      { "name": "Data", "items": ["Analytics", "ROI", "Conversion", "A/B testing", "Reporting"] },
+      { "name": "Strategy", "items": ["Campaign planning", "Budget", "Positioning", "Buyer journey"] }
+    ],
+    "bulletExamples": [
+      "Ran demand gen campaigns that generated $2M pipeline; improved MQL-to-SQL conversion by 20% through lead scoring and nurture.",
+      "Launched new brand campaign across 4 channels; increased unaided awareness by 15% in target segment.",
+      "Built content engine that produced 30+ assets per quarter; SEO traffic grew 40% YoY."
+    ],
+    "body": "Lead with pipeline, conversion, or brand metrics. Use clear bullets with budget and channel scope. Tailor to B2B vs B2C and the channels in the job description. WadeCV can help you align your marketing experience with job descriptions."
+  },
+  {
+    "slug": "sales-development",
+    "title": "Skills for Sales Development Resume",
+    "metaDescription": "SDR resume skills: prospecting, CRM, and outreach. Bullet examples and keywords for sales development roles.",
+    "intro": "SDRs generate pipeline through outbound and inbound qualification. This guide outlines skill clusters and bullet examples that show activity and results.",
+    "skillClusters": [
+      { "name": "Outreach", "items": ["Cold email", "Cold call", "LinkedIn", "Prospecting", "Messaging"] },
+      { "name": "Process", "items": ["CRM", "Qualification", "Meeting booking", "Pipeline"] },
+      { "name": "Soft skills", "items": ["Persistence", "Communication", "Research", "Resilience"] }
+    ],
+    "bulletExamples": [
+      "Exceeded quota by 120%; booked 80+ meetings per quarter through 60+ daily touchpoints.",
+      "Built targeted account lists and messaging that improved show rate from 45% to 65%.",
+      "Collaborated with marketing on lead handoff; reduced lead response time by 50%."
+    ],
+    "body": "Lead with activity and results: calls, emails, meetings booked, pipeline. Use CRM and outreach keywords from the job description. WadeCV can help you align your SDR experience with job descriptions."
+  },
+  {
+    "slug": "recruiter",
+    "title": "Skills for Recruiter Resume",
+    "metaDescription": "Recruiter resume skills: sourcing, screening, and ATS. Bullet examples for talent acquisition roles.",
+    "intro": "Recruiters source and place candidates. This guide outlines skill clusters and bullet examples that show fill rates and pipeline for in-house and agency roles.",
+    "skillClusters": [
+      { "name": "Sourcing", "items": ["LinkedIn", "Boolean", "Job boards", "Referrals", "Networking"] },
+      { "name": "Process", "items": ["Screening", "ATS", "Interview coordination", "Offer"] },
+      { "name": "Stakeholder", "items": ["Hiring manager partnership", "Candidate experience", "Reporting"] }
+    ],
+    "bulletExamples": [
+      "Filled 35+ roles per year across engineering and product; reduced time-to-fill by 20% through improved sourcing and process.",
+      "Built pipeline of 200+ qualified candidates for key roles; improved hiring manager satisfaction scores by 25%.",
+      "Led diversity initiative; increased underrepresented candidate slate by 40% through targeted sourcing and partnerships."
+    ],
+    "body": "Lead with roles filled, time-to-fill, or pipeline metrics. Highlight experience with the types of roles you recruit for. Tailor to in-house vs agency. WadeCV can help you align your recruiting experience with job descriptions."
+  },
+  {
+    "slug": "executive-assistant",
+    "title": "Skills for Executive Assistant Resume",
+    "metaDescription": "Executive assistant resume skills: scheduling, communication, and discretion. Bullet examples for EA roles.",
+    "intro": "Executive assistants support C-suite and senior leaders with calendar, travel, and coordination. This guide outlines skill clusters and bullet examples that show scope and discretion.",
+    "skillClusters": [
+      { "name": "Coordination", "items": ["Calendar", "Travel", "Expenses", "Meetings", "Board support"] },
+      { "name": "Communication", "items": ["Email", "Drafting", "Discretion", "Stakeholder management"] },
+      { "name": "Tools", "items": ["Office suite", "Concur", "Slack", "Confidentiality"] }
+    ],
+    "bulletExamples": [
+      "Supported CEO and CFO; managed complex calendars and travel for 2 executives. Coordinated board materials and meetings for 6 meetings per year.",
+      "Streamlined expense and travel process; cut processing time by 40%. Trained 3 new EAs on company systems.",
+      "Acted as gatekeeper and liaison for executive office; handled sensitive communications and maintained strict confidentiality."
+    ],
+    "body": "Lead with level of executives supported and scope (board, travel, projects). Use discretion and confidentiality as keywords. WadeCV can help you align your EA experience with job descriptions."
+  },
+  {
+    "slug": "project-coordinator",
+    "title": "Skills for Project Coordinator Resume",
+    "metaDescription": "Project coordinator resume skills: planning, tracking, and communication. Bullet examples for PC roles.",
+    "intro": "Project coordinators support project managers with scheduling, tracking, and communication. This guide outlines skill clusters and bullet examples that show organisation and impact.",
+    "skillClusters": [
+      { "name": "Planning", "items": ["Scheduling", "Tracking", "Status reports", "Documentation"] },
+      { "name": "Communication", "items": ["Stakeholder updates", "Meeting facilitation", "Follow-up"] },
+      { "name": "Tools", "items": ["Jira", "Asana", "MS Project", "Spreadsheets"] }
+    ],
+    "bulletExamples": [
+      "Supported 5 concurrent projects; maintained timelines and status reports. Identified 3 risks that were mitigated before impact.",
+      "Coordinated cross-functional meetings for 20+ stakeholders; reduced meeting time by 25% through agendas and follow-up templates.",
+      "Managed project documentation and change log; improved audit readiness and reduced rework by 15%."
+    ],
+    "body": "Lead with number of projects, team size, and outcomes (on-time delivery, risk mitigation). Use tools and methodology keywords from the job description. WadeCV can help you align your coordinator experience with job descriptions."
+  },
+  {
+    "slug": "frontend-developer",
+    "title": "Skills for Frontend Developer Resume",
+    "metaDescription": "Frontend developer resume skills: React, CSS, and UX. Bullet examples and keywords for front-end roles.",
+    "intro": "Frontend developers build user interfaces with JavaScript, HTML, and CSS. This guide outlines skill clusters and bullet examples that show technical and user impact.",
+    "skillClusters": [
+      { "name": "Core", "items": ["JavaScript/TypeScript", "React", "Vue", "HTML", "CSS"] },
+      { "name": "Quality", "items": ["Responsive", "Accessibility", "Performance", "Testing"] },
+      { "name": "Collaboration", "items": ["Design", "API integration", "State management"] }
+    ],
+    "bulletExamples": [
+      "Built responsive dashboards used by 10K+ users; improved load time by 35% and met WCAG AA.",
+      "Led migration to React; reduced bundle size by 20% and improved maintainability. Mentored 2 junior devs.",
+      "Implemented design system components used across 5 product teams; cut design-dev handoff time by 40%."
+    ],
+    "body": "Lead with frameworks and user impact (scale, performance, accessibility). Match the stack in the job description. WadeCV can help you align your frontend experience with job descriptions."
+  },
+  {
+    "slug": "devops",
+    "title": "Skills for DevOps Engineer Resume",
+    "metaDescription": "DevOps resume skills: CI/CD, cloud, and automation. Bullet examples for DevOps and platform roles.",
+    "intro": "DevOps engineers build and maintain pipelines, cloud infrastructure, and monitoring. This guide outlines skill clusters and bullet examples that show automation and reliability impact.",
+    "skillClusters": [
+      { "name": "Pipeline", "items": ["CI/CD", "Jenkins", "GitHub Actions", "Deployment"] },
+      { "name": "Infra", "items": ["AWS", "GCP", "Terraform", "Kubernetes", "Docker"] },
+      { "name": "Reliability", "items": ["Monitoring", "Alerting", "Incident response", "SLO"] }
+    ],
+    "bulletExamples": [
+      "Built CI/CD pipeline that reduced deployment time from 2 hours to 15 minutes; adopted by 15+ teams.",
+      "Managed Kubernetes clusters for 50+ services; improved uptime to 99.95% and cut cloud spend by 20%.",
+      "Introduced Terraform for infra; reduced provisioning time from days to hours and improved consistency."
+    ],
+    "body": "Lead with automation and reliability outcomes: deployment frequency, uptime, cost. List tools and clouds that match the job. WadeCV can help you align your DevOps experience with job descriptions."
+  },
+  {
+    "slug": "ux-designer",
+    "title": "Skills for UX Designer Resume",
+    "metaDescription": "UX designer resume skills: research, wireframing, and collaboration. Bullet examples for product design roles.",
+    "intro": "UX designers focus on user research, flows, and interfaces. This guide outlines skill clusters and bullet examples that show impact on usability and product success.",
+    "skillClusters": [
+      { "name": "Research", "items": ["User interviews", "Usability testing", "Personas", "Journey maps"] },
+      { "name": "Design", "items": ["Wireframes", "Prototypes", "Figma", "Design systems"] },
+      { "name": "Collaboration", "items": ["Product", "Engineering", "Stakeholder presentation"] }
+    ],
+    "bulletExamples": [
+      "Led discovery and usability testing for checkout redesign; increased conversion by 18% and reduced support tickets by 25%.",
+      "Built and maintained design system used by 8 designers; improved consistency and cut design-dev iteration time by 30%.",
+      "Conducted 50+ user interviews; identified top 3 pain points that drove roadmap for next 2 quarters."
+    ],
+    "body": "Lead with user and business impact: conversion, satisfaction, efficiency. Show research and design process. Tailor to the product type in the job description. WadeCV can help you align your UX experience with job descriptions."
+  },
+  {
+    "slug": "retail-manager",
+    "title": "Skills for Retail Manager Resume",
+    "metaDescription": "Retail manager resume skills: operations, sales, and team leadership. Bullet examples for store and district manager roles.",
+    "intro": "Retail managers run store operations, drive sales, and lead teams. This guide outlines skill clusters and bullet examples that show P&L and team impact.",
+    "skillClusters": [
+      { "name": "Operations", "items": ["Inventory", "Scheduling", "Loss prevention", "Compliance"] },
+      { "name": "Sales", "items": ["Sales targets", "Upsell", "Customer service", "Metrics"] },
+      { "name": "Leadership", "items": ["Team development", "Hiring", "Training", "Performance"] }
+    ],
+    "bulletExamples": [
+      "Managed store with $2M annual revenue; exceeded sales target by 8% and improved margin through inventory control.",
+      "Led team of 12; reduced turnover by 25% through training and engagement initiatives. Trained 3 assistant managers.",
+      "Implemented new scheduling system; reduced labour cost by 10% while maintaining service levels."
+    ],
+    "body": "Lead with store size, revenue, and team size. Show sales and operational outcomes. Tailor to the retail segment (e.g. apparel, grocery). WadeCV can help you align your retail experience with job descriptions."
+  },
+  {
+    "slug": "hospitality",
+    "title": "Skills for Hospitality Resume",
+    "metaDescription": "Hospitality resume skills: guest service, operations, and teamwork. Bullet examples for hotel and restaurant roles.",
+    "intro": "Hospitality roles value guest experience, operations, and teamwork. This guide outlines skill clusters and bullet examples for hotel, restaurant, and event roles.",
+    "skillClusters": [
+      { "name": "Guest service", "items": ["Guest satisfaction", "Complaint resolution", "Upsell", "Reviews"] },
+      { "name": "Operations", "items": ["Scheduling", "Inventory", "Safety", "Compliance"] },
+      { "name": "Team", "items": ["Training", "Coordination", "Multi-tasking"] }
+    ],
+    "bulletExamples": [
+      "Led front desk team of 6 at 150-room hotel; achieved 4.5/5 guest rating and improved upsell revenue by 15%.",
+      "Managed daily operations for restaurant with $1.5M revenue; reduced waste by 20% through inventory and portion control.",
+      "Coordinated events for 50+ weddings per year; maintained 98% satisfaction and zero safety incidents."
+    ],
+    "body": "Lead with scale (rooms, covers, events) and guest or financial outcomes. Use keywords from the job (hotel, restaurant, events). WadeCV can help you align your hospitality experience with job descriptions."
+  },
+  {
+    "slug": "accountant",
+    "title": "Skills for Accountant Resume",
+    "metaDescription": "Accountant resume skills: GAAP, reporting, and systems. Bullet examples for staff and senior accountant roles.",
+    "intro": "Accountants prepare and analyse financial records. This guide outlines skill clusters and bullet examples for public and industry accounting roles.",
+    "skillClusters": [
+      { "name": "Technical", "items": ["GAAP", "Reconciliation", "Reporting", "Tax"] },
+      { "name": "Systems", "items": ["ERP", "Excel", "QuickBooks", "NetSuite"] },
+      { "name": "Soft skills", "items": ["Attention to detail", "Deadlines", "Audit support"] }
+    ],
+    "bulletExamples": [
+      "Managed month-end close for 3 entities; reduced close time by 3 days through process improvement and checklist.",
+      "Prepared financial statements and supporting schedules for annual audit; zero material adjustments.",
+      "Reconciled 50+ accounts; identified and corrected $200K variance. Implemented new controls to prevent recurrence."
+    ],
+    "body": "Lead with scope (entities, accounts, audit) and outcomes (close time, accuracy). List systems and certifications. WadeCV can help you align your accounting experience with job descriptions."
+  },
+  {
+    "slug": "financial-analyst",
+    "title": "Skills for Financial Analyst Resume",
+    "metaDescription": "Financial analyst resume skills: modelling, FP&A, and reporting. Bullet examples for corporate and banking roles.",
+    "intro": "Financial analysts build models, track performance, and support planning. This guide outlines skill clusters and bullet examples for FP&A and investment roles.",
+    "skillClusters": [
+      { "name": "Modelling", "items": ["Excel", "Forecasting", "Variance", "P&L"] },
+      { "name": "Process", "items": ["Budgeting", "Reporting", "Presentation", "Ad hoc"] },
+      { "name": "Stakeholder", "items": ["Leadership", "Business partners", "Board"] }
+    ],
+    "bulletExamples": [
+      "Built and maintained annual budget model for $50M division; variance analysis and reporting to CFO. Improved forecast accuracy by 15%.",
+      "Supported M&A due diligence; built operating model and identified $2M synergy opportunity. Presented to investment committee.",
+      "Automated monthly reporting; reduced preparation time from 2 days to 4 hours. Trained 3 analysts on new process."
+    ],
+    "body": "Lead with scope of models or budgets and audience. Highlight Excel and modelling. Tailor to corporate vs banking. WadeCV can help you align your analyst experience with job descriptions."
   }
 ]

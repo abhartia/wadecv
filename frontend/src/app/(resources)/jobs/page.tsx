@@ -13,10 +13,17 @@ export default function JobsIndexPage() {
   return (
     <article>
       <h1 className="text-3xl font-bold mb-4">Job Description Guides</h1>
-      <p className="text-muted-foreground mb-8">
-        Understanding a role’s responsibilities, skills, and keywords helps you tailor your resume and cover letter.
-        Use these guides to see what employers look for and how to align your experience—then create a tailored CV with WadeCV.
-      </p>
+      <div className="text-muted-foreground mb-8 space-y-4">
+        <p>
+          Understanding a role’s responsibilities, required skills, and the exact keywords hiring managers and ATS look for can make the difference between landing an interview and being filtered out. Job descriptions vary by company, level, and industry—so tailoring your resume to each opportunity is essential.
+        </p>
+        <p>
+          These guides break down real job descriptions by role: what you’ll typically be expected to do, which skills to highlight, salary ranges, career paths, and the resume keywords that get past screening. Use them to align your experience with what employers want, then create a tailored CV with WadeCV so every application speaks directly to the job.
+        </p>
+        <p>
+          Whether you’re targeting a specific company (e.g. Google, McKinsey) or a type of role (e.g. product manager, data analyst, customer success), you’ll find actionable breakdowns and keyword lists to strengthen your next application.
+        </p>
+      </div>
       <ul className="space-y-3">
         {jobs.map((job) => (
           <li key={job.slug}>

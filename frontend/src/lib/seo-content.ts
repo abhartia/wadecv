@@ -3,6 +3,14 @@
  * Content is read from frontend/content/seo/*.json at build/request time.
  */
 
+import path from "path";
+import fs from "fs";
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 export interface JobEntry {
   slug: string;
   title: string;
@@ -14,6 +22,10 @@ export interface JobEntry {
   careerPath?: string[];
   resumeKeywords: string[];
   body: string;
+  faq?: FaqItem[];
+  commonMistakes?: string[];
+  interviewTips?: string[];
+  relatedSlugs?: string[];
 }
 
 export interface CompanyEntry {
@@ -25,6 +37,9 @@ export interface CompanyEntry {
   keywords: string[];
   sampleSnippet?: string;
   body: string;
+  faq?: FaqItem[];
+  commonMistakes?: string[];
+  relatedSlugs?: string[];
 }
 
 export interface SkillEntry {
@@ -35,6 +50,9 @@ export interface SkillEntry {
   skillClusters: { name: string; items: string[] }[];
   bulletExamples: string[];
   body: string;
+  faq?: FaqItem[];
+  commonMistakes?: string[];
+  relatedSlugs?: string[];
 }
 
 export interface ResumeBulletEntry {
@@ -45,6 +63,9 @@ export interface ResumeBulletEntry {
   bulletExamples: string[];
   impactFormulas: string[];
   body: string;
+  faq?: FaqItem[];
+  commonMistakes?: string[];
+  relatedSlugs?: string[];
 }
 
 export interface AtsEntry {
@@ -55,6 +76,8 @@ export interface AtsEntry {
   parsingRules: string[];
   formattingNotes: string[];
   body: string;
+  faq?: FaqItem[];
+  relatedSlugs?: string[];
 }
 
 export interface CareerChangeEntry {
@@ -66,17 +89,15 @@ export interface CareerChangeEntry {
   toRole: string;
   tips: string[];
   body: string;
+  faq?: FaqItem[];
+  commonMistakes?: string[];
+  relatedSlugs?: string[];
 }
 
 // In Next.js, process.cwd() is the frontend directory when running next build/dev
-const getContentDir = () => {
-  const path = require("path");
-  return path.join(process.cwd(), "content", "seo");
-};
+const getContentDir = () => path.join(process.cwd(), "content", "seo");
 
 function loadJsonFile<T>(filename: string): T {
-  const path = require("path");
-  const fs = require("fs");
   const dir = getContentDir();
   const fullPath = path.join(dir, filename);
   const raw = fs.readFileSync(fullPath, "utf-8");
@@ -142,4 +163,39 @@ export function getCareerChanges(): CareerChangeEntry[] {
 
 export function getCareerChangeBySlug(slug: string): CareerChangeEntry | null {
   return getCareerChanges().find((c) => c.slug === slug) ?? null;
+}
+
+export type SeoCategory = "jobs" | "company-resume" | "skills" | "resume-bullets" | "ats" | "career-change";
+
+const CATEGORY_BASE_PATH: Record<SeoCategory, string> = {
+  jobs: "/jobs",
+  "company-resume": "/company-resume",
+  skills: "/skills",
+  "resume-bullets": "/resume-bullets",
+  ats: "/ats",
+  "career-change": "/career-change",
+};
+
+export function getTitleByCategoryAndSlug(category: SeoCategory, slug: string): string | null {
+  switch (category) {
+    case "jobs":
+      return getJobBySlug(slug)?.title ?? null;
+    case "company-resume":
+      return getCompanyBySlug(slug)?.name ?? null;
+    case "skills":
+      return getSkillBySlug(slug)?.title ?? null;
+    case "resume-bullets":
+      return getResumeBulletBySlug(slug)?.title ?? null;
+    case "ats":
+      return getAtsBySlug(slug)?.name ?? null;
+    case "career-change":
+      return getCareerChangeBySlug(slug)?.title ?? null;
+    default:
+      return null;
+  }
+}
+
+export function getHrefByCategoryAndSlug(category: SeoCategory, slug: string): string {
+  const base = CATEGORY_BASE_PATH[category];
+  return category === "company-resume" ? `${base}/${slug}` : `${base}/${slug}`;
 }

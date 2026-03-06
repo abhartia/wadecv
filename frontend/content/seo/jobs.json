@@ -22,7 +22,14 @@
     "salaryRange": "Typically $120,000–$250,000+ base depending on level and location, plus equity and benefits.",
     "careerPath": ["Software Engineer II", "Senior Software Engineer", "Staff Engineer", "Principal Engineer"],
     "resumeKeywords": ["distributed systems", "system design", "scalability", "code review", "cross-functional", "Python", "Java", "Go", "Kubernetes", "cloud infrastructure", "API design", "testing", "mentorship"],
-    "body": "When tailoring your resume for a Google software engineer role, emphasize impact and scale. Use metrics wherever possible: systems you improved, latency or throughput gains, and the size of user bases or data you handled. Highlight experience with distributed systems, reliability, and collaboration across teams. Google's process often includes resume screening by recruiters and automated systems, so matching the language in the job description—without keyword stuffing—will help your application get a closer look. A tool like WadeCV can help you align your existing experience with this role and surface the strongest bullets for your tailored application."
+    "body": "When tailoring your resume for a Google software engineer role, emphasize impact and scale. Use metrics wherever possible: systems you improved, latency or throughput gains, and the size of user bases or data you handled. Highlight experience with distributed systems, reliability, and collaboration across teams.\n\nGoogle's process often includes resume screening by recruiters and automated systems, so matching the language in the job description—without keyword stuffing—will help your application get a closer look. A tool like WadeCV can help you align your existing experience with this role and surface the strongest bullets for your tailored application.",
+    "commonMistakes": ["Listing only job duties without impact or metrics", "Using vague terms like 'worked on' or 'helped with' instead of specific outcomes", "Omitting scale (users, requests, team size) when it's relevant", "Keyword stuffing; use natural language that matches the job description"],
+    "interviewTips": ["Be ready to walk through system design and past technical decisions", "Prepare STAR examples that show scale and cross-functional work", "Expect behavioural questions on collaboration and ambiguity"],
+    "relatedSlugs": ["product-manager-startup", "frontend-engineer", "backend-engineer"],
+    "faq": [
+      { "question": "What does Google look for in a software engineer resume?", "answer": "Google values impact at scale: systems you built or improved, metrics (latency, throughput, users), and evidence of collaboration. They also look for clear technical skills (languages, distributed systems, system design) and clean, scannable formatting that works with their ATS." },
+      { "question": "How long should my resume be for Google?", "answer": "One page for new grads, up to two pages for experienced engineers. Focus on relevance and impact; every bullet should earn its place." }
+    ]
   },
   {
     "slug": "product-manager-startup",
@@ -47,7 +54,13 @@
     "salaryRange": "Varies widely; early-stage often $90,000–$140,000 base plus equity; growth-stage can be higher.",
     "careerPath": ["Associate PM", "Product Manager", "Senior PM", "Director of Product", "VP Product"],
     "resumeKeywords": ["roadmap", "user stories", "agile", "stakeholder", "prioritization", "metrics", "A/B testing", "user research", "cross-functional", "product strategy", "customer discovery", "OKRs", "backlog"],
-    "body": "Startup PM roles value ownership and outcomes over formal process. On your resume, lead with impact: features shipped, metrics improved, and how you influenced strategy or prioritization. Use concrete numbers (e.g. adoption rates, revenue impact, user growth). Tailoring your resume to each startup's stage and product area will help you stand out. WadeCV can help you reframe your existing PM experience for startup-style job descriptions so your strongest wins are front and centre."
+    "body": "Startup PM roles value ownership and outcomes over formal process. On your resume, lead with impact: features shipped, metrics improved, and how you influenced strategy or prioritization. Use concrete numbers (e.g. adoption rates, revenue impact, user growth).\n\nTailoring your resume to each startup's stage and product area will help you stand out. WadeCV can help you reframe your existing PM experience for startup-style job descriptions so your strongest wins are front and centre.",
+    "commonMistakes": ["Focusing only on process (e.g. 'ran agile') without business outcomes", "Generic bullets that could apply to any company", "Skipping metrics; startups care about growth and impact"],
+    "interviewTips": ["Prepare product case studies and prioritisation frameworks", "Be ready to discuss trade-offs and how you used data", "Show you can work with limited resources and ambiguity"],
+    "relatedSlugs": ["google-software-engineer", "data-analyst-healthcare", "scrum-master"],
+    "faq": [
+      { "question": "What do startup PM hiring managers look for?", "answer": "Evidence of ownership (you shipped X, it led to Y), comfort with ambiguity, and ability to work closely with engineering and design. Metrics and outcomes matter more than job title or company size." }
+    ]
   },
   {
     "slug": "data-analyst-healthcare",
@@ -122,5 +135,185 @@
     "careerPath": ["Customer Success Associate", "CSM", "Senior CSM", "Team Lead", "Director of Customer Success"],
     "resumeKeywords": ["customer success", "retention", "churn", "onboarding", "adoption", "renewal", "expansion", "NPS", "health score", "stakeholder", "SaaS", "CRM", "quarterly business review", "upsell", "customer journey"],
     "body": "CSM roles reward outcomes: retention rates, expansion revenue, and improved adoption or NPS. On your resume, lead with metrics—renewal rates, revenue retained or expanded, number of accounts, and feedback scores. Show that you can own the relationship and work across internal teams. Tailoring your resume to the company's segment (SMB, mid-market, enterprise) and industry will help. WadeCV can help you align your customer-facing experience with CSM job descriptions and highlight your strongest impact."
+  },
+  {
+    "slug": "frontend-engineer",
+    "title": "Frontend Engineer Job Description & Resume Guide",
+    "metaDescription": "Frontend engineer job description: responsibilities, skills, salary, and resume keywords for React, Vue, and modern web roles.",
+    "intro": "Frontend engineers build the user-facing side of web and mobile applications. Demand is strong for developers who combine strong JavaScript/TypeScript skills with an eye for UX and performance. This guide breaks down typical job requirements and resume keywords so you can tailor your application.",
+    "responsibilities": ["Build responsive, accessible UIs with modern frameworks (React, Vue, Angular)", "Collaborate with design and backend to implement features and APIs", "Optimise performance (Core Web Vitals, bundle size)", "Write maintainable code and tests; participate in code review", "Stay current with browser APIs and front-end tooling"],
+    "requiredSkills": ["JavaScript/TypeScript; React, Vue, or Angular", "HTML, CSS, responsive design", "REST/GraphQL integration; state management", "Testing (Jest, Cypress, etc.); build tools (Webpack, Vite)", "Collaboration and attention to UX detail"],
+    "salaryRange": "Often $90,000–$180,000+ depending on level and location.",
+    "careerPath": ["Frontend Developer", "Frontend Engineer", "Senior Frontend Engineer", "Staff Engineer"],
+    "resumeKeywords": ["React", "TypeScript", "JavaScript", "CSS", "responsive", "accessibility", "performance", "REST", "GraphQL", "component", "state management", "testing", "CI/CD"],
+    "body": "Frontend roles reward both technical depth and user impact. On your resume, highlight projects with scale (page views, users) or performance gains, and list the frameworks and tools that match the job. Tailor keywords to the posting—many roles emphasise React or Vue specifically.\n\nWadeCV can help you align your frontend experience with each job description and surface your strongest bullets."
+  },
+  {
+    "slug": "backend-engineer",
+    "title": "Backend Engineer Job Description & Resume Guide",
+    "metaDescription": "Backend engineer responsibilities, skills, salary, and resume keywords for API, database, and service development.",
+    "intro": "Backend engineers design and maintain the server-side systems that power applications: APIs, databases, and services. This guide covers typical job requirements and how to present your experience for backend-focused roles.",
+    "responsibilities": ["Design and implement APIs and services", "Model data and work with relational and/or NoSQL databases", "Ensure reliability, security, and scalability", "Debug production issues and participate in on-call", "Work with frontend and platform teams on integration"],
+    "requiredSkills": ["Proficiency in one or more backend languages (e.g. Python, Java, Go, Node.js)", "SQL and database design; caching and message queues", "API design (REST, GraphQL); security basics", "Linux, containers, and cloud services", "Collaboration and clear documentation"],
+    "salaryRange": "Often $100,000–$200,000+ depending on level and location.",
+    "careerPath": ["Backend Developer", "Backend Engineer", "Senior Backend Engineer", "Staff Engineer"],
+    "resumeKeywords": ["API", "database", "SQL", "Python", "Java", "Go", "Node.js", "microservices", "scalability", "caching", "REST", "security", "reliability"],
+    "body": "Backend resumes should show system ownership and impact: APIs you built, scale you handled, and how you improved reliability or performance. Use metrics (throughput, latency, uptime) where possible. Match the language and stack in the job description.\n\nWadeCV can help you tailor your backend experience to each role and highlight your strongest technical outcomes."
+  },
+  {
+    "slug": "devops-engineer",
+    "title": "DevOps Engineer Job Description & Resume Guide",
+    "metaDescription": "DevOps engineer job description: CI/CD, cloud, and infrastructure responsibilities, skills, and resume keywords.",
+    "intro": "DevOps engineers bridge development and operations: they build and maintain CI/CD pipelines, cloud infrastructure, and monitoring so teams can ship reliably. This guide outlines typical responsibilities and resume keywords for DevOps and platform roles.",
+    "responsibilities": ["Build and maintain CI/CD pipelines and deployment automation", "Manage cloud infrastructure (AWS, GCP, Azure) and IaC (Terraform, etc.)", "Set up monitoring, alerting, and incident response", "Improve system reliability and performance", "Collaborate with development and security teams"],
+    "requiredSkills": ["Linux; scripting (Bash, Python); containers (Docker, Kubernetes)", "Cloud providers and IaC (Terraform, CloudFormation)", "CI/CD (Jenkins, GitHub Actions, etc.); monitoring (Prometheus, Datadog)", "Networking and security fundamentals", "Collaboration and documentation"],
+    "salaryRange": "Often $110,000–$190,000+ depending on level and location.",
+    "careerPath": ["DevOps Engineer", "Senior DevOps Engineer", "Platform Engineer", "Staff/SRE"],
+    "resumeKeywords": ["CI/CD", "Kubernetes", "Docker", "AWS", "Terraform", "Linux", "monitoring", "automation", "infrastructure", "reliability", "Python", "Bash"],
+    "body": "DevOps roles value automation, reliability, and scale. On your resume, lead with outcomes: deployment frequency, uptime, or cost/speed improvements. List the tools and clouds that match the job. Tailoring your resume to each company's stack will improve your fit.\n\nWadeCV can help you align your DevOps experience with job descriptions and surface your strongest impact."
+  },
+  {
+    "slug": "entry-level-software-engineer",
+    "title": "Entry-Level Software Engineer Job Description & Resume Guide",
+    "metaDescription": "Entry-level software engineer job requirements, skills, and resume keywords for new grads and career changers.",
+    "intro": "Entry-level software engineer roles look for strong fundamentals, willingness to learn, and evidence of hands-on work (projects, internships, open source). This guide covers what employers expect and how to present your experience when you have limited professional history.",
+    "responsibilities": ["Write and test code under guidance; participate in code reviews", "Fix bugs and implement small features", "Learn codebase and team practices", "Collaborate with peers and ask for feedback", "Document and communicate progress"],
+    "requiredSkills": ["Data structures and algorithms; at least one programming language", "Basic version control (Git); debugging and testing", "Ability to read and understand existing code", "Communication and eagerness to learn"],
+    "salaryRange": "Often $70,000–$120,000 depending on location and company.",
+    "careerPath": ["Software Engineer I", "Software Engineer II", "Senior Engineer"],
+    "resumeKeywords": ["Python", "Java", "JavaScript", "Git", "data structures", "algorithms", "internship", "project", "collaboration", "problem-solving"],
+    "body": "Without long work history, lead with projects, internships, and relevant coursework. Use clear bullet points that describe what you built and what you learned. Match the language in the job description (languages, tools) and keep formatting clean for ATS.\n\nWadeCV can help you reframe projects and coursework into resume bullets that align with entry-level job descriptions."
+  },
+  {
+    "slug": "scrum-master",
+    "title": "Scrum Master Job Description & Resume Guide",
+    "metaDescription": "Scrum master responsibilities, skills, salary, and resume keywords for agile coach and facilitator roles.",
+    "intro": "Scrum masters facilitate agile ceremonies, remove blockers, and help teams improve delivery. The role combines process knowledge with soft skills. This guide covers typical job requirements and how to tailor your resume for scrum master and agile coach positions.",
+    "responsibilities": ["Facilitate sprint planning, stand-ups, retrospectives, and demos", "Remove blockers and shield the team from distractions", "Coach team on agile practices and continuous improvement", "Track velocity and metrics; report to stakeholders", "Support product owner on backlog refinement"],
+    "requiredSkills": ["Strong knowledge of Scrum and often Kanban", "Facilitation and conflict resolution", "Understanding of software development and delivery", "Communication with technical and non-technical stakeholders", "Certification (CSM, PSM) often preferred"],
+    "salaryRange": "Often $80,000–$130,000 depending on experience and location.",
+    "careerPath": ["Scrum Master", "Senior Scrum Master", "Agile Coach", "Director of Agile"],
+    "resumeKeywords": ["Scrum", "agile", "sprint", "facilitation", "retrospective", "velocity", "backlog", "stakeholder", "continuous improvement", "Kanban", "coaching"],
+    "body": "Scrum master resumes should show impact on delivery and team health: cycle time, release frequency, or team satisfaction. Highlight facilitation and coaching, not just ceremony management. Tailor to the organisation's agile maturity and any mentioned frameworks.\n\nWadeCV can help you align your agile experience with scrum master job descriptions."
+  },
+  {
+    "slug": "solutions-architect",
+    "title": "Solutions Architect Job Description & Resume Guide",
+    "metaDescription": "Solutions architect job description: responsibilities, skills, salary, and resume keywords for pre-sales and technical design roles.",
+    "intro": "Solutions architects design technical solutions for customers and work closely with sales and delivery. The role requires broad technical knowledge and the ability to translate requirements into architectures. This guide covers typical job requirements and resume keywords.",
+    "responsibilities": ["Design solutions that meet customer requirements and constraints", "Present architectures to technical and executive audiences", "Support sales with demos, RFPs, and technical discovery", "Work with delivery and product to align on feasibility", "Stay current with product and cloud offerings"],
+    "requiredSkills": ["Broad technical knowledge (cloud, integration, security)", "Ability to design and document architectures", "Strong presentation and written communication", "Customer-facing experience; commercial awareness", "Relevant certifications (AWS, Azure, etc.) often valued"],
+    "salaryRange": "Often $120,000–$200,000+ depending on level and segment.",
+    "careerPath": ["Solutions Architect", "Senior Solutions Architect", "Principal Architect", "Chief Architect"],
+    "resumeKeywords": ["architecture", "cloud", "AWS", "Azure", "solution design", "customer", "RFP", "integration", "security", "presentation", "technical sales"],
+    "body": "Solutions architect resumes should show scope: size of deals or projects, complexity of systems, and variety of industries or use cases. Highlight both technical depth and communication. Tailor to the vendor or segment (e.g. cloud, ERP) in the job description.\n\nWadeCV can help you align your architecture and customer experience with solutions architect job descriptions."
+  },
+  {
+    "slug": "technical-writer",
+    "title": "Technical Writer Job Description & Resume Guide",
+    "metaDescription": "Technical writer job description: responsibilities, skills, and resume keywords for docs and developer experience roles.",
+    "intro": "Technical writers create documentation, tutorials, and other content that helps users and developers succeed with a product. The role combines writing skill with technical understanding. This guide covers typical job requirements and how to tailor your resume.",
+    "responsibilities": ["Write and maintain user and developer documentation", "Work with engineering and product to understand features", "Organise content (information architecture) and improve findability", "Contribute to style guides and documentation processes", "Sometimes create tutorials, API docs, or release notes"],
+    "requiredSkills": ["Clear, concise writing and editing", "Ability to learn technical concepts quickly", "Experience with docs tools (e.g. Markdown, static site generators)", "Collaboration with engineering and product", "Attention to audience and usability"],
+    "salaryRange": "Often $70,000–$120,000 depending on experience and location.",
+    "careerPath": ["Technical Writer", "Senior Technical Writer", "Documentation Lead", "Content Strategy"],
+    "resumeKeywords": ["documentation", "technical writing", "API docs", "Markdown", "user guide", "developer experience", "information architecture", "editing", "tutorial"],
+    "body": "Technical writer resumes should show scope: types of docs (API, user, internal), audience size, and impact (e.g. reduced support tickets, improved adoption). List tools and domains that match the job. Tailoring your resume to the product type (developer tools, enterprise software, etc.) will help.\n\nWadeCV can help you align your writing and technical experience with technical writer job descriptions."
+  },
+  {
+    "slug": "sdr-sales-development",
+    "title": "SDR / Sales Development Representative Job Description & Resume Guide",
+    "metaDescription": "SDR job description: responsibilities, skills, salary, and resume keywords for sales development and outbound roles.",
+    "intro": "Sales development representatives (SDRs) generate pipeline through outbound outreach and inbound qualification. The role is often the first step into sales. This guide covers typical job requirements and resume keywords for SDR and BDR positions.",
+    "responsibilities": ["Prospect and reach out to leads via email, phone, and social", "Qualify leads and book meetings for account executives", "Hit activity and pipeline targets", "Use CRM and sales tools; keep data accurate", "Collaborate with marketing and sales on messaging"],
+    "requiredSkills": ["Strong communication and persistence", "Basic CRM use (Salesforce, HubSpot, etc.)", "Ability to research prospects and tailor outreach", "Resilience and time management", "Interest in sales and product"],
+    "salaryRange": "Often $45,000–$65,000 base plus variable compensation.",
+    "careerPath": ["SDR", "Senior SDR", "Account Executive", "Sales Manager"],
+    "resumeKeywords": ["SDR", "outbound", "pipeline", "CRM", "Salesforce", "qualification", "cold call", "lead", "quota", "discovery"],
+    "body": "SDR resumes should show activity and results: calls/emails per day, meetings booked, pipeline generated, or quota attainment. Highlight any sales or customer-facing experience. Tailor to the company's segment and product.\n\nWadeCV can help you align your SDR or related experience with job descriptions and highlight your strongest numbers."
+  },
+  {
+    "slug": "account-executive",
+    "title": "Account Executive Job Description & Resume Guide",
+    "metaDescription": "Account executive job description: responsibilities, skills, salary, and resume keywords for B2B sales roles.",
+    "intro": "Account executives own the full sales cycle: discovery, demos, negotiation, and closing. They typically work with qualified leads passed from SDRs. This guide covers typical job requirements and how to present your sales experience.",
+    "responsibilities": ["Run discovery calls and demos; identify pain points and fit", "Build proposals and negotiate terms", "Close deals and hit revenue targets", "Manage pipeline and forecast in CRM", "Work with customer success on handoffs and expansion"],
+    "requiredSkills": ["Full-cycle sales experience; closing experience", "Strong discovery and presentation skills", "CRM and pipeline management", "Resilience and relationship building", "Understanding of product and market"],
+    "salaryRange": "Often $70,000–$120,000+ base plus commission; OTE varies by segment.",
+    "careerPath": ["Account Executive", "Senior AE", "Enterprise AE", "Sales Director"],
+    "resumeKeywords": ["quota", "pipeline", "discovery", "close", "revenue", "CRM", "negotiation", "enterprise", "full-cycle", "forecast"],
+    "body": "AE resumes should lead with revenue and quota: attainment, deal size, and segment. Use concrete numbers and show progression. Tailor to the company's segment (SMB, mid-market, enterprise) and industry.\n\nWadeCV can help you align your sales experience with account executive job descriptions."
+  },
+  {
+    "slug": "recruiter",
+    "title": "Recruiter Job Description & Resume Guide",
+    "metaDescription": "Recruiter job description: responsibilities, skills, and resume keywords for talent acquisition and staffing roles.",
+    "intro": "Recruiters source, screen, and place candidates for open roles. They work in-house or at staffing agencies. This guide covers typical job requirements and how to tailor your resume for recruiter and talent acquisition positions.",
+    "responsibilities": ["Source candidates via job boards, LinkedIn, and referrals", "Screen resumes and conduct phone or video screens", "Coordinate interviews and feedback; support offer process", "Build relationships with hiring managers and candidates", "Meet fill and time-to-fill targets"],
+    "requiredSkills": ["Sourcing and screening skills", "Strong communication and organisation", "ATS and recruiting tools experience", "Ability to sell the role and company", "Resilience and attention to detail"],
+    "salaryRange": "Often $50,000–$85,000 base plus commission in agency; in-house can be higher.",
+    "careerPath": ["Recruiter", "Senior Recruiter", "Recruiting Manager", "Director of Talent Acquisition"],
+    "resumeKeywords": ["sourcing", "screening", "ATS", "full-cycle", "hiring manager", "candidate", "time-to-fill", "LinkedIn", "pipeline", "placement"],
+    "body": "Recruiter resumes should show outcomes: roles filled, time-to-fill, or pipeline metrics. Highlight experience with the types of roles you recruited for (tech, healthcare, etc.) and any specialisation. Tailoring your resume to in-house vs agency and industry will help.\n\nWadeCV can help you align your recruiting experience with job descriptions."
+  },
+  {
+    "slug": "hr-business-partner",
+    "title": "HR Business Partner Job Description & Resume Guide",
+    "metaDescription": "HR business partner job description: responsibilities, skills, and resume keywords for HRBP and people partner roles.",
+    "intro": "HR business partners (HRBPs) work with leaders on people strategy: talent, performance, engagement, and org design. The role combines HR expertise with consulting and influence. This guide covers typical job requirements and resume keywords.",
+    "responsibilities": ["Partner with leaders on people strategy and org design", "Support performance management, talent review, and succession", "Address employee relations and engagement", "Drive HR initiatives (e.g. diversity, retention) within the business", "Use data to inform people decisions"],
+    "requiredSkills": ["Broad HR knowledge (talent, ER, compensation basics)", "Consulting and influence without direct authority", "Strong communication and discretion", "Data literacy and project management", "Experience in relevant industry or scale"],
+    "salaryRange": "Often $80,000–$140,000 depending on level and location.",
+    "careerPath": ["HRBP", "Senior HRBP", "Director of HR", "VP HR"],
+    "resumeKeywords": ["HRBP", "talent", "performance", "engagement", "employee relations", "org design", "stakeholder", "people strategy", "retention", "succession"],
+    "body": "HRBP resumes should show business impact: retention, engagement scores, or successful org changes. Highlight partnership with senior leaders and scope of population supported. Tailor to the industry and size of company in the job description.\n\nWadeCV can help you align your HR experience with HRBP job descriptions."
+  },
+  {
+    "slug": "marketing-manager",
+    "title": "Marketing Manager Job Description & Resume Guide",
+    "metaDescription": "Marketing manager job description: responsibilities, skills, salary, and resume keywords for growth and brand roles.",
+    "intro": "Marketing managers own campaigns, channels, or segments: demand gen, brand, content, or product marketing. The role varies by company and focus. This guide covers typical job requirements and how to tailor your resume.",
+    "responsibilities": ["Plan and execute marketing campaigns and initiatives", "Manage channels (email, paid, social, content) and budgets", "Analyse performance and report on ROI", "Work with sales, product, and external partners", "Support brand positioning and messaging"],
+    "requiredSkills": ["Channel expertise (e.g. demand gen, content, brand)", "Data and analytics; comfort with marketing tools", "Project management and cross-functional collaboration", "Written and verbal communication", "Understanding of customer and buyer journey"],
+    "salaryRange": "Often $75,000–$130,000 depending on level and location.",
+    "careerPath": ["Marketing Manager", "Senior Marketing Manager", "Director of Marketing", "VP Marketing"],
+    "resumeKeywords": ["campaign", "demand gen", "ROI", "conversion", "brand", "content", "SEO", "paid media", "lead", "pipeline"],
+    "body": "Marketing manager resumes should lead with results: pipeline, conversion rates, or brand metrics. Use numbers and show ownership of budgets or channels. Tailor to the type of marketing (B2B, B2C, product) and channels in the job description.\n\nWadeCV can help you align your marketing experience with job descriptions."
+  },
+  {
+    "slug": "financial-analyst",
+    "title": "Financial Analyst Job Description & Resume Guide",
+    "metaDescription": "Financial analyst job description: responsibilities, skills, salary, and resume keywords for FP&A and investment roles.",
+    "intro": "Financial analysts build models, track performance, and support planning and decisions. Roles exist in corporate FP&A, investment banking, and asset management. This guide covers typical job requirements and resume keywords.",
+    "responsibilities": ["Build and maintain financial models and forecasts", "Analyse variance and performance vs plan", "Support budgeting, planning, and reporting", "Present findings to leadership and stakeholders", "Ad hoc analysis and process improvement"],
+    "requiredSkills": ["Excel fluency; financial modelling", "Understanding of P&L, cash flow, and key metrics", "Attention to detail and analytical rigour", "Communication and presentation", "Relevant degree or certification (CFA, CPA) often preferred"],
+    "salaryRange": "Often $65,000–$110,000 in corporate; banking can be higher with bonus.",
+    "careerPath": ["Financial Analyst", "Senior Financial Analyst", "Manager FP&A", "Director of Finance"],
+    "resumeKeywords": ["financial model", "forecast", "FP&A", "variance", "Excel", "budget", "P&L", "reporting", "analysis", "stakeholder"],
+    "body": "Financial analyst resumes should show scope: size of budgets or models, types of analysis, and audience (board, business unit). Highlight Excel and modelling skills and any sector experience. Tailor to corporate vs banking and industry.\n\nWadeCV can help you align your finance experience with financial analyst job descriptions."
+  },
+  {
+    "slug": "nurse",
+    "title": "Nurse Job Description & Resume Guide",
+    "metaDescription": "Nurse job description: responsibilities, skills, and resume keywords for RN, LPN, and clinical nursing roles.",
+    "intro": "Nursing roles require clinical skills, compassion, and the ability to work under pressure. Employers look for clear credentials, relevant experience, and evidence of patient outcomes. This guide covers typical job requirements and how to tailor your nursing resume.",
+    "responsibilities": ["Assess patients and deliver care per care plans and protocols", "Administer medications and treatments; monitor vital signs", "Document care and communicate with families and care team", "Maintain a safe, compliant environment", "Support patient and family education"],
+    "requiredSkills": ["Valid RN or LPN licence; BLS/ACLS as required", "Clinical assessment and documentation", "Communication and empathy", "Ability to work in fast-paced, team settings", "Attention to detail and compliance"],
+    "salaryRange": "Varies by setting and location; often $60,000–$95,000 for RNs.",
+    "careerPath": ["Staff Nurse", "Charge Nurse", "Nurse Manager", "Director of Nursing"],
+    "resumeKeywords": ["patient care", "assessment", "medication", "documentation", "BLS", "ACLS", "RN", "clinical", "care plan", "vital signs"],
+    "body": "Nursing resumes should highlight licence, certifications, and clinical setting. Use bullets that show patient load, types of care, and any quality or safety outcomes. Tailor to the setting (hospital, clinic, home health) and specialty in the job description.\n\nWadeCV can help you align your nursing experience with job descriptions."
+  },
+  {
+    "slug": "teacher",
+    "title": "Teacher Job Description & Resume Guide",
+    "metaDescription": "Teacher job description: responsibilities, skills, and resume keywords for K-12 and education roles.",
+    "intro": "Teachers plan and deliver instruction, assess learning, and support student development. Hiring managers look for certification, classroom experience, and evidence of student outcomes. This guide covers typical job requirements and resume keywords for teaching positions.",
+    "responsibilities": ["Plan and deliver lessons aligned to standards", "Assess student progress and differentiate instruction", "Manage classroom behaviour and create a positive climate", "Communicate with families and colleagues", "Participate in professional development and school initiatives"],
+    "requiredSkills": ["Teaching certification (state-specific)", "Knowledge of curriculum and pedagogy", "Classroom management", "Communication and collaboration", "Data literacy for student progress"],
+    "salaryRange": "Varies by state and district; often $45,000–$75,000 for K-12.",
+    "careerPath": ["Teacher", "Lead Teacher", "Department Head", "Administrator"],
+    "resumeKeywords": ["lesson plan", "differentiation", "assessment", "classroom management", "curriculum", "student achievement", "certification", "standards"],
+    "body": "Teacher resumes should highlight certification, grade level or subject, and student outcomes (growth, pass rates, engagement). Use clear bullets that show scope and impact. Tailor to the district and grade level in the job description.\n\nWadeCV can help you align your teaching experience with job descriptions."
   }
 ]

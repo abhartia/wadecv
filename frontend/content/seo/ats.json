@@ -18,7 +18,11 @@
       "Save and submit your resume as a .docx or PDF; ensure the file is text-based and not image-only.",
       "Match the wording of the job description where it honestly applies—keywords matter for ranking."
     ],
-    "body": "Workday ATS works best with clean, well-structured resumes. Use a single column, clear headings, and consistent date formats. Repeating keywords from the job description in your experience and skills sections can improve your ranking, but avoid stuffing—relevance and clarity matter for human reviewers too. After you pass the ATS, recruiters will look for impact and fit. Tailoring your resume to each role (including keyword alignment) will give you the best chance. WadeCV can help you create an ATS-friendly, tailored resume that works for Workday and other systems."
+    "body": "Workday ATS works best with clean, well-structured resumes. Use a single column, clear headings, and consistent date formats.\n\nRepeating keywords from the job description in your experience and skills sections can improve your ranking, but avoid stuffing—relevance and clarity matter for human reviewers too. After you pass the ATS, recruiters will look for impact and fit. Tailoring your resume to each role (including keyword alignment) will give you the best chance. WadeCV can help you create an ATS-friendly, tailored resume that works for Workday and other systems.",
+    "faq": [
+      { "question": "What file format should I use for Workday?", "answer": "Use .docx or PDF with selectable text. Avoid image-only PDFs so the ATS can parse your content. Keep formatting simple." }
+    ],
+    "relatedSlugs": ["greenhouse", "lever"]
   },
   {
     "slug": "greenhouse",
@@ -60,6 +64,126 @@
       "Weave in keywords from the job description where they accurately describe your experience.",
       "Submit as PDF or DOCX with selectable text so the ATS can parse and index your content."
     ],
-    "body": "Lever is designed to make it easy for recruiters to find and evaluate candidates. A clean, keyword-aligned resume will parse well and stand out in search. Emphasise impact and outcomes so that when recruiters open your profile, they see clear evidence of fit. Tailoring your resume to each Lever job post will improve both ATS match and human appeal. WadeCV can help you create a resume that works for Lever and other modern ATS platforms."
+    "body": "Lever is designed to make it easy for recruiters to find and evaluate candidates. A clean, keyword-aligned resume will parse well and stand out in search. Emphasise impact and outcomes so that when recruiters open your profile, they see clear evidence of fit.\n\nTailoring your resume to each Lever job post will improve both ATS match and human appeal. WadeCV can help you create a resume that works for Lever and other modern ATS platforms."
+  },
+  {
+    "slug": "icims",
+    "name": "iCIMS",
+    "metaDescription": "How to optimize your resume for iCIMS ATS. Parsing rules and formatting tips for iCIMS applications.",
+    "intro": "iCIMS is widely used by mid-size and large employers. Understanding how iCIMS parses resumes can help you format and keyword your application effectively.",
+    "parsingRules": [
+      "iCIMS extracts resume content into searchable fields for recruiters.",
+      "Standard section headings improve parsing accuracy.",
+      "Keywords from the job description are used in matching; include relevant terms.",
+      "Complete all required application fields; incomplete applications may be deprioritised."
+    ],
+    "formattingNotes": [
+      "Use clear headings (Experience, Education, Skills) and single-column layout.",
+      "Avoid complex tables or graphics in the body.",
+      "Include full job titles and company names; use consistent date formats.",
+      "Incorporate keywords from the job description naturally."
+    ],
+    "body": "iCIMS works best with clean, text-based resumes. Use standard headings and bullet points. Tailor your resume to each role and include relevant keywords. WadeCV can help you create an ATS-friendly resume that works for iCIMS and other systems.",
+    "relatedSlugs": ["workday", "greenhouse"]
+  },
+  {
+    "slug": "taleo",
+    "name": "Oracle Taleo",
+    "metaDescription": "How to optimize your resume for Taleo ATS. Parsing and formatting tips for Taleo applications.",
+    "intro": "Oracle Taleo is used by many enterprise employers. Knowing how Taleo parses and ranks resumes can improve your chances of passing the initial screen.",
+    "parsingRules": [
+      "Taleo parses resume text into structured fields for recruiter search and filtering.",
+      "Consistent formatting and headings help the system assign content correctly.",
+      "Keywords from the job posting are matched; include relevant terms in your resume.",
+      "Application questions and required fields must be completed."
+    ],
+    "formattingNotes": [
+      "Use standard section headings and a simple, single-column layout.",
+      "Prefer bullet points over dense paragraphs or tables.",
+      "Spell out important acronyms at least once if they are keywords.",
+      "Save as .docx or PDF with selectable text."
+    ],
+    "body": "Taleo rewards clear structure and keyword relevance. Use standard headings and weave in job-description keywords naturally. Focus on impact and outcomes. WadeCV can help you build a Taleo-friendly, tailored resume.",
+    "relatedSlugs": ["workday", "icims"]
+  },
+  {
+    "slug": "sap-successfactors",
+    "name": "SAP SuccessFactors",
+    "metaDescription": "How to optimize your resume for SAP SuccessFactors Recruiting. Parsing and formatting tips.",
+    "intro": "SAP SuccessFactors Recruiting is used by many large and global employers. This guide covers how to format and keyword your resume for SuccessFactors.",
+    "parsingRules": [
+      "SuccessFactors parses resume content for recruiter search and candidate matching.",
+      "Structured sections and clear job titles improve parsing.",
+      "Keywords from the job description influence ranking; include relevant terms.",
+      "Complete all required application steps and questions."
+    ],
+    "formattingNotes": [
+      "Use standard headings (Experience, Education, Skills) and single-column layout.",
+      "Avoid images and complex formatting in the body.",
+      "Use consistent date formats and full company names.",
+      "Match job description language where it honestly applies."
+    ],
+    "body": "SuccessFactors works well with clean, keyword-aligned resumes. Emphasise impact and use standard formatting. Tailor your resume to each role. WadeCV can help you create an ATS-friendly resume that works for SuccessFactors and other systems.",
+    "relatedSlugs": ["workday", "taleo"]
+  },
+  {
+    "slug": "jazzhr",
+    "name": "JazzHR",
+    "metaDescription": "How to optimize your resume for JazzHR ATS. Formatting and keyword tips for JazzHR applications.",
+    "intro": "JazzHR is used by many small and mid-size companies. This guide covers how to format and keyword your resume for JazzHR.",
+    "parsingRules": [
+      "JazzHR parses resume content for recruiter review and search.",
+      "Clear headings and structure improve parsing.",
+      "Keywords from the job description help with matching.",
+      "Complete application questions and required fields."
+    ],
+    "formattingNotes": [
+      "Use standard section headings and bullet points.",
+      "Keep layout simple and text-based.",
+      "Include relevant keywords from the job description.",
+      "Submit as PDF or DOCX with selectable text."
+    ],
+    "body": "JazzHR favours clear, scannable resumes. Use standard headings and emphasise impact. Tailor your resume to each role. WadeCV can help you create a resume that works for JazzHR and other ATS platforms.",
+    "relatedSlugs": ["greenhouse", "lever"]
+  },
+  {
+    "slug": "bamboohr",
+    "name": "BambooHR",
+    "metaDescription": "How to optimize your resume for BambooHR ATS. Formatting tips for BambooHR applications.",
+    "intro": "BambooHR is used by many SMBs for hiring. This guide covers how to format and keyword your resume for BambooHR.",
+    "parsingRules": [
+      "BambooHR parses resume content for recruiter review and search.",
+      "Standard headings and consistent formatting help parsing.",
+      "Keywords from the job posting are used in matching.",
+      "Complete all required application fields."
+    ],
+    "formattingNotes": [
+      "Use clear section headings (Experience, Education, Skills).",
+      "Prefer bullet points and simple layout.",
+      "Include full job titles and company names.",
+      "Weave in relevant keywords from the job description."
+    ],
+    "body": "BambooHR works best with clean, well-structured resumes. Use standard formatting and emphasise impact. Tailor your resume to each role. WadeCV can help you create an ATS-friendly resume that works for BambooHR and similar systems.",
+    "relatedSlugs": ["jazzhr", "greenhouse"]
+  },
+  {
+    "slug": "ashby",
+    "name": "Ashby",
+    "metaDescription": "How to optimize your resume for Ashby ATS. Formatting and keyword tips for Ashby applications.",
+    "intro": "Ashby is used by many tech and growth-stage companies. This guide covers how to format and keyword your resume for Ashby.",
+    "parsingRules": [
+      "Ashby parses resume content for recruiter review and search.",
+      "Structured sections and clear job titles improve parsing.",
+      "Keywords from the job description help with matching and search.",
+      "Complete application questions and required fields."
+    ],
+    "formattingNotes": [
+      "Use standard headings (Experience, Education, Skills) and single-column layout.",
+      "Use bullet points and clear, scannable formatting.",
+      "Include relevant keywords from the job description naturally.",
+      "Submit as PDF or DOCX with selectable text."
+    ],
+    "body": "Ashby is designed for efficient recruiter workflow. A clean, keyword-aligned resume will parse well and stand out. Emphasise impact and outcomes. Tailor your resume to each role. WadeCV can help you create a resume that works for Ashby and other modern ATS platforms.",
+    "relatedSlugs": ["lever", "greenhouse"]
   }
 ]
