@@ -21,7 +21,7 @@ export default function JobsIndexPage() {
           These guides break down real job descriptions by role: what you’ll typically be expected to do, which skills to highlight, salary ranges, career paths, and the resume keywords that get past screening. Use them to align your experience with what employers want, then create a tailored CV with WadeCV so every application speaks directly to the job.
         </p>
         <p>
-          Whether you’re targeting a specific company (e.g. Google, McKinsey) or a type of role (e.g. product manager, data analyst, customer success), you’ll find actionable breakdowns and keyword lists to strengthen your next application.
+          Whether you’re targeting a type of role (e.g. product manager, data analyst, customer success, software engineer), you’ll find actionable breakdowns and keyword lists to strengthen your next application.
         </p>
       </div>
       <ul className="space-y-3">
