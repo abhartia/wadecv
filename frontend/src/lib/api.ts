@@ -12,6 +12,41 @@ class ApiError extends Error {
   }
 }
 
+/** Refresh tokens using refresh_token from localStorage; save and notify. Returns new access token or null. */
+async function tryRefreshTokens(): Promise<string | null> {
+  if (typeof window === "undefined") return null;
+  const refresh = localStorage.getItem("refresh_token");
+  if (!refresh) return null;
+  try {
+    const res = await fetch(`${API_URL}/api/auth/refresh`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ refresh_token: refresh }),
+      credentials: "include",
+    });
+    if (!res.ok) return null;
+    const tokens = (await res.json()) as { access_token: string; refresh_token: string };
+    localStorage.setItem("access_token", tokens.access_token);
+    localStorage.setItem("refresh_token", tokens.refresh_token);
+    window.dispatchEvent(new CustomEvent("tokensRefreshed", { detail: tokens }));
+    return tokens.access_token;
+  } catch {
+    return null;
+  }
+}
+
+/** Performs fetch; on 401 with a token, tries refresh and one retry with new token. */
+async function fetchWithAuth(url: string, init: RequestInit, token: string | null): Promise<Response> {
+  const headers = new Headers(init.headers);
+  if (token) headers.set("Authorization", `Bearer ${token}`);
+  let res = await fetch(url, { ...init, headers, credentials: "include" });
+  if (res.status !== 401 || !token) return res;
+  const newToken = await tryRefreshTokens();
+  if (!newToken) return res;
+  headers.set("Authorization", `Bearer ${newToken}`);
+  return fetch(url, { ...init, headers, credentials: "include" });
+}
+
 async function request<T>(endpoint: string, options: FetchOptions = {}): Promise<T> {
   const { token, ...fetchOptions } = options;
 
@@ -23,15 +58,10 @@ async function request<T>(endpoint: string, options: FetchOptions = {}): Promise
     headers["Content-Type"] = "application/json";
   }
 
-  if (token) {
-    headers["Authorization"] = `Bearer ${token}`;
-  }
-
-  const res = await fetch(`${API_URL}${endpoint}`, {
+  const res = await fetchWithAuth(`${API_URL}${endpoint}`, {
     ...fetchOptions,
     headers,
-    credentials: "include",
-  });
+  }, token ?? null);
 
   if (!res.ok) {
     const body = await res.json().catch(() => ({ detail: "An error occurred" }));
@@ -169,10 +199,11 @@ export const api = {
     request<Array<{ id: string; original_filename: string; status: string; created_at: string; job_title: string | null; company_name: string | null }>>("/api/cv/", { token }),
 
   downloadCV: (cvId: string, token: string, format: "docx" | "pdf" = "docx") =>
-    fetch(`${API_URL}/api/cv/${cvId}/download?format=${format}`, {
-      headers: { Authorization: `Bearer ${token}` },
-      credentials: "include",
-    }),
+    fetchWithAuth(
+      `${API_URL}/api/cv/${cvId}/download?format=${format}`,
+      {},
+      token
+    ),
 
   // Jobs
   listJobs: (token: string, status?: string) =>
@@ -249,10 +280,11 @@ export const api = {
     ),
 
   downloadCoverLetter: (jobId: string, token: string, format: "docx" | "pdf" = "docx") =>
-    fetch(`${API_URL}/api/cover-letter/${jobId}/download?format=${format}`, {
-      headers: { Authorization: `Bearer ${token}` },
-      credentials: "include",
-    }),
+    fetchWithAuth(
+      `${API_URL}/api/cover-letter/${jobId}/download?format=${format}`,
+      {},
+      token
+    ),
 
   deleteCoverLetter: (jobId: string, token: string) =>
     request(`/api/cover-letter/${jobId}`, { method: "DELETE", token }),

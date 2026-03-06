@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "google",
+    "name": "Google",
+    "metaDescription": "Google resume example and hiring requirements. Keywords and tips to tailor your resume for Google software and non-engineering roles.",
+    "intro": "Google receives huge volumes of applications every year. Standing out requires a clear, ATS-friendly resume that matches how they describe roles and what recruiters look for. This guide covers typical hiring expectations and resume strategies that align with Google's process.",
+    "hiringRequirements": [
+      "Strong academic record and/or demonstrated impact in prior roles",
+      "Relevant experience that maps to the role's responsibilities and level",
+      "Evidence of leadership, collaboration, and structured problem-solving",
+      "Clear communication and ability to work in ambiguous, fast-paced environments",
+      "For technical roles: proficiency in relevant languages and systems; for non-technical: data fluency and stakeholder management"
+    ],
+    "keywords": ["impact", "scale", "cross-functional", "user", "data-driven", "experiment", "launch", "ownership", "leadership", "collaboration", "ambiguity", "metrics", "efficiency", "quality"],
+    "sampleSnippet": "Led migration of core service to new platform, reducing p99 latency by 40% and improving reliability for 10M+ daily active users. Drove cross-functional alignment with product, SRE, and support teams and documented runbooks for on-call.",
+    "body": "Google recruiters and hiring managers look for impact, scope, and how you work with others. Use concrete metrics and avoid vague language. Match the level of the role—junior roles need evidence of growth and ownership; senior roles need system-level or org-level impact. Keep formatting simple so ATS and human reviewers can parse your resume easily. Tailoring your resume to each specific job description at Google will improve your chances. WadeCV can help you reframe your experience to align with Google-style job posts and surface your strongest bullets."
+  },
+  {
+    "slug": "amazon",
+    "name": "Amazon",
+    "metaDescription": "Amazon resume example and hiring bar. Leadership principles, keywords, and how to tailor your resume for Amazon roles.",
+    "intro": "Amazon evaluates candidates heavily against its Leadership Principles and the bar for each level. Your resume should show ownership, bias for action, and customer obsession in concrete ways. This guide outlines what Amazon looks for and how to reflect it on your resume.",
+    "hiringRequirements": [
+      "Demonstrated ownership of outcomes and accountability for results",
+      "Customer focus and evidence of working backwards from customer needs",
+      "High standards and insistence on quality and operational excellence",
+      "Ability to work in a data-driven, iterative environment",
+      "Collaboration and willingness to disagree and commit when needed"
+    ],
+    "keywords": ["ownership", "customer", "bias for action", "deliver results", "insist on high standards", "earn trust", "dive deep", "data", "metrics", "operational excellence", "launch", "scale", "cross-functional", "influence"],
+    "sampleSnippet": "Owned end-to-end delivery of new checkout feature; reduced cart abandonment by 15% through A/B-tested UX changes. Drove alignment with product, eng, and ops; wrote PR/FAQs and launched in 3 regions.",
+    "body": "Amazon's bar is high and principles-based. Use STAR-style bullets where you can: situation, action, result. Emphasise scope (customers, revenue, or systems affected) and how you made decisions with data. Avoid generic phrases; use language that echoes the job description and Leadership Principles without copying them verbatim. Tailoring your resume to the specific Amazon team and level will help. WadeCV can help you align your experience with Amazon-style job descriptions and highlight ownership and impact."
+  },
+  {
+    "slug": "mckinsey",
+    "name": "McKinsey & Company",
+    "metaDescription": "McKinsey resume example and what they look for. How to structure your resume for consulting applications and interviews.",
+    "intro": "McKinsey hires from many backgrounds—business, STEM, law, medicine—and values problem-solving, leadership, and impact. Your resume needs to tell a clear story of achievement and progression. This guide covers what McKinsey looks for and how to present it.",
+    "hiringRequirements": [
+      "Outstanding academic performance and evidence of intellectual curiosity",
+      "Structured problem-solving and analytical rigour",
+      "Leadership experience in academic, professional, or extracurricular settings",
+      "Strong communication and ability to work in teams",
+      "Integrity and professionalism"
+    ],
+    "keywords": ["analysis", "strategy", "client", "recommendations", "leadership", "team", "impact", "quantitative", "stakeholder", "project", "framework", "executive", "problem-solving", "modelling", "research"],
+    "sampleSnippet": "Led team of 4 in capstone project for Fortune 500 client; developed market entry strategy and financial model adopted by C-suite. Presented findings to board-level stakeholders and delivered 80-page recommendation deck.",
+    "body": "McKinsey resumes are typically one page for pre-MBA, two for experienced hires. Lead with education and then experience, using clear bullets with outcomes. Quantify wherever possible—team size, scope of projects, and impact. Tailoring your resume to the practice or industry you are targeting (e.g. digital, operations, healthcare) can strengthen your fit. WadeCV can help you reframe your experience to match consulting job descriptions and highlight your strongest achievements."
+  },
+  {
+    "slug": "goldman-sachs",
+    "name": "Goldman Sachs",
+    "metaDescription": "Goldman Sachs resume example and hiring expectations. Keywords and structure for investment banking, markets, and corporate roles.",
+    "intro": "Goldman Sachs recruits for roles across divisions—investment banking, markets, asset management, engineering, and more. Each division has its own focus, but all value rigour, teamwork, and results. This guide outlines how to tailor your resume for Goldman-style roles.",
+    "hiringRequirements": [
+      "Strong academic record and quantitative aptitude where relevant",
+      "Attention to detail and ability to work under pressure",
+      "Team collaboration and communication with senior professionals",
+      "Integrity and commitment to client service and risk management",
+      "Relevant internships or experience in finance, tech, or related fields"
+    ],
+    "keywords": ["analysis", "financial", "modelling", "client", "team", "due diligence", "transaction", "valuation", "markets", "risk", "compliance", "presentation", "Excel", "data", "stakeholder", "deadline"],
+    "sampleSnippet": "Supported M&A execution for 3 live deals (combined value $2B+); built operating model and valuation materials for client C-suite. Coordinated with legal, tax, and diligence teams across 2 countries.",
+    "body": "Goldman resumes should be precise and outcome-focused. Use numbers—deal sizes, team size, time saved, or scope of analysis. Formatting should be clean and consistent so recruiters can scan quickly. Tailor your resume to the division and level you are applying for. WadeCV can help you align your experience with Goldman-style job descriptions and emphasise the most relevant achievements."
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "teacher-to-product-manager",
+    "title": "Teacher to Product Manager Resume",
+    "metaDescription": "How to write a resume for transitioning from teaching to product management. Tips, structure, and keywords to highlight transferable skills.",
+    "intro": "Moving from teaching to product management is a common and viable career change. Teachers bring curriculum design, stakeholder management, and outcome-focused thinking—all relevant to PM. This guide explains how to frame your experience and structure your resume so recruiters see the connection.",
+    "fromRole": "Teacher / Educator",
+    "toRole": "Product Manager",
+    "tips": [
+      "Lead with a short summary that states your transition and highlights transferable skills (e.g. curriculum as 'product', students and parents as 'users' and 'stakeholders').",
+      "Reframe teaching experience in product terms: curriculum design as roadmap and prioritisation; assessments as metrics and outcomes; parent/colleague collaboration as cross-functional work.",
+      "Include any side projects, tools you adopted, or initiatives you led (e.g. new programmes, EdTech use) to show initiative and product-mindedness.",
+      "Add relevant PM skills: basics of agile, discovery, or data literacy if you have them; otherwise consider a short course or certification to list.",
+      "Tailor each application to the company and role; emphasise the parts of your teaching experience that align with the job description."
+    ],
+    "body": "Your resume should make the bridge explicit. Use a profile or summary at the top, then structure your experience bullets to show impact (e.g. 'Designed and rolled out X programme for Y students; improved Z outcome'). Where possible, use language that echoes product work—stakeholders, outcomes, iteration, and user needs. A tailored resume that connects your teaching experience to PM responsibilities will stand out. WadeCV can help you reframe your teaching background into a product-manager-focused resume that matches job descriptions and highlights your transferable strengths."
+  },
+  {
+    "slug": "consulting-to-tech",
+    "title": "Consulting to Tech Resume",
+    "metaDescription": "How to transition from consulting to tech. Resume tips and structure to highlight transferable skills for PM, strategy, and operations roles.",
+    "intro": "Consultants moving into tech bring structured problem-solving, client communication, and project delivery skills. This guide covers how to position your consulting experience on your resume for PM, strategy, operations, or bizops roles in tech companies.",
+    "fromRole": "Management / Strategy Consultant",
+    "toRole": "Product, Strategy, or Operations in Tech",
+    "tips": [
+      "Open with a summary that states your pivot and emphasises relevance: e.g. client work as 'stakeholder management', deliverables as 'product or process outcomes'.",
+      "Reframe projects in product/tech terms: strategy projects as 'discovery' or 'roadmap'; implementation work as 'launch' or 'rollout'; analytics as 'data-driven decisions'.",
+      "Quantify impact: team size, client scope, revenue or cost impact, and timeline so tech hiring managers see scale and results.",
+      "Highlight any tech-adjacent work: digital transformation, tool implementation, or data/analytics projects.",
+      "Tailor your resume to the type of role (PM vs strategy vs ops) and use keywords from the job description."
+    ],
+    "body": "Tech companies value consultants who can drive outcomes and work with cross-functional teams. Your resume should show scope (client size, team, budget) and results (recommendations implemented, metrics improved). Use clear, concise bullets and avoid consulting jargon where a tech reader might not know it. Tailoring your resume to each role will align your experience with what they are looking for. WadeCV can help you translate your consulting experience into a tech-focused resume that matches PM, strategy, and operations job descriptions."
+  },
+  {
+    "slug": "finance-to-data-science",
+    "title": "Finance to Data Science Resume",
+    "metaDescription": "How to write a resume when transitioning from finance to data science. Tips to highlight quantitative and analytical transferable skills.",
+    "intro": "Finance professionals often have strong quantitative and analytical foundations that transfer well to data science. This guide explains how to structure your resume and describe your experience so data science hiring managers see the relevance.",
+    "fromRole": "Finance / Banking / Accounting",
+    "toRole": "Data Scientist / Data Analyst",
+    "tips": [
+      "Start with a summary that states your transition and highlights quantitative, modelling, and data work from finance.",
+      "Reframe finance experience in data terms: valuation or risk models as 'predictive modelling'; reporting and analysis as 'data analysis and visualisation'; large datasets as 'data engineering' or 'data quality' where applicable.",
+      "List technical skills clearly: SQL, Python or R, Excel, and any BI tools; add ML or stats courses/certifications if you have them.",
+      "Emphasise outcomes: accuracy of models, decisions influenced, time saved, or errors reduced through analysis.",
+      "Tailor each application to the role (e.g. more ML vs more analytics) and industry; use keywords from the job description."
+    ],
+    "body": "Your resume should make the quantitative thread obvious. Highlight any programming, scripting, or advanced Excel work; list relevant courses or side projects in data science or ML. Use bullets that show you worked with data, built or validated models, and drove decisions. Tailoring your resume to the specific data science role (e.g. ML engineer vs analyst) will improve fit. WadeCV can help you reframe your finance experience into a data-science-oriented resume that matches job descriptions and showcases your analytical and technical strengths."
+  }
+]

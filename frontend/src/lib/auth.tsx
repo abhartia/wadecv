@@ -117,6 +117,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return () => clearInterval(interval);
   }, [token]);
 
+  useEffect(() => {
+    const onTokensRefreshed = async (e: CustomEvent<{ access_token: string; refresh_token: string }>) => {
+      const { access_token, refresh_token } = e.detail;
+      saveTokens(access_token, refresh_token);
+      try {
+        const u = await api.getMe(access_token);
+        setUser(u);
+      } catch {
+        // ignore
+      }
+    };
+    window.addEventListener("tokensRefreshed", onTokensRefreshed as unknown as EventListener);
+    return () => window.removeEventListener("tokensRefreshed", onTokensRefreshed as unknown as EventListener);
+  }, []);
+
   const login = async (email: string, password: string) => {
     const tokens = await api.login(email, password);
     saveTokens(tokens.access_token, tokens.refresh_token);

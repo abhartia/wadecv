@@ -1,0 +1,126 @@
+[
+  {
+    "slug": "google-software-engineer",
+    "title": "Google Software Engineer Job Description",
+    "metaDescription": "What Google looks for in software engineers: responsibilities, required skills, salary ranges, and top resume keywords to get past the recruiter and ATS.",
+    "intro": "Google's software engineer roles are among the most sought-after in tech. Understanding the job description and how to reflect it on your resume can significantly improve your chances of landing an interview. This guide breaks down typical responsibilities, required skills, and resume keywords that align with what Google's hiring managers and ATS look for.",
+    "responsibilities": [
+      "Design, develop, and maintain scalable software systems and services",
+      "Collaborate with product managers, designers, and cross-functional teams to define requirements",
+      "Write clean, well-tested code and participate in code reviews",
+      "Debug and resolve production issues across the stack",
+      "Contribute to technical design documents and architecture decisions",
+      "Mentor junior engineers and support team best practices"
+    ],
+    "requiredSkills": [
+      "Strong proficiency in one or more general-purpose languages (e.g. Java, C++, Python, Go)",
+      "Data structures, algorithms, and system design",
+      "Experience with distributed systems or large-scale services",
+      "Comfort with Unix/Linux environments and tooling",
+      "Effective communication and collaboration skills"
+    ],
+    "salaryRange": "Typically $120,000–$250,000+ base depending on level and location, plus equity and benefits.",
+    "careerPath": ["Software Engineer II", "Senior Software Engineer", "Staff Engineer", "Principal Engineer"],
+    "resumeKeywords": ["distributed systems", "system design", "scalability", "code review", "cross-functional", "Python", "Java", "Go", "Kubernetes", "cloud infrastructure", "API design", "testing", "mentorship"],
+    "body": "When tailoring your resume for a Google software engineer role, emphasize impact and scale. Use metrics wherever possible: systems you improved, latency or throughput gains, and the size of user bases or data you handled. Highlight experience with distributed systems, reliability, and collaboration across teams. Google's process often includes resume screening by recruiters and automated systems, so matching the language in the job description—without keyword stuffing—will help your application get a closer look. A tool like WadeCV can help you align your existing experience with this role and surface the strongest bullets for your tailored application."
+  },
+  {
+    "slug": "product-manager-startup",
+    "title": "Product Manager at a Startup – Job Description & Resume Guide",
+    "metaDescription": "Startup product manager responsibilities, required skills, and resume keywords. How to position your experience for fast-moving PM roles.",
+    "intro": "Product managers at startups wear many hats: roadmap ownership, customer discovery, and working closely with engineering and design. This guide outlines typical responsibilities, skills, and resume keywords so you can present your experience in a way that resonates with startup hiring managers and ATS.",
+    "responsibilities": [
+      "Define product vision, strategy, and roadmap in alignment with business goals",
+      "Gather and prioritize customer and stakeholder requirements",
+      "Write clear specs, user stories, and acceptance criteria for engineering",
+      "Work with design and engineering in agile cycles to ship features",
+      "Analyze usage data and feedback to iterate on product decisions",
+      "Communicate roadmap and trade-offs to leadership and cross-functional teams"
+    ],
+    "requiredSkills": [
+      "Product discovery and prioritization frameworks",
+      "Stakeholder management and cross-functional collaboration",
+      "Data-informed decision making (metrics, A/B tests, user research)",
+      "Technical fluency to work with engineers on scope and feasibility",
+      "Strong written and verbal communication"
+    ],
+    "salaryRange": "Varies widely; early-stage often $90,000–$140,000 base plus equity; growth-stage can be higher.",
+    "careerPath": ["Associate PM", "Product Manager", "Senior PM", "Director of Product", "VP Product"],
+    "resumeKeywords": ["roadmap", "user stories", "agile", "stakeholder", "prioritization", "metrics", "A/B testing", "user research", "cross-functional", "product strategy", "customer discovery", "OKRs", "backlog"],
+    "body": "Startup PM roles value ownership and outcomes over formal process. On your resume, lead with impact: features shipped, metrics improved, and how you influenced strategy or prioritization. Use concrete numbers (e.g. adoption rates, revenue impact, user growth). Tailoring your resume to each startup's stage and product area will help you stand out. WadeCV can help you reframe your existing PM experience for startup-style job descriptions so your strongest wins are front and centre."
+  },
+  {
+    "slug": "data-analyst-healthcare",
+    "title": "Data Analyst in Healthcare – Job Description & Resume Tips",
+    "metaDescription": "Healthcare data analyst responsibilities, skills, salary ranges, and resume keywords to land roles in providers, payers, and health tech.",
+    "intro": "Data analysts in healthcare help organizations make sense of clinical, operational, and financial data. Roles exist at providers, payers, pharma, and health tech companies. This guide covers typical job requirements and how to tailor your resume for these positions.",
+    "responsibilities": [
+      "Build and maintain dashboards and reports for clinical, operational, or financial metrics",
+      "Clean, transform, and analyze large datasets (claims, EMR, surveys)",
+      "Support ad hoc analyses and present findings to clinical and business stakeholders",
+      "Ensure data quality and compliance with HIPAA and internal policies",
+      "Collaborate with IT, clinical teams, and leadership to define reporting needs"
+    ],
+    "requiredSkills": [
+      "SQL and experience with relational databases and data warehouses",
+      "Visualization tools (e.g. Tableau, Power BI, Looker)",
+      "Statistical literacy and basic scripting (Python or R often preferred)",
+      "Understanding of healthcare data (claims, EMR, coding) and regulatory context",
+      "Ability to explain technical results to non-technical audiences"
+    ],
+    "salaryRange": "Often $65,000–$110,000 depending on experience, organization, and location.",
+    "careerPath": ["Data Analyst", "Senior Data Analyst", "Analytics Manager", "Director of Analytics"],
+    "resumeKeywords": ["SQL", "Tableau", "Power BI", "healthcare", "HIPAA", "claims", "EMR", "EHR", "dashboard", "metrics", "data quality", "stakeholder", "Python", "R", "analytics", "reporting"],
+    "body": "Healthcare data roles value both technical skills and domain awareness. On your resume, highlight experience with healthcare datasets, compliance considerations, and how your analyses drove decisions for clinicians or operations. Quantify impact where you can (e.g. reports used by X teams, time saved, or improvements in key metrics). Tailoring your resume to each employer's focus—clinical quality, revenue cycle, population health, or product analytics—will improve your fit. Use WadeCV to align your background with specific healthcare data analyst job descriptions."
+  },
+  {
+    "slug": "mckinsey-consultant",
+    "title": "McKinsey Consultant Job Description & Resume Guide",
+    "metaDescription": "What McKinsey looks for in consultants: responsibilities, skills, and resume keywords. How to structure your resume for consulting applications.",
+    "intro": "McKinsey & Company hires consultants from a wide range of backgrounds—from business and economics to engineering and life sciences. Understanding the job description and how to frame your experience will help your resume pass screening and land interviews. This guide breaks down typical expectations and resume optimization tips.",
+    "responsibilities": [
+      "Conduct rigorous analysis to address client business problems",
+      "Develop structured recommendations and present findings to client executives",
+      "Work in teams to deliver projects on time and to high quality standards",
+      "Build client relationships and support business development where relevant",
+      "Contribute to firm knowledge and practice development",
+      "Manage workstreams and mentor junior team members"
+    ],
+    "requiredSkills": [
+      "Strong analytical and problem-solving skills with attention to detail",
+      "Ability to structure ambiguous problems and communicate clearly",
+      "Excel and PowerPoint fluency; comfort with data and modelling",
+      "Collaboration and teamwork in diverse, high-pressure settings",
+      "Academic excellence and evidence of leadership or impact"
+    ],
+    "salaryRange": "Base salaries for entry-level consultants often in the $90,000–$110,000+ range, with performance bonuses and benefits.",
+    "careerPath": ["Business Analyst", "Associate", "Engagement Manager", "Associate Partner", "Partner"],
+    "resumeKeywords": ["analysis", "client", "recommendations", "stakeholder", "strategy", "quantitative", "leadership", "team", "impact", "problem-solving", "executive", "modelling", "framework", "project"],
+    "body": "McKinsey values problem-solving, leadership, and impact. Your resume should show progression, quantifiable results, and evidence of working with senior stakeholders or in teams. Use clear, structured bullet points and avoid jargon. Tailoring your resume to highlight relevant industry or functional experience for the role you are targeting can strengthen your application. WadeCV can help you reframe your experience to match consulting-style job descriptions and surface your strongest achievements."
+  },
+  {
+    "slug": "customer-success-manager",
+    "title": "Customer Success Manager Job Description & Resume Keywords",
+    "metaDescription": "Customer success manager responsibilities, skills, salary ranges, and resume keywords. How to tailor your resume for CSM roles in SaaS and tech.",
+    "intro": "Customer success managers focus on adoption, retention, and growth of existing customers. The role is critical in SaaS and subscription businesses. This guide outlines typical job requirements and how to present your experience so recruiters and ATS recognise your fit.",
+    "responsibilities": [
+      "Onboard new customers and drive time-to-value and adoption",
+      "Monitor health scores, usage, and risk indicators; run proactive outreach",
+      "Conduct business reviews and identify expansion or upsell opportunities",
+      "Collaborate with support, product, and sales to resolve issues and share feedback",
+      "Renew contracts and reduce churn through relationship and value delivery",
+      "Document processes and contribute to playbooks and best practices"
+    ],
+    "requiredSkills": [
+      "Strong communication and relationship management",
+      "Experience with CRM (e.g. Salesforce), support tools, and product usage data",
+      "Ability to understand customer goals and map solutions to outcomes",
+      "Organisation and project management across multiple accounts",
+      "Empathy and resilience when handling escalations"
+    ],
+    "salaryRange": "Often $70,000–$120,000 base plus variable compensation, depending on segment and company.",
+    "careerPath": ["Customer Success Associate", "CSM", "Senior CSM", "Team Lead", "Director of Customer Success"],
+    "resumeKeywords": ["customer success", "retention", "churn", "onboarding", "adoption", "renewal", "expansion", "NPS", "health score", "stakeholder", "SaaS", "CRM", "quarterly business review", "upsell", "customer journey"],
+    "body": "CSM roles reward outcomes: retention rates, expansion revenue, and improved adoption or NPS. On your resume, lead with metrics—renewal rates, revenue retained or expanded, number of accounts, and feedback scores. Show that you can own the relationship and work across internal teams. Tailoring your resume to the company's segment (SMB, mid-market, enterprise) and industry will help. WadeCV can help you align your customer-facing experience with CSM job descriptions and highlight your strongest impact."
+  }
+]

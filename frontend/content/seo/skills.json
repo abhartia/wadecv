@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "software-engineer",
+    "title": "Skills for Software Engineer Resume",
+    "metaDescription": "Technical and soft skills to list on a software engineer resume. Skill clusters, bullet examples, and keywords that get past ATS and recruiters.",
+    "intro": "A strong software engineer resume balances technical depth with clear evidence of impact and collaboration. This guide groups skills into clusters and shows how to turn them into compelling resume bullets that pass ATS and resonate with hiring managers.",
+    "skillClusters": [
+      { "name": "Languages & runtimes", "items": ["Python", "Java", "JavaScript/TypeScript", "Go", "C++", "Ruby", "Node.js"] },
+      { "name": "Systems & infra", "items": ["Distributed systems", "APIs", "Databases (SQL/NoSQL)", "Kubernetes", "AWS/GCP/Azure", "CI/CD", "Monitoring"] },
+      { "name": "Practices", "items": ["Code review", "Testing (unit, integration)", "Agile/Scrum", "System design", "Documentation"] },
+      { "name": "Soft skills", "items": ["Cross-functional collaboration", "Mentorship", "Technical communication", "Ownership", "Problem-solving"] }
+    ],
+    "bulletExamples": [
+      "Designed and shipped a new API used by 5 internal services; reduced p99 latency by 30% and improved error handling.",
+      "Led migration of legacy monolith to microservices; cut deployment time from 2 hours to 15 minutes and improved reliability.",
+      "Mentored 3 junior engineers; established code review guidelines and on-call runbooks adopted across the team."
+    ],
+    "body": "List skills in a dedicated section and reinforce them in your experience bullets. Use the same terms as the job description where they genuinely apply—ATS and recruiters look for keyword match. Prefer impact-focused bullets (what you built, for whom, and what improved) over task lists. Tailoring your resume to each role will surface the right mix of languages, systems, and soft skills. WadeCV can help you align your existing experience with software engineer job descriptions and highlight your strongest technical and collaborative wins."
+  },
+  {
+    "slug": "product-manager",
+    "title": "Skills for Product Manager Resume",
+    "metaDescription": "Skills to put on a product manager resume: discovery, prioritization, data, and collaboration. Bullet examples and keywords for PM roles.",
+    "intro": "Product managers need to show they can drive strategy, work with data, and ship outcomes with engineering and design. This guide outlines skill clusters and resume bullet examples that resonate with PM hiring managers and ATS.",
+    "skillClusters": [
+      { "name": "Discovery & strategy", "items": ["User research", "Customer interviews", "Roadmap", "Prioritization", "OKRs", "Competitive analysis"] },
+      { "name": "Execution", "items": ["Agile", "User stories", "Backlog", "Sprints", "Stakeholder alignment", "Release management"] },
+      { "name": "Data & impact", "items": ["Metrics", "A/B testing", "Analytics", "SQL", "Dashboards", "ROI"] },
+      { "name": "Collaboration", "items": ["Cross-functional", "Engineering", "Design", "Leadership", "Presentation", "Influence"] }
+    ],
+    "bulletExamples": [
+      "Owned roadmap for core onboarding flow; increased activation by 25% through iterative A/B tests and user research.",
+      "Led discovery and prioritization for 3 product areas; aligned engineering, design, and leadership on quarterly OKRs.",
+      "Drove go-to-market for new feature with 50K+ users in first quarter; presented results to C-suite and board."
+    ],
+    "body": "PM resumes should emphasise outcomes: adoption, revenue, retention, or efficiency gains. Use metrics in every bullet where possible. Balance strategic work (roadmap, discovery) with execution (shipping, stakeholder management). Tailoring your resume to the company's stage and product type will improve fit. WadeCV can help you reframe your PM experience to match job descriptions and surface your strongest impact."
+  },
+  {
+    "slug": "customer-service",
+    "title": "Skills for Customer Service Resume",
+    "metaDescription": "Customer service resume skills: communication, problem-solving, tools, and soft skills. Bullet examples and keywords for CS and support roles.",
+    "intro": "Customer service and support roles value communication, empathy, and efficiency. This guide groups skills into clusters and shows how to write resume bullets that demonstrate impact and readiness for higher-tier or leadership roles.",
+    "skillClusters": [
+      { "name": "Communication", "items": ["Verbal and written", "Empathy", "De-escalation", "Active listening", "Clear explanations"] },
+      { "name": "Tools & systems", "items": ["CRM (Salesforce, Zendesk)", "Ticketing", "Live chat", "Knowledge base", "Basic data/reporting"] },
+      { "name": "Problem-solving", "items": ["Troubleshooting", "Root cause", "Process improvement", "Escalation handling"] },
+      { "name": "Soft skills", "items": ["Teamwork", "Time management", "Adaptability", "Patience", "Customer focus"] }
+    ],
+    "bulletExamples": [
+      "Handled 50+ customer contacts daily with top quartile CSAT and resolution rate; identified recurring issues and proposed FAQ updates that cut repeat contacts by 20%.",
+      "Trained 5 new hires on product and systems; created troubleshooting playbook adopted by entire support team.",
+      "Reduced average handle time by 15% while maintaining quality scores; led pilot for new chat tool rollout."
+    ],
+    "body": "Lead with metrics: volume handled, CSAT or NPS, resolution rates, and time saved. Show progression—taking on harder cases, training others, or improving processes. Use keywords from the job description (tools, channels, and soft skills) so ATS and recruiters see a match. Tailoring your resume to each company's support model will help. WadeCV can help you align your customer service experience with job descriptions and highlight your strongest contributions."
+  },
+  {
+    "slug": "data-analyst",
+    "title": "Skills for Data Analyst Resume",
+    "metaDescription": "Data analyst resume skills: SQL, visualization, statistics, and domain. Skill clusters and bullet examples for analytics roles.",
+    "intro": "Data analysts need to show they can query data, build reports, and turn insights into action. This guide outlines technical and soft skills to list, plus bullet examples that demonstrate impact for analyst roles.",
+    "skillClusters": [
+      { "name": "Data & SQL", "items": ["SQL", "Data modelling", "ETL", "Data quality", "Warehouses (BigQuery, Snowflake, Redshift)"] },
+      { "name": "Visualization & reporting", "items": ["Tableau", "Power BI", "Looker", "Dashboards", "Reporting"] },
+      { "name": "Analysis", "items": ["Statistics", "A/B testing", "Trend analysis", "Python/R", "Excel"] },
+      { "name": "Collaboration", "items": ["Stakeholder communication", "Requirements", "Documentation", "Presentation"] }
+    ],
+    "bulletExamples": [
+      "Built and maintained 10+ dashboards for sales and marketing; reduced manual report requests by 40% and enabled self-serve analytics.",
+      "Analysed conversion funnel with SQL and Python; identified drop-off points and recommended tests that increased sign-up completion by 18%.",
+      "Standardised definitions and documentation for core metrics; aligned 5 teams on single source of truth and reduced reporting errors."
+    ],
+    "body": "Emphasise the impact of your work: reports adopted, decisions influenced, and metrics improved. List tools and languages clearly so ATS and hiring managers can see technical fit. Tailoring your resume to the industry (e.g. product, marketing, finance, healthcare) will strengthen your application. WadeCV can help you align your analyst experience with data analyst job descriptions and surface your best outcomes."
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "workday",
+    "name": "Workday",
+    "metaDescription": "How to optimize your resume for Workday ATS. Parsing rules, formatting tips, and keywords that get your application past the system.",
+    "intro": "Workday is used by many large employers for recruiting. Understanding how Workday ATS parses and ranks resumes can help you format and phrase your application so it gets seen by recruiters. This guide covers typical parsing behaviour and how to optimize your resume.",
+    "parsingRules": [
+      "Workday extracts sections (experience, education, skills) and parses dates, job titles, and company names.",
+      "Headings and consistent formatting help the system correctly assign content to the right section.",
+      "Bullet points and clear job titles are generally parsed well; avoid complex tables or graphics.",
+      "Skills and keywords from the job description are matched; include relevant terms in your resume text.",
+      "Custom questions and required fields in the application must be completed; incomplete applications may be deprioritised."
+    ],
+    "formattingNotes": [
+      "Use standard section headings (e.g. Experience, Education, Skills) so the ATS can map content correctly.",
+      "Prefer simple bullet lists over nested tables or multi-column layouts in the body of the resume.",
+      "Include full job titles and company names; spell out acronyms once if they are important keywords.",
+      "Save and submit your resume as a .docx or PDF; ensure the file is text-based and not image-only.",
+      "Match the wording of the job description where it honestly applies—keywords matter for ranking."
+    ],
+    "body": "Workday ATS works best with clean, well-structured resumes. Use a single column, clear headings, and consistent date formats. Repeating keywords from the job description in your experience and skills sections can improve your ranking, but avoid stuffing—relevance and clarity matter for human reviewers too. After you pass the ATS, recruiters will look for impact and fit. Tailoring your resume to each role (including keyword alignment) will give you the best chance. WadeCV can help you create an ATS-friendly, tailored resume that works for Workday and other systems."
+  },
+  {
+    "slug": "greenhouse",
+    "name": "Greenhouse",
+    "metaDescription": "Resume optimization for Greenhouse ATS. How Greenhouse parses resumes and how to format and keyword your application.",
+    "intro": "Greenhouse is a popular applicant tracking system used by many tech and growth-stage companies. Knowing how to format and keyword your resume for Greenhouse can improve your chances of passing the initial screen and reaching a human reviewer.",
+    "parsingRules": [
+      "Greenhouse parses resume text into structured fields (experience, education, skills) for recruiter review and search.",
+      "Clear section headings and consistent formatting improve parsing accuracy.",
+      "Recruiters often search by keyword; including role-relevant terms in your resume helps you show up in results.",
+      "Attachments are stored and displayed to recruiters; a clean, readable PDF or DOCX is recommended.",
+      "Application questions may be required; incomplete applications may not be considered."
+    ],
+    "formattingNotes": [
+      "Use standard headings (Experience, Education, Skills) and a single-column layout for best parsing.",
+      "Avoid images, heavy graphics, or multi-column tables in the main body of the resume.",
+      "Use bullet points and clear job titles; include company names and dates in a consistent format.",
+      "Incorporate relevant keywords from the job description naturally in your bullets and skills section.",
+      "Keep the resume to a reasonable length (e.g. 1–2 pages) so recruiters can scan it quickly in Greenhouse."
+    ],
+    "body": "Greenhouse allows recruiters to search and filter by keywords and experience. A well-formatted resume with relevant terms will rank better and be easier to review. Focus on impact and clarity—ATS optimization should support, not replace, strong content. Tailoring your resume to each Greenhouse job posting will align your language with what recruiters are looking for. WadeCV can help you build an ATS-friendly, tailored resume that performs well in Greenhouse and similar systems."
+  },
+  {
+    "slug": "lever",
+    "name": "Lever",
+    "metaDescription": "How to optimize your resume for Lever ATS. Parsing behaviour, formatting tips, and keyword matching for Lever applications.",
+    "intro": "Lever is used by many startups and mid-size companies for recruiting. Optimizing your resume for how Lever parses and displays content can help you get past the initial screen and into the hands of hiring managers and recruiters.",
+    "parsingRules": [
+      "Lever extracts resume content into searchable and filterable fields for the recruiting team.",
+      "Structured sections and clear job titles improve parsing and recruiter navigation.",
+      "Keywords from the job description are often used in search and filtering; include relevant terms in your resume.",
+      "Resume content is shown alongside the job description; clarity and relevance help recruiters compare fit.",
+      "Complete all required application fields; missing information can delay or exclude your application."
+    ],
+    "formattingNotes": [
+      "Use clear section headings (Experience, Education, Skills) and a single-column, text-based layout.",
+      "Prefer bullet points and simple formatting over complex tables or graphics.",
+      "Include full job titles, company names, and dates in a consistent format.",
+      "Weave in keywords from the job description where they accurately describe your experience.",
+      "Submit as PDF or DOCX with selectable text so the ATS can parse and index your content."
+    ],
+    "body": "Lever is designed to make it easy for recruiters to find and evaluate candidates. A clean, keyword-aligned resume will parse well and stand out in search. Emphasise impact and outcomes so that when recruiters open your profile, they see clear evidence of fit. Tailoring your resume to each Lever job post will improve both ATS match and human appeal. WadeCV can help you create a resume that works for Lever and other modern ATS platforms."
+  }
+]

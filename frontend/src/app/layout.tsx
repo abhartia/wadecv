@@ -9,12 +9,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL
+      ? process.env.NEXT_PUBLIC_APP_URL.replace(/\/$/, "")
+      : "https://wadecv.com"
+  ),
   title: "WadeCV - AI-Powered CV Tailoring",
   description:
     "Create perfectly tailored CVs for every job application using AI. Upload your CV, paste a job link, and get a professionally crafted resume in seconds.",
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
     apple: [{ url: "/favicon.png", type: "image/png" }],
+  },
+  openGraph: {
+    title: "WadeCV - AI-Powered CV Tailoring",
+    description: "Create perfectly tailored CVs for every job application using AI. Upload your CV, paste a job link, and get a professionally crafted resume in seconds.",
+  },
+  twitter: {
+    card: "summary",
+    title: "WadeCV - AI-Powered CV Tailoring",
+    description: "Create perfectly tailored CVs for every job application using AI.",
   },
 };
 

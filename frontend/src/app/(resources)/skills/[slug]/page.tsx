@@ -1,0 +1,74 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { getSkillBySlug, getSkills } from "@/lib/seo-content";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SeoCta } from "@/components/seo/seo-cta";
+
+type Props = { params: Promise<{ slug: string }> };
+
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+  const skill = getSkillBySlug(slug);
+  if (!skill) return { title: "Skills Guide Not Found | WadeCV" };
+  return {
+    title: `${skill.title} | WadeCV`,
+    description: skill.metaDescription,
+    openGraph: { title: skill.title, description: skill.metaDescription },
+    twitter: { card: "summary", title: skill.title, description: skill.metaDescription },
+  };
+}
+
+export async function generateStaticParams() {
+  return getSkills().map((s) => ({ slug: s.slug }));
+}
+
+export default async function SkillPage({ params }: Props) {
+  const { slug } = await params;
+  const skill = getSkillBySlug(slug);
+  if (!skill) notFound();
+
+  return (
+    <article>
+      <h1 className="text-3xl font-bold mb-4">{skill.title}</h1>
+      <p className="text-muted-foreground mb-6">{skill.intro}</p>
+
+      {skill.skillClusters.map((cluster, i) => (
+        <section key={i} className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">{cluster.name}</h2>
+          <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
+            {cluster.items.map((item, j) => (
+              <li key={j}>{item}</li>
+            ))}
+          </ul>
+        </section>
+      ))}
+
+      <section className="mb-8">
+        <h2 className="text-xl font-semibold mb-3">Resume bullet examples</h2>
+        <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+          {skill.bulletExamples.map((b, i) => (
+            <li key={i}>{b}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mb-8">
+        <div className="prose dark:prose-invert max-w-none text-muted-foreground">
+          <p className="whitespace-pre-wrap">{skill.body}</p>
+        </div>
+      </section>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Build a resume that highlights these skills</CardTitle>
+          <p className="text-sm text-muted-foreground">
+            WadeCV helps you tailor your CV to the role and surface the right skills and bullets for each application.
+          </p>
+        </CardHeader>
+        <CardContent>
+          <SeoCta variant="skills" />
+        </CardContent>
+      </Card>
+    </article>
+  );
+}

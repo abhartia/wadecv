@@ -1,0 +1,78 @@
+[
+  {
+    "slug": "software-engineer",
+    "title": "Software Engineer Resume Bullet Points",
+    "metaDescription": "Software engineer resume bullet examples and impact formulas. How to write strong, ATS-friendly bullets that show scope and results.",
+    "intro": "Strong resume bullets for software engineers show what you built, for whom, and what improved. This guide gives you concrete examples and a simple formula so you can turn your experience into compelling, scannable bullets that get past ATS and recruiters.",
+    "bulletExamples": [
+      "Designed and implemented a new caching layer that reduced API response time by 40% for 2M+ daily requests.",
+      "Led migration of 3 legacy services to Kubernetes; cut deployment time by 70% and improved system reliability.",
+      "Built and maintained CI/CD pipelines used by 15+ engineers; reduced broken main builds by 50% through automated checks.",
+      "Mentored 4 junior developers; established code review guidelines and introduced testing practices adopted across the team.",
+      "Owned end-to-end delivery of payment integration feature; coordinated with product, security, and compliance and launched on schedule."
+    ],
+    "impactFormulas": [
+      "Action + system/feature + metric (e.g. 'Reduced latency by X%', 'Improved throughput for Y users')",
+      "Scope + outcome (e.g. 'Led migration affecting Z services'; 'Adopted by N teams')",
+      "Problem + solution + result (e.g. 'Identified bottleneck; implemented fix; cut cost by X%')"
+    ],
+    "body": "Use the same language as the job description where it fits—keywords help ATS and recruiters. Prefer active verbs (designed, built, led, reduced, improved) and concrete numbers. One strong bullet is better than three vague ones. Tailoring your bullets to each role will highlight the most relevant experience. WadeCV can help you reframe your software engineering experience into tailored resume bullets that match specific job descriptions."
+  },
+  {
+    "slug": "sales",
+    "title": "Sales Resume Bullet Points",
+    "metaDescription": "Sales resume bullet examples and impact formulas. How to write results-focused bullets that show quota attainment and revenue impact.",
+    "intro": "Sales resumes need to show revenue, quota performance, and relationship skills in a few tight bullets. This guide provides examples and a simple structure so you can present your track record in a way that recruiters and ATS recognise.",
+    "bulletExamples": [
+      "Exceeded quota by 120% in FY24; closed 15 new enterprise deals with average contract value of $85K.",
+      "Built pipeline of $2M+ through outbound campaigns and partner referrals; converted 22% to closed-won.",
+      "Managed 45 accounts in mid-market segment; achieved 95% retention and grew ARR by 30% through upsells.",
+      "Led RFP response for $500K deal; coordinated with product and legal and won against 3 incumbents.",
+      "Trained 5 new SDRs on outreach and CRM; team exceeded target by 15% in first full quarter."
+    ],
+    "impactFormulas": [
+      "Quota + result (e.g. 'Exceeded quota by X%', 'Achieved Y% of target')",
+      "Revenue + scope (e.g. 'Closed $X in new business', 'Grew ARR by Y%')",
+      "Activity + outcome (e.g. 'Generated pipeline of $X', 'Converted Y% to closed-won')"
+    ],
+    "body": "Lead with numbers: quota attainment, revenue, deal count, retention, and pipeline. Use role-appropriate metrics—SDRs focus on pipeline and activity; account executives on closed revenue and retention. Tailoring your resume to the company's segment (SMB, enterprise, industry) will improve fit. WadeCV can help you align your sales experience with job descriptions and highlight your strongest results."
+  },
+  {
+    "slug": "project-manager",
+    "title": "Project Manager Resume Bullet Points",
+    "metaDescription": "Project manager resume bullet examples and impact formulas. How to show scope, delivery, and stakeholder management.",
+    "intro": "Project manager resume bullets should show scope, timelines, and how you kept teams and stakeholders aligned. This guide gives you examples and a clear structure so your experience reads as impact-focused and ATS-friendly.",
+    "bulletExamples": [
+      "Delivered $3M digital transformation project on time and 5% under budget; coordinated 12 cross-functional teams and 3 vendors.",
+      "Managed agile rollout for product org of 40; reduced release cycle from 6 weeks to 2 and improved predictability.",
+      "Led migration of 5 legacy systems to cloud; completed in 8 months with zero critical incidents and full stakeholder sign-off.",
+      "Implemented new PMO governance; reduced project overruns by 25% and improved reporting for leadership.",
+      "Ran discovery and planning for 4 concurrent initiatives; prioritised backlog with product and eng and delivered 90% of scope in Q1."
+    ],
+    "impactFormulas": [
+      "Scope + delivery (e.g. 'Delivered X on time and under budget'; 'Managed Y teams')",
+      "Change + result (e.g. 'Reduced cycle time by X'; 'Improved predictability')",
+      "Stakeholders + outcome (e.g. 'Aligned N teams'; 'Achieved sign-off from exec sponsor')"
+    ],
+    "body": "Emphasise scope (budget, team size, timeline) and outcomes (on-time delivery, risk reduction, process improvement). Use standard terms like agile, Scrum, and PMO where they apply. Tailoring your resume to the industry and type of projects (IT, construction, product, etc.) will strengthen your application. WadeCV can help you reframe your PM experience to match job descriptions and surface your best deliveries."
+  },
+  {
+    "slug": "customer-service",
+    "title": "Customer Service Resume Bullet Points",
+    "metaDescription": "Customer service resume bullet examples and impact formulas. How to show volume, quality, and improvement in support roles.",
+    "intro": "Customer service resume bullets should show volume handled, quality metrics, and any process or training impact. This guide provides examples and formulas so you can present your support experience clearly and with impact.",
+    "bulletExamples": [
+      "Handled 60+ customer contacts daily across phone, email, and chat; maintained CSAT above 4.5/5 and first-contact resolution rate of 85%.",
+      "Reduced average handle time by 20% through knowledge base updates and scripting; shared best practices with team of 15.",
+      "Resolved 95% of escalations without supervisor intervention; trained 3 peers on de-escalation and product expertise.",
+      "Identified top 5 driver issues and worked with product to fix; repeat contacts dropped by 25% in 2 quarters.",
+      "Led pilot for new CRM; documented workflows and trained 20 agents; rollout completed 2 weeks ahead of schedule."
+    ],
+    "impactFormulas": [
+      "Volume + quality (e.g. 'Handled X contacts daily with Y CSAT')",
+      "Improvement + scope (e.g. 'Reduced handle time by X%'; 'Cut repeat contacts by Y%')",
+      "Leadership + outcome (e.g. 'Trained N agents'; 'Led rollout affecting X users')"
+    ],
+    "body": "Use metrics that matter to the role: contact volume, CSAT, resolution rate, handle time, and any process or training impact. Show progression—taking on harder cases, training others, or improving tools and playbooks. Tailoring your resume to the channel (phone, chat, email) and industry will help. WadeCV can help you align your customer service experience with job descriptions and highlight your strongest contributions."
+  }
+]

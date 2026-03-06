@@ -11,7 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { User, LogOut, CreditCard, Settings, LayoutDashboard, Coins, Menu } from "lucide-react";
+import { User, LogOut, CreditCard, Settings, LayoutDashboard, Coins, Menu, BookOpen, Briefcase, Building2, ListChecks, FileText, ScanLine, ArrowRightLeft } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
 import { ThemeToggle } from "./theme-toggle";
@@ -49,6 +49,33 @@ export function Navbar() {
               <Link href="/applications" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 Applications
               </Link>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
+                    Resources <BookOpen className="h-4 w-4" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-56">
+                  <DropdownMenuItem asChild>
+                    <Link href="/jobs"><Briefcase className="mr-2 h-4 w-4" />Job Guides</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/company-resume"><Building2 className="mr-2 h-4 w-4" />Company Resumes</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/skills"><ListChecks className="mr-2 h-4 w-4" />Skills by Role</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/resume-bullets"><FileText className="mr-2 h-4 w-4" />Resume Bullets</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/ats"><ScanLine className="mr-2 h-4 w-4" />ATS Guides</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/career-change"><ArrowRightLeft className="mr-2 h-4 w-4" />Career Change</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Link href="/billing" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 <span className="flex items-center gap-1.5">
                   <Coins className="h-4 w-4" />
@@ -99,6 +126,13 @@ export function Navbar() {
                   <Link href="/dashboard" onClick={() => setOpen(false)} className="text-sm font-medium">Dashboard</Link>
                   <Link href="/tailor" onClick={() => setOpen(false)} className="text-sm font-medium">Tailor CV</Link>
                   <Link href="/applications" onClick={() => setOpen(false)} className="text-sm font-medium">Applications</Link>
+                  <span className="text-xs font-medium text-muted-foreground mt-2">Resources</span>
+                  <Link href="/jobs" onClick={() => setOpen(false)} className="text-sm font-medium pl-2">Job Guides</Link>
+                  <Link href="/company-resume" onClick={() => setOpen(false)} className="text-sm font-medium pl-2">Company Resumes</Link>
+                  <Link href="/skills" onClick={() => setOpen(false)} className="text-sm font-medium pl-2">Skills by Role</Link>
+                  <Link href="/resume-bullets" onClick={() => setOpen(false)} className="text-sm font-medium pl-2">Resume Bullets</Link>
+                  <Link href="/ats" onClick={() => setOpen(false)} className="text-sm font-medium pl-2">ATS Guides</Link>
+                  <Link href="/career-change" onClick={() => setOpen(false)} className="text-sm font-medium pl-2">Career Change</Link>
                   <Link href="/billing" onClick={() => setOpen(false)} className="text-sm font-medium">Billing ({creditLabel})</Link>
                   <Link href="/settings" onClick={() => setOpen(false)} className="text-sm font-medium">Settings</Link>
                   <hr />
@@ -109,6 +143,33 @@ export function Navbar() {
           </>
         ) : (
           <div className="flex items-center gap-2">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
+                  Resources <BookOpen className="h-4 w-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                <DropdownMenuItem asChild>
+                  <Link href="/jobs"><Briefcase className="mr-2 h-4 w-4" />Job Guides</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/company-resume"><Building2 className="mr-2 h-4 w-4" />Company Resumes</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/skills"><ListChecks className="mr-2 h-4 w-4" />Skills by Role</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/resume-bullets"><FileText className="mr-2 h-4 w-4" />Resume Bullets</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/ats"><ScanLine className="mr-2 h-4 w-4" />ATS Guides</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/career-change"><ArrowRightLeft className="mr-2 h-4 w-4" />Career Change</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <ThemeToggle />
             <Link href="/auth/login">
               <Button variant="ghost">Log in</Button>
