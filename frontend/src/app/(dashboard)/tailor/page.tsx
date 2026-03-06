@@ -89,6 +89,7 @@ function TailorContent() {
   const [refining, setRefining] = useState(false);
   const [scraping, setScraping] = useState(false);
   const [clLoading, setClLoading] = useState(false);
+  const [clDownloadLoading, setClDownloadLoading] = useState(false);
   const [clSaving, setClSaving] = useState(false);
   const [scrapeError, setScrapeError] = useState<string | null>(null);
 
@@ -431,8 +432,12 @@ function TailorContent() {
 
   const handleDownloadCoverLetter = async (format: "docx" | "pdf") => {
     if (!token || !jobId) return;
-    setClLoading(true);
+    setClDownloadLoading(true);
     try {
+      // Persist current editor content so the downloaded file matches what the user sees
+      if (coverLetterContent.trim()) {
+        await api.updateCoverLetter(jobId, coverLetterContent, token);
+      }
       const response = await api.downloadCoverLetter(jobId, token, format);
       const contentType = response.headers.get("content-type") || "";
       const expected = format === "pdf" ? "application/pdf" : "officedocument.wordprocessingml.document";
@@ -469,7 +474,7 @@ function TailorContent() {
     } catch {
       toast.error("Download failed");
     } finally {
-      setClLoading(false);
+      setClDownloadLoading(false);
     }
   };
 
@@ -922,8 +927,8 @@ function TailorContent() {
                     </Button>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button variant="outline" disabled={clLoading}>
-                          {clLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Download className="mr-2 h-4 w-4" />}
+                        <Button variant="outline" disabled={clDownloadLoading}>
+                          {clDownloadLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Download className="mr-2 h-4 w-4" />}
                           Download Cover Letter
                           <ChevronDown className="ml-1 h-3 w-3" />
                         </Button>

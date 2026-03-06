@@ -72,7 +72,8 @@ Guidelines:
 - Pay special attention to requirement sections in the job description such as "What We’re Looking For", "Qualifications", "Requirements", or "You Have". Treat these as the canonical list of must-have skills and experiences.
 - Where it is truthful based on the candidate's CV and additional information, explicitly mirror the key phrases and keywords from these requirement sections in experience bullets and the skills block so the CV is a strong keyword match for those sections.
 - Prefer using the employer’s own terms when honest (e.g. "cross-functional stakeholder management" instead of a looser synonym) to improve ATS and recruiter keyword matching, but never invent experience the candidate does not have.
-- Include all relevant skills from the original CV, adding any that are implied by experience
+- In the skills section, include only skills that are clearly relevant to the target role and likely to influence hiring decisions; avoid long, low-signal lists of technologies or programming languages for roles that are not primarily hands-on technical (e.g. commercial, product, strategy, leadership).
+- Include all relevant, role-relevant skills from the original CV, adding any that are implied by experience.
 - Keep the CV truthful - only enhance presentation, never fabricate experience
 - Use concise, impactful language
 - Ensure ATS compatibility with standard section headers
