@@ -110,13 +110,13 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-8">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-3xl font-bold">Dashboard</h1>
           <p className="text-muted-foreground mt-1">Welcome back! Here&apos;s an overview of your activity.</p>
         </div>
-        <Link href="/tailor">
-          <Button><Plus className="mr-2 h-4 w-4" />Tailor New CV</Button>
+        <Link href="/tailor" className="w-full sm:w-auto">
+          <Button className="w-full sm:w-auto"><Plus className="mr-2 h-4 w-4" />Tailor New CV</Button>
         </Link>
       </div>
 
@@ -215,7 +215,7 @@ export default function DashboardPage() {
                   return (
                     <div
                       key={job.id}
-                      className="flex items-center justify-between p-3 rounded-lg border hover:bg-muted/50 transition-colors"
+                      className="flex flex-col gap-3 p-3 rounded-lg border hover:bg-muted/50 transition-colors sm:flex-row sm:items-center sm:justify-between"
                     >
                       <Link href={`/tailor?job=${job.id}`} className="min-w-0 flex-1">
                         <div>
@@ -230,8 +230,8 @@ export default function DashboardPage() {
                           </p>
                         </div>
                       </Link>
-                      <div className="flex items-center gap-2 ml-4 shrink-0">
-                        <div className="flex flex-col items-end gap-1">
+                      <div className="flex flex-wrap items-center gap-2 shrink-0 sm:ml-4">
+                        <div className="flex flex-col items-start sm:items-end gap-1">
                           {job.fit_score != null && (
                             <Badge
                               variant="outline"
@@ -253,12 +253,12 @@ export default function DashboardPage() {
                             {getStatusLabel(job.application_status)}
                           </Badge>
                         </div>
-                        <div className="flex gap-1">
+                        <div className="flex gap-1 items-center">
                           <Button
                             type="button"
                             variant="ghost"
                             size="icon"
-                            className={isAccepted ? "opacity-100" : "opacity-60"}
+                            className={`min-h-[44px] min-w-[44px] ${isAccepted ? "opacity-100" : "opacity-60"}`}
                             disabled={isAccepted}
                             onClick={() =>
                               handleUpdateApplicationStatus(job.id, "cv_accepted")
@@ -270,7 +270,7 @@ export default function DashboardPage() {
                             type="button"
                             variant="ghost"
                             size="icon"
-                            className={isRejected ? "opacity-100" : "opacity-60"}
+                            className={`min-h-[44px] min-w-[44px] ${isRejected ? "opacity-100" : "opacity-60"}`}
                             disabled={isRejected}
                             onClick={() =>
                               handleUpdateApplicationStatus(job.id, "cv_rejected")

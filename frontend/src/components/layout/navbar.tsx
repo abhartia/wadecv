@@ -19,6 +19,7 @@ import { ThemeToggle } from "./theme-toggle";
 export function Navbar() {
   const { user, logout } = useAuth();
   const [open, setOpen] = useState(false);
+  const [openGuest, setOpenGuest] = useState(false);
 
   const creditLabel = user ? `${user.credits} ${user.credits === 1 ? "credit" : "credits"}` : "";
 
@@ -122,7 +123,7 @@ export function Navbar() {
                 <Button variant="ghost" size="icon"><Menu className="h-5 w-5" /></Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-72">
-                <nav className="flex flex-col gap-4 mt-8">
+                <nav className="flex flex-col gap-4 mt-8 px-6">
                   <Link href="/dashboard" onClick={() => setOpen(false)} className="text-sm font-medium">Dashboard</Link>
                   <Link href="/tailor" onClick={() => setOpen(false)} className="text-sm font-medium">Tailor CV</Link>
                   <Link href="/applications" onClick={() => setOpen(false)} className="text-sm font-medium">Applications</Link>
@@ -142,42 +143,72 @@ export function Navbar() {
             </Sheet>
           </>
         ) : (
-          <div className="flex items-center gap-2">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
-                  Resources <BookOpen className="h-4 w-4" />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
-                <DropdownMenuItem asChild>
-                  <Link href="/jobs"><Briefcase className="mr-2 h-4 w-4" />Job Guides</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/company-resume"><Building2 className="mr-2 h-4 w-4" />Company Resumes</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/skills"><ListChecks className="mr-2 h-4 w-4" />Skills by Role</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/resume-bullets"><FileText className="mr-2 h-4 w-4" />Resume Bullets</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/ats"><ScanLine className="mr-2 h-4 w-4" />ATS Guides</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/career-change"><ArrowRightLeft className="mr-2 h-4 w-4" />Career Change</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <ThemeToggle />
-            <Link href="/auth/login">
-              <Button variant="ghost">Log in</Button>
-            </Link>
-            <Link href="/auth/register">
-              <Button>Get Started</Button>
-            </Link>
-          </div>
+          <>
+            <div className="hidden md:flex items-center gap-2">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
+                    Resources <BookOpen className="h-4 w-4" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-56">
+                  <DropdownMenuItem asChild>
+                    <Link href="/jobs"><Briefcase className="mr-2 h-4 w-4" />Job Guides</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/company-resume"><Building2 className="mr-2 h-4 w-4" />Company Resumes</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/skills"><ListChecks className="mr-2 h-4 w-4" />Skills by Role</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/resume-bullets"><FileText className="mr-2 h-4 w-4" />Resume Bullets</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/ats"><ScanLine className="mr-2 h-4 w-4" />ATS Guides</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/career-change"><ArrowRightLeft className="mr-2 h-4 w-4" />Career Change</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              <ThemeToggle />
+              <Link href="/auth/login">
+                <Button variant="ghost">Log in</Button>
+              </Link>
+              <Link href="/auth/register">
+                <Button>Get Started</Button>
+              </Link>
+            </div>
+
+            <Sheet open={openGuest} onOpenChange={setOpenGuest}>
+              <SheetTrigger asChild className="md:hidden">
+                <Button variant="ghost" size="icon"><Menu className="h-5 w-5" /></Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-72">
+                <nav className="flex flex-col gap-4 mt-8 px-6">
+                  <span className="text-xs font-medium text-muted-foreground">Resources</span>
+                  <Link href="/jobs" onClick={() => setOpenGuest(false)} className="text-sm font-medium py-2">Job Guides</Link>
+                  <Link href="/company-resume" onClick={() => setOpenGuest(false)} className="text-sm font-medium py-2">Company Resumes</Link>
+                  <Link href="/skills" onClick={() => setOpenGuest(false)} className="text-sm font-medium py-2">Skills by Role</Link>
+                  <Link href="/resume-bullets" onClick={() => setOpenGuest(false)} className="text-sm font-medium py-2">Resume Bullets</Link>
+                  <Link href="/ats" onClick={() => setOpenGuest(false)} className="text-sm font-medium py-2">ATS Guides</Link>
+                  <Link href="/career-change" onClick={() => setOpenGuest(false)} className="text-sm font-medium py-2">Career Change</Link>
+                  <hr className="my-2" />
+                  <div className="flex items-center gap-2 py-2">
+                    <span className="text-sm font-medium">Theme</span>
+                    <ThemeToggle />
+                  </div>
+                  <Link href="/auth/login" onClick={() => setOpenGuest(false)} className="text-sm font-medium py-2">
+                    <Button variant="ghost" className="w-full justify-start">Log in</Button>
+                  </Link>
+                  <Link href="/auth/register" onClick={() => setOpenGuest(false)} className="block py-2">
+                    <Button className="w-full">Get Started</Button>
+                  </Link>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </>
         )}
       </div>
     </header>

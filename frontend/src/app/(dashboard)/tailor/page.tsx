@@ -535,18 +535,20 @@ function TailorContent() {
       {/* Progress */}
       <div className="space-y-3">
         <Progress value={progress} className="h-2" />
-        <div className="flex justify-between">
-          {steps.map((s, i) => {
-            const Icon = STEP_ICONS[s];
-            const isActive = i === stepIdx;
-            const isDone = i < stepIdx;
-            return (
-              <div key={s} className={`flex flex-col items-center gap-1 ${isActive ? "text-primary" : isDone ? "text-primary/60" : "text-muted-foreground/40"}`}>
-                <Icon className="h-4 w-4" />
-                <span className="text-xs hidden sm:block">{STEP_LABELS[s]}</span>
-              </div>
-            );
-          })}
+        <div className="overflow-x-auto min-w-0 -mx-1">
+          <div className="flex justify-between min-w-max px-1">
+            {steps.map((s, i) => {
+              const Icon = STEP_ICONS[s];
+              const isActive = i === stepIdx;
+              const isDone = i < stepIdx;
+              return (
+                <div key={s} className={`flex flex-col items-center gap-1 shrink-0 ${isActive ? "text-primary" : isDone ? "text-primary/60" : "text-muted-foreground/40"}`}>
+                  <Icon className="h-4 w-4" />
+                  <span className="text-xs hidden sm:block">{STEP_LABELS[s]}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
 
@@ -639,13 +641,14 @@ function TailorContent() {
               <Label className="flex items-center gap-2">
                 <Globe className="h-4 w-4" /> Job URL
               </Label>
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <Input
                   placeholder="https://company.com/careers/role"
                   value={jobUrl}
                   onChange={(e) => setJobUrl(e.target.value)}
+                  className="min-w-0"
                 />
-                <Button variant="outline" onClick={handleScrape} disabled={!jobUrl || scraping}>
+                <Button variant="outline" onClick={handleScrape} disabled={!jobUrl || scraping} className="sm:shrink-0">
                   {scraping ? <Loader2 className="h-4 w-4 animate-spin" /> : <Link2 className="h-4 w-4" />}
                   <span className="ml-2 hidden sm:inline">Extract</span>
                 </Button>
@@ -846,12 +849,12 @@ function TailorContent() {
 
           <CVEditor data={cvData} onChange={setCvData} />
 
-          <div className="flex justify-between">
-            <Button variant="outline" onClick={handleSave} disabled={loading}>
+          <div className="flex flex-col gap-3 sm:flex-row sm:justify-between">
+            <Button variant="outline" onClick={handleSave} disabled={loading} className="sm:shrink-0">
               {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Save Changes
             </Button>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap gap-2 w-full sm:w-auto sm:justify-end">
               {fitAnalysis && (
                 <Button variant="outline" onClick={() => setStep("fit")} disabled={loading}>
                   View Fit Analysis

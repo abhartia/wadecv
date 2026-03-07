@@ -1,8 +1,12 @@
 import io
 import re
 from docx import Document
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
+from docx.opc.constants import RELATIONSHIP_TYPE
 from docx.shared import Pt, Inches, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.text.run import Run
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_CENTER, TA_LEFT
 from reportlab.lib.pagesizes import A4
@@ -29,6 +33,45 @@ def _clean_text(value: object | None) -> str:
     elif not isinstance(value, str):
         value = str(value)
     return _CONTROL_CHARS_RE.sub("", value)
+
+
+def _contact_link_url(key: str, value: str) -> str | None:
+    """
+    Return the URL to use for a contact link, or None if it should be plain text.
+    Handles cases where only display text was stored (e.g. "LinkedIn", "GitHub")
+    instead of the actual URL from the original CV hyperlink.
+    """
+    if not value or key not in ("linkedin", "website"):
+        return None
+    raw = value.strip()
+    if not raw:
+        return None
+    lower = raw.lower()
+    if raw.startswith("http://") or raw.startswith("https://"):
+        return raw
+    if key == "linkedin" and lower in ("linkedin", "linkedin profile", "linkedin url"):
+        return "https://linkedin.com"
+    if lower in ("github", "github profile", "github url"):
+        return "https://github.com"
+    if key == "website" and "." in raw and " " not in raw:
+        return raw if "://" in raw else "https://" + raw
+    return None
+
+
+def _add_hyperlink_run(paragraph, text: str, url: str, font_name: str, font_size_pt: int, color_rgb: tuple):
+    """Add a run that is a clickable hyperlink, with the same styling as contact text."""
+    part = paragraph.part
+    r_id = part.relate_to(url, RELATIONSHIP_TYPE.HYPERLINK, is_external=True)
+    hyperlink = OxmlElement("w:hyperlink")
+    hyperlink.set(qn("r:id"), r_id)
+    new_run = Run(OxmlElement("w:r"), paragraph)
+    new_run.text = text
+    new_run.font.name = font_name
+    new_run.font.size = Pt(font_size_pt)
+    new_run.font.color.rgb = RGBColor(*color_rgb)
+    new_run.font.underline = False
+    hyperlink.append(new_run._element)
+    paragraph._p.append(hyperlink)
 
 
 def _add_heading(doc: Document, text: str, level: int = 1, heading_pt: int = 13):
@@ -122,18 +165,29 @@ def build_cv_docx(cv_data: dict, page_limit: int = 2) -> bytes:
         run.bold = True
         run.font.color.rgb = RGBColor(0x1E, 0x29, 0x3B)
 
-    contact_parts = []
-    for key in ["email", "phone", "location", "linkedin", "website"]:
-        val = _clean_text(info.get(key, ""))
-        if val:
-            contact_parts.append(val)
-    if contact_parts:
+    contact_keys = ["email", "phone", "location", "linkedin", "website"]
+    contact_items = [(k, _clean_text(info.get(k, ""))) for k in contact_keys]
+    contact_items = [(k, v) for k, v in contact_items if v]
+    if contact_items:
         contact_para = doc.add_paragraph()
         contact_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        run = contact_para.add_run("  |  ".join(contact_parts))
-        run.font.name = "Calibri"
-        run.font.size = Pt(contact_pt)
-        run.font.color.rgb = RGBColor(0x6B, 0x72, 0x80)
+        contact_color = (0x6B, 0x72, 0x80)
+        for i, (key, val) in enumerate(contact_items):
+            if i > 0:
+                run = contact_para.add_run("  |  ")
+                run.font.name = "Calibri"
+                run.font.size = Pt(contact_pt)
+                run.font.color.rgb = RGBColor(*contact_color)
+            link_url = _contact_link_url(key, val)
+            if link_url:
+                _add_hyperlink_run(
+                    contact_para, val, link_url, "Calibri", contact_pt, contact_color
+                )
+            else:
+                run = contact_para.add_run(val)
+                run.font.name = "Calibri"
+                run.font.size = Pt(contact_pt)
+                run.font.color.rgb = RGBColor(*contact_color)
 
     _add_separator(doc, separator_before, separator_after)
 
@@ -337,13 +391,20 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
     if name:
         story.append(Paragraph(name, styles["CvName"]))
 
-    contact_parts = []
-    for key in ["email", "phone", "location", "linkedin", "website"]:
+    contact_keys = ["email", "phone", "location", "linkedin", "website"]
+    contact_segments = []
+    for key in contact_keys:
         val = _clean_text(info.get(key, ""))
-        if val:
-            contact_parts.append(val)
-    if contact_parts:
-        story.append(Paragraph("  |  ".join(contact_parts), styles["CvContact"]))
+        if not val:
+            continue
+        link_url = _contact_link_url(key, val)
+        escaped = val.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        if link_url:
+            contact_segments.append('<a href="%s" color="#64748B">%s</a>' % (link_url.replace("&", "&amp;"), escaped))
+        else:
+            contact_segments.append(escaped)
+    if contact_segments:
+        story.append(Paragraph("  |  ".join(contact_segments), styles["CvContact"]))
 
     # Horizontal rule under header
     content_width = (A4[0] / 72.0 - 2 * margin_side) * inch

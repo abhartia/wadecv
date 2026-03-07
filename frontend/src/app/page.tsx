@@ -211,7 +211,7 @@ export default function LandingPage() {
                 { name: "Value", credits: 50, price: "$15", per: "$0.30", popular: true },
                 { name: "Pro", credits: 100, price: "$20", per: "$0.20", popular: false },
               ].map((plan) => (
-                <Card key={plan.name} className={`relative ${plan.popular ? "border-primary shadow-lg scale-105" : ""}`}>
+                <Card key={plan.name} className={`relative ${plan.popular ? "border-primary shadow-lg md:scale-105" : ""}`}>
                   {plan.popular && (
                     <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">Most Popular</Badge>
                   )}
