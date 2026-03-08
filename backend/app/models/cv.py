@@ -20,7 +20,7 @@ class CV(Base):
     fit_analysis: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
     generated_cv_raw: Mapped[str | None] = mapped_column(Text, nullable=True)
     status: Mapped[str] = mapped_column(String(50), default="uploaded")
-    page_limit: Mapped[int] = mapped_column(Integer, default=2)
+    page_limit: Mapped[int] = mapped_column(Integer, default=1)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     user = relationship("User", back_populates="cvs")

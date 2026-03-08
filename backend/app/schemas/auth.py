@@ -46,7 +46,7 @@ class UserResponse(BaseModel):
     has_password: bool = False
     base_cv_content: str | None = None
     additional_info: str | None = None
-    cv_page_limit: int = 2
+    cv_page_limit: int = 1
     created_at: str
 
     model_config = {"from_attributes": True}

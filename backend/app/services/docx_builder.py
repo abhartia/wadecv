@@ -74,8 +74,9 @@ def _add_hyperlink_run(paragraph, text: str, url: str, font_name: str, font_size
     paragraph._p.append(hyperlink)
 
 
-def _add_heading(doc: Document, text: str, level: int = 1, heading_pt: int = 13):
+def _add_heading(doc: Document, text: str, level: int = 1, heading_pt: int = 13, space_before: int = 0):
     heading = doc.add_heading(_clean_text(text), level=level)
+    heading.paragraph_format.space_before = Pt(space_before)
     for run in heading.runs:
         run.font.color.rgb = RGBColor(0x1E, 0x29, 0x3B)
         run.font.name = "Calibri"
@@ -122,24 +123,24 @@ def _add_separator(doc: Document, space_before: int = 2, space_after: int = 2):
     p._p.get_or_add_pPr().append(pBdr)
 
 
-def build_cv_docx(cv_data: dict, page_limit: int = 2) -> bytes:
+def build_cv_docx(cv_data: dict, page_limit: int = 1) -> bytes:
     compact = page_limit == 1
-    # Compact (1-page): smaller fonts and margins so content fits on one page
+    # Compact mode: tighter than 2-page but enough spacing to fill the page and avoid a large bottom gap
     margin_in = 0.4 if compact else 0.6
     margin_side = 0.5 if compact else 0.75
-    # For 1-page CVs we can use larger fonts – still compact but reduces excess whitespace.
-    name_pt = 18 if compact else 22
+    name_pt = 20 if compact else 24
     contact_pt = 9 if compact else 10
     body_pt = 10 if compact else 11
-    meta_pt = 9 if compact else 9
-    heading_pt = 11 if compact else 13
-    # Make job and education header lines stand out slightly more on compact (1-page) CVs
+    meta_pt = 9
+    heading_pt = 12 if compact else 14
     exp_header_pt = body_pt + 1 if compact else body_pt
     edu_header_pt = body_pt + 1 if compact else body_pt
-    space_after_body = 0 if compact else 2
-    space_after_bullet = 0 if compact else 1
-    separator_before = 0 if compact else 2
-    separator_after = 0 if compact else 2
+    space_after_body = 3 if compact else 8
+    space_after_bullet = 3 if compact else 6
+    separator_before = 3 if compact else 8
+    separator_after = 3 if compact else 8
+    space_before_heading = 5 if compact else 12
+    space_after_block = 5 if compact else 8
 
     doc = Document()
 
@@ -174,7 +175,7 @@ def build_cv_docx(cv_data: dict, page_limit: int = 2) -> bytes:
         contact_color = (0x6B, 0x72, 0x80)
         for i, (key, val) in enumerate(contact_items):
             if i > 0:
-                run = contact_para.add_run("  |  ")
+                run = contact_para.add_run("   |   ")
                 run.font.name = "Calibri"
                 run.font.size = Pt(contact_pt)
                 run.font.color.rgb = RGBColor(*contact_color)
@@ -193,12 +194,12 @@ def build_cv_docx(cv_data: dict, page_limit: int = 2) -> bytes:
 
     summary = _clean_text(cv_data.get("professional_summary", ""))
     if summary:
-        _add_heading(doc, "Professional Summary", level=2, heading_pt=heading_pt)
+        _add_heading(doc, "Professional Summary", level=2, heading_pt=heading_pt, space_before=0)
         _add_paragraph(doc, summary, size=body_pt, space_after=space_after_body)
 
     experience = cv_data.get("experience", []) or []
     if experience:
-        _add_heading(doc, "Professional Experience", level=2, heading_pt=heading_pt)
+        _add_heading(doc, "Professional Experience", level=2, heading_pt=heading_pt, space_before=space_before_heading)
         for exp in experience:
             title_line = _clean_text(exp.get("job_title", ""))
             company = _clean_text(exp.get("company", ""))
@@ -231,10 +232,14 @@ def build_cv_docx(cv_data: dict, page_limit: int = 2) -> bytes:
 
             for bullet in exp.get("bullets", []) or []:
                 _add_bullet(doc, bullet, size=body_pt, space_after=space_after_bullet)
+        # Space after experience block for visual balance
+        p = doc.add_paragraph()
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.space_after = Pt(space_after_block)
 
     education = cv_data.get("education", []) or []
     if education:
-        _add_heading(doc, "Education", level=2, heading_pt=heading_pt)
+        _add_heading(doc, "Education", level=2, heading_pt=heading_pt, space_before=space_before_heading)
         for edu in education:
             degree = _clean_text(edu.get("degree", ""))
             institution = _clean_text(edu.get("institution", ""))
@@ -262,10 +267,14 @@ def build_cv_docx(cv_data: dict, page_limit: int = 2) -> bytes:
             details = _clean_text(edu.get("details", ""))
             if details:
                 _add_paragraph(doc, details, size=body_pt, space_after=space_after_body)
+        # Space after education block for visual balance
+        p = doc.add_paragraph()
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.space_after = Pt(space_after_block)
 
     skills = cv_data.get("skills", {}) or {}
     if any(skills.get(k) for k in ["technical", "soft", "languages", "certifications"]):
-        _add_heading(doc, "Skills", level=2, heading_pt=heading_pt)
+        _add_heading(doc, "Skills", level=2, heading_pt=heading_pt, space_before=space_before_heading)
         for category, label in [
             ("technical", "Technical"),
             ("soft", "Soft Skills"),
@@ -293,7 +302,7 @@ def build_cv_docx(cv_data: dict, page_limit: int = 2) -> bytes:
         else:
             interests_list = [_clean_text(str(item)).strip() for item in (interests_raw or []) if _clean_text(str(item)).strip()]
         if interests_list:
-            _add_heading(doc, "Interests", level=2, heading_pt=heading_pt)
+            _add_heading(doc, "Interests", level=2, heading_pt=heading_pt, space_before=space_before_heading)
             _add_paragraph(doc, ", ".join(interests_list), size=body_pt, space_after=space_after_body)
 
     buf = io.BytesIO()
@@ -301,7 +310,7 @@ def build_cv_docx(cv_data: dict, page_limit: int = 2) -> bytes:
     return buf.getvalue()
 
 
-def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
+def build_cv_pdf(cv_data: dict, page_limit: int = 1) -> bytes:
     """
     Build a clean, printable PDF version of the CV using the same structured data
     that powers the DOCX export.
@@ -309,17 +318,16 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
     compact = page_limit == 1
     margin_in = 0.4 if compact else 0.6
     margin_side = 0.5 if compact else 0.75
-    # Larger fonts on 1-page CVs to use available whitespace while staying compact
-    name_font = 18 if compact else 22
+    name_font = 20 if compact else 24
     contact_font = 8 if compact else 9
-    heading_font = 11 if compact else 13
+    heading_font = 12 if compact else 14
     body_font = 10 if compact else 11
-    meta_font = 8 if compact else 9
-    # Slightly larger job/education header lines on compact (1-page) CVs
+    meta_font = 8
     header_font = body_font + 1 if compact else body_font
-    body_leading = 11 if compact else 14
-    space_after = 2 if compact else 4
-    space_before_heading = 4 if compact else 10
+    body_leading = 12 if compact else 14
+    space_after = 3 if compact else 8
+    space_before_heading = 5 if compact else 12
+    space_after_block = 5 if compact else 8
 
     buf = io.BytesIO()
 
@@ -340,7 +348,7 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
             alignment=TA_CENTER,
             fontSize=name_font,
             fontName="Helvetica-Bold",
-            spaceAfter=2 if compact else 4,
+            spaceAfter=2 if compact else 8,
             textColor=colors.HexColor("#1E293B"),
         )
     )
@@ -351,7 +359,7 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
             alignment=TA_CENTER,
             fontSize=contact_font,
             textColor=colors.HexColor("#64748B"),
-            spaceAfter=4 if compact else 6,
+            spaceAfter=3 if compact else 6,
         )
     )
     styles.add(
@@ -361,8 +369,8 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
             fontName="Helvetica-Bold",
             fontSize=heading_font,
             textColor=colors.HexColor("#1E293B"),
-            spaceBefore=space_before_heading,
-            spaceAfter=3 if compact else 4,
+            spaceBefore=0,
+            spaceAfter=3 if compact else 6,
         )
     )
     styles.add(
@@ -404,7 +412,7 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
         else:
             contact_segments.append(escaped)
     if contact_segments:
-        story.append(Paragraph("  |  ".join(contact_segments), styles["CvContact"]))
+        story.append(Paragraph("   |   ".join(contact_segments), styles["CvContact"]))
 
     # Horizontal rule under header
     content_width = (A4[0] / 72.0 - 2 * margin_side) * inch
@@ -412,7 +420,7 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
     rule_table.setStyle([("LINEBELOW", (0, 0), (-1, 0), 0.5, colors.HexColor("#94A3B8"))])
     story.append(Spacer(1, 2))
     story.append(rule_table)
-    story.append(Spacer(1, 6 if compact else 8))
+    story.append(Spacer(1, 5 if compact else 12))
 
     summary = _clean_text(cv_data.get("professional_summary", ""))
     if summary:
@@ -424,6 +432,7 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
 
     experience = cv_data.get("experience", []) or []
     if experience:
+        story.append(Spacer(1, space_before_heading))
         story.append(Paragraph("Professional Experience", styles["CvHeading"]))
         for exp in experience:
             title_line = _clean_text(exp.get("job_title", ""))
@@ -467,10 +476,11 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
                         leftIndent=10,
                     )
                 )
+        story.append(Spacer(1, space_after_block))
 
     education = cv_data.get("education", []) or []
     if education:
-        story.append(Spacer(1, 6))
+        story.append(Spacer(1, space_before_heading))
         story.append(Paragraph("Education", styles["CvHeading"]))
         for edu in education:
             degree = _clean_text(edu.get("degree", ""))
@@ -497,10 +507,11 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
             details = _clean_text(edu.get("details", ""))
             if details:
                 story.append(Paragraph(details.replace("&", "&amp;").replace("<", "&lt;"), styles["CvBody"]))
+        story.append(Spacer(1, space_after_block))
 
     skills = cv_data.get("skills", {}) or {}
     if any(skills.get(k) for k in ["technical", "soft", "languages", "certifications"]):
-        story.append(Spacer(1, 6))
+        story.append(Spacer(1, space_before_heading))
         story.append(Paragraph("Skills", styles["CvHeading"]))
         for category, label in [
             ("technical", "Technical"),
@@ -524,7 +535,7 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 2) -> bytes:
         else:
             interests_list = [_clean_text(str(item)).strip() for item in (interests_raw or []) if _clean_text(str(item)).strip()]
         if interests_list:
-            story.append(Spacer(1, 6))
+            story.append(Spacer(1, space_before_heading))
             story.append(Paragraph("Interests", styles["CvHeading"]))
             story.append(Paragraph(", ".join(_pdf_esc(t) for t in interests_list), styles["CvBody"]))
 

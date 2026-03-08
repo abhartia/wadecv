@@ -175,7 +175,7 @@ async def get_me(user: User = Depends(get_current_user)):
         has_password=bool(user.password_hash),
         base_cv_content=user.base_cv_content,
         additional_info=user.additional_info,
-        cv_page_limit=getattr(user, "cv_page_limit", 2) or 2,
+        cv_page_limit=getattr(user, "cv_page_limit", 1) or 1,
         created_at=user.created_at.isoformat(),
     )
 

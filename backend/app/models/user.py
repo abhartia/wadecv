@@ -19,7 +19,7 @@ class User(Base):
     stripe_customer_id: Mapped[str | None] = mapped_column(String(255), nullable=True)
     base_cv_content: Mapped[str | None] = mapped_column(Text, nullable=True)
     additional_info: Mapped[str | None] = mapped_column(Text, nullable=True)
-    cv_page_limit: Mapped[int] = mapped_column(Integer, default=2)
+    cv_page_limit: Mapped[int] = mapped_column(Integer, default=1)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     deleted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
 

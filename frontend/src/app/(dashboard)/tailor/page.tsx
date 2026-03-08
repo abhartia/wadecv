@@ -30,6 +30,8 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { toast } from "sonner";
 import { Upload, FileText, Briefcase, Wand2, Edit3, Download, Loader2, ArrowLeft, ArrowRight, Link2, Globe, Coins, UserCheck, Settings, Target, CheckCircle2, AlertTriangle, RefreshCw, Mail, ChevronDown } from "lucide-react";
 import { CVEditor } from "@/components/cv-editor/cv-editor";
+import { CvPreview } from "@/components/cv-preview/cv-preview";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Link from "next/link";
@@ -83,7 +85,7 @@ function TailorContent() {
   const [gapFeedback, setGapFeedback] = useState<Record<string, string>>({});
   const [coverLetterContent, setCoverLetterContent] = useState("");
   const [coverLetterGenerated, setCoverLetterGenerated] = useState(false);
-  const [pageLimit, setPageLimit] = useState<1 | 2>(2);
+  const [pageLimit, setPageLimit] = useState<1 | 2>(1);
   const [loading, setLoading] = useState(false);
   const [downloadLoading, setDownloadLoading] = useState(false);
   const [refining, setRefining] = useState(false);
@@ -116,7 +118,7 @@ function TailorContent() {
     setGapFeedback({});
     setCoverLetterContent("");
     setCoverLetterGenerated(false);
-    setPageLimit((user?.cv_page_limit === 1 || user?.cv_page_limit === 2) ? user.cv_page_limit : 2);
+    setPageLimit((user?.cv_page_limit === 1 || user?.cv_page_limit === 2) ? user.cv_page_limit : 1);
     setLoading(false);
     setDownloadLoading(false);
     setRefining(false);
@@ -721,7 +723,7 @@ function TailorContent() {
             <Loader2 className="h-16 w-16 animate-spin text-primary mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Generating your tailored CV...</h3>
             <p className="text-muted-foreground">
-              Our AI is analyzing the job requirements and crafting your perfect CV. This usually takes 10-20 seconds.
+              Our AI is tailoring your CV to this role and polishing the layout so it looks sharp. This can take up to a minute.
             </p>
           </CardContent>
         </Card>
@@ -847,7 +849,20 @@ function TailorContent() {
             </CardHeader>
           </Card>
 
-          <CVEditor data={cvData} onChange={setCvData} />
+          <Tabs defaultValue="edit" className="w-full">
+            <TabsList className="grid w-full max-w-xs grid-cols-2">
+              <TabsTrigger value="edit">Edit</TabsTrigger>
+              <TabsTrigger value="preview">Preview</TabsTrigger>
+            </TabsList>
+            <TabsContent value="edit" className="mt-4">
+              <CVEditor data={cvData} onChange={setCvData} />
+            </TabsContent>
+            <TabsContent value="preview" className="mt-4">
+              <div className="flex justify-center">
+                <CvPreview data={cvData} pageLimit={pageLimit} />
+              </div>
+            </TabsContent>
+          </Tabs>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-between">
             <Button variant="outline" onClick={handleSave} disabled={loading} className="sm:shrink-0">

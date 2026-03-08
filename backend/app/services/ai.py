@@ -129,3 +129,89 @@ async def generate_completion(
         )
 
     return message.content or ""
+
+
+async def generate_completion_with_image(
+    system_prompt: str,
+    user_prompt: str,
+    image_base64: str | list[str],
+    trace_name: str,
+    metadata: dict | None = None,
+    json_mode: bool = False,
+    max_tokens: int = 4096,
+) -> str:
+    """
+    Call the same deployment (e.g. GPT-5 Nano) with image(s) in the user message.
+    image_base64: one base64-encoded PNG string, or a list of them (e.g. page 1, page 2).
+    """
+    client = get_openai_client()
+    langfuse = get_langfuse()
+    model = settings.azure_openai_deployment
+    reasoning = _is_reasoning_model(model)
+
+    trace_id: str | None = None
+    if langfuse is not None and hasattr(langfuse, "trace"):
+        try:
+            trace = langfuse.trace(
+                name=trace_name,
+                metadata=metadata or {},
+            )
+            trace_id = getattr(trace, "id", None)
+        except Exception:
+            trace_id = None
+
+    extra_args: dict = {}
+    if trace_id:
+        extra_args["langfuse_trace_id"] = trace_id
+
+    if json_mode:
+        extra_args["response_format"] = {"type": "json_object"}
+
+    role = "developer" if reasoning else "system"
+
+    images = image_base64 if isinstance(image_base64, list) else [image_base64]
+    user_content: list = [{"type": "text", "text": user_prompt}]
+    for b64 in images:
+        user_content.append({
+            "type": "image_url",
+            "image_url": {"url": f"data:image/png;base64,{b64}"},
+        })
+
+    messages = [
+        {"role": role, "content": system_prompt},
+        {"role": "user", "content": user_content},
+    ]
+
+    if reasoning:
+        extra_args["max_completion_tokens"] = max_tokens
+    else:
+        extra_args["temperature"] = 0.3
+        extra_args["max_tokens"] = max_tokens
+
+    response = await client.chat.completions.create(
+        model=model,
+        messages=messages,
+        **extra_args,
+    )
+
+    message = response.choices[0].message
+
+    if json_mode:
+        parsed = getattr(message, "parsed", None)
+        if parsed is not None:
+            return json.dumps(parsed)
+
+        if message.content and message.content.strip():
+            return message.content
+
+        logger.error(
+            "JSON mode (vision) returned empty response. finish_reason=%s, refusal=%s",
+            response.choices[0].finish_reason,
+            getattr(message, "refusal", None),
+        )
+        raise ValueError(
+            "JSON mode enabled but model returned neither parsed JSON nor content. "
+            f"finish_reason={response.choices[0].finish_reason}"
+        )
+
+    return message.content or ""

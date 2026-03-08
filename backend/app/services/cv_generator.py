@@ -78,7 +78,9 @@ Guidelines:
 - Use concise, impactful language
 - Ensure ATS compatibility with standard section headers
 - If additional info is provided, incorporate it naturally into the relevant sections
-- If the original CV or additional info mentions interests, hobbies, or extracurriculars, include an "interests" array with 1–5 short items; otherwise omit or leave empty."""
+- If the original CV or additional info mentions interests, hobbies, or extracurriculars, include an "interests" array with 1–5 short items; otherwise omit or leave empty.
+- Aim for visually balanced section lengths: avoid one very long section (e.g. a huge experience block) and a one-line summary; keep sections proportionally balanced where content allows.
+- If additional_info contains "Layout feedback" or "apply these tweaks", you MUST apply those tweaks: e.g. shorten the professional summary, reduce the number of bullets per role, or rebalance content as specified. Treat layout feedback as mandatory instructions. When the instructions say to keep the CV to one page, apply tweaks by shortening summary and experience bullets only; never remove or omit education entries or their details (degree, institution, dates, honors, coursework, thesis)."""
 
 
 PAGE_LIMIT_ONE_PROMPT = """
@@ -86,9 +88,9 @@ PAGE_LIMIT_ONE_PROMPT = """
 CRITICAL — PAGE LENGTH: This CV MUST fit on a SINGLE page. The document will be rendered with compact formatting (reduced margins and font size), so you can include full content in key sections while still fitting on one page.
 - Professional summary: 2–3 concise sentences.
 - Experience: Focus on the 2–3 most relevant roles. Use at most 2–3 short bullet points per role. If there are additional roles, summarize them briefly in one combined line (e.g. under “Additional Experience”) instead of full bullet lists.
-- Education: Include ALL degrees and qualifications. Do not omit or shorten education. List degree, institution, dates, and key details (honors, relevant coursework, or thesis if applicable). Education is important and must be complete.
+- Education: Include ALL degrees and qualifications. Do not omit or shorten education. List degree, institution, dates, and always populate "details" with honors, relevant coursework, thesis, or other education notes when present in the original CV or additional info. Education is important and must be complete.
 - Skills: One compact block with the most relevant skills.
-- To save space, first trim from the professional summary and from the number of experience bullets; keep education complete and truthful."""
+- To save space, first trim from the professional summary and from the number of experience bullets; keep education complete and truthful with all details."""
 
 PAGE_LIMIT_TWO_PROMPT = """
 
@@ -101,7 +103,7 @@ async def generate_cv(
     additional_info: str | None = None,
     user_id: str | None = None,
     cv_id: str | None = None,
-    page_limit: Literal[1, 2] = 2,
+    page_limit: Literal[1, 2] = 1,
 ) -> dict:
     page_instruction = PAGE_LIMIT_ONE_PROMPT if page_limit == 1 else PAGE_LIMIT_TWO_PROMPT
     system_prompt = CV_SYSTEM_PROMPT + page_instruction + "\n\nReturn ONLY valid JSON. No explanation, no formatting, no comments."

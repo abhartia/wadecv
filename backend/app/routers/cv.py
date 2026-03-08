@@ -22,6 +22,7 @@ from app.services.job_metadata import extract_job_metadata
 from app.services.credits import deduct_credit
 from app.services.scraper import scrape_job_url
 from app.services.docx_builder import build_cv_docx, build_cv_pdf
+from app.services.cv_layout_feedback import get_cv_layout_feedback
 
 router = APIRouter()
 
@@ -105,7 +106,7 @@ async def generate_cv_endpoint(
                 detail="Job description is missing for this application",
             )
 
-        page_limit = cv.page_limit if cv.page_limit else 2
+        page_limit = cv.page_limit if cv.page_limit else 1
 
         cv_data, fit_analysis = await asyncio.gather(
             generate_cv(
@@ -122,6 +123,26 @@ async def generate_cv_endpoint(
                 additional_info=additional_info,
             ),
         )
+
+        layout_tweaks = await get_cv_layout_feedback(
+            cv_data,
+            page_limit=page_limit,
+            user_id=str(user.id),
+            cv_id=str(cv.id),
+        )
+        if layout_tweaks:
+            layout_feedback_text = "Layout feedback (apply these tweaks):\n" + "\n".join("- " + t for t in layout_tweaks)
+            if page_limit == 1:
+                layout_feedback_text = "CRITICAL: This is a one-page CV. Apply the tweaks by shortening or condensing the professional summary and experience bullets only; do not add new content and do NOT remove or omit education. Keep all education entries with degree, institution, dates, and details (honors, coursework, thesis). The result must still fit on one page.\n\n" + layout_feedback_text
+            combined_for_second = (additional_info or "") + "\n\n" + layout_feedback_text
+            cv_data = await generate_cv(
+                original_content=original_content,
+                job_description=job_description,
+                additional_info=combined_for_second,
+                user_id=str(user.id),
+                cv_id=str(cv.id),
+                page_limit=page_limit,
+            )
 
         cv.generated_cv_data = cv_data
         cv.fit_analysis = fit_analysis
@@ -240,6 +261,26 @@ async def generate_cv_endpoint(
             additional_info=additional_info,
         ),
     )
+
+    layout_tweaks = await get_cv_layout_feedback(
+        cv_data,
+        page_limit=req.page_limit,
+        user_id=str(user.id),
+        cv_id=str(cv.id),
+    )
+    if layout_tweaks:
+        layout_feedback_text = "Layout feedback (apply these tweaks):\n" + "\n".join("- " + t for t in layout_tweaks)
+        if req.page_limit == 1:
+            layout_feedback_text = "CRITICAL: This is a one-page CV. Apply the tweaks by shortening or condensing the professional summary and experience bullets only; do not add new content and do NOT remove or omit education. Keep all education entries with degree, institution, dates, and details (honors, coursework, thesis). The result must still fit on one page.\n\n" + layout_feedback_text
+        combined_for_second = (additional_info or "") + "\n\n" + layout_feedback_text
+        cv_data = await generate_cv(
+            original_content=original_content,
+            job_description=job_description,
+            additional_info=combined_for_second,
+            user_id=str(user.id),
+            cv_id=str(cv.id),
+            page_limit=req.page_limit,
+        )
 
     cv.generated_cv_data = cv_data
     cv.fit_analysis = fit_analysis
@@ -371,7 +412,7 @@ async def refine_cv(
             additional_info=combined_additional,
             user_id=str(user.id),
             cv_id=str(cv.id),
-            page_limit=cv.page_limit if cv.page_limit else 2,
+            page_limit=cv.page_limit if cv.page_limit else 1,
         ),
         generate_fit_analysis(
             original_content=original_content,
@@ -479,7 +520,7 @@ async def download_cv(
     safe_base = base.replace(" ", "_")
 
     if format == "pdf":
-        pdf_bytes = build_cv_pdf(cv.generated_cv_data, page_limit=getattr(cv, "page_limit", 2) or 2)
+        pdf_bytes = build_cv_pdf(cv.generated_cv_data, page_limit=getattr(cv, "page_limit", 1) or 1)
         filename = f"{safe_base}.pdf"
         return StreamingResponse(
             io.BytesIO(pdf_bytes),
@@ -488,7 +529,7 @@ async def download_cv(
         )
 
     # default to DOCX
-    docx_bytes = build_cv_docx(cv.generated_cv_data, page_limit=getattr(cv, "page_limit", 2) or 2)
+    docx_bytes = build_cv_docx(cv.generated_cv_data, page_limit=getattr(cv, "page_limit", 1) or 1)
     filename = f"{safe_base}.docx"
     return StreamingResponse(
         io.BytesIO(docx_bytes),

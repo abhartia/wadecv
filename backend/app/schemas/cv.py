@@ -18,7 +18,7 @@ class CVGenerateRequest(BaseModel):
     job_url: str | None = None
     job_description: str | None = None
     additional_info: str | None = None
-    page_limit: Literal[1, 2] = 2
+    page_limit: Literal[1, 2] = 1
 
 
 class CVUpdateRequest(BaseModel):
