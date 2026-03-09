@@ -12,7 +12,7 @@ class ApiError extends Error {
   }
 }
 
-export class StreamingNotAvailableError extends ApiError {
+class StreamingNotAvailableError extends ApiError {
   constructor(message: string, status = 0) {
     super(message, status);
     this.name = "StreamingNotAvailableError";
