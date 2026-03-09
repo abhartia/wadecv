@@ -64,6 +64,67 @@ async def _emit_event(
     await emit(event)
 
 
+async def _apply_layout_feedback_and_regenerate(
+    *,
+    cv_data: dict,
+    original_content: str,
+    job_description: str,
+    additional_info: str | None,
+    page_limit: int,
+    user: User,
+    cv: CV,
+    emit: Callable[[CVGenerationProgressEvent], Awaitable[None]] | None = None,
+    job: Job | None = None,
+    progress: int | None = None,
+) -> dict:
+    """
+    Run the CV layout feedback pipeline and, if tweaks are suggested, regenerate the CV
+    with those tweaks applied as additional instructions.
+    """
+    layout_tweaks = await get_cv_layout_feedback(
+        cv_data,
+        page_limit=page_limit,
+        user_id=str(user.id),
+        cv_id=str(cv.id),
+    )
+    if not layout_tweaks:
+        return cv_data
+
+    if emit:
+        await _emit_event(
+            emit,
+            type_="progress",
+            stage=CVGenerationStage.LAYOUT_FEEDBACK,
+            message="Applying layout feedback and regenerating CV",
+            progress=progress,
+            cv_id=str(cv.id),
+            job_id=str(job.id) if job else None,
+        )
+
+    layout_feedback_text = "Layout feedback (apply these tweaks):\n" + "\n".join(
+        "- " + t for t in layout_tweaks
+    )
+    if page_limit == 1:
+        layout_feedback_text = (
+            "CRITICAL: This is a one-page CV. Apply the tweaks by shortening or "
+            "condensing the professional summary and experience bullets only; do not add "
+            "new content and do NOT remove or omit education. Keep all education entries "
+            "with degree, institution, dates, and details (honors, coursework, thesis). "
+            "The result must still fit on one page.\n\n" + layout_feedback_text
+        )
+
+    combined_for_second = (additional_info or "") + "\n\n" + layout_feedback_text
+
+    return await generate_cv(
+        original_content=original_content,
+        job_description=job_description,
+        additional_info=combined_for_second,
+        user_id=str(user.id),
+        cv_id=str(cv.id),
+        page_limit=page_limit,
+    )
+
+
 async def _run_cv_generation(
     req: CVGenerateRequest,
     user: User,
@@ -164,42 +225,18 @@ async def _run_cv_generation(
             job_id=str(job.id),
         )
 
-        layout_tweaks = await get_cv_layout_feedback(
-            cv_data,
+        cv_data = await _apply_layout_feedback_and_regenerate(
+            cv_data=cv_data,
+            original_content=original_content,
+            job_description=job_description,
+            additional_info=additional_info,
             page_limit=page_limit,
-            user_id=str(user.id),
-            cv_id=str(cv.id),
+            user=user,
+            cv=cv,
+            emit=emit,
+            job=job,
+            progress=75,
         )
-        if layout_tweaks:
-            await _emit_event(
-                emit,
-                type_="progress",
-                stage=CVGenerationStage.LAYOUT_FEEDBACK,
-                message="Applying layout feedback and regenerating CV",
-                progress=75,
-                cv_id=str(cv.id),
-                job_id=str(job.id),
-            )
-            layout_feedback_text = "Layout feedback (apply these tweaks):\n" + "\n".join(
-                "- " + t for t in layout_tweaks
-            )
-            if page_limit == 1:
-                layout_feedback_text = (
-                    "CRITICAL: This is a one-page CV. Apply the tweaks by shortening or "
-                    "condensing the professional summary and experience bullets only; do not add "
-                    "new content and do NOT remove or omit education. Keep all education entries "
-                    "with degree, institution, dates, and details (honors, coursework, thesis). "
-                    "The result must still fit on one page.\n\n" + layout_feedback_text
-                )
-            combined_for_second = (additional_info or "") + "\n\n" + layout_feedback_text
-            cv_data = await generate_cv(
-                original_content=original_content,
-                job_description=job_description,
-                additional_info=combined_for_second,
-                user_id=str(user.id),
-                cv_id=str(cv.id),
-                page_limit=page_limit,
-            )
 
         cv.generated_cv_data = cv_data
         cv.fit_analysis = fit_analysis
@@ -399,41 +436,17 @@ async def _run_cv_generation(
         cv_id=str(cv.id),
     )
 
-    layout_tweaks = await get_cv_layout_feedback(
-        cv_data,
+    cv_data = await _apply_layout_feedback_and_regenerate(
+        cv_data=cv_data,
+        original_content=original_content,
+        job_description=job_description,
+        additional_info=additional_info,
         page_limit=req.page_limit,
-        user_id=str(user.id),
-        cv_id=str(cv.id),
+        user=user,
+        cv=cv,
+        emit=emit,
+        progress=80,
     )
-    if layout_tweaks:
-        await _emit_event(
-            emit,
-            type_="progress",
-            stage=CVGenerationStage.LAYOUT_FEEDBACK,
-            message="Applying layout feedback and regenerating CV",
-            progress=80,
-            cv_id=str(cv.id),
-        )
-        layout_feedback_text = "Layout feedback (apply these tweaks):\n" + "\n".join(
-            "- " + t for t in layout_tweaks
-        )
-        if req.page_limit == 1:
-            layout_feedback_text = (
-                "CRITICAL: This is a one-page CV. Apply the tweaks by shortening or "
-                "condensing the professional summary and experience bullets only; do not add new "
-                "content and do NOT remove or omit education. Keep all education entries with "
-                "degree, institution, dates, and details (honors, coursework, thesis). The "
-                "result must still fit on one page.\n\n" + layout_feedback_text
-            )
-        combined_for_second = (additional_info or "") + "\n\n" + layout_feedback_text
-        cv_data = await generate_cv(
-            original_content=original_content,
-            job_description=job_description,
-            additional_info=combined_for_second,
-            user_id=str(user.id),
-            cv_id=str(cv.id),
-            page_limit=req.page_limit,
-        )
 
     cv.generated_cv_data = cv_data
     cv.fit_analysis = fit_analysis
@@ -689,21 +702,29 @@ async def refine_cv(
     if combined_additional:
         combined_additional += "\n\n"
     combined_additional += "Candidate clarifications on potential gaps:\n" + feedback_text
+    page_limit = cv.page_limit if cv.page_limit else 1
 
-    cv_data, fit_analysis = await asyncio.gather(
-        generate_cv(
-            original_content=original_content,
-            job_description=job_description,
-            additional_info=combined_additional,
-            user_id=str(user.id),
-            cv_id=str(cv.id),
-            page_limit=cv.page_limit if cv.page_limit else 1,
-        ),
-        generate_fit_analysis(
-            original_content=original_content,
-            job_description=job_description,
-            additional_info=combined_additional,
-        ),
+    cv_data_first = await generate_cv(
+        original_content=original_content,
+        job_description=job_description,
+        additional_info=combined_additional,
+        user_id=str(user.id),
+        cv_id=str(cv.id),
+        page_limit=page_limit,
+    )
+    cv_data = await _apply_layout_feedback_and_regenerate(
+        cv_data=cv_data_first,
+        original_content=original_content,
+        job_description=job_description,
+        additional_info=combined_additional,
+        page_limit=page_limit,
+        user=user,
+        cv=cv,
+    )
+    fit_analysis = await generate_fit_analysis(
+        original_content=original_content,
+        job_description=job_description,
+        additional_info=combined_additional,
     )
 
     cv.generated_cv_data = cv_data

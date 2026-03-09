@@ -130,6 +130,48 @@ function TailorContent() {
   const stepIdx = steps.indexOf(step);
   const progress = ((stepIdx + 1) / steps.length) * 100;
 
+  const goToStep = (target: Step) => {
+    // Avoid navigating away while generation is actively in progress
+    if (step === "generate" && loading) {
+      return;
+    }
+
+    switch (target) {
+      case "fit": {
+        if (!fitAnalysis) {
+          toast.error("Fit analysis is not available yet.");
+          return;
+        }
+        break;
+      }
+      case "edit": {
+        if (!cvData) {
+          toast.error("Your tailored CV is not ready yet.");
+          return;
+        }
+        break;
+      }
+      case "cover_letter": {
+        if (!jobId) {
+          toast.error("Cover letters are available once a job has been created for this CV.");
+          return;
+        }
+        break;
+      }
+      case "download": {
+        if (!cvId) {
+          toast.error("Your CV is not ready to download yet.");
+          return;
+        }
+        break;
+      }
+      default:
+        break;
+    }
+
+    setStep(target);
+  };
+
   const latestGenerationMessage =
     generationEvents.length > 0
       ? generationEvents[generationEvents.length - 1]?.message
@@ -332,10 +374,10 @@ function TailorContent() {
       setCoverLetterGenerated(false);
       await refreshUser();
       if (result.fit_analysis) {
-        setStep("fit");
+        goToStep("fit");
         toast.success("CV generated! Review your fit analysis.");
       } else {
-        setStep("edit");
+        goToStep("edit");
         toast.success("CV generated! Review and edit below.");
       }
     } catch (err: unknown) {
@@ -403,7 +445,7 @@ function TailorContent() {
       a.download = match?.[1] ?? `Tailored_CV.${format}`;
       a.click();
       window.URL.revokeObjectURL(url);
-      if (step === "edit") setStep("cover_letter");
+      if (step === "edit") goToStep("cover_letter");
       toast.success("CV downloaded!");
       trackCvDownload(format);
     } catch {
@@ -569,7 +611,7 @@ function TailorContent() {
     }
   };
 
-  const goBack = (target: Step) => setStep(target);
+  const goBack = (target: Step) => goToStep(target);
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
@@ -616,8 +658,53 @@ function TailorContent() {
               const Icon = STEP_ICONS[s];
               const isActive = i === stepIdx;
               const isDone = i < stepIdx;
+              const isTrackerNavigableStep =
+                s === "fit" || s === "edit" || s === "cover_letter" || s === "download";
+
+              let isClickable = false;
+              if (isTrackerNavigableStep) {
+                if (s === "fit") {
+                  isClickable = !!fitAnalysis;
+                } else if (s === "edit") {
+                  isClickable = !!cvData;
+                } else if (s === "cover_letter") {
+                  isClickable = !!jobId;
+                } else if (s === "download") {
+                  isClickable = !!cvId;
+                }
+              }
+
+              const handleStepClick = () => {
+                if (!isClickable) return;
+                goToStep(s);
+              };
+
               return (
-                <div key={s} className={`flex flex-col items-center gap-1 shrink-0 ${isActive ? "text-primary" : isDone ? "text-primary/60" : "text-muted-foreground/40"}`}>
+                <div
+                  key={s}
+                  role={isClickable ? "button" : undefined}
+                  tabIndex={isClickable ? 0 : -1}
+                  aria-current={isActive ? "step" : undefined}
+                  aria-disabled={!isClickable}
+                  onClick={isClickable ? handleStepClick : undefined}
+                  onKeyDown={
+                    isClickable
+                      ? (event) => {
+                          if (event.key === "Enter" || event.key === " ") {
+                            event.preventDefault();
+                            handleStepClick();
+                          }
+                        }
+                      : undefined
+                  }
+                  className={`flex flex-col items-center gap-1 shrink-0 ${
+                    isActive
+                      ? "text-primary"
+                      : isDone
+                      ? "text-primary/60"
+                      : "text-muted-foreground/40"
+                  } ${isClickable ? "cursor-pointer" : "cursor-default"}`}
+                >
                   <Icon className="h-4 w-4" />
                   <span className="text-xs hidden sm:block">{STEP_LABELS[s]}</span>
                 </div>
