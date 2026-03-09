@@ -236,7 +236,7 @@ async def _run_cv_generation(
         )
 
         cv_data = await _apply_layout_feedback_and_regenerate(
-            cv_data=cv_data,
+            cv_data=cv_data_first,
             original_content=original_content,
             job_description=job_description,
             additional_info=additional_info,
@@ -446,7 +446,7 @@ async def _run_cv_generation(
     )
 
     cv_data = await _apply_layout_feedback_and_regenerate(
-        cv_data=cv_data,
+        cv_data=cv_data_first,
         original_content=original_content,
         job_description=job_description,
         additional_info=additional_info,
