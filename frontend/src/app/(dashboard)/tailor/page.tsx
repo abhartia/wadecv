@@ -3,7 +3,7 @@
 import { useState, useCallback, Suspense, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "@/lib/auth";
-import { api, ApiError } from "@/lib/api";
+import { api, ApiError, CVGenerationProgressEvent, CVGenerationStage } from "@/lib/api";
 import {
   trackCvDownload,
   trackCvEmailSent,
@@ -53,6 +53,33 @@ const STEP_ICONS: Record<Step, React.ElementType> = {
   cover_letter: Mail, download: Download,
 };
 
+const STAGE_ORDER: CVGenerationStage[] = [
+  "start",
+  "setup",
+  "scraping_job",
+  "job_metadata",
+  "deduct_credit",
+  "first_pass_generation",
+  "layout_feedback",
+  "second_pass_generation",
+  "saving",
+  "done",
+];
+
+const STAGE_LABELS: Record<CVGenerationStage, string> = {
+  start: "Starting",
+  setup: "Preparing your details",
+  scraping_job: "Reading the job URL",
+  job_metadata: "Extracting job title & company",
+  deduct_credit: "Checking and deducting a credit",
+  first_pass_generation: "Generating tailored CV & fit analysis",
+  layout_feedback: "Reviewing layout and page length",
+  second_pass_generation: "Applying layout tweaks",
+  saving: "Saving your CV and job",
+  done: "Finished",
+  error: "Error",
+};
+
 const isLinkedInJobUrl = (url: string): boolean => {
   if (!url) return false;
   try {
@@ -94,9 +121,19 @@ function TailorContent() {
   const [clDownloadLoading, setClDownloadLoading] = useState(false);
   const [clSaving, setClSaving] = useState(false);
   const [scrapeError, setScrapeError] = useState<string | null>(null);
+  const [generationProgress, setGenerationProgress] = useState<number>(0);
+  const [generationStage, setGenerationStage] = useState<CVGenerationStage | null>(null);
+  const [generationEvents, setGenerationEvents] = useState<
+    { id: number; stage: CVGenerationStage; message: string }[]
+  >([]);
 
   const stepIdx = steps.indexOf(step);
   const progress = ((stepIdx + 1) / steps.length) * 100;
+
+  const latestGenerationMessage =
+    generationEvents.length > 0
+      ? generationEvents[generationEvents.length - 1]?.message
+      : null;
 
   const startNewApplication = () => {
     // Clear URL-based job context so we don't immediately reload the old application
@@ -241,15 +278,51 @@ function TailorContent() {
     }
     setLoading(true);
     setStep("generate");
+    setGenerationProgress(5);
+    setGenerationStage("start");
+    setGenerationEvents([]);
     trackCvTailorStarted();
+    const payload = {
+      cv_id: cvId || undefined,
+      job_url: jobUrl || undefined,
+      job_description: jobDescription || undefined,
+      additional_info: additionalInfo || undefined,
+      page_limit: pageLimit,
+    };
     try {
-      const result = await api.generateCV({
-        cv_id: cvId || undefined,
-        job_url: jobUrl || undefined,
-        job_description: jobDescription || undefined,
-        additional_info: additionalInfo || undefined,
-        page_limit: pageLimit,
-      }, token);
+      const result = await (async () => {
+        if (!token) {
+          throw new Error("Not authenticated");
+        }
+        try {
+          return await api.generateCVStream(
+            payload,
+            token,
+            (event: CVGenerationProgressEvent) => {
+              if (typeof event.progress === "number") {
+                setGenerationProgress(event.progress);
+              }
+              if (event.stage && event.stage !== "error") {
+                setGenerationStage(event.stage);
+              }
+              setGenerationEvents((prev) => [
+                ...prev,
+                {
+                  id: prev.length,
+                  stage: event.stage,
+                  message: event.message,
+                },
+              ]);
+            },
+          );
+        } catch (err) {
+          if (err instanceof ApiError && err.status === 0) {
+            // Streaming not available; fall back to single-response endpoint
+            return await api.generateCV(payload, token);
+          }
+          throw err;
+        }
+      })();
       setCvId(result.id);
       if (result.job_id) setJobId(result.job_id);
       setCvData(result.generated_cv_data);
@@ -716,15 +789,70 @@ function TailorContent() {
         </Card>
       )}
 
-      {/* Step: Generate (loading) */}
+      {/* Step: Generate (live progress) */}
       {step === "generate" && (
         <Card>
-          <CardContent className="py-16 text-center">
-            <Loader2 className="h-16 w-16 animate-spin text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Generating your tailored CV...</h3>
-            <p className="text-muted-foreground">
-              Our AI is tailoring your CV to this role and polishing the layout so it looks sharp. This can take up to a minute.
-            </p>
+          <CardContent className="py-10 space-y-6">
+            <div className="text-center space-y-2">
+              <Loader2 className="h-10 w-10 animate-spin text-primary mx-auto" />
+              <h3 className="text-xl font-semibold">Generating your tailored CV...</h3>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                We&apos;re tailoring your CV to this role, analyzing the job description, and polishing the layout so it looks sharp.
+                This usually takes under a minute.
+              </p>
+            </div>
+            <div className="space-y-3">
+              <Progress value={generationProgress} className="h-2" />
+              <div className="flex justify-between text-xs text-muted-foreground">
+                <span>
+                  {generationStage ? STAGE_LABELS[generationStage] : "Starting"}
+                </span>
+                <span>{Math.round(generationProgress)}%</span>
+              </div>
+            </div>
+            <div className="border rounded-lg p-3 bg-muted/40 max-h-48 overflow-y-auto text-xs">
+              <div className="font-medium mb-1 text-muted-foreground">
+                Live activity
+              </div>
+              {generationEvents.length === 0 && (
+                <p className="text-muted-foreground">
+                  Connecting to the generator...
+                </p>
+              )}
+              {generationEvents.length > 0 && (
+                <ul className="space-y-1">
+                  {STAGE_ORDER.map((stage) => {
+                    const eventsForStage = generationEvents.filter((e) => e.stage === stage);
+                    if (eventsForStage.length === 0) return null;
+                    const last = eventsForStage[eventsForStage.length - 1];
+                    const isDoneStage = stage === "done";
+                    return (
+                      <li
+                        key={stage}
+                        className="flex items-start gap-2"
+                      >
+                        <span
+                          className={`mt-1 h-1.5 w-1.5 rounded-full ${
+                            isDoneStage ? "bg-green-500" : "bg-primary"
+                          }`}
+                        />
+                        <div>
+                          <div className="font-medium">
+                            {STAGE_LABELS[stage]}
+                          </div>
+                          <div className="text-muted-foreground">
+                            {last.message}
+                          </div>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+              {latestGenerationMessage && generationStage === "error" && (
+                <p className="text-red-500">{latestGenerationMessage}</p>
+              )}
+            </div>
           </CardContent>
         </Card>
       )}

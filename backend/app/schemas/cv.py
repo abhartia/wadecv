@@ -1,5 +1,7 @@
-from pydantic import BaseModel
+from enum import Enum
 from typing import Literal
+
+from pydantic import BaseModel
 
 
 class CVUploadResponse(BaseModel):
@@ -40,6 +42,32 @@ class CVResponse(BaseModel):
     job_id: str | None = None
     status: str
     created_at: str
+
+    model_config = {"from_attributes": True}
+
+
+class CVGenerationStage(str, Enum):
+    START = "start"
+    SETUP = "setup"
+    SCRAPING_JOB = "scraping_job"
+    JOB_METADATA = "job_metadata"
+    DEDUCT_CREDIT = "deduct_credit"
+    FIRST_PASS_GENERATION = "first_pass_generation"
+    LAYOUT_FEEDBACK = "layout_feedback"
+    SECOND_PASS_GENERATION = "second_pass_generation"
+    SAVING = "saving"
+    DONE = "done"
+    ERROR = "error"
+
+
+class CVGenerationProgressEvent(BaseModel):
+    type: Literal["progress", "done", "error"]
+    stage: CVGenerationStage
+    message: str
+    progress: int | None = None
+    cv_id: str | None = None
+    job_id: str | None = None
+    result: "CVResponse | None" = None
 
     model_config = {"from_attributes": True}
 

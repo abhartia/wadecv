@@ -12,6 +12,51 @@ class ApiError extends Error {
   }
 }
 
+export class StreamingNotAvailableError extends ApiError {
+  constructor(message: string, status = 0) {
+    super(message, status);
+    this.name = "StreamingNotAvailableError";
+  }
+}
+
+export interface CVGenerateResponse {
+  id: string;
+  original_filename: string;
+  original_content: string;
+  additional_info: string | null;
+  generated_cv_data: Record<string, unknown>;
+  fit_analysis: { fit_score: number; strengths: string[]; gaps: string[] } | null;
+  page_limit: number | null;
+  job_id: string | null;
+  status: string;
+  created_at: string;
+}
+
+export type CVGenerationStage =
+  | "start"
+  | "setup"
+  | "scraping_job"
+  | "job_metadata"
+  | "deduct_credit"
+  | "first_pass_generation"
+  | "layout_feedback"
+  | "second_pass_generation"
+  | "saving"
+  | "done"
+  | "error";
+
+export type CVGenerationEventType = "progress" | "done" | "error";
+
+export interface CVGenerationProgressEvent {
+  type: CVGenerationEventType;
+  stage: CVGenerationStage;
+  message: string;
+  progress?: number | null;
+  cv_id?: string | null;
+  job_id?: string | null;
+  result?: CVGenerateResponse | null;
+}
+
 /** Refresh tokens using refresh_token from localStorage; save and notify. Returns new access token or null. */
 async function tryRefreshTokens(): Promise<string | null> {
   if (typeof window === "undefined") return null;
@@ -140,22 +185,100 @@ export const api = {
   },
 
   generateCV: (data: { cv_id?: string; job_id?: string; job_url?: string; job_description?: string; additional_info?: string; page_limit?: 1 | 2 }, token: string) =>
-    request<{
-      id: string;
-      original_filename: string;
-      original_content: string;
-      additional_info: string | null;
-      generated_cv_data: Record<string, unknown>;
-      fit_analysis: { fit_score: number; strengths: string[]; gaps: string[] } | null;
-      page_limit: number | null;
-      job_id: string | null;
-      status: string;
-      created_at: string;
-    }>("/api/cv/generate", {
+    request<CVGenerateResponse>("/api/cv/generate", {
       method: "POST",
       body: JSON.stringify(data),
       token,
     }),
+
+  generateCVStream: async (
+    data: { cv_id?: string; job_id?: string; job_url?: string; job_description?: string; additional_info?: string; page_limit?: 1 | 2 },
+    token: string,
+    onEvent?: (event: CVGenerationProgressEvent) => void,
+  ): Promise<CVGenerateResponse> => {
+    let res: Response;
+    let sawEvent = false;
+
+    try {
+      res = await fetchWithAuth(
+        `${API_URL}/api/cv/generate/stream`,
+        {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+        token ?? null,
+      );
+    } catch (err) {
+      const message = (err as Error)?.message || "Streaming not available";
+      throw new StreamingNotAvailableError(message, 0);
+    }
+
+    if (!res.ok || !res.body) {
+      let message = "An error occurred";
+      try {
+        const body = (await res.json()) as { detail?: string };
+        message = body.detail || message;
+      } catch {
+        // ignore body parse failures
+      }
+      throw new StreamingNotAvailableError(message, res.status);
+    }
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
+    let finalResult: CVGenerateResponse | null = null;
+
+    try {
+      // Read newline-delimited JSON events from the stream
+      // Each line should be a JSON-encoded CVGenerationProgressEvent
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() ?? "";
+
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (!trimmed) continue;
+          let event: CVGenerationProgressEvent;
+          try {
+            event = JSON.parse(trimmed) as CVGenerationProgressEvent;
+          } catch {
+            continue;
+          }
+
+          sawEvent = true;
+          onEvent?.(event);
+
+          if (event.type === "done" && event.result) {
+            finalResult = event.result;
+          } else if (event.type === "error") {
+            const message = event.message || "Generation failed";
+            throw new ApiError(message, 500);
+          }
+        }
+      }
+    } catch (err) {
+      if (!sawEvent || err instanceof StreamingNotAvailableError) {
+        const message =
+          err instanceof Error ? err.message : "Streaming not available";
+        const status = err instanceof ApiError ? err.status : 0;
+        throw new StreamingNotAvailableError(message, status);
+      }
+      throw err;
+    }
+
+    if (!finalResult) {
+      throw new ApiError("Generation failed before completion", 500);
+    }
+
+    return finalResult;
+  },
 
   refineCV: (cvId: string, data: { gap_feedback: Record<string, string> }, token: string) =>
     request<{
@@ -346,4 +469,4 @@ export const api = {
   },
 };
 
-export { ApiError };
+export { ApiError, StreamingNotAvailableError };
