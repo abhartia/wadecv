@@ -24,9 +24,8 @@ export default function LandingPage() {
               <span className="text-primary block mt-2">perfectly tailored CV</span>
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground mb-8">
-              Upload your CV, paste a job link, and let AI help you surface and reframe the strongest parts of your
-              real experience for a specific role. This isn&apos;t a hacky shortcut; it keeps your story honest so that
-              when you do get the interview, you&apos;re still leaning on your own track record.
+              Add a job, run a fit analysis to see how you match, then generate your tailored CV for free.
+              Add clarifications on any gaps and our AI reframes your real experience for the role. Honest and interview-ready.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/auth/register">
@@ -53,7 +52,7 @@ export default function LandingPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold sm:text-4xl mb-4">How It Works</h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Three simple steps from your existing CV to a tailored, role-specific version
+                Job details → fit analysis (1 credit) → generate CV for free → edit & download
               </p>
             </div>
 
@@ -74,9 +73,9 @@ export default function LandingPage() {
                   <Wand2 className="h-8 w-8 text-primary" />
                 </div>
                 <div className="text-4xl font-bold text-primary/20">02</div>
-                <h3 className="text-xl font-semibold">Add Job & See Your Fit</h3>
+                <h3 className="text-xl font-semibold">Run Fit Analysis (1 credit)</h3>
                 <p className="text-muted-foreground">
-                  Paste a job URL or description. Our AI scores how strong a fit you are for the role, highlights where you&apos;re a good match, and flags potential gaps.
+                  Paste a job URL or description and run fit analysis. You get a match score, strengths, and potential gaps.
                 </p>
               </div>
 
@@ -85,9 +84,9 @@ export default function LandingPage() {
                   <Download className="h-8 w-8 text-primary" />
                 </div>
                 <div className="text-4xl font-bold text-primary/20">03</div>
-                <h3 className="text-xl font-semibold">Refine, Edit & Download</h3>
+                <h3 className="text-xl font-semibold">Generate, Edit & Download</h3>
                 <p className="text-muted-foreground">
-                  Tell the system where the gaps are wrong (e.g. experience that isn&apos;t obvious on your CV) and it will regenerate your tailored CV without using another credit. Then review everything in the editor and download a polished DOCX.
+                  Add clarifications on any gaps (or skip if they&apos;re all correct), then generate your tailored CV for free. Edit in the dashboard and download a polished DOCX, and get a free cover letter for the same role.
                 </p>
               </div>
             </div>
@@ -133,7 +132,7 @@ export default function LandingPage() {
                     Potential Gaps (Mock)
                   </CardTitle>
                   <p className="text-xs text-muted-foreground">
-                    Tell the system where the AI is wrong and it will refine your CV for free.
+                    Add clarifications here, then generate your tailored CV for free—no extra credit.
                   </p>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -201,7 +200,7 @@ export default function LandingPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold sm:text-4xl mb-4">Simple, Transparent Pricing</h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Pay per CV generation. 1 credit = 1 tailored CV. Cover letters are always free.
+                1 credit = 1 fit analysis per job. CV generation and refinements for that job are free. Cover letters always free.
               </p>
             </div>
 
@@ -221,12 +220,12 @@ export default function LandingPage() {
                       <span className="text-4xl font-bold">{plan.price}</span>
                     </div>
                     <p className="text-sm text-muted-foreground mt-1">
-                      {plan.credits} credits ({plan.per}/CV)
+                      {plan.credits} credits ({plan.per}/job)
                     </p>
                   </CardHeader>
                   <CardContent className="space-y-3 pt-4">
                     <ul className="space-y-2 text-sm">
-                      <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" />{plan.credits} CV generations</li>
+                      <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" />{plan.credits} job fit analyses (CV + refinements free per job)</li>
                       <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" />Free cover letters</li>
                       <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" />DOCX downloads</li>
                       <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" />Application tracking</li>

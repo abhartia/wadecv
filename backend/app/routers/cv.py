@@ -82,9 +82,13 @@ async def _apply_layout_feedback_and_regenerate(
     current_cv_data = cv_data
     current_additional = additional_info or ""
 
+    base_progress = progress or 70
+
     for iteration in range(max_layout_iterations):
         iteration_index = iteration + 1
-        layout_progress = progress or 70
+        # Ensure progress does not move backwards across iterations.
+        iteration_base = min(base_progress + (iteration_index - 1) * 10, 90)
+        layout_progress = iteration_base
 
         if emit:
             await _emit_event(
@@ -129,7 +133,7 @@ async def _apply_layout_feedback_and_regenerate(
 
         # Use a slightly higher progress value for the second-pass generation
         # so the progress bar moves forward between layout review and applying tweaks.
-        second_pass_progress = min((layout_progress or 0) + 10, 95)
+        second_pass_progress = min(layout_progress + 10, 95)
 
         if emit:
             await _emit_event(

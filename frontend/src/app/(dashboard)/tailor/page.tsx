@@ -892,7 +892,7 @@ function TailorContent() {
                 )}
                 {step === "job" && loading
                   ? "Running fit analysis..."
-                  : "Generate Tailored CV (1 credit)"}
+                  : "Run Fit Analysis (1 credit)"}
               </Button>
             </div>
           </CardContent>
