@@ -7,6 +7,8 @@ import io
 import json
 import logging
 
+from pypdf import PdfReader
+
 from app.services.ai import generate_completion_with_image
 from app.services.docx_builder import build_cv_pdf
 
@@ -149,3 +151,33 @@ async def get_cv_layout_feedback(
             (raw[:300] + "..." if len(raw) > 300 else raw) if raw else "(empty)",
         )
         return []
+
+
+def count_cv_pdf_pages(cv_data: dict, page_limit: int = 1) -> int:
+    """
+    Deterministically count the number of pages for a rendered CV PDF.
+
+    This uses the same PDF-building path as layout feedback (build_cv_pdf) and
+    pypdf's PdfReader for page counting, without any AI calls.
+
+    On failure, logs and returns the requested page_limit so we do not
+    accidentally trigger infinite layout refinement loops.
+    """
+    try:
+        pdf_bytes = build_cv_pdf(cv_data, page_limit=page_limit)
+    except Exception as e:  # noqa: BLE001
+        logger.warning("build_cv_pdf failed in count_cv_pdf_pages: %s", e)
+        return page_limit
+
+    try:
+        reader = PdfReader(io.BytesIO(pdf_bytes))
+        num_pages = len(reader.pages)
+        logger.info(
+            "Deterministic page count for CV: pages=%s (page_limit=%s)",
+            num_pages,
+            page_limit,
+        )
+        return num_pages
+    except Exception as e:  # noqa: BLE001
+        logger.warning("PdfReader failed in count_cv_pdf_pages: %s", e)
+        return page_limit

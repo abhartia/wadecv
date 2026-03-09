@@ -37,10 +37,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import Link from "next/link";
 
 type FitAnalysis = { fit_score: number; strengths: string[]; gaps: string[] };
-type Step = "upload" | "enhance" | "job" | "generate" | "fit" | "edit" | "cover_letter" | "download";
+type Step = "upload" | "enhance" | "job" | "fit" | "generate" | "edit" | "cover_letter" | "download";
 
-const ALL_STEPS: Step[] = ["upload", "enhance", "job", "generate", "fit", "edit", "cover_letter", "download"];
-const PROFILE_STEPS: Step[] = ["job", "generate", "fit", "edit", "cover_letter", "download"];
+const ALL_STEPS: Step[] = ["upload", "enhance", "job", "fit", "generate", "edit", "cover_letter", "download"];
+const PROFILE_STEPS: Step[] = ["job", "fit", "generate", "edit", "cover_letter", "download"];
 
 const STEP_LABELS: Record<Step, string> = {
   upload: "Upload CV", enhance: "Add Info", job: "Job Details",
@@ -319,10 +319,6 @@ function TailorContent() {
       return;
     }
     setLoading(true);
-    setStep("generate");
-    setGenerationProgress(5);
-    setGenerationStage("start");
-    setGenerationEvents([]);
     trackCvTailorStarted();
     const payload = {
       cv_id: cvId || undefined,
@@ -332,60 +328,19 @@ function TailorContent() {
       page_limit: pageLimit,
     };
     try {
-      const result = await (async () => {
-        if (!token) {
-          throw new Error("Not authenticated");
-        }
-        try {
-          return await api.generateCVStream(
-            payload,
-            token,
-            (event: CVGenerationProgressEvent) => {
-              if (typeof event.progress === "number") {
-                setGenerationProgress(event.progress);
-              }
-              if (event.stage && event.stage !== "error") {
-                setGenerationStage(event.stage);
-              }
-              setGenerationEvents((prev) => [
-                ...prev,
-                {
-                  id: prev.length,
-                  stage: event.stage,
-                  message: event.message,
-                },
-              ]);
-            },
-          );
-        } catch (err) {
-          if (err instanceof ApiError && err.status === 0) {
-            // Streaming not available; fall back to single-response endpoint
-            return await api.generateCV(payload, token);
-          }
-          throw err;
-        }
-      })();
+      const result = await api.fitCV(payload, token);
       setCvId(result.id);
       if (result.job_id) setJobId(result.job_id);
-      setCvData(result.generated_cv_data);
       setFitAnalysis(result.fit_analysis ?? null);
       setGapFeedback({});
-      setCoverLetterContent("");
-      setCoverLetterGenerated(false);
-      void refreshUser();
-      if (result.fit_analysis) {
-        setStep("fit");
-        toast.success("CV generated! Review your fit analysis.");
-      } else {
-        setStep("edit");
-        toast.success("CV generated! Review and edit below.");
-      }
+      setStep("fit");
+      toast.success("Fit analysis ready. Review your match and share any clarifications.");
     } catch (err: unknown) {
       if (err instanceof ApiError && err.status === 402) {
         toast.error("Insufficient credits. Please purchase more to continue.");
         setStep("job");
       } else {
-        toast.error((err as Error).message || "Generation failed");
+        toast.error((err as Error).message || "Fit analysis failed");
         setStep("job");
       }
     } finally {
@@ -455,31 +410,90 @@ function TailorContent() {
     }
   };
 
-  const handleRefine = async () => {
+  const runRefinement = async (filled: Record<string, string>) => {
     if (!token || !cvId) return;
+    let usedStreaming = false;
+    setRefining(true);
+    setStep("generate");
+    setGenerationProgress(5);
+    setGenerationStage("start");
+    setGenerationEvents([]);
+    try {
+      const result = await (async () => {
+        if (!token) {
+          throw new Error("Not authenticated");
+        }
+        try {
+          return await api.refineCVStream(
+            cvId,
+            { gap_feedback: filled },
+            token,
+            (event: CVGenerationProgressEvent) => {
+              usedStreaming = true;
+              if (typeof event.progress === "number") {
+                setGenerationProgress(event.progress);
+              }
+              if (event.stage && event.stage !== "error") {
+                setGenerationStage(event.stage);
+              }
+              setGenerationEvents((prev) => [
+                ...prev,
+                {
+                  id: prev.length,
+                  stage: event.stage,
+                  message: event.message,
+                },
+              ]);
+
+              if (event.type === "done" && event.result) {
+                const final = event.result;
+                if (final.job_id) setJobId(final.job_id);
+                setCvId(final.id);
+                setCvData(final.generated_cv_data);
+                setFitAnalysis(final.fit_analysis as FitAnalysis | null);
+                setGapFeedback({});
+                setCoverLetterContent("");
+                setCoverLetterGenerated(false);
+                void refreshUser();
+                toast.success("CV refined! Review and edit your tailored CV.");
+                setStep("edit");
+              }
+            },
+          );
+        } catch (err) {
+          if (err instanceof ApiError && err.status === 0) {
+            // Streaming not available; fall back to non-streaming refine endpoint
+            return await api.refineCV(cvId, { gap_feedback: filled }, token);
+          }
+          throw err;
+        }
+      })();
+      // If streaming events handled the transition already, avoid duplicating work.
+      if (!usedStreaming) {
+        if (result.job_id) setJobId(result.job_id);
+        setCvData(result.generated_cv_data);
+        setFitAnalysis(result.fit_analysis ?? null);
+        setGapFeedback({});
+        setCoverLetterContent("");
+        setCoverLetterGenerated(false);
+        await refreshUser();
+        toast.success("CV refined! Review and edit your tailored CV.");
+        setStep("edit");
+      }
+    } catch (err: unknown) {
+      toast.error((err as Error).message || "Refinement failed");
+      setStep("fit");
+    } finally {
+      setRefining(false);
+      setGenerationStage(null);
+    }
+  };
+
+  const handleGenerateFromFit = async () => {
     const filled = Object.fromEntries(
       Object.entries(gapFeedback).filter(([, v]) => v.trim())
     );
-    if (Object.keys(filled).length === 0) {
-      toast.error("Please provide feedback on at least one gap");
-      return;
-    }
-    setRefining(true);
-    try {
-      const result = await api.refineCV(cvId, { gap_feedback: filled }, token);
-      if (result.job_id) setJobId(result.job_id);
-      setCvData(result.generated_cv_data);
-      setFitAnalysis(result.fit_analysis ?? null);
-      setGapFeedback({});
-      setCoverLetterContent("");
-      setCoverLetterGenerated(false);
-      await refreshUser();
-      toast.success("CV refined! Review the updated analysis below.");
-    } catch (err: unknown) {
-      toast.error((err as Error).message || "Refinement failed");
-    } finally {
-      setRefining(false);
-    }
+    await runRefinement(filled);
   };
 
   const handleRegenerateForJob = async () => {
@@ -796,7 +810,7 @@ function TailorContent() {
         <Card>
           <CardHeader>
             <CardTitle>Target Job</CardTitle>
-            <CardDescription>Provide the job you want to tailor your CV for</CardDescription>
+            <CardDescription>Provide the job you want to tailor your CV for. We&apos;ll run a detailed fit analysis first (1 credit), then generate and refine your CV for free.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-3">
@@ -867,9 +881,18 @@ function TailorContent() {
               ) : (
                 <div />
               )}
-              <Button onClick={handleGenerate} disabled={!jobDescription && !jobUrl}>
-                <Wand2 className="mr-2 h-4 w-4" />
-                Generate Tailored CV (1 credit)
+              <Button
+                onClick={handleGenerate}
+                disabled={(!jobDescription && !jobUrl) || loading}
+              >
+                {step === "job" && loading ? (
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                ) : (
+                  <Wand2 className="mr-2 h-4 w-4" />
+                )}
+                {step === "job" && loading
+                  ? "Running fit analysis..."
+                  : "Generate Tailored CV (1 credit)"}
               </Button>
             </div>
           </CardContent>
@@ -1034,21 +1057,14 @@ function TailorContent() {
             </Card>
           )}
 
-          <div className="flex justify-between">
-            {fitAnalysis.gaps.length > 0 ? (
-              <Button
-                variant="outline"
-                onClick={handleRefine}
-                disabled={refining || Object.values(gapFeedback).every((v) => !v.trim())}
-              >
-                {refining ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <RefreshCw className="mr-2 h-4 w-4" />}
-                Refine CV with Feedback
-              </Button>
-            ) : (
-              <div />
-            )}
-            <Button onClick={() => setStep("edit")}>
-              Continue to Edit <ArrowRight className="ml-2 h-4 w-4" />
+          <div className="flex justify-end">
+            <Button onClick={handleGenerateFromFit} disabled={refining}>
+              {refining ? (
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              ) : (
+                <ArrowRight className="mr-2 h-4 w-4" />
+              )}
+              Generate CV
             </Button>
           </div>
         </div>

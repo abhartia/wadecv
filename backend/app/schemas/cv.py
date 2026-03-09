@@ -23,6 +23,21 @@ class CVGenerateRequest(BaseModel):
     page_limit: Literal[1, 2] = 1
 
 
+class CVFitRequest(BaseModel):
+    """
+    Request body for running a paid fit analysis without generating a CV yet.
+    Mirrors CVGenerateRequest but is used only to create/associate a CV+Job
+    and compute fit_analysis.
+    """
+
+    cv_id: str | None = None
+    job_id: str | None = None
+    job_url: str | None = None
+    job_description: str | None = None
+    additional_info: str | None = None
+    page_limit: Literal[1, 2] = 1
+
+
 class CVUpdateRequest(BaseModel):
     generated_cv_data: dict
 
