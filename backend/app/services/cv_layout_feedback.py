@@ -110,7 +110,7 @@ async def get_cv_layout_feedback(
             trace_name="cv_layout_feedback",
             metadata={"user_id": user_id, "cv_id": cv_id},
             json_mode=True,
-            max_tokens=8192,
+            max_tokens=16000,
         )
     except Exception as e:
         logger.warning("Layout feedback API call failed: %s", e)

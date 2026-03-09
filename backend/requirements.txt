@@ -19,3 +19,4 @@ langfuse>=2.53.0
 stripe>=11.3.0
 resend>=2.5.0
 python-dotenv>=1.0.1
+pypdf>=5.0.0
