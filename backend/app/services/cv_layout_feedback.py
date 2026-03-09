@@ -42,8 +42,9 @@ def _pdf_to_png_base64(pdf_bytes: bytes, page_limit: int = 1) -> list[str] | Non
     """Convert PDF page(s) to PNG. Always requests up to 2 pages so overflow is visible for 1-page CVs. Returns a list of base64 strings (one per page, up to 2), or None on failure."""
     try:
         from pdf2image import convert_from_bytes
+        from pdf2image.exceptions import PDFInfoNotInstalledError
     except ImportError:
-        logger.warning("pdf2image not installed; CV layout feedback will be skipped")
+        logger.info("pdf2image not installed; skipping CV layout feedback image conversion")
         return None
 
     try:
@@ -65,7 +66,11 @@ def _pdf_to_png_base64(pdf_bytes: bytes, page_limit: int = 1) -> list[str] | Non
             img.save(buf, format="PNG")
             result.append(base64.b64encode(buf.getvalue()).decode("ascii"))
         return result
-    except Exception as e:
+    except PDFInfoNotInstalledError as e:  # type: ignore[name-defined]
+        # Poppler is not available; degrade gracefully and avoid noisy warnings
+        logger.info("Poppler (pdfinfo) not installed; skipping CV layout feedback: %s", e)
+        return None
+    except Exception as e:  # noqa: BLE001
         logger.warning("PDF to image conversion failed: %s", e)
         return None
 

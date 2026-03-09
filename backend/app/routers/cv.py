@@ -77,10 +77,17 @@ async def _apply_layout_feedback_and_regenerate(
     job: Job | None = None,
     progress: int | None = None,
 ) -> dict:
-    """
-    Run the CV layout feedback pipeline and, if tweaks are suggested, regenerate the CV
-    with those tweaks applied as additional instructions.
-    """
+    if emit:
+        await _emit_event(
+            emit,
+            type_="progress",
+            stage=CVGenerationStage.LAYOUT_FEEDBACK,
+            message="Reviewing layout and page length",
+            progress=progress,
+            cv_id=str(cv.id),
+            job_id=str(job.id) if job else None,
+        )
+
     layout_tweaks = await get_cv_layout_feedback(
         cv_data,
         page_limit=page_limit,
@@ -88,13 +95,23 @@ async def _apply_layout_feedback_and_regenerate(
         cv_id=str(cv.id),
     )
     if not layout_tweaks:
+        if emit:
+            await _emit_event(
+                emit,
+                type_="progress",
+                stage=CVGenerationStage.LAYOUT_FEEDBACK,
+                message="No layout changes needed; keeping first-pass CV",
+                progress=progress,
+                cv_id=str(cv.id),
+                job_id=str(job.id) if job else None,
+            )
         return cv_data
 
     if emit:
         await _emit_event(
             emit,
             type_="progress",
-            stage=CVGenerationStage.LAYOUT_FEEDBACK,
+            stage=CVGenerationStage.SECOND_PASS_GENERATION,
             message="Applying layout feedback and regenerating CV",
             progress=progress,
             cv_id=str(cv.id),
@@ -193,33 +210,26 @@ async def _run_cv_generation(
             emit,
             type_="progress",
             stage=CVGenerationStage.FIRST_PASS_GENERATION,
-            message="Generating tailored CV and fit analysis",
+            message="Generating tailored CV (first pass)",
             progress=30,
             cv_id=str(cv.id),
             job_id=str(job.id),
         )
 
-        cv_data, fit_analysis = await asyncio.gather(
-            generate_cv(
-                original_content=original_content,
-                job_description=job_description,
-                additional_info=additional_info,
-                user_id=str(user.id),
-                cv_id=str(cv.id),
-                page_limit=page_limit,
-            ),
-            generate_fit_analysis(
-                original_content=original_content,
-                job_description=job_description,
-                additional_info=additional_info,
-            ),
+        cv_data_first = await generate_cv(
+            original_content=original_content,
+            job_description=job_description,
+            additional_info=additional_info,
+            user_id=str(user.id),
+            cv_id=str(cv.id),
+            page_limit=page_limit,
         )
 
         await _emit_event(
             emit,
             type_="progress",
             stage=CVGenerationStage.FIRST_PASS_GENERATION,
-            message="First-pass CV and fit analysis generated",
+            message="First-pass CV generated",
             progress=60,
             cv_id=str(cv.id),
             job_id=str(job.id),
@@ -236,6 +246,12 @@ async def _run_cv_generation(
             emit=emit,
             job=job,
             progress=75,
+        )
+
+        fit_analysis = await generate_fit_analysis(
+            original_content=original_content,
+            job_description=job_description,
+            additional_info=additional_info,
         )
 
         cv.generated_cv_data = cv_data
@@ -406,32 +422,25 @@ async def _run_cv_generation(
         emit,
         type_="progress",
         stage=CVGenerationStage.FIRST_PASS_GENERATION,
-        message="Generating tailored CV and fit analysis",
+        message="Generating tailored CV (first pass)",
         progress=45,
         cv_id=str(cv.id),
     )
 
-    cv_data, fit_analysis = await asyncio.gather(
-        generate_cv(
-            original_content=original_content,
-            job_description=job_description,
-            additional_info=additional_info,
-            user_id=str(user.id),
-            cv_id=str(cv.id),
-            page_limit=req.page_limit,
-        ),
-        generate_fit_analysis(
-            original_content=original_content,
-            job_description=job_description,
-            additional_info=additional_info,
-        ),
+    cv_data_first = await generate_cv(
+        original_content=original_content,
+        job_description=job_description,
+        additional_info=additional_info,
+        user_id=str(user.id),
+        cv_id=str(cv.id),
+        page_limit=req.page_limit,
     )
 
     await _emit_event(
         emit,
         type_="progress",
         stage=CVGenerationStage.FIRST_PASS_GENERATION,
-        message="First-pass CV and fit analysis generated",
+        message="First-pass CV generated",
         progress=70,
         cv_id=str(cv.id),
     )
@@ -446,6 +455,12 @@ async def _run_cv_generation(
         cv=cv,
         emit=emit,
         progress=80,
+    )
+
+    fit_analysis = await generate_fit_analysis(
+        original_content=original_content,
+        job_description=job_description,
+        additional_info=additional_info,
     )
 
     cv.generated_cv_data = cv_data

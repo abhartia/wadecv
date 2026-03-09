@@ -2,9 +2,15 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
+# System dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
+    poppler-utils \
     && rm -rf /var/lib/apt/lists/*
+
+# Ensure pdf2image can locate poppler utilities
+ENV PDFINFO_PATH=/usr/bin/pdfinfo \
+    PDFTOPPM_PATH=/usr/bin/pdftoppm
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt

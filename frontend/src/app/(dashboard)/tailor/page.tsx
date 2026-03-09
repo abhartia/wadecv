@@ -72,7 +72,7 @@ const STAGE_LABELS: Record<CVGenerationStage, string> = {
   scraping_job: "Reading the job URL",
   job_metadata: "Extracting job title & company",
   deduct_credit: "Checking and deducting a credit",
-  first_pass_generation: "Generating tailored CV & fit analysis",
+  first_pass_generation: "Generating tailored CV (first pass)",
   layout_feedback: "Reviewing layout and page length",
   second_pass_generation: "Applying layout tweaks",
   saving: "Saving your CV and job",
@@ -372,12 +372,12 @@ function TailorContent() {
       setGapFeedback({});
       setCoverLetterContent("");
       setCoverLetterGenerated(false);
-      await refreshUser();
+      void refreshUser();
       if (result.fit_analysis) {
-        goToStep("fit");
+        setStep("fit");
         toast.success("CV generated! Review your fit analysis.");
       } else {
-        goToStep("edit");
+        setStep("edit");
         toast.success("CV generated! Review and edit below.");
       }
     } catch (err: unknown) {
