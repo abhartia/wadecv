@@ -1,3 +1,5 @@
+import logging
+
 import stripe
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -8,6 +10,12 @@ from app.services.credits import CREDIT_PACKS, add_credits
 
 settings = get_settings()
 stripe.api_key = settings.stripe_secret_key
+
+logger = logging.getLogger(__name__)
+
+
+class PaymentError(Exception):
+    pass
 
 
 async def create_checkout_session(db: AsyncSession, user: User, pack_id: str) -> str:
@@ -20,29 +28,75 @@ async def create_checkout_session(db: AsyncSession, user: User, pack_id: str) ->
         user.stripe_customer_id = customer.id
         await db.flush()
 
-    session = stripe.checkout.Session.create(
-        customer=user.stripe_customer_id,
-        payment_method_types=["card"],
-        line_items=[{
-            "price_data": {
-                "currency": "usd",
-                "product_data": {
-                    "name": f"WadeCV {pack['name']} Pack - {pack['credits']} Credits",
-                    "description": f"{pack['credits']} CV generation credits",
+    def _build_line_items() -> list[dict]:
+        return [
+            {
+                "price_data": {
+                    "currency": "usd",
+                    "product_data": {
+                        "name": f"WadeCV {pack['name']} Pack - {pack['credits']} Credits",
+                        "description": f"{pack['credits']} CV generation credits",
+                    },
+                    "unit_amount": pack["price_cents"],
                 },
-                "unit_amount": pack["price_cents"],
+                "quantity": 1,
+            }
+        ]
+
+    try:
+        session = stripe.checkout.Session.create(
+            customer=user.stripe_customer_id,
+            payment_method_types=["card"],
+            line_items=_build_line_items(),
+            mode="payment",
+            success_url=f"{settings.frontend_url}/dashboard",
+            cancel_url=f"{settings.frontend_url}/billing?cancelled=true",
+            metadata={
+                "user_id": str(user.id),
+                "pack_id": pack_id,
+                "credits": str(pack["credits"]),
             },
-            "quantity": 1,
-        }],
-        mode="payment",
-        success_url=f"{settings.frontend_url}/dashboard",
-        cancel_url=f"{settings.frontend_url}/billing?cancelled=true",
-        metadata={
-            "user_id": str(user.id),
-            "pack_id": pack_id,
-            "credits": str(pack["credits"]),
-        },
-    )
+        )
+    except stripe.error.InvalidRequestError as e:
+        message = str(e)
+        if "No such customer" in message:
+            logger.warning(
+                "Stripe reported missing customer; recreating for user.",
+                extra={"user_id": str(user.id), "pack_id": pack_id, "stripe_customer_id": user.stripe_customer_id},
+            )
+            user.stripe_customer_id = None
+            await db.flush()
+
+            customer = stripe.Customer.create(email=user.email, metadata={"user_id": str(user.id)})
+            user.stripe_customer_id = customer.id
+            await db.flush()
+
+            session = stripe.checkout.Session.create(
+                customer=user.stripe_customer_id,
+                payment_method_types=["card"],
+                line_items=_build_line_items(),
+                mode="payment",
+                success_url=f"{settings.frontend_url}/dashboard",
+                cancel_url=f"{settings.frontend_url}/billing?cancelled=true",
+                metadata={
+                    "user_id": str(user.id),
+                    "pack_id": pack_id,
+                    "credits": str(pack["credits"]),
+                },
+            )
+        else:
+            logger.exception(
+                "Stripe invalid request error during checkout session creation.",
+                extra={"user_id": str(user.id), "pack_id": pack_id},
+            )
+            raise PaymentError("There was an issue with the payment service. Please try again.") from e
+    except stripe.error.StripeError as e:
+        logger.exception(
+            "Stripe error during checkout session creation.",
+            extra={"user_id": str(user.id), "pack_id": pack_id},
+        )
+        raise PaymentError("There was an issue with the payment service. Please try again.") from e
+
     return session.url
 
 

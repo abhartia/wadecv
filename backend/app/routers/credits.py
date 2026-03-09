@@ -8,7 +8,7 @@ from app.models.credit import CreditTransaction
 from app.schemas.credit import CreditPack, CheckoutRequest, CheckoutResponse, CreditBalanceResponse, CreditTransactionResponse
 from app.utils.auth import get_current_user
 from app.services.credits import CREDIT_PACKS
-from app.services.stripe_service import create_checkout_session
+from app.services.stripe_service import PaymentError, create_checkout_session
 
 router = APIRouter()
 
@@ -57,3 +57,5 @@ async def create_checkout(
         return CheckoutResponse(checkout_url=url)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
+    except PaymentError as e:
+        raise HTTPException(status_code=502, detail=str(e))
