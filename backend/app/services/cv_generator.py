@@ -72,18 +72,19 @@ Guidelines:
 - Pay special attention to requirement sections in the job description such as "What We’re Looking For", "Qualifications", "Requirements", or "You Have". Treat these as the canonical list of must-have skills and experiences.
 - Where it is truthful based on the candidate's CV and additional information, explicitly mirror the key phrases and keywords from these requirement sections in experience bullets and the skills block so the CV is a strong keyword match for those sections.
 - Prefer using the employer’s own terms when honest (e.g. "cross-functional stakeholder management" instead of a looser synonym) to improve ATS and recruiter keyword matching, but never invent experience the candidate does not have.
-- In the skills section, include only skills that are clearly relevant to the target role and likely to influence hiring decisions; avoid long, low-signal lists of technologies or programming languages for roles that are not primarily hands-on technical (e.g. commercial, product, strategy, leadership).
+- In the skills section (technical, soft, languages, certifications), include only skills that are clearly relevant to the target role and likely to influence hiring decisions; avoid long, low-signal lists of marginal tools or technologies.
+- For very long skills lists, prefer grouping related items into compact phrases (for example, "cloud platforms (AWS, Azure, GCP)" instead of listing each separately) when it preserves clarity and truthfulness.
 - Include all relevant, role-relevant skills from the original CV, adding any that are implied by experience.
 - Keep the CV truthful - only enhance presentation, never fabricate experience
 - Use concise, impactful language
 - Ensure ATS compatibility with standard section headers
 - If additional info is provided, incorporate it naturally into the relevant sections
 - If the original CV or additional info mentions interests, hobbies, or extracurriculars, include an "interests" array with 1–5 short items; otherwise omit or leave empty.
-- Aim for visually balanced section lengths: avoid one very long section (e.g. a huge experience block) and a one-line summary; keep sections proportionally balanced where content allows.
-- When you need to shorten the CV to meet a page limit, always start by removing or merging bullets that are **least relevant to the target job description** (generic, redundant, or weakly connected to the job’s responsibilities or requirements) while preserving highly relevant bullets.
+- Aim for visually balanced section lengths: avoid one very long section (e.g. a huge experience block or massive Skills list) and a one-line summary; keep sections proportionally balanced where content allows.
+- When you need to shorten the CV to meet a page limit, always start by removing or merging bullets that are **least relevant to the target job description** (generic, redundant, or weakly connected to the job’s responsibilities or requirements) while preserving highly relevant bullets and skills.
 - Critically, preserve the candidate's complete work history: do not drop, hide, or merge past roles to save space. You may shorten or merge bullet points, but you must keep all distinct roles represented in the `experience` array with clear dates so total years of experience and any genuine gaps remain visible.
 - For every experience entry, always populate `start_date` and `end_date`. Use a consistent, machine- and human-readable format such as "YYYY-MM" for months and years (e.g. "2019-06"), and use "Present" for ongoing roles where appropriate.
-- If additional_info contains "Layout feedback" or "apply these tweaks", you MUST apply those tweaks: e.g. shorten the professional summary, reduce the number of bullets per role, or rebalance content as specified. Treat layout feedback as mandatory instructions. When the instructions say to keep the CV to one page, apply tweaks by shortening summary and experience bullets only; never remove or omit education entries or their details (degree, institution, dates, honors, coursework, thesis), and do not drop entire past roles; instead, summarize them more briefly if needed."""
+- If additional_info contains "Layout feedback" or "apply these tweaks", you MUST apply those tweaks: e.g. shorten the professional summary, reduce the number of bullets per role, or rebalance content as specified. Treat layout feedback as mandatory instructions. When the instructions say to keep the CV to one page, apply tweaks by shortening summary, experience bullets, and overly long Skills lists only; never remove or omit education entries or their details (degree, institution, dates, honors, coursework, thesis), and do not drop entire past roles; instead, summarize them more briefly if needed."""
 
 
 PAGE_LIMIT_ONE_PROMPT = """
@@ -93,8 +94,8 @@ CRITICAL — PAGE LENGTH: This CV MUST fit on a SINGLE page. The document will b
 - Experience: Keep the 1–2 most recent roles relatively detailed with at most 2–3 short, high-impact bullet points each. For older roles, reduce to at most 1–2 bullets per role, dropping the least relevant points for the target job or merging similar bullets.
 - Experience (layout feedback): When layout feedback instructs you to reduce bullets in a specific role, you MUST do so (for example, “reduce bullets in the 3rd role from 6 to 3, keeping only the most relevant points that match the job’s responsibilities or requirements”).
 - Education: Include ALL degrees and qualifications. Do not omit or shorten education. List degree, institution, dates, and always populate "details" with honors, relevant coursework, thesis, or other education notes when present in the original CV or additional info. Education is important and must be complete.
-- Skills: One compact block with the most relevant skills.
-- To save space, first trim from the professional summary and from the number of experience bullets (starting with older roles) while keeping education complete and truthful with all details."""
+- Skills: One compact block with the most relevant skills for this job. Prefer to keep skills that appear in or closely match the job posting, and drop unrelated items or group similar tools together.
+- To save space, first trim from the professional summary, then from the number of experience bullets (starting with older roles), and finally from overly long Skills lists, while keeping education complete and truthful with all details."""
 
 PAGE_LIMIT_TWO_PROMPT = """
 

@@ -125,6 +125,8 @@ function TailorContent() {
     { id: number; stage: CVGenerationStage; message: string }[]
   >([]);
 
+  const hasFilledGapFeedback = Object.values(gapFeedback).some((v) => v.trim());
+
   const stepIdx = steps.indexOf(step);
   const progress = ((stepIdx + 1) / steps.length) * 100;
 
@@ -484,6 +486,28 @@ function TailorContent() {
     } finally {
       setRefining(false);
       setGenerationStage(null);
+    }
+  };
+
+  const handleUpdateFitOnly = async () => {
+    if (!token || !cvId) return;
+    const filled = Object.fromEntries(
+      Object.entries(gapFeedback).filter(([, v]) => v.trim())
+    );
+    if (Object.keys(filled).length === 0) {
+      toast.error("Please answer at least one gap question to update your fit analysis.");
+      return;
+    }
+    setRefining(true);
+    try {
+      const result = await api.refineFitAnalysis(cvId, { gap_feedback: filled }, token);
+      setFitAnalysis(result.fit_analysis as FitAnalysis | null);
+      setGapFeedback({});
+      toast.success("Fit score and analysis updated.");
+    } catch (err: unknown) {
+      toast.error((err as Error).message || "Failed to update fit analysis");
+    } finally {
+      setRefining(false);
     }
   };
 
@@ -1027,7 +1051,7 @@ function TailorContent() {
                   Potential Gaps
                 </CardTitle>
                 <CardDescription>
-                  Think any of these are wrong? Tell us why and we&apos;ll refine your CV for free and update your memory bank so future CV generations know this about you.
+                  Think any of these are wrong? Tell us why and we&apos;ll refine your CV for free and update your memory bank so future CV generations know this about you. You can re-run the fit score and analysis for this job for free whenever you update these answers.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -1055,7 +1079,18 @@ function TailorContent() {
             </Card>
           )}
 
-          <div className="flex justify-end">
+          <p className="text-xs text-muted-foreground">
+            Answer any gap questions, then use the buttons below. Updating your fit score and analysis for this job is free.
+          </p>
+          <div className="flex flex-col-reverse gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <Button
+              variant="outline"
+              onClick={handleUpdateFitOnly}
+              disabled={refining || !hasFilledGapFeedback}
+            >
+              {refining && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+              Update fit score and analysis
+            </Button>
             <Button onClick={handleGenerateFromFit} disabled={refining}>
               {refining ? (
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />

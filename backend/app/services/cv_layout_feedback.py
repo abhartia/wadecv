@@ -44,6 +44,10 @@ When deciding what to trim, focus on **relevance to the target job description**
 - Keep bullets that mention key skills, tools, or outcomes that align with sections like “Responsibilities”, “Requirements”, or “What you’ll do”.
 - You may suggest merging two similar bullets into one more compact, high-relevance bullet when appropriate.
 
+If the Skills section is a long list of technologies or tools, treat it as another lever for fitting on one page:
+- Suggest trimming or grouping the Skills section so it keeps only the skills clearly relevant to the job description (for example, keep Python, SQL, and cloud platforms if those are in the job requirements, and drop unrelated tools).
+- Prefer suggestions such as “Shorten Skills by keeping only backend-related tools (Python, FastAPI, PostgreSQL) and removing unrelated items.”
+
 Be specific about where to trim (e.g. “reduce bullets in the 3rd (older) role from 5 to 2, keeping only the bullets that mention backend APIs and SQL”).
 
 Do not suggest removing or shortening education; education details must stay. Return your JSON with the "tweaks" array as specified."""
@@ -54,6 +58,10 @@ Suggest specific tweaks to shorten or condense content so it fits on one page, f
 - Keep the 1–2 most recent, highly relevant roles relatively detailed (up to 2–3 bullets each).
 - Aggressively reduce or merge bullets in older or less relevant roles (e.g. down to 1–2 bullets) before trimming the most relevant recent roles.
 - Prefer precise instructions like “reduce bullets in the 2nd role from 6 to 3, dropping bullets that do not mention Python, APIs, or distributed systems”.
+
+Also, consider the Skills section when it contributes to overflow:
+- If Skills is a long, dense list, suggest shortening it by removing skills that do not map to the job’s responsibilities/requirements and keeping only those that match or closely align with the posting.
+- You may recommend grouping similar skills (for example, “cloud platforms (AWS, Azure, GCP)” instead of listing each on a separate line) to save space while preserving meaning.
 
 Do not suggest removing or shortening education. Return your JSON with the "tweaks" array as specified."""
 

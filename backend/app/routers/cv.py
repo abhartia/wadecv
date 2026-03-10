@@ -587,6 +587,38 @@ async def _run_cv_generation(
     return response
 
 
+def _build_combined_additional(
+    cv: CV,
+    req: CVRefineRequest,
+    user: User,
+) -> tuple[str, str]:
+    """
+    Build combined additional_info string and feedback_text from an existing CV and
+    gap feedback, and update the user's stored additional_info with the feedback
+    text (without the leading label).
+    """
+    combined_additional = cv.additional_info or ""
+    feedback_lines: list[str] = []
+    feedback_text = ""
+    for _gap, explanation in req.gap_feedback.items():
+        explanation = explanation.strip()
+        if explanation:
+            feedback_lines.append(f"- {explanation}")
+
+    if feedback_lines:
+        feedback_text = "\n".join(feedback_lines)
+        if combined_additional:
+            combined_additional += "\n\n"
+        combined_additional += "Candidate clarifications on potential gaps:\n" + feedback_text
+
+        existing_profile_info = user.additional_info or ""
+        if existing_profile_info:
+            existing_profile_info += "\n\n"
+        user.additional_info = existing_profile_info + feedback_text
+
+    return combined_additional, feedback_text
+
+
 async def _run_refine_generation(
     *,
     cv: CV,
@@ -610,19 +642,11 @@ async def _run_refine_generation(
     job_description = job.job_description or ""
     original_content = cv.original_content
 
-    combined_additional = cv.additional_info or ""
-    feedback_lines: list[str] = []
-    feedback_text = ""
-    for _gap, explanation in req.gap_feedback.items():
-        explanation = explanation.strip()
-        if explanation:
-            feedback_lines.append(f"- {explanation}")
+    combined_additional, feedback_text = _build_combined_additional(cv, req, user)
 
-    if feedback_lines:
-        feedback_text = "\n".join(feedback_lines)
-        if combined_additional:
-            combined_additional += "\n\n"
-        combined_additional += "Candidate clarifications on potential gaps:\n" + feedback_text
+    feedback_lines: list[str] = []
+    if feedback_text:
+        feedback_lines = feedback_text.splitlines()
 
     page_limit = cv.page_limit if cv.page_limit else 1
 
@@ -692,12 +716,6 @@ async def _run_refine_generation(
     cv.fit_analysis = fit_analysis
     cv.additional_info = combined_additional
 
-    if feedback_text:
-        existing_profile_info = user.additional_info or ""
-        if existing_profile_info:
-            existing_profile_info += "\n\n"
-        user.additional_info = existing_profile_info + feedback_text
-
     # Mark the job as having a generated CV after refinement.
     job.application_status = "generated"
 
@@ -729,6 +747,54 @@ async def _run_refine_generation(
         )
 
     return response
+
+
+async def _run_fit_refinement(
+    *,
+    cv: CV,
+    req: CVRefineRequest,
+    user: User,
+    db: AsyncSession,
+) -> CVResponse:
+    """
+    Fit-only refinement:
+    - Rebuilds combined additional_info from existing CV info plus any gap explanations
+    - Recomputes fit_analysis using the clarified information
+    - Updates the CV and the user's stored additional_info
+    - Does NOT generate or update generated_cv_data and does NOT change job status
+    """
+    if not cv.jobs:
+        raise HTTPException(status_code=400, detail="No job associated with this CV")
+
+    job = cv.jobs[0]
+    job_description = job.job_description or ""
+    original_content = cv.original_content
+
+    combined_additional, _feedback_text = _build_combined_additional(cv, req, user)
+
+    fit_analysis = await generate_fit_analysis(
+        original_content=original_content,
+        job_description=job_description,
+        additional_info=combined_additional,
+    )
+
+    cv.fit_analysis = fit_analysis
+    cv.additional_info = combined_additional
+
+    await db.flush()
+
+    return CVResponse(
+        id=str(cv.id),
+        original_filename=cv.original_filename,
+        original_content=cv.original_content,
+        additional_info=cv.additional_info,
+        generated_cv_data=cv.generated_cv_data,
+        fit_analysis=cv.fit_analysis,
+        page_limit=cv.page_limit,
+        job_id=str(job.id),
+        status=cv.status,
+        created_at=cv.created_at.isoformat(),
+    )
 
 
 @router.post("/upload", response_model=CVUploadResponse)
@@ -936,6 +1002,23 @@ async def fit_cv(
     )
 
     return response
+
+
+@router.post("/{cv_id}/fit/refine", response_model=CVResponse)
+async def refine_fit_only(
+    cv_id: str,
+    req: CVRefineRequest,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    result = await db.execute(
+        select(CV).where(CV.id == uuid.UUID(cv_id), CV.user_id == user.id)
+    )
+    cv = result.scalar_one_or_none()
+    if not cv:
+        raise HTTPException(status_code=404, detail="CV not found")
+
+    return await _run_fit_refinement(cv=cv, req=req, user=user, db=db)
 
 
 @router.post("/generate/stream")

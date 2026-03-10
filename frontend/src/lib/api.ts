@@ -290,6 +290,13 @@ export const api = {
     return finalResult;
   },
 
+  refineFitAnalysis: (cvId: string, data: { gap_feedback: Record<string, string> }, token: string) =>
+    request<CVGenerateResponse>(`/api/cv/${cvId}/fit/refine`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      token,
+    }),
+
   refineCV: (cvId: string, data: { gap_feedback: Record<string, string> }, token: string) =>
     request<{
       id: string;
