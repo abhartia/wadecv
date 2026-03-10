@@ -68,7 +68,7 @@ Return ONLY a valid JSON object with this exact structure:
 Guidelines:
 - Tailor the professional summary specifically to the target job
 - Rewrite experience bullet points using strong action verbs and quantified achievements
-- Prioritize and reorder experience bullets to highlight relevance to the target role
+- Prioritize and reorder experience bullet points to highlight relevance to the target role
 - Pay special attention to requirement sections in the job description such as "What We’re Looking For", "Qualifications", "Requirements", or "You Have". Treat these as the canonical list of must-have skills and experiences.
 - Where it is truthful based on the candidate's CV and additional information, explicitly mirror the key phrases and keywords from these requirement sections in experience bullets and the skills block so the CV is a strong keyword match for those sections.
 - Prefer using the employer’s own terms when honest (e.g. "cross-functional stakeholder management" instead of a looser synonym) to improve ATS and recruiter keyword matching, but never invent experience the candidate does not have.
@@ -79,7 +79,7 @@ Guidelines:
 - Use concise, impactful language
 - Ensure ATS compatibility with standard section headers
 - If additional info is provided, incorporate it naturally into the relevant sections
-- If the original CV or additional info mentions interests, hobbies, or extracurriculars, include an "interests" array with 1–5 short items; otherwise omit or leave empty.
+- If the original CV or additional info mentions interests, hobbies, or extracurriculars, include an "interests" array with at least two distinct short items and no more than five. If you can identify only a single genuine interest, or are uncertain, set "interests" to an empty array instead of returning a single-item list.
 - Aim for visually balanced section lengths: avoid one very long section (e.g. a huge experience block or massive Skills list) and a one-line summary; keep sections proportionally balanced where content allows.
 - When you need to shorten the CV to meet a page limit, always start by removing or merging bullets that are **least relevant to the target job description** (generic, redundant, or weakly connected to the job’s responsibilities or requirements) while preserving highly relevant bullets and skills.
 - Critically, preserve the candidate's complete work history: do not drop, hide, or merge past roles to save space. You may shorten or merge bullet points, but you must keep all distinct roles represented in the `experience` array with clear dates so total years of experience and any genuine gaps remain visible.
@@ -188,6 +188,33 @@ async def generate_cv(
             if isinstance(item, dict):
                 item.setdefault("start_date", "")
                 item.setdefault("end_date", "")
+
+    # Normalize and post-process interests so we never surface a single-item list.
+    raw_interests = parsed.get("interests", [])
+    normalized_interests: list[str] = []
+    if isinstance(raw_interests, str):
+        # Split comma- or slash-separated strings into individual interests.
+        parts = [p.strip() for chunk in raw_interests.split("/") for p in chunk.split(",")]
+        normalized_interests = [p for p in parts if p]
+    elif isinstance(raw_interests, list):
+        for item in raw_interests:
+            text = str(item).strip()
+            if not text:
+                continue
+            normalized_interests.append(text)
+
+    # Deduplicate while preserving order.
+    seen: set[str] = set()
+    deduped_interests: list[str] = []
+    for item in normalized_interests:
+        key = item.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped_interests.append(item)
+
+    # If we end up with fewer than two distinct interests, clear the array entirely.
+    parsed["interests"] = deduped_interests if len(deduped_interests) >= 2 else []
 
     return parsed
 

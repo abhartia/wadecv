@@ -19,6 +19,20 @@ _CONTROL_CHARS_RE = re.compile(
     "[" + "".join(chr(c) for c in range(32) if c not in (9, 10, 13)) + "]"
 )
 
+_UNICODE_NORMALIZATION_MAP = {
+    "\u2010": "-",
+    "\u2011": "-",
+    "\u2012": "-",
+    "\u2013": "-",
+    "\u2014": "-",
+    "\u2212": "-",
+    "\u2022": " ",
+    "\u00B7": " ",
+    "\u25A0": " ",
+    "\u25AA": " ",
+    "\u00A0": " ",
+}
+
 
 def _clean_text(value: object | None) -> str:
     """
@@ -32,7 +46,11 @@ def _clean_text(value: object | None) -> str:
         value = ", ".join(str(v) for v in value if v is not None)
     elif not isinstance(value, str):
         value = str(value)
-    return _CONTROL_CHARS_RE.sub("", value)
+
+    cleaned = _CONTROL_CHARS_RE.sub("", value)
+    for src, replacement in _UNICODE_NORMALIZATION_MAP.items():
+        cleaned = cleaned.replace(src, replacement)
+    return cleaned
 
 
 def _contact_link_url(key: str, value: str) -> str | None:
