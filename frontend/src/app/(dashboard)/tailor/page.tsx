@@ -6,11 +6,9 @@ import { useAuth } from "@/lib/auth";
 import { api, ApiError, CVGenerationProgressEvent, CVGenerationStage } from "@/lib/api";
 import {
   trackCvDownload,
-  trackCvEmailSent,
   trackCvImportFailure,
   trackCvImportStarted,
   trackCvImportSuccess,
-  trackCvSectionEdited,
   trackCvTailorApplied,
   trackCvTailorStarted,
   trackDashboardViewed,

@@ -196,7 +196,7 @@ export function CVEditor({ data, onChange }: CVEditorProps) {
                 if (!Number.isFinite(year)) return null;
                 return year * 12 + (Number.isFinite(month) ? month : 1);
               };
-              const score = (item: { exp: (typeof cv.experience)[number]; index: number }) => {
+              const score = (item: { exp: any; index: number }) => {
                 const endScore =
                   item.exp.end_date && item.exp.end_date.toLowerCase().includes("present")
                     ? Number.POSITIVE_INFINITY
@@ -239,14 +239,14 @@ export function CVEditor({ data, onChange }: CVEditorProps) {
                       <div className="space-y-2 flex-1">
                         <Label>End Date</Label>
                         <Input
-                          placeholder='YYYY-MM or "Present"'
+                          placeholder="YYYY-MM or Present"
                           value={exp.end_date || ""}
                           onChange={(e) => update(["experience", String(i), "end_date"], e.target.value)}
                         />
                       </div>
                     </div>
                     <p className="text-xs text-muted-foreground">
-                      Use a consistent format (e.g. 2019-06) and \"Present\" for your current role so your total experience is clear.
+                      Use a consistent format (e.g. 2019-06) and the word Present for your current role so your total experience is clear.
                     </p>
                   </div>
                 </div>

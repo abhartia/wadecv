@@ -7,7 +7,7 @@ import { api } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Coins, FileText, Plus, Briefcase, ArrowRight, Loader2, Sparkles, Upload, Check, X } from "lucide-react";
+import { Coins, Plus, Briefcase, ArrowRight, Loader2, Sparkles, Upload, Check, X } from "lucide-react";
 
 interface CVItem {
   id: string;
@@ -61,7 +61,6 @@ export default function DashboardPage() {
   const [cvs, setCvs] = useState<CVItem[]>([]);
   const [jobs, setJobs] = useState<JobItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const generatedCvs = cvs.filter((cv) => cv.status === "generated");
   const decidedJobs = jobs.filter((job) =>
     ["accepted", "rejected", "cv_accepted", "cv_rejected"].includes(job.application_status),
   );

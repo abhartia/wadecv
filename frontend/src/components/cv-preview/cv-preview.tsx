@@ -56,7 +56,7 @@ interface CvPreviewProps {
   pageLimit?: 1 | 2;
 }
 
-export function CvPreview({ data, pageLimit = 1 }: CvPreviewProps) {
+export function CvPreview({ data }: CvPreviewProps) {
   const cv = data as CVPreviewData;
 
   const computeTotalYearsExperience = (): number | null => {
