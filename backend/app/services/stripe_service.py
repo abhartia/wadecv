@@ -51,6 +51,7 @@ async def create_checkout_session(db: AsyncSession, user: User, pack_id: str) ->
             mode="payment",
             success_url=f"{settings.frontend_url}/dashboard",
             cancel_url=f"{settings.frontend_url}/billing?cancelled=true",
+            allow_promotion_codes=True,
             metadata={
                 "user_id": str(user.id),
                 "pack_id": pack_id,
@@ -78,6 +79,7 @@ async def create_checkout_session(db: AsyncSession, user: User, pack_id: str) ->
                 mode="payment",
                 success_url=f"{settings.frontend_url}/dashboard",
                 cancel_url=f"{settings.frontend_url}/billing?cancelled=true",
+                allow_promotion_codes=True,
                 metadata={
                     "user_id": str(user.id),
                     "pack_id": pack_id,

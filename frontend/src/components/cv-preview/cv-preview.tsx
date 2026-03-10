@@ -62,7 +62,7 @@ export function CvPreview({ data, pageLimit = 1 }: CvPreviewProps) {
     >
       {/* Name */}
       {cv.personal_info?.full_name && (
-        <h1 className="text-center text-2xl font-bold text-[#1E293B] mb-1">
+        <h1 className="text-center text-3xl font-bold tracking-tight text-[#1E293B] mb-1">
           {clean(cv.personal_info.full_name)}
         </h1>
       )}
@@ -75,14 +75,11 @@ export function CvPreview({ data, pageLimit = 1 }: CvPreviewProps) {
       )}
 
       {/* Horizontal rule */}
-      <hr className="border-t border-slate-300 mb-6" />
+      <hr className="border-t border-slate-200 mb-6" />
 
-      {/* Professional Summary */}
+      {/* Professional Summary - no header, summary only */}
       {cv.professional_summary && (
         <section className="mb-6">
-          <h2 className="text-sm font-bold text-[#1E293B] mb-2 mt-0">
-            Professional Summary
-          </h2>
           <p className="text-sm leading-relaxed mb-0">
             {clean(cv.professional_summary)}
           </p>
@@ -92,7 +89,7 @@ export function CvPreview({ data, pageLimit = 1 }: CvPreviewProps) {
       {/* Experience */}
       {(cv.experience?.length ?? 0) > 0 && (
         <section className="mb-6">
-          <h2 className="text-sm font-bold text-[#1E293B] mb-3 mt-4">
+          <h2 className="text-xs font-bold uppercase tracking-wide text-[#1E293B] mb-3 mt-4">
             Professional Experience
           </h2>
           <div className="space-y-4">
@@ -123,7 +120,7 @@ export function CvPreview({ data, pageLimit = 1 }: CvPreviewProps) {
       {/* Education */}
       {(cv.education?.length ?? 0) > 0 && (
         <section className="mb-6">
-          <h2 className="text-sm font-bold text-[#1E293B] mb-3 mt-4">
+          <h2 className="text-xs font-bold uppercase tracking-wide text-[#1E293B] mb-3 mt-4">
             Education
           </h2>
           <div className="space-y-3">
@@ -153,7 +150,7 @@ export function CvPreview({ data, pageLimit = 1 }: CvPreviewProps) {
           (k) => (cv.skills![k]?.length ?? 0) > 0
         ) && (
           <section className="mb-6">
-            <h2 className="text-sm font-bold text-[#1E293B] mb-2 mt-4">
+            <h2 className="text-xs font-bold uppercase tracking-wide text-[#1E293B] mb-2 mt-4">
               Skills
             </h2>
             <div className="text-sm space-y-1">
@@ -182,7 +179,7 @@ export function CvPreview({ data, pageLimit = 1 }: CvPreviewProps) {
       {/* Interests */}
       {cv.interests != null && (Array.isArray(cv.interests) ? cv.interests.length > 0 : String(cv.interests).trim() !== "") && (
         <section className="mb-0">
-          <h2 className="text-sm font-bold text-[#1E293B] mb-2 mt-4">
+          <h2 className="text-xs font-bold uppercase tracking-wide text-[#1E293B] mb-2 mt-4">
             Interests
           </h2>
           <p className="text-sm mb-0">

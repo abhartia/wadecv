@@ -194,7 +194,6 @@ def build_cv_docx(cv_data: dict, page_limit: int = 1) -> bytes:
 
     summary = _clean_text(cv_data.get("professional_summary", ""))
     if summary:
-        _add_heading(doc, "Professional Summary", level=2, heading_pt=heading_pt, space_before=0)
         _add_paragraph(doc, summary, size=body_pt, space_after=space_after_body)
 
     experience = cv_data.get("experience", []) or []
@@ -424,7 +423,6 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 1) -> bytes:
 
     summary = _clean_text(cv_data.get("professional_summary", ""))
     if summary:
-        story.append(Paragraph("Professional Summary", styles["CvHeading"]))
         story.append(Paragraph(summary, styles["CvBody"]))
 
     def _pdf_esc(s: str) -> str:

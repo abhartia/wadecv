@@ -1,6 +1,7 @@
 import asyncio
 import io
 import logging
+import unicodedata
 import uuid
 from collections.abc import Awaitable, Callable
 
@@ -37,6 +38,22 @@ from app.utils.parsing import parse_cv_file
 logger = logging.getLogger(__name__)
 
 router = APIRouter()
+
+
+def _to_ascii_filename(base: str) -> str:
+    """
+    Convert an arbitrary filename base to a value that is safe for HTTP
+    headers, which must be latin-1 encodable. We:
+    - normalize to NFKD
+    - drop non-ASCII characters
+    - replace spaces with underscores
+    - replace any remaining unsafe characters with underscores
+    """
+    normalized = unicodedata.normalize("NFKD", base)
+    ascii_only = normalized.encode("ascii", "ignore").decode("ascii")
+    ascii_only = ascii_only.replace(" ", "_")
+    cleaned = "".join(ch if (ch.isalnum() or ch in ("_", "-", ".")) else "_" for ch in ascii_only)
+    return cleaned or "Resume"
 
 
 async def _emit_event(
@@ -1191,7 +1208,8 @@ async def download_cv(
         base = f"{first_name}_Resume{mid}{date_str}"
     else:
         base = f"Resume{mid}{date_str}"
-    safe_base = base.replace(" ", "_")
+
+    safe_base = _to_ascii_filename(base)
 
     if format == "pdf":
         pdf_bytes = build_cv_pdf(cv.generated_cv_data, page_limit=getattr(cv, "page_limit", 1) or 1)
@@ -1199,7 +1217,7 @@ async def download_cv(
         return StreamingResponse(
             io.BytesIO(pdf_bytes),
             media_type="application/pdf",
-            headers={"Content-Disposition": f'attachment; filename=\"{filename}\"'},
+            headers={"Content-Disposition": f'attachment; filename="{filename}"'},
         )
 
     # default to DOCX
@@ -1208,5 +1226,5 @@ async def download_cv(
     return StreamingResponse(
         io.BytesIO(docx_bytes),
         media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        headers={"Content-Disposition": f'attachment; filename=\"{filename}\"'},
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
     )
