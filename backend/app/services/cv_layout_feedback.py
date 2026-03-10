@@ -35,9 +35,25 @@ LAYOUT_FEEDBACK_USER = """Review this CV image and return your JSON with the "tw
 
 LAYOUT_FEEDBACK_USER_TWO_PAGES = """The following two images are page 1 and page 2 of a 2-page CV. Review both pages and return your JSON with the "tweaks" array as specified."""
 
-LAYOUT_FEEDBACK_USER_ONE_PAGE = """This CV must fit on ONE page. Suggest only tweaks that shorten or condense the professional summary and experience bullets (e.g. shorter summary, fewer bullets per role). Do not suggest removing or shortening education; education details must stay. Return your JSON with the "tweaks" array as specified."""
+LAYOUT_FEEDBACK_USER_ONE_PAGE = """This CV must fit on ONE page.
 
-LAYOUT_FEEDBACK_USER_ONE_PAGE_OVERFLOW = """The following two images are page 1 and page 2 of a CV that must fit on ONE page. It is currently overflowing to a second page. Suggest specific tweaks to shorten or condense (e.g. shorter professional summary, fewer bullets per role) so it fits on one page. Do not suggest removing or shortening education. Return your JSON with the "tweaks" array as specified."""
+Suggest only tweaks that shorten or condense the professional summary and, especially, bullets under Professional Experience.
+
+Be specific about where to trim:
+- Prioritize keeping more detail in the 1–2 most recent roles and reducing bullets in older roles first.
+- Prefer suggestions like “reduce bullets in the 3rd (older) role from 5 to 2, keeping only the most relevant points to the target job” over vague advice.
+- You may suggest merging two similar bullets into one more compact bullet when appropriate.
+
+Do not suggest removing or shortening education; education details must stay. Return your JSON with the "tweaks" array as specified."""
+
+LAYOUT_FEEDBACK_USER_ONE_PAGE_OVERFLOW = """The following two images are page 1 and page 2 of a CV that must fit on ONE page. It is currently overflowing to a second page.
+
+Suggest specific tweaks to shorten or condense content so it fits on one page, focusing primarily on Professional Experience bullets:
+- Keep the 1–2 most recent roles relatively detailed (up to 2–3 bullets each).
+- Aggressively reduce bullets in older roles (e.g. down to 1–2 bullets, or merge similar points) before trimming recent roles.
+- Prefer precise instructions like “reduce bullets in the 2nd role from 6 to 3, dropping the least relevant points”.
+
+Do not suggest removing or shortening education. Return your JSON with the "tweaks" array as specified."""
 
 
 def _pdf_to_png_base64(pdf_bytes: bytes, page_limit: int = 1) -> list[str] | None:

@@ -89,10 +89,11 @@ PAGE_LIMIT_ONE_PROMPT = """
 
 CRITICAL — PAGE LENGTH: This CV MUST fit on a SINGLE page. The document will be rendered with compact formatting (reduced margins and font size), so you can include full content in key sections while still fitting on one page.
 - Professional summary: 2–3 concise sentences.
-- Experience: Focus on the 2–3 most relevant roles. Use at most 2–3 short bullet points per role. If there are additional roles, summarize them briefly in one combined line (e.g. under “Additional Experience”) instead of full bullet lists.
+- Experience: Keep the 1–2 most recent roles relatively detailed with at most 2–3 short, high-impact bullet points each. For older roles, reduce to at most 1–2 bullets per role, dropping the least relevant points for the target job or merging similar bullets.
+- Experience (layout feedback): When layout feedback instructs you to reduce bullets in a specific role, you MUST do so (for example, “reduce bullets in the 3rd role from 6 to 3, keeping only the most relevant points”).
 - Education: Include ALL degrees and qualifications. Do not omit or shorten education. List degree, institution, dates, and always populate "details" with honors, relevant coursework, thesis, or other education notes when present in the original CV or additional info. Education is important and must be complete.
 - Skills: One compact block with the most relevant skills.
-- To save space, first trim from the professional summary and from the number of experience bullets; keep education complete and truthful with all details."""
+- To save space, first trim from the professional summary and from the number of experience bullets (starting with older roles) while keeping education complete and truthful with all details."""
 
 PAGE_LIMIT_TWO_PROMPT = """
 
