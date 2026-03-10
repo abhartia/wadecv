@@ -196,7 +196,7 @@ export function CVEditor({ data, onChange }: CVEditorProps) {
                 if (!Number.isFinite(year)) return null;
                 return year * 12 + (Number.isFinite(month) ? month : 1);
               };
-              const score = (item: { exp: any; index: number }) => {
+              const score = (item: { exp: CVData["experience"][number]; index: number }) => {
                 const endScore =
                   item.exp.end_date && item.exp.end_date.toLowerCase().includes("present")
                     ? Number.POSITIVE_INFINITY

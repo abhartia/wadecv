@@ -58,7 +58,6 @@ const getStatusLabel = (status: string) => {
 
 export default function DashboardPage() {
   const { user, token } = useAuth();
-  const [cvs, setCvs] = useState<CVItem[]>([]);
   const [jobs, setJobs] = useState<JobItem[]>([]);
   const [loading, setLoading] = useState(true);
   const decidedJobs = jobs.filter((job) =>
@@ -73,13 +72,12 @@ export default function DashboardPage() {
 
   useEffect(() => {
     if (!token) return;
-    Promise.all([
-      api.listCVs(token),
-      api.listJobs(token),
-    ]).then(([cvsData, jobsData]) => {
-      setCvs(cvsData);
-      setJobs(jobsData);
-    }).finally(() => setLoading(false));
+    api
+      .listJobs(token)
+      .then((jobsData) => {
+        setJobs(jobsData);
+      })
+      .finally(() => setLoading(false));
   }, [token]);
 
   const handleUpdateApplicationStatus = async (
