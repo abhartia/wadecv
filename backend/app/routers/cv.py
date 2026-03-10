@@ -1078,6 +1078,9 @@ async def update_cv(
     if not cv:
         raise HTTPException(status_code=404, detail="CV not found")
 
+    # Trust the client as the source of truth for which roles should be visible,
+    # but do not auto-prune or alter experience on the server. Any removal of
+    # roles must happen explicitly in the client before this request.
     cv.generated_cv_data = req.generated_cv_data
     await db.flush()
 

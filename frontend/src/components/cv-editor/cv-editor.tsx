@@ -70,8 +70,18 @@ export function CVEditor({ data, onChange }: CVEditorProps) {
   };
 
   const addExperience = () => {
-    const exp = [...(cv.experience || []), { job_title: "", company: "", location: "", start_date: "", end_date: "", bullets: [""] }];
-    update(["experience"], exp);
+    const existing = [...(cv.experience || [])];
+    const next = {
+      job_title: "",
+      company: "",
+      location: "",
+      start_date: "",
+      end_date: "",
+      bullets: [""],
+    };
+    // New entries are appended, but we will render experience in reverse-chronological
+    // order when mapping below so earlier roles remain visible and scannable.
+    update(["experience"], [...existing, next]);
   };
 
   const removeExperience = (idx: number) => {
@@ -167,9 +177,36 @@ export function CVEditor({ data, onChange }: CVEditorProps) {
               <Plus className="mr-1 h-4 w-4" />Add
             </Button>
           </div>
+          <p className="mt-2 text-xs text-muted-foreground">
+            Include your full relevant work history with clear start and end dates for each role so recruiters and ATS can see your total years of experience.
+          </p>
         </CardHeader>
         <CardContent className="space-y-6">
-          {(cv.experience || []).map((exp, i) => (
+          {(cv.experience || [])
+            .map((exp, i) => ({ exp, index: i }))
+            .sort((a, b) => {
+              const parseYearMonth = (value?: string) => {
+                if (!value) return null;
+                const trimmed = value.trim();
+                if (!trimmed) return null;
+                // Try to parse formats like YYYY-MM or YYYY
+                const [yearStr, monthStr] = trimmed.split(/[-/]/);
+                const year = Number.parseInt(yearStr || "", 10);
+                const month = monthStr ? Number.parseInt(monthStr, 10) : 1;
+                if (!Number.isFinite(year)) return null;
+                return year * 12 + (Number.isFinite(month) ? month : 1);
+              };
+              const score = (item: { exp: (typeof cv.experience)[number]; index: number }) => {
+                const endScore =
+                  item.exp.end_date && item.exp.end_date.toLowerCase().includes("present")
+                    ? Number.POSITIVE_INFINITY
+                    : parseYearMonth(item.exp.end_date) ?? parseYearMonth(item.exp.start_date);
+                // Fallback to index order if no dates
+                return endScore ?? item.index;
+              };
+              return score(b) - score(a);
+            })
+            .map(({ exp, index: i }) => (
             <div key={i} className="space-y-4">
               {i > 0 && <Separator />}
               <div className="flex justify-between items-start">
@@ -186,15 +223,31 @@ export function CVEditor({ data, onChange }: CVEditorProps) {
                     <Label>Location</Label>
                     <Input value={exp.location || ""} onChange={(e) => update(["experience", String(i), "location"], e.target.value)} />
                   </div>
-                  <div className="flex gap-2">
-                    <div className="space-y-2 flex-1">
-                      <Label>Start Date</Label>
-                      <Input value={exp.start_date || ""} onChange={(e) => update(["experience", String(i), "start_date"], e.target.value)} />
+                  <div className="flex flex-col gap-2">
+                    <div className="flex gap-2">
+                      <div className="space-y-2 flex-1">
+                        <Label>
+                          Start Date <span className="text-destructive">*</span>
+                        </Label>
+                        <Input
+                          placeholder="YYYY-MM (required)"
+                          value={exp.start_date || ""}
+                          onChange={(e) => update(["experience", String(i), "start_date"], e.target.value)}
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2 flex-1">
+                        <Label>End Date</Label>
+                        <Input
+                          placeholder='YYYY-MM or "Present"'
+                          value={exp.end_date || ""}
+                          onChange={(e) => update(["experience", String(i), "end_date"], e.target.value)}
+                        />
+                      </div>
                     </div>
-                    <div className="space-y-2 flex-1">
-                      <Label>End Date</Label>
-                      <Input value={exp.end_date || ""} onChange={(e) => update(["experience", String(i), "end_date"], e.target.value)} />
-                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      Use a consistent format (e.g. 2019-06) and \"Present\" for your current role so your total experience is clear.
+                    </p>
                   </div>
                 </div>
                 <Button variant="ghost" size="icon" className="ml-2 text-destructive" onClick={() => removeExperience(i)}>

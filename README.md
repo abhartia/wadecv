@@ -13,6 +13,10 @@ AI-powered CV tailoring system. Upload your CV, paste a job link, and get a prof
 - **Credit System** -- Pay-per-use pricing with Stripe integration
 - **Dark Mode** -- Full dark mode support
 
+## CV data guarantees
+
+- **Complete, dated work history** -- Generated CVs preserve the candidate's full relevant work history and include clear start/end dates (or \"Present\") for each role so recruiters and ATS can infer total years of experience without hidden gaps introduced by the system.
+
 ## Tech Stack
 
 | Layer | Technology |

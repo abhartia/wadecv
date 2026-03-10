@@ -1,5 +1,15 @@
 "use client";
 
+/**
+ * Structured CV data used for rendering previews and exports.
+ *
+ * Critical invariants:
+ * - The `experience` array should include the candidate's full relevant work history
+ *   (no roles silently dropped by generation or layout steps).
+ * - Each experience entry should have a clear `start_date` and an `end_date` (or a
+ *   well-formed "Present" value) so recruiters and ATS can infer total years of
+ *   experience and spot any genuine career gaps from the visible CV alone.
+ */
 export interface CVPreviewData {
   personal_info?: {
     full_name?: string;
@@ -49,6 +59,48 @@ interface CvPreviewProps {
 export function CvPreview({ data, pageLimit = 1 }: CvPreviewProps) {
   const cv = data as CVPreviewData;
 
+  const computeTotalYearsExperience = (): number | null => {
+    if (!cv.experience || cv.experience.length === 0) return null;
+
+    const parseYearMonth = (value?: string) => {
+      if (!value) return null;
+      const trimmed = value.trim();
+      if (!trimmed) return null;
+      const lower = trimmed.toLowerCase();
+      if (lower.includes("present")) {
+        const now = new Date();
+        return now.getFullYear() * 12 + (now.getMonth() + 1);
+      }
+      const [yearStr, monthStr] = trimmed.split(/[-/]/);
+      const year = Number.parseInt(yearStr || "", 10);
+      const month = monthStr ? Number.parseInt(monthStr, 10) : 1;
+      if (!Number.isFinite(year)) return null;
+      return year * 12 + (Number.isFinite(month) ? month : 1);
+    };
+
+    let minStart: number | null = null;
+    let maxEnd: number | null = null;
+
+    for (const exp of cv.experience) {
+      const startScore = parseYearMonth(exp.start_date);
+      const endScore = parseYearMonth(exp.end_date) ?? startScore;
+      if (startScore != null) {
+        minStart = minStart == null ? startScore : Math.min(minStart, startScore);
+      }
+      if (endScore != null) {
+        maxEnd = maxEnd == null ? endScore : Math.max(maxEnd, endScore);
+      }
+    }
+
+    if (minStart == null || maxEnd == null || maxEnd < minStart) return null;
+
+    const months = maxEnd - minStart + 1;
+    const years = months / 12;
+    return Math.round(years);
+  };
+
+  const totalYears = computeTotalYearsExperience();
+
   const contactKeys = ["email", "phone", "location", "linkedin", "website"] as const;
   const contactParts = contactKeys
     .map((k) => cv.personal_info?.[k])
@@ -62,9 +114,16 @@ export function CvPreview({ data, pageLimit = 1 }: CvPreviewProps) {
     >
       {/* Name */}
       {cv.personal_info?.full_name && (
-        <h1 className="text-center text-3xl font-bold tracking-tight text-[#1E293B] mb-1">
-          {clean(cv.personal_info.full_name)}
-        </h1>
+        <div className="mb-1">
+          <h1 className="text-center text-3xl font-bold tracking-tight text-[#1E293B]">
+            {clean(cv.personal_info.full_name)}
+          </h1>
+          {totalYears != null && totalYears > 0 && (
+            <p className="mt-0.5 text-center text-xs font-medium uppercase tracking-wide text-[#475569]">
+              {totalYears} years of experience
+            </p>
+          )}
+        </div>
       )}
 
       {/* Contact */}

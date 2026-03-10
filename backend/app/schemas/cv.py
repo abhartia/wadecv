@@ -39,6 +39,15 @@ class CVFitRequest(BaseModel):
 
 
 class CVUpdateRequest(BaseModel):
+    """
+    Full replacement of the generated CV JSON structure.
+
+    The frontend is expected to send the candidate's complete, dated work
+    history in `generated_cv_data["experience"]`. Server-side code will not
+    auto-prune or synthesize roles; any removal of roles must be an explicit
+    choice in the client.
+    """
+
     generated_cv_data: dict
 
 

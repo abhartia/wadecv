@@ -80,7 +80,9 @@ Guidelines:
 - If additional info is provided, incorporate it naturally into the relevant sections
 - If the original CV or additional info mentions interests, hobbies, or extracurriculars, include an "interests" array with 1–5 short items; otherwise omit or leave empty.
 - Aim for visually balanced section lengths: avoid one very long section (e.g. a huge experience block) and a one-line summary; keep sections proportionally balanced where content allows.
-- If additional_info contains "Layout feedback" or "apply these tweaks", you MUST apply those tweaks: e.g. shorten the professional summary, reduce the number of bullets per role, or rebalance content as specified. Treat layout feedback as mandatory instructions. When the instructions say to keep the CV to one page, apply tweaks by shortening summary and experience bullets only; never remove or omit education entries or their details (degree, institution, dates, honors, coursework, thesis)."""
+- Critically, preserve the candidate's complete work history: do not drop, hide, or merge past roles to save space. You may shorten or merge bullet points, but you must keep all distinct roles represented in the `experience` array with clear dates so total years of experience and any genuine gaps remain visible.
+- For every experience entry, always populate `start_date` and `end_date`. Use a consistent, machine- and human-readable format such as "YYYY-MM" for months and years (e.g. "2019-06"), and use "Present" for ongoing roles where appropriate.
+- If additional_info contains "Layout feedback" or "apply these tweaks", you MUST apply those tweaks: e.g. shorten the professional summary, reduce the number of bullets per role, or rebalance content as specified. Treat layout feedback as mandatory instructions. When the instructions say to keep the CV to one page, apply tweaks by shortening summary and experience bullets only; never remove or omit education entries or their details (degree, institution, dates, honors, coursework, thesis), and do not drop entire past roles; instead, summarize them more briefly if needed."""
 
 
 PAGE_LIMIT_ONE_PROMPT = """
@@ -149,7 +151,7 @@ async def generate_cv(
     if not cleaned:
         # Fall back to an empty-but-well-structured CV object so the
         # API still returns a valid payload instead of a 500 error.
-        return {
+        base: dict = {
             "personal_info": {
                 "full_name": "",
                 "email": "",
@@ -169,8 +171,22 @@ async def generate_cv(
             },
             "interests": [],
         }
+        return base
 
-    return json.loads(cleaned)
+    parsed = json.loads(cleaned)
+
+    # Post-process to enforce date fields on experience entries even if the
+    # model omitted them. We do not add or remove roles here; we only ensure
+    # that each listed role has explicit start/end date keys so downstream
+    # logic and ATS can reason about total years of experience.
+    experience = parsed.get("experience")
+    if isinstance(experience, list):
+        for item in experience:
+            if isinstance(item, dict):
+                item.setdefault("start_date", "")
+                item.setdefault("end_date", "")
+
+    return parsed
 
 
 async def generate_fit_analysis(
