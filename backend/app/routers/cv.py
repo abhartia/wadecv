@@ -26,7 +26,6 @@ from app.schemas.cv import (
     CVUploadResponse,
 )
 from app.services.credits import deduct_credit
-from app.services.cv_compaction import compact_experience_bullets_for_one_page
 from app.services.cv_generator import generate_cv, generate_fit_analysis
 from app.services.cv_layout_feedback import count_cv_pdf_pages, get_cv_layout_feedback
 from app.services.docx_builder import build_cv_docx, build_cv_pdf
@@ -95,7 +94,7 @@ async def _apply_layout_feedback_and_regenerate(
     emit: Callable[[CVGenerationProgressEvent], Awaitable[None]] | None = None,
     job: Job | None = None,
     progress: int | None = None,
-    max_layout_iterations: int = 3,
+    max_layout_iterations: int = 4,
 ) -> dict:
     current_cv_data = cv_data
     current_additional = additional_info or ""
@@ -139,21 +138,11 @@ async def _apply_layout_feedback_and_regenerate(
 
             if iteration_index >= max_layout_iterations:
                 logger.warning(
-                    "Layout iterations exhausted with overflow; attempting bullet compaction "
-                    "before returning last CV data (pages=%s, limit=%s)",
+                    "Layout iterations exhausted with overflow and no tweaks; returning last CV data "
+                    "(pages=%s, limit=%s)",
                     num_pages,
                     page_limit,
                 )
-                if page_limit == 1:
-                    compacted = compact_experience_bullets_for_one_page(current_cv_data)
-                    compacted_pages = count_cv_pdf_pages(compacted, page_limit=page_limit)
-                    logger.info(
-                        "Bullet compaction fallback (no-tweak case): pages=%s (limit=%s)",
-                        compacted_pages,
-                        page_limit,
-                    )
-                    if compacted_pages <= page_limit:
-                        return compacted
                 return current_cv_data
 
             # Try again in the next iteration using the same CV data.
@@ -212,21 +201,10 @@ async def _apply_layout_feedback_and_regenerate(
         if iteration_index >= max_layout_iterations:
             logger.warning(
                 "Layout iterations exhausted with overflow after applying tweaks; "
-                "attempting bullet compaction before returning last CV data "
-                "(pages=%s, limit=%s)",
+                "returning last CV data (pages=%s, limit=%s)",
                 num_pages,
                 page_limit,
             )
-            if page_limit == 1:
-                compacted = compact_experience_bullets_for_one_page(current_cv_data)
-                compacted_pages = count_cv_pdf_pages(compacted, page_limit=page_limit)
-                logger.info(
-                    "Bullet compaction fallback (tweaked case): pages=%s (limit=%s)",
-                    compacted_pages,
-                    page_limit,
-                )
-                if compacted_pages <= page_limit:
-                    return compacted
             return current_cv_data
 
     return current_cv_data

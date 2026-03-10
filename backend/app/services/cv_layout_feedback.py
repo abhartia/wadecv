@@ -39,19 +39,21 @@ LAYOUT_FEEDBACK_USER_ONE_PAGE = """This CV must fit on ONE page.
 
 Suggest only tweaks that shorten or condense the professional summary and, especially, bullets under Professional Experience.
 
-Be specific about where to trim:
-- Prioritize keeping more detail in the 1–2 most recent roles and reducing bullets in older roles first.
-- Prefer suggestions like “reduce bullets in the 3rd (older) role from 5 to 2, keeping only the most relevant points to the target job” over vague advice.
-- You may suggest merging two similar bullets into one more compact bullet when appropriate.
+When deciding what to trim, focus on **relevance to the target job description**:
+- Prefer to shorten or drop bullets that are generic, redundant, or do not clearly map to the job’s responsibilities or requirements.
+- Keep bullets that mention key skills, tools, or outcomes that align with sections like “Responsibilities”, “Requirements”, or “What you’ll do”.
+- You may suggest merging two similar bullets into one more compact, high-relevance bullet when appropriate.
+
+Be specific about where to trim (e.g. “reduce bullets in the 3rd (older) role from 5 to 2, keeping only the bullets that mention backend APIs and SQL”).
 
 Do not suggest removing or shortening education; education details must stay. Return your JSON with the "tweaks" array as specified."""
 
 LAYOUT_FEEDBACK_USER_ONE_PAGE_OVERFLOW = """The following two images are page 1 and page 2 of a CV that must fit on ONE page. It is currently overflowing to a second page.
 
-Suggest specific tweaks to shorten or condense content so it fits on one page, focusing primarily on Professional Experience bullets:
-- Keep the 1–2 most recent roles relatively detailed (up to 2–3 bullets each).
-- Aggressively reduce bullets in older roles (e.g. down to 1–2 bullets, or merge similar points) before trimming recent roles.
-- Prefer precise instructions like “reduce bullets in the 2nd role from 6 to 3, dropping the least relevant points”.
+Suggest specific tweaks to shorten or condense content so it fits on one page, focusing primarily on Professional Experience bullets and their relevance to the job:
+- Keep the 1–2 most recent, highly relevant roles relatively detailed (up to 2–3 bullets each).
+- Aggressively reduce or merge bullets in older or less relevant roles (e.g. down to 1–2 bullets) before trimming the most relevant recent roles.
+- Prefer precise instructions like “reduce bullets in the 2nd role from 6 to 3, dropping bullets that do not mention Python, APIs, or distributed systems”.
 
 Do not suggest removing or shortening education. Return your JSON with the "tweaks" array as specified."""
 
