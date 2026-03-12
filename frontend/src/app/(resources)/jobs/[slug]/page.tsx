@@ -6,6 +6,8 @@ import { SeoCta } from "@/components/seo/seo-cta";
 import { FaqSection } from "@/components/seo/faq-section";
 import { RelatedGuides } from "@/components/seo/related-guides";
 
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com";
+
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props) {
@@ -31,6 +33,21 @@ export default async function JobPage({ params }: Props) {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: job.title,
+            description: job.metaDescription,
+            author: { "@type": "Organization", name: "WadeCV" },
+            publisher: { "@type": "Organization", name: "WadeCV", url: BASE_URL },
+            datePublished: "2024-01-01",
+            mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/jobs/${job.slug}` },
+          }),
+        }}
+      />
       <h1 className="text-3xl font-bold mb-4">{job.title}</h1>
       <p className="text-muted-foreground mb-6">{job.intro}</p>
 
@@ -119,7 +136,7 @@ export default async function JobPage({ params }: Props) {
           </p>
         </CardHeader>
         <CardContent>
-          <SeoCta variant="job" label="Generate a resume optimized for this job" />
+          <SeoCta variant="job" label="Generate a resume optimized for this job" slug={slug} />
         </CardContent>
       </Card>
     </article>

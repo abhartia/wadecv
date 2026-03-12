@@ -29,7 +29,9 @@ type GAEventName =
   | "job_scrape_failure"
   | "feature_clicked"
   | "frontend_error"
-  | "api_call_failed";
+  | "api_call_failed"
+  | "seo_cta_click"
+  | "seo_nav_click";
 
 export type GAEventParams = Record<string, string | number | boolean | null | undefined>;
 

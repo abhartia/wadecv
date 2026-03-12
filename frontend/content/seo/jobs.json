@@ -52,7 +52,11 @@
     "salaryRange": "Often $65,000–$110,000 depending on experience, organization, and location.",
     "careerPath": ["Data Analyst", "Senior Data Analyst", "Analytics Manager", "Director of Analytics"],
     "resumeKeywords": ["SQL", "Tableau", "Power BI", "healthcare", "HIPAA", "claims", "EMR", "EHR", "dashboard", "metrics", "data quality", "stakeholder", "Python", "R", "analytics", "reporting"],
-    "body": "Healthcare data roles value both technical skills and domain awareness. On your resume, highlight experience with healthcare datasets, compliance considerations, and how your analyses drove decisions for clinicians or operations. Quantify impact where you can (e.g. reports used by X teams, time saved, or improvements in key metrics). Tailoring your resume to each employer's focus—clinical quality, revenue cycle, population health, or product analytics—will improve your fit. Use WadeCV to align your background with specific healthcare data analyst job descriptions."
+    "body": "Healthcare data roles value both technical skills and domain awareness. On your resume, highlight experience with healthcare datasets, compliance considerations, and how your analyses drove decisions for clinicians or operations. Quantify impact where you can (e.g. reports used by X teams, time saved, or improvements in key metrics). Tailoring your resume to each employer's focus—clinical quality, revenue cycle, population health, or product analytics—will improve your fit. Use WadeCV to align your background with specific healthcare data analyst job descriptions.",
+    "faq": [
+      { "question": "What skills do healthcare data analyst roles look for?", "answer": "SQL, visualization tools (Tableau, Power BI), and often Python or R. Domain knowledge of healthcare data (claims, EMR, HIPAA) and the ability to explain results to non-technical stakeholders are also important." }
+    ],
+    "relatedSlugs": ["nurse", "data-scientist", "financial-analyst"]
   },
   {
     "slug": "customer-success-manager",
@@ -77,7 +81,12 @@
     "salaryRange": "Often $70,000–$120,000 base plus variable compensation, depending on segment and company.",
     "careerPath": ["Customer Success Associate", "CSM", "Senior CSM", "Team Lead", "Director of Customer Success"],
     "resumeKeywords": ["customer success", "retention", "churn", "onboarding", "adoption", "renewal", "expansion", "NPS", "health score", "stakeholder", "SaaS", "CRM", "quarterly business review", "upsell", "customer journey"],
-    "body": "CSM roles reward outcomes: retention rates, expansion revenue, and improved adoption or NPS. On your resume, lead with metrics—renewal rates, revenue retained or expanded, number of accounts, and feedback scores. Show that you can own the relationship and work across internal teams. Tailoring your resume to the company's segment (SMB, mid-market, enterprise) and industry will help. WadeCV can help you align your customer-facing experience with CSM job descriptions and highlight your strongest impact."
+    "body": "CSM roles reward outcomes: retention rates, expansion revenue, and improved adoption or NPS. On your resume, lead with metrics—renewal rates, revenue retained or expanded, number of accounts, and feedback scores. Show that you can own the relationship and work across internal teams. Tailoring your resume to the company's segment (SMB, mid-market, enterprise) and industry will help. WadeCV can help you align your customer-facing experience with CSM job descriptions and highlight your strongest impact.",
+    "faq": [
+      { "question": "What metrics should I put on a customer success manager resume?", "answer": "Renewal rate, retention, NPS or CSAT, expansion revenue, number of accounts managed, and adoption or usage metrics. Lead with outcomes that show you drove retention and growth." }
+    ],
+    "commonMistakes": ["Vague bullets without metrics", "Skipping renewal or retention numbers", "No evidence of cross-functional work"],
+    "relatedSlugs": ["account-executive", "recruiter", "product-manager-startup"]
   },
   {
     "slug": "frontend-engineer",
@@ -258,5 +267,74 @@
     "careerPath": ["Teacher", "Lead Teacher", "Department Head", "Administrator"],
     "resumeKeywords": ["lesson plan", "differentiation", "assessment", "classroom management", "curriculum", "student achievement", "certification", "standards"],
     "body": "Teacher resumes should highlight certification, grade level or subject, and student outcomes (growth, pass rates, engagement). Use clear bullets that show scope and impact. Tailor to the district and grade level in the job description.\n\nWadeCV can help you align your teaching experience with job descriptions."
+  },
+  {
+    "slug": "senior-product-manager",
+    "title": "Senior Product Manager Job Description & Resume Guide",
+    "metaDescription": "Senior PM job description: scope, leadership, and resume keywords for staff and principal PM roles.",
+    "intro": "Senior product managers own strategy, mentor others, and drive outcomes across multiple teams or products. This guide covers typical expectations and how to present your experience for senior and principal PM roles.",
+    "responsibilities": ["Define product strategy and roadmap for a product area or portfolio", "Lead and mentor PMs; align cross-functional teams on priorities", "Drive key metrics and business outcomes; report to leadership", "Represent product in planning, board reviews, and customer conversations", "Balance technical debt, innovation, and incremental delivery"],
+    "requiredSkills": ["Strategic thinking and prioritisation at scale", "Stakeholder and executive communication", "Data-driven decision making and experimentation", "Technical fluency to partner with eng and design leadership", "Mentorship and team development"],
+    "salaryRange": "Often $150,000–$250,000+ depending on level and location.",
+    "careerPath": ["Senior PM", "Principal PM", "Director of Product", "VP Product"],
+    "resumeKeywords": ["strategy", "roadmap", "metrics", "stakeholder", "leadership", "scale", "OKRs", "cross-functional", "ownership", "executive", "mentorship"],
+    "body": "Senior PM resumes should show scope: product area, team size, revenue or user impact. Lead with strategy and outcomes, not just execution. Highlight how you influenced direction, developed people, and drove results. Tailoring your resume to the company's stage and product type will strengthen your fit. WadeCV can help you align your senior PM experience with job descriptions and surface your strongest leadership and impact.",
+    "commonMistakes": ["Focusing only on tactics; senior roles need strategy and scope", "Omitting mentorship or org impact", "Generic bullets that don't show level of ownership"],
+    "interviewTips": ["Prepare strategy and prioritisation cases", "Be ready to discuss trade-offs and how you influenced without authority", "Show how you developed others and scaled product practice"],
+    "relatedSlugs": ["product-manager-startup", "solutions-architect", "marketing-manager"],
+    "faq": [
+      { "question": "What do senior PM hiring managers look for?", "answer": "Evidence of strategy ownership, scope (team, product area, revenue), and impact on people and process. They want to see you can drive outcomes and align stakeholders at scale." }
+    ]
+  },
+  {
+    "slug": "ux-designer",
+    "title": "UX Designer Job Description & Resume Guide",
+    "metaDescription": "UX designer job description: responsibilities, skills, and resume keywords for product design roles.",
+    "intro": "UX designers focus on user research, flows, and interfaces. Hiring managers look for impact on usability and product success. This guide covers typical job requirements and resume keywords for UX and product design roles.",
+    "responsibilities": ["Conduct user research and usability testing", "Create wireframes, prototypes, and high-fidelity designs", "Collaborate with product and engineering on scope and implementation", "Define and evolve design systems and patterns", "Measure and iterate based on usage and feedback"],
+    "requiredSkills": ["User research and usability testing", "Wireframing and prototyping (Figma, Sketch, etc.)", "Visual design and design systems", "Collaboration with product and engineering", "Data and metrics literacy"],
+    "salaryRange": "Often $90,000–$160,000+ depending on level and location.",
+    "careerPath": ["UX Designer", "Senior UX Designer", "Staff Designer", "Design Lead"],
+    "resumeKeywords": ["user research", "wireframe", "prototype", "Figma", "design system", "usability", "conversion", "user flow", "accessibility", "collaboration"],
+    "body": "UX resumes should lead with user and business impact: conversion, satisfaction, efficiency. Show research and design process and how it drove outcomes. Tailor to the product type (B2B, B2C, internal tools). WadeCV can help you align your UX experience with job descriptions.",
+    "commonMistakes": ["Portfolio-only focus; resume should stand alone with impact", "Vague bullets without metrics or scope", "Skipping collaboration and stakeholder context"],
+    "relatedSlugs": ["frontend-engineer", "product-manager-startup", "technical-writer"],
+    "faq": [
+      { "question": "How do I show UX impact on a resume?", "answer": "Use metrics: conversion rate changes, task completion time, satisfaction scores, or support ticket reduction. Describe the problem, your approach, and the outcome in 1–2 lines per project." }
+    ]
+  },
+  {
+    "slug": "data-scientist",
+    "title": "Data Scientist Job Description & Resume Guide",
+    "metaDescription": "Data scientist job description: ML, analytics, and resume keywords for DS and ML engineer roles.",
+    "intro": "Data scientists build models, run experiments, and turn data into decisions. Roles span analytics, ML, and research. This guide covers typical job requirements and how to tailor your resume for data science positions.",
+    "responsibilities": ["Build and deploy models for prediction, recommendation, or classification", "Design and analyse A/B tests and experiments", "Work with large datasets; ensure reproducibility and documentation", "Collaborate with product and engineering on metrics and instrumentation", "Present findings to technical and non-technical stakeholders"],
+    "requiredSkills": ["Python or R; SQL; statistics and ML fundamentals", "Experiment design and causal inference", "ML frameworks (e.g. scikit-learn, TensorFlow); feature engineering", "Communication and storytelling with data", "Software engineering practices where models are productionised"],
+    "salaryRange": "Often $120,000–$200,000+ depending on level and location.",
+    "careerPath": ["Data Scientist", "Senior Data Scientist", "Staff DS", "Principal DS"],
+    "resumeKeywords": ["machine learning", "A/B test", "Python", "SQL", "model", "experiment", "metrics", "recommendation", "prediction", "statistics", "causal"],
+    "body": "Data science resumes should show impact: model performance, experiment results, or decisions influenced. Include technical stack and scale (data size, users affected). Tailor to the role (more ML vs more analytics). WadeCV can help you align your DS experience with job descriptions.",
+    "commonMistakes": ["Listing tools without outcomes", "Omitting business context for models", "Too much methodology, not enough impact"],
+    "relatedSlugs": ["data-analyst-healthcare", "backend-engineer", "product-manager-startup"],
+    "faq": [
+      { "question": "How many technical details should be on a data scientist resume?", "answer": "Enough to show depth (language, frameworks, methods) but lead with impact: what the model or analysis did for the business, and at what scale." }
+    ]
+  },
+  {
+    "slug": "qa-engineer",
+    "title": "QA Engineer Job Description & Resume Guide",
+    "metaDescription": "QA engineer job description: testing, automation, and resume keywords for quality assurance roles.",
+    "intro": "QA engineers ensure product quality through manual and automated testing. The role combines technical skill with attention to detail. This guide covers typical job requirements and resume keywords for QA and SDET roles.",
+    "responsibilities": ["Design and execute test plans and cases", "Build and maintain automated test suites (e.g. Selenium, Cypress)", "Report bugs and work with development on fixes", "Participate in release and regression testing", "Improve test coverage and CI integration"],
+    "requiredSkills": ["Test design and methodology", "Automation (e.g. Selenium, Cypress, Playwright)", "Programming (e.g. Python, JavaScript) for test code", "API and database basics for test data", "CI/CD and agile practices"],
+    "salaryRange": "Often $70,000–$130,000 depending on level and location.",
+    "careerPath": ["QA Engineer", "Senior QA", "SDET", "QA Lead"],
+    "resumeKeywords": ["automation", "Selenium", "test", "regression", "CI", "bug", "coverage", "API", "quality", "release"],
+    "body": "QA resumes should show impact: coverage improved, bugs caught, release quality. Include automation stack and scale (number of tests, environments). Tailor to the product type and stack in the job description. WadeCV can help you align your QA experience with job descriptions.",
+    "commonMistakes": ["Only listing test types; show outcomes and scale", "No automation or tool depth", "Vague defect descriptions without impact"],
+    "relatedSlugs": ["frontend-engineer", "devops-engineer", "scrum-master"],
+    "faq": [
+      { "question": "Should I list manual vs automated testing on my QA resume?", "answer": "Yes. Show both—manual for exploratory and edge cases, automation for regression and scale. Quantify where you can (e.g. 'Maintained 500+ automated tests')." }
+    ]
   }
 ]

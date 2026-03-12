@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wadecv-mcp-seo-server"
+version = "0.1.0"
+description = "MCP server for WadeCV that uses GA4 and Google Search Console data to drive weekly SEO insights and content changes."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "WadeCV", email = "dev@wadecv.local" }]
+
+dependencies = [
+  "mcp[cli]>=1.0.0",
+  "google-analytics-data>=0.18.0",
+  "google-api-python-client>=2.150.0",
+  "google-auth>=2.0.0",
+  "google-auth-httplib2>=0.2.0",
+  "pydantic>=2.0.0",
+  "python-dateutil>=2.8.0",
+]
+
+[project.scripts]
+wadecv-mcp-seo = "server:main"
+
+[tool.mcp]
+server-command = ["python", "server.py"]
+
+[tool.setuptools]
+py-modules = ["server", "google_clients", "seo_analysis", "patch_models"]
+

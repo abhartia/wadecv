@@ -42,6 +42,7 @@ Global scripts are injected by:
   - Auth: `trackLoginAttempt`, `trackLoginSuccess`, `trackLoginFailure`, `trackSignup*`
   - CV flow: `trackCvImport*`, `trackCvSectionEdited`, `trackCvTailorStarted`, `trackCvTailorApplied`, `trackCvDownload`, `trackCvEmailSent`
   - Engagement: `trackDashboardViewed`, `trackEditorOpened`, `trackFeatureClicked`, job scrape events
+  - SEO: `trackSeoCtaClick(variant, slug?)`, `trackSeoNavClick(link)` – fired from Resources CTAs and navbar/footer links
   - Errors: `trackFrontendError`, `trackApiCallFailed`
 
 ### Existing wiring

@@ -88,3 +88,11 @@ export function trackApiCallFailed(endpoint: string, status: number) {
   trackEvent("api_call_failed", { endpoint, status });
 }
 
+export function trackSeoCtaClick(variant: string, slug?: string) {
+  trackEvent("seo_cta_click", { variant, ...(slug ? { slug } : {}) });
+}
+
+export function trackSeoNavClick(link: string) {
+  trackEvent("seo_nav_click", { link });
+}
+

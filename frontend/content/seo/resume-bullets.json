@@ -167,5 +167,200 @@
       "Initiative + metric (e.g. 'Launched X'; 'Increased Y by Z%')"
     ],
     "body": "Lead with pipeline, conversion, or brand metrics. Use clear numbers and channel scope. Tailor to B2B vs B2C. WadeCV can help you align your marketing experience with job descriptions."
+  },
+  {
+    "slug": "product-manager",
+    "title": "Product Manager Resume Bullet Points",
+    "metaDescription": "Product manager resume bullet examples and impact formulas. How to show roadmap, discovery, and outcomes.",
+    "intro": "PM resume bullets should show ownership of roadmap, discovery, and delivery. This guide gives you examples and formulas for product manager roles.",
+    "bulletExamples": [
+      "Owned roadmap for core onboarding flow; increased activation by 25% through A/B tests and user research.",
+      "Led discovery and prioritisation for 3 product areas; aligned engineering and design on quarterly OKRs.",
+      "Drove go-to-market for new feature with 50K+ users in first quarter; presented results to C-suite.",
+      "Reduced support tickets by 30% by shipping in-app guidance and FAQ; measured via NPS and ticket volume."
+    ],
+    "impactFormulas": [
+      "Outcome + method (e.g. 'Increased X by Y% through Z')",
+      "Scope + alignment (e.g. 'Led X; aligned N teams on Y')",
+      "Launch + result (e.g. 'Shipped X; achieved Y metric')"
+    ],
+    "body": "PM bullets should lead with outcomes: activation, retention, revenue, or efficiency. Show discovery and stakeholder work, not just delivery. Tailor to the company stage and product type. WadeCV can help you align your PM experience with job descriptions.",
+    "relatedSlugs": ["software-engineer", "data-analyst", "customer-service"],
+    "faq": [
+      { "question": "How do I show product impact without revenue data?", "answer": "Use adoption, engagement, retention, or efficiency metrics. Examples: activation rate, feature adoption, time saved, or reduction in support load." }
+    ],
+    "commonMistakes": ["Listing only features shipped without outcomes", "Skipping discovery or stakeholder context", "Vague metrics (e.g. 'improved metrics')"]
+  },
+  {
+    "slug": "data-analyst",
+    "title": "Data Analyst Resume Bullet Points",
+    "metaDescription": "Data analyst resume bullet examples. How to show dashboard, reporting, and analysis impact.",
+    "intro": "Data analyst bullets should show impact of your reports and analyses. This guide gives you examples and formulas for analytics roles.",
+    "bulletExamples": [
+      "Built and maintained 10+ dashboards for sales and marketing; reduced manual report requests by 40%.",
+      "Analysed conversion funnel with SQL and Python; identified drop-off points; recommended tests that increased sign-up by 18%.",
+      "Standardised metric definitions and documentation; aligned 5 teams on single source of truth; reduced reporting errors.",
+      "Delivered weekly performance reports to leadership; insights drove 3 strategic pivots in Q2."
+    ],
+    "impactFormulas": [
+      "Deliverable + outcome (e.g. 'Built X; reduced Y by Z%')",
+      "Analysis + decision (e.g. 'Analysed X; recommended Y; result Z')",
+      "Scope + alignment (e.g. 'Aligned N teams on X; outcome Y')"
+    ],
+    "body": "Lead with impact: reports adopted, decisions influenced, metrics improved. List tools and languages clearly. Tailor to industry (product, marketing, finance, healthcare). WadeCV can help you align your analyst experience with job descriptions.",
+    "relatedSlugs": ["software-engineer", "product-manager", "customer-service"],
+    "faq": [
+      { "question": "How many technical details in a data analyst resume?", "answer": "Enough to show stack (SQL, Python, Tableau, etc.) and scale. Lead each bullet with the business outcome, then the method." }
+    ],
+    "commonMistakes": ["Listing only deliverables without impact", "Too much methodology, not enough outcome", "Vague 'analysed data' bullets"]
+  },
+  {
+    "slug": "recruiter",
+    "title": "Recruiter Resume Bullet Points",
+    "metaDescription": "Recruiter resume bullet examples. How to show fill rates, time-to-fill, and pipeline.",
+    "intro": "Recruiter bullets should show roles filled, time-to-fill, and pipeline. This guide gives you examples for in-house and agency roles.",
+    "bulletExamples": [
+      "Filled 35+ roles per year across engineering and product; reduced time-to-fill by 20% through improved sourcing.",
+      "Built pipeline of 200+ qualified candidates for key roles; improved hiring manager satisfaction by 25%.",
+      "Led diversity initiative; increased underrepresented candidate slate by 40% through targeted sourcing.",
+      "Managed full-cycle recruiting for 15 open roles; achieved 95% offer acceptance rate."
+    ],
+    "impactFormulas": [
+      "Volume + outcome (e.g. 'Filled X roles; reduced time-to-fill by Y%')",
+      "Pipeline + result (e.g. 'Built pipeline of X; outcome Y')",
+      "Initiative + metric (e.g. 'Led X; improved Y by Z%')"
+    ],
+    "body": "Lead with roles filled, time-to-fill, or pipeline metrics. Highlight experience with the types of roles you recruit for. Tailor to in-house vs agency. WadeCV can help you align your recruiting experience with job descriptions.",
+    "relatedSlugs": ["hr-business-partner", "customer-success-manager", "sales"],
+    "faq": [
+      { "question": "How do I show recruiter impact without confidential data?", "answer": "Use percentages (time-to-fill reduction, satisfaction improvement), counts (roles filled, pipeline size), or process outcomes (sourcing mix, offer acceptance)." }
+    ],
+    "commonMistakes": ["Vague 'recruited for X' without scale or outcome", "Omitting ATS or sourcing tools", "No differentiation between in-house and agency"]
+  },
+  {
+    "slug": "administrative-assistant",
+    "title": "Administrative Assistant Resume Bullet Points",
+    "metaDescription": "Admin assistant resume bullet examples. How to show coordination, scope, and efficiency.",
+    "intro": "Administrative assistant bullets should show scope of support and any efficiency gains. This guide gives you examples for admin and office roles.",
+    "bulletExamples": [
+      "Supported C-suite of 5; managed calendars, travel, and expenses for 3 executives. Reduced meeting conflicts by 30%.",
+      "Coordinated onboarding for 50+ new hires; cut onboarding time by 2 days through checklists and tracking.",
+      "Managed office supplies and vendor relationships; reduced costs by 15% through bulk ordering.",
+      "Scheduled and prepared materials for 20+ board and leadership meetings per year; zero missed deadlines."
+    ],
+    "impactFormulas": [
+      "Scope + outcome (e.g. 'Supported X; achieved Y')",
+      "Volume + efficiency (e.g. 'Coordinated X; reduced time/cost by Y%')",
+      "Responsibility + result (e.g. 'Managed X; outcome Y')"
+    ],
+    "body": "Lead with scope: number of executives or team supported, types of tasks, efficiency gains. Use keywords from the job (tools, industry). WadeCV can help you align your admin experience with job descriptions.",
+    "relatedSlugs": ["executive-assistant", "project-coordinator", "customer-service"],
+    "commonMistakes": ["Generic task lists without scope or outcome", "Omitting tools (Office, Confluence, etc.)", "No numbers or scale"]
+  },
+  {
+    "slug": "executive-assistant",
+    "title": "Executive Assistant Resume Bullet Points",
+    "metaDescription": "Executive assistant resume bullet examples. How to show C-level support and discretion.",
+    "intro": "Executive assistant bullets should show level of executives supported and scope (board, travel, projects). This guide gives you examples for EA roles.",
+    "bulletExamples": [
+      "Supported CEO and CFO; managed complex calendars and travel for 2 executives. Coordinated board materials for 6 meetings per year.",
+      "Streamlined expense and travel process; cut processing time by 40%. Trained 3 new EAs on company systems.",
+      "Acted as gatekeeper and liaison for executive office; handled sensitive communications with strict confidentiality.",
+      "Managed executive communications and draft responses; ensured timely follow-up on 50+ weekly items."
+    ],
+    "impactFormulas": [
+      "Level + scope (e.g. 'Supported C-suite of X; managed Y')",
+      "Process + outcome (e.g. 'Streamlined X; reduced time by Y%')",
+      "Responsibility + discretion (e.g. 'Managed X; maintained Y')"
+    ],
+    "body": "Lead with level of executives and scope (board, travel, projects). Use discretion and confidentiality as keywords. WadeCV can help you align your EA experience with job descriptions.",
+    "relatedSlugs": ["administrative-assistant", "project-coordinator", "hr-business-partner"],
+    "commonMistakes": ["Vague 'supported executives' without scope", "Omitting board or high-stakes context", "No evidence of discretion or judgment"]
+  },
+  {
+    "slug": "frontend-developer",
+    "title": "Frontend Developer Resume Bullet Points",
+    "metaDescription": "Frontend developer resume bullet examples. How to show UI, performance, and framework impact.",
+    "intro": "Frontend developer bullets should show frameworks, user impact, and performance. This guide gives you examples for front-end roles.",
+    "bulletExamples": [
+      "Built responsive dashboards used by 10K+ users; improved load time by 35% and met WCAG AA.",
+      "Led migration to React; reduced bundle size by 20% and improved maintainability. Mentored 2 junior devs.",
+      "Implemented design system components used across 5 product teams; cut design-dev handoff time by 40%.",
+      "Shipped accessibility improvements across 15 pages; reduced compliance issues and improved screen reader support."
+    ],
+    "impactFormulas": [
+      "Build + scale + metric (e.g. 'Built X for Y users; improved Z by N%')",
+      "Migration + outcome (e.g. 'Led migration to X; outcome Y')",
+      "Scope + result (e.g. 'Implemented X across N teams; outcome Y')"
+    ],
+    "body": "Lead with frameworks and user impact (scale, performance, accessibility). Match the stack in the job description. WadeCV can help you align your frontend experience with job descriptions.",
+    "relatedSlugs": ["software-engineer", "ux-designer", "devops"],
+    "faq": [
+      { "question": "How do I show frontend impact without backend access?", "answer": "Focus on performance (Core Web Vitals, load time), accessibility (WCAG, screen readers), adoption (users, teams using your components), and UX outcomes (conversion, engagement)." }
+    ],
+    "commonMistakes": ["Listing only libraries without outcomes", "No performance or accessibility metrics", "Generic 'built features' bullets"]
+  },
+  {
+    "slug": "devops",
+    "title": "DevOps Engineer Resume Bullet Points",
+    "metaDescription": "DevOps resume bullet examples. How to show CI/CD, reliability, and automation impact.",
+    "intro": "DevOps bullets should show automation, reliability, and scale. This guide gives you examples for DevOps and platform roles.",
+    "bulletExamples": [
+      "Built CI/CD pipeline that reduced deployment time from 2 hours to 15 minutes; adopted by 15+ teams.",
+      "Managed Kubernetes clusters for 50+ services; improved uptime to 99.95% and cut cloud spend by 20%.",
+      "Introduced Terraform for infra; reduced provisioning time from days to hours and improved consistency.",
+      "Led incident response and postmortems; reduced MTTR by 40% through runbooks and alerting improvements."
+    ],
+    "impactFormulas": [
+      "Automation + outcome (e.g. 'Built X; reduced Y by Z')",
+      "Scale + metric (e.g. 'Managed X services; achieved Y uptime')",
+      "Initiative + result (e.g. 'Introduced X; outcome Y')"
+    ],
+    "body": "Lead with automation and reliability outcomes: deployment frequency, uptime, cost. List tools and clouds that match the job. WadeCV can help you align your DevOps experience with job descriptions.",
+    "relatedSlugs": ["software-engineer", "backend-engineer", "frontend-developer"],
+    "commonMistakes": ["Listing only tools without outcomes", "No uptime or deployment metrics", "Vague 'maintained infrastructure' bullets"]
+  },
+  {
+    "slug": "ux-designer",
+    "title": "UX Designer Resume Bullet Points",
+    "metaDescription": "UX designer resume bullet examples. How to show research, design, and conversion impact.",
+    "intro": "UX designer bullets should show user and business impact from research and design. This guide gives you examples for product design roles.",
+    "bulletExamples": [
+      "Led discovery and usability testing for checkout redesign; increased conversion by 18% and reduced support tickets by 25%.",
+      "Built and maintained design system used by 8 designers; cut design-dev iteration time by 30%.",
+      "Conducted 50+ user interviews; identified top 3 pain points that drove roadmap for next 2 quarters.",
+      "Redesigned onboarding flow; improved completion rate by 22% and decreased time-to-value by 40%."
+    ],
+    "impactFormulas": [
+      "Research/design + outcome (e.g. 'Led X; increased Y by Z%')",
+      "Deliverable + scope (e.g. 'Built X used by N; outcome Y')",
+      "Process + result (e.g. 'Conducted X; drove Y')"
+    ],
+    "body": "Lead with user and business impact: conversion, satisfaction, efficiency. Show research and design process. Tailor to product type. WadeCV can help you align your UX experience with job descriptions.",
+    "relatedSlugs": ["product-manager", "frontend-developer", "technical-writer"],
+    "commonMistakes": ["Portfolio-only; resume needs standalone impact", "No metrics or business outcomes", "Skipping collaboration context"]
+  },
+  {
+    "slug": "quantifiable-resume-bullets",
+    "title": "Quantifiable Resume Bullet Examples",
+    "metaDescription": "How to add numbers and metrics to resume bullets. Examples across roles.",
+    "intro": "Quantifiable bullets use numbers to show scope and impact. This guide shows how to add metrics to any role.",
+    "bulletExamples": [
+      "Managed budget of $2M; delivered project 5% under budget and 2 weeks ahead of schedule.",
+      "Led team of 12; reduced turnover by 25% and improved engagement scores by 15%.",
+      "Processed 200+ invoices monthly; reduced errors by 40% through automation and checklist.",
+      "Grew social following from 10K to 50K in 12 months; increased engagement rate by 20%."
+    ],
+    "impactFormulas": [
+      "Scope + result (e.g. 'Managed X; achieved Y')",
+      "Volume + improvement (e.g. 'Processed X; reduced Y by Z%')",
+      "Before + after (e.g. 'Grew X from A to B; outcome Y')"
+    ],
+    "body": "Add numbers for: team size, budget, volume, time, percentage change, or scale (users, revenue). Even approximate numbers are better than none. WadeCV can help you turn duties into quantifiable bullets that match job descriptions.",
+    "relatedSlugs": ["achievement-examples", "action-verbs", "software-engineer"],
+    "faq": [
+      { "question": "What if I don't have exact numbers?", "answer": "Use reasonable estimates (e.g. '~50 customers', 'approximately 20%'). Round to significant figures. Focus on the type of metric that matters for the role." }
+    ],
+    "commonMistakes": ["No numbers at all", "Only vague percentages without context", "Overly precise numbers that look made up"]
   }
 ]

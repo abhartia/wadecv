@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { trackSeoCtaClick } from "@/lib/analytics/events";
 
 type Variant = "job" | "company" | "skills" | "resume-bullets" | "ats" | "career-change";
 
@@ -15,13 +18,17 @@ const DEFAULT_LABELS: Record<Variant, string> = {
 type SeoCtaProps = {
   variant: Variant;
   label?: string;
+  slug?: string;
 };
 
 /** SEO CTA: always links to /auth/register (tailor is behind auth). */
-export function SeoCta({ variant, label }: SeoCtaProps) {
+export function SeoCta({ variant, label, slug }: SeoCtaProps) {
   const text = label ?? DEFAULT_LABELS[variant];
   return (
-    <Link href="/auth/register">
+    <Link
+      href="/auth/register"
+      onClick={() => trackSeoCtaClick(variant, slug)}
+    >
       <Button size="lg" className="w-full sm:w-auto">
         {text}
       </Button>

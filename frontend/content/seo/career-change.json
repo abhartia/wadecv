@@ -195,5 +195,68 @@
       "Tailor to the type of content role (B2B, B2C, brand) and use keywords from the job description."
     ],
     "body": "Your resume should show writing and audience impact. Use metrics (reach, engagement, frequency) and language that resonates in marketing. WadeCV can help you reframe your journalism experience for content marketing job descriptions."
+  },
+  {
+    "slug": "law-enforcement-to-corporate",
+    "title": "Law Enforcement to Corporate Resume",
+    "metaDescription": "How to transition from law enforcement to corporate roles. Resume tips to highlight discipline, leadership, and process.",
+    "intro": "Law enforcement experience builds discipline, decision-making under pressure, and leadership—all valuable in corporate security, operations, or compliance. This guide covers how to position your background for corporate roles.",
+    "fromRole": "Law Enforcement / First Responder",
+    "toRole": "Corporate (Security, Operations, Compliance)",
+    "tips": [
+      "Lead with a summary that states your transition and highlights transferable skills (leadership, process, integrity, crisis management).",
+      "Reframe law enforcement experience in corporate terms: investigations as 'analysis and compliance'; patrol or coordination as 'operations and risk management'; training as 'training and development'.",
+      "Use civilian-friendly language; avoid jargon or acronyms without context.",
+      "Quantify scope: team size, area of responsibility, incidents handled, or process improvements.",
+      "Tailor to the target role (corporate security, loss prevention, compliance) and use keywords from the job description."
+    ],
+    "body": "Your resume should show how your training and experience translate to corporate needs: risk awareness, process, and accountability. Use clear bullets with scope and outcomes. WadeCV can help you reframe your law enforcement experience for corporate job descriptions.",
+    "faq": [
+      { "question": "How do I explain my law enforcement background to corporate recruiters?", "answer": "Focus on transferable skills: decision-making, leadership, documentation, compliance, and working with diverse stakeholders. Use clear, non-jargon language and quantify where possible." }
+    ],
+    "commonMistakes": ["Using only law enforcement jargon", "Skipping a summary that states the transition", "Not quantifying scope or outcomes"],
+    "relatedSlugs": ["military-to-project-manager", "retail-to-corporate", "hospitality-to-project-management"]
+  },
+  {
+    "slug": "nurse-to-tech",
+    "title": "Nurse to Tech Resume",
+    "metaDescription": "How to transition from nursing to tech. Resume tips for product, health tech, and customer success roles.",
+    "intro": "Nurses moving into tech bring clinical perspective, empathy, and process awareness—valuable in health tech, product, or customer success. This guide covers how to position your nursing background for tech roles.",
+    "fromRole": "Nurse / Clinical",
+    "toRole": "Tech (Product, Health Tech, Customer Success)",
+    "tips": [
+      "Lead with a summary that states your transition and highlights relevance (clinical workflow, user perspective, patient outcomes, health tech).",
+      "Reframe nursing in tech terms: care plans as 'workflows' or 'user journeys'; patient documentation as 'data and compliance'; interdisciplinary work as 'stakeholder management'.",
+      "Highlight any health tech tools, EMR experience, or quality/process initiatives.",
+      "Add relevant tech or product skills: agile basics, user research, or data literacy if you have them.",
+      "Tailor to the role (health tech product, clinical success, implementation) and use keywords from the job description."
+    ],
+    "body": "Your resume should show how your clinical experience translates to tech: user perspective, workflow understanding, and outcomes. Use bullets that emphasise impact and scope. WadeCV can help you reframe your nursing experience for tech job descriptions.",
+    "faq": [
+      { "question": "Do health tech companies value nursing experience?", "answer": "Yes. Product, implementation, and customer success roles often seek clinical perspective. Frame your experience around workflows, outcomes, and user needs." }
+    ],
+    "commonMistakes": ["Using only clinical jargon", "Skipping tech or product relevance", "Not highlighting health tech or EMR experience"],
+    "relatedSlugs": ["nurse-to-healthcare-admin", "teacher-to-edtech", "admin-to-product-manager"]
+  },
+  {
+    "slug": "engineer-to-product-manager",
+    "title": "Engineer to Product Manager Resume",
+    "metaDescription": "How to transition from engineering to product management. Resume tips to highlight technical depth and product thinking.",
+    "intro": "Engineers moving into product management bring technical depth and execution experience. This guide covers how to position your engineering background for PM roles.",
+    "fromRole": "Software / Engineering",
+    "toRole": "Product Manager",
+    "tips": [
+      "Lead with a summary that states your transition and highlights product-relevant skills (prioritisation, stakeholder alignment, technical trade-offs).",
+      "Reframe engineering in product terms: technical decisions as 'product trade-offs'; cross-team work as 'stakeholder management'; scope and delivery as 'roadmap and launch'.",
+      "Highlight any product-adjacent work: writing specs, talking to users, or defining success metrics.",
+      "Emphasise outcomes and scope: users affected, metrics improved, or alignment achieved.",
+      "Tailor to the company and product type; use keywords from the job description."
+    ],
+    "body": "Your resume should show how your technical background supports product thinking: trade-offs, scope, and outcomes. Use bullets that emphasise impact and collaboration. WadeCV can help you reframe your engineering experience for product manager job descriptions.",
+    "faq": [
+      { "question": "How much technical detail should be on an engineer-to-PM resume?", "answer": "Enough to show you can partner with engineering and make trade-offs. Lead with product and business outcomes; use technical depth to support credibility." }
+    ],
+    "commonMistakes": ["Only technical bullets; need product and stakeholder context", "Skipping a summary that states the transition", "No evidence of prioritisation or discovery"],
+    "relatedSlugs": ["teacher-to-product-manager", "admin-to-product-manager", "operations-to-product"]
   }
 ]

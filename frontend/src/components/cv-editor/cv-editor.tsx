@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -52,6 +52,15 @@ interface CVEditorProps {
 
 export function CVEditor({ data, onChange }: CVEditorProps) {
   const cv = data as unknown as CVData;
+  const syncKey = useMemo(
+    () => JSON.stringify({ s: cv.skills, i: cv.interests }),
+    [cv.skills, cv.interests]
+  );
+  return <CVEditorInner key={syncKey} data={data} onChange={onChange} />;
+}
+
+function CVEditorInner({ data, onChange }: CVEditorProps) {
+  const cv = data as unknown as CVData;
 
   const [skillsInput, setSkillsInput] = useState<Record<"technical" | "soft" | "languages" | "certifications", string>>({
     technical: (cv.skills?.technical || []).join(", "),
@@ -62,18 +71,7 @@ export function CVEditor({ data, onChange }: CVEditorProps) {
 
   const [interestsInput, setInterestsInput] = useState<string>((cv.interests || []).join(", "));
 
-  useEffect(() => {
-    setSkillsInput({
-      technical: (cv.skills?.technical || []).join(", "),
-      soft: (cv.skills?.soft || []).join(", "),
-      languages: (cv.skills?.languages || []).join(", "),
-      certifications: (cv.skills?.certifications || []).join(", "),
-    });
-  }, [JSON.stringify(cv.skills)]);
-
-  useEffect(() => {
-    setInterestsInput((cv.interests || []).join(", "));
-  }, [JSON.stringify(cv.interests)]);
+  // No useEffect: when cv.skills/cv.interests change, parent remounts us via key so state re-initializes above.
 
   const update = (path: string[], value: unknown) => {
     const newData = JSON.parse(JSON.stringify(data));
