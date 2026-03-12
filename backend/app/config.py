@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     # Azure OpenAI
     azure_openai_endpoint: str = ""
     azure_openai_api_key: str = ""
-    azure_openai_deployment: str = "GPT5Nano"
+    azure_openai_deployment: str = "GPT5Mini"
     azure_openai_api_version: str = "2024-12-01-preview"
 
     # Langfuse

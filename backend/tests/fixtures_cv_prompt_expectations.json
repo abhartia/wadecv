@@ -1,0 +1,36 @@
+{
+  "description": "Golden-structure examples for prompt-shaped CV output. These are not used in automated tests, but serve as reference when manually evaluating prompt changes.",
+  "degree_and_certifications_example": {
+    "education": [
+      {
+        "degree": "MBA",
+        "institution": "INSEAD",
+        "location": "Fontainebleau, France",
+        "start_date": "2021-09",
+        "end_date": "2023-12",
+        "details": "GMAT 750 (98th percentile); advised WA Department of Jobs, Tourism, Science and Innovation; launched Simmer List AI platform."
+      }
+    ],
+    "skills": {
+      "technical": [
+        "Data & analytics (Python, SQL)",
+        "Cloud & AI platforms (Azure, AWS, OpenAI APIs)"
+      ],
+      "soft": [
+        "Executive stakeholder management",
+        "Cross-functional leadership",
+        "Strategic planning and change management"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "German (intermediate)"
+      ],
+      "certifications": [
+        "PMP",
+        "AWS Certified Solutions Architect – Associate"
+      ]
+    }
+  }
+}
+

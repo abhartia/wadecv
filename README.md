@@ -4,7 +4,7 @@ AI-powered CV tailoring system. Upload your CV, paste a job link, and get a prof
 
 ## Features
 
-- **AI CV Generation** -- Tailors your existing CV for specific job descriptions using Azure OpenAI (GPT-5-nano)
+- **AI CV Generation** -- Tailors your existing CV for specific job descriptions using Azure OpenAI (GPT-5-mini)
 - **Job URL Scraping** -- Automatically extracts job descriptions from LinkedIn, Indeed, Greenhouse, Lever, and more
 - **Cover Letter Generation** -- Free AI-generated cover letters for every tailored CV
 - **Online CV Editor** -- Edit generated CVs section-by-section before downloading
@@ -24,7 +24,7 @@ AI-powered CV tailoring system. Upload your CV, paste a job link, and get a prof
 | Frontend | Next.js 16, React, TypeScript, Tailwind CSS, shadcn/ui |
 | Backend | FastAPI, Python 3.12, SQLAlchemy, Alembic |
 | Database | PostgreSQL (Azure Flexible Server) |
-| AI | Azure OpenAI (GPT-5-nano), Langfuse |
+| AI | Azure OpenAI (GPT-5-mini), Langfuse |
 | Payments | Stripe (Checkout Sessions) |
 | Email | Resend |
 | Hosting | Azure App Service |

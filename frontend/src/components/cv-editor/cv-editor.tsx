@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -51,6 +52,28 @@ interface CVEditorProps {
 
 export function CVEditor({ data, onChange }: CVEditorProps) {
   const cv = data as unknown as CVData;
+
+  const [skillsInput, setSkillsInput] = useState<Record<"technical" | "soft" | "languages" | "certifications", string>>({
+    technical: (cv.skills?.technical || []).join(", "),
+    soft: (cv.skills?.soft || []).join(", "),
+    languages: (cv.skills?.languages || []).join(", "),
+    certifications: (cv.skills?.certifications || []).join(", "),
+  });
+
+  const [interestsInput, setInterestsInput] = useState<string>((cv.interests || []).join(", "));
+
+  useEffect(() => {
+    setSkillsInput({
+      technical: (cv.skills?.technical || []).join(", "),
+      soft: (cv.skills?.soft || []).join(", "),
+      languages: (cv.skills?.languages || []).join(", "),
+      certifications: (cv.skills?.certifications || []).join(", "),
+    });
+  }, [JSON.stringify(cv.skills)]);
+
+  useEffect(() => {
+    setInterestsInput((cv.interests || []).join(", "));
+  }, [JSON.stringify(cv.interests)]);
 
   const update = (path: string[], value: unknown) => {
     const newData = JSON.parse(JSON.stringify(data));
@@ -349,10 +372,12 @@ export function CVEditor({ data, onChange }: CVEditorProps) {
               <Textarea
                 rows={2}
                 placeholder={`Comma-separated ${category} skills...`}
-                value={(cv.skills?.[category] || []).join(", ")}
+                value={skillsInput[category] ?? ""}
                 onChange={(e) => {
+                  const value = e.target.value;
+                  setSkillsInput((prev) => ({ ...prev, [category]: value }));
                   const items = e.target.value.split(",").map((s) => s.trim()).filter(Boolean);
-                  update(["skills", category], items.length ? items : e.target.value ? [e.target.value] : []);
+                  update(["skills", category], items);
                 }}
               />
             </div>
@@ -371,9 +396,11 @@ export function CVEditor({ data, onChange }: CVEditorProps) {
           <Textarea
             rows={2}
             placeholder="Comma-separated interests, e.g. Running, open-source, photography"
-            value={(cv.interests || []).join(", ")}
+            value={interestsInput}
             onChange={(e) => {
-              const items = e.target.value.split(",").map((s) => s.trim()).filter(Boolean);
+              const value = e.target.value;
+              setInterestsInput(value);
+              const items = value.split(",").map((s) => s.trim()).filter(Boolean);
               update(["interests"], items.length ? items : []);
             }}
           />

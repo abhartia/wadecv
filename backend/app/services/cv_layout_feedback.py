@@ -1,5 +1,5 @@
 """
-CV layout feedback: render CV to image, send to GPT-5 Nano for visual balance/layout
+CV layout feedback: render CV to image, send to GPT-5 Mini for visual balance/layout
 tweaks, return a list of actionable suggestions to pass into generate_cv as additional_info.
 """
 import base64

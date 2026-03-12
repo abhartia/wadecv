@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 _langfuse: Langfuse | None = None
 _client: AsyncAzureOpenAI | None = None
 
-REASONING_MODELS = {"o1", "o1-mini", "o3", "o3-mini", "o3-pro", "GPT5Nano"}
+REASONING_MODELS = {"o1", "o1-mini", "o3", "o3-mini", "o3-pro", "GPT5Mini"}
 
 
 def _is_reasoning_model(model: str) -> bool:
@@ -141,7 +141,7 @@ async def generate_completion_with_image(
     max_tokens: int = 4096,
 ) -> str:
     """
-    Call the same deployment (e.g. GPT-5 Nano) with image(s) in the user message.
+    Call the same deployment (e.g. GPT-5 Mini) with image(s) in the user message.
     image_base64: one base64-encoded PNG string, or a list of them (e.g. page 1, page 2).
     """
     client = get_openai_client()
