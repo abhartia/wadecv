@@ -105,6 +105,8 @@ function TailorContent() {
   const [jobUrl, setJobUrl] = useState("");
   const [jobDescription, setJobDescription] = useState("");
   const [jobId, setJobId] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
+  const [companyName, setCompanyName] = useState("");
   const [cvData, setCvData] = useState<Record<string, unknown> | null>(null);
   const [fitAnalysis, setFitAnalysis] = useState<FitAnalysis | null>(null);
   const [gapFeedback, setGapFeedback] = useState<Record<string, string>>({});
@@ -226,6 +228,8 @@ function TailorContent() {
 
         setCvId(cv.id);
         setJobId(job.id);
+        setJobTitle(job.job_title || "");
+        setCompanyName(job.company_name || "");
         setJobDescription(job.job_description);
         setJobUrl(job.job_url ?? "");
         setCvData(cv.generated_cv_data);
@@ -243,8 +247,17 @@ function TailorContent() {
           // no cover letter yet, that's fine
         }
 
-        // Ensure we land on edit step once data is loaded
-        setStep("edit");
+        // Choose the correct step based on what data is available:
+        // - If a tailored CV exists, go straight to Edit
+        // - Else if only fit analysis exists, go to Fit
+        // - Otherwise, fall back to the Job setup step
+        if (cv.generated_cv_data) {
+          setStep("edit");
+        } else if (cv.fit_analysis) {
+          setStep("fit");
+        } else {
+          setStep("job");
+        }
       } catch (err) {
         toast.error((err as Error).message || "Failed to load application");
       }
@@ -252,6 +265,22 @@ function TailorContent() {
 
     void loadExistingApplication();
   }, [jobParam, token]);
+
+  useEffect(() => {
+    if (!token || !jobId) return;
+
+    const loadJobMetadata = async () => {
+      try {
+        const job = await api.getJob(jobId, token);
+        setJobTitle(job.job_title || "");
+        setCompanyName(job.company_name || "");
+      } catch {
+        // Non-critical: editing should still work even if job metadata fails to load
+      }
+    };
+
+    void loadJobMetadata();
+  }, [jobId, token]);
 
   const handleUpload = useCallback(async () => {
     if (!file || !token) return;
@@ -1110,6 +1139,18 @@ function TailorContent() {
             <CardHeader>
               <CardTitle>Edit Your Tailored CV</CardTitle>
               <CardDescription>Review and fine-tune the generated content before downloading</CardDescription>
+              {(jobTitle || companyName) && (
+                <p className="text-sm text-muted-foreground mt-1">
+                  Application for{" "}
+                  <span className="font-medium">
+                    {jobTitle || "Untitled position"}
+                  </span>
+                  {" at "}
+                  <span className="font-medium">
+                    {companyName || "Unknown company"}
+                  </span>
+                </p>
+              )}
             </CardHeader>
           </Card>
 
