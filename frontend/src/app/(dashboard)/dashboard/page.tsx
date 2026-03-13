@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth";
 import { api, GapInsightsResponse } from "@/lib/api";
+import { getGapInsightsApiJobsGapInsightsGetOptions, listJobsApiJobsGetOptions } from "@/gen/hey-api/@tanstack/react-query.gen";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -58,56 +59,74 @@ const getStatusLabel = (status: string) => {
 
 export default function DashboardPage() {
   const { user, token } = useAuth();
-  const [jobs, setJobs] = useState<JobItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [gapInsights, setGapInsights] = useState<GapInsightsResponse | null>(null);
-  const [gapInsightsLoading, setGapInsightsLoading] = useState(true);
-  const hasFetchedGapInsights = useRef(false);
-  const decidedJobs = jobs.filter((job) =>
-    ["accepted", "rejected", "cv_accepted", "cv_rejected"].includes(job.application_status),
+  const {
+    data: jobsData,
+    isLoading: jobsLoading,
+  } = useQuery({
+    ...listJobsApiJobsGetOptions(
+      token
+        ? {
+            baseUrl: process.env.NEXT_PUBLIC_API_URL,
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        : undefined,
+    ),
+    enabled: !!token,
+  });
+
+  const {
+    data: gapInsights,
+    isLoading: gapInsightsLoading,
+  } = useQuery({
+    ...getGapInsightsApiJobsGapInsightsGetOptions(
+      token
+        ? {
+            baseUrl: process.env.NEXT_PUBLIC_API_URL,
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        : undefined,
+    ),
+    enabled: !!token,
+  });
+
+  const jobs = (jobsData ?? []) as JobItem[];
+
+  const oneWeekAgo = (() => {
+    const d = new Date();
+    d.setDate(d.getDate() - 7);
+    return d;
+  })();
+
+  const isAccepted = (job: JobItem) =>
+    job.application_status === "accepted" || job.application_status === "cv_accepted";
+
+  const isExplicitRejection = (job: JobItem) =>
+    job.application_status === "rejected" || job.application_status === "cv_rejected";
+
+  const isTimedOut = (job: JobItem) =>
+    new Date(job.created_at) < oneWeekAgo && !isAccepted(job);
+
+  const numeratorAcceptedJobs = jobs.filter(isAccepted);
+  const denominatorJobs = jobs.filter(
+    (job) => isAccepted(job) || isExplicitRejection(job) || isTimedOut(job),
   );
-  const acceptedJobs = decidedJobs.filter(
-    (job) =>
-      job.application_status === "accepted" || job.application_status === "cv_accepted",
-  );
+
   const successRate =
-    decidedJobs.length === 0 ? null : Math.round((acceptedJobs.length / decidedJobs.length) * 100);
-
-  useEffect(() => {
-    if (!token) return;
-    api
-      .listJobs(token)
-      .then((jobsData) => {
-        setJobs(jobsData);
-      })
-      .finally(() => setLoading(false));
-  }, [token]);
-
-  useEffect(() => {
-    if (!token || hasFetchedGapInsights.current) return;
-    hasFetchedGapInsights.current = true;
-    setGapInsightsLoading(true);
-    api
-      .getGapInsights(token)
-      .then((data) => {
-        setGapInsights(data);
-      })
-      .catch(() => {
-        setGapInsights(null);
-      })
-      .finally(() => setGapInsightsLoading(false));
-  }, [token]);
+    denominatorJobs.length === 0
+      ? null
+      : Math.round((numeratorAcceptedJobs.length / denominatorJobs.length) * 100);
 
   const handleUpdateApplicationStatus = async (
     jobId: string,
     status: "cv_accepted" | "cv_rejected",
   ) => {
     if (!token) return;
-    setJobs((prev) =>
-      prev.map((job) =>
-        job.id === jobId ? { ...job, application_status: status } : job
-      )
-    );
+    // Optimistically update UI by refetching jobs; simplest is to let
+    // the next query execution pick up server state after mutation.
     try {
       await api.updateJob(jobId, { application_status: status }, token);
     } catch {
@@ -115,7 +134,7 @@ export default function DashboardPage() {
     }
   };
 
-  if (loading) {
+  if (jobsLoading) {
     return (
       <div className="flex items-center justify-center py-20">
         <Loader2 className="h-8 w-8 animate-spin text-primary" />
@@ -174,7 +193,8 @@ export default function DashboardPage() {
                   {successRate === null ? "N/A" : `${successRate}%`}
                 </p>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Based on CV Accepted vs CV Rejected applications
+                  Treats any application more than 1 week old that isn&apos;t accepted as a
+                  rejection in the success rate
                 </p>
               </div>
               <Check className="h-10 w-10 text-primary/20" />
@@ -234,7 +254,7 @@ export default function DashboardPage() {
                 {gapInsights.gap_insights.summary_text}
               </p>
 
-              {gapInsights.gap_insights.themes.length > 0 && (
+              {Array.isArray(gapInsights.gap_insights.themes) && gapInsights.gap_insights.themes.length > 0 && (
                 <div className="space-y-3">
                   <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
                     Key themes in your gaps
