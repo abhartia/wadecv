@@ -11,6 +11,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { toast } from "sonner";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Loader2, Briefcase, FileText, Download, Mail, ExternalLink, ChevronDown, Edit3 } from "lucide-react";
 
 interface Job {
@@ -23,7 +24,8 @@ interface Job {
   application_status: string;
   applied_at: string | null;
   created_at: string;
-   fit_score: number | null;
+  fit_score: number | null;
+  has_cover_letter: boolean;
 }
 
 const STATUSES = [
@@ -43,10 +45,12 @@ const getStatusLabel = (status: string) =>
 
 export default function ApplicationsPage() {
   const { token } = useAuth();
+  const router = useRouter();
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<string>("all");
   const [coverLetterLoading, setCoverLetterLoading] = useState<string | null>(null);
+  const [fitSort, setFitSort] = useState<"none" | "asc" | "desc">("none");
 
   useEffect(() => {
     if (!token) return;
@@ -172,6 +176,24 @@ export default function ApplicationsPage() {
     }
   };
 
+  const sortedJobs =
+    fitSort === "none"
+      ? jobs
+      : [...jobs].sort((a, b) => {
+          const aScore = a.fit_score ?? -1;
+          const bScore = b.fit_score ?? -1;
+          if (fitSort === "desc") {
+            return bScore - aScore;
+          }
+          return aScore - bScore;
+        });
+
+  const toggleFitSort = () => {
+    setFitSort((current) =>
+      current === "none" ? "desc" : current === "desc" ? "asc" : "none",
+    );
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -216,20 +238,43 @@ export default function ApplicationsPage() {
                 <TableRow>
                   <TableHead>Position</TableHead>
                   <TableHead>Company</TableHead>
-                  <TableHead>Fit</TableHead>
+                  <TableHead>
+                    <button
+                      type="button"
+                      onClick={toggleFitSort}
+                      className="inline-flex items-center gap-1"
+                    >
+                      <span>Fit</span>
+                      {fitSort === "desc" && (
+                        <ChevronDown className="h-3 w-3" />
+                      )}
+                      {fitSort === "asc" && (
+                        <ChevronDown className="h-3 w-3 rotate-180" />
+                      )}
+                    </button>
+                  </TableHead>
                   <TableHead>Status</TableHead>
                   <TableHead>Date</TableHead>
                   <TableHead className="text-right">Actions</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {jobs.map((job) => (
-                  <TableRow key={job.id}>
+                {sortedJobs.map((job) => (
+                  <TableRow
+                    key={job.id}
+                    className="cursor-pointer hover:bg-muted/50"
+                    onClick={() => router.push(`/tailor?job=${job.id}`)}
+                  >
                     <TableCell className="font-medium">
                       <div className="flex items-center gap-2">
                         {job.job_title || "Untitled Position"}
                         {job.job_url && (
-                          <a href={job.job_url} target="_blank" rel="noopener noreferrer">
+                          <a
+                            href={job.job_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                          >
                             <ExternalLink className="h-3 w-3 text-muted-foreground" />
                           </a>
                         )}
@@ -260,6 +305,7 @@ export default function ApplicationsPage() {
                           <button
                             type="button"
                             className="inline-flex items-center gap-1 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                            onClick={(e) => e.stopPropagation()}
                           >
                             <Badge
                               variant="secondary"
@@ -287,14 +333,23 @@ export default function ApplicationsPage() {
                     </TableCell>
                     <TableCell className="text-right">
                       <div className="flex items-center justify-end gap-1">
-                        <Link href={`/tailor?job=${job.id}`} prefetch={false}>
+                        <Link
+                          href={`/tailor?job=${job.id}`}
+                          prefetch={false}
+                          onClick={(e) => e.stopPropagation()}
+                        >
                           <Button variant="ghost" size="icon" title="Edit CV">
                             <Edit3 className="h-4 w-4" />
                           </Button>
                         </Link>
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" size="icon" title="Download CV">
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              title="Download CV"
+                              onClick={(e) => e.stopPropagation()}
+                            >
                               <FileText className="h-4 w-4" />
                             </Button>
                           </DropdownMenuTrigger>
@@ -312,7 +367,10 @@ export default function ApplicationsPage() {
                           size="icon"
                           title="Generate Cover Letter"
                           disabled={coverLetterLoading === job.id}
-                          onClick={() => handleGenerateCoverLetter(job.id)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleGenerateCoverLetter(job.id);
+                          }}
                         >
                           {coverLetterLoading === job.id ? (
                             <Loader2 className="h-4 w-4 animate-spin" />
@@ -320,21 +378,38 @@ export default function ApplicationsPage() {
                             <Mail className="h-4 w-4" />
                           )}
                         </Button>
-                        <DropdownMenu>
-                          <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" size="icon" title="Download Cover Letter">
-                              <Download className="h-4 w-4" />
-                            </Button>
-                          </DropdownMenuTrigger>
-                          <DropdownMenuContent align="end">
-                            <DropdownMenuItem onClick={() => handleDownloadCoverLetter(job.id, "docx")}>
-                              Download Cover Letter as DOCX
-                            </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => handleDownloadCoverLetter(job.id, "pdf")}>
-                              Download Cover Letter as PDF
-                            </DropdownMenuItem>
-                          </DropdownMenuContent>
-                        </DropdownMenu>
+                        {job.has_cover_letter && (
+                          <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                title="Download Cover Letter"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <Download className="h-4 w-4" />
+                              </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                              <DropdownMenuItem
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleDownloadCoverLetter(job.id, "docx");
+                                }}
+                              >
+                                Download Cover Letter as DOCX
+                              </DropdownMenuItem>
+                              <DropdownMenuItem
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleDownloadCoverLetter(job.id, "pdf");
+                                }}
+                              >
+                                Download Cover Letter as PDF
+                              </DropdownMenuItem>
+                            </DropdownMenuContent>
+                          </DropdownMenu>
+                        )}
                       </div>
                     </TableCell>
                   </TableRow>

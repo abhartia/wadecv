@@ -9,10 +9,24 @@ from app.database import get_db
 from app.models.user import User
 from app.models.job import Job
 from app.schemas.job import JobResponse, JobUpdateRequest, ScrapeRequest, ScrapeResponse
+from app.schemas.insights import GapInsightsResponse
 from app.utils.auth import get_current_user
 from app.services.scraper import scrape_job_url
+from app.services.gap_insights import build_gap_insights_for_user
 
 router = APIRouter()
+
+
+@router.get("/gap-insights/", response_model=GapInsightsResponse)
+async def get_gap_insights(
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """
+    Return the logged-in user's gap insights, refreshing them every N applications.
+    """
+    payload = await build_gap_insights_for_user(user=user, db=db)
+    return GapInsightsResponse(**payload)
 
 
 @router.get("/", response_model=list[JobResponse])

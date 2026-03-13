@@ -32,6 +32,25 @@ export interface CVGenerateResponse {
   created_at: string;
 }
 
+export interface GapInsightTheme {
+  label: string;
+  description: string;
+  count: number;
+}
+
+export interface GapInsights {
+  summary_text: string;
+  themes: GapInsightTheme[];
+  updated_at: string | null;
+}
+
+export interface GapInsightsResponse {
+  available: boolean;
+  total_applications: number;
+  next_refresh_at: number | null;
+  gap_insights: GapInsights | null;
+}
+
 export type CVGenerationStage =
   | "start"
   | "setup"
@@ -445,6 +464,7 @@ export const api = {
       applied_at: string | null;
       created_at: string;
       fit_score: number | null;
+      has_cover_letter: boolean;
     }>>(`/api/jobs/${status ? `?status_filter=${status}` : ""}`, { token }),
 
   getJob: (jobId: string, token: string) =>
@@ -469,6 +489,9 @@ export const api = {
       "/api/jobs/scrape",
       { method: "POST", body: JSON.stringify({ url }), token }
     ),
+
+  getGapInsights: (token: string) =>
+    request<GapInsightsResponse>("/api/jobs/gap-insights/", { token }),
 
   // Credits
   getPacks: () =>

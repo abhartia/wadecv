@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth";
-import { api } from "@/lib/api";
+import { api, GapInsightsResponse } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -60,6 +60,9 @@ export default function DashboardPage() {
   const { user, token } = useAuth();
   const [jobs, setJobs] = useState<JobItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const [gapInsights, setGapInsights] = useState<GapInsightsResponse | null>(null);
+  const [gapInsightsLoading, setGapInsightsLoading] = useState(true);
+  const hasFetchedGapInsights = useRef(false);
   const decidedJobs = jobs.filter((job) =>
     ["accepted", "rejected", "cv_accepted", "cv_rejected"].includes(job.application_status),
   );
@@ -78,6 +81,21 @@ export default function DashboardPage() {
         setJobs(jobsData);
       })
       .finally(() => setLoading(false));
+  }, [token]);
+
+  useEffect(() => {
+    if (!token || hasFetchedGapInsights.current) return;
+    hasFetchedGapInsights.current = true;
+    setGapInsightsLoading(true);
+    api
+      .getGapInsights(token)
+      .then((data) => {
+        setGapInsights(data);
+      })
+      .catch(() => {
+        setGapInsights(null);
+      })
+      .finally(() => setGapInsightsLoading(false));
   }, [token]);
 
   const handleUpdateApplicationStatus = async (
@@ -187,6 +205,80 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
       )}
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-lg">Your recurring gaps</CardTitle>
+          <CardDescription>
+            See the most common gaps from your applications so you can proactively improve them.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {gapInsightsLoading && (
+            <p className="text-sm text-muted-foreground">
+              We&apos;re analysing your recent applications to surface your most important gaps.
+            </p>
+          )}
+
+          {!gapInsightsLoading && gapInsights && !gapInsights.available && gapInsights.total_applications < 10 && (
+            <p className="text-sm text-muted-foreground">
+              You&apos;ll see personalised gap insights after you&apos;ve created at least 10
+              applications. You currently have{" "}
+              <span className="font-medium">{gapInsights.total_applications}</span>.
+            </p>
+          )}
+
+          {!gapInsightsLoading && gapInsights && gapInsights.available && gapInsights.gap_insights && (
+            <div className="space-y-4">
+              <p className="text-sm text-muted-foreground">
+                {gapInsights.gap_insights.summary_text}
+              </p>
+
+              {gapInsights.gap_insights.themes.length > 0 && (
+                <div className="space-y-3">
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                    Key themes in your gaps
+                  </p>
+                  <div className="space-y-2">
+                    {gapInsights.gap_insights.themes
+                      .slice()
+                      .sort((a, b) => (b.count ?? 0) - (a.count ?? 0))
+                      .map((theme) => (
+                      <div key={theme.label} className="rounded-md border p-3 space-y-1">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="text-sm font-medium">{theme.label}</span>
+                          {typeof theme.count === "number" && theme.count > 0 && (
+                            <Badge variant="outline" className="text-[10px]">
+                              {theme.count} {theme.count === 1 ? "gap" : "gaps"}
+                            </Badge>
+                          )}
+                        </div>
+                        <p className="text-xs text-muted-foreground">
+                          {theme.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {gapInsights.next_refresh_at != null && (
+                <p className="text-xs text-muted-foreground">
+                  Updates every 10 applications. Next update at{" "}
+                  <span className="font-medium">
+                    {gapInsights.next_refresh_at}
+                  </span>{" "}
+                  applications (you&apos;re currently at{" "}
+                  <span className="font-medium">
+                    {gapInsights.total_applications}
+                  </span>
+                  ).
+                </p>
+              )}
+            </div>
+          )}
+        </CardContent>
+      </Card>
 
       {/* Recent Applications */}
       <Card>
