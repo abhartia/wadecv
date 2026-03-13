@@ -3,21 +3,12 @@
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth";
-import { api, GapInsightsResponse } from "@/lib/api";
+import { api } from "@/lib/api";
 import { getGapInsightsApiJobsGapInsightsGetOptions, listJobsApiJobsGetOptions } from "@/gen/hey-api/@tanstack/react-query.gen";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Coins, Plus, Briefcase, ArrowRight, Loader2, Sparkles, Upload, Check, X } from "lucide-react";
-
-interface CVItem {
-  id: string;
-  original_filename: string;
-  status: string;
-  created_at: string;
-  job_title: string | null;
-  company_name: string | null;
-}
 
 interface JobItem {
   id: string;

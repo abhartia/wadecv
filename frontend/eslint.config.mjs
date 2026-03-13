@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Ignore generated API client code (hey-api)
+    "src/gen/hey-api/**",
   ]),
 ]);
 
