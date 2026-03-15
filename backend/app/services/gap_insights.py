@@ -1,5 +1,6 @@
 import json
 import logging
+import uuid
 from collections import Counter
 from datetime import datetime, timezone
 from typing import Any
@@ -7,6 +8,7 @@ from typing import Any
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.database import async_session
 from app.models.user import User
 from app.models.job import Job
 from app.models.cv import CV
@@ -26,6 +28,25 @@ async def _count_user_jobs(db: AsyncSession, user: User) -> int:
         select(func.count(Job.id)).where(Job.user_id == user.id)
     )
     return int(result.scalar_one() or 0)
+
+
+async def should_refresh_gap_insights(user: User, db: AsyncSession) -> bool:
+    """
+    Return True if we are at or past the refresh threshold (e.g. 10th or +10th job),
+    so a background refresh should be scheduled.
+    """
+    total_jobs = await _count_user_jobs(db, user)
+    if total_jobs < MIN_APPLICATIONS_FOR_INSIGHTS:
+        return False
+    last_count = getattr(user, "gap_insights_job_count", 0) or 0
+    existing_insights = getattr(user, "gap_insights", None)
+    if (
+        isinstance(existing_insights, dict)
+        and last_count >= MIN_APPLICATIONS_FOR_INSIGHTS
+        and total_jobs < last_count + REFRESH_INTERVAL
+    ):
+        return False
+    return True
 
 
 async def _collect_gap_counts(db: AsyncSession, user: User) -> dict[str, int]:
@@ -233,4 +254,24 @@ async def build_gap_insights_for_user(
         "next_refresh_at": total_jobs + REFRESH_INTERVAL,
         "gap_insights": insights,
     }
+
+
+async def run_gap_insights_refresh(user_id: uuid.UUID) -> None:
+    """
+    Run gap insights build in a new DB session (for use after request ends).
+    Commits on success; logs and rolls back on failure.
+    """
+    async with async_session() as session:
+        try:
+            result = await session.execute(
+                select(User).where(User.id == user_id)
+            )
+            user = result.scalar_one_or_none()
+            if not user:
+                return
+            await build_gap_insights_for_user(user=user, db=session)
+            await session.commit()
+        except Exception:
+            logger.exception("Gap insights refresh failed for user_id=%s", user_id)
+            await session.rollback()
 

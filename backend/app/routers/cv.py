@@ -5,7 +5,7 @@ import unicodedata
 import uuid
 from collections.abc import Awaitable, Callable
 
-from fastapi import APIRouter, Depends, File, HTTPException, Query, UploadFile, status
+from fastapi import APIRouter, BackgroundTasks, Depends, File, HTTPException, Query, UploadFile, status
 from fastapi.responses import StreamingResponse
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -29,6 +29,7 @@ from app.services.credits import deduct_credit
 from app.services.cv_generator import generate_cv, generate_fit_analysis
 from app.services.cv_layout_feedback import count_cv_pdf_pages, get_cv_layout_feedback
 from app.services.docx_builder import build_cv_docx, build_cv_pdf
+from app.services.gap_insights import run_gap_insights_refresh, should_refresh_gap_insights
 from app.services.job_metadata import extract_job_metadata
 from app.services.scraper import scrape_job_url
 from app.utils.auth import get_current_user
@@ -842,10 +843,16 @@ async def upload_cv(
 @router.post("/generate", response_model=CVResponse)
 async def generate_cv_endpoint(
     req: CVGenerateRequest,
+    background_tasks: BackgroundTasks,
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
-    return await _run_cv_generation(req=req, user=user, db=db)
+    response = await _run_cv_generation(req=req, user=user, db=db)
+    if await should_refresh_gap_insights(user, db):
+        background_tasks.add_task(run_gap_insights_refresh, user.id)
+    # Commit before returning so the client can fetch the new job immediately.
+    await db.commit()
+    return response
 
 
 @router.post("/fit", response_model=CVResponse)
@@ -988,6 +995,12 @@ async def fit_cv(
 
     await db.flush()
 
+    # Gap insights refresh is triggered in the Generate CV step (refine or full generate)
+    # so the summary uses the most recent gap analysis (including feedback).
+
+    # Commit before returning so the response is sent after the job is visible.
+    await db.commit()
+
     response = CVResponse(
         id=str(cv.id),
         original_filename=cv.original_filename,
@@ -1035,6 +1048,8 @@ async def generate_cv_stream(
     async def producer() -> None:
         try:
             await _run_cv_generation(req=req, user=user, db=db, emit=emit)
+            if await should_refresh_gap_insights(user, db):
+                asyncio.create_task(run_gap_insights_refresh(user.id))
         except HTTPException as exc:
             await emit(
                 CVGenerationProgressEvent(
@@ -1104,6 +1119,8 @@ async def refine_cv_stream(
                 raise HTTPException(status_code=404, detail="CV not found")
 
             await _run_refine_generation(cv=cv, req=req, user=user, db=db, emit=emit)
+            if await should_refresh_gap_insights(user, db):
+                asyncio.create_task(run_gap_insights_refresh(user.id))
         except HTTPException as exc:
             await emit(
                 CVGenerationProgressEvent(
@@ -1210,6 +1227,7 @@ async def get_cv(
 async def refine_cv(
     cv_id: str,
     req: CVRefineRequest,
+    background_tasks: BackgroundTasks,
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
@@ -1220,7 +1238,10 @@ async def refine_cv(
     if not cv:
         raise HTTPException(status_code=404, detail="CV not found")
 
-    return await _run_refine_generation(cv=cv, req=req, user=user, db=db)
+    response = await _run_refine_generation(cv=cv, req=req, user=user, db=db)
+    if await should_refresh_gap_insights(user, db):
+        background_tasks.add_task(run_gap_insights_refresh, user.id)
+    return response
 
 
 @router.get("/", response_model=list[CVListItem])
