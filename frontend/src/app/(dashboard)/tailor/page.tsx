@@ -26,12 +26,14 @@ import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { toast } from "sonner";
-import { Upload, FileText, Briefcase, Wand2, Edit3, Download, Loader2, ArrowLeft, ArrowRight, Link2, Globe, Coins, UserCheck, Settings, Target, CheckCircle2, AlertTriangle, RefreshCw, Mail, ChevronDown } from "lucide-react";
+import { Upload, FileText, Briefcase, Wand2, Edit3, Download, Loader2, ArrowLeft, ArrowRight, Link2, Globe, Coins, UserCheck, Settings, Target, CheckCircle2, AlertTriangle, RefreshCw, Mail, ChevronDown, Eye } from "lucide-react";
 import { CVEditor } from "@/components/cv-editor/cv-editor";
 import { CvPreview } from "@/components/cv-preview/cv-preview";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import Link from "next/link";
 
 type FitAnalysis = { fit_score: number; strengths: string[]; gaps: string[] };
@@ -1300,6 +1302,29 @@ function TailorContent() {
               <Button variant="outline" onClick={() => { setStep("edit"); }}>
                 <Edit3 className="mr-2 h-4 w-4" />Edit CV
               </Button>
+              {jobDescription.trim() && (
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="ghost">
+                      <Eye className="mr-2 h-4 w-4" />
+                      View role description
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-2xl">
+                    <DialogHeader>
+                      <DialogTitle>Role description</DialogTitle>
+                      <DialogDescription>
+                        Read-only view of the job description used for this tailored CV.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <ScrollArea className="max-h-[55vh] rounded-md border p-4">
+                      <p className="whitespace-pre-wrap text-sm leading-6 text-foreground">
+                        {jobDescription}
+                      </p>
+                    </ScrollArea>
+                  </DialogContent>
+                </Dialog>
+              )}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="outline">
