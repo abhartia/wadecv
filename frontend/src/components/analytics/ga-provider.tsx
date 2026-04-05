@@ -24,7 +24,11 @@ export function GAProvider() {
             function gtag(){dataLayer.push(arguments);}
             window.gtag = gtag;
             gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
+            var gtagConfig = {};
+            if (document.referrer && document.referrer.indexOf('stripe.com') !== -1) {
+              gtagConfig.page_referrer = '';
+            }
+            gtag('config', '${GA_MEASUREMENT_ID}', gtagConfig);
           `}
         </Script>
       )}

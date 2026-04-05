@@ -3,9 +3,9 @@ import { getCareerChanges } from "@/lib/seo-content";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata = {
-  title: "Career Change Resume Guides | WadeCV",
+  title: "Career Change Resume Guides: Reframe Your Experience (2026) | WadeCV",
   description:
-    "How to write a resume when changing careers: teacher to PM, consulting to tech, finance to data science, and more.",
+    "Step-by-step resume guides for career changers: teacher to PM, military to project manager, nurse to tech, and 10+ more paths with transferable-skill translations.",
 };
 
 export default function CareerChangeIndexPage() {

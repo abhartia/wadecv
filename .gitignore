@@ -33,3 +33,4 @@ Thumbs.db
 .env.example
 /.cursor
 mcp-server/ethereal-fort-184509-febb290bee48.json
+/analytics

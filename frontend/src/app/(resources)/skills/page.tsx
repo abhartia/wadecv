@@ -3,9 +3,9 @@ import { getSkills } from "@/lib/seo-content";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata = {
-  title: "Skills for Resume by Role | WadeCV",
+  title: "Best Skills for Your Resume by Role (2026) | WadeCV",
   description:
-    "Skills to put on your resume by role: software engineer, product manager, customer service, data analyst, and more.",
+    "Role-specific skill lists for your resume: software engineer, product manager, data analyst, customer service, and more. Copy-paste ready.",
 };
 
 export default function SkillsIndexPage() {

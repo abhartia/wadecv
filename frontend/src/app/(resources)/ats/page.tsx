@@ -3,9 +3,9 @@ import { getAtsList } from "@/lib/seo-content";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata = {
-  title: "ATS Resume Guides | WadeCV",
+  title: "ATS Resume Guides: Beat Every Applicant Tracking System (2026) | WadeCV",
   description:
-    "How to optimize your resume for Workday, Greenhouse, Lever, and other ATS. Parsing rules, formatting tips, and keyword matching.",
+    "System-by-system ATS guides for Workday, Greenhouse, Lever, iCIMS, and more. Exact parsing rules, safe formatting, and keywords that get your resume past the screen.",
 };
 
 export default function AtsIndexPage() {

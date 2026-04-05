@@ -3,9 +3,9 @@ import { getCompanies } from "@/lib/seo-content";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata = {
-  title: "Company Resume Guides | WadeCV",
+  title: "Company-Specific Resume Guides: Keywords That Get Interviews (2026) | WadeCV",
   description:
-    "Resume guides by company: hiring requirements, keywords, and tips for Google, Amazon, McKinsey, Goldman Sachs, and more.",
+    "Tailor your resume for Google, Amazon, McKinsey, Goldman Sachs, and 10+ top employers. Exact keywords, hiring bar, and sample bullets per company.",
 };
 
 export default function CompanyResumeIndexPage() {

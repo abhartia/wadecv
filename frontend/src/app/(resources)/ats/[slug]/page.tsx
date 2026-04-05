@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SeoCta } from "@/components/seo/seo-cta";
 import { FaqSection } from "@/components/seo/faq-section";
 import { RelatedGuides } from "@/components/seo/related-guides";
+import { CrossCategoryLinks } from "@/components/seo/cross-category-links";
 
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com";
 
@@ -14,10 +15,10 @@ export async function generateMetadata({ params }: Props) {
   const entry = getAtsBySlug(slug);
   if (!entry) return { title: "ATS Guide Not Found | WadeCV" };
   return {
-    title: `Resume for ${entry.name} ATS | WadeCV`,
+    title: `How to Pass ${entry.name} ATS Screening (2026 Guide) | WadeCV`,
     description: entry.metaDescription,
-    openGraph: { title: `Resume for ${entry.name} ATS`, description: entry.metaDescription },
-    twitter: { card: "summary", title: `Resume for ${entry.name} ATS`, description: entry.metaDescription },
+    openGraph: { title: `How to Pass ${entry.name} ATS Screening (2026 Guide)`, description: entry.metaDescription },
+    twitter: { card: "summary", title: `How to Pass ${entry.name} ATS Screening (2026 Guide)`, description: entry.metaDescription },
   };
 }
 
@@ -38,11 +39,29 @@ export default async function AtsPage({ params }: Props) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: `Resume for ${entry.name} ATS`,
+            headline: `How to Pass ${entry.name} ATS Screening`,
             description: entry.metaDescription,
             author: { "@type": "Organization", name: "WadeCV" },
             publisher: { "@type": "Organization", name: "WadeCV", url: BASE_URL },
             mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/ats/${entry.slug}` },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: `How to Optimize Your Resume for ${entry.name} ATS`,
+            description: entry.metaDescription,
+            step: [
+              ...entry.formattingNotes.map((note, i) => ({
+                "@type": "HowToStep",
+                position: i + 1,
+                text: note,
+              })),
+            ],
           }),
         }}
       />
@@ -80,6 +99,8 @@ export default async function AtsPage({ params }: Props) {
       {entry.faq && <FaqSection faq={entry.faq} />}
 
       <RelatedGuides relatedSlugs={entry.relatedSlugs} category="ats" currentSlug={slug} />
+
+      <CrossCategoryLinks currentCategory="/ats" />
 
       <Card>
         <CardHeader>

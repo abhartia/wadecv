@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { SeoCta } from "@/components/seo/seo-cta";
 import { FaqSection } from "@/components/seo/faq-section";
 import { RelatedGuides } from "@/components/seo/related-guides";
+import { CrossCategoryLinks } from "@/components/seo/cross-category-links";
 
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com";
 
@@ -15,10 +16,10 @@ export async function generateMetadata({ params }: Props) {
   const entry = getCompanyBySlug(company);
   if (!entry) return { title: "Company Not Found | WadeCV" };
   return {
-    title: `${entry.name} Resume Guide | WadeCV`,
+    title: `${entry.name} Resume Guide: What Recruiters Look For (2026) | WadeCV`,
     description: entry.metaDescription,
-    openGraph: { title: `${entry.name} Resume Guide`, description: entry.metaDescription },
-    twitter: { card: "summary", title: `${entry.name} Resume Guide`, description: entry.metaDescription },
+    openGraph: { title: `${entry.name} Resume Guide: What Recruiters Look For (2026)`, description: entry.metaDescription },
+    twitter: { card: "summary", title: `${entry.name} Resume Guide: What Recruiters Look For (2026)`, description: entry.metaDescription },
   };
 }
 
@@ -101,6 +102,8 @@ export default async function CompanyResumePage({ params }: Props) {
       {entry.faq && <FaqSection faq={entry.faq} />}
 
       <RelatedGuides relatedSlugs={entry.relatedSlugs} category="company-resume" currentSlug={company} />
+
+      <CrossCategoryLinks currentCategory="/company-resume" />
 
       <Card>
         <CardHeader>

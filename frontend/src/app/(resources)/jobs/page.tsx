@@ -3,9 +3,9 @@ import { getJobs } from "@/lib/seo-content";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata = {
-  title: "Job Description Guides | WadeCV",
+  title: "Resume Guides by Job Title: Keywords, Skills & Tips (2026) | WadeCV",
   description:
-    "Browse job description breakdowns by role: responsibilities, required skills, salary ranges, and resume keywords to tailor your CV.",
+    "Role-by-role resume guides: responsibilities, must-have keywords, salary benchmarks, and tailored bullet examples for 20+ job titles.",
 };
 
 export default function JobsIndexPage() {
