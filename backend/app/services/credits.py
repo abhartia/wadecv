@@ -40,26 +40,36 @@ async def add_credits(
     return user.credits
 
 
-async def deduct_credit(db: AsyncSession, user_id) -> int:
+async def deduct_credits(
+    db: AsyncSession,
+    user_id,
+    amount: int,
+    transaction_type: str,
+    description: str,
+) -> int:
     result = await db.execute(select(User).where(User.id == user_id).with_for_update())
     user = result.scalar_one_or_none()
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
 
-    if user.credits < 1:
+    if user.credits < amount:
         raise HTTPException(
             status_code=status.HTTP_402_PAYMENT_REQUIRED,
             detail="Insufficient credits. Please purchase more credits to continue.",
         )
 
-    user.credits -= 1
+    user.credits -= amount
 
     transaction = CreditTransaction(
         user_id=user_id,
-        amount=-1,
-        type="cv_generation",
-        description="CV generation",
+        amount=-amount,
+        type=transaction_type,
+        description=description,
     )
     db.add(transaction)
     await db.flush()
     return user.credits
+
+
+async def deduct_credit(db: AsyncSession, user_id) -> int:
+    return await deduct_credits(db, user_id, 1, "cv_generation", "CV generation")

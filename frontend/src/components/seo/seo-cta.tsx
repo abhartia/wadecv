@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { trackSeoCtaClick } from "@/lib/analytics/events";
 
-type Variant = "job" | "company" | "skills" | "resume-bullets" | "ats" | "career-change";
+type Variant = "job" | "company" | "skills" | "resume-bullets" | "ats" | "career-change" | "physical-mail";
 
 const DEFAULT_LABELS: Record<Variant, string> = {
   job: "Generate a resume optimized for this job",
@@ -13,6 +13,7 @@ const DEFAULT_LABELS: Record<Variant, string> = {
   "resume-bullets": "Get AI-powered resume bullets",
   ats: "Optimize your resume for ATS",
   "career-change": "Build your transition CV",
+  "physical-mail": "Mail your CV to a company",
 };
 
 type SeoCtaProps = {

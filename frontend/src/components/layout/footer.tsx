@@ -39,6 +39,7 @@ export function Footer() {
               <li><Link href="/resume-bullets" className="hover:text-foreground transition-colors">Resume Bullets</Link></li>
               <li><Link href="/ats" className="hover:text-foreground transition-colors">ATS Guides</Link></li>
               <li><Link href="/career-change" className="hover:text-foreground transition-colors">Career Change</Link></li>
+              <li><Link href="/physical-mail" className="hover:text-foreground transition-colors">Mail Your CV</Link></li>
             </ul>
           </div>
 

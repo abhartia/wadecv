@@ -13,6 +13,7 @@ interface User {
   base_cv_content: string | null;
   additional_info: string | null;
   cv_page_limit?: number;
+  mailing_address?: Record<string, string> | null;
   created_at: string;
 }
 

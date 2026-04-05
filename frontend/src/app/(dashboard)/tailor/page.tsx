@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, Suspense, useEffect } from "react";
+import { useState, useCallback, Suspense, useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import { api, ApiError, CVGenerationProgressEvent, CVGenerationStage } from "@/lib/api";
@@ -26,7 +26,7 @@ import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { toast } from "sonner";
-import { Upload, FileText, Briefcase, Wand2, Edit3, Download, Loader2, ArrowLeft, ArrowRight, Link2, Globe, Coins, UserCheck, Settings, Target, CheckCircle2, AlertTriangle, RefreshCw, Mail, ChevronDown, Eye } from "lucide-react";
+import { Upload, FileText, Briefcase, Wand2, Edit3, Download, Loader2, ArrowLeft, ArrowRight, Link2, Globe, Coins, UserCheck, Settings, Target, CheckCircle2, AlertTriangle, RefreshCw, Mail, ChevronDown, Eye, Send } from "lucide-react";
 import { CVEditor } from "@/components/cv-editor/cv-editor";
 import { CvPreview } from "@/components/cv-preview/cv-preview";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -34,24 +34,53 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { extractAddressApiMailExtractAddressPost, sendMailApiMailSendPost } from "@/gen/hey-api/sdk.gen";
+import { client } from "@/gen/hey-api/client.gen";
+import type { AddressSchema, BodySendMailApiMailSendPost } from "@/gen/hey-api/types.gen";
+import { Checkbox } from "@/components/ui/checkbox";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import Link from "next/link";
 
 type FitAnalysis = { fit_score: number; strengths: string[]; gaps: string[] };
-type Step = "upload" | "enhance" | "job" | "fit" | "generate" | "edit" | "cover_letter" | "download";
+type Step = "upload" | "enhance" | "job" | "fit" | "generate" | "edit" | "cover_letter" | "download" | "mail";
 
-const ALL_STEPS: Step[] = ["upload", "enhance", "job", "fit", "generate", "edit", "cover_letter", "download"];
-const PROFILE_STEPS: Step[] = ["job", "fit", "generate", "edit", "cover_letter", "download"];
+const ALL_STEPS: Step[] = ["upload", "enhance", "job", "fit", "generate", "edit", "cover_letter", "download", "mail"];
+const PROFILE_STEPS: Step[] = ["job", "fit", "generate", "edit", "cover_letter", "download", "mail"];
 
 const STEP_LABELS: Record<Step, string> = {
   upload: "Upload CV", enhance: "Add Info", job: "Job Details",
   generate: "Generate", fit: "Fit Analysis", edit: "Edit",
-  cover_letter: "Cover Letter", download: "Download",
+  cover_letter: "Cover Letter", download: "Download", mail: "Send Mail",
 };
 const STEP_ICONS: Record<Step, React.ElementType> = {
   upload: Upload, enhance: Edit3, job: Briefcase,
   generate: Wand2, fit: Target, edit: FileText,
-  cover_letter: Mail, download: Download,
+  cover_letter: Mail, download: Download, mail: Send,
 };
+
+const EMPTY_ADDRESS: AddressSchema = {
+  name: "", address_line1: "", address_line2: "", city: "", state: "", zip: "", country: "US",
+};
+
+const US_STATES = [
+  { value: "AL", label: "Alabama" }, { value: "AK", label: "Alaska" }, { value: "AZ", label: "Arizona" },
+  { value: "AR", label: "Arkansas" }, { value: "CA", label: "California" }, { value: "CO", label: "Colorado" },
+  { value: "CT", label: "Connecticut" }, { value: "DE", label: "Delaware" }, { value: "FL", label: "Florida" },
+  { value: "GA", label: "Georgia" }, { value: "HI", label: "Hawaii" }, { value: "ID", label: "Idaho" },
+  { value: "IL", label: "Illinois" }, { value: "IN", label: "Indiana" }, { value: "IA", label: "Iowa" },
+  { value: "KS", label: "Kansas" }, { value: "KY", label: "Kentucky" }, { value: "LA", label: "Louisiana" },
+  { value: "ME", label: "Maine" }, { value: "MD", label: "Maryland" }, { value: "MA", label: "Massachusetts" },
+  { value: "MI", label: "Michigan" }, { value: "MN", label: "Minnesota" }, { value: "MS", label: "Mississippi" },
+  { value: "MO", label: "Missouri" }, { value: "MT", label: "Montana" }, { value: "NE", label: "Nebraska" },
+  { value: "NV", label: "Nevada" }, { value: "NH", label: "New Hampshire" }, { value: "NJ", label: "New Jersey" },
+  { value: "NM", label: "New Mexico" }, { value: "NY", label: "New York" }, { value: "NC", label: "North Carolina" },
+  { value: "ND", label: "North Dakota" }, { value: "OH", label: "Ohio" }, { value: "OK", label: "Oklahoma" },
+  { value: "OR", label: "Oregon" }, { value: "PA", label: "Pennsylvania" }, { value: "RI", label: "Rhode Island" },
+  { value: "SC", label: "South Carolina" }, { value: "SD", label: "South Dakota" }, { value: "TN", label: "Tennessee" },
+  { value: "TX", label: "Texas" }, { value: "UT", label: "Utah" }, { value: "VT", label: "Vermont" },
+  { value: "VA", label: "Virginia" }, { value: "WA", label: "Washington" }, { value: "WV", label: "West Virginia" },
+  { value: "WI", label: "Wisconsin" }, { value: "WY", label: "Wyoming" }, { value: "DC", label: "District of Columbia" },
+];
 
 const STAGE_ORDER: CVGenerationStage[] = [
   "start",
@@ -90,6 +119,509 @@ const isLinkedInJobUrl = (url: string): boolean => {
   }
 };
 
+function AddressForm({
+  label,
+  address,
+  onChange,
+}: {
+  label: string;
+  address: AddressSchema;
+  onChange: (a: AddressSchema) => void;
+}) {
+  const update = (field: keyof AddressSchema, value: string) =>
+    onChange({ ...address, [field]: value });
+  return (
+    <div className="space-y-3">
+      <h4 className="font-semibold text-sm">{label}</h4>
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div className="space-y-1">
+          <Label className="text-xs">Name</Label>
+          <Input value={address.name} onChange={(e) => update("name", e.target.value)} placeholder="Company or recipient name" />
+        </div>
+        <div className="space-y-1">
+          <Label className="text-xs">Address Line 1</Label>
+          <Input value={address.address_line1} onChange={(e) => update("address_line1", e.target.value)} placeholder="123 Main St" />
+        </div>
+        <div className="space-y-1">
+          <Label className="text-xs">Address Line 2</Label>
+          <Input value={address.address_line2 ?? ""} onChange={(e) => update("address_line2", e.target.value)} placeholder="Suite, floor, etc." />
+        </div>
+        <div className="space-y-1">
+          <Label className="text-xs">City</Label>
+          <Input value={address.city} onChange={(e) => update("city", e.target.value)} placeholder="City" />
+        </div>
+        <div className="space-y-1">
+          <Label className="text-xs">State</Label>
+          <Select value={address.state} onValueChange={(v) => update("state", v)}>
+            <SelectTrigger>
+              <SelectValue placeholder="Select state" />
+            </SelectTrigger>
+            <SelectContent>
+              {US_STATES.map((s) => (
+                <SelectItem key={s.value} value={s.value}>{s.label}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+        <div className="space-y-1">
+          <Label className="text-xs">ZIP Code</Label>
+          <Input value={address.zip} onChange={(e) => update("zip", e.target.value)} placeholder="12345" />
+        </div>
+        <div className="space-y-1">
+          <Label className="text-xs">Country</Label>
+          <Input value="US" disabled className="opacity-70" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PdfPreviewPanel({
+  label,
+  pdfUrl,
+  loading,
+  customFile,
+  onUpload,
+  onReset,
+}: {
+  label: string;
+  pdfUrl: string | null;
+  loading: boolean;
+  customFile: File | null;
+  onUpload: (file: File) => void;
+  onReset: () => void;
+}) {
+  const fileInputId = `pdf-upload-${label.replace(/\s/g, "-")}`;
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center justify-between">
+        <h4 className="font-semibold text-sm">{label}</h4>
+        <div className="flex items-center gap-2">
+          {customFile ? (
+            <>
+              <Badge variant="secondary" className="text-xs">Custom: {customFile.name}</Badge>
+              <Button variant="ghost" size="sm" onClick={onReset}>
+                <RefreshCw className="mr-1 h-3 w-3" />Reset to generated
+              </Button>
+            </>
+          ) : (
+            <>
+              <input
+                id={fileInputId}
+                type="file"
+                accept=".pdf"
+                className="hidden"
+                onChange={(e) => {
+                  const f = e.target.files?.[0];
+                  if (f) onUpload(f);
+                  e.target.value = "";
+                }}
+              />
+              <Button variant="outline" size="sm" asChild>
+                <label htmlFor={fileInputId} className="cursor-pointer">
+                  <Upload className="mr-1 h-3 w-3" />Replace with your own PDF
+                </label>
+              </Button>
+            </>
+          )}
+        </div>
+      </div>
+      {loading ? (
+        <div className="flex items-center justify-center h-[400px] border rounded-md bg-muted/30">
+          <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+        </div>
+      ) : pdfUrl ? (
+        <iframe src={pdfUrl} className="w-full h-[500px] border rounded-md" title={label} />
+      ) : (
+        <div className="flex items-center justify-center h-[200px] border rounded-md bg-muted/30 text-muted-foreground text-sm">
+          PDF preview unavailable
+        </div>
+      )}
+    </div>
+  );
+}
+
+function MailStep({
+  jobId,
+  cvId,
+  token,
+  user,
+  coverLetterGenerated,
+  mailContentType,
+  setMailContentType,
+  toAddress,
+  setToAddress,
+  fromAddress,
+  setFromAddress,
+  saveReturnAddress,
+  setSaveReturnAddress,
+  addressExtracted,
+  setAddressExtracted,
+  addressLoading,
+  setAddressLoading,
+  mailSending,
+  setMailSending,
+  mailSent,
+  setMailSent,
+  refreshUser,
+}: {
+  jobId: string;
+  cvId: string;
+  token: string | null;
+  user: { credits: number; mailing_address?: Record<string, string> | null } | null;
+  coverLetterGenerated: boolean;
+  mailContentType: BodySendMailApiMailSendPost["content_type"];
+  setMailContentType: (v: BodySendMailApiMailSendPost["content_type"]) => void;
+  toAddress: AddressSchema;
+  setToAddress: (a: AddressSchema) => void;
+  fromAddress: AddressSchema;
+  setFromAddress: (a: AddressSchema) => void;
+  saveReturnAddress: boolean;
+  setSaveReturnAddress: (v: boolean) => void;
+  addressExtracted: boolean;
+  setAddressExtracted: (v: boolean) => void;
+  addressLoading: boolean;
+  setAddressLoading: (v: boolean) => void;
+  mailSending: boolean;
+  setMailSending: (v: boolean) => void;
+  mailSent: boolean;
+  setMailSent: (v: boolean) => void;
+  refreshUser: () => Promise<void>;
+}) {
+  const credits = user?.credits ?? 0;
+  const MAIL_COST = 5;
+
+  // PDF preview state
+  const [cvPdfUrl, setCvPdfUrl] = useState<string | null>(null);
+  const [clPdfUrl, setClPdfUrl] = useState<string | null>(null);
+  const [cvPdfLoading, setCvPdfLoading] = useState(false);
+  const [clPdfLoading, setClPdfLoading] = useState(false);
+  const [customCvFile, setCustomCvFile] = useState<File | null>(null);
+  const [customClFile, setCustomClFile] = useState<File | null>(null);
+  // Keep generated blob URLs to restore on reset
+  const [generatedCvPdfUrl, setGeneratedCvPdfUrl] = useState<string | null>(null);
+  const [generatedClPdfUrl, setGeneratedClPdfUrl] = useState<string | null>(null);
+
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
+  // Fetch generated CV PDF preview
+  useEffect(() => {
+    if (!token || !cvId || generatedCvPdfUrl) return;
+    setCvPdfLoading(true);
+    fetch(`${API_URL}/api/cv/${cvId}/download?format=pdf`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((res) => (res.ok ? res.blob() : null))
+      .then((blob) => {
+        if (blob) {
+          const url = URL.createObjectURL(blob);
+          setGeneratedCvPdfUrl(url);
+          if (!customCvFile) setCvPdfUrl(url);
+        }
+      })
+      .catch(() => {})
+      .finally(() => setCvPdfLoading(false));
+  }, [token, cvId, API_URL, generatedCvPdfUrl, customCvFile]);
+
+  // Fetch generated cover letter PDF preview
+  useEffect(() => {
+    if (!token || !jobId || !coverLetterGenerated || generatedClPdfUrl) return;
+    setClPdfLoading(true);
+    fetch(`${API_URL}/api/cover-letter/${jobId}/download?format=pdf`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((res) => (res.ok ? res.blob() : null))
+      .then((blob) => {
+        if (blob) {
+          const url = URL.createObjectURL(blob);
+          setGeneratedClPdfUrl(url);
+          if (!customClFile) setClPdfUrl(url);
+        }
+      })
+      .catch(() => {})
+      .finally(() => setClPdfLoading(false));
+  }, [token, jobId, coverLetterGenerated, API_URL, generatedClPdfUrl, customClFile]);
+
+  // Cleanup blob URLs on unmount
+  useEffect(() => {
+    return () => {
+      if (generatedCvPdfUrl) URL.revokeObjectURL(generatedCvPdfUrl);
+      if (generatedClPdfUrl) URL.revokeObjectURL(generatedClPdfUrl);
+    };
+  }, [generatedCvPdfUrl, generatedClPdfUrl]);
+
+  const handleCvUpload = (file: File) => {
+    setCustomCvFile(file);
+    const url = URL.createObjectURL(file);
+    setCvPdfUrl(url);
+  };
+
+  const handleCvReset = () => {
+    if (customCvFile && cvPdfUrl && cvPdfUrl !== generatedCvPdfUrl) {
+      URL.revokeObjectURL(cvPdfUrl);
+    }
+    setCustomCvFile(null);
+    setCvPdfUrl(generatedCvPdfUrl);
+  };
+
+  const handleClUpload = (file: File) => {
+    setCustomClFile(file);
+    const url = URL.createObjectURL(file);
+    setClPdfUrl(url);
+  };
+
+  const handleClReset = () => {
+    if (customClFile && clPdfUrl && clPdfUrl !== generatedClPdfUrl) {
+      URL.revokeObjectURL(clPdfUrl);
+    }
+    setCustomClFile(null);
+    setClPdfUrl(generatedClPdfUrl);
+  };
+
+  // Extract address on first render
+  useEffect(() => {
+    if (addressExtracted || addressLoading || !token || !jobId) return;
+    setAddressLoading(true);
+    client.setConfig({ baseUrl: process.env.NEXT_PUBLIC_API_URL, headers: { Authorization: `Bearer ${token}` } });
+    extractAddressApiMailExtractAddressPost({
+      body: { job_id: jobId },
+    })
+      .then((res) => {
+        if (res.data?.found) {
+          setToAddress({
+            name: res.data.name ?? "",
+            address_line1: res.data.address_line1 ?? "",
+            address_line2: res.data.address_line2 ?? "",
+            city: res.data.city ?? "",
+            state: res.data.state ?? "",
+            zip: res.data.zip ?? "",
+            country: res.data.country ?? "US",
+          });
+        }
+      })
+      .catch(() => {})
+      .finally(() => {
+        setAddressExtracted(true);
+        setAddressLoading(false);
+      });
+  }, [addressExtracted, addressLoading, token, jobId, setAddressLoading, setAddressExtracted, setToAddress]);
+
+  // Pre-fill return address from profile
+  useEffect(() => {
+    if (user?.mailing_address && !fromAddress.address_line1) {
+      const saved = user.mailing_address;
+      setFromAddress({
+        name: saved.name ?? "",
+        address_line1: saved.address_line1 ?? "",
+        address_line2: saved.address_line2 ?? "",
+        city: saved.city ?? "",
+        state: saved.state ?? "",
+        zip: saved.zip ?? "",
+        country: saved.country ?? "US",
+      });
+    }
+  }, [user?.mailing_address, fromAddress.address_line1, setFromAddress]);
+
+  const isToValid = toAddress.name && toAddress.address_line1 && toAddress.city && toAddress.state && toAddress.zip;
+  const isFromValid = fromAddress.name && fromAddress.address_line1 && fromAddress.city && fromAddress.state && fromAddress.zip;
+  const canSend = isToValid && isFromValid && credits >= MAIL_COST && !mailSending && !mailSent;
+
+  const handleSend = async () => {
+    if (!token || !canSend) return;
+    setMailSending(true);
+    try {
+      client.setConfig({ baseUrl: process.env.NEXT_PUBLIC_API_URL, headers: { Authorization: `Bearer ${token}` } });
+      const res = await sendMailApiMailSendPost({
+        body: {
+          job_id: jobId,
+          content_type: mailContentType,
+          to_address: JSON.stringify(toAddress),
+          from_address: JSON.stringify(fromAddress),
+          save_return_address: saveReturnAddress,
+          ...(customCvFile ? { custom_cv_pdf: customCvFile } : {}),
+          ...(customClFile ? { custom_cover_letter_pdf: customClFile } : {}),
+        },
+      });
+      if (res.error) {
+        toast.error((res.error as { detail?: string }).detail || "Failed to send mail");
+      } else {
+        setMailSent(true);
+        toast.success("Physical mail sent! Delivery via USPS First Class typically takes 5\u20137 business days.");
+        await refreshUser();
+      }
+    } catch {
+      toast.error("Failed to send physical mail");
+    } finally {
+      setMailSending(false);
+    }
+  };
+
+  if (mailSent) {
+    return (
+      <Card>
+        <CardContent className="py-16 text-center space-y-4">
+          <CheckCircle2 className="h-16 w-16 text-green-500 mx-auto" />
+          <h3 className="text-2xl font-bold">Mail sent!</h3>
+          <p className="text-muted-foreground max-w-md mx-auto">
+            Your physical mail has been submitted for delivery via USPS First Class. It typically arrives in 5–7 business days.
+          </p>
+          <Link href="/applications">
+            <Button className="mt-4">View Applications</Button>
+          </Link>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  const showCvPreview = mailContentType === "cv_only" || mailContentType === "both";
+  const showClPreview = mailContentType === "cover_letter_only" || mailContentType === "both";
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Send Physical Mail</CardTitle>
+        <CardDescription>
+          Mail a physical copy of your CV and/or cover letter to the company. Preview what will be sent and optionally replace with your own PDF.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-6">
+        {/* Content type selection */}
+        <div className="space-y-3">
+          <Label className="font-semibold">What to send</Label>
+          <div className="flex flex-col gap-2">
+            {(
+              [
+                { value: "cv_only", label: "CV only", needsCL: false },
+                { value: "cover_letter_only", label: "Cover letter only", needsCL: true },
+                { value: "both", label: "CV and cover letter", needsCL: true },
+              ] as const
+            ).map((opt) => (
+              <label
+                key={opt.value}
+                className={`flex items-center gap-2 rounded-md border p-3 cursor-pointer transition-colors ${mailContentType === opt.value ? "border-primary bg-primary/5" : "border-border"} ${opt.needsCL && !coverLetterGenerated ? "opacity-50 cursor-not-allowed" : ""}`}
+              >
+                <input
+                  type="radio"
+                  name="mailContentType"
+                  value={opt.value}
+                  checked={mailContentType === opt.value}
+                  disabled={opt.needsCL && !coverLetterGenerated}
+                  onChange={() => setMailContentType(opt.value)}
+                  className="accent-primary"
+                />
+                <span className="text-sm">{opt.label}</span>
+                {opt.needsCL && !coverLetterGenerated && (
+                  <span className="text-xs text-muted-foreground ml-auto">Generate a cover letter first</span>
+                )}
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* PDF Previews */}
+        <div className={`grid gap-6 ${showCvPreview && showClPreview ? "lg:grid-cols-2" : ""}`}>
+          {showClPreview && (
+            <PdfPreviewPanel
+              label="Cover Letter"
+              pdfUrl={clPdfUrl}
+              loading={clPdfLoading}
+              customFile={customClFile}
+              onUpload={handleClUpload}
+              onReset={handleClReset}
+            />
+          )}
+          {showCvPreview && (
+            <PdfPreviewPanel
+              label="CV"
+              pdfUrl={cvPdfUrl}
+              loading={cvPdfLoading}
+              customFile={customCvFile}
+              onUpload={handleCvUpload}
+              onReset={handleCvReset}
+            />
+          )}
+        </div>
+
+        {/* Company address */}
+        {addressLoading ? (
+          <div className="flex items-center gap-2 text-muted-foreground text-sm py-4">
+            <Loader2 className="h-4 w-4 animate-spin" />
+            Extracting company address from job description...
+          </div>
+        ) : (
+          <AddressForm label="Company address (to)" address={toAddress} onChange={setToAddress} />
+        )}
+
+        {/* Return address */}
+        <AddressForm label="Your return address (from)" address={fromAddress} onChange={setFromAddress} />
+
+        {/* Save return address checkbox */}
+        <label className="flex items-center gap-2 cursor-pointer">
+          <Checkbox checked={saveReturnAddress} onCheckedChange={(v) => setSaveReturnAddress(v === true)} />
+          <span className="text-sm">Save return address to my profile</span>
+        </label>
+
+        {/* Cost and send */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2 border-t">
+          <div className="flex items-center gap-2">
+            <Coins className="h-4 w-4 text-muted-foreground" />
+            <span className="text-sm">
+              Cost: <strong>{MAIL_COST} credits</strong>
+            </span>
+            <span className="text-sm text-muted-foreground">
+              (Balance: {credits} credits)
+            </span>
+          </div>
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button disabled={!canSend}>
+                {mailSending ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />Sending...
+                  </>
+                ) : credits < MAIL_COST ? (
+                  "Insufficient credits"
+                ) : (
+                  <>
+                    <Send className="mr-2 h-4 w-4" />Send Mail ({MAIL_COST} credits)
+                  </>
+                )}
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Confirm physical mail</AlertDialogTitle>
+                <AlertDialogDescription asChild>
+                  <div className="space-y-3 text-sm">
+                    <p>You are about to send a physical letter with the following details:</p>
+                    <div className="rounded-md border p-3 space-y-1 text-foreground">
+                      <p><strong>Sending:</strong> {mailContentType === "both" ? "CV and cover letter" : mailContentType === "cv_only" ? "CV only" : "Cover letter only"}</p>
+                      <p><strong>To:</strong> {toAddress.name}, {toAddress.address_line1}, {toAddress.city}, {toAddress.state} {toAddress.zip}</p>
+                      <p><strong>From:</strong> {fromAddress.name}, {fromAddress.address_line1}, {fromAddress.city}, {fromAddress.state} {fromAddress.zip}</p>
+                    </div>
+                    <p><strong>Cost:</strong> {MAIL_COST} credits (current balance: {credits})</p>
+                    <p className="text-muted-foreground">Sent via USPS First Class. Delivery typically takes 5–7 business days. This action cannot be undone.</p>
+                  </div>
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction onClick={handleSend} disabled={mailSending}>
+                  {mailSending ? (
+                    <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Sending...</>
+                  ) : (
+                    "Confirm & Send"
+                  )}
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
 function TailorContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -123,6 +655,14 @@ function TailorContent() {
   const [clDownloadLoading, setClDownloadLoading] = useState(false);
   const [clSaving, setClSaving] = useState(false);
   const [scrapeError, setScrapeError] = useState<string | null>(null);
+  const [mailContentType, setMailContentType] = useState<BodySendMailApiMailSendPost["content_type"]>("cv_only");
+  const [toAddress, setToAddress] = useState<AddressSchema>({ ...EMPTY_ADDRESS });
+  const [fromAddress, setFromAddress] = useState<AddressSchema>({ ...EMPTY_ADDRESS });
+  const [saveReturnAddress, setSaveReturnAddress] = useState(true);
+  const [addressExtracted, setAddressExtracted] = useState(false);
+  const [addressLoading, setAddressLoading] = useState(false);
+  const [mailSending, setMailSending] = useState(false);
+  const [mailSent, setMailSent] = useState(false);
   const [generationProgress, setGenerationProgress] = useState<number>(0);
   const [generationStage, setGenerationStage] = useState<CVGenerationStage | null>(null);
   const [generationEvents, setGenerationEvents] = useState<
@@ -169,6 +709,13 @@ function TailorContent() {
         }
         break;
       }
+      case "mail": {
+        if (!jobId) {
+          toast.error("You need a generated CV before sending mail.");
+          return;
+        }
+        break;
+      }
       default:
         break;
     }
@@ -188,6 +735,7 @@ function TailorContent() {
     }
 
     // Reset all local state for a fresh flow
+    jobLoadedRef.current = null;
     setStep(profileFlow ? "job" : "upload");
     setFile(null);
     setCvId("");
@@ -219,11 +767,18 @@ function TailorContent() {
     if (preferred === 1 || preferred === 2) setPageLimit(preferred);
   }, [user?.cv_page_limit]);
 
+  // Track whether the initial load for ?job= has already run so that
+  // token refreshes don't snap the user back to the Edit step.
+  const jobLoadedRef = useRef<string | null>(null);
+
   // When opened for an existing application (?job=...), load job, CV and cover letter
   useEffect(() => {
     if (!token || !jobParam) return;
+    // Only run once per jobParam value — skip if token refreshed
+    if (jobLoadedRef.current === jobParam) return;
 
     const loadExistingApplication = async () => {
+      jobLoadedRef.current = jobParam;
       try {
         const job = await api.getJob(jobParam, token);
         const cv = await api.getCV(job.cv_id, token);
@@ -726,7 +1281,7 @@ function TailorContent() {
               const isActive = i === stepIdx;
               const isDone = i < stepIdx;
               const isTrackerNavigableStep =
-                s === "fit" || s === "edit" || s === "cover_letter" || s === "download";
+                s === "fit" || s === "edit" || s === "cover_letter" || s === "download" || s === "mail";
 
               let isClickable = false;
               if (isTrackerNavigableStep) {
@@ -738,6 +1293,8 @@ function TailorContent() {
                   isClickable = !!jobId;
                 } else if (s === "download") {
                   isClickable = !!cvId;
+                } else if (s === "mail") {
+                  isClickable = !!jobId;
                 }
               }
 
@@ -1361,12 +1918,47 @@ function TailorContent() {
                   </DropdownMenuContent>
                 </DropdownMenu>
               )}
+              <Button
+                variant="outline"
+                onClick={() => setStep("mail")}
+              >
+                <Send className="mr-2 h-4 w-4" />
+                Send Physical Mail
+              </Button>
               <Link href="/applications">
                 <Button>View Applications</Button>
               </Link>
             </div>
           </CardContent>
         </Card>
+      )}
+
+      {/* Step: Mail */}
+      {step === "mail" && (
+        <MailStep
+          jobId={jobId}
+          cvId={cvId}
+          token={token}
+          user={user}
+          coverLetterGenerated={coverLetterGenerated}
+          mailContentType={mailContentType}
+          setMailContentType={setMailContentType}
+          toAddress={toAddress}
+          setToAddress={setToAddress}
+          fromAddress={fromAddress}
+          setFromAddress={setFromAddress}
+          saveReturnAddress={saveReturnAddress}
+          setSaveReturnAddress={setSaveReturnAddress}
+          addressExtracted={addressExtracted}
+          setAddressExtracted={setAddressExtracted}
+          addressLoading={addressLoading}
+          setAddressLoading={setAddressLoading}
+          mailSending={mailSending}
+          setMailSending={setMailSending}
+          mailSent={mailSent}
+          setMailSent={setMailSent}
+          refreshUser={refreshUser}
+        />
       )}
     </div>
   );

@@ -1720,6 +1720,86 @@
           }
         }
       }
+    },
+    "/api/mail/extract-address": {
+      "post": {
+        "tags": ["Physical Mail"],
+        "summary": "Extract Address",
+        "operationId": "extract_address_api_mail_extract_address_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExtractAddressRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtractAddressResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [{ "HTTPBearer": [] }]
+      }
+    },
+    "/api/mail/send": {
+      "post": {
+        "tags": ["Physical Mail"],
+        "summary": "Send Mail",
+        "operationId": "send_mail_api_mail_send_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_send_mail_api_mail_send_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PhysicalMailResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [{ "HTTPBearer": [] }]
+      }
     }
   },
   "components": {
@@ -2622,6 +2702,17 @@
               }
             ],
             "title": "Cv Page Limit"
+          },
+          "mailing_address": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mailing Address"
           }
         },
         "type": "object",
@@ -2873,6 +2964,17 @@
             "title": "Cv Page Limit",
             "default": 1
           },
+          "mailing_address": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mailing Address"
+          },
           "created_at": {
             "type": "string",
             "title": "Created At"
@@ -2927,6 +3029,71 @@
           "type"
         ],
         "title": "ValidationError"
+      },
+      "AddressSchema": {
+        "properties": {
+          "name": { "type": "string", "title": "Name" },
+          "address_line1": { "type": "string", "title": "Address Line1" },
+          "address_line2": { "type": "string", "title": "Address Line2", "default": "" },
+          "city": { "type": "string", "title": "City" },
+          "state": { "type": "string", "title": "State" },
+          "zip": { "type": "string", "title": "Zip" },
+          "country": { "type": "string", "title": "Country", "default": "US" }
+        },
+        "type": "object",
+        "required": ["name", "address_line1", "city", "state", "zip"],
+        "title": "AddressSchema"
+      },
+      "ExtractAddressRequest": {
+        "properties": {
+          "job_id": { "type": "string", "title": "Job Id" }
+        },
+        "type": "object",
+        "required": ["job_id"],
+        "title": "ExtractAddressRequest"
+      },
+      "ExtractAddressResponse": {
+        "properties": {
+          "found": { "type": "boolean", "title": "Found" },
+          "name": { "type": "string", "title": "Name", "default": "" },
+          "address_line1": { "type": "string", "title": "Address Line1", "default": "" },
+          "address_line2": { "type": "string", "title": "Address Line2", "default": "" },
+          "city": { "type": "string", "title": "City", "default": "" },
+          "state": { "type": "string", "title": "State", "default": "" },
+          "zip": { "type": "string", "title": "Zip", "default": "" },
+          "country": { "type": "string", "title": "Country", "default": "US" }
+        },
+        "type": "object",
+        "required": ["found"],
+        "title": "ExtractAddressResponse"
+      },
+      "Body_send_mail_api_mail_send_post": {
+        "properties": {
+          "job_id": { "type": "string", "title": "Job Id" },
+          "content_type": { "type": "string", "enum": ["cv_only", "cover_letter_only", "both"], "title": "Content Type" },
+          "to_address": { "type": "string", "title": "To Address", "description": "JSON-encoded address object" },
+          "from_address": { "type": "string", "title": "From Address", "description": "JSON-encoded address object" },
+          "save_return_address": { "type": "boolean", "title": "Save Return Address", "default": true },
+          "custom_cv_pdf": { "type": "string", "contentMediaType": "application/octet-stream", "title": "Custom Cv Pdf" },
+          "custom_cover_letter_pdf": { "type": "string", "contentMediaType": "application/octet-stream", "title": "Custom Cover Letter Pdf" }
+        },
+        "type": "object",
+        "required": ["job_id", "content_type", "to_address", "from_address"],
+        "title": "Body_send_mail_api_mail_send_post"
+      },
+      "PhysicalMailResponse": {
+        "properties": {
+          "id": { "type": "string", "title": "Id" },
+          "job_id": { "type": "string", "title": "Job Id" },
+          "lob_letter_id": { "anyOf": [{ "type": "string" }, { "type": "null" }], "title": "Lob Letter Id" },
+          "content_type": { "type": "string", "title": "Content Type" },
+          "status": { "type": "string", "title": "Status" },
+          "credits_charged": { "type": "integer", "title": "Credits Charged" },
+          "created_at": { "type": "string", "title": "Created At" }
+        },
+        "type": "object",
+        "required": ["id", "job_id", "content_type", "status", "credits_charged", "created_at"],
+        "title": "PhysicalMailResponse"
       }
     },
     "securitySchemes": {

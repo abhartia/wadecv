@@ -26,19 +26,19 @@ export const metadata: Metadata = {
   ),
   title: "WadeCV - AI-Powered CV Tailoring",
   description:
-    "Create perfectly tailored CVs for every job application using AI. Upload your CV, paste a job link, and get a professionally crafted resume in seconds.",
+    "Create perfectly tailored CVs for every job application using AI. Upload your CV, paste a job link, and get a professionally crafted resume in seconds. You can even mail a printed copy directly to the company.",
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
     apple: [{ url: "/favicon.png", type: "image/png" }],
   },
   openGraph: {
     title: "WadeCV - AI-Powered CV Tailoring",
-    description: "Create perfectly tailored CVs for every job application using AI. Upload your CV, paste a job link, and get a professionally crafted resume in seconds.",
+    description: "Create perfectly tailored CVs for every job application using AI. Generate, edit, download, and mail printed copies directly to companies via USPS.",
   },
   twitter: {
     card: "summary",
     title: "WadeCV - AI-Powered CV Tailoring",
-    description: "Create perfectly tailored CVs for every job application using AI.",
+    description: "Create perfectly tailored CVs using AI. Mail printed copies directly to companies via USPS.",
   },
 };
 

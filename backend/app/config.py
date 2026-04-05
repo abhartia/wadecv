@@ -36,6 +36,9 @@ class Settings(BaseSettings):
     email_from: str = "WadeCV <noreply@wadecv.com>"
     support_forward_to: str = "bhartta@gmail.com"
 
+    # Lob (physical mail)
+    lob_api_key: str = ""
+
     # URLs
     frontend_url: str = "http://localhost:3000"
     backend_url: str = "http://localhost:8000"

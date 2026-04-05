@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
-from app.routers import auth, cv, jobs, credits, cover_letter, webhook, account
+from app.routers import auth, cv, jobs, credits, cover_letter, webhook, account, physical_mail
 
 settings = get_settings()
 
@@ -34,6 +34,7 @@ app.include_router(credits.router, prefix="/api/credits", tags=["Credits"])
 app.include_router(cover_letter.router, prefix="/api/cover-letter", tags=["Cover Letter"])
 app.include_router(webhook.router, prefix="/api/webhook", tags=["Webhooks"])
 app.include_router(account.router, prefix="/api/account", tags=["Account"])
+app.include_router(physical_mail.router, prefix="/api/mail", tags=["Physical Mail"])
 
 
 @app.get("/api/health")

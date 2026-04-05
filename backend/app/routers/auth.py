@@ -176,6 +176,7 @@ async def get_me(user: User = Depends(get_current_user)):
         base_cv_content=user.base_cv_content,
         additional_info=user.additional_info,
         cv_page_limit=getattr(user, "cv_page_limit", 1) or 1,
+        mailing_address=user.mailing_address,
         created_at=user.created_at.isoformat(),
     )
 

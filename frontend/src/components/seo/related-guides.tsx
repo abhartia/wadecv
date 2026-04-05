@@ -18,6 +18,7 @@ const CATEGORY_BASE_PATH: Record<SeoCategory, string> = {
   "resume-bullets": "/resume-bullets",
   ats: "/ats",
   "career-change": "/career-change",
+  "physical-mail": "/physical-mail",
 };
 
 type RelatedGuidesProps = {

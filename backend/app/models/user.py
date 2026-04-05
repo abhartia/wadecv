@@ -22,6 +22,7 @@ class User(Base):
     gap_insights: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
     gap_insights_job_count: Mapped[int] = mapped_column(Integer, default=0)
     cv_page_limit: Mapped[int] = mapped_column(Integer, default=1)
+    mailing_address: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     deleted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
 
@@ -29,6 +30,7 @@ class User(Base):
     jobs = relationship("Job", back_populates="user", lazy="selectin")
     credit_transactions = relationship("CreditTransaction", back_populates="user", lazy="selectin")
     magic_links = relationship("MagicLink", back_populates="user", lazy="selectin")
+    physical_mails = relationship("PhysicalMail", back_populates="user", lazy="selectin")
 
 
 class MagicLink(Base):

@@ -82,6 +82,7 @@ async def get_profile(user: User = Depends(get_current_user)):
         base_cv_content=user.base_cv_content,
         additional_info=user.additional_info,
         cv_page_limit=getattr(user, "cv_page_limit", 1) or 1,
+        mailing_address=user.mailing_address,
         created_at=user.created_at.isoformat(),
     )
 
@@ -98,6 +99,8 @@ async def update_profile(
         user.additional_info = req.additional_info
     if req.cv_page_limit is not None:
         user.cv_page_limit = req.cv_page_limit
+    if req.mailing_address is not None:
+        user.mailing_address = req.mailing_address
     await db.flush()
     return UserResponse(
         id=str(user.id),
@@ -109,6 +112,7 @@ async def update_profile(
         base_cv_content=user.base_cv_content,
         additional_info=user.additional_info,
         cv_page_limit=getattr(user, "cv_page_limit", 1) or 1,
+        mailing_address=user.mailing_address,
         created_at=user.created_at.isoformat(),
     )
 
@@ -147,5 +151,6 @@ async def upload_profile_cv(
         base_cv_content=user.base_cv_content,
         additional_info=user.additional_info,
         cv_page_limit=getattr(user, "cv_page_limit", 1) or 1,
+        mailing_address=user.mailing_address,
         created_at=user.created_at.isoformat(),
     )

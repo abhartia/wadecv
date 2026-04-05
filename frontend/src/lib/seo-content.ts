@@ -94,6 +94,17 @@ export interface CareerChangeEntry {
   relatedSlugs?: string[];
 }
 
+export interface PhysicalMailEntry {
+  slug: string;
+  title: string;
+  metaDescription: string;
+  intro: string;
+  body: string;
+  faq?: FaqItem[];
+  commonMistakes?: string[];
+  relatedSlugs?: string[];
+}
+
 // In Next.js, process.cwd() is the frontend directory when running next build/dev
 const getContentDir = () => path.join(process.cwd(), "content", "seo");
 
@@ -110,6 +121,7 @@ let skillsCache: SkillEntry[] | null = null;
 let resumeBulletsCache: ResumeBulletEntry[] | null = null;
 let atsCache: AtsEntry[] | null = null;
 let careerChangeCache: CareerChangeEntry[] | null = null;
+let physicalMailCache: PhysicalMailEntry[] | null = null;
 
 export function getJobs(): JobEntry[] {
   if (!jobsCache) jobsCache = loadJsonFile<JobEntry[]>("jobs.json");
@@ -165,7 +177,16 @@ export function getCareerChangeBySlug(slug: string): CareerChangeEntry | null {
   return getCareerChanges().find((c) => c.slug === slug) ?? null;
 }
 
-export type SeoCategory = "jobs" | "company-resume" | "skills" | "resume-bullets" | "ats" | "career-change";
+export function getPhysicalMailEntries(): PhysicalMailEntry[] {
+  if (!physicalMailCache) physicalMailCache = loadJsonFile<PhysicalMailEntry[]>("physical-mail.json");
+  return physicalMailCache;
+}
+
+export function getPhysicalMailBySlug(slug: string): PhysicalMailEntry | null {
+  return getPhysicalMailEntries().find((e) => e.slug === slug) ?? null;
+}
+
+export type SeoCategory = "jobs" | "company-resume" | "skills" | "resume-bullets" | "ats" | "career-change" | "physical-mail";
 
 const CATEGORY_BASE_PATH: Record<SeoCategory, string> = {
   jobs: "/jobs",
@@ -174,6 +195,7 @@ const CATEGORY_BASE_PATH: Record<SeoCategory, string> = {
   "resume-bullets": "/resume-bullets",
   ats: "/ats",
   "career-change": "/career-change",
+  "physical-mail": "/physical-mail",
 };
 
 export function getTitleByCategoryAndSlug(category: SeoCategory, slug: string): string | null {
@@ -190,6 +212,8 @@ export function getTitleByCategoryAndSlug(category: SeoCategory, slug: string): 
       return getAtsBySlug(slug)?.name ?? null;
     case "career-change":
       return getCareerChangeBySlug(slug)?.title ?? null;
+    case "physical-mail":
+      return getPhysicalMailBySlug(slug)?.title ?? null;
     default:
       return null;
   }

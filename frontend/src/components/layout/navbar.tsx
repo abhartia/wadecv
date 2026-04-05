@@ -11,7 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { User, LogOut, CreditCard, Settings, LayoutDashboard, Coins, Menu, BookOpen, Briefcase, Building2, ListChecks, FileText, ScanLine, ArrowRightLeft } from "lucide-react";
+import { User, LogOut, CreditCard, Settings, LayoutDashboard, Coins, Menu, BookOpen, Briefcase, Building2, ListChecks, FileText, ScanLine, ArrowRightLeft, Send } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
 import { ThemeToggle } from "./theme-toggle";
@@ -76,6 +76,9 @@ export function Navbar() {
                   <DropdownMenuItem asChild>
                     <Link href="/career-change" onClick={() => trackSeoNavClick("/career-change")}><ArrowRightLeft className="mr-2 h-4 w-4" />Career Change</Link>
                   </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/physical-mail" onClick={() => trackSeoNavClick("/physical-mail")}><Send className="mr-2 h-4 w-4" />Mail Your CV</Link>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
               <Link href="/billing" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
@@ -135,6 +138,7 @@ export function Navbar() {
                   <Link href="/resume-bullets" onClick={() => { trackSeoNavClick("/resume-bullets"); setOpen(false); }} className="text-sm font-medium pl-2">Resume Bullets</Link>
                   <Link href="/ats" onClick={() => { trackSeoNavClick("/ats"); setOpen(false); }} className="text-sm font-medium pl-2">ATS Guides</Link>
                   <Link href="/career-change" onClick={() => { trackSeoNavClick("/career-change"); setOpen(false); }} className="text-sm font-medium pl-2">Career Change</Link>
+                  <Link href="/physical-mail" onClick={() => { trackSeoNavClick("/physical-mail"); setOpen(false); }} className="text-sm font-medium pl-2">Mail Your CV</Link>
                   <Link href="/billing" onClick={() => setOpen(false)} className="text-sm font-medium">Billing ({creditLabel})</Link>
                   <Link href="/settings" onClick={() => setOpen(false)} className="text-sm font-medium">Settings</Link>
                   <hr />
@@ -171,6 +175,9 @@ export function Navbar() {
                   <DropdownMenuItem asChild>
                     <Link href="/career-change" onClick={() => trackSeoNavClick("/career-change")}><ArrowRightLeft className="mr-2 h-4 w-4" />Career Change</Link>
                   </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/physical-mail" onClick={() => trackSeoNavClick("/physical-mail")}><Send className="mr-2 h-4 w-4" />Mail Your CV</Link>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
               <ThemeToggle />
@@ -195,6 +202,7 @@ export function Navbar() {
                   <Link href="/resume-bullets" onClick={() => { trackSeoNavClick("/resume-bullets"); setOpenGuest(false); }} className="text-sm font-medium py-2">Resume Bullets</Link>
                   <Link href="/ats" onClick={() => { trackSeoNavClick("/ats"); setOpenGuest(false); }} className="text-sm font-medium py-2">ATS Guides</Link>
                   <Link href="/career-change" onClick={() => { trackSeoNavClick("/career-change"); setOpenGuest(false); }} className="text-sm font-medium py-2">Career Change</Link>
+                  <Link href="/physical-mail" onClick={() => { trackSeoNavClick("/physical-mail"); setOpenGuest(false); }} className="text-sm font-medium py-2">Mail Your CV</Link>
                   <hr className="my-2" />
                   <div className="flex items-center gap-2 py-2">
                     <span className="text-sm font-medium">Theme</span>

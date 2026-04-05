@@ -554,6 +554,12 @@ export type ProfileUpdateRequest = {
      * Cv Page Limit
      */
     cv_page_limit?: 1 | 2 | null;
+    /**
+     * Mailing Address
+     */
+    mailing_address?: {
+        [key: string]: unknown;
+    } | null;
 };
 
 /**
@@ -704,6 +710,12 @@ export type UserResponse = {
      */
     cv_page_limit?: number;
     /**
+     * Mailing Address
+     */
+    mailing_address?: {
+        [key: string]: unknown;
+    } | null;
+    /**
      * Created At
      */
     created_at: string;
@@ -735,6 +747,160 @@ export type ValidationError = {
     ctx?: {
         [key: string]: unknown;
     };
+};
+
+/**
+ * AddressSchema
+ */
+export type AddressSchema = {
+    /**
+     * Name
+     */
+    name: string;
+    /**
+     * Address Line1
+     */
+    address_line1: string;
+    /**
+     * Address Line2
+     */
+    address_line2?: string;
+    /**
+     * City
+     */
+    city: string;
+    /**
+     * State
+     */
+    state: string;
+    /**
+     * Zip
+     */
+    zip: string;
+    /**
+     * Country
+     */
+    country?: string;
+};
+
+/**
+ * ExtractAddressRequest
+ */
+export type ExtractAddressRequest = {
+    /**
+     * Job Id
+     */
+    job_id: string;
+};
+
+/**
+ * ExtractAddressResponse
+ */
+export type ExtractAddressResponse = {
+    /**
+     * Found
+     */
+    found: boolean;
+    /**
+     * Name
+     */
+    name?: string;
+    /**
+     * Address Line1
+     */
+    address_line1?: string;
+    /**
+     * Address Line2
+     */
+    address_line2?: string;
+    /**
+     * City
+     */
+    city?: string;
+    /**
+     * State
+     */
+    state?: string;
+    /**
+     * Zip
+     */
+    zip?: string;
+    /**
+     * Country
+     */
+    country?: string;
+};
+
+/**
+ * Body_send_mail_api_mail_send_post
+ */
+export type BodySendMailApiMailSendPost = {
+    /**
+     * Job Id
+     */
+    job_id: string;
+    /**
+     * Content Type
+     */
+    content_type: 'cv_only' | 'cover_letter_only' | 'both';
+    /**
+     * To Address
+     *
+     * JSON-encoded address object
+     */
+    to_address: string;
+    /**
+     * From Address
+     *
+     * JSON-encoded address object
+     */
+    from_address: string;
+    /**
+     * Save Return Address
+     */
+    save_return_address?: boolean;
+    /**
+     * Custom Cv Pdf
+     */
+    custom_cv_pdf?: Blob | File;
+    /**
+     * Custom Cover Letter Pdf
+     */
+    custom_cover_letter_pdf?: Blob | File;
+};
+
+/**
+ * PhysicalMailResponse
+ */
+export type PhysicalMailResponse = {
+    /**
+     * Id
+     */
+    id: string;
+    /**
+     * Job Id
+     */
+    job_id: string;
+    /**
+     * Lob Letter Id
+     */
+    lob_letter_id?: string | null;
+    /**
+     * Content Type
+     */
+    content_type: string;
+    /**
+     * Status
+     */
+    status: string;
+    /**
+     * Credits Charged
+     */
+    credits_charged: number;
+    /**
+     * Created At
+     */
+    created_at: string;
 };
 
 export type RegisterApiAuthRegisterPostData = {
@@ -1738,3 +1904,53 @@ export type HealthApiHealthGetResponses = {
      */
     200: unknown;
 };
+
+export type ExtractAddressApiMailExtractAddressPostData = {
+    body: ExtractAddressRequest;
+    path?: never;
+    query?: never;
+    url: '/api/mail/extract-address';
+};
+
+export type ExtractAddressApiMailExtractAddressPostErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type ExtractAddressApiMailExtractAddressPostError = ExtractAddressApiMailExtractAddressPostErrors[keyof ExtractAddressApiMailExtractAddressPostErrors];
+
+export type ExtractAddressApiMailExtractAddressPostResponses = {
+    /**
+     * Successful Response
+     */
+    200: ExtractAddressResponse;
+};
+
+export type ExtractAddressApiMailExtractAddressPostResponse = ExtractAddressApiMailExtractAddressPostResponses[keyof ExtractAddressApiMailExtractAddressPostResponses];
+
+export type SendMailApiMailSendPostData = {
+    body: BodySendMailApiMailSendPost;
+    path?: never;
+    query?: never;
+    url: '/api/mail/send';
+};
+
+export type SendMailApiMailSendPostErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type SendMailApiMailSendPostError = SendMailApiMailSendPostErrors[keyof SendMailApiMailSendPostErrors];
+
+export type SendMailApiMailSendPostResponses = {
+    /**
+     * Successful Response
+     */
+    200: PhysicalMailResponse;
+};
+
+export type SendMailApiMailSendPostResponse = SendMailApiMailSendPostResponses[keyof SendMailApiMailSendPostResponses];

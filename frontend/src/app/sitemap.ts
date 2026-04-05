@@ -6,6 +6,7 @@ import {
   getResumeBullets,
   getAtsList,
   getCareerChanges,
+  getPhysicalMailEntries,
 } from "@/lib/seo-content";
 
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL
@@ -31,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/resume-bullets`, lastModified: lastmod, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE_URL}/ats`, lastModified: lastmod, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE_URL}/career-change`, lastModified: lastmod, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE_URL}/physical-mail`, lastModified: lastmod, changeFrequency: "weekly", priority: 0.8 },
   ];
 
   const jobUrls = getJobs().map((j) => ({
@@ -75,6 +77,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const physicalMailUrls = getPhysicalMailEntries().map((e) => ({
+    url: `${BASE_URL}/physical-mail/${e.slug}`,
+    lastModified: lastmod,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   return [
     ...staticRoutes,
     ...jobUrls,
@@ -83,5 +92,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...bulletUrls,
     ...atsUrls,
     ...careerChangeUrls,
+    ...physicalMailUrls,
   ];
 }

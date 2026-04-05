@@ -12,6 +12,7 @@ import app.models.cv  # noqa: F401
 import app.models.job  # noqa: F401
 import app.models.cover_letter  # noqa: F401
 import app.models.credit  # noqa: F401
+import app.models.physical_mail  # noqa: F401
 
 config = context.config
 settings = get_settings()

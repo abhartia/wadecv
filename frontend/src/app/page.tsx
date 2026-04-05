@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { FileText, Upload, Wand2, Download, CheckCircle, Sparkles, Shield, Zap, AlertTriangle } from "lucide-react";
+import { FileText, Upload, Wand2, Download, CheckCircle, Sparkles, Shield, Zap, AlertTriangle, Send, Mail, Package } from "lucide-react";
 
 export default function LandingPage() {
   return (
@@ -25,7 +25,8 @@ export default function LandingPage() {
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground mb-8">
               Add a job, run a fit analysis to see how you match, then generate your tailored CV for free.
-              Add clarifications on any gaps and our AI reframes your real experience for the role. Honest and interview-ready.
+              Add clarifications on any gaps and our AI reframes your real experience for the role.
+              You can even mail a printed copy directly to the company via USPS.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/auth/register">
@@ -179,8 +180,8 @@ export default function LandingPage() {
                 { icon: Zap, title: "Lightning Fast", desc: "Get a professionally tailored CV in seconds, not hours of manual editing." },
                 { icon: FileText, title: "ATS-Friendly", desc: "Clean formatting that passes Applicant Tracking Systems every time." },
                 { icon: Shield, title: "Cover Letters", desc: "Generate matching cover letters for free with every tailored CV." },
+                { icon: Send, title: "Physical Mail", desc: "Send a printed CV and cover letter directly to any US company via USPS First Class." },
                 { icon: CheckCircle, title: "Track Applications", desc: "Keep track of all your job applications in one organized dashboard." },
-                { icon: Download, title: "DOCX Export", desc: "Download your tailored CV as a professional Word document." },
               ].map((f, i) => (
                 <Card key={i} className="border-0 shadow-sm bg-muted/30 hover:bg-muted/50 transition-colors">
                   <CardContent className="pt-6">
@@ -194,8 +195,74 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* Physical Mail Feature */}
+        <section className="py-24 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <Badge variant="secondary" className="mb-2">
+                  <Send className="mr-1 h-3 w-3" /> Only on WadeCV
+                </Badge>
+                <h2 className="text-3xl font-bold sm:text-4xl">
+                  Go beyond the inbox — mail your application directly
+                </h2>
+                <p className="text-muted-foreground text-lg">
+                  Most applicants hit &ldquo;submit&rdquo; and hope for the best. Stand out by sending a professionally
+                  printed copy of your CV and cover letter straight to the hiring manager&apos;s desk.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    { icon: FileText, text: "Professionally formatted CV printed on high-quality paper" },
+                    { icon: Mail, text: "Matching cover letter included — personalized for the role" },
+                    { icon: Package, text: "Delivered via USPS First Class in 5–7 business days" },
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <item.icon className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                      <span className="text-sm">{item.text}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-sm text-muted-foreground">
+                  Physical mail gets noticed. In a world of overflowing inboxes, a tangible application
+                  signals genuine interest and effort that digital submissions alone can&apos;t convey.
+                </p>
+                <Link href="/auth/register">
+                  <Button size="lg" className="mt-2">
+                    Start for Free <Zap className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+              <Card className="border-0 shadow-sm bg-background/60">
+                <CardContent className="pt-8 pb-8 space-y-6">
+                  <div className="text-center space-y-2">
+                    <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Send className="h-8 w-8 text-primary" />
+                    </div>
+                    <h3 className="font-semibold text-lg">How it works</h3>
+                  </div>
+                  <ol className="space-y-4 text-sm">
+                    {[
+                      "Generate your tailored CV (and optional cover letter) as usual",
+                      "Click \"Send Physical Mail\" on the download step",
+                      "Preview the PDF, enter the company address, and confirm",
+                      "We print and mail it via USPS First Class for 5 credits",
+                    ].map((step, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-bold shrink-0">
+                          {i + 1}
+                        </span>
+                        <span className="text-muted-foreground">{step}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Pricing */}
-        <section id="pricing" className="py-24 bg-muted/30">
+        <section id="pricing" className="py-24">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold sm:text-4xl mb-4">Simple, Transparent Pricing</h2>
