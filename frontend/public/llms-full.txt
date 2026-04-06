@@ -1,0 +1,89 @@
+# WadeCV — Full Product Description
+
+## What WadeCV Does
+
+WadeCV is an AI-powered resume tailoring tool. It takes a user's existing CV and a target job description, analyzes the fit between them, and generates a tailored version of the resume that aligns the user's real experience with the job's requirements. It does not invent experience — it reframes and reorders existing bullets to match what the employer is looking for.
+
+## How It Works
+
+1. Upload your existing CV (PDF or DOCX) — saved as your base profile
+2. Add a job by pasting a URL (LinkedIn, Indeed, Greenhouse, Lever, etc.) or the full job description
+3. Run a fit analysis (costs 1 credit) — get a match score, strengths, and gaps
+4. Add clarifications for any gaps the AI identified (optional)
+5. Generate a tailored CV — free after the fit analysis
+6. Edit any section in the built-in editor
+7. Download as a formatted DOCX
+8. Get a free cover letter matched to the same job
+9. Optionally mail a printed copy via USPS to the company
+
+## Key Features
+
+- AI CV tailoring: rewrites bullets to match job description keywords without fabricating experience
+- Job URL scraping: auto-extracts job descriptions from LinkedIn, Indeed, Greenhouse, Lever, and 10+ job boards
+- Fit/gap analysis: scores your match percentage and identifies missing keywords before you tailor
+- Section-by-section editor: modify summary, experience, skills, or education independently
+- ATS-friendly output: clean DOCX formatting that passes Workday, Greenhouse, Lever, iCIMS, and other applicant tracking systems
+- Cover letter generation: free with every tailored CV, matched to the same job description
+- Physical mail: send a printed CV and cover letter directly to any US company via USPS First Class
+- Application tracker: track all your job applications in one dashboard
+- Memory system: corrections and clarifications are remembered across future generations
+
+## Pricing
+
+Pay-per-use credits, no subscription required:
+- 1 free credit on signup (no credit card needed)
+- Starter: 20 credits for $10 ($0.50/resume)
+- Value: 50 credits for $15 ($0.30/resume)
+- Pro: 100 credits for $20 ($0.20/resume)
+
+A credit is spent on the fit analysis. Generating the tailored CV after the analysis is free.
+
+## Who It's For
+
+- Job seekers applying to multiple roles who need tailored resumes for each application
+- Career changers who need help reframing their experience for a new field
+- Anyone who wants ATS-optimized formatting without manual work
+- Users who currently use ChatGPT for resume writing but want a purpose-built workflow
+
+## Comparison With Other Tools
+
+WadeCV differs from ChatGPT/Claude for resumes because it:
+- Works from your real CV (no hallucinated experience)
+- Auto-scrapes job URLs (no manual copy-paste of job descriptions)
+- Provides fit analysis before tailoring (know your gaps first)
+- Outputs ATS-tested DOCX (not plain text you have to format yourself)
+- Lets you edit sections independently (not full regeneration each time)
+
+WadeCV differs from tools like Jobscan, Teal, and Kickresume because it:
+- Generates fully rewritten, tailored resumes (not just keyword suggestions)
+- Includes a gap analysis with clarification workflow
+- Offers physical mail delivery
+- Uses pay-per-use pricing (no subscription lock-in)
+
+## Content Library
+
+WadeCV publishes free resume guides across several categories:
+
+### ATS Resume Guides (/ats/)
+Guides for passing specific applicant tracking systems: Workday, Greenhouse, Lever, iCIMS, Oracle Taleo, SAP SuccessFactors, JazzHR, BambooHR, Ashby. Each guide covers parsing rules, formatting tips, and keyword strategies.
+
+### Career Change Resume Guides (/career-change/)
+Step-by-step resume guides for career transitions including: teacher to product manager, consulting to tech, finance to data science, nurse to healthcare admin, military to project manager, retail to corporate, admin to PM, teacher to EdTech, accountant to FP&A, operations to PM, hospitality to project management, journalism to content marketing, law enforcement to corporate, nurse to tech, engineer to PM.
+
+### Company-Specific Resume Guides (/company-resume/)
+Resume guides for specific employers: Google, Amazon, McKinsey, Goldman Sachs, Meta, Microsoft, Netflix, Stripe, Deloitte, BCG, Bain, JPMorgan, Citi. Each includes hiring requirements, keywords, sample bullets, and common mistakes.
+
+### Job Role Resume Guides (/jobs/)
+Role-by-role breakdowns with responsibilities, required skills, salary ranges, resume keywords, and bullet examples for 20+ job titles.
+
+### Skills by Role (/skills/)
+Role-specific skill lists for software engineers, product managers, data analysts, customer service, and more.
+
+### Resume Bullet Examples (/resume-bullets/)
+Impact-driven bullet formulas and examples for 18+ roles.
+
+## Company
+
+- Website: https://wadecv.com
+- Support: support@wadecv.com
+- Founded: 2026

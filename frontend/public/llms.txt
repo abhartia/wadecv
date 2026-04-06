@@ -1,0 +1,21 @@
+# WadeCV
+
+> AI-powered resume tailoring that rewrites your real experience for specific job descriptions.
+
+WadeCV helps job seekers tailor their CV to each job application using AI. Users upload a base CV, paste a job URL or description, receive a fit/gap analysis, then generate a tailored resume that matches the role's keywords and requirements. The output is a clean, ATS-friendly DOCX with a free cover letter.
+
+## Key Pages
+
+- [Homepage](https://wadecv.com): Product overview, how it works, pricing
+- [ATS Resume Guides](https://wadecv.com/ats): How to pass Workday, Greenhouse, Lever, iCIMS, and other applicant tracking systems
+- [Career Change Guides](https://wadecv.com/career-change): Step-by-step resume guides for career transitions (teacher to PM, military to project manager, etc.)
+- [Company Resume Guides](https://wadecv.com/company-resume): Company-specific resume tips for Google, Amazon, McKinsey, Goldman Sachs, and more
+- [Job Description Guides](https://wadecv.com/jobs): Role-by-role resume keywords, skills, and bullet examples
+- [Skills by Role](https://wadecv.com/skills): Which skills to put on your resume by job title
+- [Resume Bullet Examples](https://wadecv.com/resume-bullets): Impact-driven bullet formulas by role
+- [AI Resume Builder Comparison](https://wadecv.com/ai-resume-builder-comparison): WadeCV vs ChatGPT for resume writing
+- [Best AI Resume Builders 2026](https://wadecv.com/best-ai-resume-builder-2026): Comparison of top AI resume tools
+
+## Detailed Content
+
+- [Full content for LLMs](https://wadecv.com/llms-full.txt)

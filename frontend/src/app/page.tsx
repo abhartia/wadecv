@@ -6,9 +6,62 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FileText, Upload, Wand2, Download, CheckCircle, Sparkles, Shield, Zap, AlertTriangle, Send, Mail, Package } from "lucide-react";
 
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || "https://wadecv.com";
+
 export default function LandingPage() {
   return (
     <div className="flex min-h-screen flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "WadeCV",
+            url: BASE_URL,
+            logo: `${BASE_URL}/logo.png`,
+            description:
+              "AI-powered resume tailoring that rewrites your real experience for specific job descriptions. Upload your CV, paste a job URL, and get an ATS-optimized tailored resume in seconds.",
+            contactPoint: {
+              "@type": "ContactPoint",
+              email: "support@wadecv.com",
+              contactType: "customer support",
+            },
+            sameAs: [],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "WadeCV",
+            url: BASE_URL,
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Web",
+            description:
+              "AI resume tailoring tool. Upload your CV, paste a job URL, get a fit analysis, and generate a tailored ATS-friendly resume with a free cover letter.",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+              description: "1 free credit on signup. Additional credits from $0.20/resume.",
+            },
+            featureList: [
+              "AI-powered CV tailoring from your real experience",
+              "Job URL scraping from LinkedIn, Indeed, Greenhouse, Lever",
+              "Fit and gap analysis before tailoring",
+              "ATS-friendly DOCX export",
+              "Free cover letter generation",
+              "Section-by-section resume editor",
+              "Physical mail delivery via USPS",
+              "Application tracking dashboard",
+            ],
+          }),
+        }}
+      />
       <Navbar />
 
       <main className="flex-1">
