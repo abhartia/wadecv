@@ -5,10 +5,50 @@
     "metaDescription": "Technical and soft skills to list on a software engineer resume. Skill clusters, bullet examples, and keywords that get past ATS and recruiters.",
     "intro": "A strong software engineer resume balances technical depth with clear evidence of impact and collaboration. This guide groups skills into clusters and shows how to turn them into compelling resume bullets that pass ATS and resonate with hiring managers.",
     "skillClusters": [
-      { "name": "Languages & runtimes", "items": ["Python", "Java", "JavaScript/TypeScript", "Go", "C++", "Ruby", "Node.js"] },
-      { "name": "Systems & infra", "items": ["Distributed systems", "APIs", "Databases (SQL/NoSQL)", "Kubernetes", "AWS/GCP/Azure", "CI/CD", "Monitoring"] },
-      { "name": "Practices", "items": ["Code review", "Testing (unit, integration)", "Agile/Scrum", "System design", "Documentation"] },
-      { "name": "Soft skills", "items": ["Cross-functional collaboration", "Mentorship", "Technical communication", "Ownership", "Problem-solving"] }
+      {
+        "name": "Languages & runtimes",
+        "items": [
+          "Python",
+          "Java",
+          "JavaScript/TypeScript",
+          "Go",
+          "C++",
+          "Ruby",
+          "Node.js"
+        ]
+      },
+      {
+        "name": "Systems & infra",
+        "items": [
+          "Distributed systems",
+          "APIs",
+          "Databases (SQL/NoSQL)",
+          "Kubernetes",
+          "AWS/GCP/Azure",
+          "CI/CD",
+          "Monitoring"
+        ]
+      },
+      {
+        "name": "Practices",
+        "items": [
+          "Code review",
+          "Testing (unit, integration)",
+          "Agile/Scrum",
+          "System design",
+          "Documentation"
+        ]
+      },
+      {
+        "name": "Soft skills",
+        "items": [
+          "Cross-functional collaboration",
+          "Mentorship",
+          "Technical communication",
+          "Ownership",
+          "Problem-solving"
+        ]
+      }
     ],
     "bulletExamples": [
       "Designed and shipped a new API used by 5 internal services; reduced p99 latency by 30% and improved error handling.",
@@ -16,11 +56,22 @@
       "Mentored 3 junior engineers; established code review guidelines and on-call runbooks adopted across the team."
     ],
     "body": "List skills in a dedicated section and reinforce them in your experience bullets. Use the same terms as the job description where they genuinely apply—ATS and recruiters look for keyword match.\n\nPrefer impact-focused bullets (what you built, for whom, and what improved) over task lists. Tailoring your resume to each role will surface the right mix of languages, systems, and soft skills. WadeCV can help you align your existing experience with software engineer job descriptions and highlight your strongest technical and collaborative wins.",
-    "relatedSlugs": ["product-manager", "data-analyst", "frontend-developer"],
-    "faq": [
-      { "question": "How many skills should I list on a software engineer resume?", "answer": "Focus on 10–15 relevant technical skills plus a few soft skills. Match the job description and reinforce them in your experience bullets rather than listing every technology you've touched." }
+    "relatedSlugs": [
+      "product-manager",
+      "data-analyst",
+      "frontend-developer"
     ],
-    "commonMistakes": ["Listing outdated or irrelevant technologies", "Generic soft skills without evidence in bullets", "Keyword stuffing; keep language natural"]
+    "faq": [
+      {
+        "question": "How many skills should I list on a software engineer resume?",
+        "answer": "Focus on 10–15 relevant technical skills plus a few soft skills. Match the job description and reinforce them in your experience bullets rather than listing every technology you've touched."
+      }
+    ],
+    "commonMistakes": [
+      "Listing outdated or irrelevant technologies",
+      "Generic soft skills without evidence in bullets",
+      "Keyword stuffing; keep language natural"
+    ]
   },
   {
     "slug": "product-manager",
@@ -28,10 +79,50 @@
     "metaDescription": "Skills to put on a product manager resume: discovery, prioritization, data, and collaboration. Bullet examples and keywords for PM roles.",
     "intro": "Product managers need to show they can drive strategy, work with data, and ship outcomes with engineering and design. This guide outlines skill clusters and resume bullet examples that resonate with PM hiring managers and ATS.",
     "skillClusters": [
-      { "name": "Discovery & strategy", "items": ["User research", "Customer interviews", "Roadmap", "Prioritization", "OKRs", "Competitive analysis"] },
-      { "name": "Execution", "items": ["Agile", "User stories", "Backlog", "Sprints", "Stakeholder alignment", "Release management"] },
-      { "name": "Data & impact", "items": ["Metrics", "A/B testing", "Analytics", "SQL", "Dashboards", "ROI"] },
-      { "name": "Collaboration", "items": ["Cross-functional", "Engineering", "Design", "Leadership", "Presentation", "Influence"] }
+      {
+        "name": "Discovery & strategy",
+        "items": [
+          "User research",
+          "Customer interviews",
+          "Roadmap",
+          "Prioritization",
+          "OKRs",
+          "Competitive analysis"
+        ]
+      },
+      {
+        "name": "Execution",
+        "items": [
+          "Agile",
+          "User stories",
+          "Backlog",
+          "Sprints",
+          "Stakeholder alignment",
+          "Release management"
+        ]
+      },
+      {
+        "name": "Data & impact",
+        "items": [
+          "Metrics",
+          "A/B testing",
+          "Analytics",
+          "SQL",
+          "Dashboards",
+          "ROI"
+        ]
+      },
+      {
+        "name": "Collaboration",
+        "items": [
+          "Cross-functional",
+          "Engineering",
+          "Design",
+          "Leadership",
+          "Presentation",
+          "Influence"
+        ]
+      }
     ],
     "bulletExamples": [
       "Owned roadmap for core onboarding flow; increased activation by 25% through iterative A/B tests and user research.",
@@ -39,7 +130,11 @@
       "Drove go-to-market for new feature with 50K+ users in first quarter; presented results to C-suite and board."
     ],
     "body": "PM resumes should emphasise outcomes: adoption, revenue, retention, or efficiency gains. Use metrics in every bullet where possible.\n\nBalance strategic work (roadmap, discovery) with execution (shipping, stakeholder management). Tailoring your resume to the company's stage and product type will improve fit. WadeCV can help you reframe your PM experience to match job descriptions and surface your strongest impact.",
-    "relatedSlugs": ["software-engineer", "data-analyst", "customer-service"]
+    "relatedSlugs": [
+      "software-engineer",
+      "data-analyst",
+      "customer-service"
+    ]
   },
   {
     "slug": "customer-service",
@@ -47,10 +142,45 @@
     "metaDescription": "Customer service resume skills: communication, problem-solving, tools, and soft skills. Bullet examples and keywords for CS and support roles.",
     "intro": "Customer service and support roles value communication, empathy, and efficiency. This guide groups skills into clusters and shows how to write resume bullets that demonstrate impact and readiness for higher-tier or leadership roles.",
     "skillClusters": [
-      { "name": "Communication", "items": ["Verbal and written", "Empathy", "De-escalation", "Active listening", "Clear explanations"] },
-      { "name": "Tools & systems", "items": ["CRM (Salesforce, Zendesk)", "Ticketing", "Live chat", "Knowledge base", "Basic data/reporting"] },
-      { "name": "Problem-solving", "items": ["Troubleshooting", "Root cause", "Process improvement", "Escalation handling"] },
-      { "name": "Soft skills", "items": ["Teamwork", "Time management", "Adaptability", "Patience", "Customer focus"] }
+      {
+        "name": "Communication",
+        "items": [
+          "Verbal and written",
+          "Empathy",
+          "De-escalation",
+          "Active listening",
+          "Clear explanations"
+        ]
+      },
+      {
+        "name": "Tools & systems",
+        "items": [
+          "CRM (Salesforce, Zendesk)",
+          "Ticketing",
+          "Live chat",
+          "Knowledge base",
+          "Basic data/reporting"
+        ]
+      },
+      {
+        "name": "Problem-solving",
+        "items": [
+          "Troubleshooting",
+          "Root cause",
+          "Process improvement",
+          "Escalation handling"
+        ]
+      },
+      {
+        "name": "Soft skills",
+        "items": [
+          "Teamwork",
+          "Time management",
+          "Adaptability",
+          "Patience",
+          "Customer focus"
+        ]
+      }
     ],
     "bulletExamples": [
       "Handled 50+ customer contacts daily with top quartile CSAT and resolution rate; identified recurring issues and proposed FAQ updates that cut repeat contacts by 20%.",
@@ -65,10 +195,45 @@
     "metaDescription": "Data analyst resume skills: SQL, visualization, statistics, and domain. Skill clusters and bullet examples for analytics roles.",
     "intro": "Data analysts need to show they can query data, build reports, and turn insights into action. This guide outlines technical and soft skills to list, plus bullet examples that demonstrate impact for analyst roles.",
     "skillClusters": [
-      { "name": "Data & SQL", "items": ["SQL", "Data modelling", "ETL", "Data quality", "Warehouses (BigQuery, Snowflake, Redshift)"] },
-      { "name": "Visualization & reporting", "items": ["Tableau", "Power BI", "Looker", "Dashboards", "Reporting"] },
-      { "name": "Analysis", "items": ["Statistics", "A/B testing", "Trend analysis", "Python/R", "Excel"] },
-      { "name": "Collaboration", "items": ["Stakeholder communication", "Requirements", "Documentation", "Presentation"] }
+      {
+        "name": "Data & SQL",
+        "items": [
+          "SQL",
+          "Data modelling",
+          "ETL",
+          "Data quality",
+          "Warehouses (BigQuery, Snowflake, Redshift)"
+        ]
+      },
+      {
+        "name": "Visualization & reporting",
+        "items": [
+          "Tableau",
+          "Power BI",
+          "Looker",
+          "Dashboards",
+          "Reporting"
+        ]
+      },
+      {
+        "name": "Analysis",
+        "items": [
+          "Statistics",
+          "A/B testing",
+          "Trend analysis",
+          "Python/R",
+          "Excel"
+        ]
+      },
+      {
+        "name": "Collaboration",
+        "items": [
+          "Stakeholder communication",
+          "Requirements",
+          "Documentation",
+          "Presentation"
+        ]
+      }
     ],
     "bulletExamples": [
       "Built and maintained 10+ dashboards for sales and marketing; reduced manual report requests by 40% and enabled self-serve analytics.",
@@ -83,9 +248,35 @@
     "metaDescription": "Skills to put on a nurse resume: clinical, communication, and soft skills. Bullet examples and keywords for RN and LPN roles.",
     "intro": "Nursing resumes need to show clinical competence, credentials, and the ability to work under pressure. This guide outlines skill clusters and bullet examples that resonate with hiring managers in hospitals, clinics, and other settings.",
     "skillClusters": [
-      { "name": "Clinical", "items": ["Patient assessment", "Medication administration", "Vital signs", "Documentation", "Care plans", "BLS/ACLS"] },
-      { "name": "Communication", "items": ["Patient and family education", "Handoff", "Interdisciplinary communication", "Empathy"] },
-      { "name": "Technical", "items": ["EMR/EHR", "IV", "Equipment", "Compliance"] }
+      {
+        "name": "Clinical",
+        "items": [
+          "Patient assessment",
+          "Medication administration",
+          "Vital signs",
+          "Documentation",
+          "Care plans",
+          "BLS/ACLS"
+        ]
+      },
+      {
+        "name": "Communication",
+        "items": [
+          "Patient and family education",
+          "Handoff",
+          "Interdisciplinary communication",
+          "Empathy"
+        ]
+      },
+      {
+        "name": "Technical",
+        "items": [
+          "EMR/EHR",
+          "IV",
+          "Equipment",
+          "Compliance"
+        ]
+      }
     ],
     "bulletExamples": [
       "Provided direct care for 6–8 patients per shift on med-surg unit; maintained 100% documentation compliance and zero medication errors.",
@@ -100,9 +291,34 @@
     "metaDescription": "Skills to put on a teacher resume: pedagogy, classroom management, and communication. Bullet examples for K-12 roles.",
     "intro": "Teaching resumes need to show certification, classroom experience, and evidence of student growth. This guide outlines skill clusters and bullet examples that resonate with principals and hiring committees.",
     "skillClusters": [
-      { "name": "Instruction", "items": ["Lesson planning", "Differentiation", "Assessment", "Curriculum alignment", "Standards"] },
-      { "name": "Classroom", "items": ["Classroom management", "Positive behaviour support", "Engagement", "Routines"] },
-      { "name": "Collaboration", "items": ["Parent communication", "PLC", "Professional development", "Data-driven instruction"] }
+      {
+        "name": "Instruction",
+        "items": [
+          "Lesson planning",
+          "Differentiation",
+          "Assessment",
+          "Curriculum alignment",
+          "Standards"
+        ]
+      },
+      {
+        "name": "Classroom",
+        "items": [
+          "Classroom management",
+          "Positive behaviour support",
+          "Engagement",
+          "Routines"
+        ]
+      },
+      {
+        "name": "Collaboration",
+        "items": [
+          "Parent communication",
+          "PLC",
+          "Professional development",
+          "Data-driven instruction"
+        ]
+      }
     ],
     "bulletExamples": [
       "Taught 4th grade ELA; 85% of students met or exceeded growth targets on state assessment.",
@@ -117,9 +333,34 @@
     "metaDescription": "Administrative assistant resume skills: organisation, communication, and tools. Bullet examples and keywords for admin roles.",
     "intro": "Administrative assistants keep offices running: scheduling, correspondence, and support. This guide outlines skill clusters and bullet examples that resonate with hiring managers.",
     "skillClusters": [
-      { "name": "Organisation", "items": ["Scheduling", "Filing", "Travel", "Expense reports", "Meeting coordination"] },
-      { "name": "Communication", "items": ["Email", "Phone", "Written correspondence", "Discretion"] },
-      { "name": "Tools", "items": ["Microsoft Office", "Google Workspace", "CRM", "Confluence"] }
+      {
+        "name": "Organisation",
+        "items": [
+          "Scheduling",
+          "Filing",
+          "Travel",
+          "Expense reports",
+          "Meeting coordination"
+        ]
+      },
+      {
+        "name": "Communication",
+        "items": [
+          "Email",
+          "Phone",
+          "Written correspondence",
+          "Discretion"
+        ]
+      },
+      {
+        "name": "Tools",
+        "items": [
+          "Microsoft Office",
+          "Google Workspace",
+          "CRM",
+          "Confluence"
+        ]
+      }
     ],
     "bulletExamples": [
       "Supported C-suite of 5; managed calendars, travel, and expenses for 3 executives. Reduced meeting conflicts by 30% through improved scheduling.",
@@ -134,9 +375,36 @@
     "metaDescription": "Marketing manager resume skills: channels, analytics, and campaign management. Bullet examples for growth and brand roles.",
     "intro": "Marketing managers own campaigns, channels, or segments. This guide outlines skill clusters and bullet examples that show impact for demand gen, brand, and content roles.",
     "skillClusters": [
-      { "name": "Channels", "items": ["Email", "Paid media", "SEO", "Content", "Social", "Events"] },
-      { "name": "Data", "items": ["Analytics", "ROI", "Conversion", "A/B testing", "Reporting"] },
-      { "name": "Strategy", "items": ["Campaign planning", "Budget", "Positioning", "Buyer journey"] }
+      {
+        "name": "Channels",
+        "items": [
+          "Email",
+          "Paid media",
+          "SEO",
+          "Content",
+          "Social",
+          "Events"
+        ]
+      },
+      {
+        "name": "Data",
+        "items": [
+          "Analytics",
+          "ROI",
+          "Conversion",
+          "A/B testing",
+          "Reporting"
+        ]
+      },
+      {
+        "name": "Strategy",
+        "items": [
+          "Campaign planning",
+          "Budget",
+          "Positioning",
+          "Buyer journey"
+        ]
+      }
     ],
     "bulletExamples": [
       "Ran demand gen campaigns that generated $2M pipeline; improved MQL-to-SQL conversion by 20% through lead scoring and nurture.",
@@ -151,9 +419,34 @@
     "metaDescription": "SDR resume skills: prospecting, CRM, and outreach. Bullet examples and keywords for sales development roles.",
     "intro": "SDRs generate pipeline through outbound and inbound qualification. This guide outlines skill clusters and bullet examples that show activity and results.",
     "skillClusters": [
-      { "name": "Outreach", "items": ["Cold email", "Cold call", "LinkedIn", "Prospecting", "Messaging"] },
-      { "name": "Process", "items": ["CRM", "Qualification", "Meeting booking", "Pipeline"] },
-      { "name": "Soft skills", "items": ["Persistence", "Communication", "Research", "Resilience"] }
+      {
+        "name": "Outreach",
+        "items": [
+          "Cold email",
+          "Cold call",
+          "LinkedIn",
+          "Prospecting",
+          "Messaging"
+        ]
+      },
+      {
+        "name": "Process",
+        "items": [
+          "CRM",
+          "Qualification",
+          "Meeting booking",
+          "Pipeline"
+        ]
+      },
+      {
+        "name": "Soft skills",
+        "items": [
+          "Persistence",
+          "Communication",
+          "Research",
+          "Resilience"
+        ]
+      }
     ],
     "bulletExamples": [
       "Exceeded quota by 120%; booked 80+ meetings per quarter through 60+ daily touchpoints.",
@@ -168,9 +461,33 @@
     "metaDescription": "Recruiter resume skills: sourcing, screening, and ATS. Bullet examples for talent acquisition roles.",
     "intro": "Recruiters source and place candidates. This guide outlines skill clusters and bullet examples that show fill rates and pipeline for in-house and agency roles.",
     "skillClusters": [
-      { "name": "Sourcing", "items": ["LinkedIn", "Boolean", "Job boards", "Referrals", "Networking"] },
-      { "name": "Process", "items": ["Screening", "ATS", "Interview coordination", "Offer"] },
-      { "name": "Stakeholder", "items": ["Hiring manager partnership", "Candidate experience", "Reporting"] }
+      {
+        "name": "Sourcing",
+        "items": [
+          "LinkedIn",
+          "Boolean",
+          "Job boards",
+          "Referrals",
+          "Networking"
+        ]
+      },
+      {
+        "name": "Process",
+        "items": [
+          "Screening",
+          "ATS",
+          "Interview coordination",
+          "Offer"
+        ]
+      },
+      {
+        "name": "Stakeholder",
+        "items": [
+          "Hiring manager partnership",
+          "Candidate experience",
+          "Reporting"
+        ]
+      }
     ],
     "bulletExamples": [
       "Filled 35+ roles per year across engineering and product; reduced time-to-fill by 20% through improved sourcing and process.",
@@ -185,9 +502,34 @@
     "metaDescription": "Executive assistant resume skills: scheduling, communication, and discretion. Bullet examples for EA roles.",
     "intro": "Executive assistants support C-suite and senior leaders with calendar, travel, and coordination. This guide outlines skill clusters and bullet examples that show scope and discretion.",
     "skillClusters": [
-      { "name": "Coordination", "items": ["Calendar", "Travel", "Expenses", "Meetings", "Board support"] },
-      { "name": "Communication", "items": ["Email", "Drafting", "Discretion", "Stakeholder management"] },
-      { "name": "Tools", "items": ["Office suite", "Concur", "Slack", "Confidentiality"] }
+      {
+        "name": "Coordination",
+        "items": [
+          "Calendar",
+          "Travel",
+          "Expenses",
+          "Meetings",
+          "Board support"
+        ]
+      },
+      {
+        "name": "Communication",
+        "items": [
+          "Email",
+          "Drafting",
+          "Discretion",
+          "Stakeholder management"
+        ]
+      },
+      {
+        "name": "Tools",
+        "items": [
+          "Office suite",
+          "Concur",
+          "Slack",
+          "Confidentiality"
+        ]
+      }
     ],
     "bulletExamples": [
       "Supported CEO and CFO; managed complex calendars and travel for 2 executives. Coordinated board materials and meetings for 6 meetings per year.",
@@ -202,9 +544,32 @@
     "metaDescription": "Project coordinator resume skills: planning, tracking, and communication. Bullet examples for PC roles.",
     "intro": "Project coordinators support project managers with scheduling, tracking, and communication. This guide outlines skill clusters and bullet examples that show organisation and impact.",
     "skillClusters": [
-      { "name": "Planning", "items": ["Scheduling", "Tracking", "Status reports", "Documentation"] },
-      { "name": "Communication", "items": ["Stakeholder updates", "Meeting facilitation", "Follow-up"] },
-      { "name": "Tools", "items": ["Jira", "Asana", "MS Project", "Spreadsheets"] }
+      {
+        "name": "Planning",
+        "items": [
+          "Scheduling",
+          "Tracking",
+          "Status reports",
+          "Documentation"
+        ]
+      },
+      {
+        "name": "Communication",
+        "items": [
+          "Stakeholder updates",
+          "Meeting facilitation",
+          "Follow-up"
+        ]
+      },
+      {
+        "name": "Tools",
+        "items": [
+          "Jira",
+          "Asana",
+          "MS Project",
+          "Spreadsheets"
+        ]
+      }
     ],
     "bulletExamples": [
       "Supported 5 concurrent projects; maintained timelines and status reports. Identified 3 risks that were mitigated before impact.",
@@ -219,9 +584,33 @@
     "metaDescription": "Frontend developer resume skills: React, CSS, and UX. Bullet examples and keywords for front-end roles.",
     "intro": "Frontend developers build user interfaces with JavaScript, HTML, and CSS. This guide outlines skill clusters and bullet examples that show technical and user impact.",
     "skillClusters": [
-      { "name": "Core", "items": ["JavaScript/TypeScript", "React", "Vue", "HTML", "CSS"] },
-      { "name": "Quality", "items": ["Responsive", "Accessibility", "Performance", "Testing"] },
-      { "name": "Collaboration", "items": ["Design", "API integration", "State management"] }
+      {
+        "name": "Core",
+        "items": [
+          "JavaScript/TypeScript",
+          "React",
+          "Vue",
+          "HTML",
+          "CSS"
+        ]
+      },
+      {
+        "name": "Quality",
+        "items": [
+          "Responsive",
+          "Accessibility",
+          "Performance",
+          "Testing"
+        ]
+      },
+      {
+        "name": "Collaboration",
+        "items": [
+          "Design",
+          "API integration",
+          "State management"
+        ]
+      }
     ],
     "bulletExamples": [
       "Built responsive dashboards used by 10K+ users; improved load time by 35% and met WCAG AA.",
@@ -236,9 +625,34 @@
     "metaDescription": "DevOps resume skills: CI/CD, cloud, and automation. Bullet examples for DevOps and platform roles.",
     "intro": "DevOps engineers build and maintain pipelines, cloud infrastructure, and monitoring. This guide outlines skill clusters and bullet examples that show automation and reliability impact.",
     "skillClusters": [
-      { "name": "Pipeline", "items": ["CI/CD", "Jenkins", "GitHub Actions", "Deployment"] },
-      { "name": "Infra", "items": ["AWS", "GCP", "Terraform", "Kubernetes", "Docker"] },
-      { "name": "Reliability", "items": ["Monitoring", "Alerting", "Incident response", "SLO"] }
+      {
+        "name": "Pipeline",
+        "items": [
+          "CI/CD",
+          "Jenkins",
+          "GitHub Actions",
+          "Deployment"
+        ]
+      },
+      {
+        "name": "Infra",
+        "items": [
+          "AWS",
+          "GCP",
+          "Terraform",
+          "Kubernetes",
+          "Docker"
+        ]
+      },
+      {
+        "name": "Reliability",
+        "items": [
+          "Monitoring",
+          "Alerting",
+          "Incident response",
+          "SLO"
+        ]
+      }
     ],
     "bulletExamples": [
       "Built CI/CD pipeline that reduced deployment time from 2 hours to 15 minutes; adopted by 15+ teams.",
@@ -253,9 +667,32 @@
     "metaDescription": "UX designer resume skills: research, wireframing, and collaboration. Bullet examples for product design roles.",
     "intro": "UX designers focus on user research, flows, and interfaces. This guide outlines skill clusters and bullet examples that show impact on usability and product success.",
     "skillClusters": [
-      { "name": "Research", "items": ["User interviews", "Usability testing", "Personas", "Journey maps"] },
-      { "name": "Design", "items": ["Wireframes", "Prototypes", "Figma", "Design systems"] },
-      { "name": "Collaboration", "items": ["Product", "Engineering", "Stakeholder presentation"] }
+      {
+        "name": "Research",
+        "items": [
+          "User interviews",
+          "Usability testing",
+          "Personas",
+          "Journey maps"
+        ]
+      },
+      {
+        "name": "Design",
+        "items": [
+          "Wireframes",
+          "Prototypes",
+          "Figma",
+          "Design systems"
+        ]
+      },
+      {
+        "name": "Collaboration",
+        "items": [
+          "Product",
+          "Engineering",
+          "Stakeholder presentation"
+        ]
+      }
     ],
     "bulletExamples": [
       "Led discovery and usability testing for checkout redesign; increased conversion by 18% and reduced support tickets by 25%.",
@@ -270,9 +707,33 @@
     "metaDescription": "Retail manager resume skills: operations, sales, and team leadership. Bullet examples for store and district manager roles.",
     "intro": "Retail managers run store operations, drive sales, and lead teams. This guide outlines skill clusters and bullet examples that show P&L and team impact.",
     "skillClusters": [
-      { "name": "Operations", "items": ["Inventory", "Scheduling", "Loss prevention", "Compliance"] },
-      { "name": "Sales", "items": ["Sales targets", "Upsell", "Customer service", "Metrics"] },
-      { "name": "Leadership", "items": ["Team development", "Hiring", "Training", "Performance"] }
+      {
+        "name": "Operations",
+        "items": [
+          "Inventory",
+          "Scheduling",
+          "Loss prevention",
+          "Compliance"
+        ]
+      },
+      {
+        "name": "Sales",
+        "items": [
+          "Sales targets",
+          "Upsell",
+          "Customer service",
+          "Metrics"
+        ]
+      },
+      {
+        "name": "Leadership",
+        "items": [
+          "Team development",
+          "Hiring",
+          "Training",
+          "Performance"
+        ]
+      }
     ],
     "bulletExamples": [
       "Managed store with $2M annual revenue; exceeded sales target by 8% and improved margin through inventory control.",
@@ -287,9 +748,32 @@
     "metaDescription": "Hospitality resume skills: guest service, operations, and teamwork. Bullet examples for hotel and restaurant roles.",
     "intro": "Hospitality roles value guest experience, operations, and teamwork. This guide outlines skill clusters and bullet examples for hotel, restaurant, and event roles.",
     "skillClusters": [
-      { "name": "Guest service", "items": ["Guest satisfaction", "Complaint resolution", "Upsell", "Reviews"] },
-      { "name": "Operations", "items": ["Scheduling", "Inventory", "Safety", "Compliance"] },
-      { "name": "Team", "items": ["Training", "Coordination", "Multi-tasking"] }
+      {
+        "name": "Guest service",
+        "items": [
+          "Guest satisfaction",
+          "Complaint resolution",
+          "Upsell",
+          "Reviews"
+        ]
+      },
+      {
+        "name": "Operations",
+        "items": [
+          "Scheduling",
+          "Inventory",
+          "Safety",
+          "Compliance"
+        ]
+      },
+      {
+        "name": "Team",
+        "items": [
+          "Training",
+          "Coordination",
+          "Multi-tasking"
+        ]
+      }
     ],
     "bulletExamples": [
       "Led front desk team of 6 at 150-room hotel; achieved 4.5/5 guest rating and improved upsell revenue by 15%.",
@@ -304,9 +788,32 @@
     "metaDescription": "Accountant resume skills: GAAP, reporting, and systems. Bullet examples for staff and senior accountant roles.",
     "intro": "Accountants prepare and analyse financial records. This guide outlines skill clusters and bullet examples for public and industry accounting roles.",
     "skillClusters": [
-      { "name": "Technical", "items": ["GAAP", "Reconciliation", "Reporting", "Tax"] },
-      { "name": "Systems", "items": ["ERP", "Excel", "QuickBooks", "NetSuite"] },
-      { "name": "Soft skills", "items": ["Attention to detail", "Deadlines", "Audit support"] }
+      {
+        "name": "Technical",
+        "items": [
+          "GAAP",
+          "Reconciliation",
+          "Reporting",
+          "Tax"
+        ]
+      },
+      {
+        "name": "Systems",
+        "items": [
+          "ERP",
+          "Excel",
+          "QuickBooks",
+          "NetSuite"
+        ]
+      },
+      {
+        "name": "Soft skills",
+        "items": [
+          "Attention to detail",
+          "Deadlines",
+          "Audit support"
+        ]
+      }
     ],
     "bulletExamples": [
       "Managed month-end close for 3 entities; reduced close time by 3 days through process improvement and checklist.",
@@ -321,9 +828,32 @@
     "metaDescription": "Financial analyst resume skills: modelling, FP&A, and reporting. Bullet examples for corporate and banking roles.",
     "intro": "Financial analysts build models, track performance, and support planning. This guide outlines skill clusters and bullet examples for FP&A and investment roles.",
     "skillClusters": [
-      { "name": "Modelling", "items": ["Excel", "Forecasting", "Variance", "P&L"] },
-      { "name": "Process", "items": ["Budgeting", "Reporting", "Presentation", "Ad hoc"] },
-      { "name": "Stakeholder", "items": ["Leadership", "Business partners", "Board"] }
+      {
+        "name": "Modelling",
+        "items": [
+          "Excel",
+          "Forecasting",
+          "Variance",
+          "P&L"
+        ]
+      },
+      {
+        "name": "Process",
+        "items": [
+          "Budgeting",
+          "Reporting",
+          "Presentation",
+          "Ad hoc"
+        ]
+      },
+      {
+        "name": "Stakeholder",
+        "items": [
+          "Leadership",
+          "Business partners",
+          "Board"
+        ]
+      }
     ],
     "bulletExamples": [
       "Built and maintained annual budget model for $50M division; variance analysis and reporting to CFO. Improved forecast accuracy by 15%.",
@@ -331,5 +861,606 @@
       "Automated monthly reporting; reduced preparation time from 2 days to 4 hours. Trained 3 analysts on new process."
     ],
     "body": "Lead with scope of models or budgets and audience. Highlight Excel and modelling. Tailor to corporate vs banking. WadeCV can help you align your analyst experience with job descriptions."
+  },
+  {
+    "slug": "project-manager",
+    "title": "Skills for Project Manager Resume",
+    "metaDescription": "Project management skills to list on your resume in 2026. Skill clusters, ATS keywords, and bullet examples for PMP-certified and non-certified PMs.",
+    "intro": "Project managers need a blend of hard skills (planning tools, methodologies) and soft skills (leadership, communication, conflict resolution). This guide organises PM skills into clusters and shows how to present them on a resume that passes ATS and resonates with hiring managers.",
+    "skillClusters": [
+      {
+        "name": "Planning & scheduling",
+        "items": [
+          "MS Project",
+          "Asana",
+          "Jira",
+          "Monday.com",
+          "Smartsheet",
+          "Gantt charts",
+          "WBS"
+        ]
+      },
+      {
+        "name": "Methodology",
+        "items": [
+          "Agile",
+          "Scrum",
+          "Kanban",
+          "Waterfall",
+          "PRINCE2",
+          "PMP",
+          "PMI-ACP"
+        ]
+      },
+      {
+        "name": "Financial & resource",
+        "items": [
+          "Budget management",
+          "Resource allocation",
+          "Cost forecasting",
+          "P&L ownership",
+          "Vendor management"
+        ]
+      },
+      {
+        "name": "Soft skills",
+        "items": [
+          "Stakeholder management",
+          "Executive communication",
+          "Change management",
+          "Risk mitigation",
+          "Conflict resolution",
+          "Team leadership"
+        ]
+      }
+    ],
+    "bulletExamples": [
+      "Delivered $2.4M ERP implementation 2 weeks ahead of schedule by restructuring sprint planning and eliminating 3 recurring blocker categories.",
+      "Managed 6 concurrent projects across 3 time zones, maintaining a 96% on-time delivery rate over 18 months.",
+      "Reduced project scope change requests by 40% by introducing structured requirements reviews at project kick-off."
+    ],
+    "body": "List methodology certifications (PMP, PMI-ACP, PRINCE2) prominently — they're often filtered on by ATS. In your experience section, show delivery outcomes: on-time %, budget variance, and stakeholder satisfaction. WadeCV can help you surface the most relevant PM skills and outcomes for each specific role.",
+    "relatedSlugs": [
+      "product-manager",
+      "data-analyst",
+      "administrative-assistant"
+    ],
+    "faq": [
+      {
+        "question": "Which project management skills are most in demand in 2026?",
+        "answer": "Agile fluency (Scrum, Kanban), digital project tools (Jira, Asana, Monday.com), and stakeholder communication skills top most job descriptions. PMP certification remains a strong differentiator for mid-to-senior roles."
+      }
+    ],
+    "commonMistakes": [
+      "Listing tools without showing scale or complexity of projects managed",
+      "No delivery metrics — on-time rate, budget variance",
+      "Omitting certification acronyms that ATS scans for"
+    ]
+  },
+  {
+    "slug": "business-analyst",
+    "title": "Skills for Business Analyst Resume",
+    "metaDescription": "Business analyst skills to list on your resume. Key competencies, ATS keywords, and impact-driven bullet examples for BA roles across IT, finance, and operations.",
+    "intro": "Business analysts need analytical rigour, communication clarity, and the ability to bridge business and technology. This guide covers the skill clusters, tools, and bullet examples that make a BA resume stand out in ATS screening and hiring manager review.",
+    "skillClusters": [
+      {
+        "name": "Analysis & documentation",
+        "items": [
+          "Requirements elicitation",
+          "Business requirements document (BRD)",
+          "Functional specifications",
+          "Gap analysis",
+          "User stories",
+          "Use cases"
+        ]
+      },
+      {
+        "name": "Process & modelling",
+        "items": [
+          "Process mapping",
+          "BPMN",
+          "Visio",
+          "Lucidchart",
+          "Swim lane diagrams",
+          "As-is / to-be analysis"
+        ]
+      },
+      {
+        "name": "Data & reporting",
+        "items": [
+          "SQL",
+          "Excel (advanced)",
+          "Power BI",
+          "Tableau",
+          "Data modelling",
+          "Dashboard creation"
+        ]
+      },
+      {
+        "name": "Soft skills",
+        "items": [
+          "Stakeholder management",
+          "Facilitation",
+          "Conflict resolution",
+          "Written communication",
+          "Presentation skills"
+        ]
+      }
+    ],
+    "bulletExamples": [
+      "Gathered and documented requirements for a $1.2M CRM migration; requirements accepted with zero rework cycles, project delivered on schedule.",
+      "Built a Power BI dashboard tracking 12 operational KPIs, reducing weekly reporting time from 6 hours to 45 minutes.",
+      "Facilitated 8 cross-functional workshops to map as-is processes, identifying $300K in annual savings through automation."
+    ],
+    "body": "BA resumes are won or lost on specificity. Name the domain (healthcare, financial services, retail), the tools (SQL, Power BI, Visio), and the outcome (savings, time saved, rework eliminated). CBAP or CCBA certification adds credibility for senior roles. WadeCV can align your BA skills with each job's domain and toolset.",
+    "relatedSlugs": [
+      "data-analyst",
+      "project-manager",
+      "financial-analyst"
+    ],
+    "faq": [
+      {
+        "question": "Do I need SQL to get a business analyst job?",
+        "answer": "For most modern BA roles, yes — especially in tech, finance, and data-driven organisations. Even basic SQL (SELECT, JOINs, aggregations) to pull data for analysis is increasingly expected. It's worth learning even if not required by every posting."
+      }
+    ],
+    "commonMistakes": [
+      "Generic bullets about 'gathering requirements' without specifics",
+      "No mention of domain expertise (finance, healthcare, IT)",
+      "Missing tool keywords: SQL, Power BI, Visio"
+    ]
+  },
+  {
+    "slug": "operations-manager",
+    "title": "Skills for Operations Manager Resume",
+    "metaDescription": "Operations manager skills to list on your resume. Competency clusters, ATS keywords, and impact-driven bullet examples for ops manager roles across industries.",
+    "intro": "Operations managers need a combination of process improvement expertise, people leadership, and financial acumen. This guide covers the skill clusters that appear most often in ops manager job descriptions, with bullet examples that show measurable impact.",
+    "skillClusters": [
+      {
+        "name": "Process & efficiency",
+        "items": [
+          "Lean manufacturing",
+          "Six Sigma",
+          "Kaizen",
+          "SOP development",
+          "Process mapping",
+          "Root cause analysis",
+          "5S"
+        ]
+      },
+      {
+        "name": "People & teams",
+        "items": [
+          "Team leadership",
+          "Performance management",
+          "Hiring and onboarding",
+          "Scheduling",
+          "Coaching",
+          "Employee relations"
+        ]
+      },
+      {
+        "name": "Financial",
+        "items": [
+          "Budget management",
+          "P&L ownership",
+          "Cost reduction",
+          "CapEx planning",
+          "Vendor negotiation"
+        ]
+      },
+      {
+        "name": "Systems & tools",
+        "items": [
+          "SAP",
+          "Oracle",
+          "NetSuite",
+          "WMS (warehouse management)",
+          "ERP systems",
+          "Power BI",
+          "Excel"
+        ]
+      }
+    ],
+    "bulletExamples": [
+      "Led Lean initiative across 3 production lines, reducing cycle time by 22% and saving $480K annually in labour and waste.",
+      "Managed $4.2M operations budget across 2 sites, ending each of 3 consecutive years under budget.",
+      "Built and scaled a 45-person operations team over 18 months, reducing voluntary attrition from 28% to 14%."
+    ],
+    "body": "Operations manager resumes are judged on measurable improvement. Every major bullet should show a before/after: cost reduced, time saved, quality improved, team scaled. Lean or Six Sigma certification (Green Belt, Black Belt) is a differentiator. WadeCV can tailor your ops skills to the specific industry and scope each employer is hiring for.",
+    "relatedSlugs": [
+      "project-manager",
+      "supply-chain-analyst",
+      "recruiter"
+    ],
+    "faq": [
+      {
+        "question": "Is Six Sigma certification required for an operations manager job?",
+        "answer": "Not required, but it's a strong differentiator — especially in manufacturing, logistics, and healthcare operations. Even a Green Belt shows commitment to process improvement methodology. Many employers list it as 'preferred' rather than required."
+      }
+    ],
+    "commonMistakes": [
+      "Describing scope without outcomes — 'managed daily operations' is not enough",
+      "No financial metrics (budget owned, cost saved)",
+      "Omitting Lean/Six Sigma training even if informal"
+    ]
+  },
+  {
+    "slug": "cybersecurity",
+    "title": "Skills for Cybersecurity Resume",
+    "metaDescription": "Cybersecurity skills to list on your resume in 2026. Technical skill clusters, certifications, and ATS keywords for SOC analyst, security engineer, and infosec roles.",
+    "intro": "Cybersecurity roles demand deep technical breadth — tools, platforms, protocols — plus analytical skills and the ability to communicate risk to non-technical stakeholders. This guide covers the skill clusters, certifications, and bullet examples that make a cybersecurity resume stand out.",
+    "skillClusters": [
+      {
+        "name": "Monitoring & detection",
+        "items": [
+          "SIEM (Splunk, Microsoft Sentinel, IBM QRadar)",
+          "EDR (CrowdStrike, SentinelOne)",
+          "IDS/IPS",
+          "Log analysis",
+          "Threat hunting"
+        ]
+      },
+      {
+        "name": "Vulnerability & testing",
+        "items": [
+          "Penetration testing",
+          "Vulnerability scanning (Nessus, Qualys)",
+          "OWASP Top 10",
+          "Burp Suite",
+          "Metasploit",
+          "Kali Linux"
+        ]
+      },
+      {
+        "name": "Governance & compliance",
+        "items": [
+          "NIST CSF",
+          "ISO 27001",
+          "SOC 2",
+          "GDPR",
+          "Risk assessment",
+          "Security policy writing"
+        ]
+      },
+      {
+        "name": "Certifications",
+        "items": [
+          "CompTIA Security+",
+          "CEH",
+          "CISSP",
+          "CISM",
+          "OSCP",
+          "AWS Security Specialty"
+        ]
+      }
+    ],
+    "bulletExamples": [
+      "Triaged 150+ security alerts daily in Splunk SIEM; reduced mean time to detect (MTTD) from 4.2 hours to 38 minutes through tuned correlation rules.",
+      "Conducted penetration testing across 12 web applications; identified 3 critical vulnerabilities (OWASP Top 10) and coordinated remediation with dev teams.",
+      "Led ISO 27001 gap assessment and remediation plan; organisation achieved certification within 9 months."
+    ],
+    "body": "Cybersecurity resumes need both certifications and real-world experience. Certs without context (no incidents investigated, no tools deployed) look weak. Show scale: alerts/day, coverage area, compliance scope. Government/cleared roles should note clearance level. WadeCV can align your security skills to each role's specific focus — SOC analyst, AppSec, GRC, or cloud security.",
+    "relatedSlugs": [
+      "devops",
+      "software-engineer",
+      "data-analyst"
+    ],
+    "faq": [
+      {
+        "question": "What cybersecurity certification should I get first?",
+        "answer": "CompTIA Security+ is the most widely recognised entry-level certification and a prerequisite for many DoD contractor roles. For hands-on penetration testing, OSCP is the gold standard. CISSP is for experienced practitioners targeting senior or management roles."
+      }
+    ],
+    "commonMistakes": [
+      "Listing certifications without linking them to real work experience",
+      "No metrics: alerts handled, MTTD/MTTR, coverage area",
+      "Missing key tool names that ATS scans for"
+    ]
+  },
+  {
+    "slug": "digital-marketing",
+    "title": "Skills for Digital Marketing Resume",
+    "metaDescription": "Digital marketing skills to list on your resume in 2026. Channel-by-channel skill clusters, ATS keywords, and results-driven bullet examples for marketing roles.",
+    "intro": "Digital marketers must show fluency across multiple channels — SEO, paid search, email, social, and analytics. Employers scan for specific tools and platforms, not just generic 'marketing' skills. This guide organises digital marketing skills by channel and shows how to quantify your impact.",
+    "skillClusters": [
+      {
+        "name": "SEO & content",
+        "items": [
+          "Keyword research (Ahrefs, SEMrush, Moz)",
+          "On-page optimisation",
+          "Technical SEO",
+          "Content strategy",
+          "Link building",
+          "Google Search Console"
+        ]
+      },
+      {
+        "name": "Paid media",
+        "items": [
+          "Google Ads",
+          "Meta Ads Manager",
+          "LinkedIn Ads",
+          "TikTok Ads",
+          "Programmatic / Display",
+          "ROAS optimisation"
+        ]
+      },
+      {
+        "name": "Email & CRM",
+        "items": [
+          "Klaviyo",
+          "Mailchimp",
+          "HubSpot",
+          "Salesforce Marketing Cloud",
+          "List segmentation",
+          "A/B testing",
+          "Deliverability"
+        ]
+      },
+      {
+        "name": "Analytics & reporting",
+        "items": [
+          "Google Analytics 4",
+          "Looker Studio",
+          "Power BI",
+          "Attribution modelling",
+          "Conversion rate optimisation (CRO)"
+        ]
+      }
+    ],
+    "bulletExamples": [
+      "Grew organic search traffic 140% YoY through a technical SEO overhaul and 60-piece content calendar — driven by keyword gap analysis in Ahrefs.",
+      "Managed $350K annual Google Ads budget; reduced CPA by 31% through audience segmentation, negative keyword expansion, and landing page A/B testing.",
+      "Built and optimised email welcome sequence in Klaviyo; sequence now drives 18% of total monthly revenue with 42% open rate."
+    ],
+    "body": "Digital marketing resumes are strongest when they show channel-specific results with real numbers. Don't just say you 'managed social media' — specify the platform, audience size, and engagement or growth achieved. Tool fluency is essential; list specific platforms for each channel. WadeCV can tailor your marketing skills to each employer's channel mix and industry.",
+    "relatedSlugs": [
+      "marketing-manager",
+      "social-media-manager",
+      "content-writer"
+    ],
+    "faq": [
+      {
+        "question": "What are the most in-demand digital marketing skills in 2026?",
+        "answer": "Paid media (especially Google Ads and Meta Ads), marketing analytics (GA4, Looker Studio, attribution), and SEO remain top priorities. AI fluency — using tools like ChatGPT or Jasper in content workflows — is increasingly mentioned in job descriptions."
+      }
+    ],
+    "commonMistakes": [
+      "Generic 'social media' without platform, audience size, or metrics",
+      "No mention of specific tools — ATS filters on platform names",
+      "Missing ROAS, CPA, or growth metrics on paid campaigns"
+    ]
+  },
+  {
+    "slug": "machine-learning",
+    "title": "Skills for Machine Learning Resume",
+    "metaDescription": "Machine learning skills to list on your resume. Technical skill clusters, framework keywords, and impact-driven bullet examples for ML engineer and data science roles.",
+    "intro": "Machine learning roles demand a specific combination of maths fundamentals, Python/framework depth, and engineering skills to take models to production. This guide covers the skill clusters, keywords, and bullet examples that help ML resumes get noticed.",
+    "skillClusters": [
+      {
+        "name": "Core ML",
+        "items": [
+          "Supervised learning",
+          "Unsupervised learning",
+          "Deep learning",
+          "NLP",
+          "Computer vision",
+          "Reinforcement learning",
+          "Transformer architectures",
+          "LLMs"
+        ]
+      },
+      {
+        "name": "Frameworks & libraries",
+        "items": [
+          "PyTorch",
+          "TensorFlow",
+          "scikit-learn",
+          "HuggingFace Transformers",
+          "Keras",
+          "XGBoost",
+          "LangChain"
+        ]
+      },
+      {
+        "name": "Data & pipeline",
+        "items": [
+          "SQL",
+          "Pandas",
+          "NumPy",
+          "Apache Spark",
+          "Airflow",
+          "dbt",
+          "Feature engineering"
+        ]
+      },
+      {
+        "name": "MLOps & deployment",
+        "items": [
+          "MLflow",
+          "Kubeflow",
+          "SageMaker",
+          "Docker",
+          "Kubernetes",
+          "CI/CD for ML",
+          "Model monitoring",
+          "A/B testing"
+        ]
+      }
+    ],
+    "bulletExamples": [
+      "Trained and deployed a BERT-based document classifier achieving 94% accuracy; model now processes 2M+ documents/day in production on SageMaker.",
+      "Reduced model retraining pipeline from 6 hours to 45 minutes by migrating to distributed training on AWS, saving $18K/month in compute.",
+      "Built a recommendation system for 5M users using collaborative filtering; A/B test showed 12% lift in session engagement."
+    ],
+    "body": "ML resumes live at the intersection of research depth and engineering credibility. Show both: models you designed and deployed, with scale (users served, requests/second) and business impact (revenue, engagement, cost). Open-source contributions and Kaggle rankings are worth including. WadeCV can tailor your ML skills to each role's focus — NLP, computer vision, MLOps, or LLM engineering.",
+    "relatedSlugs": [
+      "software-engineer",
+      "data-analyst",
+      "devops"
+    ],
+    "faq": [
+      {
+        "question": "Should I list both PyTorch and TensorFlow on my ML resume?",
+        "answer": "Yes, if you have genuine experience with both. PyTorch dominates research and most modern ML teams; TensorFlow/Keras is more common in enterprise settings. List the one you're strongest in first and note your proficiency level if they differ significantly."
+      }
+    ],
+    "commonMistakes": [
+      "Only showing Jupyter notebook projects — no production deployments",
+      "Listing frameworks without showing what you built or the scale of impact",
+      "No mention of model monitoring, drift detection, or retraining pipelines"
+    ]
+  },
+  {
+    "slug": "cloud-computing",
+    "title": "Skills for Cloud Computing Resume",
+    "metaDescription": "Cloud computing skills to list on your resume for AWS, Azure, and GCP roles. Technical clusters, certifications, and results-focused bullet examples for cloud engineers.",
+    "intro": "Cloud computing roles require a mix of architecture knowledge, hands-on infrastructure skills, and security awareness. Whether you're targeting AWS, Azure, or GCP, employers want to see specific services, certifications, and real deployments — not just general cloud familiarity.",
+    "skillClusters": [
+      {
+        "name": "Cloud platforms",
+        "items": [
+          "AWS (EC2, S3, RDS, Lambda, EKS, CloudFront)",
+          "Azure (AKS, App Service, Azure SQL, Entra ID)",
+          "GCP (GKE, BigQuery, Cloud Run, Vertex AI)"
+        ]
+      },
+      {
+        "name": "Infrastructure as Code",
+        "items": [
+          "Terraform",
+          "CloudFormation",
+          "Pulumi",
+          "Ansible",
+          "Helm"
+        ]
+      },
+      {
+        "name": "Containers & orchestration",
+        "items": [
+          "Docker",
+          "Kubernetes",
+          "EKS",
+          "AKS",
+          "GKE",
+          "Helm charts",
+          "Service mesh (Istio, Linkerd)"
+        ]
+      },
+      {
+        "name": "Certifications",
+        "items": [
+          "AWS Solutions Architect Associate (SAA-C03)",
+          "AWS SysOps",
+          "CKA (Certified Kubernetes Administrator)",
+          "Azure AZ-104",
+          "GCP Professional Cloud Architect"
+        ]
+      }
+    ],
+    "bulletExamples": [
+      "Designed and deployed multi-region AWS infrastructure for a SaaS platform serving 50K daily active users; achieved 99.97% uptime over 12 months.",
+      "Migrated 40+ microservices from on-premises to EKS using Terraform; reduced infrastructure cost by $120K/year and deployment time from 4 hours to 12 minutes.",
+      "Implemented AWS WAF and GuardDuty; blocked 98% of automated attack traffic and achieved SOC 2 Type II compliance in 6 months."
+    ],
+    "body": "Cloud resumes must show specific services (not just 'AWS') with real outcomes: reliability metrics, cost savings, and migration scope. Certifications matter — list them with year achieved. Show IaC ownership (you wrote the Terraform, not just used it). WadeCV can tailor your cloud skills to the specific provider and architecture style each employer uses.",
+    "relatedSlugs": [
+      "devops",
+      "software-engineer",
+      "cybersecurity"
+    ],
+    "faq": [
+      {
+        "question": "Is one cloud certification enough to get a cloud engineer job?",
+        "answer": "AWS SAA or Azure AZ-104 is a solid foundation, but employers increasingly want to see real project experience alongside certifications. A GitHub portfolio with Terraform modules or Kubernetes deployments carries more weight than certifications alone."
+      }
+    ],
+    "commonMistakes": [
+      "Listing 'AWS' without specifying which services you've worked with in production",
+      "No reliability or cost metrics for infrastructure you built",
+      "Missing IaC tools — employers expect Terraform or CloudFormation fluency"
+    ]
+  },
+  {
+    "slug": "python-developer",
+    "title": "Skills for Python Developer Resume",
+    "metaDescription": "Python skills to list on your resume in 2026. Framework clusters, ATS keywords, and impact-driven bullet examples for backend, data, and automation Python roles.",
+    "intro": "Python is the most in-demand programming language across web development, data engineering, ML, and DevOps automation. Employers want to see specific frameworks and libraries alongside real projects. This guide covers the Python skill clusters that appear most often in job descriptions.",
+    "skillClusters": [
+      {
+        "name": "Web & APIs",
+        "items": [
+          "FastAPI",
+          "Django",
+          "Flask",
+          "REST APIs",
+          "GraphQL",
+          "Pydantic",
+          "SQLAlchemy",
+          "Celery"
+        ]
+      },
+      {
+        "name": "Data & ML",
+        "items": [
+          "Pandas",
+          "NumPy",
+          "scikit-learn",
+          "PyTorch",
+          "TensorFlow",
+          "Jupyter",
+          "Matplotlib",
+          "Seaborn"
+        ]
+      },
+      {
+        "name": "Infrastructure & automation",
+        "items": [
+          "Docker",
+          "Kubernetes",
+          "Airflow",
+          "AWS Lambda",
+          "Terraform (Python CDK)",
+          "CI/CD",
+          "pytest",
+          "asyncio"
+        ]
+      },
+      {
+        "name": "Databases & storage",
+        "items": [
+          "PostgreSQL",
+          "MySQL",
+          "Redis",
+          "MongoDB",
+          "Elasticsearch",
+          "SQLAlchemy ORM",
+          "Alembic"
+        ]
+      }
+    ],
+    "bulletExamples": [
+      "Built a FastAPI microservice processing 10K requests/second with sub-20ms p99 latency; deployed on Kubernetes with auto-scaling and blue/green deployments.",
+      "Wrote automated ETL pipeline in Python/Airflow ingesting 50GB/day from 12 sources into PostgreSQL; reduced analyst data prep time from 3 hours to 5 minutes.",
+      "Refactored legacy Django monolith into async FastAPI services; improved throughput 4x and reduced server costs by $40K/year."
+    ],
+    "body": "Python developer resumes must show the domain (web, data, ML, DevOps) alongside framework fluency. Don't just list libraries — show what you built with them and at what scale. Test coverage and code quality habits (pytest, type hints, CI) signal senior-level engineering. WadeCV can tailor your Python skills to each role's specific stack and domain focus.",
+    "relatedSlugs": [
+      "software-engineer",
+      "data-analyst",
+      "machine-learning"
+    ],
+    "faq": [
+      {
+        "question": "Should I list all Python frameworks I know on my resume?",
+        "answer": "List the frameworks relevant to the role you're applying for. A web role wants FastAPI/Django/Flask; a data role wants Pandas/NumPy/Spark; an ML role wants PyTorch/scikit-learn. Tailoring your skills section to each job description is more effective than exhaustive lists."
+      }
+    ],
+    "commonMistakes": [
+      "Listing 'Python' without any frameworks or domain context",
+      "No scale or performance metrics on projects",
+      "Omitting testing, typing, or code quality signals"
+    ]
   }
 ]

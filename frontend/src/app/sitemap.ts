@@ -35,6 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/physical-mail`, lastModified: lastmod, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE_URL}/ai-resume-builder-comparison`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/best-ai-resume-builder-2026`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/wadecv-vs-teal`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.8 },
   ];
 
   const jobUrls = getJobs().map((j) => ({
