@@ -44,7 +44,8 @@ export default async function JobPage({ params }: Props) {
             description: job.metaDescription,
             author: { "@type": "Organization", name: "WadeCV" },
             publisher: { "@type": "Organization", name: "WadeCV", url: BASE_URL },
-            datePublished: "2024-01-01",
+            datePublished: "2026-04-01",
+            dateModified: "2026-04-07",
             mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/jobs/${job.slug}` },
           }),
         }}

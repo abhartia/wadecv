@@ -44,6 +44,8 @@ export default async function CompanyResumePage({ params }: Props) {
             description: entry.metaDescription,
             author: { "@type": "Organization", name: "WadeCV" },
             publisher: { "@type": "Organization", name: "WadeCV", url: BASE_URL },
+            datePublished: "2026-04-01",
+            dateModified: "2026-04-07",
             mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/company-resume/${entry.slug}` },
           }),
         }}

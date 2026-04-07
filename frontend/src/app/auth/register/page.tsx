@@ -12,6 +12,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Separator } from "@/components/ui/separator";
 import { toast } from "sonner";
 import { FileText, Mail, Loader2, Gift } from "lucide-react";
+import { trackSignupStart, trackSignupSuccess, trackSignupFailure } from "@/lib/analytics/events";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -29,11 +30,14 @@ export default function RegisterPage() {
       return;
     }
     setLoading(true);
+    trackSignupStart("password");
     try {
       await register(email, password);
+      trackSignupSuccess("password");
       router.push("/dashboard");
       toast.success("Welcome to WadeCV! You have 1 free credit.");
     } catch (err: unknown) {
+      trackSignupFailure("password", (err as Error).message);
       toast.error((err as Error).message || "Registration failed");
     } finally {
       setLoading(false);
@@ -46,11 +50,14 @@ export default function RegisterPage() {
       return;
     }
     setMagicLoading(true);
+    trackSignupStart("magic_link");
     try {
       await api.sendMagicLink(email);
+      trackSignupSuccess("magic_link");
       setMagicLinkSent(true);
       toast.success("Magic link sent! Check your email.");
     } catch (err: unknown) {
+      trackSignupFailure("magic_link", (err as Error).message);
       toast.error((err as Error).message || "Failed to send magic link");
     } finally {
       setMagicLoading(false);

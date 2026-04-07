@@ -362,5 +362,197 @@
       { "question": "What if I don't have exact numbers?", "answer": "Use reasonable estimates (e.g. '~50 customers', 'approximately 20%'). Round to significant figures. Focus on the type of metric that matters for the role." }
     ],
     "commonMistakes": ["No numbers at all", "Only vague percentages without context", "Overly precise numbers that look made up"]
+  },
+  {
+    "slug": "accountant",
+    "title": "Accountant Resume Bullet Points",
+    "metaDescription": "Accountant resume bullet examples and impact formulas. Show accuracy, volume, and process improvements that hiring managers want to see.",
+    "intro": "Accountant resume bullets should quantify the scale of your work — accounts managed, close timelines, audit results, and process savings. This guide gives you concrete examples and formulas for staff, senior, and public accounting roles.",
+    "bulletExamples": [
+      "Managed month-end close for 5-entity group; reduced close cycle from 12 days to 7 through process redesign and automation.",
+      "Prepared and filed 200+ individual and corporate tax returns per season with zero penalties or late filings.",
+      "Reconciled 150+ general ledger accounts monthly; identified and resolved $400K in discrepancies before quarter-end.",
+      "Led SOX compliance testing for 3 business units; achieved clean audit results for 2 consecutive years.",
+      "Automated 15 recurring journal entries using Excel macros; saved 8 hours per close cycle and reduced errors by 60%."
+    ],
+    "impactFormulas": [
+      "Volume + accuracy (e.g. 'Reconciled X accounts with Y% accuracy')",
+      "Process + savings (e.g. 'Automated X; reduced close time by Y days')",
+      "Compliance + result (e.g. 'Led X testing; achieved clean audit')"
+    ],
+    "body": "Lead with volume (accounts, entities, returns) and outcomes (accuracy, timeliness, savings). Highlight ERP systems (SAP, Oracle, NetSuite, QuickBooks) and compliance frameworks (SOX, GAAP, IFRS). Show progression from bookkeeping to analysis or advisory.\n\nTailor your bullets to the role level — staff accountants emphasise accuracy and volume; senior accountants and controllers show process improvement and team leadership. WadeCV can help you reframe your accounting experience to match specific job descriptions.",
+    "relatedSlugs": ["data-analyst", "administrative-assistant", "quantifiable-resume-bullets"],
+    "faq": [
+      { "question": "How do I show accounting impact without confidential numbers?", "answer": "Use percentages (reduced close time by 40%), counts (200+ returns, 150 accounts), or process outcomes (zero penalties, clean audit). Avoid disclosing exact revenue or client names." }
+    ],
+    "commonMistakes": ["Listing only tasks ('prepared journal entries') without scale or outcome", "Omitting ERP or accounting software experience", "No mention of compliance or accuracy metrics"]
+  },
+  {
+    "slug": "business-analyst",
+    "title": "Business Analyst Resume Bullet Points",
+    "metaDescription": "Business analyst resume bullet examples. How to show requirements gathering, stakeholder alignment, and project outcomes on your resume.",
+    "intro": "Business analyst resume bullets should show how your requirements, analysis, and recommendations drove decisions and project outcomes. This guide gives you examples and formulas for BA roles across industries.",
+    "bulletExamples": [
+      "Gathered and documented requirements for CRM migration affecting 500+ users; delivered on time with 95% stakeholder satisfaction.",
+      "Conducted gap analysis between current and target-state processes; identified 12 automation opportunities saving 200+ hours annually.",
+      "Created data models and process flows for new claims system; reduced rework by 30% through clearer specifications.",
+      "Facilitated 20+ workshops with cross-functional stakeholders; aligned product, engineering, and operations on roadmap priorities.",
+      "Built Power BI dashboards tracking 15 KPIs; adopted by C-suite for quarterly business reviews."
+    ],
+    "impactFormulas": [
+      "Analysis + decision (e.g. 'Conducted X analysis; identified Y opportunities')",
+      "Deliverable + adoption (e.g. 'Created X; adopted by Y stakeholders')",
+      "Process + outcome (e.g. 'Reduced rework by X% through Y')"
+    ],
+    "body": "Lead with impact: decisions influenced, time saved, processes improved. Show tools (SQL, Power BI, Tableau, Jira, Confluence) and methods (agile, waterfall, gap analysis). Distinguish between technical BA and business-facing BA roles.\n\nTailor bullets to the industry — financial services BAs highlight compliance and risk; tech BAs highlight product and agile. WadeCV can help you align your BA experience with specific job descriptions.",
+    "relatedSlugs": ["data-analyst", "project-manager", "product-manager"],
+    "faq": [
+      { "question": "How do I show BA impact when I don't own the outcome?", "answer": "Focus on what you delivered: requirements quality (fewer change requests), stakeholder alignment (workshops, sign-offs), or analysis that drove a decision. You don't need to own the final metric." }
+    ],
+    "commonMistakes": ["Vague 'gathered requirements' without scope or outcome", "No mention of stakeholder management", "Listing tools without showing what you built with them"]
+  },
+  {
+    "slug": "operations-manager",
+    "title": "Operations Manager Resume Bullet Points",
+    "metaDescription": "Operations manager resume bullet examples. How to show efficiency, cost savings, and team leadership on your resume.",
+    "intro": "Operations manager bullets should show scale of operations, efficiency gains, and team leadership. This guide gives you examples for ops roles across logistics, retail, manufacturing, and services.",
+    "bulletExamples": [
+      "Managed daily operations for facility processing 10K+ orders per day; maintained 99.5% on-time fulfilment.",
+      "Led team of 45 across 3 shifts; reduced turnover by 20% through improved scheduling and career development.",
+      "Implemented Lean Six Sigma process improvements; cut waste by 15% and saved $300K annually.",
+      "Negotiated vendor contracts for 12 key suppliers; achieved 10% cost reduction while maintaining quality SLAs.",
+      "Designed and rolled out new inventory management system; reduced stockouts by 35% and overstock by 20%."
+    ],
+    "impactFormulas": [
+      "Scale + metric (e.g. 'Managed X orders/day; achieved Y% fulfilment')",
+      "Improvement + savings (e.g. 'Implemented X; saved $Y annually')",
+      "Team + outcome (e.g. 'Led team of X; reduced turnover by Y%')"
+    ],
+    "body": "Lead with scale (volume, team size, budget) and outcomes (cost savings, efficiency, quality). Highlight methodologies (Lean, Six Sigma, Kaizen) and systems (ERP, WMS, TMS). Show progression from individual contributor to managing teams and processes.\n\nTailor to the industry — logistics ops focus on fulfilment and supply chain; retail ops on shrinkage and customer satisfaction. WadeCV can help you align your operations experience with specific job descriptions.",
+    "relatedSlugs": ["project-manager", "supply-chain-analyst", "administrative-assistant"],
+    "faq": [
+      { "question": "How do I quantify operations management impact?", "answer": "Track: cost savings, efficiency improvements (cycle time, throughput), quality metrics (defect rate, SLA compliance), team metrics (turnover, training hours), and volume handled." }
+    ],
+    "commonMistakes": ["Generic 'managed operations' without scale", "No cost or efficiency metrics", "Omitting team size and leadership scope"]
+  },
+  {
+    "slug": "cybersecurity-analyst",
+    "title": "Cybersecurity Analyst Resume Bullet Points",
+    "metaDescription": "Cybersecurity analyst resume bullet examples. How to show threat detection, incident response, and security posture improvements.",
+    "intro": "Cybersecurity analyst resume bullets should show threats detected, incidents handled, and security posture improvements. This guide gives you examples for SOC, IR, and security engineering roles.",
+    "bulletExamples": [
+      "Monitored SIEM alerts across 2,000+ endpoints; triaged 50+ incidents monthly with 98% SLA compliance.",
+      "Led incident response for ransomware attack affecting 300 users; contained within 4 hours with zero data exfiltration.",
+      "Conducted 15 penetration tests on web applications; identified 40+ vulnerabilities, 12 critical, all remediated within SLA.",
+      "Developed and deployed 25 custom detection rules in Splunk; reduced false positives by 35% and improved mean time to detect.",
+      "Led security awareness training for 500+ employees; phishing click rate dropped from 18% to 4% over 6 months."
+    ],
+    "impactFormulas": [
+      "Scope + metric (e.g. 'Monitored X endpoints; triaged Y incidents')",
+      "Incident + outcome (e.g. 'Contained X within Y hours; zero data loss')",
+      "Initiative + result (e.g. 'Deployed X rules; reduced false positives by Y%')"
+    ],
+    "body": "Lead with scope (endpoints, alerts, incidents) and outcomes (containment time, detection rate, compliance). List tools (Splunk, CrowdStrike, Palo Alto, MITRE ATT&CK) and certifications (CISSP, CEH, CompTIA Security+). Show incident response experience and any automation or detection engineering work.\n\nTailor to the role — SOC analysts focus on triage and detection; IR leads on containment and recovery; security engineers on tooling and architecture. WadeCV can help you align your cybersecurity experience with specific job descriptions.",
+    "relatedSlugs": ["software-engineer", "devops", "data-analyst"],
+    "faq": [
+      { "question": "How do I write cybersecurity bullets without disclosing sensitive details?", "answer": "Use sanitised metrics: incident count, containment time, detection rate, SLA compliance, training outcomes. Never name specific attack vectors, clients, or classified tools." }
+    ],
+    "commonMistakes": ["Listing only tools without outcomes", "No incident metrics or SLA data", "Vague 'monitored security' bullets without scale"]
+  },
+  {
+    "slug": "cloud-engineer",
+    "title": "Cloud Engineer Resume Bullet Points",
+    "metaDescription": "Cloud engineer resume bullet examples. How to show infrastructure scale, cost optimisation, and reliability on your resume.",
+    "intro": "Cloud engineer resume bullets should show infrastructure scale, cost savings, and reliability improvements. This guide gives you examples for AWS, Azure, and GCP roles.",
+    "bulletExamples": [
+      "Architected and managed multi-region AWS infrastructure for 200+ microservices; achieved 99.99% uptime.",
+      "Migrated 50+ on-premise workloads to Azure; reduced infrastructure costs by 30% and improved deployment speed by 5x.",
+      "Implemented Infrastructure as Code with Terraform across 3 environments; reduced provisioning time from 3 days to 30 minutes.",
+      "Designed auto-scaling policies for compute and database layers; handled 10x traffic spikes during peak periods without degradation.",
+      "Led FinOps initiative; identified $200K in unused resources and right-sized 40+ instances, cutting monthly cloud spend by 25%."
+    ],
+    "impactFormulas": [
+      "Scale + reliability (e.g. 'Managed X services; achieved Y% uptime')",
+      "Migration + outcome (e.g. 'Migrated X workloads; reduced cost by Y%')",
+      "Automation + savings (e.g. 'Implemented X; reduced provisioning from Y to Z')"
+    ],
+    "body": "Lead with scale (services, regions, traffic) and outcomes (uptime, cost, deployment speed). List cloud platforms (AWS, Azure, GCP), IaC tools (Terraform, CloudFormation, Pulumi), and orchestration (Kubernetes, ECS). Show cost optimisation and FinOps experience — it's increasingly valued.\n\nTailor to the cloud provider in the job description. WadeCV can help you align your cloud engineering experience with specific job descriptions.",
+    "relatedSlugs": ["devops", "software-engineer", "cybersecurity-analyst"],
+    "faq": [
+      { "question": "Should I list all three cloud platforms on my resume?", "answer": "List platforms where you have real hands-on experience. If the job targets one provider, lead with that. Multi-cloud experience is a strength — just be specific about what you did on each." }
+    ],
+    "commonMistakes": ["Listing certifications without showing hands-on work", "No cost or scale metrics", "Vague 'managed cloud infrastructure' without specifics"]
+  },
+  {
+    "slug": "social-media-manager",
+    "title": "Social Media Manager Resume Bullet Points",
+    "metaDescription": "Social media manager resume bullet examples. How to show engagement, growth, and campaign impact on your resume.",
+    "intro": "Social media manager resume bullets should show channel growth, engagement, and campaign ROI. This guide gives you examples for organic, paid, and community management roles.",
+    "bulletExamples": [
+      "Grew Instagram following from 5K to 50K in 12 months through content strategy and influencer partnerships; engagement rate 4.5%.",
+      "Managed $150K annual paid social budget across Meta and LinkedIn; generated 2,000+ qualified leads at $22 CPL.",
+      "Created and executed content calendar of 60+ posts per month across 4 platforms; maintained consistent brand voice.",
+      "Launched TikTok presence from zero; reached 1M+ views in first quarter through trending audio and original series.",
+      "Built and moderated community of 10K+ members; increased repeat engagement by 40% through events and AMAs."
+    ],
+    "impactFormulas": [
+      "Growth + metric (e.g. 'Grew X from Y to Z; engagement rate A%')",
+      "Budget + ROI (e.g. 'Managed $X budget; generated Y leads at $Z CPL')",
+      "Content + reach (e.g. 'Created X posts/month; achieved Y impressions')"
+    ],
+    "body": "Lead with growth metrics (followers, engagement rate, reach), campaign ROI (CPL, ROAS, conversions), and content volume. Show platform-specific expertise and analytics tools (Meta Business Suite, Sprout Social, Hootsuite).\n\nTailor to the role — organic roles emphasise content and engagement; paid roles emphasise budget and ROI; community roles emphasise retention and advocacy. WadeCV can help you align your social media experience with specific job descriptions.",
+    "relatedSlugs": ["marketing-manager", "content-writer", "ux-designer"],
+    "faq": [
+      { "question": "How do I show social media ROI on my resume?", "answer": "Use platform-native metrics: follower growth, engagement rate, reach, impressions. For paid: CPL, ROAS, conversion rate. For community: member growth, repeat engagement, event attendance." }
+    ],
+    "commonMistakes": ["No growth or engagement metrics", "Listing only platforms without outcomes", "Generic 'managed social media' without scale or strategy"]
+  },
+  {
+    "slug": "supply-chain-analyst",
+    "title": "Supply Chain Analyst Resume Bullet Points",
+    "metaDescription": "Supply chain analyst resume bullet examples. How to show forecasting accuracy, cost reduction, and process optimisation.",
+    "intro": "Supply chain analyst resume bullets should show forecasting accuracy, cost savings, and process improvements. This guide gives you examples for procurement, logistics, and demand planning roles.",
+    "bulletExamples": [
+      "Improved demand forecast accuracy from 72% to 89% using statistical models; reduced excess inventory by $1.2M.",
+      "Analysed supplier lead times across 80+ vendors; identified bottlenecks and reduced average lead time by 15%.",
+      "Designed inventory replenishment model that reduced stockouts by 25% while cutting carrying costs by 18%.",
+      "Built automated procurement dashboard in Power BI tracking 20+ KPIs; adopted by supply chain leadership for weekly reviews.",
+      "Led RFQ process for 5 key commodity groups; negotiated contracts saving $500K annually with improved quality SLAs."
+    ],
+    "impactFormulas": [
+      "Analysis + outcome (e.g. 'Improved forecast accuracy from X% to Y%; reduced Z')",
+      "Process + savings (e.g. 'Designed X; reduced stockouts by Y% and costs by Z%')",
+      "Scope + result (e.g. 'Analysed X vendors; reduced lead time by Y%')"
+    ],
+    "body": "Lead with impact: forecast accuracy, cost savings, inventory reduction, lead time improvements. Show tools (SAP, Oracle SCM, Power BI, advanced Excel) and methodologies (statistical forecasting, Lean, Six Sigma). Quantify supplier count, SKU volume, or spend managed.\n\nTailor to the function — demand planners focus on forecast accuracy; procurement analysts on cost savings; logistics analysts on transit times and fulfilment. WadeCV can help you align your supply chain experience with specific job descriptions.",
+    "relatedSlugs": ["data-analyst", "operations-manager", "business-analyst"],
+    "faq": [
+      { "question": "How do I show supply chain impact as a junior analyst?", "answer": "Focus on analysis outcomes: dashboards built, reports adopted, recommendations made, process improvements suggested. Even if you didn't own the final decision, your analysis drove it." }
+    ],
+    "commonMistakes": ["Listing only tools without outcomes", "No forecasting or cost metrics", "Generic 'supported supply chain' without specifics"]
+  },
+  {
+    "slug": "content-writer",
+    "title": "Content Writer Resume Bullet Points",
+    "metaDescription": "Content writer resume bullet examples. How to show SEO impact, traffic growth, and content strategy on your resume.",
+    "intro": "Content writer resume bullets should show traffic, engagement, and business impact from your writing. This guide gives you examples for SEO, blog, copywriting, and content marketing roles.",
+    "bulletExamples": [
+      "Published 100+ SEO-optimised articles; grew organic traffic from 10K to 80K monthly sessions in 18 months.",
+      "Wrote product launch copy for 5 feature releases; landing pages converted at 12% (3x industry average).",
+      "Developed content strategy and editorial calendar for B2B SaaS blog; increased MQLs from content by 40%.",
+      "Edited and fact-checked 30+ technical articles per quarter; maintained brand voice across 4 contributing authors.",
+      "Created email nurture series of 12 emails; improved open rate by 25% and click-through rate by 15% vs previous campaigns."
+    ],
+    "impactFormulas": [
+      "Volume + growth (e.g. 'Published X articles; grew traffic from Y to Z')",
+      "Copy + conversion (e.g. 'Wrote X; converted at Y%')",
+      "Strategy + outcome (e.g. 'Developed X; increased Y by Z%')"
+    ],
+    "body": "Lead with traffic, conversion, or engagement metrics. Show content types (blog, landing pages, email, whitepapers) and tools (WordPress, SEO tools, CMS, analytics). Distinguish between SEO content, copywriting, and content strategy.\n\nTailor to the role — SEO writers emphasise organic traffic and rankings; copywriters emphasise conversion; content strategists emphasise editorial calendars and business impact. WadeCV can help you align your content writing experience with specific job descriptions.",
+    "relatedSlugs": ["marketing-manager", "social-media-manager", "ux-designer"],
+    "faq": [
+      { "question": "How do I show writing impact without access to analytics?", "answer": "Use publication volume, engagement (shares, comments), editorial scope (topics, platforms), and qualitative outcomes (stakeholder feedback, brand consistency). Ask for analytics access in future roles." }
+    ],
+    "commonMistakes": ["No traffic or engagement metrics", "Listing only topics without outcomes", "Generic 'wrote blog posts' without scale or strategy"]
   }
 ]
