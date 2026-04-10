@@ -2,27 +2,45 @@
   {
     "slug": "workday",
     "name": "Workday",
-    "metaDescription": "Beat the Workday ATS in 2026: exact parsing rules, formatting dos and don’ts, and the keywords recruiters filter on. Free checklist inside.",
-    "intro": "Workday is used by many large employers for recruiting. Understanding how Workday ATS parses and ranks resumes can help you format and phrase your application so it gets seen by recruiters. This guide covers typical parsing behaviour and how to optimize your resume.",
+    "metaDescription": "Beat the Workday ATS in 2026: exact parsing rules, formatting dos and don'ts, and the keywords recruiters filter on. Free checklist inside.",
+    "intro": "Workday Recruiting powers hiring at over 10,000 organizations including Walmart, Salesforce, Bank of America, and Netflix. As part of the broader Workday HCM suite, the recruiting module tightly integrates with HR systems — meaning your resume data flows from application through onboarding. Workday's parser is strict about structure, and its auto-screen features can filter candidates before a recruiter ever sees your application.",
     "parsingRules": [
-      "Workday extracts sections (experience, education, skills) and parses dates, job titles, and company names.",
-      "Headings and consistent formatting help the system correctly assign content to the right section.",
-      "Bullet points and clear job titles are generally parsed well; avoid complex tables or graphics.",
-      "Skills and keywords from the job description are matched; include relevant terms in your resume text.",
-      "Custom questions and required fields in the application must be completed; incomplete applications may be deprioritised."
+      "Workday's parser extracts sections (experience, education, skills) and maps them to structured candidate profile fields. Each field is individually searchable by recruiters.",
+      "The parser expects standard date formats (e.g., Jan 2023 – Present). Non-standard formats like 'Q1 2023' or '2023.01' may cause dates to be missed entirely, leaving gaps in your timeline.",
+      "Workday uses configurable screening questions with knockout criteria. Answering 'No' to a required qualification (e.g., 'Do you have a bachelor's degree?') can trigger automatic rejection before a recruiter reviews your resume.",
+      "Skills extracted from your resume are matched against the job requisition's required and preferred qualifications. Workday's matching algorithm weights exact keyword matches over synonyms.",
+      "Custom application questions are tied to compliance requirements. Incomplete or skipped questions may prevent your application from being submitted at all.",
+      "Workday stores your candidate profile across the entire organization. Applying to one role makes your profile visible to recruiters across all departments and locations."
     ],
     "formattingNotes": [
-      "Use standard section headings (e.g. Experience, Education, Skills) so the ATS can map content correctly.",
-      "Prefer simple bullet lists over nested tables or multi-column layouts in the body of the resume.",
-      "Include full job titles and company names; spell out acronyms once if they are important keywords.",
-      "Save and submit your resume as a .docx or PDF; ensure the file is text-based and not image-only.",
-      "Match the wording of the job description where it honestly applies—keywords matter for ranking."
+      "Use standard section headings (Experience, Education, Skills, Certifications) exactly as written. Workday's parser uses heading recognition to assign content to profile fields — creative headings like 'Where I've Made an Impact' will be parsed as unstructured text.",
+      "Single-column layout only. Workday's parser reads left-to-right, top-to-bottom. Multi-column layouts cause content from different sections to be interleaved in the parsed output.",
+      "Each role should follow the format: Job Title, Company Name, City/State, Start Date – End Date. Workday extracts each of these into separate fields, so inconsistencies create visible errors in your candidate profile.",
+      "Include a dedicated Skills section with comma-separated keywords. Workday's requisition matching pulls heavily from this section when calculating your qualification score.",
+      "Save as PDF with selectable text or .docx. Image-only PDFs (scanned documents) cannot be parsed. Workday will store the file but extract no searchable text from it.",
+      "Keep file size under 5 MB. Workday enforces upload limits that vary by employer configuration, but 5 MB is the most common threshold."
     ],
-    "body": "Workday ATS works best with clean, well-structured resumes. Use a single column, clear headings, and consistent date formats.\n\nRepeating keywords from the job description in your experience and skills sections can improve your ranking, but avoid stuffing—relevance and clarity matter for human reviewers too. After you pass the ATS, recruiters will look for impact and fit. Tailoring your resume to each role (including keyword alignment) will give you the best chance. WadeCV can help you create an ATS-friendly, tailored resume that works for Workday and other systems.",
+    "body": "Workday processes millions of job applications annually across enterprise employers in every industry. The platform is particularly dominant in Fortune 500 companies, financial services, healthcare, and technology. If you encounter an application portal that asks you to 'Sign In with Workday' or redirects to a myworkday.com subdomain, you are applying through Workday Recruiting.\n\nThe most critical difference between Workday and other ATS platforms is its screening automation. Workday allows employers to configure automatic knockout rules tied to application questions. Unlike Lever or Greenhouse, where every application reaches a recruiter's pipeline, Workday can reject candidates before any human reviews the resume. This makes completing every application question accurately essential — a single disqualifying answer removes you from consideration permanently for that requisition.\n\nWorkday's keyword matching works at the requisition level. Each job posting has required qualifications and preferred qualifications, and Workday scores candidates based on how well their parsed resume data matches these lists. The scoring is largely keyword-based: if the job requires 'Python' and your resume says 'Python programming,' you match. If your resume says 'scripting languages' without naming Python, you may not. Always mirror the exact terminology from the job posting.\n\nAnother Workday-specific consideration is the unified candidate profile. When you apply to any role at a Workday-powered organization, your profile becomes visible across the entire company. Recruiters from different departments can search the candidate database and find your profile. This means your resume should include both role-specific keywords and broader industry terms — you want to be discoverable for the role you applied to and for adjacent opportunities across the organization.\n\nWadeCV analyzes the specific job description from any Workday posting, identifies the required and preferred qualifications, and generates a tailored resume that aligns your experience with Workday's matching criteria. Every resume WadeCV produces uses ATS-safe formatting that parses cleanly in Workday's strict parser.",
     "faq": [
       {
+        "question": "Does Workday automatically reject resumes?",
+        "answer": "Yes. Workday supports configurable knockout screening questions. Employers can set rules that automatically disqualify candidates who answer 'No' to required qualifications (e.g., work authorization, minimum degree). This rejection happens before a recruiter reviews your resume, so answer every screening question carefully."
+      },
+      {
         "question": "What file format should I use for Workday?",
-        "answer": "Use .docx or PDF with selectable text. Avoid image-only PDFs so the ATS can parse your content. Keep formatting simple."
+        "answer": "Use .docx or PDF with selectable text. Avoid image-only PDFs (scanned documents) since Workday's parser cannot extract text from images. Keep file size under 5 MB, which is the most common upload limit across Workday implementations."
+      },
+      {
+        "question": "Can recruiters at other departments see my Workday application?",
+        "answer": "Yes. Workday creates a unified candidate profile across the entire organization. When you apply to one role, recruiters in other departments can search and find your profile. Include broad industry keywords alongside role-specific terms to be discoverable for adjacent opportunities."
+      },
+      {
+        "question": "How does Workday rank candidates?",
+        "answer": "Workday scores candidates based on keyword matches between your parsed resume and the job requisition's required and preferred qualifications. Exact keyword matches score higher than synonyms. Always mirror the terminology from the job posting in your resume."
+      },
+      {
+        "question": "Should I apply to multiple roles at the same Workday company?",
+        "answer": "Yes, but be strategic. Each application is tracked, and recruiters can see all your submissions. Tailor each resume to the specific role. Applying to too many unrelated positions can signal unfocused interest, but 2-3 well-targeted applications demonstrate genuine interest in the company."
       }
     ],
     "relatedSlugs": [
@@ -34,23 +52,47 @@
   {
     "slug": "greenhouse",
     "name": "Greenhouse",
-    "metaDescription": "Pass the Greenhouse ATS screen: how Greenhouse parses resumes, which formats survive, and the keywords that rank you higher. 2026 guide.",
-    "intro": "Greenhouse is a popular applicant tracking system used by many tech and growth-stage companies. Knowing how to format and keyword your resume for Greenhouse can improve your chances of passing the initial screen and reaching a human reviewer.",
+    "metaDescription": "Pass the Greenhouse ATS screen: how Greenhouse parses, scores, and surfaces resumes to hiring teams. Formatting rules, keyword strategy, and scorecard tips for 2026.",
+    "intro": "Greenhouse powers recruiting at over 7,500 companies including Airbnb, HubSpot, Stripe, Coinbase, and Wayfair. Built for structured hiring, Greenhouse emphasizes scorecard-based evaluation where interviewers rate candidates against predefined criteria. Your resume needs to not only parse correctly but also map clearly to the competencies the hiring team will evaluate.",
     "parsingRules": [
-      "Greenhouse parses resume text into structured fields (experience, education, skills) for recruiter review and search.",
-      "Clear section headings and consistent formatting improve parsing accuracy.",
-      "Recruiters often search by keyword; including role-relevant terms in your resume helps you show up in results.",
-      "Attachments are stored and displayed to recruiters; a clean, readable PDF or DOCX is recommended.",
-      "Application questions may be required; incomplete applications may not be considered."
+      "Greenhouse uses a built-in resume parser that extracts your resume into a structured candidate profile — name, contact info, current title, work history, education, and skills are mapped to individual fields visible to the entire hiring team.",
+      "Recruiters search Greenhouse's candidate database using keyword filters, tags, and source tracking. Your resume text must contain the exact terms hiring managers use in their job descriptions and scorecards.",
+      "Greenhouse displays your parsed resume alongside the original attachment. If the parser misreads your formatting, recruiters see both the error and the original — but first impressions are formed from the parsed view.",
+      "Unlike Taleo or Workday, Greenhouse does not auto-reject based on screening questions. Applications enter the hiring pipeline, but recruiters use 'Preliminary Screen' reject reasons to quickly filter unqualified candidates.",
+      "Greenhouse supports PDF, DOCX, and plain text uploads. The parser handles all three formats, but clean DOCX files typically produce the most accurate extraction of dates and job titles.",
+      "When you apply via a Greenhouse-hosted job board (recognizable by boards.greenhouse.io in the URL), your resume is parsed immediately and a candidate profile is created. This profile persists and is searchable for future roles at the same company."
     ],
     "formattingNotes": [
-      "Use standard headings (Experience, Education, Skills) and a single-column layout for best parsing.",
-      "Avoid images, heavy graphics, or multi-column tables in the main body of the resume.",
-      "Use bullet points and clear job titles; include company names and dates in a consistent format.",
-      "Incorporate relevant keywords from the job description naturally in your bullets and skills section.",
-      "Keep the resume to a reasonable length (e.g. 1–2 pages) so recruiters can scan it quickly in Greenhouse."
+      "Use a single-column layout with standard section headings: Experience (or Work Experience), Education, Skills, and optionally Projects or Certifications. Greenhouse maps content by heading recognition — non-standard headings like 'My Journey' will be treated as unstructured text.",
+      "Format each role as: Job Title | Company Name | Start Date – End Date. Greenhouse extracts these into separate profile fields. Inconsistent formatting (e.g., mixing 'Jan 2023' with '01/2023') creates visible parsing errors.",
+      "Use 3–5 bullet points per role, each starting with a strong action verb. Greenhouse's candidate profile view displays bullets cleanly, and interviewers use them to score you against the scorecard criteria.",
+      "Include a dedicated Skills section with technologies, tools, and methodologies listed as comma-separated keywords. Greenhouse's search indexes this section for recruiter keyword filtering.",
+      "Avoid headers, footers, text boxes, tables, and images. Greenhouse's parser can skip or misread content in these elements. Stick to standard body text and bullet lists.",
+      "Keep your resume to 1–2 pages. Greenhouse displays a preview card that truncates long resumes. Front-load your strongest qualifications in the first half so they appear in the preview."
     ],
-    "body": "Greenhouse allows recruiters to search and filter by keywords and experience. A well-formatted resume with relevant terms will rank better and be easier to review. Focus on impact and clarity—ATS optimization should support, not replace, strong content. Tailoring your resume to each Greenhouse job posting will align your language with what recruiters are looking for. WadeCV can help you build an ATS-friendly, tailored resume that performs well in Greenhouse and similar systems.",
+    "body": "Greenhouse is the dominant ATS in the technology, SaaS, and venture-backed startup ecosystem. Companies using Greenhouse tend to follow structured hiring practices — every role has a defined scorecard with specific competencies, and interviewers evaluate candidates against these criteria rather than relying on gut instinct. This means your resume needs to clearly demonstrate the competencies listed in the job description.\n\nThe most important concept for Greenhouse optimization is the scorecard. When a company creates a job in Greenhouse, they define the key attributes they are evaluating (e.g., 'Technical depth in distributed systems,' 'Cross-functional communication,' 'Bias for action'). Interviewers score candidates on each attribute after every interview stage. While you cannot see the scorecard, the job description almost always reflects its criteria. Keywords and phrases from the job description map directly to what interviewers will look for in your resume.\n\nGreenhouse's search and filtering work differently from enterprise ATS platforms. Recruiters use keyword search, source tracking, and custom tags to manage their pipeline. There is no automatic scoring algorithm that ranks candidates numerically. Instead, the recruiter manually reviews applications, uses the parsed profile to assess fit, and advances candidates through pipeline stages. This makes readability and keyword alignment equally important — your resume needs to both match search terms and be easy for a human to scan.\n\nAnother Greenhouse-specific feature is the candidate survey. After applying, you may receive an automated email asking for additional information (pronouns, demographic data, referral source). These surveys are optional but tracked. The referral source question is particularly important — if someone at the company referred you, mention it in both the survey and your application to ensure the referral is properly attributed.\n\nGreenhouse's talent pool keeps your profile active after you apply. If you are rejected for one role, your profile remains searchable for future openings. Recruiters can filter past candidates by skills, experience level, and previous pipeline stage. Including broad skill keywords alongside role-specific terms ensures you remain discoverable for adjacent roles.\n\nWadeCV analyzes job descriptions from any Greenhouse posting, identifies the scorecard criteria embedded in the requirements, and generates a tailored resume that aligns your experience with what interviewers will evaluate. Every resume uses Greenhouse-safe formatting — single column, standard headings, clean bullets — so your content parses correctly into Greenhouse's candidate profile.",
+    "faq": [
+      {
+        "question": "Does Greenhouse automatically reject resumes?",
+        "answer": "No. Greenhouse does not use knockout questions or auto-rejection rules like Workday or Taleo. Every application enters the hiring pipeline. However, recruiters use the 'Preliminary Screen' stage to quickly review and reject candidates who do not meet minimum qualifications, so your resume still needs to clearly demonstrate the required skills."
+      },
+      {
+        "question": "What file format works best for Greenhouse?",
+        "answer": "Clean DOCX files typically produce the most accurate parsing of dates, job titles, and company names. PDF with selectable text also works well. Avoid image-only PDFs, scanned documents, and files with complex formatting like tables or text boxes."
+      },
+      {
+        "question": "How do Greenhouse scorecards affect my application?",
+        "answer": "Each role in Greenhouse has a scorecard with specific competencies that interviewers evaluate. These criteria are reflected in the job description. Align your resume bullets with the competencies listed in the requirements — interviewers will look for evidence of these specific skills when reviewing your resume."
+      },
+      {
+        "question": "Can I apply to multiple jobs at the same Greenhouse company?",
+        "answer": "Yes. Greenhouse tracks candidates across all applications at the same company. Your profile is shared across hiring teams, so recruiters can see your full application history. Tailor each resume to the specific role, as interviewers will review the version you submitted for their particular position."
+      },
+      {
+        "question": "How long does my resume stay in Greenhouse?",
+        "answer": "Your candidate profile persists in Greenhouse's talent pool indefinitely (subject to company data retention policies and privacy regulations). Recruiters can search past candidates for future openings. Include broad industry keywords alongside role-specific terms to remain discoverable for adjacent roles."
+      }
+    ],
     "relatedSlugs": [
       "lever",
       "ashby",
@@ -110,21 +152,47 @@
   {
     "slug": "icims",
     "name": "iCIMS",
-    "metaDescription": "Get past iCIMS ATS screening: how iCIMS parses resumes, formatting rules that work, and keywords to include. Step-by-step 2026 guide.",
-    "intro": "iCIMS is widely used by mid-size and large employers. Understanding how iCIMS parses resumes can help you format and keyword your application effectively.",
+    "metaDescription": "Get past iCIMS ATS screening: how iCIMS parses and ranks resumes, formatting that survives the Talent Cloud, and keywords enterprise recruiters filter on. 2026 guide.",
+    "intro": "iCIMS Talent Cloud is one of the largest ATS platforms in the world, powering hiring at over 4,000 employers including Amazon, Target, FedEx, UnitedHealth Group, and Goldman Sachs. iCIMS handles over 4 million hires per year and processes hundreds of millions of applications. Its AI-powered matching engine scores candidates against job requirements, making keyword alignment critical for getting past the initial screen.",
     "parsingRules": [
-      "iCIMS extracts resume content into searchable fields for recruiters.",
-      "Standard section headings improve parsing accuracy.",
-      "Keywords from the job description are used in matching; include relevant terms.",
-      "Complete all required application fields; incomplete applications may be deprioritised."
+      "iCIMS uses an AI-powered parsing engine that extracts your resume into a structured candidate profile with separate fields for contact information, work experience, education, skills, and certifications. Each field is individually searchable.",
+      "The platform's matching algorithm compares your parsed profile against the job requisition's requirements and generates a qualification score. Higher scores push your application to the top of the recruiter's review queue.",
+      "iCIMS supports both keyword matching and semantic matching — it can recognize that 'people management' relates to 'team leadership.' However, exact keyword matches still score significantly higher than semantic equivalents.",
+      "Recruiters use iCIMS's advanced filtering to search by skills, years of experience, education level, location, and custom fields. Missing any of these data points from your resume means you cannot appear in filtered searches.",
+      "iCIMS stores a 'Profile' (parsed structured data) separate from your uploaded 'Resume' (the original file). Recruiters primarily search and filter using Profile data, so parsing accuracy directly affects your visibility.",
+      "The platform supports PDF, DOCX, TXT, and RTF uploads. DOCX files generally produce the cleanest parsing. Very old PDF formats or heavily designed resumes with graphics can cause parsing failures."
     ],
     "formattingNotes": [
-      "Use clear headings (Experience, Education, Skills) and single-column layout.",
-      "Avoid complex tables or graphics in the body.",
-      "Include full job titles and company names; use consistent date formats.",
-      "Incorporate keywords from the job description naturally."
+      "Use standard section headings: Work Experience (or Professional Experience), Education, Skills, Certifications. iCIMS's parser relies on heading recognition to categorize content — non-standard headings result in content being dumped into an 'Other' field that recruiters rarely search.",
+      "Single-column layout is essential. iCIMS reads content sequentially, and multi-column or sidebar layouts cause skills and experience from different sections to be interleaved in the parsed Profile.",
+      "Format each role as: Job Title, Company Name, Location, Start Date – End Date on a single line or clearly grouped. iCIMS extracts each element into separate fields; inconsistent formatting creates gaps in your employment timeline.",
+      "Include a clear Skills section with both technical and soft skills. iCIMS's matching algorithm weights the Skills section heavily when calculating your qualification score against the job requirements.",
+      "Spell out acronyms at least once followed by the abbreviation: 'Certified Public Accountant (CPA).' iCIMS indexes both forms, but the expanded version catches searches by recruiters who type the full term.",
+      "Avoid tables, text boxes, headers, footers, and images in the body of your resume. iCIMS's parser can skip content in these elements entirely, causing critical information to be missing from your searchable Profile."
     ],
-    "body": "iCIMS works best with clean, text-based resumes. Use standard headings and bullet points. Tailor your resume to each role and include relevant keywords. WadeCV can help you create an ATS-friendly resume that works for iCIMS and other systems.",
+    "body": "iCIMS is the dominant ATS platform for enterprise employers in healthcare, retail, financial services, logistics, and government contracting. If you are applying to a large corporation with thousands of employees, there is a strong chance they use iCIMS. The platform's job application pages are often embedded directly into company career sites, making it less obvious that you are applying through iCIMS — but the underlying parsing and matching engine is the same regardless of the branding.\n\nThe most important concept for iCIMS optimization is the qualification score. When a recruiter opens their requisition dashboard, candidates are sorted by how well their parsed Profile matches the job requirements. This matching is automated — iCIMS's AI compares your skills, experience level, education, and keywords against the job posting and assigns a relative score. Candidates with higher scores appear first. If your resume parses poorly or lacks the right keywords, you may be qualified but ranked below candidates with better-optimized resumes.\n\niCIMS's search and filter capabilities are extensive. Recruiters can filter candidates by specific skills, minimum years of experience, degree type, location radius, and dozens of custom fields. Every filter is applied against your parsed Profile data, not the original resume file. This means if iCIMS fails to parse your years of experience correctly (due to inconsistent date formats) or misses a skill (because it was in a text box the parser skipped), you become invisible to filtered searches even if the information is clearly visible in your actual resume.\n\nA critical iCIMS-specific detail is the distinction between your Profile and your Resume. Your Profile is the structured, searchable data that iCIMS extracted from your upload. Your Resume is the original file attachment. Recruiters search and filter using Profile data, but they read the Resume attachment when evaluating candidates they have already found. Both need to be optimized — the Profile for discoverability, the Resume for readability and impact.\n\niCIMS also supports candidate re-engagement. If you previously applied to a company using iCIMS, your Profile may still be in their system. Recruiters running searches for new requisitions can find your old profile. Applying again with an updated, better-optimized resume overwrites your old Profile with fresh data, so reapplying to companies where you were previously rejected is a viable strategy if your resume has improved.\n\nWadeCV analyzes job descriptions from any iCIMS-powered career site, identifies the keywords and qualifications the matching algorithm will score against, and generates a tailored resume with clean formatting that parses accurately into iCIMS's Profile fields. Every resume is structured for maximum discoverability in recruiter searches.",
+    "faq": [
+      {
+        "question": "Does iCIMS automatically reject resumes?",
+        "answer": "iCIMS can be configured with knockout screening questions that automatically disqualify candidates. However, the more common filtering is score-based ranking — your resume is not rejected outright, but a low qualification score means recruiters may never see your application. Keyword alignment with the job description directly affects your score."
+      },
+      {
+        "question": "What file format works best for iCIMS?",
+        "answer": "DOCX files generally produce the cleanest parsing results. PDF with selectable text also works well. Avoid image-only PDFs, heavily designed resumes with graphics, and very old file formats. iCIMS also accepts TXT and RTF, but DOCX gives the most reliable extraction."
+      },
+      {
+        "question": "What is the difference between my iCIMS Profile and Resume?",
+        "answer": "Your Profile is the structured data that iCIMS extracted from your resume — separate fields for skills, experience, education, and contact info. This is what recruiters search and filter. Your Resume is the original file you uploaded. Recruiters read it after finding you through Profile searches. Both need to be optimized: the Profile for discoverability, the Resume for readability."
+      },
+      {
+        "question": "Should I reapply if I was rejected on iCIMS before?",
+        "answer": "Yes, if your resume has improved. Reapplying to the same company overwrites your old Profile with updated data. If your new resume is better optimized with relevant keywords and cleaner formatting, you will score higher in the matching algorithm than your previous application."
+      },
+      {
+        "question": "How does iCIMS rank candidates?",
+        "answer": "iCIMS uses an AI-powered matching algorithm that compares your parsed Profile against the job requisition's requirements. It considers keyword matches, skills, years of experience, education level, and location. Higher-scoring candidates appear at the top of the recruiter's dashboard. Exact keyword matches score higher than semantic equivalents."
+      }
+    ],
     "relatedSlugs": [
       "workday",
       "greenhouse",
@@ -134,21 +202,47 @@
   {
     "slug": "taleo",
     "name": "Oracle Taleo",
-    "metaDescription": "Oracle Taleo ATS resume guide: parsing rules, safe formatting, and keyword placement that gets enterprise applications past the filter.",
-    "intro": "Oracle Taleo is used by many enterprise employers. Knowing how Taleo parses and ranks resumes can improve your chances of passing the initial screen.",
+    "metaDescription": "Oracle Taleo ATS resume guide for 2026: how Taleo parses, screens, and ranks enterprise applications. Knockout question strategy, keyword rules, and formatting that survives the legacy parser.",
+    "intro": "Oracle Taleo remains one of the most widely deployed enterprise ATS platforms in the world, used by hundreds of Fortune 500 companies including Procter & Gamble, Starbucks, Lockheed Martin, Boeing, and Johnson & Johnson. As a legacy system first launched in 1999, Taleo's parser technology is older and stricter than modern ATS platforms — making resume formatting especially critical for accurate extraction.",
     "parsingRules": [
-      "Taleo parses resume text into structured fields for recruiter search and filtering.",
-      "Consistent formatting and headings help the system assign content correctly.",
-      "Keywords from the job posting are matched; include relevant terms in your resume.",
-      "Application questions and required fields must be completed."
+      "Taleo's resume parser (Taleo Resume Parsing or TRP) extracts text into structured requisition fields: contact info, objective/summary, work experience, education, skills, and certifications. The parser is rules-based rather than AI-powered, making it less forgiving of non-standard formats.",
+      "Taleo uses configurable knockout questions with strict pass/fail logic. Answering incorrectly on required qualifications (work authorization, clearance level, minimum education) triggers automatic rejection — your resume is never reviewed by a human.",
+      "Recruiters search Taleo's candidate database using keyword Boolean searches (AND, OR, NOT). Your resume must contain exact keyword matches for the terms recruiters use in their searches.",
+      "Taleo's candidate ranking system assigns a Req Rank score based on how well your profile matches the requisition's requirements. This score determines your position in the recruiter's candidate queue.",
+      "The parser handles PDF, DOCX, TXT, and HTML uploads. However, Taleo's older parsing engine struggles with complex formatting — tables, columns, and graphics frequently cause parsing failures.",
+      "Taleo supports both external applications (career site submissions) and internal applications (employee referrals). Referred candidates often receive priority visibility in the recruiter's queue."
     ],
     "formattingNotes": [
-      "Use standard section headings and a simple, single-column layout.",
-      "Prefer bullet points over dense paragraphs or tables.",
-      "Spell out important acronyms at least once if they are keywords.",
-      "Save as .docx or PDF with selectable text."
+      "Use the most basic formatting possible. Taleo's parser is one of the strictest in the ATS market. Avoid columns, tables, text boxes, headers, footers, graphics, logos, and any decorative elements. Plain text with simple bullet points is safest.",
+      "Use standard section headings exactly as written: Work Experience, Education, Skills, Summary. Taleo's rules-based parser depends on exact heading matches to categorize content into the correct profile fields.",
+      "Format dates consistently throughout your resume: use 'Month Year' format (e.g., 'January 2023' or 'Jan 2023'). Taleo's date parser is strict — formats like '1/2023', '2023-01', or 'Q1 2023' may not be recognized, creating employment gaps.",
+      "Include a clear Skills section. Taleo's Req Rank scoring pulls heavily from skills data when matching candidates to requisitions. List both technical skills and industry-specific terminology.",
+      "Spell out all acronyms at least once, then include the abbreviation: 'Project Management Professional (PMP).' Taleo indexes the exact text — if a recruiter searches 'PMP' and your resume only says 'Project Management Professional,' you may not appear.",
+      "Submit as .docx for the most reliable parsing. While Taleo accepts PDF, its older parser engine extracts text more reliably from Word documents than from PDFs, especially PDFs with any embedded formatting."
     ],
-    "body": "Taleo rewards clear structure and keyword relevance. Use standard headings and weave in job-description keywords naturally. Focus on impact and outcomes. WadeCV can help you build a Taleo-friendly, tailored resume.",
+    "body": "Oracle Taleo has been processing job applications since 1999, making it one of the oldest ATS platforms still in widespread use. Despite Oracle's efforts to modernize the platform as part of Oracle HCM Cloud, many large enterprises still run Taleo Business Edition or Taleo Enterprise, which use the original parsing and screening technology. This means applicants in 2026 are often facing a parser that was designed in the early 2000s.\n\nThe most critical difference between Taleo and modern ATS platforms is knockout question enforcement. Taleo allows employers to configure mandatory screening questions with automatic disqualification rules. Unlike Greenhouse or Lever, where every application reaches a recruiter, Taleo can reject your application instantly based on your answers to screening questions. Common knockout questions include work authorization status, willingness to relocate, security clearance level, and minimum education requirements. Answer every screening question carefully and honestly — a single disqualifying answer permanently removes you from that requisition.\n\nTaleo's Req Rank scoring system determines where you appear in the recruiter's candidate queue. The system compares your parsed resume data against the job requisition's requirements — required qualifications, preferred qualifications, and keyword matches. Candidates with higher Req Rank scores appear first. Since Taleo uses rules-based matching rather than AI, exact keyword matches matter more than in modern systems. If the job description says 'Six Sigma' and your resume says 'process improvement methodology,' Taleo may not connect the two.\n\nTaleo's parser technology is notably less sophisticated than modern ATS parsers. Complex formatting that works fine in Greenhouse or Lever can cause significant parsing errors in Taleo. Tables, columns, text boxes, and graphics are particularly problematic — the parser may skip content entirely or assign it to the wrong profile field. The safest approach is to use the simplest possible formatting: single-column layout, standard headings, basic bullet points, and consistent date formats.\n\nDespite being a legacy platform, Taleo processes an enormous volume of applications at some of the world's largest employers. Government contractors, defense companies, pharmaceutical firms, and consumer goods companies are among the heaviest Taleo users. If you are applying to any Fortune 500 company with 'Oracle' branding in their career site, there is a good chance you are submitting through Taleo.\n\nWadeCV analyzes job descriptions from any Taleo-powered career site, identifies the required and preferred qualifications that Taleo's Req Rank algorithm will score against, and generates a tailored resume with the simplest, safest formatting to ensure clean parsing in Taleo's legacy parser engine.",
+    "faq": [
+      {
+        "question": "Does Oracle Taleo automatically reject resumes?",
+        "answer": "Yes. Taleo supports configurable knockout questions that automatically disqualify candidates. Common knockout criteria include work authorization, minimum education, security clearance, and willingness to relocate. Your application is rejected before any human reviews it if you fail a knockout question."
+      },
+      {
+        "question": "What file format works best for Taleo?",
+        "answer": "DOCX is the safest choice. Taleo's older parser engine extracts text more reliably from Word documents than PDFs. If you must use PDF, ensure it has selectable text (not a scanned image). Avoid heavily formatted or designed resumes — Taleo's parser struggles with complex layouts."
+      },
+      {
+        "question": "How does Taleo's Req Rank scoring work?",
+        "answer": "Taleo compares your parsed resume against the job requisition's required and preferred qualifications. It assigns a Req Rank score based on keyword matches, skills alignment, experience level, and education. Higher-ranked candidates appear first in the recruiter's queue. Exact keyword matches score higher than synonyms since the matching is rules-based, not AI-powered."
+      },
+      {
+        "question": "Why does my Taleo application show missing information?",
+        "answer": "Taleo's parser is strict about formatting. Tables, columns, text boxes, headers, footers, and graphics can cause content to be skipped entirely. Non-standard date formats may create employment gaps. Use the simplest formatting possible: single column, standard headings, basic bullets, and consistent date formats."
+      },
+      {
+        "question": "Can I edit my Taleo profile after submitting?",
+        "answer": "Most Taleo implementations allow you to log back into the career portal and update your profile and resume. However, changes to a submitted application may not be reflected for requisitions already in review. For new applications, always upload your most recent, optimized resume."
+      }
+    ],
     "relatedSlugs": [
       "workday",
       "icims",
@@ -158,21 +252,47 @@
   {
     "slug": "sap-successfactors",
     "name": "SAP SuccessFactors",
-    "metaDescription": "SAP SuccessFactors resume optimization: how the ATS parses your application, formatting that works, and keywords global employers look for.",
-    "intro": "SAP SuccessFactors Recruiting is used by many large and global employers. This guide covers how to format and keyword your resume for SuccessFactors.",
+    "metaDescription": "SAP SuccessFactors ATS resume guide for 2026: how the global enterprise recruiting module parses, ranks, and matches candidates. Formatting rules and keyword strategy for multinational employers.",
+    "intro": "SAP SuccessFactors Recruiting is the hiring module within SAP's enterprise human capital management (HCM) suite, used by over 8,000 organizations globally including Siemens, Bosch, Nestlé, Unilever, and Deloitte. As part of a broader HR ecosystem, SuccessFactors tightly integrates recruiting with workforce planning, compensation, and onboarding — meaning your resume data follows you from application through your entire employee lifecycle.",
     "parsingRules": [
-      "SuccessFactors parses resume content for recruiter search and candidate matching.",
-      "Structured sections and clear job titles improve parsing.",
-      "Keywords from the job description influence ranking; include relevant terms.",
-      "Complete all required application steps and questions."
+      "SuccessFactors uses a built-in resume parser that extracts content into structured candidate profile fields: personal information, work experience, education, skills, certifications, and languages. Each field is searchable by recruiters.",
+      "The platform supports competency-based matching, where your parsed skills and experience are compared against role-specific competency requirements defined by the employer. This goes beyond simple keyword matching — SuccessFactors maps your experience to organizational competency frameworks.",
+      "Recruiters use SuccessFactors' candidate search with filters for skills, experience years, education level, languages spoken, and location. Missing any of these data points means you will not appear in filtered candidate searches.",
+      "SuccessFactors supports configurable screening questions. Depending on the employer's configuration, these can be used for auto-qualification scoring or knockout disqualification. Read and answer every question carefully.",
+      "The parser handles PDF, DOCX, and plain text uploads. DOCX files produce the most consistent extraction results across different SuccessFactors deployments.",
+      "SuccessFactors creates a global candidate profile across the entire organization. Applying to one role at a multinational employer makes your profile visible to recruiters in every country and business unit."
     ],
     "formattingNotes": [
-      "Use standard headings (Experience, Education, Skills) and single-column layout.",
-      "Avoid images and complex formatting in the body.",
-      "Use consistent date formats and full company names.",
-      "Match job description language where it honestly applies."
+      "Use standard section headings: Professional Experience, Education, Skills, Languages, Certifications. SuccessFactors maps content by heading recognition, and non-standard headings result in content being categorized as miscellaneous.",
+      "Single-column layout with clear role formatting: Job Title | Company Name | Location | Start Date – End Date. SuccessFactors extracts each element into separate profile fields visible to recruiters across the global organization.",
+      "Include a Languages section if you speak multiple languages. SuccessFactors' search includes language filters, and multinational employers frequently search for candidates who speak specific languages. Use a format like: 'English (Native), Spanish (Professional), French (Conversational).'",
+      "List skills as comma-separated keywords in a dedicated Skills section. Include both technical skills and competency-related terms from the job description. SuccessFactors' competency matching draws heavily from this section.",
+      "Avoid tables, columns, text boxes, and images. SuccessFactors' parser can skip or misread formatted elements. Keep the layout clean and sequential.",
+      "Include location information (city and country) prominently. SuccessFactors recruiters at multinational companies frequently filter candidates by location, especially for roles with specific geographic requirements."
     ],
-    "body": "SuccessFactors works well with clean, keyword-aligned resumes. Emphasise impact and use standard formatting. Tailor your resume to each role. WadeCV can help you create an ATS-friendly resume that works for SuccessFactors and other systems.",
+    "body": "SAP SuccessFactors is the dominant recruiting platform for multinational corporations, particularly in manufacturing, pharmaceuticals, automotive, consumer goods, and professional services. Companies using SuccessFactors tend to operate across multiple countries and need an ATS that handles multilingual applications, compliance with local labor laws, and global talent mobility. If you are applying to a European-headquartered multinational or a company that uses 'SAP' branding in their HR systems, you are likely applying through SuccessFactors.\n\nThe most distinctive feature of SuccessFactors Recruiting is competency-based matching. While most ATS platforms use keyword matching to compare your resume against job requirements, SuccessFactors goes further by mapping your skills and experience to the employer's competency framework. Companies define competencies for each role (e.g., 'Strategic Thinking Level 3,' 'Project Management Level 4'), and the system attempts to match your profile data against these structured requirements. In practice, this means the keywords in the job description map to specific competencies — using the exact language from the posting is even more important than in keyword-only systems.\n\nSuccessFactors' global candidate profile is another critical consideration. When you apply to a role at a company like Siemens or Nestlé, your profile becomes visible to recruiters across every country and business unit in the organization. A recruiter in Munich searching for candidates with SAP experience can find your profile even if you applied to a different role in London. This makes your resume a long-term asset — include broad competency keywords, transferable skills, and language proficiencies alongside role-specific terms.\n\nLanguage skills deserve special attention when optimizing for SuccessFactors. Multinational employers actively search for multilingual candidates. SuccessFactors includes language fields in its candidate profile, and recruiters use language filters when searching. Always include a Languages section with your proficiency level for each language, even if the job description does not explicitly require additional languages.\n\nSuccessFactors deployments vary significantly between employers because the platform is highly configurable. Some companies use the full AI-powered matching suite, while others rely on basic keyword search. The safest optimization strategy is to combine exact keyword alignment (matching the job description verbatim) with competency-relevant language (demonstrating the underlying abilities the role requires) and clean, parseable formatting.\n\nWadeCV analyzes job descriptions from any SuccessFactors-powered career site, identifies both keyword requirements and underlying competency criteria, and generates a tailored resume with clean formatting that parses accurately across all SuccessFactors configurations.",
+    "faq": [
+      {
+        "question": "Does SAP SuccessFactors automatically reject resumes?",
+        "answer": "It depends on the employer's configuration. SuccessFactors supports knockout screening questions that can automatically disqualify candidates, but not all employers enable this feature. Some use screening questions only for scoring and ranking rather than rejection. Always answer screening questions carefully regardless."
+      },
+      {
+        "question": "What file format works best for SuccessFactors?",
+        "answer": "DOCX produces the most consistent parsing results across different SuccessFactors deployments. PDF with selectable text also works well. Avoid image-only PDFs, heavily designed resumes, and files with tables or columns — the parser may skip formatted elements."
+      },
+      {
+        "question": "How does SuccessFactors' competency matching work?",
+        "answer": "Companies define role-specific competencies (skills and abilities at specific proficiency levels) for each position. SuccessFactors maps your parsed resume data against these competency requirements. The job description reflects these competencies — mirror its exact language in your resume to score well in the matching process."
+      },
+      {
+        "question": "Should I include language skills on my resume for SuccessFactors?",
+        "answer": "Yes, always. SuccessFactors includes language proficiency fields in the candidate profile, and recruiters at multinational companies frequently filter candidates by language. Include a Languages section with proficiency levels (Native, Professional, Conversational) for every language you speak."
+      },
+      {
+        "question": "Can recruiters in other countries see my SuccessFactors application?",
+        "answer": "Yes. SuccessFactors creates a global candidate profile across the entire organization. Applying to one role makes your profile visible to recruiters in every country and business unit. Include transferable skills and broad competency keywords to be discoverable for roles beyond the one you applied to."
+      }
+    ],
     "relatedSlugs": [
       "workday",
       "taleo",
@@ -182,21 +302,47 @@
   {
     "slug": "jazzhr",
     "name": "JazzHR",
-    "metaDescription": "JazzHR ATS resume tips: how small and mid-size company ATS screens work, formatting rules, and keywords that get you shortlisted.",
-    "intro": "JazzHR is used by many small and mid-size companies. This guide covers how to format and keyword your resume for JazzHR.",
+    "metaDescription": "JazzHR ATS resume guide for 2026: how small and mid-size company ATS screens work, resume formatting rules, keyword matching, and tips to get shortlisted by SMB hiring teams.",
+    "intro": "JazzHR is an applicant tracking system built specifically for small and mid-size businesses, used by over 10,000 companies with typically 10–500 employees. Unlike enterprise ATS platforms like Workday or Taleo, JazzHR emphasizes simplicity and workflow automation for lean hiring teams. The platform's resume screening tools are less complex than enterprise systems, but understanding how JazzHR handles applications gives you a meaningful advantage over other candidates.",
     "parsingRules": [
-      "JazzHR parses resume content for recruiter review and search.",
-      "Clear headings and structure improve parsing.",
-      "Keywords from the job description help with matching.",
-      "Complete application questions and required fields."
+      "JazzHR's resume parser extracts text into a candidate profile with fields for contact information, work history, education, and skills. The parser is designed for simplicity — it handles standard resume formats well but can struggle with highly creative or designed layouts.",
+      "Recruiters review candidates in JazzHR through a pipeline view organized by hiring stages (e.g., New, Phone Screen, Interview, Offer). Your initial placement in the pipeline depends on how well your resume matches the recruiter's first-pass criteria.",
+      "JazzHR includes basic keyword screening — recruiters can search their candidate pool by keywords. However, there is no automated scoring or ranking algorithm like enterprise ATS platforms use. Recruiters manually review applications.",
+      "The platform supports collaborative hiring. Multiple team members (hiring manager, department lead, CEO at small companies) may review your resume and leave ratings. Clean, scannable formatting helps all reviewers quickly assess your qualifications.",
+      "JazzHR accepts PDF, DOCX, and plain text uploads. The parser handles all three, but DOCX typically produces the most reliable extraction.",
+      "Application forms in JazzHR may include custom screening questions. While JazzHR does not typically auto-reject based on answers, hiring managers can see your responses alongside your resume and may filter manually."
     ],
     "formattingNotes": [
-      "Use standard section headings and bullet points.",
-      "Keep layout simple and text-based.",
-      "Include relevant keywords from the job description.",
-      "Submit as PDF or DOCX with selectable text."
+      "Use standard section headings (Experience, Education, Skills) and a clean, single-column layout. JazzHR's parser is optimized for standard resume formats — creative layouts with sidebars or infographics may not parse correctly.",
+      "Format each role clearly: Job Title | Company Name | Start Date – End Date. At small companies, hiring managers (not professional recruiters) often review resumes, so clarity and readability matter even more than at large enterprises.",
+      "Use concise bullet points (3–4 per role) focused on impact and outcomes. SMB hiring managers are often busy founders or department leads with limited time for resume review. Make your key qualifications immediately visible.",
+      "Include a Skills section with keywords matching the job description. Even though JazzHR does not use automated scoring, recruiters use keyword search to find candidates when they have multiple applicants.",
+      "Keep your resume to 1 page if possible, 2 pages maximum. SMB hiring teams often review resumes on mobile devices or tablets through JazzHR's mobile app, where shorter resumes are easier to scan.",
+      "Avoid complex formatting: no tables, columns, text boxes, images, or graphics. JazzHR's parser works best with simple, text-based layouts."
     ],
-    "body": "JazzHR favours clear, scannable resumes. Use standard headings and emphasise impact. Tailor your resume to each role. WadeCV can help you create a resume that works for JazzHR and other ATS platforms.",
+    "body": "JazzHR is the most popular ATS among small and mid-size businesses in the United States. Companies using JazzHR are typically startups, local businesses, regional firms, and growing companies that need professional hiring tools without enterprise complexity. If you are applying to a company with fewer than 500 employees that uses an online application form (rather than just accepting email submissions), there is a good chance they are using JazzHR or a similar SMB-focused ATS.\n\nThe biggest difference between JazzHR and enterprise ATS platforms is the level of automation. Enterprise systems like Workday and Taleo can automatically score, rank, and reject candidates before a human sees the application. JazzHR takes a lighter approach — most candidate evaluation is done manually by the hiring team. This means your resume does not need to beat an algorithm, but it does need to impress busy hiring managers who may spend only 15–30 seconds on their initial scan.\n\nAt small companies, the hiring process is often less structured than at enterprises. The person reviewing your resume might be the CEO, a department head, or the direct hiring manager — not a professional recruiter trained in talent acquisition. This changes what makes an effective resume. Impact statements, quantified achievements, and clear demonstrations of relevant skills matter more than keyword density. Your resume needs to quickly answer the question: 'Can this person do the job we need done?'\n\nJazzHR's collaborative hiring feature means multiple stakeholders may review your resume. The hiring manager shares candidates with other team members, who leave ratings and comments. Your resume needs to be clear and scannable for all reviewers, including people outside the specific department who may not understand technical jargon. When possible, translate technical accomplishments into business outcomes that any reviewer can understand.\n\nKeyword optimization still matters in JazzHR, even without automated scoring. Recruiters use JazzHR's search function to find candidates in their pipeline, especially when they have a high volume of applicants. Including keywords from the job description in your Skills section and experience bullets ensures you surface when the hiring team searches for specific qualifications.\n\nWadeCV analyzes job descriptions from JazzHR-powered career pages, identifies the key qualifications the hiring team is looking for, and generates a tailored resume optimized for both the JazzHR parser and the human reviewers who will evaluate your application.",
+    "faq": [
+      {
+        "question": "Does JazzHR automatically reject resumes?",
+        "answer": "Generally no. JazzHR is designed for manual review by hiring teams. While the platform supports screening questions, most SMB employers use these for information gathering rather than automatic disqualification. Your resume will likely be reviewed by a human — make sure it clearly demonstrates your qualifications."
+      },
+      {
+        "question": "What file format works best for JazzHR?",
+        "answer": "DOCX produces the most reliable parsing. PDF with selectable text also works well. Avoid image-only PDFs or heavily designed resumes with graphics, sidebars, or complex layouts — JazzHR's parser handles standard formats best."
+      },
+      {
+        "question": "How long should my resume be for JazzHR applications?",
+        "answer": "Keep it to 1 page if possible, 2 pages maximum. SMB hiring managers are often busy founders or department leads who review resumes on JazzHR's mobile app. Shorter, more focused resumes with clear impact statements perform better than lengthy documents."
+      },
+      {
+        "question": "Who reviews my resume in JazzHR?",
+        "answer": "At small companies, multiple stakeholders often review applications: the hiring manager, department leads, and sometimes the CEO. JazzHR's collaborative hiring feature lets them share candidates and leave ratings. Make your resume clear and scannable for both technical and non-technical reviewers."
+      },
+      {
+        "question": "Does JazzHR use AI to rank candidates?",
+        "answer": "No. Unlike enterprise ATS platforms, JazzHR does not use AI-powered scoring or automated candidate ranking. Recruiters manually review applications and advance candidates through the pipeline. However, they can use keyword search to filter candidates, so include relevant terms from the job description."
+      }
+    ],
     "relatedSlugs": [
       "greenhouse",
       "lever",
@@ -206,21 +352,47 @@
   {
     "slug": "bamboohr",
     "name": "BambooHR",
-    "metaDescription": "BambooHR ATS resume guide: how SMB applicant tracking works, resume formatting that parses correctly, and keywords to match.",
-    "intro": "BambooHR is used by many SMBs for hiring. This guide covers how to format and keyword your resume for BambooHR.",
+    "metaDescription": "BambooHR ATS resume guide for 2026: how SMB applicant tracking works, resume formatting that parses correctly, and how to stand out with lean hiring teams.",
+    "intro": "BambooHR is an all-in-one HR platform with a built-in applicant tracking system, used by over 33,000 small and mid-size businesses worldwide. Unlike standalone ATS platforms, BambooHR's recruiting module is part of a broader HR suite that handles onboarding, payroll, and performance management. Companies using BambooHR are typically 50–1,000 employees — large enough for professional HR tools, but small enough that every hire matters.",
     "parsingRules": [
-      "BambooHR parses resume content for recruiter review and search.",
-      "Standard headings and consistent formatting help parsing.",
-      "Keywords from the job posting are used in matching.",
-      "Complete all required application fields."
+      "BambooHR's ATS includes a resume parser that extracts text into a candidate profile. The parser focuses on basic extraction — name, contact information, work history, and education — rather than sophisticated field mapping like enterprise platforms.",
+      "Recruiters review candidates through BambooHR's hiring pipeline, which organizes applicants by stage (Applied, Phone Screen, Interview, Offer). Your parsed profile and original resume are both visible to reviewers.",
+      "BambooHR includes basic applicant search — recruiters can search by name, email, and keywords. However, there is no AI-powered scoring or automated ranking. Candidate evaluation is entirely manual.",
+      "The platform supports team-based hiring. Multiple reviewers (HR, hiring manager, team leads) can access applications, leave comments, and rate candidates using customizable scorecards.",
+      "BambooHR accepts PDF, DOCX, and plain text uploads. The parser handles standard formats well but may struggle with heavily designed or multi-column layouts.",
+      "Application forms may include custom questions configured by the employer. BambooHR does not auto-reject based on question responses — all applications reach the hiring team's review queue."
     ],
     "formattingNotes": [
-      "Use clear section headings (Experience, Education, Skills).",
-      "Prefer bullet points and simple layout.",
-      "Include full job titles and company names.",
-      "Weave in relevant keywords from the job description."
+      "Use a clean, single-column layout with standard headings: Experience, Education, Skills. BambooHR's parser works best with conventional resume formats. Avoid sidebars, infographics, or creative layouts.",
+      "Format each role clearly: Job Title | Company Name | Start Date – End Date. BambooHR displays your work history in the candidate profile, so consistent formatting ensures accurate timeline display.",
+      "Write concise, impact-focused bullet points (3–4 per role). BambooHR companies are typically small enough that hiring managers personally review every application. They care about demonstrated impact, not keyword volume.",
+      "Include a Skills section with relevant keywords from the job description. Even without automated matching, recruiters use BambooHR's search to find candidates with specific qualifications.",
+      "Show cultural fit signals. Small and mid-size companies using BambooHR often prioritize culture alongside skills. Mention team collaboration, cross-functional work, and adaptability where relevant.",
+      "Keep to 1–2 pages. SMB hiring teams review high volumes of applications manually. A focused, well-organized resume respects their time and highlights your strongest qualifications quickly."
     ],
-    "body": "BambooHR works best with clean, well-structured resumes. Use standard formatting and emphasise impact. Tailor your resume to each role. WadeCV can help you create an ATS-friendly resume that works for BambooHR and similar systems.",
+    "body": "BambooHR is one of the most popular HR platforms for small and mid-size businesses, and its built-in ATS module handles the hiring workflow for tens of thousands of companies. Unlike enterprise ATS platforms that focus on automation, compliance, and high-volume processing, BambooHR prioritizes simplicity and team collaboration. The hiring teams using BambooHR are typically small — an HR generalist, a hiring manager, and maybe a department lead — making every application a personal review rather than an algorithmic sort.\n\nThe most important thing to understand about BambooHR hiring is that there is no automated screening standing between your resume and a human reviewer. Every application lands in the hiring pipeline and is reviewed by a person. There are no knockout questions, no AI scoring, and no automatic ranking. This is both an advantage and a challenge: you do not need to beat an algorithm, but you do need to make a strong impression on someone who may be reviewing 50–200 applications for a single role.\n\nAt BambooHR companies, the hiring manager is usually deeply involved in the review process. In many cases, the hiring manager reviews every single application personally, not just a filtered shortlist. This means your resume needs to speak directly to the person who would be your future boss. Focus on impact, results, and relevant experience over generic keyword optimization. Quantified achievements ('Reduced customer onboarding time by 40%') are more compelling to a hands-on hiring manager than lists of buzzwords.\n\nBambooHR's collaborative review features mean multiple people will see your resume. Each reviewer uses a customizable scorecard to rate candidates, and they leave comments for each other. Your resume needs to be clear enough that both the hiring manager (who understands the technical requirements) and the HR generalist (who may not) can assess your qualifications. Avoid unexplained jargon — either explain technical terms briefly or translate them into business outcomes.\n\nCultural fit carries significant weight at BambooHR companies. Small and mid-size businesses invest heavily in company culture, and BambooHR itself promotes this through its platform. When relevant, mention team collaboration, cross-functional projects, wearing multiple hats, and adaptability. These signals help hiring teams assess whether you would thrive in a smaller, more dynamic environment.\n\nWadeCV analyzes job descriptions from BambooHR career pages, identifies the key qualifications and cultural signals the hiring team is looking for, and generates a tailored resume that balances keyword relevance with the impact-focused storytelling that manual reviewers respond to.",
+    "faq": [
+      {
+        "question": "Does BambooHR automatically reject resumes?",
+        "answer": "No. BambooHR does not use automated screening, knockout questions, or AI-powered rejection. Every application reaches the hiring team's review queue. Your resume is reviewed by a human — focus on making a strong impression with clear impact statements and relevant experience."
+      },
+      {
+        "question": "What file format works best for BambooHR?",
+        "answer": "PDF with selectable text or DOCX both work well. Avoid image-only PDFs and heavily designed resumes with multiple columns, sidebars, or graphics. BambooHR's parser handles standard single-column formats most reliably."
+      },
+      {
+        "question": "How does BambooHR rank candidates?",
+        "answer": "It does not rank candidates automatically. All evaluation is manual — reviewers assess applications and rate candidates using customizable scorecards. There is no AI scoring or keyword-based ranking. Focus on demonstrating clear impact and relevant experience rather than keyword density."
+      },
+      {
+        "question": "How important is cultural fit for BambooHR companies?",
+        "answer": "Very important. Small and mid-size businesses using BambooHR often prioritize cultural alignment alongside technical skills. When relevant, mention team collaboration, cross-functional work, adaptability, and comfort with wearing multiple hats. These signals help hiring teams assess organizational fit."
+      },
+      {
+        "question": "Who reviews my resume at BambooHR companies?",
+        "answer": "Typically an HR generalist, the hiring manager, and often additional team members. BambooHR supports collaborative hiring with shared scorecards and comments. Make your resume clear and accessible to both technical and non-technical reviewers."
+      }
+    ],
     "relatedSlugs": [
       "jazzhr",
       "greenhouse",
@@ -230,21 +402,47 @@
   {
     "slug": "ashby",
     "name": "Ashby",
-    "metaDescription": "Ashby ATS resume optimization: how tech-company ATS Ashby parses applications, formatting that works, and keywords to include.",
-    "intro": "Ashby is used by many tech and growth-stage companies. This guide covers how to format and keyword your resume for Ashby.",
+    "metaDescription": "Ashby ATS resume guide for 2026: how the analytics-first ATS used by top tech companies parses applications, scorecard evaluation, and keywords that get you shortlisted.",
+    "intro": "Ashby is a modern, analytics-driven ATS that has rapidly gained adoption among high-growth technology companies including Notion, Ramp, Figma, Plaid, and Linear. Built for data-driven recruiting teams, Ashby combines applicant tracking with hiring analytics, structured evaluation, and pipeline automation. Its modern parser and scorecard system make it one of the most sophisticated ATS platforms for tech-sector hiring.",
     "parsingRules": [
-      "Ashby parses resume content for recruiter review and search.",
-      "Structured sections and clear job titles improve parsing.",
-      "Keywords from the job description help with matching and search.",
-      "Complete application questions and required fields."
+      "Ashby uses a modern resume parser that extracts content into a structured candidate profile with fields for contact information, work experience (title, company, dates, description), education, skills, and certifications. The parser handles contemporary resume formats better than legacy ATS platforms.",
+      "Recruiters search Ashby's candidate database using keyword filters, boolean queries, tags, and custom fields. The search indexes your full resume text, so keywords anywhere in your resume contribute to discoverability.",
+      "Ashby displays your parsed candidate profile alongside the original resume attachment. Recruiters can toggle between the structured view and the formatted document, so both parsing accuracy and visual presentation matter.",
+      "Ashby supports structured hiring with customizable scorecards. Interviewers evaluate candidates against predefined criteria at each pipeline stage. Your resume should map clearly to the competencies listed in the job description.",
+      "The platform does not use automatic knockout rejection. Every application enters the hiring pipeline and is reviewed by the recruiting team. However, Ashby's automation rules can move candidates between stages based on recruiter actions.",
+      "Ashby accepts PDF, DOCX, and plain text uploads. As a modern platform, its parser handles a wider range of formatting than legacy systems, but clean formatting still produces the most accurate extraction."
     ],
     "formattingNotes": [
-      "Use standard headings (Experience, Education, Skills) and single-column layout.",
-      "Use bullet points and clear, scannable formatting.",
-      "Include relevant keywords from the job description naturally.",
-      "Submit as PDF or DOCX with selectable text."
+      "Use a clean single-column layout with standard headings: Experience, Education, Skills, and optionally Projects or Certifications. Ashby's parser is more flexible than legacy ATS platforms but still produces the best results with conventional formatting.",
+      "Format each role as: Job Title | Company Name | Start Date – End Date. Ashby extracts these into structured fields that recruiters see in the candidate profile. Include brief role descriptions with 3–5 bullet points per position.",
+      "Include a Skills section with technologies, tools, frameworks, and methodologies. Tech companies using Ashby recruit for specific technical stacks — list the exact tools from the job description (e.g., 'React, TypeScript, PostgreSQL, AWS' not 'frontend development').",
+      "Quantify impact in every bullet point where possible. Ashby companies are data-driven and their scorecards emphasize measurable outcomes. Bullets like 'Reduced API latency by 40% serving 2M daily requests' score higher on interview scorecards than generic descriptions.",
+      "Include links to your GitHub, portfolio, or personal site if relevant. Ashby's candidate profile supports links, and tech recruiters frequently check these to validate technical skills.",
+      "Avoid complex formatting, but Ashby's modern parser is more forgiving than Taleo or Workday. Simple two-column layouts may parse acceptably, though single-column is still safest. Never use images, graphics, or decorative elements in the body."
     ],
-    "body": "Ashby is designed for efficient recruiter workflow. A clean, keyword-aligned resume will parse well and stand out. Emphasise impact and outcomes. Tailor your resume to each role. WadeCV can help you create a resume that works for Ashby and other modern ATS platforms.",
+    "body": "Ashby has emerged as the ATS of choice for the most competitive technology companies in Silicon Valley and beyond. Companies using Ashby tend to be venture-backed, product-led, and engineering-heavy — the kind of companies where every hire has outsized impact and the bar is exceptionally high. If you are applying to a Series B+ tech company that advertises 'data-driven hiring' or 'structured interviewing,' there is a good chance they use Ashby.\n\nThe defining feature of Ashby is its analytics-first approach to recruiting. Every aspect of the hiring pipeline is measured — time-to-hire, pass-through rates, interview-to-offer ratios, source quality, and interviewer calibration. This data-driven culture extends to how candidates are evaluated: structured scorecards with predefined criteria, calibrated interviewer ratings, and pipeline automation based on score thresholds. Your resume is the first data point in this evaluation chain.\n\nAshby's scorecard system is central to how your application is evaluated. Each role has a structured scorecard with specific competencies (e.g., 'System Design,' 'Technical Communication,' 'Ownership Mentality'). Interviewers rate candidates against these criteria at every pipeline stage, starting with the resume review. The scorecard criteria are almost always reflected in the job description — mirror its language and structure in your resume to make it easy for reviewers to map your experience to their evaluation framework.\n\nKeyword strategy for Ashby should focus on technical specificity. Ashby companies are hiring for particular tech stacks, and recruiters filter candidates by specific technologies. Generic terms like 'backend development' are less effective than specific ones like 'Go, gRPC, PostgreSQL, Kubernetes.' Review the job description carefully and include every technology, tool, and framework that you genuinely have experience with. The engineering culture at Ashby companies values precision — listing technologies you have only surface-level exposure to can backfire in technical interviews.\n\nAshby's modern architecture also means its parser handles contemporary resume formats better than legacy ATS platforms. While complex layouts can still cause parsing issues, Ashby is more forgiving of subtle formatting variations. That said, a clean, well-organized resume still produces the best parsed profile and makes the best impression on the data-driven recruiting teams that choose Ashby.\n\nWadeCV analyzes job descriptions from Ashby-powered career pages, identifies the technical requirements and scorecard competencies embedded in the posting, and generates a tailored resume that aligns your experience with the structured evaluation criteria that Ashby hiring teams use.",
+    "faq": [
+      {
+        "question": "Does Ashby automatically reject resumes?",
+        "answer": "No. Ashby does not use knockout questions or automated rejection. Every application enters the hiring pipeline and is reviewed by the recruiting team. However, Ashby's pipeline automation can move candidates between stages based on recruiter actions and score thresholds."
+      },
+      {
+        "question": "What file format works best for Ashby?",
+        "answer": "Both PDF and DOCX work well with Ashby's modern parser. PDF with selectable text is the most common choice among tech candidates. Avoid image-only PDFs and heavily designed resumes with graphics or infographics."
+      },
+      {
+        "question": "How do Ashby scorecards affect my application?",
+        "answer": "Each role in Ashby has a structured scorecard with predefined competencies. Interviewers rate candidates against these criteria at every stage, starting with resume review. The job description reflects the scorecard criteria — align your resume with the specific competencies mentioned in the posting."
+      },
+      {
+        "question": "Should I include GitHub or portfolio links for Ashby applications?",
+        "answer": "Yes. Ashby's candidate profile supports links, and tech recruiters at Ashby companies frequently review GitHub profiles, portfolios, and personal sites to validate technical skills. Include links if they strengthen your application."
+      },
+      {
+        "question": "How specific should my technical skills be for Ashby companies?",
+        "answer": "Very specific. Ashby companies recruit for particular tech stacks, and recruiters filter candidates by exact technologies. List specific tools, frameworks, and languages (e.g., 'React, TypeScript, PostgreSQL, AWS') rather than generic categories like 'frontend development.' Only list technologies you can speak to confidently in interviews."
+      }
+    ],
     "relatedSlugs": [
       "lever",
       "greenhouse",
