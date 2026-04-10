@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/best-ai-resume-builder-2026`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/wadecv-vs-teal`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/wadecv-vs-jobscan`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/wadecv-vs-wobo`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.8 },
   ];
 
   const jobUrls = getJobs().map((j) => ({

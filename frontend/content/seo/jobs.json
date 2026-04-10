@@ -1,7 +1,7 @@
 [
   {
     "slug": "product-manager-startup",
-    "title": "Product Manager at a Startup – Job Description & Resume Guide",
+    "title": "Product Manager at a Startup \u2013 Job Description & Resume Guide",
     "metaDescription": "Startup product manager responsibilities, required skills, and resume keywords. How to position your experience for fast-moving PM roles.",
     "intro": "Product managers at startups wear many hats: roadmap ownership, customer discovery, and working closely with engineering and design. This guide outlines typical responsibilities, skills, and resume keywords so you can present your experience in a way that resonates with startup hiring managers and ATS.",
     "responsibilities": [
@@ -19,7 +19,7 @@
       "Technical fluency to work with engineers on scope and feasibility",
       "Strong written and verbal communication"
     ],
-    "salaryRange": "Varies widely; early-stage often $90,000–$140,000 base plus equity; growth-stage can be higher.",
+    "salaryRange": "Varies widely; early-stage often $90,000\u2013$140,000 base plus equity; growth-stage can be higher.",
     "careerPath": [
       "Associate PM",
       "Product Manager",
@@ -67,7 +67,7 @@
   },
   {
     "slug": "data-analyst-healthcare",
-    "title": "Data Analyst in Healthcare – Job Description & Resume Tips",
+    "title": "Data Analyst in Healthcare \u2013 Job Description & Resume Tips",
     "metaDescription": "Healthcare data analyst responsibilities, skills, salary ranges, and resume keywords to land roles in providers, payers, and health tech.",
     "intro": "Data analysts in healthcare help organizations make sense of clinical, operational, and financial data. Roles exist at providers, payers, pharma, and health tech companies. This guide covers typical job requirements and how to tailor your resume for these positions.",
     "responsibilities": [
@@ -84,7 +84,7 @@
       "Understanding of healthcare data (claims, EMR, coding) and regulatory context",
       "Ability to explain technical results to non-technical audiences"
     ],
-    "salaryRange": "Often $65,000–$110,000 depending on experience, organization, and location.",
+    "salaryRange": "Often $65,000\u2013$110,000 depending on experience, organization, and location.",
     "careerPath": [
       "Data Analyst",
       "Senior Data Analyst",
@@ -109,7 +109,7 @@
       "analytics",
       "reporting"
     ],
-    "body": "Healthcare data roles value both technical skills and domain awareness. On your resume, highlight experience with healthcare datasets, compliance considerations, and how your analyses drove decisions for clinicians or operations. Quantify impact where you can (e.g. reports used by X teams, time saved, or improvements in key metrics). Tailoring your resume to each employer's focus—clinical quality, revenue cycle, population health, or product analytics—will improve your fit. Use WadeCV to align your background with specific healthcare data analyst job descriptions.",
+    "body": "Healthcare data roles value both technical skills and domain awareness. On your resume, highlight experience with healthcare datasets, compliance considerations, and how your analyses drove decisions for clinicians or operations. Quantify impact where you can (e.g. reports used by X teams, time saved, or improvements in key metrics). Tailoring your resume to each employer's focus\u2014clinical quality, revenue cycle, population health, or product analytics\u2014will improve your fit. Use WadeCV to align your background with specific healthcare data analyst job descriptions.",
     "faq": [
       {
         "question": "What skills do healthcare data analyst roles look for?",
@@ -142,7 +142,7 @@
       "Organisation and project management across multiple accounts",
       "Empathy and resilience when handling escalations"
     ],
-    "salaryRange": "Often $70,000–$120,000 base plus variable compensation, depending on segment and company.",
+    "salaryRange": "Often $70,000\u2013$120,000 base plus variable compensation, depending on segment and company.",
     "careerPath": [
       "Customer Success Associate",
       "CSM",
@@ -167,7 +167,7 @@
       "upsell",
       "customer journey"
     ],
-    "body": "CSM roles reward outcomes: retention rates, expansion revenue, and improved adoption or NPS. On your resume, lead with metrics—renewal rates, revenue retained or expanded, number of accounts, and feedback scores. Show that you can own the relationship and work across internal teams. Tailoring your resume to the company's segment (SMB, mid-market, enterprise) and industry will help. WadeCV can help you align your customer-facing experience with CSM job descriptions and highlight your strongest impact.",
+    "body": "CSM roles reward outcomes: retention rates, expansion revenue, and improved adoption or NPS. On your resume, lead with metrics\u2014renewal rates, revenue retained or expanded, number of accounts, and feedback scores. Show that you can own the relationship and work across internal teams. Tailoring your resume to the company's segment (SMB, mid-market, enterprise) and industry will help. WadeCV can help you align your customer-facing experience with CSM job descriptions and highlight your strongest impact.",
     "faq": [
       {
         "question": "What metrics should I put on a customer success manager resume?",
@@ -204,7 +204,7 @@
       "Testing (Jest, Cypress, etc.); build tools (Webpack, Vite)",
       "Collaboration and attention to UX detail"
     ],
-    "salaryRange": "Often $90,000–$180,000+ depending on level and location.",
+    "salaryRange": "Often $90,000\u2013$180,000+ depending on level and location.",
     "careerPath": [
       "Frontend Developer",
       "Frontend Engineer",
@@ -226,7 +226,7 @@
       "testing",
       "CI/CD"
     ],
-    "body": "Frontend roles reward both technical depth and user impact. On your resume, highlight projects with scale (page views, users) or performance gains, and list the frameworks and tools that match the job. Tailor keywords to the posting—many roles emphasise React or Vue specifically.\n\nWadeCV can help you align your frontend experience with each job description and surface your strongest bullets."
+    "body": "Frontend roles reward both technical depth and user impact. On your resume, highlight projects with scale (page views, users) or performance gains, and list the frameworks and tools that match the job. Tailor keywords to the posting\u2014many roles emphasise React or Vue specifically.\n\nWadeCV can help you align your frontend experience with each job description and surface your strongest bullets."
   },
   {
     "slug": "backend-engineer",
@@ -247,7 +247,7 @@
       "Linux, containers, and cloud services",
       "Collaboration and clear documentation"
     ],
-    "salaryRange": "Often $100,000–$200,000+ depending on level and location.",
+    "salaryRange": "Often $100,000\u2013$200,000+ depending on level and location.",
     "careerPath": [
       "Backend Developer",
       "Backend Engineer",
@@ -290,7 +290,7 @@
       "Networking and security fundamentals",
       "Collaboration and documentation"
     ],
-    "salaryRange": "Often $110,000–$190,000+ depending on level and location.",
+    "salaryRange": "Often $110,000\u2013$190,000+ depending on level and location.",
     "careerPath": [
       "DevOps Engineer",
       "Senior DevOps Engineer",
@@ -331,7 +331,7 @@
       "Ability to read and understand existing code",
       "Communication and eagerness to learn"
     ],
-    "salaryRange": "Often $70,000–$120,000 depending on location and company.",
+    "salaryRange": "Often $70,000\u2013$120,000 depending on location and company.",
     "careerPath": [
       "Software Engineer I",
       "Software Engineer II",
@@ -370,7 +370,7 @@
       "Communication with technical and non-technical stakeholders",
       "Certification (CSM, PSM) often preferred"
     ],
-    "salaryRange": "Often $80,000–$130,000 depending on experience and location.",
+    "salaryRange": "Often $80,000\u2013$130,000 depending on experience and location.",
     "careerPath": [
       "Scrum Master",
       "Senior Scrum Master",
@@ -411,7 +411,7 @@
       "Customer-facing experience; commercial awareness",
       "Relevant certifications (AWS, Azure, etc.) often valued"
     ],
-    "salaryRange": "Often $120,000–$200,000+ depending on level and segment.",
+    "salaryRange": "Often $120,000\u2013$200,000+ depending on level and segment.",
     "careerPath": [
       "Solutions Architect",
       "Senior Solutions Architect",
@@ -452,7 +452,7 @@
       "Collaboration with engineering and product",
       "Attention to audience and usability"
     ],
-    "salaryRange": "Often $70,000–$120,000 depending on experience and location.",
+    "salaryRange": "Often $70,000\u2013$120,000 depending on experience and location.",
     "careerPath": [
       "Technical Writer",
       "Senior Technical Writer",
@@ -491,7 +491,7 @@
       "Resilience and time management",
       "Interest in sales and product"
     ],
-    "salaryRange": "Often $45,000–$65,000 base plus variable compensation.",
+    "salaryRange": "Often $45,000\u2013$65,000 base plus variable compensation.",
     "careerPath": [
       "SDR",
       "Senior SDR",
@@ -531,7 +531,7 @@
       "Resilience and relationship building",
       "Understanding of product and market"
     ],
-    "salaryRange": "Often $70,000–$120,000+ base plus commission; OTE varies by segment.",
+    "salaryRange": "Often $70,000\u2013$120,000+ base plus commission; OTE varies by segment.",
     "careerPath": [
       "Account Executive",
       "Senior AE",
@@ -571,7 +571,7 @@
       "Ability to sell the role and company",
       "Resilience and attention to detail"
     ],
-    "salaryRange": "Often $50,000–$85,000 base plus commission in agency; in-house can be higher.",
+    "salaryRange": "Often $50,000\u2013$85,000 base plus commission in agency; in-house can be higher.",
     "careerPath": [
       "Recruiter",
       "Senior Recruiter",
@@ -611,7 +611,7 @@
       "Data literacy and project management",
       "Experience in relevant industry or scale"
     ],
-    "salaryRange": "Often $80,000–$140,000 depending on level and location.",
+    "salaryRange": "Often $80,000\u2013$140,000 depending on level and location.",
     "careerPath": [
       "HRBP",
       "Senior HRBP",
@@ -651,7 +651,7 @@
       "Written and verbal communication",
       "Understanding of customer and buyer journey"
     ],
-    "salaryRange": "Often $75,000–$130,000 depending on level and location.",
+    "salaryRange": "Often $75,000\u2013$130,000 depending on level and location.",
     "careerPath": [
       "Marketing Manager",
       "Senior Marketing Manager",
@@ -691,7 +691,7 @@
       "Communication and presentation",
       "Relevant degree or certification (CFA, CPA) often preferred"
     ],
-    "salaryRange": "Often $65,000–$110,000 in corporate; banking can be higher with bonus.",
+    "salaryRange": "Often $65,000\u2013$110,000 in corporate; banking can be higher with bonus.",
     "careerPath": [
       "Financial Analyst",
       "Senior Financial Analyst",
@@ -731,7 +731,7 @@
       "Ability to work in fast-paced, team settings",
       "Attention to detail and compliance"
     ],
-    "salaryRange": "Varies by setting and location; often $60,000–$95,000 for RNs.",
+    "salaryRange": "Varies by setting and location; often $60,000\u2013$95,000 for RNs.",
     "careerPath": [
       "Staff Nurse",
       "Charge Nurse",
@@ -771,7 +771,7 @@
       "Communication and collaboration",
       "Data literacy for student progress"
     ],
-    "salaryRange": "Varies by state and district; often $45,000–$75,000 for K-12.",
+    "salaryRange": "Varies by state and district; often $45,000\u2013$75,000 for K-12.",
     "careerPath": [
       "Teacher",
       "Lead Teacher",
@@ -809,7 +809,7 @@
       "Technical fluency to partner with eng and design leadership",
       "Mentorship and team development"
     ],
-    "salaryRange": "Often $150,000–$250,000+ depending on level and location.",
+    "salaryRange": "Often $150,000\u2013$250,000+ depending on level and location.",
     "careerPath": [
       "Senior PM",
       "Principal PM",
@@ -871,7 +871,7 @@
       "Collaboration with product and engineering",
       "Data and metrics literacy"
     ],
-    "salaryRange": "Often $90,000–$160,000+ depending on level and location.",
+    "salaryRange": "Often $90,000\u2013$160,000+ depending on level and location.",
     "careerPath": [
       "UX Designer",
       "Senior UX Designer",
@@ -904,7 +904,7 @@
     "faq": [
       {
         "question": "How do I show UX impact on a resume?",
-        "answer": "Use metrics: conversion rate changes, task completion time, satisfaction scores, or support ticket reduction. Describe the problem, your approach, and the outcome in 1–2 lines per project."
+        "answer": "Use metrics: conversion rate changes, task completion time, satisfaction scores, or support ticket reduction. Describe the problem, your approach, and the outcome in 1\u20132 lines per project."
       }
     ]
   },
@@ -927,7 +927,7 @@
       "Communication and storytelling with data",
       "Software engineering practices where models are productionised"
     ],
-    "salaryRange": "Often $120,000–$200,000+ depending on level and location.",
+    "salaryRange": "Often $120,000\u2013$200,000+ depending on level and location.",
     "careerPath": [
       "Data Scientist",
       "Senior Data Scientist",
@@ -984,7 +984,7 @@
       "API and database basics for test data",
       "CI/CD and agile practices"
     ],
-    "salaryRange": "Often $70,000–$130,000 depending on level and location.",
+    "salaryRange": "Often $70,000\u2013$130,000 depending on level and location.",
     "careerPath": [
       "QA Engineer",
       "Senior QA",
@@ -1017,15 +1017,15 @@
     "faq": [
       {
         "question": "Should I list manual vs automated testing on my QA resume?",
-        "answer": "Yes. Show both—manual for exploratory and edge cases, automation for regression and scale. Quantify where you can (e.g. 'Maintained 500+ automated tests')."
+        "answer": "Yes. Show both\u2014manual for exploratory and edge cases, automation for regression and scale. Quantify where you can (e.g. 'Maintained 500+ automated tests')."
       }
     ]
   },
   {
     "slug": "project-manager",
-    "title": "Project Manager – Job Description & Resume Guide",
+    "title": "Project Manager \u2013 Job Description & Resume Guide",
     "metaDescription": "Project manager job description, core skills, and resume keywords. How to write a PM resume that passes ATS and impresses hiring managers in 2026.",
-    "intro": "Project managers plan, execute, and close projects on time and within budget while coordinating teams and stakeholders. This guide covers the responsibilities, skills, and resume keywords you need to land a PM role across industries — from tech to construction to healthcare.",
+    "intro": "Project managers plan, execute, and close projects on time and within budget while coordinating teams and stakeholders. This guide covers the responsibilities, skills, and resume keywords you need to land a PM role across industries \u2014 from tech to construction to healthcare.",
     "responsibilities": [
       "Define project scope, goals, deliverables, and timelines",
       "Develop and maintain project plans, schedules, and risk logs",
@@ -1042,7 +1042,7 @@
       "Change management and scope control",
       "Agile, Scrum, or Waterfall methodology"
     ],
-    "salaryRange": "$75,000–$130,000 depending on industry, company size, and PMP certification.",
+    "salaryRange": "$75,000\u2013$130,000 depending on industry, company size, and PMP certification.",
     "careerPath": [
       "Project Coordinator",
       "Project Manager",
@@ -1085,13 +1085,13 @@
     "faq": [
       {
         "question": "Do I need a PMP certification to get a project manager job?",
-        "answer": "No, but it helps — especially for mid-to-senior roles or government contracts. Many employers require or prefer it. If you don't have it, emphasise years of experience and concrete delivery outcomes."
+        "answer": "No, but it helps \u2014 especially for mid-to-senior roles or government contracts. Many employers require or prefer it. If you don't have it, emphasise years of experience and concrete delivery outcomes."
       }
     ]
   },
   {
     "slug": "business-analyst",
-    "title": "Business Analyst – Job Description & Resume Guide",
+    "title": "Business Analyst \u2013 Job Description & Resume Guide",
     "metaDescription": "Business analyst job description, key skills, and resume keywords. How to write a BA resume that gets past ATS and shows your analytical and stakeholder skills.",
     "intro": "Business analysts bridge the gap between business needs and technical solutions. They gather requirements, model processes, analyse data, and translate findings into actionable recommendations. This guide covers the BA role across IT, finance, and operations contexts.",
     "responsibilities": [
@@ -1111,7 +1111,7 @@
       "Understanding of SDLC and Agile delivery",
       "Written communication and presentation skills"
     ],
-    "salaryRange": "$70,000–$110,000 depending on industry and seniority; finance and tech BAs often earn more.",
+    "salaryRange": "$70,000\u2013$110,000 depending on industry and seniority; finance and tech BAs often earn more.",
     "careerPath": [
       "Junior Business Analyst",
       "Business Analyst",
@@ -1137,7 +1137,7 @@
     "body": "The strongest BA resumes show impact at both ends: requirements clarity (prevented rework, reduced ambiguity) and outcomes (system shipped, process improved, cost saved). Include specific tools (SQL, Power BI, Visio) and methodology experience. CBAP or CCBA certification is a differentiator for senior roles. WadeCV can tailor your BA experience to the specific domain and tools in each job description.",
     "commonMistakes": [
       "Only listing activities ('gathered requirements') without outcomes",
-      "Missing tools — recruiters scan for SQL, Tableau, Visio",
+      "Missing tools \u2014 recruiters scan for SQL, Tableau, Visio",
       "No mention of domain expertise (finance, healthcare, retail)"
     ],
     "interviewTips": [
@@ -1159,7 +1159,7 @@
   },
   {
     "slug": "operations-manager",
-    "title": "Operations Manager – Job Description & Resume Guide",
+    "title": "Operations Manager \u2013 Job Description & Resume Guide",
     "metaDescription": "Operations manager responsibilities, skills, and resume keywords for 2026. Write a compelling ops manager resume that shows efficiency gains and team leadership.",
     "intro": "Operations managers keep organisations running efficiently. Whether in logistics, manufacturing, retail, or tech, they manage people, processes, and resources to deliver results on time and within budget. This guide covers the core responsibilities, skills, and resume strategies for landing an ops manager role.",
     "responsibilities": [
@@ -1180,7 +1180,7 @@
       "ERP systems (SAP, Oracle, NetSuite)",
       "Lean / Six Sigma methodology"
     ],
-    "salaryRange": "$70,000–$120,000 depending on industry and scope; manufacturing and logistics ops managers often earn $90,000+.",
+    "salaryRange": "$70,000\u2013$120,000 depending on industry and scope; manufacturing and logistics ops managers often earn $90,000+.",
     "careerPath": [
       "Operations Coordinator",
       "Operations Supervisor",
@@ -1207,7 +1207,7 @@
     "commonMistakes": [
       "Generic bullets about 'managing operations' without scale or outcome",
       "No mention of specific industries or operational domains",
-      "Omitting metrics — ops roles are defined by measurable improvement"
+      "Omitting metrics \u2014 ops roles are defined by measurable improvement"
     ],
     "interviewTips": [
       "Prepare a continuous improvement project with before/after metrics",
@@ -1228,9 +1228,9 @@
   },
   {
     "slug": "cybersecurity-analyst",
-    "title": "Cybersecurity Analyst – Job Description & Resume Guide",
+    "title": "Cybersecurity Analyst \u2013 Job Description & Resume Guide",
     "metaDescription": "Cybersecurity analyst job description, key skills, and resume keywords for 2026. How to write an infosec resume that highlights technical skills and incident response experience.",
-    "intro": "Cybersecurity analysts protect organisations from threats by monitoring systems, detecting incidents, and responding to breaches. Demand is high and growing — but so is competition. This guide covers the responsibilities, skills, and resume strategies to land a cybersecurity analyst role.",
+    "intro": "Cybersecurity analysts protect organisations from threats by monitoring systems, detecting incidents, and responding to breaches. Demand is high and growing \u2014 but so is competition. This guide covers the responsibilities, skills, and resume strategies to land a cybersecurity analyst role.",
     "responsibilities": [
       "Monitor security information and event management (SIEM) systems for threats",
       "Investigate and respond to security incidents and alerts",
@@ -1249,7 +1249,7 @@
       "Understanding of MITRE ATT&CK framework",
       "Security certifications: CompTIA Security+, CEH, CISSP"
     ],
-    "salaryRange": "$75,000–$130,000; senior analysts and those with CISSP can earn $130,000+.",
+    "salaryRange": "$75,000\u2013$130,000; senior analysts and those with CISSP can earn $130,000+.",
     "careerPath": [
       "IT Support / Network Admin",
       "Security Analyst (Level 1/2/3)",
@@ -1272,11 +1272,11 @@
       "Python",
       "endpoint detection"
     ],
-    "body": "Cybersecurity resumes must show both technical depth and real-world incident experience. List specific tools and platforms, certifications, and — where possible — incidents you helped contain or risks you reduced. Government and regulated-industry roles often require clearances, so note those if applicable. WadeCV can align your security experience with each job's specific stack and threat environment.",
+    "body": "Cybersecurity resumes must show both technical depth and real-world incident experience. List specific tools and platforms, certifications, and \u2014 where possible \u2014 incidents you helped contain or risks you reduced. Government and regulated-industry roles often require clearances, so note those if applicable. WadeCV can align your security experience with each job's specific stack and threat environment.",
     "commonMistakes": [
       "Generic security language without specific tools or platforms",
       "No mention of certifications or active study towards them",
-      "Missing metrics — e.g. alerts triaged per day, MTTD/MTTR improvements"
+      "Missing metrics \u2014 e.g. alerts triaged per day, MTTD/MTTR improvements"
     ],
     "interviewTips": [
       "Be ready to walk through an incident response scenario end-to-end",
@@ -1297,7 +1297,7 @@
   },
   {
     "slug": "machine-learning-engineer",
-    "title": "Machine Learning Engineer – Job Description & Resume Guide",
+    "title": "Machine Learning Engineer \u2013 Job Description & Resume Guide",
     "metaDescription": "Machine learning engineer job description, skills, and resume keywords. How to write an ML engineer resume that showcases models shipped, tools used, and measurable impact.",
     "intro": "Machine learning engineers build, train, and deploy ML models at production scale. They sit between data science and software engineering, turning research into reliable, scalable systems. This guide covers the core responsibilities, skills, and resume strategies for landing an ML engineer role.",
     "responsibilities": [
@@ -1318,7 +1318,7 @@
       "Experimentation: A/B testing, evaluation metrics",
       "SQL and cloud platforms (AWS, GCP, Azure)"
     ],
-    "salaryRange": "$130,000–$200,000+; top-tier tech companies and AI labs pay above $200,000 with equity.",
+    "salaryRange": "$130,000\u2013$200,000+; top-tier tech companies and AI labs pay above $200,000 with equity.",
     "careerPath": [
       "Data Scientist",
       "ML Engineer",
@@ -1349,7 +1349,7 @@
       "No mention of scale, latency, or business impact of deployed models"
     ],
     "interviewTips": [
-      "Be ready for a system design interview — ML serving pipelines, feature stores, monitoring",
+      "Be ready for a system design interview \u2014 ML serving pipelines, feature stores, monitoring",
       "Know bias/variance tradeoff, regularisation, and when to use which model family",
       "Prepare a case study of a model you trained, deployed, and monitored in production"
     ],
@@ -1361,15 +1361,15 @@
     "faq": [
       {
         "question": "What is the difference between a data scientist and a machine learning engineer?",
-        "answer": "Data scientists focus on exploration, analysis, and building models in notebooks. ML engineers focus on productionising those models — scalable infrastructure, serving systems, monitoring, and reliability. Roles overlap significantly, especially at smaller companies."
+        "answer": "Data scientists focus on exploration, analysis, and building models in notebooks. ML engineers focus on productionising those models \u2014 scalable infrastructure, serving systems, monitoring, and reliability. Roles overlap significantly, especially at smaller companies."
       }
     ]
   },
   {
     "slug": "cloud-engineer",
-    "title": "Cloud Engineer – Job Description & Resume Guide",
+    "title": "Cloud Engineer \u2013 Job Description & Resume Guide",
     "metaDescription": "Cloud engineer job description, skills, and resume keywords for AWS, Azure, and GCP roles. How to write a cloud infrastructure resume that highlights architecture and cost optimisation.",
-    "intro": "Cloud engineers design, build, and manage cloud infrastructure on AWS, Azure, or GCP. They bridge architecture and operations — automating provisioning, ensuring reliability, and optimising cost. This guide covers responsibilities, skills, and resume strategies for cloud engineering roles.",
+    "intro": "Cloud engineers design, build, and manage cloud infrastructure on AWS, Azure, or GCP. They bridge architecture and operations \u2014 automating provisioning, ensuring reliability, and optimising cost. This guide covers responsibilities, skills, and resume strategies for cloud engineering roles.",
     "responsibilities": [
       "Design and implement scalable, secure cloud architectures on AWS, Azure, or GCP",
       "Provision and manage infrastructure using IaC tools (Terraform, CloudFormation, Pulumi)",
@@ -1388,7 +1388,7 @@
       "Scripting: Python, Bash",
       "Security: IAM, RBAC, secrets management, compliance frameworks"
     ],
-    "salaryRange": "$110,000–$175,000; senior cloud architects earn $180,000+.",
+    "salaryRange": "$110,000\u2013$175,000; senior cloud architects earn $180,000+.",
     "careerPath": [
       "Systems Administrator / DevOps Engineer",
       "Cloud Engineer",
@@ -1431,13 +1431,13 @@
     "faq": [
       {
         "question": "Which cloud certification is best for a cloud engineer?",
-        "answer": "AWS Certified Solutions Architect – Associate (SAA-C03) is the most widely recognised. Azure AZ-104 and Google Professional Cloud Architect are strong for their respective platforms. Kubernetes CKA is valuable for cloud-native roles regardless of cloud provider."
+        "answer": "AWS Certified Solutions Architect \u2013 Associate (SAA-C03) is the most widely recognised. Azure AZ-104 and Google Professional Cloud Architect are strong for their respective platforms. Kubernetes CKA is valuable for cloud-native roles regardless of cloud provider."
       }
     ]
   },
   {
     "slug": "content-writer",
-    "title": "Content Writer – Job Description & Resume Guide",
+    "title": "Content Writer \u2013 Job Description & Resume Guide",
     "metaDescription": "Content writer job description, skills, and resume keywords. How to write a content writing resume that showcases SEO expertise, editorial range, and measurable content results.",
     "intro": "Content writers create blog posts, articles, web copy, case studies, and other written materials that attract, educate, and convert audiences. Modern content roles increasingly require SEO knowledge, analytics fluency, and the ability to work with AI writing tools. This guide covers what employers are looking for and how to position your experience.",
     "responsibilities": [
@@ -1455,10 +1455,10 @@
       "CMS experience (WordPress, Webflow, Contentful)",
       "Analytics: Google Analytics, Search Console",
       "Editorial research and fact-checking",
-      "AI writing tools (ChatGPT, Claude, Jasper) — knowing how to use and edit AI output",
+      "AI writing tools (ChatGPT, Claude, Jasper) \u2014 knowing how to use and edit AI output",
       "Strong grammar, style, and adaptability to different brand voices"
     ],
-    "salaryRange": "$45,000–$80,000 for in-house roles; senior and specialist content strategists earn $80,000–$110,000.",
+    "salaryRange": "$45,000\u2013$80,000 for in-house roles; senior and specialist content strategists earn $80,000\u2013$110,000.",
     "careerPath": [
       "Content Writer",
       "Senior Content Writer",
@@ -1483,12 +1483,12 @@
     ],
     "body": "Content writer resumes should showcase results, not just output. Pair every piece of writing experience with a metric: organic traffic generated, ranking positions achieved, leads attributed to content, or engagement rates. Include links to a portfolio or specific published pieces. Showing SEO and analytics fluency is increasingly essential. WadeCV can tailor your content experience to each employer's domain and content type.",
     "commonMistakes": [
-      "No metrics — 'wrote blog posts' is not enough",
+      "No metrics \u2014 'wrote blog posts' is not enough",
       "No portfolio link or examples of published work",
       "Missing SEO skills or tool mentions if you have them"
     ],
     "interviewTips": [
-      "Bring 2–3 examples of content you're proud of with their results",
+      "Bring 2\u20133 examples of content you're proud of with their results",
       "Be ready to do a short writing or editing exercise",
       "Show how you approach a new topic you know nothing about"
     ],
@@ -1506,7 +1506,7 @@
   },
   {
     "slug": "social-media-manager",
-    "title": "Social Media Manager – Job Description & Resume Guide",
+    "title": "Social Media Manager \u2013 Job Description & Resume Guide",
     "metaDescription": "Social media manager job description, skills, and resume keywords. Write a social media resume that shows platform expertise, audience growth, and content strategy results.",
     "intro": "Social media managers build and manage a brand's presence across platforms like LinkedIn, Instagram, TikTok, and X. The role combines content creation, community management, analytics, and increasingly, paid social. This guide covers what employers look for and how to frame your experience.",
     "responsibilities": [
@@ -1527,7 +1527,7 @@
       "Community management and brand voice consistency",
       "Trend awareness and cultural fluency"
     ],
-    "salaryRange": "$45,000–$80,000 for in-house roles; agencies and senior roles can reach $90,000.",
+    "salaryRange": "$45,000\u2013$80,000 for in-house roles; agencies and senior roles can reach $90,000.",
     "careerPath": [
       "Social Media Coordinator",
       "Social Media Manager",
@@ -1551,7 +1551,7 @@
       "brand voice",
       "social listening"
     ],
-    "body": "Social media resumes must show platform results: follower growth percentages, engagement rates, reach milestones, and ROAS on paid campaigns. Include specific platforms you've managed and the audience size. Show creative range — written content, video, campaigns — and analytics fluency. WadeCV can tailor your social experience to each employer's platform mix and industry.",
+    "body": "Social media resumes must show platform results: follower growth percentages, engagement rates, reach milestones, and ROAS on paid campaigns. Include specific platforms you've managed and the audience size. Show creative range \u2014 written content, video, campaigns \u2014 and analytics fluency. WadeCV can tailor your social experience to each employer's platform mix and industry.",
     "commonMistakes": [
       "No metrics on follower growth, engagement, or reach",
       "Not specifying which platforms you managed and at what scale",
@@ -1570,13 +1570,13 @@
     "faq": [
       {
         "question": "What metrics matter most on a social media manager resume?",
-        "answer": "Engagement rate (likes/comments/shares vs reach), follower growth (% or absolute), reach or impressions at scale, and ROAS on paid campaigns. Pick the 2–3 most impressive numbers for each role and lead with them."
+        "answer": "Engagement rate (likes/comments/shares vs reach), follower growth (% or absolute), reach or impressions at scale, and ROAS on paid campaigns. Pick the 2\u20133 most impressive numbers for each role and lead with them."
       }
     ]
   },
   {
     "slug": "supply-chain-analyst",
-    "title": "Supply Chain Analyst – Job Description & Resume Guide",
+    "title": "Supply Chain Analyst \u2013 Job Description & Resume Guide",
     "metaDescription": "Supply chain analyst job description, skills, and resume keywords. Write a supply chain resume that highlights data analysis, forecasting, and operational improvements.",
     "intro": "Supply chain analysts optimise the flow of goods, information, and resources from suppliers to customers. They use data to improve forecasting accuracy, reduce costs, and increase resilience. This guide covers the responsibilities, skills, and resume strategies for supply chain analyst roles in manufacturing, retail, and tech.",
     "responsibilities": [
@@ -1597,7 +1597,7 @@
       "S&OP and SIOP process knowledge",
       "Lean / continuous improvement methodology"
     ],
-    "salaryRange": "$55,000–$95,000; senior analysts and supply chain managers earn $90,000–$120,000.",
+    "salaryRange": "$55,000\u2013$95,000; senior analysts and supply chain managers earn $90,000\u2013$120,000.",
     "careerPath": [
       "Supply Chain Coordinator",
       "Supply Chain Analyst",
@@ -1646,9 +1646,9 @@
   },
   {
     "slug": "product-designer",
-    "title": "Product Designer – Job Description & Resume Guide",
+    "title": "Product Designer \u2013 Job Description & Resume Guide",
     "metaDescription": "Product designer job description, skills, and resume keywords. How to write a UX/product design resume that showcases your design process, outcomes, and portfolio.",
-    "intro": "Product designers shape the end-to-end user experience of digital products — from research and wireframing to high-fidelity prototypes and design systems. The role combines UX thinking with visual design skills and close collaboration with product and engineering teams. This guide covers what employers look for and how to position your portfolio.",
+    "intro": "Product designers shape the end-to-end user experience of digital products \u2014 from research and wireframing to high-fidelity prototypes and design systems. The role combines UX thinking with visual design skills and close collaboration with product and engineering teams. This guide covers what employers look for and how to position your portfolio.",
     "responsibilities": [
       "Lead user research: interviews, usability tests, surveys, and journey mapping",
       "Create wireframes, prototypes, and high-fidelity designs in Figma or Sketch",
@@ -1667,7 +1667,7 @@
       "Understanding of accessibility standards (WCAG)",
       "Collaboration with product and engineering (Agile ceremonies)"
     ],
-    "salaryRange": "$90,000–$160,000 depending on seniority and company; FAANG/unicorn product designers earn more.",
+    "salaryRange": "$90,000\u2013$160,000 depending on seniority and company; FAANG/unicorn product designers earn more.",
     "careerPath": [
       "Junior / Associate Product Designer",
       "Product Designer",
@@ -1690,14 +1690,14 @@
       "Agile",
       "cross-functional"
     ],
-    "body": "Product design resumes live and die by the portfolio. Every bullet should connect to a project the interviewer can review. Show design process (research → wireframe → test → iterate) and outcomes (engagement rates, task completion, satisfaction scores). Quantify where you can. WadeCV can tailor your design experience descriptions to each role's emphasis — research-heavy, systems-focused, or consumer-facing product.",
+    "body": "Product design resumes live and die by the portfolio. Every bullet should connect to a project the interviewer can review. Show design process (research \u2192 wireframe \u2192 test \u2192 iterate) and outcomes (engagement rates, task completion, satisfaction scores). Quantify where you can. WadeCV can tailor your design experience descriptions to each role's emphasis \u2014 research-heavy, systems-focused, or consumer-facing product.",
     "commonMistakes": [
       "No portfolio link or link to a locked/broken portfolio",
       "Tool-listing without showing process or outcomes",
       "No mention of design QA, handoff, or collaboration with engineers"
     ],
     "interviewTips": [
-      "Prepare a case study walkthrough: problem → research → design decisions → outcome",
+      "Prepare a case study walkthrough: problem \u2192 research \u2192 design decisions \u2192 outcome",
       "Be ready to critique your own designs and discuss what you'd change",
       "Show how you handle feedback from stakeholders who disagree with your design choices"
     ],
@@ -1709,15 +1709,15 @@
     "faq": [
       {
         "question": "What is the difference between a UX designer and a product designer?",
-        "answer": "UX designers focus primarily on the user experience flow, research, and wireframing. Product designers take a broader scope — owning the full design from research through to high-fidelity UI, design systems, and working closely with product and engineering. In practice, the titles are often used interchangeably at many companies."
+        "answer": "UX designers focus primarily on the user experience flow, research, and wireframing. Product designers take a broader scope \u2014 owning the full design from research through to high-fidelity UI, design systems, and working closely with product and engineering. In practice, the titles are often used interchangeably at many companies."
       }
     ]
   },
   {
     "slug": "accountant",
-    "title": "Accountant – Job Description & Resume Guide",
+    "title": "Accountant \u2013 Job Description & Resume Guide",
     "metaDescription": "Accountant job description, key skills, and resume keywords. How to write an accounting resume that highlights technical proficiency, certifications, and quantifiable results.",
-    "intro": "Accountants are essential to every industry — managing financial records, ensuring compliance, preparing reports, and advising on budgets. Whether you’re targeting public accounting, corporate finance, or a government role, your resume needs to show both technical expertise and business acumen. This guide covers what hiring managers look for.",
+    "intro": "Accountants are essential to every industry \u2014 managing financial records, ensuring compliance, preparing reports, and advising on budgets. Whether you\u2019re targeting public accounting, corporate finance, or a government role, your resume needs to show both technical expertise and business acumen. This guide covers what hiring managers look for.",
     "responsibilities": [
       "Prepare and analyse financial statements (income statement, balance sheet, cash flow)",
       "Manage general ledger, journal entries, and month-end/year-end close processes",
@@ -1736,7 +1736,7 @@
       "Attention to detail and accuracy under deadlines",
       "Communication skills for presenting financial data to non-finance stakeholders"
     ],
-    "salaryRange": ",000–,000 for staff accountants; ,000–,000 for senior accountants; CPAs and managers earn more.",
+    "salaryRange": ",000\u2013,000 for staff accountants; ,000\u2013,000 for senior accountants; CPAs and managers earn more.",
     "careerPath": [
       "Staff Accountant",
       "Senior Accountant",
@@ -1764,16 +1764,16 @@
       "CPA",
       "Excel"
     ],
-    "body": "Accounting resumes should lead with certifications (CPA, CMA) and quantifiable impact — dollars managed, audit findings resolved, time saved through process improvements. Tailor your keywords to the specific accounting role: a tax accountant resume looks different from a corporate FP&A position. WadeCV matches your accounting experience to each job description so the right skills and accomplishments are front and centre.",
+    "body": "Accounting resumes should lead with certifications (CPA, CMA) and quantifiable impact \u2014 dollars managed, audit findings resolved, time saved through process improvements. Tailor your keywords to the specific accounting role: a tax accountant resume looks different from a corporate FP&A position. WadeCV matches your accounting experience to each job description so the right skills and accomplishments are front and centre.",
     "commonMistakes": [
       "Listing software without context (say what you did with it)",
       "Missing CPA or certification details (include state, year)",
-      "Generic bullets like “managed accounts” without dollar amounts or scope"
+      "Generic bullets like \u201cmanaged accounts\u201d without dollar amounts or scope"
     ],
     "interviewTips": [
-      "Be ready to discuss specific accounting standards you’ve applied",
+      "Be ready to discuss specific accounting standards you\u2019ve applied",
       "Prepare examples of errors you caught or process improvements you drove",
-      "Know the company’s industry — accounting needs differ between SaaS, manufacturing, and non-profit"
+      "Know the company\u2019s industry \u2014 accounting needs differ between SaaS, manufacturing, and non-profit"
     ],
     "relatedSlugs": [
       "financial-analyst",
@@ -1783,15 +1783,15 @@
     "faq": [
       {
         "question": "Do I need a CPA to get an accounting job?",
-        "answer": "Not always. Many staff and senior accountant roles don’t require a CPA, but having one significantly expands your options and earning potential — especially for public accounting, audit, and controller-level positions."
+        "answer": "Not always. Many staff and senior accountant roles don\u2019t require a CPA, but having one significantly expands your options and earning potential \u2014 especially for public accounting, audit, and controller-level positions."
       }
     ]
   },
   {
     "slug": "customer-service-representative",
-    "title": "Customer Service Representative – Job Description & Resume Guide",
+    "title": "Customer Service Representative \u2013 Job Description & Resume Guide",
     "metaDescription": "Customer service representative job description, skills, and resume keywords. How to write a customer service resume that highlights communication, problem-solving, and metrics.",
-    "intro": "Customer service representatives are the front line of every company — handling inquiries, resolving complaints, processing orders, and building customer loyalty. This role exists in virtually every industry, from retail and banking to SaaS and healthcare. Here’s what hiring managers look for on a customer service resume.",
+    "intro": "Customer service representatives are the front line of every company \u2014 handling inquiries, resolving complaints, processing orders, and building customer loyalty. This role exists in virtually every industry, from retail and banking to SaaS and healthcare. Here\u2019s what hiring managers look for on a customer service resume.",
     "responsibilities": [
       "Respond to customer inquiries via phone, email, chat, and social media",
       "Troubleshoot product or service issues and escalate when necessary",
@@ -1810,7 +1810,7 @@
       "Product knowledge and ability to learn new systems quickly",
       "Patience and composure under pressure"
     ],
-    "salaryRange": ",000–,000 for entry-level; ,000–,000 for senior or specialized roles; team leads and managers earn more.",
+    "salaryRange": ",000\u2013,000 for entry-level; ,000\u2013,000 for senior or specialized roles; team leads and managers earn more.",
     "careerPath": [
       "Customer Service Representative",
       "Senior CSR / Specialist",
@@ -1835,15 +1835,15 @@
       "customer retention",
       "multitasking"
     ],
-    "body": "Customer service resumes should emphasize metrics: tickets resolved per day, CSAT scores, first-call resolution rates, and any upsell revenue generated. Highlight the channels you’ve worked (phone, email, live chat, social media) and the CRM tools you’ve used. WadeCV tailors your customer service experience to each job description so the right metrics and skills are highlighted for that specific role.",
+    "body": "Customer service resumes should emphasize metrics: tickets resolved per day, CSAT scores, first-call resolution rates, and any upsell revenue generated. Highlight the channels you\u2019ve worked (phone, email, live chat, social media) and the CRM tools you\u2019ve used. WadeCV tailors your customer service experience to each job description so the right metrics and skills are highlighted for that specific role.",
     "commonMistakes": [
-      "Saying “helped customers” without specifying volume, channel, or outcome",
-      "Omitting CRM tools and ticketing systems you’ve used",
+      "Saying \u201chelped customers\u201d without specifying volume, channel, or outcome",
+      "Omitting CRM tools and ticketing systems you\u2019ve used",
       "Not quantifying performance (CSAT score, resolution rate, tickets/day)"
     ],
     "interviewTips": [
       "Prepare a story about handling a difficult customer and how you resolved it",
-      "Know the company’s products so you can discuss how you’d support their customers",
+      "Know the company\u2019s products so you can discuss how you\u2019d support their customers",
       "Be ready to discuss your approach to balancing speed and quality in responses"
     ],
     "relatedSlugs": [
@@ -1854,15 +1854,15 @@
     "faq": [
       {
         "question": "What skills should I highlight on a customer service resume?",
-        "answer": "Focus on communication, problem-solving, CRM proficiency, and metrics. Hiring managers want to see that you can handle volume while maintaining quality — so include CSAT scores, resolution rates, and specific tools you’ve used."
+        "answer": "Focus on communication, problem-solving, CRM proficiency, and metrics. Hiring managers want to see that you can handle volume while maintaining quality \u2014 so include CSAT scores, resolution rates, and specific tools you\u2019ve used."
       }
     ]
   },
   {
     "slug": "administrative-assistant",
-    "title": "Administrative Assistant – Job Description & Resume Guide",
+    "title": "Administrative Assistant \u2013 Job Description & Resume Guide",
     "metaDescription": "Administrative assistant job description, skills, and resume keywords. How to write an admin assistant resume that showcases organization, multitasking, and office management.",
-    "intro": "Administrative assistants keep offices running smoothly — managing calendars, coordinating meetings, handling correspondence, and supporting leadership. The role requires strong organizational skills, discretion, and the ability to juggle multiple priorities. This guide covers what employers look for and how to position your experience.",
+    "intro": "Administrative assistants keep offices running smoothly \u2014 managing calendars, coordinating meetings, handling correspondence, and supporting leadership. The role requires strong organizational skills, discretion, and the ability to juggle multiple priorities. This guide covers what employers look for and how to position your experience.",
     "responsibilities": [
       "Manage executive calendars, schedule meetings, and coordinate travel arrangements",
       "Handle incoming and outgoing correspondence (email, phone, mail)",
@@ -1881,7 +1881,7 @@
       "Discretion and confidentiality",
       "Basic bookkeeping or expense tracking"
     ],
-    "salaryRange": ",000–,000 for entry-level; ,000–,000 for experienced; executive assistants earn ,000–,000+.",
+    "salaryRange": ",000\u2013,000 for entry-level; ,000\u2013,000 for experienced; executive assistants earn ,000\u2013,000+.",
     "careerPath": [
       "Administrative Assistant",
       "Senior Administrative Assistant",
@@ -1905,14 +1905,14 @@
       "vendor management",
       "event planning"
     ],
-    "body": "Administrative assistant resumes should highlight the scale of your support: how many executives, how many employees in the office, how many meetings or events coordinated per week. Quantify wherever possible — budgets managed, travel booked, processes streamlined. WadeCV tailors your admin experience to each specific job description so the most relevant skills are emphasized.",
+    "body": "Administrative assistant resumes should highlight the scale of your support: how many executives, how many employees in the office, how many meetings or events coordinated per week. Quantify wherever possible \u2014 budgets managed, travel booked, processes streamlined. WadeCV tailors your admin experience to each specific job description so the most relevant skills are emphasized.",
     "commonMistakes": [
-      "Listing “Microsoft Office” without specifying advanced skills (pivot tables, mail merge, macros)",
-      "Vague bullets like “assisted with office tasks” — be specific about scope and outcomes",
+      "Listing \u201cMicrosoft Office\u201d without specifying advanced skills (pivot tables, mail merge, macros)",
+      "Vague bullets like \u201cassisted with office tasks\u201d \u2014 be specific about scope and outcomes",
       "Omitting the number of people or executives you supported"
     ],
     "interviewTips": [
-      "Prepare examples of how you’ve handled competing priorities from multiple stakeholders",
+      "Prepare examples of how you\u2019ve handled competing priorities from multiple stakeholders",
       "Be ready to discuss a time you improved an office process or saved the team time",
       "Show that you understand the tools and systems the company uses"
     ],
@@ -1924,15 +1924,15 @@
     "faq": [
       {
         "question": "What is the difference between an administrative assistant and an executive assistant?",
-        "answer": "Administrative assistants typically support an office or team with general office management. Executive assistants support specific senior leaders with more strategic, high-stakes work — managing complex calendars, preparing board materials, and acting as a gatekeeper. EA roles usually require more experience and pay more."
+        "answer": "Administrative assistants typically support an office or team with general office management. Executive assistants support specific senior leaders with more strategic, high-stakes work \u2014 managing complex calendars, preparing board materials, and acting as a gatekeeper. EA roles usually require more experience and pay more."
       }
     ]
   },
   {
     "slug": "executive-assistant",
-    "title": "Executive Assistant – Job Description & Resume Guide",
+    "title": "Executive Assistant \u2013 Job Description & Resume Guide",
     "metaDescription": "Executive assistant job description, skills, and resume keywords. How to write an EA resume that highlights strategic support, discretion, and high-level coordination.",
-    "intro": "Executive assistants are strategic partners to C-suite leaders and senior executives — managing complex calendars, coordinating board meetings, handling sensitive communications, and anticipating needs before they arise. This guide covers the skills, keywords, and resume strategies that land EA roles at top companies.",
+    "intro": "Executive assistants are strategic partners to C-suite leaders and senior executives \u2014 managing complex calendars, coordinating board meetings, handling sensitive communications, and anticipating needs before they arise. This guide covers the skills, keywords, and resume strategies that land EA roles at top companies.",
     "responsibilities": [
       "Manage complex calendars for C-suite executives across multiple time zones",
       "Coordinate board meetings, off-sites, and leadership events end to end",
@@ -1951,7 +1951,7 @@
       "Travel logistics and international coordination",
       "Emotional intelligence and stakeholder management"
     ],
-    "salaryRange": ",000–,000 for mid-level; ,000–,000+ for C-suite EAs at large companies; tech and finance EAs earn more.",
+    "salaryRange": ",000\u2013,000 for mid-level; ,000\u2013,000+ for C-suite EAs at large companies; tech and finance EAs earn more.",
     "careerPath": [
       "Administrative Assistant",
       "Executive Assistant",
@@ -1976,15 +1976,15 @@
       "Google Workspace",
       "discretion"
     ],
-    "body": "Executive assistant resumes must demonstrate trust, judgment, and the ability to operate at the executive level. Lead with the seniority of the executives you’ve supported and the complexity of what you managed — board meetings, international travel, multi-million-dollar events. WadeCV tailors your EA experience to each specific role so the right level of strategic support is highlighted.",
+    "body": "Executive assistant resumes must demonstrate trust, judgment, and the ability to operate at the executive level. Lead with the seniority of the executives you\u2019ve supported and the complexity of what you managed \u2014 board meetings, international travel, multi-million-dollar events. WadeCV tailors your EA experience to each specific role so the right level of strategic support is highlighted.",
     "commonMistakes": [
-      "Not naming the level of executive supported (say “CEO” or “VP of Engineering”, not just “senior leader”)",
-      "Underselling the role — EA work is strategic, not just administrative",
+      "Not naming the level of executive supported (say \u201cCEO\u201d or \u201cVP of Engineering\u201d, not just \u201csenior leader\u201d)",
+      "Underselling the role \u2014 EA work is strategic, not just administrative",
       "Omitting confidential project work or special initiatives you managed"
     ],
     "interviewTips": [
-      "Prepare examples of how you’ve handled sensitive or politically complex situations",
-      "Be ready to discuss your approach to calendar triage and protecting your executive’s time",
+      "Prepare examples of how you\u2019ve handled sensitive or politically complex situations",
+      "Be ready to discuss your approach to calendar triage and protecting your executive\u2019s time",
       "Show that you understand the business context, not just the logistics"
     ],
     "relatedSlugs": [
@@ -1995,7 +1995,77 @@
     "faq": [
       {
         "question": "How do I transition from administrative assistant to executive assistant?",
-        "answer": "Focus on gaining exposure to executive-level work: volunteer to support senior leaders, take on special projects, and learn to manage complex calendars and events. On your resume, emphasize any work you’ve done with leadership, confidential information, or cross-functional coordination."
+        "answer": "Focus on gaining exposure to executive-level work: volunteer to support senior leaders, take on special projects, and learn to manage complex calendars and events. On your resume, emphasize any work you\u2019ve done with leadership, confidential information, or cross-functional coordination."
+      }
+    ]
+  },
+  {
+    "slug": "digital-marketing-manager",
+    "title": "Digital Marketing Manager \u2013 Job Description & Resume Guide",
+    "metaDescription": "Digital marketing manager responsibilities, skills, salary, and resume keywords. How to tailor your resume for marketing roles in 2026.",
+    "intro": "Digital marketing managers plan and execute campaigns across channels \u2014 SEO, paid media, email, social, and content. This guide covers typical responsibilities, skills, and resume keywords so you can position your marketing experience for these roles.",
+    "responsibilities": [
+      "Develop and execute digital marketing strategies across SEO, SEM, social media, email, and content",
+      "Manage paid advertising budgets and optimize campaigns for ROI across Google Ads, Meta, and LinkedIn",
+      "Analyze marketing performance using GA4, Google Search Console, and platform analytics",
+      "Oversee content calendar and coordinate with writers, designers, and external agencies",
+      "Run A/B tests on landing pages, email campaigns, and ad creatives to improve conversion rates",
+      "Report on KPIs including CAC, ROAS, conversion rates, and traffic growth to leadership"
+    ],
+    "requiredSkills": [
+      "Google Ads and Meta Ads platform management",
+      "SEO strategy and execution (on-page, technical, link building)",
+      "Marketing analytics (GA4, Google Search Console, Data Studio)",
+      "Email marketing and automation (Mailchimp, HubSpot, Klaviyo)",
+      "Content marketing strategy and editorial planning",
+      "Budget management and ROI optimization"
+    ],
+    "salaryRange": "$65,000\u2013$120,000 depending on experience, location, and company size; senior roles at tech companies can exceed $140,000.",
+    "careerPath": [
+      "Marketing Coordinator",
+      "Digital Marketing Specialist",
+      "Digital Marketing Manager",
+      "Senior Marketing Manager",
+      "Director of Marketing",
+      "VP of Marketing / CMO"
+    ],
+    "resumeKeywords": [
+      "SEO",
+      "SEM",
+      "Google Ads",
+      "Meta Ads",
+      "email marketing",
+      "content marketing",
+      "GA4",
+      "conversion rate optimization",
+      "A/B testing",
+      "ROAS",
+      "CAC",
+      "marketing automation",
+      "social media marketing",
+      "lead generation",
+      "campaign management"
+    ],
+    "body": "Digital marketing manager roles require a mix of analytical and creative skills. On your resume, lead with measurable results: traffic growth percentages, ROAS improvements, conversion rate lifts, and campaign budgets managed. Specify the channels and tools you have used.\n\nTailoring your resume to highlight the specific channels mentioned in the job description (SEO vs paid vs email vs social) makes a significant difference. WadeCV can help you reframe your marketing experience to match each job description so your strongest campaign results are highlighted.",
+    "commonMistakes": [
+      "Listing channels managed without performance metrics",
+      "Using vague language like 'managed social media' without specifics",
+      "Not including budget sizes or team sizes managed"
+    ],
+    "interviewTips": [
+      "Prepare case studies with before/after metrics for campaigns you ran",
+      "Be ready to discuss how you allocate budget across channels",
+      "Show familiarity with the company's current marketing presence"
+    ],
+    "relatedSlugs": [
+      "content-writer",
+      "social-media-manager",
+      "product-manager-startup"
+    ],
+    "faq": [
+      {
+        "question": "What skills do hiring managers look for in digital marketing managers?",
+        "answer": "Data-driven decision making, multi-channel campaign management, and the ability to tie marketing activities to revenue. Specific platform expertise (Google Ads, Meta Ads, SEO tools) and analytics proficiency (GA4, Data Studio) are consistently requested."
       }
     ]
   }

@@ -16,12 +16,23 @@
       "Scope + outcome (e.g. 'Led migration affecting Z services'; 'Adopted by N teams')",
       "Problem + solution + result (e.g. 'Identified bottleneck; implemented fix; cut cost by X%')"
     ],
-    "body": "Use the same language as the job description where it fits—keywords help ATS and recruiters. Prefer active verbs (designed, built, led, reduced, improved) and concrete numbers.\n\nOne strong bullet is better than three vague ones. Tailoring your bullets to each role will highlight the most relevant experience. WadeCV can help you reframe your software engineering experience into tailored resume bullets that match specific job descriptions.",
-    "relatedSlugs": ["sales", "project-manager", "customer-service"],
-    "faq": [
-      { "question": "How many bullet points per job on a resume?", "answer": "Aim for 3–5 strong bullets per role. Quality and relevance matter more than quantity; use impact and metrics in each." }
+    "body": "Use the same language as the job description where it fits\u2014keywords help ATS and recruiters. Prefer active verbs (designed, built, led, reduced, improved) and concrete numbers.\n\nOne strong bullet is better than three vague ones. Tailoring your bullets to each role will highlight the most relevant experience. WadeCV can help you reframe your software engineering experience into tailored resume bullets that match specific job descriptions.",
+    "relatedSlugs": [
+      "sales",
+      "project-manager",
+      "customer-service"
     ],
-    "commonMistakes": ["Vague bullets without metrics or scope", "Starting every bullet with 'Responsible for'", "Listing duties instead of outcomes"]
+    "faq": [
+      {
+        "question": "How many bullet points per job on a resume?",
+        "answer": "Aim for 3\u20135 strong bullets per role. Quality and relevance matter more than quantity; use impact and metrics in each."
+      }
+    ],
+    "commonMistakes": [
+      "Vague bullets without metrics or scope",
+      "Starting every bullet with 'Responsible for'",
+      "Listing duties instead of outcomes"
+    ]
   },
   {
     "slug": "sales",
@@ -40,8 +51,12 @@
       "Revenue + scope (e.g. 'Closed $X in new business', 'Grew ARR by Y%')",
       "Activity + outcome (e.g. 'Generated pipeline of $X', 'Converted Y% to closed-won')"
     ],
-    "body": "Lead with numbers: quota attainment, revenue, deal count, retention, and pipeline.\n\nUse role-appropriate metrics—SDRs focus on pipeline and activity; account executives on closed revenue and retention. Tailoring your resume to the company's segment (SMB, enterprise, industry) will improve fit. WadeCV can help you align your sales experience with job descriptions and highlight your strongest results.",
-    "relatedSlugs": ["software-engineer", "project-manager", "customer-service"]
+    "body": "Lead with numbers: quota attainment, revenue, deal count, retention, and pipeline.\n\nUse role-appropriate metrics\u2014SDRs focus on pipeline and activity; account executives on closed revenue and retention. Tailoring your resume to the company's segment (SMB, enterprise, industry) will improve fit. WadeCV can help you align your sales experience with job descriptions and highlight your strongest results.",
+    "relatedSlugs": [
+      "software-engineer",
+      "project-manager",
+      "customer-service"
+    ]
   },
   {
     "slug": "project-manager",
@@ -79,7 +94,7 @@
       "Improvement + scope (e.g. 'Reduced handle time by X%'; 'Cut repeat contacts by Y%')",
       "Leadership + outcome (e.g. 'Trained N agents'; 'Led rollout affecting X users')"
     ],
-    "body": "Use metrics that matter to the role: contact volume, CSAT, resolution rate, handle time, and any process or training impact. Show progression—taking on harder cases, training others, or improving tools and playbooks.\n\nTailoring your resume to the channel (phone, chat, email) and industry will help. WadeCV can help you align your customer service experience with job descriptions and highlight your strongest contributions."
+    "body": "Use metrics that matter to the role: contact volume, CSAT, resolution rate, handle time, and any process or training impact. Show progression\u2014taking on harder cases, training others, or improving tools and playbooks.\n\nTailoring your resume to the channel (phone, chat, email) and industry will help. WadeCV can help you align your customer service experience with job descriptions and highlight your strongest contributions."
   },
   {
     "slug": "nurse",
@@ -87,7 +102,7 @@
     "metaDescription": "Nurse resume bullet examples and impact formulas. How to show clinical impact and patient outcomes on your resume.",
     "intro": "Nursing resume bullets should show clinical scope, patient outcomes, and any quality or safety impact. This guide gives you examples and formulas so your experience reads as impact-focused.",
     "bulletExamples": [
-      "Provided direct care for 6–8 patients per shift on med-surg unit; maintained 100% documentation compliance and zero medication errors in 2 years.",
+      "Provided direct care for 6\u20138 patients per shift on med-surg unit; maintained 100% documentation compliance and zero medication errors in 2 years.",
       "Trained 3 new RNs on unit protocols and EMR; supported orientation and reduced time-to-independence by 2 weeks.",
       "Led quality initiative that reduced central line infections by 25%; presented at unit council and hospital-wide."
     ],
@@ -128,12 +143,12 @@
       "Mentored 4 junior team members; 2 promoted within 18 months."
     ],
     "impactFormulas": [
-      "Led / Directed / Owned — for leadership and ownership",
-      "Designed / Built / Implemented — for technical or process creation",
-      "Reduced / Improved / Increased — for measurable outcomes",
-      "Mentored / Trained / Developed — for people impact"
+      "Led / Directed / Owned \u2014 for leadership and ownership",
+      "Designed / Built / Implemented \u2014 for technical or process creation",
+      "Reduced / Improved / Increased \u2014 for measurable outcomes",
+      "Mentored / Trained / Developed \u2014 for people impact"
     ],
-    "body": "Vary your verbs so bullets don't all start the same way. Match the level of the role—senior roles often use 'Led', 'Drove', 'Owned'. Tailoring your bullets to the job description will help. WadeCV can help you generate bullets that use strong action verbs and match the role."
+    "body": "Vary your verbs so bullets don't all start the same way. Match the level of the role\u2014senior roles often use 'Led', 'Drove', 'Owned'. Tailoring your bullets to the job description will help. WadeCV can help you generate bullets that use strong action verbs and match the role."
   },
   {
     "slug": "teacher",
@@ -185,11 +200,22 @@
       "Launch + result (e.g. 'Shipped X; achieved Y metric')"
     ],
     "body": "PM bullets should lead with outcomes: activation, retention, revenue, or efficiency. Show discovery and stakeholder work, not just delivery. Tailor to the company stage and product type. WadeCV can help you align your PM experience with job descriptions.",
-    "relatedSlugs": ["software-engineer", "data-analyst", "customer-service"],
-    "faq": [
-      { "question": "How do I show product impact without revenue data?", "answer": "Use adoption, engagement, retention, or efficiency metrics. Examples: activation rate, feature adoption, time saved, or reduction in support load." }
+    "relatedSlugs": [
+      "software-engineer",
+      "data-analyst",
+      "customer-service"
     ],
-    "commonMistakes": ["Listing only features shipped without outcomes", "Skipping discovery or stakeholder context", "Vague metrics (e.g. 'improved metrics')"]
+    "faq": [
+      {
+        "question": "How do I show product impact without revenue data?",
+        "answer": "Use adoption, engagement, retention, or efficiency metrics. Examples: activation rate, feature adoption, time saved, or reduction in support load."
+      }
+    ],
+    "commonMistakes": [
+      "Listing only features shipped without outcomes",
+      "Skipping discovery or stakeholder context",
+      "Vague metrics (e.g. 'improved metrics')"
+    ]
   },
   {
     "slug": "data-analyst",
@@ -208,11 +234,22 @@
       "Scope + alignment (e.g. 'Aligned N teams on X; outcome Y')"
     ],
     "body": "Lead with impact: reports adopted, decisions influenced, metrics improved. List tools and languages clearly. Tailor to industry (product, marketing, finance, healthcare). WadeCV can help you align your analyst experience with job descriptions.",
-    "relatedSlugs": ["software-engineer", "product-manager", "customer-service"],
-    "faq": [
-      { "question": "How many technical details in a data analyst resume?", "answer": "Enough to show stack (SQL, Python, Tableau, etc.) and scale. Lead each bullet with the business outcome, then the method." }
+    "relatedSlugs": [
+      "software-engineer",
+      "product-manager",
+      "customer-service"
     ],
-    "commonMistakes": ["Listing only deliverables without impact", "Too much methodology, not enough outcome", "Vague 'analysed data' bullets"]
+    "faq": [
+      {
+        "question": "How many technical details in a data analyst resume?",
+        "answer": "Enough to show stack (SQL, Python, Tableau, etc.) and scale. Lead each bullet with the business outcome, then the method."
+      }
+    ],
+    "commonMistakes": [
+      "Listing only deliverables without impact",
+      "Too much methodology, not enough outcome",
+      "Vague 'analysed data' bullets"
+    ]
   },
   {
     "slug": "recruiter",
@@ -231,11 +268,22 @@
       "Initiative + metric (e.g. 'Led X; improved Y by Z%')"
     ],
     "body": "Lead with roles filled, time-to-fill, or pipeline metrics. Highlight experience with the types of roles you recruit for. Tailor to in-house vs agency. WadeCV can help you align your recruiting experience with job descriptions.",
-    "relatedSlugs": ["hr-business-partner", "customer-success-manager", "sales"],
-    "faq": [
-      { "question": "How do I show recruiter impact without confidential data?", "answer": "Use percentages (time-to-fill reduction, satisfaction improvement), counts (roles filled, pipeline size), or process outcomes (sourcing mix, offer acceptance)." }
+    "relatedSlugs": [
+      "hr-business-partner",
+      "customer-success-manager",
+      "sales"
     ],
-    "commonMistakes": ["Vague 'recruited for X' without scale or outcome", "Omitting ATS or sourcing tools", "No differentiation between in-house and agency"]
+    "faq": [
+      {
+        "question": "How do I show recruiter impact without confidential data?",
+        "answer": "Use percentages (time-to-fill reduction, satisfaction improvement), counts (roles filled, pipeline size), or process outcomes (sourcing mix, offer acceptance)."
+      }
+    ],
+    "commonMistakes": [
+      "Vague 'recruited for X' without scale or outcome",
+      "Omitting ATS or sourcing tools",
+      "No differentiation between in-house and agency"
+    ]
   },
   {
     "slug": "administrative-assistant",
@@ -254,8 +302,16 @@
       "Responsibility + result (e.g. 'Managed X; outcome Y')"
     ],
     "body": "Lead with scope: number of executives or team supported, types of tasks, efficiency gains. Use keywords from the job (tools, industry). WadeCV can help you align your admin experience with job descriptions.",
-    "relatedSlugs": ["executive-assistant", "project-coordinator", "customer-service"],
-    "commonMistakes": ["Generic task lists without scope or outcome", "Omitting tools (Office, Confluence, etc.)", "No numbers or scale"]
+    "relatedSlugs": [
+      "executive-assistant",
+      "project-coordinator",
+      "customer-service"
+    ],
+    "commonMistakes": [
+      "Generic task lists without scope or outcome",
+      "Omitting tools (Office, Confluence, etc.)",
+      "No numbers or scale"
+    ]
   },
   {
     "slug": "executive-assistant",
@@ -274,8 +330,16 @@
       "Responsibility + discretion (e.g. 'Managed X; maintained Y')"
     ],
     "body": "Lead with level of executives and scope (board, travel, projects). Use discretion and confidentiality as keywords. WadeCV can help you align your EA experience with job descriptions.",
-    "relatedSlugs": ["administrative-assistant", "project-coordinator", "hr-business-partner"],
-    "commonMistakes": ["Vague 'supported executives' without scope", "Omitting board or high-stakes context", "No evidence of discretion or judgment"]
+    "relatedSlugs": [
+      "administrative-assistant",
+      "project-coordinator",
+      "hr-business-partner"
+    ],
+    "commonMistakes": [
+      "Vague 'supported executives' without scope",
+      "Omitting board or high-stakes context",
+      "No evidence of discretion or judgment"
+    ]
   },
   {
     "slug": "frontend-developer",
@@ -294,11 +358,22 @@
       "Scope + result (e.g. 'Implemented X across N teams; outcome Y')"
     ],
     "body": "Lead with frameworks and user impact (scale, performance, accessibility). Match the stack in the job description. WadeCV can help you align your frontend experience with job descriptions.",
-    "relatedSlugs": ["software-engineer", "ux-designer", "devops"],
-    "faq": [
-      { "question": "How do I show frontend impact without backend access?", "answer": "Focus on performance (Core Web Vitals, load time), accessibility (WCAG, screen readers), adoption (users, teams using your components), and UX outcomes (conversion, engagement)." }
+    "relatedSlugs": [
+      "software-engineer",
+      "ux-designer",
+      "devops"
     ],
-    "commonMistakes": ["Listing only libraries without outcomes", "No performance or accessibility metrics", "Generic 'built features' bullets"]
+    "faq": [
+      {
+        "question": "How do I show frontend impact without backend access?",
+        "answer": "Focus on performance (Core Web Vitals, load time), accessibility (WCAG, screen readers), adoption (users, teams using your components), and UX outcomes (conversion, engagement)."
+      }
+    ],
+    "commonMistakes": [
+      "Listing only libraries without outcomes",
+      "No performance or accessibility metrics",
+      "Generic 'built features' bullets"
+    ]
   },
   {
     "slug": "devops",
@@ -317,8 +392,16 @@
       "Initiative + result (e.g. 'Introduced X; outcome Y')"
     ],
     "body": "Lead with automation and reliability outcomes: deployment frequency, uptime, cost. List tools and clouds that match the job. WadeCV can help you align your DevOps experience with job descriptions.",
-    "relatedSlugs": ["software-engineer", "backend-engineer", "frontend-developer"],
-    "commonMistakes": ["Listing only tools without outcomes", "No uptime or deployment metrics", "Vague 'maintained infrastructure' bullets"]
+    "relatedSlugs": [
+      "software-engineer",
+      "backend-engineer",
+      "frontend-developer"
+    ],
+    "commonMistakes": [
+      "Listing only tools without outcomes",
+      "No uptime or deployment metrics",
+      "Vague 'maintained infrastructure' bullets"
+    ]
   },
   {
     "slug": "ux-designer",
@@ -337,8 +420,16 @@
       "Process + result (e.g. 'Conducted X; drove Y')"
     ],
     "body": "Lead with user and business impact: conversion, satisfaction, efficiency. Show research and design process. Tailor to product type. WadeCV can help you align your UX experience with job descriptions.",
-    "relatedSlugs": ["product-manager", "frontend-developer", "technical-writer"],
-    "commonMistakes": ["Portfolio-only; resume needs standalone impact", "No metrics or business outcomes", "Skipping collaboration context"]
+    "relatedSlugs": [
+      "product-manager",
+      "frontend-developer",
+      "technical-writer"
+    ],
+    "commonMistakes": [
+      "Portfolio-only; resume needs standalone impact",
+      "No metrics or business outcomes",
+      "Skipping collaboration context"
+    ]
   },
   {
     "slug": "quantifiable-resume-bullets",
@@ -357,17 +448,28 @@
       "Before + after (e.g. 'Grew X from A to B; outcome Y')"
     ],
     "body": "Add numbers for: team size, budget, volume, time, percentage change, or scale (users, revenue). Even approximate numbers are better than none. WadeCV can help you turn duties into quantifiable bullets that match job descriptions.",
-    "relatedSlugs": ["achievement-examples", "action-verbs", "software-engineer"],
-    "faq": [
-      { "question": "What if I don't have exact numbers?", "answer": "Use reasonable estimates (e.g. '~50 customers', 'approximately 20%'). Round to significant figures. Focus on the type of metric that matters for the role." }
+    "relatedSlugs": [
+      "achievement-examples",
+      "action-verbs",
+      "software-engineer"
     ],
-    "commonMistakes": ["No numbers at all", "Only vague percentages without context", "Overly precise numbers that look made up"]
+    "faq": [
+      {
+        "question": "What if I don't have exact numbers?",
+        "answer": "Use reasonable estimates (e.g. '~50 customers', 'approximately 20%'). Round to significant figures. Focus on the type of metric that matters for the role."
+      }
+    ],
+    "commonMistakes": [
+      "No numbers at all",
+      "Only vague percentages without context",
+      "Overly precise numbers that look made up"
+    ]
   },
   {
     "slug": "accountant",
     "title": "Accountant Resume Bullet Points",
     "metaDescription": "Accountant resume bullet examples and impact formulas. Show accuracy, volume, and process improvements that hiring managers want to see.",
-    "intro": "Accountant resume bullets should quantify the scale of your work — accounts managed, close timelines, audit results, and process savings. This guide gives you concrete examples and formulas for staff, senior, and public accounting roles.",
+    "intro": "Accountant resume bullets should quantify the scale of your work \u2014 accounts managed, close timelines, audit results, and process savings. This guide gives you concrete examples and formulas for staff, senior, and public accounting roles.",
     "bulletExamples": [
       "Managed month-end close for 5-entity group; reduced close cycle from 12 days to 7 through process redesign and automation.",
       "Prepared and filed 200+ individual and corporate tax returns per season with zero penalties or late filings.",
@@ -380,12 +482,23 @@
       "Process + savings (e.g. 'Automated X; reduced close time by Y days')",
       "Compliance + result (e.g. 'Led X testing; achieved clean audit')"
     ],
-    "body": "Lead with volume (accounts, entities, returns) and outcomes (accuracy, timeliness, savings). Highlight ERP systems (SAP, Oracle, NetSuite, QuickBooks) and compliance frameworks (SOX, GAAP, IFRS). Show progression from bookkeeping to analysis or advisory.\n\nTailor your bullets to the role level — staff accountants emphasise accuracy and volume; senior accountants and controllers show process improvement and team leadership. WadeCV can help you reframe your accounting experience to match specific job descriptions.",
-    "relatedSlugs": ["data-analyst", "administrative-assistant", "quantifiable-resume-bullets"],
-    "faq": [
-      { "question": "How do I show accounting impact without confidential numbers?", "answer": "Use percentages (reduced close time by 40%), counts (200+ returns, 150 accounts), or process outcomes (zero penalties, clean audit). Avoid disclosing exact revenue or client names." }
+    "body": "Lead with volume (accounts, entities, returns) and outcomes (accuracy, timeliness, savings). Highlight ERP systems (SAP, Oracle, NetSuite, QuickBooks) and compliance frameworks (SOX, GAAP, IFRS). Show progression from bookkeeping to analysis or advisory.\n\nTailor your bullets to the role level \u2014 staff accountants emphasise accuracy and volume; senior accountants and controllers show process improvement and team leadership. WadeCV can help you reframe your accounting experience to match specific job descriptions.",
+    "relatedSlugs": [
+      "data-analyst",
+      "administrative-assistant",
+      "quantifiable-resume-bullets"
     ],
-    "commonMistakes": ["Listing only tasks ('prepared journal entries') without scale or outcome", "Omitting ERP or accounting software experience", "No mention of compliance or accuracy metrics"]
+    "faq": [
+      {
+        "question": "How do I show accounting impact without confidential numbers?",
+        "answer": "Use percentages (reduced close time by 40%), counts (200+ returns, 150 accounts), or process outcomes (zero penalties, clean audit). Avoid disclosing exact revenue or client names."
+      }
+    ],
+    "commonMistakes": [
+      "Listing only tasks ('prepared journal entries') without scale or outcome",
+      "Omitting ERP or accounting software experience",
+      "No mention of compliance or accuracy metrics"
+    ]
   },
   {
     "slug": "business-analyst",
@@ -404,12 +517,23 @@
       "Deliverable + adoption (e.g. 'Created X; adopted by Y stakeholders')",
       "Process + outcome (e.g. 'Reduced rework by X% through Y')"
     ],
-    "body": "Lead with impact: decisions influenced, time saved, processes improved. Show tools (SQL, Power BI, Tableau, Jira, Confluence) and methods (agile, waterfall, gap analysis). Distinguish between technical BA and business-facing BA roles.\n\nTailor bullets to the industry — financial services BAs highlight compliance and risk; tech BAs highlight product and agile. WadeCV can help you align your BA experience with specific job descriptions.",
-    "relatedSlugs": ["data-analyst", "project-manager", "product-manager"],
-    "faq": [
-      { "question": "How do I show BA impact when I don't own the outcome?", "answer": "Focus on what you delivered: requirements quality (fewer change requests), stakeholder alignment (workshops, sign-offs), or analysis that drove a decision. You don't need to own the final metric." }
+    "body": "Lead with impact: decisions influenced, time saved, processes improved. Show tools (SQL, Power BI, Tableau, Jira, Confluence) and methods (agile, waterfall, gap analysis). Distinguish between technical BA and business-facing BA roles.\n\nTailor bullets to the industry \u2014 financial services BAs highlight compliance and risk; tech BAs highlight product and agile. WadeCV can help you align your BA experience with specific job descriptions.",
+    "relatedSlugs": [
+      "data-analyst",
+      "project-manager",
+      "product-manager"
     ],
-    "commonMistakes": ["Vague 'gathered requirements' without scope or outcome", "No mention of stakeholder management", "Listing tools without showing what you built with them"]
+    "faq": [
+      {
+        "question": "How do I show BA impact when I don't own the outcome?",
+        "answer": "Focus on what you delivered: requirements quality (fewer change requests), stakeholder alignment (workshops, sign-offs), or analysis that drove a decision. You don't need to own the final metric."
+      }
+    ],
+    "commonMistakes": [
+      "Vague 'gathered requirements' without scope or outcome",
+      "No mention of stakeholder management",
+      "Listing tools without showing what you built with them"
+    ]
   },
   {
     "slug": "operations-manager",
@@ -428,12 +552,23 @@
       "Improvement + savings (e.g. 'Implemented X; saved $Y annually')",
       "Team + outcome (e.g. 'Led team of X; reduced turnover by Y%')"
     ],
-    "body": "Lead with scale (volume, team size, budget) and outcomes (cost savings, efficiency, quality). Highlight methodologies (Lean, Six Sigma, Kaizen) and systems (ERP, WMS, TMS). Show progression from individual contributor to managing teams and processes.\n\nTailor to the industry — logistics ops focus on fulfilment and supply chain; retail ops on shrinkage and customer satisfaction. WadeCV can help you align your operations experience with specific job descriptions.",
-    "relatedSlugs": ["project-manager", "supply-chain-analyst", "administrative-assistant"],
-    "faq": [
-      { "question": "How do I quantify operations management impact?", "answer": "Track: cost savings, efficiency improvements (cycle time, throughput), quality metrics (defect rate, SLA compliance), team metrics (turnover, training hours), and volume handled." }
+    "body": "Lead with scale (volume, team size, budget) and outcomes (cost savings, efficiency, quality). Highlight methodologies (Lean, Six Sigma, Kaizen) and systems (ERP, WMS, TMS). Show progression from individual contributor to managing teams and processes.\n\nTailor to the industry \u2014 logistics ops focus on fulfilment and supply chain; retail ops on shrinkage and customer satisfaction. WadeCV can help you align your operations experience with specific job descriptions.",
+    "relatedSlugs": [
+      "project-manager",
+      "supply-chain-analyst",
+      "administrative-assistant"
     ],
-    "commonMistakes": ["Generic 'managed operations' without scale", "No cost or efficiency metrics", "Omitting team size and leadership scope"]
+    "faq": [
+      {
+        "question": "How do I quantify operations management impact?",
+        "answer": "Track: cost savings, efficiency improvements (cycle time, throughput), quality metrics (defect rate, SLA compliance), team metrics (turnover, training hours), and volume handled."
+      }
+    ],
+    "commonMistakes": [
+      "Generic 'managed operations' without scale",
+      "No cost or efficiency metrics",
+      "Omitting team size and leadership scope"
+    ]
   },
   {
     "slug": "cybersecurity-analyst",
@@ -452,12 +587,23 @@
       "Incident + outcome (e.g. 'Contained X within Y hours; zero data loss')",
       "Initiative + result (e.g. 'Deployed X rules; reduced false positives by Y%')"
     ],
-    "body": "Lead with scope (endpoints, alerts, incidents) and outcomes (containment time, detection rate, compliance). List tools (Splunk, CrowdStrike, Palo Alto, MITRE ATT&CK) and certifications (CISSP, CEH, CompTIA Security+). Show incident response experience and any automation or detection engineering work.\n\nTailor to the role — SOC analysts focus on triage and detection; IR leads on containment and recovery; security engineers on tooling and architecture. WadeCV can help you align your cybersecurity experience with specific job descriptions.",
-    "relatedSlugs": ["software-engineer", "devops", "data-analyst"],
-    "faq": [
-      { "question": "How do I write cybersecurity bullets without disclosing sensitive details?", "answer": "Use sanitised metrics: incident count, containment time, detection rate, SLA compliance, training outcomes. Never name specific attack vectors, clients, or classified tools." }
+    "body": "Lead with scope (endpoints, alerts, incidents) and outcomes (containment time, detection rate, compliance). List tools (Splunk, CrowdStrike, Palo Alto, MITRE ATT&CK) and certifications (CISSP, CEH, CompTIA Security+). Show incident response experience and any automation or detection engineering work.\n\nTailor to the role \u2014 SOC analysts focus on triage and detection; IR leads on containment and recovery; security engineers on tooling and architecture. WadeCV can help you align your cybersecurity experience with specific job descriptions.",
+    "relatedSlugs": [
+      "software-engineer",
+      "devops",
+      "data-analyst"
     ],
-    "commonMistakes": ["Listing only tools without outcomes", "No incident metrics or SLA data", "Vague 'monitored security' bullets without scale"]
+    "faq": [
+      {
+        "question": "How do I write cybersecurity bullets without disclosing sensitive details?",
+        "answer": "Use sanitised metrics: incident count, containment time, detection rate, SLA compliance, training outcomes. Never name specific attack vectors, clients, or classified tools."
+      }
+    ],
+    "commonMistakes": [
+      "Listing only tools without outcomes",
+      "No incident metrics or SLA data",
+      "Vague 'monitored security' bullets without scale"
+    ]
   },
   {
     "slug": "cloud-engineer",
@@ -476,12 +622,23 @@
       "Migration + outcome (e.g. 'Migrated X workloads; reduced cost by Y%')",
       "Automation + savings (e.g. 'Implemented X; reduced provisioning from Y to Z')"
     ],
-    "body": "Lead with scale (services, regions, traffic) and outcomes (uptime, cost, deployment speed). List cloud platforms (AWS, Azure, GCP), IaC tools (Terraform, CloudFormation, Pulumi), and orchestration (Kubernetes, ECS). Show cost optimisation and FinOps experience — it's increasingly valued.\n\nTailor to the cloud provider in the job description. WadeCV can help you align your cloud engineering experience with specific job descriptions.",
-    "relatedSlugs": ["devops", "software-engineer", "cybersecurity-analyst"],
-    "faq": [
-      { "question": "Should I list all three cloud platforms on my resume?", "answer": "List platforms where you have real hands-on experience. If the job targets one provider, lead with that. Multi-cloud experience is a strength — just be specific about what you did on each." }
+    "body": "Lead with scale (services, regions, traffic) and outcomes (uptime, cost, deployment speed). List cloud platforms (AWS, Azure, GCP), IaC tools (Terraform, CloudFormation, Pulumi), and orchestration (Kubernetes, ECS). Show cost optimisation and FinOps experience \u2014 it's increasingly valued.\n\nTailor to the cloud provider in the job description. WadeCV can help you align your cloud engineering experience with specific job descriptions.",
+    "relatedSlugs": [
+      "devops",
+      "software-engineer",
+      "cybersecurity-analyst"
     ],
-    "commonMistakes": ["Listing certifications without showing hands-on work", "No cost or scale metrics", "Vague 'managed cloud infrastructure' without specifics"]
+    "faq": [
+      {
+        "question": "Should I list all three cloud platforms on my resume?",
+        "answer": "List platforms where you have real hands-on experience. If the job targets one provider, lead with that. Multi-cloud experience is a strength \u2014 just be specific about what you did on each."
+      }
+    ],
+    "commonMistakes": [
+      "Listing certifications without showing hands-on work",
+      "No cost or scale metrics",
+      "Vague 'managed cloud infrastructure' without specifics"
+    ]
   },
   {
     "slug": "social-media-manager",
@@ -500,12 +657,23 @@
       "Budget + ROI (e.g. 'Managed $X budget; generated Y leads at $Z CPL')",
       "Content + reach (e.g. 'Created X posts/month; achieved Y impressions')"
     ],
-    "body": "Lead with growth metrics (followers, engagement rate, reach), campaign ROI (CPL, ROAS, conversions), and content volume. Show platform-specific expertise and analytics tools (Meta Business Suite, Sprout Social, Hootsuite).\n\nTailor to the role — organic roles emphasise content and engagement; paid roles emphasise budget and ROI; community roles emphasise retention and advocacy. WadeCV can help you align your social media experience with specific job descriptions.",
-    "relatedSlugs": ["marketing-manager", "content-writer", "ux-designer"],
-    "faq": [
-      { "question": "How do I show social media ROI on my resume?", "answer": "Use platform-native metrics: follower growth, engagement rate, reach, impressions. For paid: CPL, ROAS, conversion rate. For community: member growth, repeat engagement, event attendance." }
+    "body": "Lead with growth metrics (followers, engagement rate, reach), campaign ROI (CPL, ROAS, conversions), and content volume. Show platform-specific expertise and analytics tools (Meta Business Suite, Sprout Social, Hootsuite).\n\nTailor to the role \u2014 organic roles emphasise content and engagement; paid roles emphasise budget and ROI; community roles emphasise retention and advocacy. WadeCV can help you align your social media experience with specific job descriptions.",
+    "relatedSlugs": [
+      "marketing-manager",
+      "content-writer",
+      "ux-designer"
     ],
-    "commonMistakes": ["No growth or engagement metrics", "Listing only platforms without outcomes", "Generic 'managed social media' without scale or strategy"]
+    "faq": [
+      {
+        "question": "How do I show social media ROI on my resume?",
+        "answer": "Use platform-native metrics: follower growth, engagement rate, reach, impressions. For paid: CPL, ROAS, conversion rate. For community: member growth, repeat engagement, event attendance."
+      }
+    ],
+    "commonMistakes": [
+      "No growth or engagement metrics",
+      "Listing only platforms without outcomes",
+      "Generic 'managed social media' without scale or strategy"
+    ]
   },
   {
     "slug": "supply-chain-analyst",
@@ -524,12 +692,23 @@
       "Process + savings (e.g. 'Designed X; reduced stockouts by Y% and costs by Z%')",
       "Scope + result (e.g. 'Analysed X vendors; reduced lead time by Y%')"
     ],
-    "body": "Lead with impact: forecast accuracy, cost savings, inventory reduction, lead time improvements. Show tools (SAP, Oracle SCM, Power BI, advanced Excel) and methodologies (statistical forecasting, Lean, Six Sigma). Quantify supplier count, SKU volume, or spend managed.\n\nTailor to the function — demand planners focus on forecast accuracy; procurement analysts on cost savings; logistics analysts on transit times and fulfilment. WadeCV can help you align your supply chain experience with specific job descriptions.",
-    "relatedSlugs": ["data-analyst", "operations-manager", "business-analyst"],
-    "faq": [
-      { "question": "How do I show supply chain impact as a junior analyst?", "answer": "Focus on analysis outcomes: dashboards built, reports adopted, recommendations made, process improvements suggested. Even if you didn't own the final decision, your analysis drove it." }
+    "body": "Lead with impact: forecast accuracy, cost savings, inventory reduction, lead time improvements. Show tools (SAP, Oracle SCM, Power BI, advanced Excel) and methodologies (statistical forecasting, Lean, Six Sigma). Quantify supplier count, SKU volume, or spend managed.\n\nTailor to the function \u2014 demand planners focus on forecast accuracy; procurement analysts on cost savings; logistics analysts on transit times and fulfilment. WadeCV can help you align your supply chain experience with specific job descriptions.",
+    "relatedSlugs": [
+      "data-analyst",
+      "operations-manager",
+      "business-analyst"
     ],
-    "commonMistakes": ["Listing only tools without outcomes", "No forecasting or cost metrics", "Generic 'supported supply chain' without specifics"]
+    "faq": [
+      {
+        "question": "How do I show supply chain impact as a junior analyst?",
+        "answer": "Focus on analysis outcomes: dashboards built, reports adopted, recommendations made, process improvements suggested. Even if you didn't own the final decision, your analysis drove it."
+      }
+    ],
+    "commonMistakes": [
+      "Listing only tools without outcomes",
+      "No forecasting or cost metrics",
+      "Generic 'supported supply chain' without specifics"
+    ]
   },
   {
     "slug": "content-writer",
@@ -548,11 +727,92 @@
       "Copy + conversion (e.g. 'Wrote X; converted at Y%')",
       "Strategy + outcome (e.g. 'Developed X; increased Y by Z%')"
     ],
-    "body": "Lead with traffic, conversion, or engagement metrics. Show content types (blog, landing pages, email, whitepapers) and tools (WordPress, SEO tools, CMS, analytics). Distinguish between SEO content, copywriting, and content strategy.\n\nTailor to the role — SEO writers emphasise organic traffic and rankings; copywriters emphasise conversion; content strategists emphasise editorial calendars and business impact. WadeCV can help you align your content writing experience with specific job descriptions.",
-    "relatedSlugs": ["marketing-manager", "social-media-manager", "ux-designer"],
-    "faq": [
-      { "question": "How do I show writing impact without access to analytics?", "answer": "Use publication volume, engagement (shares, comments), editorial scope (topics, platforms), and qualitative outcomes (stakeholder feedback, brand consistency). Ask for analytics access in future roles." }
+    "body": "Lead with traffic, conversion, or engagement metrics. Show content types (blog, landing pages, email, whitepapers) and tools (WordPress, SEO tools, CMS, analytics). Distinguish between SEO content, copywriting, and content strategy.\n\nTailor to the role \u2014 SEO writers emphasise organic traffic and rankings; copywriters emphasise conversion; content strategists emphasise editorial calendars and business impact. WadeCV can help you align your content writing experience with specific job descriptions.",
+    "relatedSlugs": [
+      "marketing-manager",
+      "social-media-manager",
+      "ux-designer"
     ],
-    "commonMistakes": ["No traffic or engagement metrics", "Listing only topics without outcomes", "Generic 'wrote blog posts' without scale or strategy"]
+    "faq": [
+      {
+        "question": "How do I show writing impact without access to analytics?",
+        "answer": "Use publication volume, engagement (shares, comments), editorial scope (topics, platforms), and qualitative outcomes (stakeholder feedback, brand consistency). Ask for analytics access in future roles."
+      }
+    ],
+    "commonMistakes": [
+      "No traffic or engagement metrics",
+      "Listing only topics without outcomes",
+      "Generic 'wrote blog posts' without scale or strategy"
+    ]
+  },
+  {
+    "slug": "digital-marketing",
+    "title": "Digital Marketing Resume Bullet Points",
+    "metaDescription": "Digital marketing resume bullet examples and impact formulas. How to write results-driven bullets for SEO, paid media, email, and content marketing roles.",
+    "intro": "Digital marketing resume bullets should quantify campaign results, channel expertise, and business impact. This guide gives you concrete examples and formulas so you can turn your marketing experience into compelling, metrics-driven bullets.",
+    "bulletExamples": [
+      "Grew organic traffic by 180% in 12 months through technical SEO improvements and content strategy; generated 3,200 monthly leads from search.",
+      "Managed $250K monthly Google Ads budget across 15 campaigns; improved ROAS from 2.1x to 4.8x through audience segmentation and bid strategy optimization.",
+      "Launched email nurture sequence for 45K subscribers; achieved 32% open rate and 8% click-through, converting 2,100 leads to paying customers.",
+      "Led social media strategy across Instagram, LinkedIn, and TikTok; grew follower base by 65K and increased engagement rate from 1.2% to 4.7%.",
+      "Built and optimized 25 landing pages using A/B testing; improved average conversion rate from 2.3% to 5.8%, adding $420K in annual pipeline."
+    ],
+    "impactFormulas": [
+      "Channel + metric + result (e.g. 'Grew organic traffic by X%', 'Improved ROAS to Yx')",
+      "Budget + optimization (e.g. 'Managed $XK budget; reduced CPA by Y%')",
+      "Campaign + scale + outcome (e.g. 'Launched campaign reaching X users; generated Y leads')"
+    ],
+    "body": "Lead with metrics: traffic growth, ROAS, conversion rates, CPA, revenue attributed, and audience size. Specify the channels and tools you used \u2014 hiring managers scan for platform expertise.\n\nMatch your bullets to the role: SEO-focused roles want traffic and ranking metrics; paid media roles want ROAS and CPA; content roles want engagement and lead generation. WadeCV can help you reframe your marketing experience into tailored resume bullets that match specific job descriptions.",
+    "relatedSlugs": [
+      "content-writer",
+      "sales",
+      "project-manager"
+    ],
+    "faq": [
+      {
+        "question": "How do I quantify digital marketing experience on a resume?",
+        "answer": "Use specific metrics: traffic growth percentages, ROAS or ROI figures, conversion rates, CPA, budget managed, leads generated, and revenue attributed. Include timeframes to show the pace of improvement."
+      }
+    ],
+    "commonMistakes": [
+      "Listing channels without performance metrics",
+      "Using vanity metrics (impressions, followers) without tying them to business outcomes",
+      "Not specifying which tools and platforms you used"
+    ]
+  },
+  {
+    "slug": "financial-analyst",
+    "title": "Financial Analyst Resume Bullet Points",
+    "metaDescription": "Financial analyst resume bullet examples and impact formulas. How to show analytical impact, forecasting accuracy, and decision support on your resume.",
+    "intro": "Financial analyst resume bullets should demonstrate analytical rigor, accuracy of forecasts, and how your work informed business decisions. This guide provides examples and formulas to help you present your financial analysis experience with impact.",
+    "bulletExamples": [
+      "Built quarterly financial forecast model for $200M business unit; achieved 97% accuracy across 4 quarters, informing headcount and capex decisions.",
+      "Analyzed $15M in operating expenses and identified $2.1M in cost reduction opportunities; presented findings to CFO and implemented 3 initiatives.",
+      "Automated monthly close reporting using Excel VBA and Power BI; reduced report generation time from 3 days to 4 hours for team of 8 analysts.",
+      "Led financial due diligence for 2 acquisitions totaling $45M; identified $3M in synergies and flagged $800K in contingent liabilities.",
+      "Prepared board-level financial packages including P&L variance analysis, cash flow projections, and KPI dashboards for 6 business units."
+    ],
+    "impactFormulas": [
+      "Analysis + scope + outcome (e.g. 'Analyzed $XM in expenses; identified $YM in savings')",
+      "Model + accuracy + decision (e.g. 'Built forecast with X% accuracy; informed Y decisions')",
+      "Process + improvement (e.g. 'Automated reporting; reduced time by X%')"
+    ],
+    "body": "Emphasize the scale of what you analyzed (revenue, expenses, portfolio size), the accuracy of your work (forecast accuracy, variance analysis), and how your analysis influenced decisions (cost savings, investment recommendations, strategic pivots).\n\nSpecify the tools you used \u2014 Excel, SQL, Python, Tableau, Power BI, SAP \u2014 as these are frequently used as ATS keywords. WadeCV can help you tailor your financial analyst experience to match specific job descriptions and highlight your strongest analytical contributions.",
+    "relatedSlugs": [
+      "business-analyst",
+      "accountant",
+      "data-analyst"
+    ],
+    "faq": [
+      {
+        "question": "What metrics should a financial analyst include on their resume?",
+        "answer": "Include portfolio or budget size analyzed, forecast accuracy percentages, cost savings identified, revenue impact of recommendations, and efficiency gains from process improvements. Always tie your analysis to a business outcome."
+      }
+    ],
+    "commonMistakes": [
+      "Describing duties ('prepared reports') without showing impact",
+      "Not including the scale of budgets or portfolios analyzed",
+      "Omitting tools and technical skills (Excel, SQL, BI tools)"
+    ]
   }
 ]
