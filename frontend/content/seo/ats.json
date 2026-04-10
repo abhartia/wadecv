@@ -60,23 +60,47 @@
   {
     "slug": "lever",
     "name": "Lever",
-    "metaDescription": "How Lever ATS ranks your resume: parsing rules, formatting tips, and keyword strategy that gets you past the screen and into recruiter hands.",
-    "intro": "Lever is used by many startups and mid-size companies for recruiting. Optimizing your resume for how Lever parses and displays content can help you get past the initial screen and into the hands of hiring managers and recruiters.",
+    "metaDescription": "Lever ATS resume guide for 2026: how Lever parses, scores, and surfaces your resume to recruiters. Exact formatting rules, keyword tips, and common mistakes to avoid.",
+    "intro": "Lever (now part of Employ Inc.) powers recruiting at thousands of companies, from high-growth startups like Spotify and Netflix to mid-market firms across every industry. Unlike older ATS platforms, Lever combines applicant tracking with a built-in CRM, meaning your resume lives in a searchable talent pool long after you apply. Optimizing for Lever is about both passing the initial screen and being discoverable when future roles open.",
     "parsingRules": [
-      "Lever extracts resume content into searchable and filterable fields for the recruiting team.",
-      "Structured sections and clear job titles improve parsing and recruiter navigation.",
-      "Keywords from the job description are often used in search and filtering; include relevant terms in your resume.",
-      "Resume content is shown alongside the job description; clarity and relevance help recruiters compare fit.",
-      "Complete all required application fields; missing information can delay or exclude your application."
+      "Lever uses an integrated parsing engine that extracts your resume into structured candidate profiles — name, email, current title, experience history, education, and skills are mapped to individual fields.",
+      "Recruiters search Lever's candidate database using keyword filters, boolean queries, and tag-based searches. Your resume text must contain the exact terms hiring teams filter on.",
+      "Lever displays your parsed resume alongside the job description in a split-screen view. Recruiters visually scan for keyword alignment between your experience and the role requirements.",
+      "Unlike Workday or Taleo, Lever does not auto-reject based on knockout questions. Every resume reaches the hiring team's pipeline, but poorly parsed resumes get buried in the 'new applicant' queue without tags or highlights.",
+      "Lever supports resume attachments in PDF, DOCX, and plain text. The parser handles all three, but PDF with selectable text produces the most reliable extraction.",
+      "When applying through a Lever-hosted job page, your resume is parsed in real time and fields are pre-populated. Review these auto-filled fields before submitting — parser errors in your title or employer name create a bad first impression."
     ],
     "formattingNotes": [
-      "Use clear section headings (Experience, Education, Skills) and a single-column, text-based layout.",
-      "Prefer bullet points and simple formatting over complex tables or graphics.",
-      "Include full job titles, company names, and dates in a consistent format.",
-      "Weave in keywords from the job description where they accurately describe your experience.",
-      "Submit as PDF or DOCX with selectable text so the ATS can parse and index your content."
+      "Use a single-column layout with standard section headings: Experience, Education, Skills, and optionally Certifications or Projects. Lever's parser maps content by heading recognition.",
+      "Format each role as: Job Title | Company Name | Start Date – End Date. Lever extracts these into separate fields, so inconsistent formatting leads to parsing errors that recruiters see immediately.",
+      "Use 3–5 bullet points per role, each starting with a strong action verb. Lever displays bullets cleanly in its candidate profile view, making scannable content easier for recruiters to evaluate quickly.",
+      "Include a dedicated Skills section with comma-separated keywords that match the job description. Lever's search indexes this section heavily for keyword matching.",
+      "Avoid headers, footers, text boxes, tables, columns, and images. Lever's parser can misread or skip content in these elements, causing sections of your resume to disappear from your candidate profile.",
+      "Keep your resume to 1–2 pages. Lever's candidate card shows a truncated preview, so front-load your strongest qualifications and most relevant experience in the first half."
     ],
-    "body": "Lever is designed to make it easy for recruiters to find and evaluate candidates. A clean, keyword-aligned resume will parse well and stand out in search. Emphasise impact and outcomes so that when recruiters open your profile, they see clear evidence of fit.\n\nTailoring your resume to each Lever job post will improve both ATS match and human appeal. WadeCV can help you create a resume that works for Lever and other modern ATS platforms.",
+    "body": "Lever processes over 5 million job applications per year, making it one of the most widely used ATS platforms in the startup and tech ecosystem. Companies that use Lever include Spotify, Netflix, KPMG, and thousands of Series A through Series D startups. If you are applying to any company that uses Lever's job application pages (recognizable by the lever.co domain in the URL), your resume needs to be optimized for how Lever stores, searches, and displays candidate information.\n\nThe most common reason resumes fail in Lever is not outright rejection — it is invisibility. Lever does not auto-reject candidates the way enterprise ATS platforms like Taleo or Workday do. Instead, every application enters the recruiter's pipeline. The problem is that recruiters at popular companies may receive 200–500 applications per role. They use Lever's search, filter, and tagging tools to narrow the pool. If your resume does not contain the right keywords in the right format, it simply never surfaces when recruiters search.\n\nKeyword strategy for Lever is different from other ATS platforms because Lever's search is full-text rather than field-specific. This means keywords anywhere in your resume — summary, experience bullets, skills section, even education descriptions — can match a recruiter's search query. However, the Skills section receives extra weight in Lever's filtering UI, so always include a dedicated skills section that mirrors the language of the job posting.\n\nAnother Lever-specific consideration is the talent pool feature. When you apply to one role at a company using Lever, your profile remains in their talent pool permanently. Recruiters searching for candidates for future roles will find you through keyword searches. This means your resume should include broad industry terms and transferable skills alongside role-specific keywords — you want to be discoverable not just for the role you applied to, but for adjacent roles the company may open later.\n\nFormatting matters more in Lever than many candidates realize. Lever's candidate profile displays your parsed resume data alongside the original attachment. If parsing errors cause your job titles, dates, or company names to appear incorrectly, recruiters see the errors immediately. Clean formatting with consistent date formats (e.g., Jan 2023 – Present), clear role headers, and standard section headings dramatically reduces parsing errors and makes your profile look professional.\n\nWadeCV analyzes the specific job description from any Lever posting, identifies the keywords and skills the role requires, and generates a tailored resume that aligns your experience with what Lever recruiters will search for. Every resume WadeCV produces uses ATS-safe formatting — single column, standard headings, clean bullet points — so your content parses correctly into Lever's candidate profile every time.",
+    "faq": [
+      {
+        "question": "Does Lever automatically reject resumes?",
+        "answer": "No. Unlike enterprise ATS platforms like Workday or Taleo, Lever does not use knockout questions or auto-rejection rules. Every resume enters the recruiter's pipeline. However, recruiters use keyword search and filters to narrow large applicant pools, so resumes without matching keywords effectively become invisible."
+      },
+      {
+        "question": "What file format works best for Lever?",
+        "answer": "PDF with selectable text produces the most reliable parsing results. Lever also accepts DOCX and plain text. Avoid image-only PDFs (such as scanned documents) since the parser cannot extract text from images."
+      },
+      {
+        "question": "How does Lever's keyword search work?",
+        "answer": "Lever uses full-text search across your entire candidate profile, including resume text, skills, notes, and tags. Recruiters type keywords (e.g., 'Python', 'product management', 'Series B') and Lever returns matching candidates. Include relevant keywords in your skills section, experience bullets, and summary to maximize discoverability."
+      },
+      {
+        "question": "Can I apply to multiple jobs at the same company on Lever?",
+        "answer": "Yes. Lever tracks candidates across all applications at the same company. Your profile is shared across hiring teams, so each application adds to your candidate history. Make sure every resume version is well-formatted since recruiters can see all your submissions."
+      },
+      {
+        "question": "How long does my resume stay in Lever's system?",
+        "answer": "Indefinitely, unless the company deletes your data per privacy regulations (like GDPR). Lever's talent pool feature means recruiters can search and find your profile for future openings months or years after your initial application. Include broad industry keywords alongside role-specific terms to stay discoverable for adjacent roles."
+      }
+    ],
     "relatedSlugs": [
       "greenhouse",
       "ashby",

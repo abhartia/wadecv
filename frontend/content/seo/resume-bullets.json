@@ -814,5 +814,28 @@
       "Not including the scale of budgets or portfolios analyzed",
       "Omitting tools and technical skills (Excel, SQL, BI tools)"
     ]
+  },
+  {
+    "slug": "human-resources",
+    "title": "Human Resources Resume Bullet Points",
+    "metaDescription": "HR resume bullet examples with metrics. How to show recruiting, retention, compliance, and people analytics impact on your resume.",
+    "intro": "HR resume bullets should quantify your impact across recruiting, employee relations, benefits, and compliance. This guide provides examples and formulas that show strategic value \u2014 not just tasks completed.",
+    "bulletExamples": [
+      "Led full-cycle recruiting for 50+ positions across 4 departments; reduced time-to-fill by 35% through structured interview training and sourcing automation.",
+      "Managed employee relations for 300-person division; resolved 25+ workplace investigations annually with zero legal escalations.",
+      "Redesigned onboarding program for new hires; 90-day retention improved from 78% to 94% and new hire satisfaction scores increased by 40%.",
+      "Administered benefits for 800 employees across 3 locations; negotiated vendor contracts saving $180K annually while improving coverage options.",
+      "Built people analytics dashboard tracking turnover, engagement, and headcount; enabled leadership to identify and address attrition drivers 2 quarters earlier.",
+      "Partnered with legal to update employee handbook and 15 HR policies for multi-state compliance; achieved 100% audit readiness across all locations.",
+      "Launched DEI committee and employee resource groups; voluntary participation reached 35% of workforce within 6 months."
+    ],
+    "impactFormulas": [
+      "Recruiting: roles filled + time/cost reduction (e.g. 'Filled X roles, reduced time-to-fill by Y%')",
+      "Retention: improvement + scope (e.g. 'Improved 90-day retention from X% to Y% for Z-person team')",
+      "Compliance: scope + outcome (e.g. 'Updated N policies; achieved 100% audit readiness')",
+      "Cost: savings + method (e.g. 'Saved $XK through vendor renegotiation')",
+      "Programs: initiative + adoption + result (e.g. 'Launched program; X% participation; Y% improvement')"
+    ],
+    "body": "HR bullets should demonstrate business partnership, not just administrative execution. Lead with the outcome or metric, then describe what you did. Use the same language the job description uses \u2014 recruiting roles want 'time-to-fill' and 'quality of hire', while HRBP roles want 'retention', 'engagement', and 'workforce planning'.\n\nTailoring your HR resume bullets to each specific role is essential because HR covers such a wide range of specializations. WadeCV can help you match your experience to each job description, highlighting the metrics and keywords that matter most for that particular role."
   }
 ]

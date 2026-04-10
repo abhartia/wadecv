@@ -55,7 +55,7 @@
       "Led migration of legacy monolith to microservices; cut deployment time from 2 hours to 15 minutes and improved reliability.",
       "Mentored 3 junior engineers; established code review guidelines and on-call runbooks adopted across the team."
     ],
-    "body": "List skills in a dedicated section and reinforce them in your experience bullets. Use the same terms as the job description where they genuinely apply—ATS and recruiters look for keyword match.\n\nPrefer impact-focused bullets (what you built, for whom, and what improved) over task lists. Tailoring your resume to each role will surface the right mix of languages, systems, and soft skills. WadeCV can help you align your existing experience with software engineer job descriptions and highlight your strongest technical and collaborative wins.",
+    "body": "List skills in a dedicated section and reinforce them in your experience bullets. Use the same terms as the job description where they genuinely apply\u2014ATS and recruiters look for keyword match.\n\nPrefer impact-focused bullets (what you built, for whom, and what improved) over task lists. Tailoring your resume to each role will surface the right mix of languages, systems, and soft skills. WadeCV can help you align your existing experience with software engineer job descriptions and highlight your strongest technical and collaborative wins.",
     "relatedSlugs": [
       "product-manager",
       "data-analyst",
@@ -64,7 +64,7 @@
     "faq": [
       {
         "question": "How many skills should I list on a software engineer resume?",
-        "answer": "Focus on 10–15 relevant technical skills plus a few soft skills. Match the job description and reinforce them in your experience bullets rather than listing every technology you've touched."
+        "answer": "Focus on 10\u201315 relevant technical skills plus a few soft skills. Match the job description and reinforce them in your experience bullets rather than listing every technology you've touched."
       }
     ],
     "commonMistakes": [
@@ -187,7 +187,7 @@
       "Trained 5 new hires on product and systems; created troubleshooting playbook adopted by entire support team.",
       "Reduced average handle time by 15% while maintaining quality scores; led pilot for new chat tool rollout."
     ],
-    "body": "Lead with metrics: volume handled, CSAT or NPS, resolution rates, and time saved. Show progression—taking on harder cases, training others, or improving processes. Use keywords from the job description (tools, channels, and soft skills) so ATS and recruiters see a match. Tailoring your resume to each company's support model will help. WadeCV can help you align your customer service experience with job descriptions and highlight your strongest contributions."
+    "body": "Lead with metrics: volume handled, CSAT or NPS, resolution rates, and time saved. Show progression\u2014taking on harder cases, training others, or improving processes. Use keywords from the job description (tools, channels, and soft skills) so ATS and recruiters see a match. Tailoring your resume to each company's support model will help. WadeCV can help you align your customer service experience with job descriptions and highlight your strongest contributions."
   },
   {
     "slug": "data-analyst",
@@ -279,7 +279,7 @@
       }
     ],
     "bulletExamples": [
-      "Provided direct care for 6–8 patients per shift on med-surg unit; maintained 100% documentation compliance and zero medication errors.",
+      "Provided direct care for 6\u20138 patients per shift on med-surg unit; maintained 100% documentation compliance and zero medication errors.",
       "Trained 3 new RNs on unit protocols and EMR; supported orientation and preceptorship.",
       "Led quality initiative that reduced central line infections by 25%; presented at unit council."
     ],
@@ -919,7 +919,7 @@
       "Managed 6 concurrent projects across 3 time zones, maintaining a 96% on-time delivery rate over 18 months.",
       "Reduced project scope change requests by 40% by introducing structured requirements reviews at project kick-off."
     ],
-    "body": "List methodology certifications (PMP, PMI-ACP, PRINCE2) prominently — they're often filtered on by ATS. In your experience section, show delivery outcomes: on-time %, budget variance, and stakeholder satisfaction. WadeCV can help you surface the most relevant PM skills and outcomes for each specific role.",
+    "body": "List methodology certifications (PMP, PMI-ACP, PRINCE2) prominently \u2014 they're often filtered on by ATS. In your experience section, show delivery outcomes: on-time %, budget variance, and stakeholder satisfaction. WadeCV can help you surface the most relevant PM skills and outcomes for each specific role.",
     "relatedSlugs": [
       "product-manager",
       "data-analyst",
@@ -933,7 +933,7 @@
     ],
     "commonMistakes": [
       "Listing tools without showing scale or complexity of projects managed",
-      "No delivery metrics — on-time rate, budget variance",
+      "No delivery metrics \u2014 on-time rate, budget variance",
       "Omitting certification acronyms that ATS scans for"
     ]
   },
@@ -1001,7 +1001,7 @@
     "faq": [
       {
         "question": "Do I need SQL to get a business analyst job?",
-        "answer": "For most modern BA roles, yes — especially in tech, finance, and data-driven organisations. Even basic SQL (SELECT, JOINs, aggregations) to pull data for analysis is increasingly expected. It's worth learning even if not required by every posting."
+        "answer": "For most modern BA roles, yes \u2014 especially in tech, finance, and data-driven organisations. Even basic SQL (SELECT, JOINs, aggregations) to pull data for analysis is increasingly expected. It's worth learning even if not required by every posting."
       }
     ],
     "commonMistakes": [
@@ -1076,11 +1076,11 @@
     "faq": [
       {
         "question": "Is Six Sigma certification required for an operations manager job?",
-        "answer": "Not required, but it's a strong differentiator — especially in manufacturing, logistics, and healthcare operations. Even a Green Belt shows commitment to process improvement methodology. Many employers list it as 'preferred' rather than required."
+        "answer": "Not required, but it's a strong differentiator \u2014 especially in manufacturing, logistics, and healthcare operations. Even a Green Belt shows commitment to process improvement methodology. Many employers list it as 'preferred' rather than required."
       }
     ],
     "commonMistakes": [
-      "Describing scope without outcomes — 'managed daily operations' is not enough",
+      "Describing scope without outcomes \u2014 'managed daily operations' is not enough",
       "No financial metrics (budget owned, cost saved)",
       "Omitting Lean/Six Sigma training even if informal"
     ]
@@ -1089,7 +1089,7 @@
     "slug": "cybersecurity",
     "title": "Skills for Cybersecurity Resume",
     "metaDescription": "Cybersecurity skills to list on your resume in 2026. Technical skill clusters, certifications, and ATS keywords for SOC analyst, security engineer, and infosec roles.",
-    "intro": "Cybersecurity roles demand deep technical breadth — tools, platforms, protocols — plus analytical skills and the ability to communicate risk to non-technical stakeholders. This guide covers the skill clusters, certifications, and bullet examples that make a cybersecurity resume stand out.",
+    "intro": "Cybersecurity roles demand deep technical breadth \u2014 tools, platforms, protocols \u2014 plus analytical skills and the ability to communicate risk to non-technical stakeholders. This guide covers the skill clusters, certifications, and bullet examples that make a cybersecurity resume stand out.",
     "skillClusters": [
       {
         "name": "Monitoring & detection",
@@ -1140,7 +1140,7 @@
       "Conducted penetration testing across 12 web applications; identified 3 critical vulnerabilities (OWASP Top 10) and coordinated remediation with dev teams.",
       "Led ISO 27001 gap assessment and remediation plan; organisation achieved certification within 9 months."
     ],
-    "body": "Cybersecurity resumes need both certifications and real-world experience. Certs without context (no incidents investigated, no tools deployed) look weak. Show scale: alerts/day, coverage area, compliance scope. Government/cleared roles should note clearance level. WadeCV can align your security skills to each role's specific focus — SOC analyst, AppSec, GRC, or cloud security.",
+    "body": "Cybersecurity resumes need both certifications and real-world experience. Certs without context (no incidents investigated, no tools deployed) look weak. Show scale: alerts/day, coverage area, compliance scope. Government/cleared roles should note clearance level. WadeCV can align your security skills to each role's specific focus \u2014 SOC analyst, AppSec, GRC, or cloud security.",
     "relatedSlugs": [
       "devops",
       "software-engineer",
@@ -1162,7 +1162,7 @@
     "slug": "digital-marketing",
     "title": "Skills for Digital Marketing Resume",
     "metaDescription": "Digital marketing skills to list on your resume in 2026. Channel-by-channel skill clusters, ATS keywords, and results-driven bullet examples for marketing roles.",
-    "intro": "Digital marketers must show fluency across multiple channels — SEO, paid search, email, social, and analytics. Employers scan for specific tools and platforms, not just generic 'marketing' skills. This guide organises digital marketing skills by channel and shows how to quantify your impact.",
+    "intro": "Digital marketers must show fluency across multiple channels \u2014 SEO, paid search, email, social, and analytics. Employers scan for specific tools and platforms, not just generic 'marketing' skills. This guide organises digital marketing skills by channel and shows how to quantify your impact.",
     "skillClusters": [
       {
         "name": "SEO & content",
@@ -1210,11 +1210,11 @@
       }
     ],
     "bulletExamples": [
-      "Grew organic search traffic 140% YoY through a technical SEO overhaul and 60-piece content calendar — driven by keyword gap analysis in Ahrefs.",
+      "Grew organic search traffic 140% YoY through a technical SEO overhaul and 60-piece content calendar \u2014 driven by keyword gap analysis in Ahrefs.",
       "Managed $350K annual Google Ads budget; reduced CPA by 31% through audience segmentation, negative keyword expansion, and landing page A/B testing.",
       "Built and optimised email welcome sequence in Klaviyo; sequence now drives 18% of total monthly revenue with 42% open rate."
     ],
-    "body": "Digital marketing resumes are strongest when they show channel-specific results with real numbers. Don't just say you 'managed social media' — specify the platform, audience size, and engagement or growth achieved. Tool fluency is essential; list specific platforms for each channel. WadeCV can tailor your marketing skills to each employer's channel mix and industry.",
+    "body": "Digital marketing resumes are strongest when they show channel-specific results with real numbers. Don't just say you 'managed social media' \u2014 specify the platform, audience size, and engagement or growth achieved. Tool fluency is essential; list specific platforms for each channel. WadeCV can tailor your marketing skills to each employer's channel mix and industry.",
     "relatedSlugs": [
       "marketing-manager",
       "social-media-manager",
@@ -1223,12 +1223,12 @@
     "faq": [
       {
         "question": "What are the most in-demand digital marketing skills in 2026?",
-        "answer": "Paid media (especially Google Ads and Meta Ads), marketing analytics (GA4, Looker Studio, attribution), and SEO remain top priorities. AI fluency — using tools like ChatGPT or Jasper in content workflows — is increasingly mentioned in job descriptions."
+        "answer": "Paid media (especially Google Ads and Meta Ads), marketing analytics (GA4, Looker Studio, attribution), and SEO remain top priorities. AI fluency \u2014 using tools like ChatGPT or Jasper in content workflows \u2014 is increasingly mentioned in job descriptions."
       }
     ],
     "commonMistakes": [
       "Generic 'social media' without platform, audience size, or metrics",
-      "No mention of specific tools — ATS filters on platform names",
+      "No mention of specific tools \u2014 ATS filters on platform names",
       "Missing ROAS, CPA, or growth metrics on paid campaigns"
     ]
   },
@@ -1294,7 +1294,7 @@
       "Reduced model retraining pipeline from 6 hours to 45 minutes by migrating to distributed training on AWS, saving $18K/month in compute.",
       "Built a recommendation system for 5M users using collaborative filtering; A/B test showed 12% lift in session engagement."
     ],
-    "body": "ML resumes live at the intersection of research depth and engineering credibility. Show both: models you designed and deployed, with scale (users served, requests/second) and business impact (revenue, engagement, cost). Open-source contributions and Kaggle rankings are worth including. WadeCV can tailor your ML skills to each role's focus — NLP, computer vision, MLOps, or LLM engineering.",
+    "body": "ML resumes live at the intersection of research depth and engineering credibility. Show both: models you designed and deployed, with scale (users served, requests/second) and business impact (revenue, engagement, cost). Open-source contributions and Kaggle rankings are worth including. WadeCV can tailor your ML skills to each role's focus \u2014 NLP, computer vision, MLOps, or LLM engineering.",
     "relatedSlugs": [
       "software-engineer",
       "data-analyst",
@@ -1307,7 +1307,7 @@
       }
     ],
     "commonMistakes": [
-      "Only showing Jupyter notebook projects — no production deployments",
+      "Only showing Jupyter notebook projects \u2014 no production deployments",
       "Listing frameworks without showing what you built or the scale of impact",
       "No mention of model monitoring, drift detection, or retraining pipelines"
     ]
@@ -1316,7 +1316,7 @@
     "slug": "cloud-computing",
     "title": "Skills for Cloud Computing Resume",
     "metaDescription": "Cloud computing skills to list on your resume for AWS, Azure, and GCP roles. Technical clusters, certifications, and results-focused bullet examples for cloud engineers.",
-    "intro": "Cloud computing roles require a mix of architecture knowledge, hands-on infrastructure skills, and security awareness. Whether you're targeting AWS, Azure, or GCP, employers want to see specific services, certifications, and real deployments — not just general cloud familiarity.",
+    "intro": "Cloud computing roles require a mix of architecture knowledge, hands-on infrastructure skills, and security awareness. Whether you're targeting AWS, Azure, or GCP, employers want to see specific services, certifications, and real deployments \u2014 not just general cloud familiarity.",
     "skillClusters": [
       {
         "name": "Cloud platforms",
@@ -1364,7 +1364,7 @@
       "Migrated 40+ microservices from on-premises to EKS using Terraform; reduced infrastructure cost by $120K/year and deployment time from 4 hours to 12 minutes.",
       "Implemented AWS WAF and GuardDuty; blocked 98% of automated attack traffic and achieved SOC 2 Type II compliance in 6 months."
     ],
-    "body": "Cloud resumes must show specific services (not just 'AWS') with real outcomes: reliability metrics, cost savings, and migration scope. Certifications matter — list them with year achieved. Show IaC ownership (you wrote the Terraform, not just used it). WadeCV can tailor your cloud skills to the specific provider and architecture style each employer uses.",
+    "body": "Cloud resumes must show specific services (not just 'AWS') with real outcomes: reliability metrics, cost savings, and migration scope. Certifications matter \u2014 list them with year achieved. Show IaC ownership (you wrote the Terraform, not just used it). WadeCV can tailor your cloud skills to the specific provider and architecture style each employer uses.",
     "relatedSlugs": [
       "devops",
       "software-engineer",
@@ -1379,7 +1379,7 @@
     "commonMistakes": [
       "Listing 'AWS' without specifying which services you've worked with in production",
       "No reliability or cost metrics for infrastructure you built",
-      "Missing IaC tools — employers expect Terraform or CloudFormation fluency"
+      "Missing IaC tools \u2014 employers expect Terraform or CloudFormation fluency"
     ]
   },
   {
@@ -1445,7 +1445,7 @@
       "Wrote automated ETL pipeline in Python/Airflow ingesting 50GB/day from 12 sources into PostgreSQL; reduced analyst data prep time from 3 hours to 5 minutes.",
       "Refactored legacy Django monolith into async FastAPI services; improved throughput 4x and reduced server costs by $40K/year."
     ],
-    "body": "Python developer resumes must show the domain (web, data, ML, DevOps) alongside framework fluency. Don't just list libraries — show what you built with them and at what scale. Test coverage and code quality habits (pytest, type hints, CI) signal senior-level engineering. WadeCV can tailor your Python skills to each role's specific stack and domain focus.",
+    "body": "Python developer resumes must show the domain (web, data, ML, DevOps) alongside framework fluency. Don't just list libraries \u2014 show what you built with them and at what scale. Test coverage and code quality habits (pytest, type hints, CI) signal senior-level engineering. WadeCV can tailor your Python skills to each role's specific stack and domain focus.",
     "relatedSlugs": [
       "software-engineer",
       "data-analyst",
@@ -1461,6 +1461,95 @@
       "Listing 'Python' without any frameworks or domain context",
       "No scale or performance metrics on projects",
       "Omitting testing, typing, or code quality signals"
+    ]
+  },
+  {
+    "slug": "human-resources",
+    "title": "Skills for Human Resources Resume",
+    "metaDescription": "HR resume skills: recruiting, employee relations, HRIS tools, compliance, and people analytics. Keywords and bullet examples for HR roles in 2026.",
+    "intro": "Human resources roles span recruiting, employee relations, benefits administration, compliance, and organizational development. This guide groups HR skills into clusters and shows how to write resume bullets that demonstrate strategic impact \u2014 not just administrative tasks.",
+    "skillClusters": [
+      {
+        "name": "Recruiting & talent acquisition",
+        "items": [
+          "Full-cycle recruiting",
+          "Sourcing (LinkedIn Recruiter, Indeed, Greenhouse)",
+          "Interview coordination",
+          "Employer branding",
+          "Candidate experience",
+          "Offer negotiation"
+        ]
+      },
+      {
+        "name": "HRIS & tools",
+        "items": [
+          "Workday",
+          "BambooHR",
+          "ADP",
+          "SAP SuccessFactors",
+          "Lever",
+          "Greenhouse",
+          "Paylocity",
+          "Excel / Google Sheets"
+        ]
+      },
+      {
+        "name": "Employee relations & compliance",
+        "items": [
+          "Employee relations",
+          "Performance management",
+          "Conflict resolution",
+          "FMLA / ADA / EEO compliance",
+          "Policy development",
+          "Workplace investigations"
+        ]
+      },
+      {
+        "name": "Benefits & compensation",
+        "items": [
+          "Benefits administration",
+          "Open enrollment",
+          "Compensation benchmarking",
+          "401(k) administration",
+          "Total rewards strategy"
+        ]
+      },
+      {
+        "name": "Strategic HR",
+        "items": [
+          "People analytics",
+          "Workforce planning",
+          "DEI initiatives",
+          "Change management",
+          "Organizational development",
+          "Succession planning"
+        ]
+      }
+    ],
+    "bulletExamples": [
+      "Managed full-cycle recruiting for 40+ roles annually across engineering, sales, and operations; reduced average time-to-fill from 45 to 28 days.",
+      "Administered benefits for 500-person organization; led open enrollment achieving 95% participation and negotiated 12% premium reduction through vendor rebid.",
+      "Developed and delivered manager training on performance reviews and feedback; post-training survey showed 30% improvement in manager confidence scores."
+    ],
+    "body": "HR resumes should show both operational scope (headcount managed, roles filled, compliance maintained) and strategic impact (retention improvements, cost savings, culture initiatives). Use the specific HRIS tools and systems from the job description \u2014 recruiters filter by platform experience. Show progression from transactional HR tasks to strategic business partnership.\n\nTailoring your HR resume to each role is critical because HR spans many specializations. WadeCV can help you align your experience with specific job descriptions, whether the role emphasizes recruiting, compliance, people analytics, or organizational development.",
+    "relatedSlugs": [
+      "recruiter",
+      "executive-assistant",
+      "operations-manager"
+    ],
+    "faq": [
+      {
+        "question": "What skills should I put on an HR resume?",
+        "answer": "Include a mix of technical HR skills (HRIS platforms, ATS tools, payroll systems), functional skills (recruiting, benefits administration, compliance), and strategic skills (people analytics, workforce planning, DEI). Always match the specific tools and competencies mentioned in the job description."
+      },
+      {
+        "question": "How do I show HR impact on a resume?",
+        "answer": "Quantify everything: roles filled, time-to-fill, retention rates, cost savings from benefits negotiations, training completion rates, employee satisfaction scores. Frame results in terms of business impact, not just HR activities."
+      },
+      {
+        "question": "Should I list HRIS systems on my resume?",
+        "answer": "Yes. Recruiters and ATS systems filter by specific platforms (Workday, BambooHR, ADP, SAP SuccessFactors). List every HRIS, ATS, and payroll system you have used in a dedicated Skills or Tools section."
+      }
     ]
   }
 ]
