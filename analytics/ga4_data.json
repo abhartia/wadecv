@@ -1,27 +1,21 @@
 {
   "traffic_summary_30d": {
-    "activeUsers": "21",
-    "sessions": "52",
-    "screenPageViews": "99",
-    "averageSessionDuration": "355.46292565384618",
-    "bounceRate": "0.53846153846153844",
-    "newUsers": "20"
+    "activeUsers": "12",
+    "sessions": "42",
+    "screenPageViews": "85",
+    "averageSessionDuration": "430.8465926904762",
+    "bounceRate": "0.45238095238095238",
+    "newUsers": "11"
   },
   "traffic_summary_prev_30d": {
-    "activeUsers": "7",
-    "sessions": "35",
-    "screenPageViews": "196",
-    "averageSessionDuration": "1886.9038870857144",
-    "bounceRate": "0.22857142857142856",
-    "newUsers": "8"
+    "activeUsers": "16",
+    "sessions": "45",
+    "screenPageViews": "210",
+    "averageSessionDuration": "1476.2255842",
+    "bounceRate": "0.37777777777777777",
+    "newUsers": "17"
   },
   "daily_trend": [
-    {
-      "date": "20260312",
-      "activeUsers": "10",
-      "sessions": "10",
-      "screenPageViews": "14"
-    },
     {
       "date": "20260313",
       "activeUsers": "1",
@@ -146,30 +140,30 @@
   "top_pages": [
     {
       "pagePath": "/",
-      "screenPageViews": "43",
-      "activeUsers": "21",
-      "averageSessionDuration": "76.8609581860465",
-      "bounceRate": "0.51162790697674421"
+      "screenPageViews": "32",
+      "activeUsers": "12",
+      "averageSessionDuration": "97.063948969696966",
+      "bounceRate": "0.39393939393939392"
     },
     {
       "pagePath": "/tailor",
-      "screenPageViews": "23",
+      "screenPageViews": "22",
       "activeUsers": "2",
-      "averageSessionDuration": "624.18177354545458",
-      "bounceRate": "0.18181818181818182"
+      "averageSessionDuration": "641.82136809523809",
+      "bounceRate": "0.19047619047619047"
     },
     {
       "pagePath": "/dashboard",
-      "screenPageViews": "14",
+      "screenPageViews": "13",
       "activeUsers": "2",
-      "averageSessionDuration": "41.110773214285715",
-      "bounceRate": "0.071428571428571425"
+      "averageSessionDuration": "43.888298923076917",
+      "bounceRate": "0.076923076923076927"
     },
     {
       "pagePath": "/auth/login",
-      "screenPageViews": "12",
+      "screenPageViews": "11",
       "activeUsers": "2",
-      "averageSessionDuration": "14.971282583333334",
+      "averageSessionDuration": "13.800387545454544",
       "bounceRate": "0"
     },
     {
@@ -204,27 +198,19 @@
   "traffic_sources": [
     {
       "channel": "Organic Shopping",
-      "sessions": "31",
+      "sessions": "30",
       "activeUsers": "1",
-      "screenPageViews": "72",
-      "avgDuration": "591.681171516129",
-      "bounceRate": "0.25806451612903225"
+      "screenPageViews": "67",
+      "avgDuration": "598.45336920000011",
+      "bounceRate": "0.26666666666666666"
     },
     {
       "channel": "Paid Search",
-      "sessions": "13",
-      "activeUsers": "13",
-      "screenPageViews": "13",
+      "sessions": "7",
+      "activeUsers": "7",
+      "screenPageViews": "7",
       "avgDuration": "0",
       "bounceRate": "1"
-    },
-    {
-      "channel": "Direct",
-      "sessions": "4",
-      "activeUsers": "4",
-      "screenPageViews": "11",
-      "avgDuration": "35.48895425",
-      "bounceRate": "0.75"
     },
     {
       "channel": "Organic Search",
@@ -241,6 +227,14 @@
       "screenPageViews": "2",
       "avgDuration": "0",
       "bounceRate": "1"
+    },
+    {
+      "channel": "Direct",
+      "sessions": "1",
+      "activeUsers": "1",
+      "screenPageViews": "8",
+      "avgDuration": "141.955817",
+      "bounceRate": "0"
     }
   ],
   "organic_landing_pages": [
@@ -262,27 +256,27 @@
   "devices": [
     {
       "device": "desktop",
-      "sessions": "46",
-      "activeUsers": "15",
-      "bounceRate": "0.5"
+      "sessions": "39",
+      "activeUsers": "9",
+      "bounceRate": "0.4358974358974359"
     },
     {
       "device": "mobile",
-      "sessions": "6",
-      "activeUsers": "6",
-      "bounceRate": "0.83333333333333337"
+      "sessions": "3",
+      "activeUsers": "3",
+      "bounceRate": "0.66666666666666663"
     }
   ],
   "countries": [
     {
       "country": "United States",
-      "sessions": "35",
+      "sessions": "34",
       "activeUsers": "4"
     },
     {
       "country": "(not set)",
-      "sessions": "16",
-      "activeUsers": "16"
+      "sessions": "7",
+      "activeUsers": "7"
     },
     {
       "country": "Sweden",
@@ -293,33 +287,28 @@
   "events": [
     {
       "event": "page_view",
-      "eventCount": "99",
-      "totalUsers": "21"
+      "eventCount": "85",
+      "totalUsers": "12"
     },
     {
       "event": "session_start",
-      "eventCount": "52",
-      "totalUsers": "21"
+      "eventCount": "42",
+      "totalUsers": "12"
     },
     {
       "event": "user_engagement",
-      "eventCount": "27",
+      "eventCount": "25",
       "totalUsers": "2"
     },
     {
       "event": "dashboard_viewed",
-      "eventCount": "22",
-      "totalUsers": "2"
-    },
-    {
-      "event": "scroll",
       "eventCount": "21",
       "totalUsers": "2"
     },
     {
-      "event": "first_visit",
+      "event": "scroll",
       "eventCount": "20",
-      "totalUsers": "20"
+      "totalUsers": "2"
     },
     {
       "event": "cv_download",
@@ -332,18 +321,23 @@
       "totalUsers": "1"
     },
     {
+      "event": "first_visit",
+      "eventCount": "11",
+      "totalUsers": "11"
+    },
+    {
       "event": "form_start",
-      "eventCount": "12",
+      "eventCount": "11",
       "totalUsers": "2"
     },
     {
       "event": "login_attempt",
-      "eventCount": "11",
+      "eventCount": "10",
       "totalUsers": "1"
     },
     {
       "event": "login_success",
-      "eventCount": "11",
+      "eventCount": "10",
       "totalUsers": "1"
     },
     {
@@ -394,33 +388,33 @@
     {
       "pagePath": "/",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "43",
-      "activeUsers": "21",
-      "avgDuration": "76.8609581860465",
-      "bounceRate": "0.51162790697674421"
+      "screenPageViews": "32",
+      "activeUsers": "12",
+      "avgDuration": "97.063948969696966",
+      "bounceRate": "0.39393939393939392"
     },
     {
       "pagePath": "/tailor",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "23",
+      "screenPageViews": "22",
       "activeUsers": "2",
-      "avgDuration": "624.18177354545458",
-      "bounceRate": "0.18181818181818182"
+      "avgDuration": "641.82136809523809",
+      "bounceRate": "0.19047619047619047"
     },
     {
       "pagePath": "/dashboard",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "14",
+      "screenPageViews": "13",
       "activeUsers": "2",
-      "avgDuration": "41.110773214285715",
-      "bounceRate": "0.071428571428571425"
+      "avgDuration": "43.888298923076917",
+      "bounceRate": "0.076923076923076927"
     },
     {
       "pagePath": "/auth/login",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "12",
+      "screenPageViews": "11",
       "activeUsers": "2",
-      "avgDuration": "14.971282583333334",
+      "avgDuration": "13.800387545454544",
       "bounceRate": "0"
     },
     {
@@ -459,23 +453,23 @@
   "referrers": [
     {
       "source": "checkout.stripe.com",
-      "sessions": "31",
+      "sessions": "30",
       "activeUsers": "1"
     },
     {
       "source": "google",
-      "sessions": "15",
-      "activeUsers": "14"
-    },
-    {
-      "source": "(direct)",
-      "sessions": "4",
-      "activeUsers": "4"
+      "sessions": "9",
+      "activeUsers": "8"
     },
     {
       "source": "m.facebook.com",
       "sessions": "2",
       "activeUsers": "2"
+    },
+    {
+      "source": "(direct)",
+      "sessions": "1",
+      "activeUsers": "1"
     }
   ]
 }

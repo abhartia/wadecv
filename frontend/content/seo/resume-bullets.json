@@ -837,5 +837,100 @@
       "Programs: initiative + adoption + result (e.g. 'Launched program; X% participation; Y% improvement')"
     ],
     "body": "HR bullets should demonstrate business partnership, not just administrative execution. Lead with the outcome or metric, then describe what you did. Use the same language the job description uses \u2014 recruiting roles want 'time-to-fill' and 'quality of hire', while HRBP roles want 'retention', 'engagement', and 'workforce planning'.\n\nTailoring your HR resume bullets to each specific role is essential because HR covers such a wide range of specializations. WadeCV can help you match your experience to each job description, highlighting the metrics and keywords that matter most for that particular role."
+  },
+  {
+    "slug": "machine-learning",
+    "title": "Machine Learning Resume Bullet Points",
+    "metaDescription": "Machine learning resume bullet examples and impact formulas. How to write ML resume bullets that show model performance, scale, and business impact.",
+    "intro": "Machine learning resumes need to show model performance, deployment scale, and real-world business impact. This guide gives you concrete bullet examples and formulas so you can translate complex ML work into crisp, recruiter-friendly statements that pass ATS screening.",
+    "bulletExamples": [
+      "Developed and deployed a fraud detection model processing 5M+ transactions daily; reduced false positives by 35% while maintaining 99.2% recall.",
+      "Built a recommendation engine serving 800K monthly active users; improved click-through rate by 22% and generated an estimated $1.2M in incremental annual revenue.",
+      "Designed an NLP pipeline for customer support ticket classification; automated routing for 60% of tickets and reduced average resolution time by 4 hours.",
+      "Optimized model training pipeline using distributed computing; reduced training time from 18 hours to 3 hours across 8 GPU nodes.",
+      "Led A/B testing framework for ML model rollouts; established statistical significance thresholds and deployment guardrails adopted by 3 product teams.",
+      "Created automated feature engineering pipeline ingesting 200+ data sources; improved model accuracy by 12 percentage points over manual feature selection.",
+      "Mentored 3 junior data scientists on MLOps practices; introduced model versioning and experiment tracking that reduced debugging time by 50%."
+    ],
+    "impactFormulas": [
+      "Model + metric + improvement (e.g. \"Improved model accuracy by X%\", \"Reduced false positive rate by Y%\")",
+      "Scale + throughput (e.g. \"Processing N transactions/day\", \"Serving M users\")",
+      "Business impact + technical contribution (e.g. \"Generated $X in revenue through Y model\", \"Saved Z hours through automation\")",
+      "Pipeline + efficiency (e.g. \"Reduced training time by X%\", \"Automated Y% of manual process\")",
+      "Collaboration + adoption (e.g. \"Framework adopted by N teams\", \"Mentored X data scientists\")"
+    ],
+    "body": "Machine learning bullets should bridge the gap between technical complexity and business value. Recruiters scanning ML resumes want to see two things: can you build models that work, and do those models matter to the business?\n\nLead with the outcome (revenue, accuracy, speed) and include the technical approach only when it differentiates you. Mention frameworks and tools (PyTorch, TensorFlow, scikit-learn, Spark) naturally within context rather than as a separate keyword list.\n\nFor senior roles, emphasize scale, team leadership, and production deployment. For earlier-career roles, focus on project outcomes and learning velocity. WadeCV can help you reframe your ML experience into tailored bullets that match specific job descriptions.",
+    "relatedSlugs": [
+      "data-analyst",
+      "cloud-engineer",
+      "software-engineer"
+    ],
+    "faq": [
+      {
+        "question": "How do I write ML resume bullets without revealing proprietary models?",
+        "answer": "Focus on the business metric (e.g. \"improved conversion by 18%\") and the general approach (e.g. \"gradient-boosted ensemble\") without sharing model architecture details, training data specifics, or feature names."
+      },
+      {
+        "question": "Should I include model accuracy numbers on my resume?",
+        "answer": "Yes, when they are meaningful. Accuracy alone can be misleading \u2014 include precision, recall, or F1 when relevant. Always pair the metric with business context: \"99.5% accuracy\" means nothing without knowing the baseline and what it enabled."
+      },
+      {
+        "question": "How many ML projects should I list on my resume?",
+        "answer": "List 3-5 impactful projects with strong bullets rather than 10+ with thin descriptions. For each project, lead with the business problem, describe your contribution, and quantify the result."
+      }
+    ],
+    "commonMistakes": [
+      "Listing tools and frameworks without showing what you built with them",
+      "Describing model architecture without connecting to business outcomes",
+      "Using jargon-heavy bullets that non-technical recruiters cannot parse",
+      "Omitting scale metrics (data volume, user count, latency requirements)"
+    ]
+  },
+  {
+    "slug": "python-developer",
+    "title": "Python Developer Resume Bullet Points",
+    "metaDescription": "Python developer resume bullet examples and impact formulas. How to write Python resume bullets that show application scope, performance, and team impact.",
+    "intro": "Python developer resumes should demonstrate what you built, the scale it operates at, and the impact it had. This guide provides concrete bullet examples and formulas for Python developers at any level \u2014 from scripting automation to building production systems.",
+    "bulletExamples": [
+      "Built a Python-based ETL pipeline processing 50GB of data daily from 12 source systems; reduced data freshness from 24 hours to 15 minutes.",
+      "Developed RESTful API using FastAPI serving 10K+ requests/minute; achieved 99.9% uptime over 6 months with zero data loss.",
+      "Automated 15 manual reporting workflows using Python and pandas; saved the finance team 20 hours per week.",
+      "Designed and maintained Python microservices handling payment processing for 200K+ monthly transactions; integrated with Stripe and PayPal APIs.",
+      "Built web scraping framework using asyncio and aiohttp; collected structured data from 500+ sources for market intelligence product.",
+      "Contributed to open-source Python library with 2K+ GitHub stars; implemented 3 major features and reviewed 40+ community pull requests.",
+      "Led Python 2 to 3 migration across 150K+ lines of code; completed in 8 weeks with zero production regressions."
+    ],
+    "impactFormulas": [
+      "Application + scale + metric (e.g. \"API serving XK requests/minute\", \"Pipeline processing YGB daily\")",
+      "Automation + time saved (e.g. \"Automated X workflows, saving Y hours/week\")",
+      "System + reliability (e.g. \"Achieved X% uptime\", \"Zero regressions across Y deployments\")",
+      "Contribution + adoption (e.g. \"Library used by X teams\", \"Framework adopted across Y projects\")"
+    ],
+    "body": "Python is used across web development, data engineering, automation, ML, and DevOps \u2014 so your bullets should make clear which domain you work in. A Python developer building APIs needs different bullet language than one building data pipelines.\n\nFocus on the applications you built and the outcomes they produced. Include Python-specific tools and frameworks (Django, Flask, FastAPI, pandas, SQLAlchemy, asyncio) naturally within context. Quantify throughput, reliability, and business impact.\n\nFor Python-heavy roles, show depth. For full-stack or generalist roles, show breadth and adaptability. WadeCV can help you tailor your Python experience to match the specific requirements of each job description.",
+    "relatedSlugs": [
+      "software-engineer",
+      "data-analyst",
+      "cloud-engineer"
+    ],
+    "faq": [
+      {
+        "question": "Should I list Python version numbers on my resume?",
+        "answer": "Only if relevant \u2014 for example, if you led a Python 2 to 3 migration or work with cutting-edge Python 3.12+ features. Otherwise, just list \"Python\" and let your project descriptions show your depth."
+      },
+      {
+        "question": "How do I differentiate a Python developer resume from a data scientist resume?",
+        "answer": "Python developer bullets emphasize software engineering outcomes: application performance, system reliability, code quality, and team productivity. Data scientist bullets emphasize model performance, experimental results, and analytical insights. Overlap is fine \u2014 just lead with the outcomes that match the role you are targeting."
+      },
+      {
+        "question": "Should I include personal Python projects on my resume?",
+        "answer": "Yes, especially if you are early in your career or transitioning into Python. Focus on projects with measurable outcomes \u2014 user count, performance metrics, or community adoption \u2014 rather than listing hobby projects without context."
+      }
+    ],
+    "commonMistakes": [
+      "Listing \"Python\" without showing what you built with it",
+      "Writing \"developed scripts\" without explaining their purpose or impact",
+      "Focusing on syntax knowledge rather than problem-solving and system design",
+      "Omitting deployment and production context (how many users, what scale)"
+    ]
   }
 ]

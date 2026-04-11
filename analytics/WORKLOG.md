@@ -4,6 +4,88 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 
 ---
 
+## 2026-04-12 — Session 10: Internal Linking Fix + JobCopilot Comparison + Cluster Completions
+
+### Data Pulled
+- [x] GA4 analytics data → `ga4_data.json`
+- [x] GSC data → `gsc_data.json` — **272 impressions (up from 246, +11%)**, 34 pages, 50 queries, 2 clicks
+- [x] Trends data → `trends_data.json` — wobo ai +91,100%, flowcv +12,550%, jobcopilot +30,700%, chatgpt resume UP 55.5
+
+### Key Findings
+- **Impressions still growing:** 272 total (up 11% from 246). Growth trajectory sustained.
+- **Customer service cluster dominant:** `/skills/customer-service` at 74 impressions (+28% from 58)
+- **Digital marketing cluster validated:** 20 impressions (+33% from 15) — cluster completion in Session 7 is working
+- **Apr 9 dip confirmed as noise:** Recovered to 26 on Apr 10
+- **CRITICAL: 6 comparison pages NOT indexed after 5-7 days** — Root cause: zero internal links. Only in sitemap.
+- **Operations manager emerging:** `/skills/operations-manager` at 6 impressions (new in top pages)
+- **Stripe referral decreasing:** 30 sessions (was 32) — gtag fix still working
+- **Paid Search bots decreasing:** 7 sessions (was 13)
+- **Signup events still 0:** No new signups since instrumentation added Apr 7
+
+### Changes Made
+
+#### 1. Internal Linking Fix for Comparison Pages (CRITICAL — fixing root cause of non-indexing)
+**Why:** 6 comparison pages created Apr 5-11 had zero internal links pointing to them. Google could only discover via sitemap. This is why none are indexed yet.
+
+**3 fixes applied:**
+
+a) Added "Best AI Resume Builders 2026" to CrossCategoryLinks hub list
+- File: `frontend/src/components/seo/cross-category-links.tsx`
+- Every SEO page (169+ pages) now links to the listicle
+
+b) Added comparison page links from listicle to each tool's dedicated page
+- File: `frontend/src/app/(resources)/best-ai-resume-builder-2026/page.tsx`
+- Teal, Jobscan, Wobo AI, ChatGPT sections now link to `/wadecv-vs-*` pages
+- Updated dateModified to 2026-04-12
+
+c) Added contextLinks cross-references between all 6 comparison pages
+- Each page now links to 3-4 other comparison pages via CrossCategoryLinks contextLinks
+
+**Waiting for:** Google to discover and index comparison pages (check 2026-04-19+)
+
+#### 2. "WadeCV vs JobCopilot" Comparison Page (HIGH IMPACT — #1 breakout query)
+**Why:** "jobcopilot" is +30,700% breakout for "ai job application". Fundamentally different tool (auto-apply automation vs targeted tailoring). 7th comparison page.
+
+**Files created:**
+- `frontend/src/app/(resources)/wadecv-vs-jobcopilot/page.tsx` — 11-row feature comparison, 5-item FAQ, FAQPage + Article JSON-LD, CrossCategoryLinks with contextLinks
+
+**Files changed:**
+- `frontend/src/app/sitemap.ts` — added `/wadecv-vs-jobcopilot` at priority 0.8
+
+**Waiting for:** Google indexing (check 2026-04-19+)
+
+#### 3. Machine Learning Cluster Completion (MEDIUM IMPACT)
+**Why:** `/skills/machine-learning` has 3 impressions at pos 74.3 but was missing resume-bullets page. Cluster had skills + jobs (machine-learning-engineer) but no bullets.
+
+**New entry:**
+- `frontend/content/seo/resume-bullets.json` — `machine-learning` with 7 bullet examples, 5 impact formulas, 3 FAQ (31 total)
+
+#### 4. Python Developer Cluster Completion (MEDIUM IMPACT)
+**Why:** `/skills/python-developer` has 3 impressions at pos 71.7 but was missing BOTH jobs and resume-bullets pages. Now complete.
+
+**New entries:**
+- `frontend/content/seo/jobs.json` — `python-developer` with 8 responsibilities, 8 skills, 20 keywords, 3 FAQ (38 total)
+- `frontend/content/seo/resume-bullets.json` — `python-developer` with 7 bullet examples, 4 impact formulas, 3 FAQ (31 total)
+
+#### 5. Build verified
+- `next build` passes: 173 static pages (up from 169), 0 errors
+
+### Not Yet Done (For Future Sessions)
+- [ ] Check comparison pages indexed after internal linking fix (2026-04-19+)
+- [ ] Check `/wadecv-vs-jobcopilot` indexed (2026-04-19+)
+- [ ] Check ML and Python cluster pages indexed (2026-04-19+)
+- [ ] Check ATS content overhaul impact (2026-04-18+)
+- [ ] Check `/ats/lever` position/CTR after content overhaul (2026-04-18+)
+- [ ] Monitor first `signup_start`/`signup_success` events in GA4
+- [ ] Consider UK-specific content or landing page ("cv builder free uk" +60% rising)
+- [ ] Consider "WadeCV vs Zety" comparison page (zety +350% rising)
+- [ ] Create topic cluster hub/pillar pages (aggregating each category)
+- [ ] Add author credentials/expert signals to content pages
+- [ ] Investigate conversion: SEO traffic growing but 0 signups — CTA effectiveness, landing page quality
+- [ ] Monitor AI bot traffic in server logs
+
+---
+
 ## 2026-04-11 — Session 9: Full ATS Content Overhaul + Rezi Comparison
 
 ### Data Pulled

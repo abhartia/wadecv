@@ -233,7 +233,15 @@ export default function ComparisonPage() {
         </div>
       </section>
 
-      <CrossCategoryLinks currentCategory="/ai-resume-builder-comparison" />
+      <CrossCategoryLinks
+        currentCategory="/ai-resume-builder-comparison"
+        contextLinks={[
+          { href: "/best-ai-resume-builder-2026", label: "Best AI Resume Builders 2026" },
+          { href: "/wadecv-vs-teal", label: "WadeCV vs Teal" },
+          { href: "/wadecv-vs-jobscan", label: "WadeCV vs Jobscan" },
+          { href: "/wadecv-vs-rezi", label: "WadeCV vs Rezi" },
+        ]}
+      />
 
       <Card>
         <CardHeader>

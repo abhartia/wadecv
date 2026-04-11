@@ -231,7 +231,7 @@ export default function BestAiResumeBuilderPage() {
       "@type": "WebPage",
       "@id": `${BASE_URL}/best-ai-resume-builder-2026`,
     },
-    dateModified: "2026-04-05",
+    dateModified: "2026-04-12",
   };
 
   const faqJsonLd = {
@@ -405,14 +405,53 @@ export default function BestAiResumeBuilderPage() {
                   />
                 )}
 
+                {tool.name === "Teal" && (
+                  <p className="text-sm text-muted-foreground">
+                    See our{" "}
+                    <Link
+                      href="/wadecv-vs-teal"
+                      className="underline underline-offset-2"
+                    >
+                      WadeCV vs Teal head-to-head comparison
+                    </Link>
+                    .
+                  </p>
+                )}
+
+                {tool.name === "Jobscan" && (
+                  <p className="text-sm text-muted-foreground">
+                    See our{" "}
+                    <Link
+                      href="/wadecv-vs-jobscan"
+                      className="underline underline-offset-2"
+                    >
+                      WadeCV vs Jobscan head-to-head comparison
+                    </Link>
+                    .
+                  </p>
+                )}
+
+                {tool.name === "Wobo AI" && (
+                  <p className="text-sm text-muted-foreground">
+                    See our{" "}
+                    <Link
+                      href="/wadecv-vs-wobo"
+                      className="underline underline-offset-2"
+                    >
+                      WadeCV vs Wobo AI head-to-head comparison
+                    </Link>
+                    .
+                  </p>
+                )}
+
                 {tool.name === "ChatGPT" && (
                   <p className="text-sm text-muted-foreground">
-                    For a detailed comparison of WadeCV vs ChatGPT, see our{" "}
+                    See our{" "}
                     <Link
                       href="/ai-resume-builder-comparison"
                       className="underline underline-offset-2"
                     >
-                      full head-to-head comparison
+                      WadeCV vs ChatGPT head-to-head comparison
                     </Link>
                     .
                   </p>

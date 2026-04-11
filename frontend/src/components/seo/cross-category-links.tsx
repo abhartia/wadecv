@@ -10,6 +10,10 @@ const CATEGORY_HUBS: CrossLink[] = [
   { href: "/jobs", label: "Job Description Guides" },
   { href: "/skills", label: "Skills Resume Guides" },
   { href: "/resume-bullets", label: "Resume Bullet Examples" },
+  {
+    href: "/best-ai-resume-builder-2026",
+    label: "Best AI Resume Builders 2026",
+  },
 ];
 
 type Props = {

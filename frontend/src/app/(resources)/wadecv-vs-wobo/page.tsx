@@ -336,7 +336,15 @@ export default function WoboComparisonPage() {
         </div>
       </section>
 
-      <CrossCategoryLinks currentCategory="/wadecv-vs-wobo" />
+      <CrossCategoryLinks
+        currentCategory="/wadecv-vs-wobo"
+        contextLinks={[
+          { href: "/best-ai-resume-builder-2026", label: "Best AI Resume Builders 2026" },
+          { href: "/wadecv-vs-flowcv", label: "WadeCV vs FlowCV" },
+          { href: "/wadecv-vs-teal", label: "WadeCV vs Teal" },
+          { href: "/ai-resume-builder-comparison", label: "AI Resume Builder Comparison" },
+        ]}
+      />
 
       <Card>
         <CardHeader>

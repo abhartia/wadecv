@@ -340,7 +340,15 @@ export default function FlowcvComparisonPage() {
         </div>
       </section>
 
-      <CrossCategoryLinks currentCategory="/wadecv-vs-flowcv" />
+      <CrossCategoryLinks
+        currentCategory="/wadecv-vs-flowcv"
+        contextLinks={[
+          { href: "/best-ai-resume-builder-2026", label: "Best AI Resume Builders 2026" },
+          { href: "/wadecv-vs-wobo", label: "WadeCV vs Wobo AI" },
+          { href: "/wadecv-vs-teal", label: "WadeCV vs Teal" },
+          { href: "/ai-resume-builder-comparison", label: "AI Resume Builder Comparison" },
+        ]}
+      />
 
       <Card>
         <CardHeader>

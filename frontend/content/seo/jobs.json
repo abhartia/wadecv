@@ -2068,5 +2068,95 @@
         "answer": "Data-driven decision making, multi-channel campaign management, and the ability to tie marketing activities to revenue. Specific platform expertise (Google Ads, Meta Ads, SEO tools) and analytics proficiency (GA4, Data Studio) are consistently requested."
       }
     ]
+  },
+  {
+    "slug": "python-developer",
+    "title": "Python Developer Resume Guide",
+    "metaDescription": "How to write a Python developer resume that passes ATS screening. Key skills, resume keywords, salary data, and examples for Python developer roles in 2026.",
+    "intro": "Python developers are in high demand across web development, data engineering, automation, and AI/ML. Whether you are building APIs with FastAPI, data pipelines with pandas, or production systems with Django, your resume needs to clearly show what you built, at what scale, and what impact it had. This guide covers the skills, keywords, and strategies to make your Python developer resume stand out.",
+    "responsibilities": [
+      "Design and develop Python applications, APIs, and microservices for production environments",
+      "Build and maintain data processing pipelines, ETL workflows, and automation scripts",
+      "Write clean, testable, well-documented code following team coding standards",
+      "Collaborate with cross-functional teams including product, data science, and DevOps",
+      "Participate in code reviews, architecture discussions, and technical planning",
+      "Debug and optimize application performance, memory usage, and response times",
+      "Integrate third-party APIs and services into existing systems",
+      "Contribute to CI/CD pipelines and deployment automation"
+    ],
+    "requiredSkills": [
+      "Python 3.x with strong understanding of data structures, OOP, and async programming",
+      "Web frameworks: Django, Flask, or FastAPI",
+      "Database experience: PostgreSQL, MySQL, MongoDB, or Redis",
+      "API design: RESTful APIs, GraphQL, or gRPC",
+      "Testing: pytest, unittest, or integration testing frameworks",
+      "Version control with Git and collaborative development workflows",
+      "Linux/Unix command line and shell scripting",
+      "Familiarity with cloud services (AWS, Azure, or GCP)"
+    ],
+    "salaryRange": ",000 - ,000 (varies by seniority, location, and specialization)",
+    "careerPath": [
+      "Junior Python Developer",
+      "Python Developer",
+      "Senior Python Developer",
+      "Staff Engineer / Tech Lead",
+      "Principal Engineer / Engineering Manager"
+    ],
+    "resumeKeywords": [
+      "Python",
+      "Django",
+      "Flask",
+      "FastAPI",
+      "REST API",
+      "microservices",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "pandas",
+      "NumPy",
+      "asyncio",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "AWS",
+      "pytest",
+      "ETL",
+      "data pipeline",
+      "automation",
+      "Git",
+      "Linux"
+    ],
+    "body": "Python developer job descriptions vary widely \u2014 from web backend roles to data engineering to DevOps automation. Your resume should be tailored to the specific flavor of Python role you are targeting.\n\nFor web-focused roles, emphasize frameworks (Django, Flask, FastAPI), API design, database optimization, and production deployment experience. For data engineering roles, highlight ETL pipelines, large-scale data processing, and tools like Apache Airflow or Spark. For automation roles, show scripting productivity gains and system integration.\n\nQuantify everything: requests per second, data volume processed, time saved through automation, team size, uptime percentages. Python is ubiquitous \u2014 what differentiates your resume is what you accomplished with it.\n\nWadeCV can help you tailor your Python developer resume to match specific job descriptions, ensuring the right keywords and experience are highlighted for each application.",
+    "commonMistakes": [
+      "Listing Python as a skill without showing applications you built with it",
+      "Ignoring the specific Python domain (web, data, ML, automation) the role requires",
+      "Missing key framework keywords that ATS systems scan for",
+      "Writing generic developer bullets that could apply to any programming language"
+    ],
+    "interviewTips": [
+      "Be ready to discuss Python-specific concepts: generators, decorators, context managers, GIL limitations",
+      "Prepare to explain your architecture decisions \u2014 why FastAPI over Django, why async over sync",
+      "Practice coding problems that test Pythonic solutions, not just correct solutions",
+      "Know your deployment story: how your code gets from local to production"
+    ],
+    "relatedSlugs": [
+      "backend-engineer",
+      "data-analyst-healthcare",
+      "machine-learning-engineer",
+      "devops-engineer"
+    ],
+    "faq": [
+      {
+        "question": "What Python skills should I list on my resume?",
+        "answer": "List the Python-specific tools and frameworks relevant to the job: Django/Flask/FastAPI for web, pandas/NumPy for data, pytest for testing, and deployment tools like Docker. Avoid listing basic syntax \u2014 show application-level skills instead."
+      },
+      {
+        "question": "Is Python enough to get a developer job?",
+        "answer": "Python alone is a strong foundation, but most roles also expect database skills (SQL), version control (Git), API design, and some cloud platform experience. The specific extras depend on whether you target web, data, or ML roles."
+      },
+      {
+        "question": "How do I show Python experience without professional work history?",
+        "answer": "Highlight open-source contributions, personal projects with measurable outcomes, or freelance work. Include GitHub links and describe projects using the same bullet format as professional experience \u2014 what you built, the tools you used, and the result."
+      }
+    ]
   }
 ]
