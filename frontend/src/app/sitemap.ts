@@ -41,6 +41,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/wadecv-vs-flowcv`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/wadecv-vs-rezi`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/wadecv-vs-jobcopilot`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/wadecv-vs-zety`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/cv-vs-resume`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.9 },
   ];
 
   const jobUrls = getJobs().map((j) => ({

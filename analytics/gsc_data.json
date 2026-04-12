@@ -1,6 +1,13 @@
 {
   "top_queries_30d": [
     {
+      "query": "accountant job description for resume",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 98
+    },
+    {
       "query": "accountant resume keywords",
       "clicks": 0,
       "impressions": 2,
@@ -92,6 +99,13 @@
       "position": 95
     },
     {
+      "query": "administrative assistant tasks for resume",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 100
+    },
+    {
       "query": "agency recruiter job description",
       "clicks": 0,
       "impressions": 1,
@@ -141,6 +155,13 @@
       "position": 95
     },
     {
+      "query": "customer service bullet points",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 69
+    },
+    {
       "query": "customer service cv skills",
       "clicks": 0,
       "impressions": 1,
@@ -176,18 +197,25 @@
       "position": 82
     },
     {
+      "query": "customer service skills and experience",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 100
+    },
+    {
       "query": "customer service skills cv",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 4,
       "ctr": 0,
-      "position": 88
+      "position": 75.5
     },
     {
       "query": "customer service skills for cv",
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 10,
       "ctr": 0,
-      "position": 75.1
+      "position": 77.9
     },
     {
       "query": "customer service skills for resume",
@@ -199,9 +227,9 @@
     {
       "query": "customer service skills in cv",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 37
+      "position": 60.5
     },
     {
       "query": "customer service skills on resume",
@@ -213,9 +241,16 @@
     {
       "query": "customer service skills resume",
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 9,
       "ctr": 0,
-      "position": 83.1
+      "position": 82.9
+    },
+    {
+      "query": "customer service skills summary",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 65
     },
     {
       "query": "customer services skills for resume",
@@ -290,9 +325,9 @@
     {
       "query": "digital marketing cv",
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 8,
       "ctr": 0,
-      "position": 73.3
+      "position": 74.4
     },
     {
       "query": "digital marketing cvs",
@@ -314,50 +349,15 @@
       "impressions": 1,
       "ctr": 0,
       "position": 85
-    },
-    {
-      "query": "digital marketing skills resume",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 37
-    },
-    {
-      "query": "executive assistant resume skills",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 89.3
-    },
-    {
-      "query": "how to mail a resume",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 60
-    },
-    {
-      "query": "how to send cv",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 41
-    },
-    {
-      "query": "keywords for operations manager resume",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 95
     }
   ],
   "top_pages_30d": [
     {
       "page": "https://wadecv.com/",
       "clicks": 2,
-      "impressions": 6,
-      "ctr": 33.33,
-      "position": 2.8
+      "impressions": 7,
+      "ctr": 28.57,
+      "position": 6.1
     },
     {
       "page": "http://wadecv.com/",
@@ -404,9 +404,9 @@
     {
       "page": "https://wadecv.com/career-change/teacher-to-edtech",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 5
+      "position": 6
     },
     {
       "page": "https://wadecv.com/company-resume/bain",
@@ -421,6 +421,20 @@
       "impressions": 1,
       "ctr": 0,
       "position": 51
+    },
+    {
+      "page": "https://wadecv.com/jobs/accountant",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 98
+    },
+    {
+      "page": "https://wadecv.com/jobs/administrative-assistant",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 100
     },
     {
       "page": "https://wadecv.com/jobs/customer-success-manager",
@@ -544,16 +558,16 @@
     {
       "page": "https://wadecv.com/skills/customer-service",
       "clicks": 0,
-      "impressions": 74,
+      "impressions": 90,
       "ctr": 0,
-      "position": 84.1
+      "position": 83.7
     },
     {
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 20,
+      "impressions": 22,
       "ctr": 0,
-      "position": 73.8
+      "position": 74.1
     },
     {
       "page": "https://wadecv.com/skills/executive-assistant",
@@ -592,6 +606,14 @@
     }
   ],
   "query_page_30d": [
+    {
+      "query": "accountant job description for resume",
+      "page": "https://wadecv.com/jobs/accountant",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 98
+    },
     {
       "query": "accountant resume keywords",
       "page": "https://wadecv.com/skills/accountant",
@@ -697,6 +719,14 @@
       "position": 95
     },
     {
+      "query": "administrative assistant tasks for resume",
+      "page": "https://wadecv.com/jobs/administrative-assistant",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 100
+    },
+    {
       "query": "agency recruiter job description",
       "page": "https://wadecv.com/jobs/recruiter",
       "clicks": 0,
@@ -761,6 +791,14 @@
       "position": 95
     },
     {
+      "query": "customer service bullet points",
+      "page": "https://wadecv.com/skills/customer-service",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 69
+    },
+    {
       "query": "customer service cv skills",
       "page": "https://wadecv.com/skills/customer-service",
       "clicks": 0,
@@ -801,20 +839,28 @@
       "position": 82
     },
     {
+      "query": "customer service skills and experience",
+      "page": "https://wadecv.com/skills/customer-service",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 100
+    },
+    {
       "query": "customer service skills cv",
       "page": "https://wadecv.com/skills/customer-service",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 4,
       "ctr": 0,
-      "position": 88
+      "position": 75.5
     },
     {
       "query": "customer service skills for cv",
       "page": "https://wadecv.com/skills/customer-service",
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 10,
       "ctr": 0,
-      "position": 75.1
+      "position": 77.9
     },
     {
       "query": "customer service skills for resume",
@@ -828,9 +874,9 @@
       "query": "customer service skills in cv",
       "page": "https://wadecv.com/skills/customer-service",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 37
+      "position": 60.5
     },
     {
       "query": "customer service skills on resume",
@@ -844,9 +890,17 @@
       "query": "customer service skills resume",
       "page": "https://wadecv.com/skills/customer-service",
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 9,
       "ctr": 0,
-      "position": 83.1
+      "position": 82.9
+    },
+    {
+      "query": "customer service skills summary",
+      "page": "https://wadecv.com/skills/customer-service",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 65
     },
     {
       "query": "customer services skills for resume",
@@ -932,9 +986,9 @@
       "query": "digital marketing cv",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 8,
       "ctr": 0,
-      "position": 73.3
+      "position": 74.4
     },
     {
       "query": "digital marketing cvs",
@@ -991,6 +1045,14 @@
       "impressions": 2,
       "ctr": 0,
       "position": 41
+    },
+    {
+      "query": "key skills for customer service resume",
+      "page": "https://wadecv.com/skills/customer-service",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 87
     },
     {
       "query": "keywords for operations manager resume",
@@ -1300,9 +1362,9 @@
       "query": "skills in customer service for cv",
       "page": "https://wadecv.com/skills/customer-service",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 1,
       "ctr": 0,
-      "position": 98
+      "position": 99
     },
     {
       "query": "skills in customer service for resume",
@@ -1343,38 +1405,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 90
-    },
-    {
-      "query": "skills on resume for customer service",
-      "page": "https://wadecv.com/skills/customer-service",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 92
-    },
-    {
-      "query": "skills to add for customer service resume",
-      "page": "https://wadecv.com/skills/customer-service",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 89
-    },
-    {
-      "query": "skills to put on a resume for customer service",
-      "page": "https://wadecv.com/skills/customer-service",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 91
-    },
-    {
-      "query": "supply chain analyst resume",
-      "page": "https://wadecv.com/resume-bullets/supply-chain-analyst",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 94
     }
   ],
   "daily_trend_90d": [
@@ -1636,15 +1666,22 @@
       "impressions": 26,
       "ctr": 0,
       "position": 80.6
+    },
+    {
+      "date": "2026-04-11",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 77.8
     }
   ],
   "devices_30d": [
     {
       "device": "DESKTOP",
       "clicks": 1,
-      "impressions": 259,
-      "ctr": 0.39,
-      "position": 53.7
+      "impressions": 282,
+      "ctr": 0.35,
+      "position": 55.7
     },
     {
       "device": "MOBILE",
@@ -1665,9 +1702,9 @@
     {
       "country": "usa",
       "clicks": 1,
-      "impressions": 123,
-      "ctr": 0.81,
-      "position": 53.4
+      "impressions": 143,
+      "ctr": 0.7,
+      "position": 56.7
     },
     {
       "country": "are",
@@ -1749,9 +1786,9 @@
     {
       "country": "gbr",
       "clicks": 0,
-      "impressions": 77,
+      "impressions": 80,
       "ctr": 0,
-      "position": 72.6
+      "position": 73.0
     },
     {
       "country": "hkg",

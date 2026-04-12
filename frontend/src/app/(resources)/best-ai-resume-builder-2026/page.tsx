@@ -11,19 +11,19 @@ const BASE_URL =
     : "https://wadecv.com");
 
 export const metadata = {
-  title: "7 Best AI Resume Builders in 2026 (Tested & Ranked) | WadeCV",
+  title: "9 Best AI Resume Builders in 2026 (Tested & Ranked) | WadeCV",
   description:
-    "We tested WadeCV, Teal, Jobscan, Kickresume, Novoresume, Wobo AI, and ChatGPT to find the best AI resume builder in 2026. Full comparison with pros, cons, and pricing.",
+    "We tested WadeCV, Teal, Jobscan, Zety, FlowCV, Kickresume, Novoresume, Wobo AI, and ChatGPT to find the best AI resume builder in 2026. Full comparison with pros, cons, and pricing.",
   openGraph: {
-    title: "7 Best AI Resume Builders in 2026 (Tested & Ranked)",
+    title: "9 Best AI Resume Builders in 2026 (Tested & Ranked)",
     description:
-      "We tested WadeCV, Teal, Jobscan, Kickresume, Novoresume, Wobo AI, and ChatGPT. Here is the honest comparison.",
+      "We tested 9 AI resume builders including WadeCV, Teal, Jobscan, Zety, and FlowCV. Here is the honest comparison.",
   },
   twitter: {
     card: "summary" as const,
-    title: "7 Best AI Resume Builders in 2026 (Tested & Ranked)",
+    title: "9 Best AI Resume Builders in 2026 (Tested & Ranked)",
     description:
-      "Full breakdown of the top AI resume builders: WadeCV, Teal, Jobscan, Kickresume, and more.",
+      "Full breakdown of the top AI resume builders: WadeCV, Teal, Jobscan, Zety, FlowCV, and more.",
   },
 };
 
@@ -105,6 +105,50 @@ const TOOLS: Tool[] = [
     atsScore: 5,
     tailoringScore: 2,
     easeScore: 2,
+  },
+  {
+    name: "Zety",
+    tagline: "Template-based resume builder with pre-written content",
+    bestFor: "Building a polished resume from scratch with professional templates",
+    pricing: "Free to create; download requires subscription (~$24.99/month)",
+    verdict: "niche",
+    pros: [
+      "20+ professional, visually polished resume templates",
+      "Pre-written bullet point suggestions by job title",
+      "Cover letter builder with matching templates",
+      "Intuitive drag-and-drop editor",
+    ],
+    cons: [
+      "No per-job tailoring — builds one generic resume",
+      "Requires a subscription to download or export",
+      "No job URL scraping or keyword analysis",
+      "Content suggestions are generic, not job-specific",
+    ],
+    atsScore: 3,
+    tailoringScore: 1,
+    easeScore: 5,
+  },
+  {
+    name: "FlowCV",
+    tagline: "Free resume builder with modern templates",
+    bestFor: "Creating a visually attractive resume at no cost",
+    pricing: "Free plan with full features; Pro at $4.99/month for premium templates",
+    verdict: "niche",
+    pros: [
+      "Genuinely free — export without watermarks on the free plan",
+      "Clean, modern templates with good typography",
+      "Real-time preview as you edit",
+      "Simple and fast to use",
+    ],
+    cons: [
+      "No AI tailoring or job-description matching",
+      "No ATS keyword analysis",
+      "Design-focused — prioritizes looks over ATS optimization",
+      "No job scraping or application tracking",
+    ],
+    atsScore: 2,
+    tailoringScore: 1,
+    easeScore: 5,
   },
   {
     name: "Kickresume",
@@ -223,7 +267,7 @@ export default function BestAiResumeBuilderPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "7 Best AI Resume Builders in 2026 (Tested & Ranked)",
+    headline: "9 Best AI Resume Builders in 2026 (Tested & Ranked)",
     description: metadata.description,
     author: { "@type": "Organization", name: "WadeCV" },
     publisher: { "@type": "Organization", name: "WadeCV", url: BASE_URL },
@@ -231,7 +275,7 @@ export default function BestAiResumeBuilderPage() {
       "@type": "WebPage",
       "@id": `${BASE_URL}/best-ai-resume-builder-2026`,
     },
-    dateModified: "2026-04-12",
+    dateModified: "2026-04-13",
   };
 
   const faqJsonLd = {
@@ -256,11 +300,11 @@ export default function BestAiResumeBuilderPage() {
       />
 
       <h1 className="text-3xl font-bold mb-3">
-        7 Best AI Resume Builders in 2026 (Tested &amp; Ranked)
+        9 Best AI Resume Builders in 2026 (Tested &amp; Ranked)
       </h1>
       <p className="text-sm text-muted-foreground mb-6">
         Last updated: April 2026 · Tools tested: WadeCV, Teal, Jobscan,
-        Kickresume, Novoresume, Wobo AI, ChatGPT
+        Zety, FlowCV, Kickresume, Novoresume, Wobo AI, ChatGPT
       </p>
 
       <p className="text-muted-foreground mb-8">
@@ -444,6 +488,32 @@ export default function BestAiResumeBuilderPage() {
                   </p>
                 )}
 
+                {tool.name === "Zety" && (
+                  <p className="text-sm text-muted-foreground">
+                    See our{" "}
+                    <Link
+                      href="/wadecv-vs-zety"
+                      className="underline underline-offset-2"
+                    >
+                      WadeCV vs Zety head-to-head comparison
+                    </Link>
+                    .
+                  </p>
+                )}
+
+                {tool.name === "FlowCV" && (
+                  <p className="text-sm text-muted-foreground">
+                    See our{" "}
+                    <Link
+                      href="/wadecv-vs-flowcv"
+                      className="underline underline-offset-2"
+                    >
+                      WadeCV vs FlowCV head-to-head comparison
+                    </Link>
+                    .
+                  </p>
+                )}
+
                 {tool.name === "ChatGPT" && (
                   <p className="text-sm text-muted-foreground">
                     See our{" "}
@@ -492,8 +562,8 @@ export default function BestAiResumeBuilderPage() {
             <span className="font-medium text-foreground">
               For building your first resume from scratch:
             </span>{" "}
-            Novoresume or Kickresume — then switch to WadeCV once you have a
-            base CV to tailor.
+            Zety, Novoresume, or Kickresume — then switch to WadeCV once you
+            have a base CV to tailor.
           </p>
         </div>
       </section>

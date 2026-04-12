@@ -14,6 +14,7 @@ const CATEGORY_HUBS: CrossLink[] = [
     href: "/best-ai-resume-builder-2026",
     label: "Best AI Resume Builders 2026",
   },
+  { href: "/cv-vs-resume", label: "CV vs Resume Guide" },
 ];
 
 type Props = {

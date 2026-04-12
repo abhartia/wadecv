@@ -1,27 +1,21 @@
 {
   "traffic_summary_30d": {
     "activeUsers": "12",
-    "sessions": "42",
-    "screenPageViews": "85",
-    "averageSessionDuration": "430.8465926904762",
-    "bounceRate": "0.45238095238095238",
+    "sessions": "41",
+    "screenPageViews": "84",
+    "averageSessionDuration": "417.93032460975616",
+    "bounceRate": "0.46341463414634149",
     "newUsers": "11"
   },
   "traffic_summary_prev_30d": {
     "activeUsers": "16",
-    "sessions": "45",
-    "screenPageViews": "210",
-    "averageSessionDuration": "1476.2255842",
-    "bounceRate": "0.37777777777777777",
+    "sessions": "46",
+    "screenPageViews": "211",
+    "averageSessionDuration": "1465.012279847826",
+    "bounceRate": "0.36956521739130432",
     "newUsers": "17"
   },
   "daily_trend": [
-    {
-      "date": "20260313",
-      "activeUsers": "1",
-      "sessions": "1",
-      "screenPageViews": "1"
-    },
     {
       "date": "20260314",
       "activeUsers": "1",
@@ -140,10 +134,10 @@
   "top_pages": [
     {
       "pagePath": "/",
-      "screenPageViews": "32",
+      "screenPageViews": "31",
       "activeUsers": "12",
-      "averageSessionDuration": "97.063948969696966",
-      "bounceRate": "0.39393939393939392"
+      "averageSessionDuration": "70.084272875",
+      "bounceRate": "0.40625"
     },
     {
       "pagePath": "/tailor",
@@ -198,11 +192,11 @@
   "traffic_sources": [
     {
       "channel": "Organic Shopping",
-      "sessions": "30",
+      "sessions": "29",
       "activeUsers": "1",
-      "screenPageViews": "67",
-      "avgDuration": "598.45336920000011",
-      "bounceRate": "0.26666666666666666"
+      "screenPageViews": "66",
+      "avgDuration": "585.97198248275868",
+      "bounceRate": "0.27586206896551724"
     },
     {
       "channel": "Paid Search",
@@ -256,9 +250,9 @@
   "devices": [
     {
       "device": "desktop",
-      "sessions": "39",
+      "sessions": "38",
       "activeUsers": "9",
-      "bounceRate": "0.4358974358974359"
+      "bounceRate": "0.44736842105263158"
     },
     {
       "device": "mobile",
@@ -270,7 +264,7 @@
   "countries": [
     {
       "country": "United States",
-      "sessions": "34",
+      "sessions": "33",
       "activeUsers": "4"
     },
     {
@@ -287,17 +281,17 @@
   "events": [
     {
       "event": "page_view",
-      "eventCount": "85",
+      "eventCount": "84",
       "totalUsers": "12"
     },
     {
       "event": "session_start",
-      "eventCount": "42",
+      "eventCount": "41",
       "totalUsers": "12"
     },
     {
       "event": "user_engagement",
-      "eventCount": "25",
+      "eventCount": "24",
       "totalUsers": "2"
     },
     {
@@ -388,10 +382,10 @@
     {
       "pagePath": "/",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "32",
+      "screenPageViews": "31",
       "activeUsers": "12",
-      "avgDuration": "97.063948969696966",
-      "bounceRate": "0.39393939393939392"
+      "avgDuration": "70.084272875",
+      "bounceRate": "0.40625"
     },
     {
       "pagePath": "/tailor",
@@ -453,7 +447,7 @@
   "referrers": [
     {
       "source": "checkout.stripe.com",
-      "sessions": "30",
+      "sessions": "29",
       "activeUsers": "1"
     },
     {

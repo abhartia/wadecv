@@ -4,6 +4,85 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 
 ---
 
+## 2026-04-13 — Session 11: CV vs Resume Hub + Zety Comparison + Listicle Expansion
+
+### Data Pulled
+- [x] GA4 analytics data → `ga4_data.json`
+- [x] GSC data → `gsc_data.json` — **295 impressions (up from 272, +8%)**, 36 pages (+2), 50 queries, 2 clicks
+- [x] Trends data → `trends_data.json` — claude ai +450%, zety +350%, cv builder free uk +190,200% BREAKOUT, what is a cv vs resume +85,900% BREAKOUT
+
+### Key Findings
+- **Impressions still growing:** 295 total (up 8% from 272). 36 pages with impressions (up from 34).
+- **Customer service cluster exploding:** `/skills/customer-service` at 90 impressions (+22% from 74). #1 content asset by far.
+- **UK traffic now 27%:** 80 impressions from UK (up from ~69). India emerging at 14 impressions.
+- **New pages entering GSC:** quantifiable-resume-bullets (4), data-analyst (3), executive-assistant (3), supply-chain-analyst (2), business-analyst (2), project-manager (2), achievement-examples (1 at pos 10!)
+- **Daily baseline established:** Post-burst average is ~26/day (Apr 8-11). Apr 6-7 peak of 53-54/day was a burst.
+- **Comparison pages still NOT indexed** — internal linking fix from Apr 12 needs 5-7 days to take effect
+- **"claude ai" rising +450%** for "ai resume builder" — new signal
+- **Signup events still 0:** No new signups. Most traffic is at pos 70-90, users aren't clicking through yet.
+
+### Changes Made
+
+#### 1. "CV vs Resume" Educational Hub Page (HIGH IMPACT — big bet of the session)
+**Why:** "what is a cv vs resume" +85,900% breakout, "cv builder free uk" +190,200% breakout. UK is 27% of impressions and growing. Educational hub page targeting massive search volume.
+
+**Files created:**
+- `frontend/src/app/(resources)/cv-vs-resume/page.tsx` — Comprehensive guide: regional differences, formatting tips, when to use each, FAQ with FAQPage + Article JSON-LD
+
+**Files changed:**
+- `frontend/src/app/sitemap.ts` — added `/cv-vs-resume` at priority 0.9
+- `frontend/src/components/seo/cross-category-links.tsx` — added "CV vs Resume Guide" to CATEGORY_HUBS (all 170+ SEO pages now link to it)
+
+**Waiting for:** Google indexing (check 2026-04-20+)
+
+#### 2. "WadeCV vs Zety" Comparison Page (HIGH IMPACT — 8th comparison page)
+**Why:** "zety resume builder" +350% rising. Template builder vs per-job tailoring — genuine comparison.
+
+**Files created:**
+- `frontend/src/app/(resources)/wadecv-vs-zety/page.tsx` — 11-row feature comparison, 5-item FAQ, FAQPage + Article JSON-LD, CrossCategoryLinks
+
+**Files changed:**
+- `frontend/src/app/sitemap.ts` — added `/wadecv-vs-zety` at priority 0.8
+
+**Waiting for:** Google indexing (check 2026-04-20+)
+
+#### 3. Listicle Expansion: "9 Best AI Resume Builders 2026"
+**Why:** Missing Zety and FlowCV — two of top breakout competitors. Improves comprehensiveness and creates internal links to comparison pages.
+
+**Files changed:**
+- `frontend/src/app/(resources)/best-ai-resume-builder-2026/page.tsx`:
+  - "7 Best" → "9 Best AI Resume Builders in 2026"
+  - Added Zety + FlowCV tool entries with pros, cons, scores
+  - Added comparison page links for Zety and FlowCV
+  - Updated verdict section, dateModified → 2026-04-13
+
+#### 4. Data Analyst Cluster Completion
+**Why:** `/resume-bullets/data-analyst` has 3 impressions, `/skills/data-analyst` exists, but no `/jobs/data-analyst`. Now complete.
+
+**New entry:**
+- `frontend/content/seo/jobs.json` — `data-analyst` with 8 responsibilities, 8 skills, 20 keywords, 3 FAQ (39 total jobs entries)
+
+#### 5. Build verified
+- `next build` passes: /cv-vs-resume and /wadecv-vs-zety confirmed in output, 0 errors
+
+### Not Yet Done (For Future Sessions)
+- [ ] Check comparison pages indexed after internal linking fix (2026-04-19+)
+- [ ] Check `/cv-vs-resume` indexed (2026-04-20+)
+- [ ] Check `/wadecv-vs-zety` indexed (2026-04-20+)
+- [ ] Check `/wadecv-vs-jobcopilot` indexed (2026-04-19+)
+- [ ] Check ATS content overhaul impact (2026-04-18+)
+- [ ] Check ML, Python, data-analyst cluster pages indexed (2026-04-20+)
+- [ ] Monitor first `signup_start`/`signup_success` events in GA4
+- [ ] Consider "WadeCV vs Claude AI" comparison content (claude ai +450% rising for ai resume builder)
+- [ ] Consider UK-specific landing page targeting "cv builder free uk" directly
+- [ ] Create topic cluster hub/pillar pages (aggregating each category)
+- [ ] Add author credentials/expert signals to content pages
+- [ ] Investigate conversion: SEO traffic growing but 0 signups — CTA effectiveness, landing page quality
+- [ ] Consider achievement-examples content expansion (pos 10, high potential)
+- [ ] Monitor AI bot traffic in server logs
+
+---
+
 ## 2026-04-12 — Session 10: Internal Linking Fix + JobCopilot Comparison + Cluster Completions
 
 ### Data Pulled

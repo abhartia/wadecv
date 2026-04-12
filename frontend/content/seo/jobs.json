@@ -2158,5 +2158,94 @@
         "answer": "Highlight open-source contributions, personal projects with measurable outcomes, or freelance work. Include GitHub links and describe projects using the same bullet format as professional experience \u2014 what you built, the tools you used, and the result."
       }
     ]
+  },
+  {
+    "slug": "data-analyst",
+    "title": "Data Analyst Resume Guide",
+    "metaDescription": "How to write a data analyst resume that passes ATS screening. Key skills, tools, resume keywords, and examples for data analyst roles across industries in 2026.",
+    "intro": "Data analysts turn raw data into actionable insights that drive business decisions. Whether you work in finance, marketing, operations, or product, employers want analysts who can clean messy datasets, build dashboards, and tell a clear story with numbers. This guide covers the skills, keywords, and strategies to make your data analyst resume stand out across industries.",
+    "responsibilities": [
+      "Collect, clean, and transform data from multiple sources for analysis",
+      "Build dashboards and reports using BI tools like Tableau, Power BI, or Looker",
+      "Write SQL queries to extract and aggregate data from relational databases",
+      "Perform exploratory data analysis to identify trends, patterns, and anomalies",
+      "Collaborate with stakeholders to define KPIs and translate business questions into data tasks",
+      "Create and maintain data documentation, data dictionaries, and process guides",
+      "Conduct A/B test analysis and statistical significance testing",
+      "Present findings to non-technical audiences using clear visualizations and summaries"
+    ],
+    "requiredSkills": [
+      "SQL proficiency including joins, subqueries, window functions, and CTEs",
+      "Excel or Google Sheets including pivot tables, VLOOKUP, and conditional formatting",
+      "BI and visualization tools: Tableau, Power BI, Looker, or Metabase",
+      "Python or R for data analysis: pandas, NumPy, matplotlib, or ggplot2",
+      "Statistical concepts: hypothesis testing, regression analysis, probability distributions",
+      "Data cleaning and transformation (ETL fundamentals)",
+      "Communication skills to present data findings to business stakeholders",
+      "Familiarity with data warehouses (Snowflake, BigQuery, Redshift) and cloud platforms"
+    ],
+    "salaryRange": "$55,000 - $110,000 (varies by industry, location, and experience level)",
+    "careerPath": [
+      "Junior Data Analyst",
+      "Data Analyst",
+      "Senior Data Analyst",
+      "Lead Data Analyst / Analytics Manager",
+      "Director of Analytics / Head of Data"
+    ],
+    "resumeKeywords": [
+      "SQL",
+      "Python",
+      "Tableau",
+      "Power BI",
+      "Excel",
+      "data analysis",
+      "data visualization",
+      "ETL",
+      "A/B testing",
+      "statistical analysis",
+      "BigQuery",
+      "Snowflake",
+      "Redshift",
+      "Looker",
+      "pandas",
+      "dashboards",
+      "KPI",
+      "stakeholder reporting",
+      "data cleaning",
+      "regression"
+    ],
+    "body": "Data analyst job descriptions vary by industry, but the core skills overlap heavily: SQL, a BI tool, basic statistics, and the ability to communicate findings clearly. Your resume should show what questions you answered, what tools you used, and what business impact your analysis had.\n\nFor analyst roles in tech and product teams, emphasize experiment design, A/B testing, and product metrics (DAU, retention, conversion). For finance and operations roles, highlight forecasting, cost analysis, and process optimization. Marketing analytics roles want attribution modeling, campaign performance, and customer segmentation.\n\nQuantify results wherever possible: revenue influenced, cost savings identified, time reduced through automation, dashboard adoption rates. Hiring managers want to see that your analysis led to decisions, not just that you produced reports.\n\nAvoid listing tools without context. Instead of writing 'SQL' alone, show what you did with it: 'Built SQL queries processing 50M+ rows daily to generate executive revenue dashboards.' Every bullet should demonstrate tool plus outcome.\n\nWadeCV can help you tailor your data analyst resume to match specific job descriptions, ensuring the right technical skills and industry keywords are highlighted for each application.",
+    "commonMistakes": [
+      "Listing tools without showing what you accomplished with them",
+      "Writing generic bullets like 'analyzed data' without specifying what data or what outcome",
+      "Omitting business impact — reports and dashboards are outputs, not results",
+      "Ignoring the industry context of the role (healthcare vs fintech vs e-commerce analysis differ)"
+    ],
+    "interviewTips": [
+      "Prepare a portfolio piece: a dashboard or analysis you can walk through end-to-end",
+      "Practice SQL live — expect window functions, CTEs, and joins on whiteboard or online IDE",
+      "Be ready to explain statistical concepts in plain language to a non-technical interviewer",
+      "Know your metrics story: for every analysis on your resume, know what decision it informed"
+    ],
+    "relatedSlugs": [
+      "data-analyst-healthcare",
+      "business-analyst",
+      "financial-analyst",
+      "data-scientist"
+    ],
+    "faq": [
+      {
+        "question": "What skills should a data analyst put on their resume?",
+        "answer": "Lead with SQL and your primary BI tool (Tableau, Power BI, or Looker). Add Python or R if you use them for analysis. Include Excel if the role mentions it. Then list domain-specific skills like A/B testing, forecasting, or customer segmentation based on the job description."
+      },
+      {
+        "question": "How do I transition into a data analyst role?",
+        "answer": "Build a portfolio with 2-3 projects using real or public datasets. Get comfortable with SQL and one BI tool. Complete a certificate (Google Data Analytics, IBM Data Analyst) for credibility. On your resume, reframe past work to highlight data-adjacent tasks like reporting, metrics tracking, or process analysis."
+      },
+      {
+        "question": "Should I list every tool I know on my data analyst resume?",
+        "answer": "No. List tools that match the job description and that you can discuss confidently in an interview. A focused list of 8-10 tools you actually use is better than a list of 25 tools you touched once. Prioritize SQL, your BI tool, and any programming languages the role requires."
+      }
+    ]
   }
 ]
