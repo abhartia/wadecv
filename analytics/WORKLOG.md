@@ -4,6 +4,72 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 
 ---
 
+## 2026-04-14 — Session 12: Mid-Page Inline CTA for Conversion Optimization
+
+### Data Pulled
+- [x] GA4 analytics data → `ga4_data.json`
+- [x] GSC data → `gsc_data.json` — **306 impressions (up from 295, +4%)**, 37 pages (+1), 50 queries, 2 clicks
+- [x] Trends data → `trends_data.json` — Limited due to 429 rate limiting. Core: resume builder down, ats resume stable
+
+### Key Findings
+- **Impressions still growing:** 306 total (up 4% from 295). Growth decelerating as expected post-burst.
+- **Customer service plateau:** 91 impressions (+1 from 90). Approaching natural ceiling for this query set.
+- **Digital marketing accelerating:** 25 impressions (+14% from 22), position 73.2 (improving).
+- **Homepage surging:** 10 impressions (+43% from 7), position 4.6, 20% CTR, 2 clicks.
+- **Python-developer position improved:** 59.0 (was 71.7 at first tracking). Cluster completion validated.
+- **Mobile growing fast:** 14 impressions (+40% from 10), 7.14% CTR vs 0.35% desktop.
+- **International spread:** 20 countries now showing impressions. Germany, HK, South Korea, Mozambique new.
+- **Apr 12 weekend dip:** 11 impressions — Saturday effect, normal for job-search queries.
+- **Comparison pages still NOT indexed** — internal linking fix from Apr 12 needs more time.
+- **Signup events still 0:** The elephant in the room. CTA buried at bottom of every page.
+
+### Changes Made
+
+#### 1. Mid-Page Inline CTA Component (HIGH IMPACT — big bet of the session)
+**Why:** 12 sessions of SEO growth with 0 signups. Root cause: CTAs are at the very bottom of pages, after all content + related guides + cross-category links. Users who bounce never see them.
+
+**Solution:** New `InlineCta` component placed mid-page (after body content, before FAQ) on ALL 7 SEO template types (170+ pages). Features:
+- Visually distinct: primary-tinted background card with Zap icon
+- 7 variant-specific headings and descriptions (skills, job, resume-bullets, ats, career-change, company, physical-mail)
+- Trust bullets: "1 free credit on signup", "AI-powered fit analysis", "ATS-optimised formatting"
+- CTA button: "Try it free — no credit card needed"
+- Tracked via existing `trackSeoCtaClick()` analytics
+
+**Files created:**
+- `frontend/src/components/seo/inline-cta.tsx` — Client component with 7 variant configs
+
+**Files changed:**
+- `frontend/src/app/(resources)/skills/[slug]/page.tsx` — import + InlineCta after body
+- `frontend/src/app/(resources)/jobs/[slug]/page.tsx` — import + InlineCta after body
+- `frontend/src/app/(resources)/resume-bullets/[slug]/page.tsx` — import + InlineCta after body
+- `frontend/src/app/(resources)/ats/[slug]/page.tsx` — import + InlineCta after body
+- `frontend/src/app/(resources)/career-change/[slug]/page.tsx` — import + InlineCta after body
+- `frontend/src/app/(resources)/physical-mail/[slug]/page.tsx` — import + InlineCta after body
+- `frontend/src/app/(resources)/company-resume/[company]/page.tsx` — import + InlineCta after body
+
+**Impact:** Every SEO detail page now has TWO CTAs — mid-page (inline) and bottom (existing Card). The mid-page CTA is what users will actually see.
+
+#### 2. Build verified
+- `next build` passes: all pages generate, 0 errors
+
+### Not Yet Done (For Future Sessions)
+- [ ] Monitor `seo_cta_click` events in GA4 — did the inline CTA change behaviour?
+- [ ] Check comparison pages indexed after internal linking fix (2026-04-19+)
+- [ ] Check `/cv-vs-resume` indexed (2026-04-20+)
+- [ ] Check `/wadecv-vs-zety` indexed (2026-04-20+)
+- [ ] Check `/wadecv-vs-jobcopilot` indexed (2026-04-19+)
+- [ ] Check ATS content overhaul impact (2026-04-18+)
+- [ ] Check ML, Python, data-analyst cluster pages indexed (2026-04-20+)
+- [ ] Monitor first `signup_start`/`signup_success` events in GA4
+- [ ] Consider "WadeCV vs Claude AI" comparison content (claude ai +450% rising)
+- [ ] Consider UK-specific landing page targeting "cv builder free uk"
+- [ ] Create topic cluster hub/pillar pages (aggregating each category)
+- [ ] Add author credentials/expert signals to content pages
+- [ ] Consider achievement-examples content expansion (pos 10, high potential)
+- [ ] Monitor AI bot traffic in server logs
+
+---
+
 ## 2026-04-13 — Session 11: CV vs Resume Hub + Zety Comparison + Listicle Expansion
 
 ### Data Pulled

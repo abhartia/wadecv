@@ -6,6 +6,7 @@ import { SeoCta } from "@/components/seo/seo-cta";
 import { FaqSection } from "@/components/seo/faq-section";
 import { RelatedGuides } from "@/components/seo/related-guides";
 import { CrossCategoryLinks } from "@/components/seo/cross-category-links";
+import { InlineCta } from "@/components/seo/inline-cta";
 
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com";
 
@@ -89,6 +90,8 @@ export default async function CompanyResumePage({ params }: Props) {
           ))}
         </div>
       </section>
+
+      <InlineCta variant="company" slug={company} />
 
       {entry.commonMistakes && entry.commonMistakes.length > 0 && (
         <section className="mb-8">

@@ -176,6 +176,13 @@
       "position": 86
     },
     {
+      "query": "customer service qualities for resume",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 97
+    },
+    {
       "query": "customer service rep skills",
       "clicks": 0,
       "impressions": 1,
@@ -325,16 +332,16 @@
     {
       "query": "digital marketing cv",
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 10,
       "ctr": 0,
-      "position": 74.4
+      "position": 72
     },
     {
       "query": "digital marketing cvs",
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 78
+      "position": 77.5
     },
     {
       "query": "digital marketing keywords resume",
@@ -342,22 +349,15 @@
       "impressions": 1,
       "ctr": 0,
       "position": 97
-    },
-    {
-      "query": "digital marketing skills for resume",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 85
     }
   ],
   "top_pages_30d": [
     {
       "page": "https://wadecv.com/",
       "clicks": 2,
-      "impressions": 7,
-      "ctr": 28.57,
-      "position": 6.1
+      "impressions": 10,
+      "ctr": 20.0,
+      "position": 4.6
     },
     {
       "page": "http://wadecv.com/",
@@ -369,9 +369,16 @@
     {
       "page": "https://wadecv.com/ats/lever",
       "clicks": 0,
-      "impressions": 57,
+      "impressions": 58,
       "ctr": 0,
       "position": 7.8
+    },
+    {
+      "page": "https://wadecv.com/best-ai-resume-builder-2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6
     },
     {
       "page": "https://wadecv.com/career-change",
@@ -558,23 +565,23 @@
     {
       "page": "https://wadecv.com/skills/customer-service",
       "clicks": 0,
-      "impressions": 90,
+      "impressions": 91,
       "ctr": 0,
-      "position": 83.7
+      "position": 83.8
     },
     {
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 22,
+      "impressions": 25,
       "ctr": 0,
-      "position": 74.1
+      "position": 73.2
     },
     {
       "page": "https://wadecv.com/skills/executive-assistant",
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 89.3
+      "position": 90.5
     },
     {
       "page": "https://wadecv.com/skills/machine-learning",
@@ -600,9 +607,9 @@
     {
       "page": "https://wadecv.com/skills/python-developer",
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 71.7
+      "position": 59
     }
   ],
   "query_page_30d": [
@@ -815,6 +822,14 @@
       "position": 86
     },
     {
+      "query": "customer service qualities for resume",
+      "page": "https://wadecv.com/skills/customer-service",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 97
+    },
+    {
       "query": "customer service rep skills",
       "page": "https://wadecv.com/skills/customer-service",
       "clicks": 0,
@@ -986,17 +1001,17 @@
       "query": "digital marketing cv",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 10,
       "ctr": 0,
-      "position": 74.4
+      "position": 72
     },
     {
       "query": "digital marketing cvs",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 78
+      "position": 77.5
     },
     {
       "query": "digital marketing keywords resume",
@@ -1149,6 +1164,14 @@
       "impressions": 1,
       "ctr": 0,
       "position": 72
+    },
+    {
+      "query": "python developer resume skills",
+      "page": "https://wadecv.com/skills/python-developer",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 21
     },
     {
       "query": "quantifiable impact example",
@@ -1389,22 +1412,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 70
-    },
-    {
-      "query": "skills of a project manager resume",
-      "page": "https://wadecv.com/skills/project-manager",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 77
-    },
-    {
-      "query": "skills of an operations manager",
-      "page": "https://wadecv.com/skills/operations-manager",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 90
     }
   ],
   "daily_trend_90d": [
@@ -1673,38 +1680,45 @@
       "impressions": 23,
       "ctr": 0,
       "position": 77.8
+    },
+    {
+      "date": "2026-04-12",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 38.9
     }
   ],
   "devices_30d": [
     {
       "device": "DESKTOP",
       "clicks": 1,
-      "impressions": 282,
+      "impressions": 289,
       "ctr": 0.35,
       "position": 55.7
     },
     {
       "device": "MOBILE",
       "clicks": 1,
-      "impressions": 10,
-      "ctr": 10.0,
-      "position": 10.4
+      "impressions": 14,
+      "ctr": 7.14,
+      "position": 9.1
     }
   ],
   "countries_30d": [
     {
       "country": "can",
       "clicks": 1,
-      "impressions": 7,
-      "ctr": 14.29,
-      "position": 29.3
+      "impressions": 8,
+      "ctr": 12.5,
+      "position": 37.8
     },
     {
       "country": "usa",
       "clicks": 1,
-      "impressions": 143,
-      "ctr": 0.7,
-      "position": 56.7
+      "impressions": 146,
+      "ctr": 0.68,
+      "position": 56.3
     },
     {
       "country": "are",
@@ -1786,9 +1800,9 @@
     {
       "country": "gbr",
       "clicks": 0,
-      "impressions": 80,
+      "impressions": 83,
       "ctr": 0,
-      "position": 73.0
+      "position": 72.8
     },
     {
       "country": "hkg",
@@ -1826,11 +1840,11 @@
       "position": 11
     },
     {
-      "country": "nga",
+      "country": "moz",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 46.5
+      "position": 1
     }
   ]
 }

@@ -1,27 +1,21 @@
 {
   "traffic_summary_30d": {
-    "activeUsers": "12",
+    "activeUsers": "11",
     "sessions": "41",
-    "screenPageViews": "84",
-    "averageSessionDuration": "417.93032460975616",
-    "bounceRate": "0.46341463414634149",
-    "newUsers": "11"
+    "screenPageViews": "87",
+    "averageSessionDuration": "426.76961621951227",
+    "bounceRate": "0.43902439024390244",
+    "newUsers": "10"
   },
   "traffic_summary_prev_30d": {
-    "activeUsers": "16",
-    "sessions": "46",
-    "screenPageViews": "211",
-    "averageSessionDuration": "1465.012279847826",
-    "bounceRate": "0.36956521739130432",
-    "newUsers": "17"
+    "activeUsers": "17",
+    "sessions": "47",
+    "screenPageViews": "212",
+    "averageSessionDuration": "1433.8418058085106",
+    "bounceRate": "0.38297872340425532",
+    "newUsers": "18"
   },
   "daily_trend": [
-    {
-      "date": "20260314",
-      "activeUsers": "1",
-      "sessions": "1",
-      "screenPageViews": "1"
-    },
     {
       "date": "20260316",
       "activeUsers": "1",
@@ -129,42 +123,48 @@
       "activeUsers": "1",
       "sessions": "1",
       "screenPageViews": "8"
+    },
+    {
+      "date": "20260413",
+      "activeUsers": "1",
+      "sessions": "1",
+      "screenPageViews": "4"
     }
   ],
   "top_pages": [
     {
       "pagePath": "/",
-      "screenPageViews": "31",
-      "activeUsers": "12",
-      "averageSessionDuration": "70.084272875",
-      "bounceRate": "0.40625"
+      "screenPageViews": "30",
+      "activeUsers": "11",
+      "averageSessionDuration": "72.345055870967741",
+      "bounceRate": "0.38709677419354838"
     },
     {
       "pagePath": "/tailor",
-      "screenPageViews": "22",
+      "screenPageViews": "23",
       "activeUsers": "2",
-      "averageSessionDuration": "641.82136809523809",
-      "bounceRate": "0.19047619047619047"
+      "averageSessionDuration": "627.9617076818181",
+      "bounceRate": "0.18181818181818182"
     },
     {
       "pagePath": "/dashboard",
-      "screenPageViews": "13",
+      "screenPageViews": "14",
       "activeUsers": "2",
-      "averageSessionDuration": "43.888298923076917",
-      "bounceRate": "0.076923076923076927"
+      "averageSessionDuration": "42.575000214285708",
+      "bounceRate": "0.071428571428571425"
     },
     {
       "pagePath": "/auth/login",
-      "screenPageViews": "11",
+      "screenPageViews": "12",
       "activeUsers": "2",
-      "averageSessionDuration": "13.800387545454544",
+      "averageSessionDuration": "12.650355249999999",
       "bounceRate": "0"
     },
     {
       "pagePath": "/applications",
-      "screenPageViews": "4",
+      "screenPageViews": "5",
       "activeUsers": "2",
-      "averageSessionDuration": "132.9416575",
+      "averageSessionDuration": "106.353326",
       "bounceRate": "0"
     },
     {
@@ -192,17 +192,17 @@
   "traffic_sources": [
     {
       "channel": "Organic Shopping",
-      "sessions": "29",
+      "sessions": "30",
       "activeUsers": "1",
-      "screenPageViews": "66",
-      "avgDuration": "585.97198248275868",
-      "bounceRate": "0.27586206896551724"
+      "screenPageViews": "70",
+      "avgDuration": "578.51994826666669",
+      "bounceRate": "0.26666666666666666"
     },
     {
       "channel": "Paid Search",
-      "sessions": "7",
-      "activeUsers": "7",
-      "screenPageViews": "7",
+      "sessions": "6",
+      "activeUsers": "6",
+      "screenPageViews": "6",
       "avgDuration": "0",
       "bounceRate": "1"
     },
@@ -229,6 +229,14 @@
       "screenPageViews": "8",
       "avgDuration": "141.955817",
       "bounceRate": "0"
+    },
+    {
+      "channel": "Unassigned",
+      "sessions": "1",
+      "activeUsers": "1",
+      "screenPageViews": "0",
+      "avgDuration": "0",
+      "bounceRate": "1"
     }
   ],
   "organic_landing_pages": [
@@ -251,8 +259,8 @@
     {
       "device": "desktop",
       "sessions": "38",
-      "activeUsers": "9",
-      "bounceRate": "0.44736842105263158"
+      "activeUsers": "8",
+      "bounceRate": "0.42105263157894735"
     },
     {
       "device": "mobile",
@@ -269,8 +277,13 @@
     },
     {
       "country": "(not set)",
-      "sessions": "7",
-      "activeUsers": "7"
+      "sessions": "6",
+      "activeUsers": "6"
+    },
+    {
+      "country": "Australia",
+      "sessions": "1",
+      "activeUsers": "1"
     },
     {
       "country": "Sweden",
@@ -281,13 +294,13 @@
   "events": [
     {
       "event": "page_view",
-      "eventCount": "84",
-      "totalUsers": "12"
+      "eventCount": "87",
+      "totalUsers": "11"
     },
     {
       "event": "session_start",
       "eventCount": "41",
-      "totalUsers": "12"
+      "totalUsers": "11"
     },
     {
       "event": "user_engagement",
@@ -296,17 +309,17 @@
     },
     {
       "event": "dashboard_viewed",
-      "eventCount": "21",
+      "eventCount": "22",
       "totalUsers": "2"
     },
     {
       "event": "scroll",
-      "eventCount": "20",
+      "eventCount": "21",
       "totalUsers": "2"
     },
     {
       "event": "cv_download",
-      "eventCount": "17",
+      "eventCount": "18",
       "totalUsers": "1"
     },
     {
@@ -315,24 +328,24 @@
       "totalUsers": "1"
     },
     {
-      "event": "first_visit",
-      "eventCount": "11",
-      "totalUsers": "11"
-    },
-    {
       "event": "form_start",
-      "eventCount": "11",
+      "eventCount": "12",
       "totalUsers": "2"
     },
     {
       "event": "login_attempt",
-      "eventCount": "10",
+      "eventCount": "11",
       "totalUsers": "1"
     },
     {
       "event": "login_success",
-      "eventCount": "10",
+      "eventCount": "11",
       "totalUsers": "1"
+    },
+    {
+      "event": "first_visit",
+      "eventCount": "10",
+      "totalUsers": "10"
     },
     {
       "event": "feature_clicked",
@@ -376,47 +389,53 @@
       "activeUsers": "4",
       "sessions": "4",
       "screenPageViews": "11"
+    },
+    {
+      "week": "202616",
+      "activeUsers": "1",
+      "sessions": "1",
+      "screenPageViews": "4"
     }
   ],
   "all_pages_with_titles": [
     {
       "pagePath": "/",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "31",
-      "activeUsers": "12",
-      "avgDuration": "70.084272875",
-      "bounceRate": "0.40625"
+      "screenPageViews": "30",
+      "activeUsers": "11",
+      "avgDuration": "72.345055870967741",
+      "bounceRate": "0.38709677419354838"
     },
     {
       "pagePath": "/tailor",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "22",
+      "screenPageViews": "23",
       "activeUsers": "2",
-      "avgDuration": "641.82136809523809",
-      "bounceRate": "0.19047619047619047"
+      "avgDuration": "627.9617076818181",
+      "bounceRate": "0.18181818181818182"
     },
     {
       "pagePath": "/dashboard",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "13",
+      "screenPageViews": "14",
       "activeUsers": "2",
-      "avgDuration": "43.888298923076917",
-      "bounceRate": "0.076923076923076927"
+      "avgDuration": "42.575000214285708",
+      "bounceRate": "0.071428571428571425"
     },
     {
       "pagePath": "/auth/login",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "11",
+      "screenPageViews": "12",
       "activeUsers": "2",
-      "avgDuration": "13.800387545454544",
+      "avgDuration": "12.650355249999999",
       "bounceRate": "0"
     },
     {
       "pagePath": "/applications",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "4",
+      "screenPageViews": "5",
       "activeUsers": "2",
-      "avgDuration": "132.9416575",
+      "avgDuration": "106.353326",
       "bounceRate": "0"
     },
     {
@@ -447,13 +466,13 @@
   "referrers": [
     {
       "source": "checkout.stripe.com",
-      "sessions": "29",
+      "sessions": "30",
       "activeUsers": "1"
     },
     {
       "source": "google",
-      "sessions": "9",
-      "activeUsers": "8"
+      "sessions": "8",
+      "activeUsers": "7"
     },
     {
       "source": "m.facebook.com",
@@ -462,6 +481,11 @@
     },
     {
       "source": "(direct)",
+      "sessions": "1",
+      "activeUsers": "1"
+    },
+    {
+      "source": "(not set)",
       "sessions": "1",
       "activeUsers": "1"
     }
