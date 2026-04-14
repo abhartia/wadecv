@@ -4,6 +4,74 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 
 ---
 
+## 2026-04-15 — Session 13: Internal Linking Expansion + AiApply Comparison + Listicle to 11 Tools
+
+### Data Pulled
+- [x] GA4 analytics data → `ga4_data.json`
+- [x] GSC data → `gsc_data.json` — **317 impressions (up from 306, +3.6%)**, 38 pages (+1), 50 queries, 2 clicks
+- [x] Trends data → `trends_data.json` — wobo ai +88,000%, aiapply +31,700%, chatgpt resume trending UP 60.2
+
+### Key Findings
+- **MILESTONE: Listicle indexed!** `/best-ai-resume-builder-2026` showing at position 6 with 1 impression. Internal linking fix from Apr 12 worked.
+- **Impressions still growing:** 317 total (up 3.6% from 306). Growth decelerating as expected.
+- **Lever up to 61:** From 58, +5%. Still page 1 (pos 7.8) but 0 clicks.
+- **USA growing:** 151 impressions (up from 146). New countries: China, Colombia, Bolivia, Switzerland, Argentina.
+- **Weekend confirmed:** Apr 12-13 both at 11 impressions (Saturday/Sunday). Weekday average ~26/day.
+- **"aiapply" 31,700% breakout:** New competitor rising fast, no comparison page until now.
+- **"chatgpt resume" surging:** 60.2 recent vs 44.9 avg. Our existing page targets this.
+- **Signup events still 0:** Inline CTA added yesterday, too early for data.
+
+### Changes Made
+
+#### 1. Internal Linking Expansion for Comparison Pages (HIGH IMPACT — big bet of session)
+**Why:** Listicle indexed at pos 6 after getting linked from 170+ pages. Comparison pages are ONLY linked from listicle + each other. Adding direct links from ALL SEO pages to comparison pages creates 1-hop paths.
+
+**File changed:** `frontend/src/components/seo/cross-category-links.tsx`
+- Added `TOOL_COMPARISONS` array (5 pages: ChatGPT, Teal, Jobscan, Wobo, AiApply)
+- New "Compare AI resume tools" subsection with 3-column grid
+- Hub links increased from 4 to 6 displayed
+
+**Impact:** ~500+ new internal links to comparison pages across 170+ SEO pages.
+
+#### 2. "WadeCV vs AiApply" Comparison Page (HIGH IMPACT — 31,700% breakout)
+**Why:** "aiapply" breakout for "ai job application". Auto-apply vs tailoring is a genuine philosophical comparison.
+
+**File created:** `frontend/src/app/(resources)/wadecv-vs-aiapply/page.tsx`
+- 11-row feature comparison, 5-item FAQ, FAQPage + Article JSON-LD
+- Includes InlineCta mid-page
+- CrossCategoryLinks with contextLinks to related comparisons
+
+**File changed:** `frontend/src/app/sitemap.ts` — added `/wadecv-vs-aiapply`
+
+#### 3. Listicle Expansion to 11 Tools
+**Why:** AiApply (31,700%) and Enhancv (250%) missing from listicle.
+
+**File changed:** `frontend/src/app/(resources)/best-ai-resume-builder-2026/page.tsx`
+- "9 Best" → "11 Best AI Resume Builders in 2026"
+- Added AiApply entry (auto-apply automation, pros/cons, scores, comparison link)
+- Added Enhancv entry (visual resume builder, pros/cons, scores)
+- Updated intro, dateModified → 2026-04-15
+
+#### 4. Build verified
+- `next build` passes: /wadecv-vs-aiapply confirmed, 0 errors
+
+### Not Yet Done (For Future Sessions)
+- [ ] Monitor `seo_cta_click` events in GA4 — did the inline CTA (Apr 14) improve conversion?
+- [ ] Check comparison pages indexed after expanded internal linking (2026-04-20+)
+- [ ] Check `/wadecv-vs-aiapply` indexed (2026-04-22+)
+- [ ] Check `/cv-vs-resume` indexed (2026-04-20+)
+- [ ] Check ATS content overhaul impact (2026-04-18+)
+- [ ] Monitor listicle position — currently pos 6 with 1 impression, watch for growth
+- [ ] Monitor first `signup_start`/`signup_success` events in GA4
+- [ ] Consider "WadeCV vs Claude AI" comparison (claude +400% for ai resume builder)
+- [ ] Consider UK-specific landing page ("cv builder free uk" still breakout)
+- [ ] Create topic cluster hub/pillar pages
+- [ ] Consider "WadeCV vs Enhancv" dedicated comparison page if Enhancv keeps rising
+- [ ] Add author credentials/expert signals to content pages
+- [ ] Monitor AI bot traffic in server logs
+
+---
+
 ## 2026-04-14 — Session 12: Mid-Page Inline CTA for Conversion Optimization
 
 ### Data Pulled

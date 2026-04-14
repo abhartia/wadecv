@@ -11,19 +11,19 @@ const BASE_URL =
     : "https://wadecv.com");
 
 export const metadata = {
-  title: "9 Best AI Resume Builders in 2026 (Tested & Ranked) | WadeCV",
+  title: "11 Best AI Resume Builders in 2026 (Tested & Ranked) | WadeCV",
   description:
-    "We tested WadeCV, Teal, Jobscan, Zety, FlowCV, Kickresume, Novoresume, Wobo AI, and ChatGPT to find the best AI resume builder in 2026. Full comparison with pros, cons, and pricing.",
+    "We tested WadeCV, Teal, Jobscan, Zety, FlowCV, Kickresume, Novoresume, Wobo AI, AiApply, Enhancv, and ChatGPT to find the best AI resume builder in 2026. Full comparison with pros, cons, and pricing.",
   openGraph: {
-    title: "9 Best AI Resume Builders in 2026 (Tested & Ranked)",
+    title: "11 Best AI Resume Builders in 2026 (Tested & Ranked)",
     description:
-      "We tested 9 AI resume builders including WadeCV, Teal, Jobscan, Zety, and FlowCV. Here is the honest comparison.",
+      "We tested 11 AI resume builders including WadeCV, Teal, Jobscan, Zety, AiApply, and Enhancv. Here is the honest comparison.",
   },
   twitter: {
     card: "summary" as const,
-    title: "9 Best AI Resume Builders in 2026 (Tested & Ranked)",
+    title: "11 Best AI Resume Builders in 2026 (Tested & Ranked)",
     description:
-      "Full breakdown of the top AI resume builders: WadeCV, Teal, Jobscan, Zety, FlowCV, and more.",
+      "Full breakdown of the top AI resume builders: WadeCV, Teal, Jobscan, AiApply, Enhancv, and more.",
   },
 };
 
@@ -211,6 +211,50 @@ const TOOLS: Tool[] = [
     easeScore: 3,
   },
   {
+    name: "AiApply",
+    tagline: "Auto-apply automation across job boards",
+    bestFor: "Mass-applying to jobs with minimal manual effort",
+    pricing: "From ~$29/month for auto-apply credits",
+    verdict: "niche",
+    pros: [
+      "Automates application submission across LinkedIn, Indeed, and Glassdoor",
+      "Generates cover letters per application",
+      "Application tracking built in",
+      "Saves significant time on repetitive form filling",
+    ],
+    cons: [
+      "Resume content is not deeply tailored per job",
+      "Mass-applying can trigger recruiter red flags",
+      "Generic applications have lower callback rates",
+      "No fit/gap analysis before applying",
+    ],
+    atsScore: 2,
+    tailoringScore: 2,
+    easeScore: 4,
+  },
+  {
+    name: "Enhancv",
+    tagline: "Visual resume builder with content analysis",
+    bestFor: "Creating a modern, design-forward resume with content feedback",
+    pricing: "Free plan; Pro at $19.99/month",
+    verdict: "niche",
+    pros: [
+      "Strong visual design with modern, creative templates",
+      "Content analyzer gives feedback on resume sections",
+      "Good balance between design and ATS compatibility",
+      "Supports multiple resume formats (one-page, two-page, cover letter)",
+    ],
+    cons: [
+      "No per-job tailoring from a job URL",
+      "Content suggestions are generic, not job-specific",
+      "Pro features require a monthly subscription",
+      "No gap analysis or keyword matching",
+    ],
+    atsScore: 3,
+    tailoringScore: 2,
+    easeScore: 4,
+  },
+  {
     name: "ChatGPT",
     tagline: "General-purpose AI that can write resumes",
     bestFor: "Brainstorming bullet points or drafting from scratch",
@@ -267,7 +311,7 @@ export default function BestAiResumeBuilderPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "9 Best AI Resume Builders in 2026 (Tested & Ranked)",
+    headline: "11 Best AI Resume Builders in 2026 (Tested & Ranked)",
     description: metadata.description,
     author: { "@type": "Organization", name: "WadeCV" },
     publisher: { "@type": "Organization", name: "WadeCV", url: BASE_URL },
@@ -275,7 +319,7 @@ export default function BestAiResumeBuilderPage() {
       "@type": "WebPage",
       "@id": `${BASE_URL}/best-ai-resume-builder-2026`,
     },
-    dateModified: "2026-04-13",
+    dateModified: "2026-04-15",
   };
 
   const faqJsonLd = {
@@ -300,18 +344,20 @@ export default function BestAiResumeBuilderPage() {
       />
 
       <h1 className="text-3xl font-bold mb-3">
-        9 Best AI Resume Builders in 2026 (Tested &amp; Ranked)
+        11 Best AI Resume Builders in 2026 (Tested &amp; Ranked)
       </h1>
       <p className="text-sm text-muted-foreground mb-6">
         Last updated: April 2026 · Tools tested: WadeCV, Teal, Jobscan,
-        Zety, FlowCV, Kickresume, Novoresume, Wobo AI, ChatGPT
+        Zety, FlowCV, Kickresume, Novoresume, Wobo AI, AiApply, Enhancv,
+        ChatGPT
       </p>
 
       <p className="text-muted-foreground mb-8">
         AI resume builders are not created equal. Some are glorified template
-        editors with a GPT button bolted on. Others are genuinely built around
-        the job-tailoring workflow — keyword extraction, ATS formatting, and
-        gap analysis. We tested seven of the most-searched tools in 2026 and
+        editors with a GPT button bolted on. Others automate mass applications
+        with generic resumes. The best tools are genuinely built around the
+        job-tailoring workflow — keyword extraction, ATS formatting, and gap
+        analysis. We tested eleven of the most-searched tools in 2026 and
         ranked them on three criteria that actually matter: ATS compatibility,
         job-tailoring quality, and ease of use.
       </p>
@@ -509,6 +555,19 @@ export default function BestAiResumeBuilderPage() {
                       className="underline underline-offset-2"
                     >
                       WadeCV vs FlowCV head-to-head comparison
+                    </Link>
+                    .
+                  </p>
+                )}
+
+                {tool.name === "AiApply" && (
+                  <p className="text-sm text-muted-foreground">
+                    See our{" "}
+                    <Link
+                      href="/wadecv-vs-aiapply"
+                      className="underline underline-offset-2"
+                    >
+                      WadeCV vs AiApply head-to-head comparison
                     </Link>
                     .
                   </p>
