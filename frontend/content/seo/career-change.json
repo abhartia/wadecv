@@ -357,5 +357,210 @@
       "admin-to-product-manager",
       "operations-to-product"
     ]
+  },
+  {
+    "slug": "sales-to-customer-success",
+    "title": "Sales to Customer Success Resume",
+    "metaDescription": "Sales to customer success resume: reposition quota-hitting as retention and expansion. Transferable skills guide and resume tips for 2026.",
+    "intro": "Sales professionals transitioning to customer success bring pipeline management, relationship building, and revenue focus — all directly transferable. The key difference is shifting from acquisition to retention and expansion. This guide shows how to reframe your sales experience so CS hiring managers see the fit immediately.",
+    "fromRole": "Sales Representative / Account Executive",
+    "toRole": "Customer Success Manager",
+    "tips": [
+      "Lead with a summary that explicitly states your transition from sales to customer success and highlights relationship management, retention, and account growth skills.",
+      "Reframe sales metrics as CS outcomes: 'managed portfolio of 40+ accounts' becomes 'owned relationships across 40+ enterprise accounts'; 'upsold' becomes 'expanded'.",
+      "Emphasise post-sale activities in your sales experience: onboarding, training, check-ins, and QBRs show you already operated in a CS-adjacent capacity.",
+      "Highlight cross-functional collaboration — working with product, support, or engineering teams to resolve customer issues demonstrates CS competency.",
+      "Include any retention, NPS, or CSAT metrics you influenced. Even informal ones (e.g. 'maintained 95% renewal rate across book of business') are valuable."
+    ],
+    "body": "Your resume should make the transition obvious. The biggest mistake is leading with quota attainment and cold calling metrics — CS managers care about relationships, not prospecting.\n\nRestructure your experience bullets to emphasise the consultative side of your sales work: needs assessment, solution mapping, stakeholder management, and long-term relationship building. If you managed existing accounts (not just new business), lead with that.\n\nQuantify retention and expansion wherever possible. Even if your role was primarily sales, metrics like account retention rate, expansion revenue, and customer satisfaction scores translate directly to CS KPIs. WadeCV can help you reframe sales experience into customer success language automatically.",
+    "faq": [
+      {
+        "question": "Can sales reps transition to customer success?",
+        "answer": "Yes. Sales professionals bring relationship management, revenue thinking, and communication skills that are core to CS. The main shift is from acquisition to retention — reframe your experience around keeping and growing accounts."
+      },
+      {
+        "question": "What skills transfer from sales to CS?",
+        "answer": "Account management, needs assessment, objection handling (which becomes escalation management), pipeline management (which becomes health scoring), and cross-functional collaboration all transfer directly."
+      },
+      {
+        "question": "Should I mention quota attainment on a CS resume?",
+        "answer": "Briefly, to show you can drive revenue. But lead with relationship and retention metrics instead. CS managers want to see you can manage accounts, not just close them."
+      }
+    ],
+    "commonMistakes": [
+      "Leading with cold-calling and prospecting metrics instead of relationship outcomes",
+      "Using aggressive sales language instead of consultative, partnership-focused terms",
+      "Omitting post-sale activities that demonstrate CS-relevant experience",
+      "Skipping a summary that explicitly states the career transition"
+    ],
+    "relatedSlugs": [
+      "retail-to-corporate",
+      "hospitality-to-project-management",
+      "consulting-to-tech"
+    ]
+  },
+  {
+    "slug": "marketing-to-ux-design",
+    "title": "Marketing to UX Design Resume",
+    "metaDescription": "Marketing to UX design resume: reposition user research, A/B testing, and persona work as design skills. Transition guide and resume tips for 2026.",
+    "intro": "Marketers transitioning to UX design bring user research, persona development, A/B testing, and data-driven decision making — all core UX competencies. The challenge is demonstrating design thinking and process, not just marketing outcomes. This guide shows how to reframe your marketing experience for UX hiring managers.",
+    "fromRole": "Marketing Manager / Digital Marketer",
+    "toRole": "UX Designer / UX Researcher",
+    "tips": [
+      "Lead with a summary that bridges marketing and UX — highlight user research, journey mapping, data analysis, and iterative testing as shared competencies.",
+      "Reframe marketing activities in UX terms: 'customer personas' become 'user personas'; 'conversion funnel optimisation' becomes 'user flow optimisation'; 'A/B testing' is already UX language.",
+      "Include any design tool experience (Figma, Sketch, Adobe XD) or UX coursework/certifications prominently. Even basic prototyping experience matters.",
+      "Emphasise qualitative research: customer interviews, surveys, usability testing, and focus groups you conducted in marketing roles all demonstrate UX research skills.",
+      "Show a portfolio link if possible. Even 1-2 case studies showing your design process (research → ideation → prototype → test) strengthen your application significantly."
+    ],
+    "body": "Your resume should show that marketing and UX share the same foundation: understanding users and optimising their experience. The difference is that marketing optimises for conversion while UX optimises for usability — but the methods overlap significantly.\n\nRestructure your experience to highlight the research and testing side of your marketing work. Every landing page test, customer interview, or journey map you created is UX-adjacent. Lead with these over campaign metrics.\n\nIf you have completed a UX bootcamp, Google UX Design Certificate, or similar programme, give it prominent placement. Hiring managers expect career changers to show intentional skill development. Pair your marketing experience with demonstrated UX methodology and you become a uniquely valuable candidate. WadeCV can help you reframe marketing bullets into UX-focused language.",
+    "faq": [
+      {
+        "question": "Can marketers transition to UX design?",
+        "answer": "Yes. Marketing and UX share core competencies: user research, persona development, journey mapping, A/B testing, and data-driven iteration. Adding design tool skills and UX methodology knowledge completes the transition."
+      },
+      {
+        "question": "Do I need a UX bootcamp or certification?",
+        "answer": "It helps significantly. Hiring managers expect career changers to demonstrate intentional UX skill development. The Google UX Design Certificate, General Assembly, or similar programmes are commonly accepted credentials."
+      },
+      {
+        "question": "What marketing skills transfer to UX?",
+        "answer": "User research, A/B testing, customer journey mapping, persona development, data analysis, stakeholder presentation, and cross-functional collaboration all transfer directly to UX roles."
+      }
+    ],
+    "commonMistakes": [
+      "Leading with campaign ROI and revenue metrics instead of research and testing outcomes",
+      "Omitting design tools and UX methodology from the skills section",
+      "Not including a portfolio link or case studies",
+      "Using marketing jargon (leads, conversions, CTR) instead of UX terminology (users, usability, task completion)"
+    ],
+    "relatedSlugs": [
+      "journalism-to-content-marketing",
+      "teacher-to-edtech",
+      "consulting-to-tech"
+    ]
+  },
+  {
+    "slug": "teacher-to-corporate-training",
+    "title": "Teacher to Corporate Training Resume",
+    "metaDescription": "Teacher to corporate trainer resume: reposition classroom skills as L&D expertise. Curriculum-to-programme design transition guide for 2026.",
+    "intro": "Teachers moving into corporate training and learning & development (L&D) have one of the smoothest career transitions available. Curriculum design, instructional delivery, assessment, and learner engagement are directly transferable. This guide shows how to reframe your teaching experience so corporate L&D teams see you as a ready-made hire.",
+    "fromRole": "Teacher / Educator",
+    "toRole": "Corporate Trainer / L&D Specialist",
+    "tips": [
+      "Lead with a summary positioning yourself as an instructional designer and training facilitator, not a teacher. Use corporate L&D language from the start.",
+      "Reframe teaching activities: 'lesson plans' become 'training programmes'; 'student assessments' become 'learner evaluations'; 'parent conferences' become 'stakeholder reviews'.",
+      "Highlight any experience with adult learners, professional development workshops, or peer training you delivered — these are directly L&D-relevant.",
+      "Include instructional design tools and LMS platforms you have used (Google Classroom, Canvas, Moodle, Articulate, etc.) — corporate L&D uses similar technology.",
+      "Quantify outcomes wherever possible: completion rates, assessment score improvements, programme adoption rates, and learner satisfaction metrics."
+    ],
+    "body": "This is one of the most natural career transitions because the core competency — designing and delivering effective learning experiences — is identical. The difference is audience (adults vs students) and context (workplace vs classroom).\n\nYour resume should translate every teaching accomplishment into corporate training language. Curriculum becomes programme design. Student engagement becomes learner retention. Assessment results become training effectiveness metrics. The skills are the same; only the vocabulary changes.\n\nIf you have any experience training colleagues, leading professional development sessions, or creating digital learning materials, prioritise these on your resume — they prove you can operate in a corporate context. WadeCV can automatically translate your teaching experience into L&D terminology tailored to each specific corporate training role.",
+    "faq": [
+      {
+        "question": "Can teachers become corporate trainers without additional qualifications?",
+        "answer": "Often yes. Teaching experience directly demonstrates instructional design, facilitation, assessment, and learner engagement — all core L&D competencies. Some roles may prefer CPTD, ATD, or instructional design certifications, but many hire based on teaching experience alone."
+      },
+      {
+        "question": "What is the salary difference between teaching and corporate training?",
+        "answer": "Corporate training and L&D roles typically pay 20-50% more than teaching positions, depending on industry and location. Senior L&D managers and instructional designers in tech companies can earn significantly more."
+      },
+      {
+        "question": "Should I mention specific grade levels or subjects on a corporate training resume?",
+        "answer": "Briefly, for context. But lead with transferable skills and programme outcomes rather than grade-specific details. Corporate hiring managers care about your ability to design and deliver effective training, not the specific content you taught."
+      }
+    ],
+    "commonMistakes": [
+      "Using education jargon (IEP, differentiated instruction, grade-level standards) without translating to corporate equivalents",
+      "Leading with teaching credentials instead of training outcomes",
+      "Omitting technology skills and LMS experience",
+      "Not highlighting any experience with adult learners or colleague training"
+    ],
+    "relatedSlugs": [
+      "teacher-to-product-manager",
+      "teacher-to-edtech",
+      "admin-to-product-manager"
+    ]
+  },
+  {
+    "slug": "banking-to-fintech",
+    "title": "Banking to FinTech Resume",
+    "metaDescription": "Banking to fintech resume: reposition compliance knowledge, financial analysis, and client management for fast-moving startup roles. 2026 guide.",
+    "intro": "Banking professionals moving to fintech bring deep financial expertise, regulatory knowledge, and client relationship skills that fintech companies desperately need. The challenge is demonstrating that you can thrive in a fast-paced, technology-driven environment. This guide shows how to reframe your banking experience for fintech hiring managers.",
+    "fromRole": "Banking Professional / Financial Analyst",
+    "toRole": "FinTech Product / Operations / Compliance Role",
+    "tips": [
+      "Lead with a summary that bridges traditional finance and technology — highlight your financial domain expertise alongside any technology exposure, agile experience, or digital transformation involvement.",
+      "Reframe banking activities in fintech terms: 'client portfolio management' becomes 'user lifecycle management'; 'regulatory compliance' becomes 'regulatory technology (regtech) expertise'; 'product sales' becomes 'product adoption and growth'.",
+      "Highlight any experience with digital banking, API integrations, payment platforms, or financial technology tools — even internal tools count.",
+      "Demonstrate pace and adaptability: fintech moves faster than banking. Show examples of rapid iteration, cross-functional projects, or initiatives you led that required quick turnaround.",
+      "Include knowledge of relevant regulations (PSD2, KYC/AML, SOX, GDPR) as a competitive advantage — fintech companies need people who understand compliance without slowing down innovation."
+    ],
+    "body": "Fintech companies hire banking professionals specifically for their domain expertise — understanding financial products, regulatory requirements, and customer needs. What they worry about is pace: can you operate in a startup or growth-stage environment after years in a large institution?\n\nYour resume must answer both questions. Lead with your financial expertise (the reason they would hire you) and demonstrate adaptability (the concern they need resolved). Any experience with digital transformation, process automation, or cross-functional project work shows you can operate at fintech speed.\n\nRegulatory knowledge is particularly valuable. As fintech companies scale, they face increasing regulatory scrutiny. A banking professional who understands compliance AND can articulate it in plain language is extremely hireable. WadeCV can help you reframe traditional banking experience into fintech-ready language tailored to each specific role.",
+    "faq": [
+      {
+        "question": "Is it hard to move from banking to fintech?",
+        "answer": "Not if you frame it correctly. Fintech companies actively recruit banking professionals for their domain expertise. The key is showing you can adapt to a faster pace and are comfortable with technology-driven processes."
+      },
+      {
+        "question": "What fintech roles suit banking professionals?",
+        "answer": "Product management (financial products), compliance and risk, operations, partnerships, and business development are common transition paths. Your specific banking background determines the best fit."
+      },
+      {
+        "question": "Do I need technical skills for fintech?",
+        "answer": "Not necessarily coding skills, but demonstrating comfort with technology, data analysis, and digital tools is important. SQL, basic data analysis, and familiarity with APIs or payment platforms are valuable additions."
+      }
+    ],
+    "commonMistakes": [
+      "Overemphasising hierarchical titles and corporate structure instead of impact and outcomes",
+      "Using traditional banking jargon without translating to fintech language",
+      "Not demonstrating adaptability, speed, or comfort with technology",
+      "Omitting any digital transformation or process improvement experience"
+    ],
+    "relatedSlugs": [
+      "finance-to-data-science",
+      "accountant-to-fpanda",
+      "consulting-to-tech"
+    ]
+  },
+  {
+    "slug": "graphic-design-to-ux",
+    "title": "Graphic Design to UX Design Resume",
+    "metaDescription": "Graphic design to UX design resume: reposition visual skills as user-centred design competency. Portfolio tips and transition guide for 2026.",
+    "intro": "Graphic designers transitioning to UX design have a significant advantage: visual design skills, typography knowledge, and design tool proficiency are already in your toolkit. The gap is demonstrating UX-specific methodology — user research, information architecture, and usability testing. This guide shows how to bridge that gap on your resume.",
+    "fromRole": "Graphic Designer / Visual Designer",
+    "toRole": "UX Designer / Product Designer",
+    "tips": [
+      "Lead with a summary that positions you as a designer who combines visual design expertise with user-centred design methodology. Avoid presenting yourself as 'just' a graphic designer.",
+      "Reframe design projects in UX terms: 'designed marketing collateral' becomes 'designed user-facing touchpoints'; 'created brand guidelines' becomes 'established design systems'; 'client feedback' becomes 'stakeholder and user feedback loops'.",
+      "Highlight any user research you have conducted — even informal research like user surveys, feedback sessions, or A/B testing of design variations counts as UX research.",
+      "Include UX-specific tools (Figma, Sketch, Adobe XD, InVision, Maze, Hotjar) alongside your graphic design tools. If you know prototyping and wireframing tools, list them prominently.",
+      "Include a portfolio link with 2-3 UX case studies showing your process (research → ideation → wireframe → prototype → test → iterate). Process matters more than polish in UX portfolios."
+    ],
+    "body": "Graphic designers have the visual foundation that many UX career changers lack. Your challenge is not learning design — it is demonstrating that you think beyond aesthetics to solve user problems.\n\nYour resume should show a progression from visual execution to user-centred problem solving. Lead with projects where you considered the user experience: website redesigns based on analytics, app interfaces you designed with user flows in mind, or any project where you tested design decisions with real users.\n\nThe most common gap is UX methodology. If you have completed any UX training (bootcamp, certification, online courses), give it prominent placement. Pair it with your existing design skills and you become a uniquely valuable candidate: someone who can research, design, and deliver pixel-perfect interfaces. WadeCV can help you reframe graphic design work into UX-focused language tailored to each product design role.",
+    "faq": [
+      {
+        "question": "Is graphic design to UX a good career move?",
+        "answer": "Yes. UX design typically pays more than graphic design and offers stronger career growth. Your visual design skills give you a head start — you mainly need to add UX methodology (research, information architecture, usability testing) to your toolkit."
+      },
+      {
+        "question": "Do I need a UX certification to switch from graphic design?",
+        "answer": "It is not strictly required but strongly recommended. A UX certification or bootcamp demonstrates intentional skill development and covers methodology gaps. The Google UX Design Certificate and Interaction Design Foundation are popular options."
+      },
+      {
+        "question": "How important is a UX portfolio for this transition?",
+        "answer": "Critical. UX hiring managers evaluate portfolios more than resumes. Include 2-3 case studies showing your full design process (not just final visuals). Show research, ideation, wireframes, testing, and iteration."
+      }
+    ],
+    "commonMistakes": [
+      "Presenting a portfolio of polished visuals without showing the design process or user research",
+      "Leading with print design and brand identity work instead of digital and interactive projects",
+      "Omitting UX methodology and research experience from the resume",
+      "Not including wireframing and prototyping tools in the skills section"
+    ],
+    "relatedSlugs": [
+      "marketing-to-ux-design",
+      "journalism-to-content-marketing",
+      "teacher-to-edtech"
+    ]
   }
 ]

@@ -113,6 +113,13 @@
       "position": 65
     },
     {
+      "query": "ats jobscan",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 48
+    },
+    {
       "query": "bain format resume",
       "clicks": 0,
       "impressions": 2,
@@ -302,11 +309,25 @@
       "position": 85
     },
     {
+      "query": "cv in machine learning",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 85
+    },
+    {
       "query": "cv in marketing",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 94
+    },
+    {
+      "query": "cv or",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 78
     },
     {
       "query": "cv recruiter",
@@ -328,27 +349,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 84
-    },
-    {
-      "query": "data analyst profile summary",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 86
-    },
-    {
-      "query": "digital marketing cv",
-      "clicks": 0,
-      "impressions": 12,
-      "ctr": 0,
-      "position": 70.2
-    },
-    {
-      "query": "digital marketing cvs",
-      "clicks": 0,
-      "impressions": 5,
-      "ctr": 0,
-      "position": 75.8
     }
   ],
   "top_pages_30d": [
@@ -369,16 +369,16 @@
     {
       "page": "https://wadecv.com/ats/lever",
       "clicks": 0,
-      "impressions": 61,
+      "impressions": 65,
       "ctr": 0,
-      "position": 7.8
+      "position": 8.0
     },
     {
       "page": "https://wadecv.com/best-ai-resume-builder-2026",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 6
+      "position": 7.5
     },
     {
       "page": "https://wadecv.com/career-change",
@@ -430,6 +430,13 @@
       "position": 51
     },
     {
+      "page": "https://wadecv.com/cv-vs-resume",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 78
+    },
+    {
       "page": "https://wadecv.com/jobs/accountant",
       "clicks": 0,
       "impressions": 2,
@@ -449,6 +456,13 @@
       "impressions": 1,
       "ctr": 0,
       "position": 9
+    },
+    {
+      "page": "https://wadecv.com/jobs/data-analyst",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 78
     },
     {
       "page": "https://wadecv.com/jobs/recruiter",
@@ -535,6 +549,13 @@
       "position": 85
     },
     {
+      "page": "https://wadecv.com/resume-bullets/machine-learning",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 85
+    },
+    {
       "page": "https://wadecv.com/resume-bullets/quantifiable-resume-bullets",
       "clicks": 0,
       "impressions": 4,
@@ -572,9 +593,9 @@
     {
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 29,
+      "impressions": 36,
       "ctr": 0,
-      "position": 72.4
+      "position": 71.6
     },
     {
       "page": "https://wadecv.com/skills/executive-assistant",
@@ -614,9 +635,16 @@
     {
       "page": "https://wadecv.com/skills/python-developer",
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 8,
       "ctr": 0,
-      "position": 63
+      "position": 66.2
+    },
+    {
+      "page": "https://wadecv.com/wadecv-vs-jobscan",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 48
     }
   ],
   "query_page_30d": [
@@ -747,6 +775,14 @@
       "impressions": 1,
       "ctr": 0,
       "position": 65
+    },
+    {
+      "query": "ats jobscan",
+      "page": "https://wadecv.com/wadecv-vs-jobscan",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 48
     },
     {
       "query": "bain format resume",
@@ -973,12 +1009,28 @@
       "position": 85
     },
     {
+      "query": "cv in machine learning",
+      "page": "https://wadecv.com/resume-bullets/machine-learning",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 85
+    },
+    {
       "query": "cv in marketing",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 94
+    },
+    {
+      "query": "cv or",
+      "page": "https://wadecv.com/cv-vs-resume",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 78
     },
     {
       "query": "cv recruiter",
@@ -1013,20 +1065,28 @@
       "position": 86
     },
     {
+      "query": "data analyst summary",
+      "page": "https://wadecv.com/jobs/data-analyst",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 78
+    },
+    {
       "query": "digital marketing cv",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 12,
+      "impressions": 15,
       "ctr": 0,
-      "position": 70.2
+      "position": 69
     },
     {
       "query": "digital marketing cvs",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 5,
+      "impressions": 6,
       "ctr": 0,
-      "position": 75.8
+      "position": 74
     },
     {
       "query": "digital marketing keywords resume",
@@ -1035,6 +1095,14 @@
       "impressions": 1,
       "ctr": 0,
       "position": 97
+    },
+    {
+      "query": "digital marketing resume keywords",
+      "page": "https://wadecv.com/skills/digital-marketing",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 85
     },
     {
       "query": "digital marketing skills for resume",
@@ -1048,7 +1116,7 @@
       "query": "digital marketing skills resume",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
       "position": 37
     },
@@ -1141,6 +1209,14 @@
       "position": 76
     },
     {
+      "query": "marketing skills for cv",
+      "page": "https://wadecv.com/skills/digital-marketing",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 99
+    },
+    {
       "query": "marketing skills in cv",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
@@ -1192,9 +1268,9 @@
       "query": "python developer resume",
       "page": "https://wadecv.com/skills/python-developer",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 67.5
+      "position": 69.3
     },
     {
       "query": "python developer resume skills",
@@ -1203,6 +1279,14 @@
       "impressions": 1,
       "ctr": 0,
       "position": 21
+    },
+    {
+      "query": "python skills resume",
+      "page": "https://wadecv.com/skills/python-developer",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 79
     },
     {
       "query": "quantifiable impact example",
@@ -1363,62 +1447,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 56
-    },
-    {
-      "query": "skills for accounting resume",
-      "page": "https://wadecv.com/skills/accountant",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 59
-    },
-    {
-      "query": "skills for customer service resume",
-      "page": "https://wadecv.com/skills/customer-service",
-      "clicks": 0,
-      "impressions": 5,
-      "ctr": 0,
-      "position": 94.2
-    },
-    {
-      "query": "skills for cv customer service",
-      "page": "https://wadecv.com/skills/customer-service",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 76
-    },
-    {
-      "query": "skills for operations manager resume",
-      "page": "https://wadecv.com/skills/operations-manager",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 58
-    },
-    {
-      "query": "skills for resume customer service",
-      "page": "https://wadecv.com/skills/customer-service",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 89
-    },
-    {
-      "query": "skills for resume for customer service",
-      "page": "https://wadecv.com/skills/customer-service",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 93
-    },
-    {
-      "query": "skills in customer service for cv",
-      "page": "https://wadecv.com/skills/customer-service",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 99
     }
   ],
   "daily_trend_90d": [
@@ -1701,15 +1729,22 @@
       "impressions": 11,
       "ctr": 0,
       "position": 56.2
+    },
+    {
+      "date": "2026-04-14",
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0,
+      "position": 53.8
     }
   ],
   "devices_30d": [
     {
       "device": "DESKTOP",
       "clicks": 1,
-      "impressions": 300,
-      "ctr": 0.33,
-      "position": 55.8
+      "impressions": 318,
+      "ctr": 0.31,
+      "position": 55.7
     },
     {
       "device": "MOBILE",
@@ -1723,16 +1758,16 @@
     {
       "country": "can",
       "clicks": 1,
-      "impressions": 9,
-      "ctr": 11.11,
-      "position": 43.8
+      "impressions": 10,
+      "ctr": 10.0,
+      "position": 40.3
     },
     {
       "country": "usa",
       "clicks": 1,
-      "impressions": 151,
-      "ctr": 0.66,
-      "position": 56.2
+      "impressions": 163,
+      "ctr": 0.61,
+      "position": 56.1
     },
     {
       "country": "are",
@@ -1807,16 +1842,16 @@
     {
       "country": "fra",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 20
+      "position": 25.7
     },
     {
       "country": "gbr",
       "clicks": 0,
-      "impressions": 88,
+      "impressions": 92,
       "ctr": 0,
-      "position": 71.6
+      "position": 71.3
     },
     {
       "country": "hkg",

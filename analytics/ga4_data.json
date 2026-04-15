@@ -3,25 +3,19 @@
     "activeUsers": "11",
     "sessions": "43",
     "screenPageViews": "90",
-    "averageSessionDuration": "457.44018446511632",
-    "bounceRate": "0.46511627906976744",
+    "averageSessionDuration": "456.83430158139532",
+    "bounceRate": "0.44186046511627908",
     "newUsers": "10"
   },
   "traffic_summary_prev_30d": {
-    "activeUsers": "17",
-    "sessions": "47",
-    "screenPageViews": "212",
-    "averageSessionDuration": "1433.8418058085106",
-    "bounceRate": "0.38297872340425532",
-    "newUsers": "18"
+    "activeUsers": "18",
+    "sessions": "48",
+    "screenPageViews": "213",
+    "averageSessionDuration": "1403.9701015208332",
+    "bounceRate": "0.39583333333333331",
+    "newUsers": "19"
   },
   "daily_trend": [
-    {
-      "date": "20260316",
-      "activeUsers": "1",
-      "sessions": "1",
-      "screenPageViews": "1"
-    },
     {
       "date": "20260319",
       "activeUsers": "2",
@@ -132,9 +126,9 @@
     },
     {
       "date": "20260414",
-      "activeUsers": "1",
-      "sessions": "1",
-      "screenPageViews": "3"
+      "activeUsers": "2",
+      "sessions": "2",
+      "screenPageViews": "4"
     }
   ],
   "top_pages": [
@@ -143,14 +137,14 @@
       "screenPageViews": "31",
       "activeUsers": "11",
       "averageSessionDuration": "70.084272875",
-      "bounceRate": "0.40625"
+      "bounceRate": "0.375"
     },
     {
       "pagePath": "/tailor",
       "screenPageViews": "24",
       "activeUsers": "2",
-      "averageSessionDuration": "666.122041875",
-      "bounceRate": "0.25"
+      "averageSessionDuration": "664.82002904166666",
+      "bounceRate": "0.20833333333333334"
     },
     {
       "pagePath": "/dashboard",
@@ -163,8 +157,8 @@
       "pagePath": "/auth/login",
       "screenPageViews": "13",
       "activeUsers": "2",
-      "averageSessionDuration": "13.025446692307693",
-      "bounceRate": "0.076923076923076927"
+      "averageSessionDuration": "13.425088538461539",
+      "bounceRate": "0"
     },
     {
       "pagePath": "/applications",
@@ -200,9 +194,9 @@
       "channel": "Organic Shopping",
       "sessions": "32",
       "activeUsers": "1",
-      "screenPageViews": "72",
-      "avgDuration": "610.24912859375",
-      "bounceRate": "0.3125"
+      "screenPageViews": "73",
+      "avgDuration": "609.43497346875006",
+      "bounceRate": "0.28125"
     },
     {
       "channel": "Paid Search",
@@ -235,14 +229,6 @@
       "screenPageViews": "8",
       "avgDuration": "141.955817",
       "bounceRate": "0"
-    },
-    {
-      "channel": "Unassigned",
-      "sessions": "1",
-      "activeUsers": "1",
-      "screenPageViews": "1",
-      "avgDuration": "0",
-      "bounceRate": "1"
     }
   ],
   "organic_landing_pages": [
@@ -266,7 +252,7 @@
       "device": "desktop",
       "sessions": "40",
       "activeUsers": "8",
-      "bounceRate": "0.45"
+      "bounceRate": "0.425"
     },
     {
       "device": "mobile",
@@ -325,7 +311,7 @@
     },
     {
       "event": "cv_download",
-      "eventCount": "18",
+      "eventCount": "19",
       "totalUsers": "1"
     },
     {
@@ -398,9 +384,9 @@
     },
     {
       "week": "202616",
-      "activeUsers": "1",
-      "sessions": "3",
-      "screenPageViews": "7"
+      "activeUsers": "2",
+      "sessions": "4",
+      "screenPageViews": "8"
     }
   ],
   "all_pages_with_titles": [
@@ -410,15 +396,15 @@
       "screenPageViews": "31",
       "activeUsers": "11",
       "avgDuration": "70.084272875",
-      "bounceRate": "0.40625"
+      "bounceRate": "0.375"
     },
     {
       "pagePath": "/tailor",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
       "screenPageViews": "24",
       "activeUsers": "2",
-      "avgDuration": "666.122041875",
-      "bounceRate": "0.25"
+      "avgDuration": "664.82002904166666",
+      "bounceRate": "0.20833333333333334"
     },
     {
       "pagePath": "/dashboard",
@@ -433,8 +419,8 @@
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
       "screenPageViews": "13",
       "activeUsers": "2",
-      "avgDuration": "13.025446692307693",
-      "bounceRate": "0.076923076923076927"
+      "avgDuration": "13.425088538461539",
+      "bounceRate": "0"
     },
     {
       "pagePath": "/applications",
@@ -487,11 +473,6 @@
     },
     {
       "source": "(direct)",
-      "sessions": "1",
-      "activeUsers": "1"
-    },
-    {
-      "source": "(not set)",
       "sessions": "1",
       "activeUsers": "1"
     }

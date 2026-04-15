@@ -319,7 +319,7 @@ export default function BestAiResumeBuilderPage() {
       "@type": "WebPage",
       "@id": `${BASE_URL}/best-ai-resume-builder-2026`,
     },
-    dateModified: "2026-04-15",
+    dateModified: "2026-04-16",
   };
 
   const faqJsonLd = {
@@ -568,6 +568,19 @@ export default function BestAiResumeBuilderPage() {
                       className="underline underline-offset-2"
                     >
                       WadeCV vs AiApply head-to-head comparison
+                    </Link>
+                    .
+                  </p>
+                )}
+
+                {tool.name === "Enhancv" && (
+                  <p className="text-sm text-muted-foreground">
+                    See our{" "}
+                    <Link
+                      href="/wadecv-vs-enhancv"
+                      className="underline underline-offset-2"
+                    >
+                      WadeCV vs Enhancv head-to-head comparison
                     </Link>
                     .
                   </p>

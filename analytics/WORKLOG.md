@@ -4,6 +4,75 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 
 ---
 
+## 2026-04-16 — Session 14: Enhancv Comparison + Career-Change Expansion (Best-Positioned Category)
+
+### Data Pulled
+- [x] GA4 analytics data → `ga4_data.json`
+- [x] GSC data → `gsc_data.json` — **335 impressions (up from 317, +5.7%)**, 42 pages (+4 NEW), 50 queries, 2 clicks
+- [x] Trends data → `trends_data.json` — humanize ai NEW +450%, chatgpt resume UP 61.2, teal resume builder +1,050%
+
+### Key Findings
+- **MILESTONE: First comparison page indexed!** `/wadecv-vs-jobscan` showing at pos 48, 1 impression (created Apr 8, indexed after 8 days)
+- **MILESTONE: CV vs Resume hub indexed!** `/cv-vs-resume` at pos 78, 1 impression (created Apr 13, indexed after 3 days — fast!)
+- **Impressions growing:** 335 total (up 5.7% from 317). 42 pages with impressions (up from 38).
+- **Digital marketing EXPLODING:** 36 impr (was 25, +44%), position 71.6 (improving). Fastest growing cluster.
+- **Python developer emerging:** 8 impr at pos 66.2 — first time in top pages.
+- **Listicle growing:** 2 impr at pos 7.5 (was 1 impr at pos 6). Still page 1.
+- **Lever still climbing:** 65 impr (was 61, +7%), pos 8.0.
+- **UK growing +11%:** 92 impr (was 83). "CV" terminology driving British traffic.
+- **USA growing +8%:** 163 impr (was 151).
+- **"humanize ai" NEW signal:** 450% rising for "ai resume builder" — new opportunity.
+- **"teal resume builder" +1,050%:** Massive breakout. Our comparison page exists but not yet indexed.
+- **Signup events still 0:** Inline CTA added Apr 14, 2 days ago — too early for data.
+
+### Changes Made
+
+#### 1. "WadeCV vs Enhancv" Comparison Page (HIGH IMPACT — 10th comparison page)
+**Why:** Enhancv +250% rising in Trends. Already in listicle with no dedicated page. Visual builder vs tailoring = genuine comparison.
+
+**File created:** `frontend/src/app/(resources)/wadecv-vs-enhancv/page.tsx`
+- 11-row feature comparison, 5-item FAQ, FAQPage + Article JSON-LD
+- InlineCta mid-page, CrossCategoryLinks with contextLinks (FlowCV, Rezi, Zety)
+
+**Files changed:**
+- `frontend/src/app/sitemap.ts` — added `/wadecv-vs-enhancv`
+- `frontend/src/components/seo/cross-category-links.tsx` — added Enhancv to TOOL_COMPARISONS (now 6 links)
+- `frontend/src/app/(resources)/best-ai-resume-builder-2026/page.tsx` — added Enhancv comparison link + dateModified → 2026-04-16
+
+#### 2. Career-Change Content Expansion: +5 New Entries (HIGH IMPACT — big bet of session)
+**Why:** Career-change is our BEST-POSITIONED category. Pages consistently enter GSC at positions 3-6 (page 1!). Expanding from 15 → 20 entries to get more page-1 results.
+
+**File changed:** `frontend/content/seo/career-change.json` — 5 new entries:
+- `sales-to-customer-success` — Sales → Customer Success Manager
+- `marketing-to-ux-design` — Marketing → UX Designer
+- `teacher-to-corporate-training` — Teacher → Corporate Trainer/L&D
+- `banking-to-fintech` — Banking → FinTech
+- `graphic-design-to-ux` — Graphic Designer → UX Designer
+
+Each entry: 5 tips, ~300-word body, 3 FAQ, 4 common mistakes, 3 related slugs.
+
+#### 3. Build verified
+- `next build` passes: /wadecv-vs-enhancv confirmed, career-change 20 paths, 0 errors
+
+### Not Yet Done (For Future Sessions)
+- [ ] Monitor career-change new entries for indexing (2026-04-23+)
+- [ ] Monitor `/wadecv-vs-enhancv` indexed (2026-04-23+)
+- [ ] Check comparison pages indexed after expanded internal linking — `/wadecv-vs-teal` should be next (2026-04-20+)
+- [ ] Check `/wadecv-vs-aiapply` indexed (2026-04-22+)
+- [ ] Check ATS content overhaul impact (2026-04-18+ — 2 more days)
+- [ ] Monitor listicle position growth — now at pos 7.5 with 2 impr
+- [ ] Monitor digital marketing cluster — fastest grower at 36 impr (+44%)
+- [ ] Monitor first `signup_start`/`signup_success` events in GA4
+- [ ] Consider "How to Humanize Your AI Resume" content page (humanize ai +450% new signal)
+- [ ] Consider "WadeCV vs Claude AI" comparison (claude +350%)
+- [ ] Consider UK-specific landing page ("cv builder free uk" +250% still rising)
+- [ ] Create topic cluster hub/pillar pages (been queued since Session 2)
+- [ ] Add author credentials/expert signals to content pages
+- [ ] Monitor AI bot traffic in server logs
+- [ ] Investigate why `/wadecv-vs-teal` is NOT indexed after 10 days while `/wadecv-vs-jobscan` indexed in 8
+
+---
+
 ## 2026-04-15 — Session 13: Internal Linking Expansion + AiApply Comparison + Listicle to 11 Tools
 
 ### Data Pulled
