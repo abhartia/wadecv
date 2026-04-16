@@ -138,56 +138,145 @@
   },
   {
     "slug": "customer-service",
-    "title": "Skills for Customer Service Resume",
-    "metaDescription": "Customer service resume skills: communication, problem-solving, tools, and soft skills. Bullet examples and keywords for CS and support roles.",
-    "intro": "Customer service and support roles value communication, empathy, and efficiency. This guide groups skills into clusters and shows how to write resume bullets that demonstrate impact and readiness for higher-tier or leadership roles.",
+    "title": "Customer Service Skills for Your Resume or CV (40+ Examples for 2026)",
+    "metaDescription": "The complete list of customer service skills for your CV or resume in 2026: communication, CRM tools, ticketing platforms, soft skills, and bullet examples for entry, senior, and lead roles.",
+    "intro": "Recruiters scan customer service CVs for two things: the platforms you've used (Zendesk, Salesforce, Intercom, Gorgias, Freshdesk) and the metrics you've moved (CSAT, NPS, FCR, AHT, ticket volume). This guide gives you 40+ skills grouped into 6 clusters, 12 bullet examples spanning agent through team-lead roles, and the keywords that get past ATS filters in 2026. Whether you call it a resume or a CV, the structure is the same \u2014 use the regional spelling that matches the job posting.",
     "skillClusters": [
       {
-        "name": "Communication",
+        "name": "Communication & customer interaction",
         "items": [
-          "Verbal and written",
-          "Empathy",
-          "De-escalation",
-          "Active listening",
-          "Clear explanations"
+          "Active listening and empathetic acknowledgement",
+          "De-escalation of frustrated or angry customers",
+          "Clear written communication for email, chat, and ticket replies",
+          "Tone matching (formal, casual, technical) for different audiences",
+          "Multilingual support (specify languages and CEFR levels)",
+          "Voice clarity and pacing for phone-based roles",
+          "Cross-cultural communication for global support teams"
         ]
       },
       {
-        "name": "Tools & systems",
+        "name": "Helpdesk & CRM platforms",
         "items": [
-          "CRM (Salesforce, Zendesk)",
-          "Ticketing",
-          "Live chat",
-          "Knowledge base",
-          "Basic data/reporting"
+          "Zendesk (Support, Guide, Talk, Explore)",
+          "Salesforce Service Cloud and Lightning console",
+          "Intercom (Inbox, Articles, Resolution Bot)",
+          "Freshdesk and Freshchat",
+          "HubSpot Service Hub",
+          "Gorgias (e-commerce focus, Shopify integration)",
+          "Front (shared inbox)",
+          "Help Scout, Kustomer, ServiceNow ITSM",
+          "Genesys Cloud or NICE for contact-centre operations"
         ]
       },
       {
-        "name": "Problem-solving",
+        "name": "Channels & ticketing",
         "items": [
-          "Troubleshooting",
-          "Root cause",
-          "Process improvement",
-          "Escalation handling"
+          "Omnichannel ticket triage (email, chat, voice, social, SMS)",
+          "Live chat and proactive chat",
+          "Knowledge base authoring and macro/template creation",
+          "Community moderation and forum support",
+          "Social media response (Twitter/X, Meta, TikTok DMs)",
+          "Co-browsing and remote screen-share tools (Surfly, ConnectWise)"
         ]
       },
       {
-        "name": "Soft skills",
+        "name": "Problem-solving & process",
         "items": [
-          "Teamwork",
-          "Time management",
-          "Adaptability",
-          "Patience",
-          "Customer focus"
+          "Root-cause analysis using 5 Whys or fishbone diagrams",
+          "Escalation pathways and SLA management",
+          "Workflow automation and macro design",
+          "Process documentation in Notion, Confluence, or Guru",
+          "Voice-of-customer feedback loops to product/engineering",
+          "Bug reproduction and triage handoff to engineering"
+        ]
+      },
+      {
+        "name": "Metrics & reporting",
+        "items": [
+          "CSAT, NPS, CES interpretation",
+          "First Contact Resolution (FCR) and Average Handle Time (AHT)",
+          "Ticket backlog and queue management",
+          "Cohort analysis of repeat contacts",
+          "Reporting in Looker, Tableau, or native CRM dashboards",
+          "Forecasting staffing needs against ticket volume"
+        ]
+      },
+      {
+        "name": "Leadership & soft skills",
+        "items": [
+          "Coaching and 1:1 quality reviews",
+          "Onboarding new hires and writing playbooks",
+          "Adaptability across shift work, weekends, on-call",
+          "Patience under repetitive or high-volume contact",
+          "Conflict resolution between customer and policy",
+          "Cross-functional collaboration with Sales, Product, and Engineering"
         ]
       }
     ],
     "bulletExamples": [
-      "Handled 50+ customer contacts daily with top quartile CSAT and resolution rate; identified recurring issues and proposed FAQ updates that cut repeat contacts by 20%.",
-      "Trained 5 new hires on product and systems; created troubleshooting playbook adopted by entire support team.",
-      "Reduced average handle time by 15% while maintaining quality scores; led pilot for new chat tool rollout."
+      "Resolved 60+ daily customer contacts across email, chat, and phone in Zendesk with 96% CSAT and 87% First Contact Resolution \u2014 ranked #1 of 18 agents on quality scorecards three quarters running.",
+      "Cut Average Handle Time from 11:24 to 8:02 (\u201330%) by rebuilding the macro library, deflecting top-10 repeat issues into Help Center articles, and training the team on the new playbook.",
+      "Onboarded and coached 7 new hires through 12-week ramp; cohort hit 90% of senior-agent productivity by week 8, two weeks ahead of historical baseline.",
+      "Owned tier-2 escalations for billing and account issues; reduced escalation volume to engineering by 42% by documenting common bugs and writing diagnostic decision trees.",
+      "Designed and rolled out proactive chat campaign in Intercom; recovered 18% of cart-abandonment sessions and added $240K incremental ARR over six months.",
+      "Migrated 2,400 active tickets from legacy Freshdesk instance to Zendesk in 6 weeks with zero data loss; rewrote 180 macros and trained 24 agents on the new workflow.",
+      "Authored 64-article knowledge base in Notion; deflected 38% of historical email volume and lifted self-service resolution rate from 21% to 47%.",
+      "Led voice-of-customer programme: tagged and analysed 2,000 tickets monthly, surfaced top three friction points to Product, and shipped fixes that reduced repeat contacts 26%.",
+      "Promoted to Team Lead after 14 months; managed 9-agent pod, ran weekly QA calibration sessions, and owned the team's CSAT, AHT, and adherence KPIs.",
+      "Built shift-coverage forecasting model in Google Sheets that aligned headcount to predicted ticket volume by hour; cut after-hours backlog 55% and reduced overtime spend $38K annually.",
+      "Handled bilingual (English/Spanish) support for LATAM expansion; resolved 28% of regional ticket volume single-handedly during the first six months of market entry.",
+      "Reduced agent attrition from 34% to 19% YoY by introducing structured 1:1 coaching, clear progression criteria, and a mentorship pairing programme."
     ],
-    "body": "Lead with metrics: volume handled, CSAT or NPS, resolution rates, and time saved. Show progression\u2014taking on harder cases, training others, or improving processes. Use keywords from the job description (tools, channels, and soft skills) so ATS and recruiters see a match. Tailoring your resume to each company's support model will help. WadeCV can help you align your customer service experience with job descriptions and highlight your strongest contributions."
+    "body": "Customer service hiring in 2026 is squarely focused on three things: tool fluency, measurable impact, and the ability to scale yourself through documentation and coaching. Generic 'good communication and teamwork' bullets will not move you off page 7 of a recruiter search \u2014 specific platforms, specific metrics, and specific scope will.\n\nLead every bullet with a verb and a number. Recruiters scanning a resume or CV in six seconds want to see ticket volume, CSAT, AHT, FCR, or revenue impact before they read the rest of the line. Even entry-level candidates can quantify: 'handled 40 contacts per day' is more credible than 'handled customer issues'.\n\nFor the skills section, mirror the language of the job posting. If the posting says 'Zendesk', do not write 'helpdesk software' \u2014 write 'Zendesk Support and Guide'. If it says 'CSAT', do not write 'customer satisfaction'. ATS keyword matching is literal, and recruiters often filter on exact tool names. Including the version or module (Salesforce Service Cloud, not just Salesforce) demonstrates depth.\n\nProgression is the most under-used signal on customer service CVs. Show how you grew: started as agent, moved to senior agent owning escalations, then team lead managing a pod. Hiring managers for senior or lead roles want to see that arc explicitly, not infer it from job titles alone. Use bullets to call out training, coaching, and process improvements that took load off your manager.\n\nTechnical depth matters more than ever. Customer service teams in 2026 own AI tooling (Resolution Bot, Einstein Bots, Fin), workflow automation, and increasingly Tableau or Looker dashboards. Listing one or two of these moves you out of the generic-agent pile.\n\nFor career changers entering customer service \u2014 from retail, hospitality, or admin roles \u2014 translate transferable skills using customer-service vocabulary. 'Managed front-of-house at a restaurant' becomes 'resolved 100+ daily guest interactions in person and over the phone, including escalations and billing disputes'. The work is the same; the language is what gets you past the screen.\n\nWadeCV reads each customer service job posting, identifies the exact tools and metrics it asks for, and rewrites your bullets to match \u2014 in the regional spelling and terminology the employer uses. Upload your resume or CV, paste the job link, and you'll see a fit analysis in 30 seconds.",
+    "relatedSlugs": [
+      "retail-manager",
+      "hospitality",
+      "sales-development",
+      "administrative-assistant"
+    ],
+    "faq": [
+      {
+        "question": "What are the top customer service skills to put on a resume or CV in 2026?",
+        "answer": "The skills that get the most weight in 2026 are: helpdesk platform fluency (Zendesk, Salesforce Service Cloud, Intercom), CSAT and FCR metrics, de-escalation, knowledge-base authoring, and voice-of-customer process design. AI tool experience (Resolution Bot, Einstein, Fin) is increasingly mentioned in mid-to-senior job descriptions. List specific tool names rather than generic categories \u2014 ATS filters match on exact platform names."
+      },
+      {
+        "question": "How many customer service skills should I list on my CV?",
+        "answer": "Aim for 8\u201312 skills in a dedicated skills section, weighted toward what the job description names explicitly. Group them into 2\u20133 categories (technical tools, customer-handling skills, soft skills) so a recruiter can scan in seconds. Avoid filler like 'hard worker' or 'team player' \u2014 every line should either match a posting keyword or be backed up by a bullet in your experience section."
+      },
+      {
+        "question": "What are good customer service bullet points for a resume?",
+        "answer": "The strongest bullets follow the format 'Action verb + scope + tool + metric'. For example: 'Resolved 50+ daily Zendesk tickets with 95% CSAT' beats 'Handled customer queries'. Always lead with a number where possible \u2014 ticket volume, CSAT, NPS, AHT, FCR, headcount trained, or revenue retained. Even at entry level, 'handled 40 contacts per day' is more credible than 'helped customers'."
+      },
+      {
+        "question": "What customer service keywords help my CV pass ATS screening?",
+        "answer": "Pull keywords directly from the job posting: tool names (Zendesk, Salesforce, Intercom, Freshdesk, HubSpot, Gorgias), metrics (CSAT, NPS, FCR, AHT, CES), channel words (omnichannel, live chat, ticket triage), and methodology terms (SLA, escalation, knowledge base, voice of customer). ATS systems like Greenhouse, Lever, and Workday match on exact strings, so use the same spelling and capitalisation as the posting."
+      },
+      {
+        "question": "How do I write a customer service summary for my resume?",
+        "answer": "A strong professional summary is 2\u20133 sentences and includes: years of experience, primary channel/industry (e.g. SaaS phone support, e-commerce live chat), platform fluency (Zendesk, Salesforce), and one headline metric ('maintained 96% CSAT across 12,000 annual tickets'). Tailor this to the role \u2014 a B2B SaaS posting wants different language than a high-volume DTC e-commerce role."
+      },
+      {
+        "question": "What customer service skills do I list as a Customer Service Representative vs. a Customer Service Manager?",
+        "answer": "Reps lead with platform fluency, contact volume, individual CSAT/AHT, and product knowledge. Managers and team leads add: headcount managed, hiring and onboarding, QA calibration, scheduling/forecasting, attrition rate, budget responsibility, and cross-functional partnerships with Product and Engineering. Reps prove they can do the job; managers prove they can scale a team to do it."
+      },
+      {
+        "question": "How do I list customer service skills on my CV if I'm transitioning from retail or hospitality?",
+        "answer": "Translate every interaction-heavy responsibility into customer-service language. 'Front-of-house service' becomes 'resolved 100+ daily guest interactions including billing escalations'. 'Cashier' becomes 'processed transactions and handled returns/disputes for high-volume retail environment'. List any POS, scheduling, or CRM tools you used \u2014 Square, Toast, Lightspeed all count as ticket/transaction systems and translate cleanly to a helpdesk context."
+      },
+      {
+        "question": "Should I say 'customer service' or 'customer experience' on my CV?",
+        "answer": "Match the job posting. 'Customer service' is more common in operational roles (agent, rep, support specialist) and high-volume contact-centre work. 'Customer experience' (CX) appears more in strategic, design-focused, or SaaS roles where the work spans onboarding, lifecycle, and product feedback. If you've done both, list specific responsibilities under each \u2014 'CX programme design' is meaningfully different from 'CS ticket handling'."
+      }
+    ],
+    "commonMistakes": [
+      "Listing 'good communication' or 'team player' without backing them up with bullets \u2014 these are filler and waste recruiter attention",
+      "Writing 'helpdesk software' instead of naming Zendesk, Salesforce, or whichever platform you actually used \u2014 ATS filters on exact tool names",
+      "Omitting metrics entirely. Even 'handled 30 contacts per day' is better than 'handled customer queries'",
+      "Using identical bullets across roles instead of showing progression from agent to senior to lead",
+      "Mismatching regional spelling \u2014 'organised' on a US resume or 'organized' on a UK CV signals you didn't read the posting carefully",
+      "Burying tool names in paragraphs instead of putting them in a scannable Skills section",
+      "Listing irrelevant soft skills (punctual, hardworking) instead of role-specific ones (de-escalation, root-cause analysis, voice of customer)"
+    ]
   },
   {
     "slug": "data-analyst",
@@ -784,43 +873,154 @@
   },
   {
     "slug": "accountant",
-    "title": "Skills for Accountant Resume",
-    "metaDescription": "Accountant resume skills: GAAP, reporting, and systems. Bullet examples for staff and senior accountant roles.",
-    "intro": "Accountants prepare and analyse financial records. This guide outlines skill clusters and bullet examples for public and industry accounting roles.",
+    "title": "Accountant Skills for Your Resume or CV (40+ Examples & ATS Keywords for 2026)",
+    "metaDescription": "Complete accountant skills for your CV or resume in 2026: GAAP/IFRS, ERP systems, reporting, audit, and bullet examples for staff, senior, and manager-level roles. ATS keywords included.",
+    "intro": "Accounting CVs in 2026 win on three signals: technical depth (GAAP, IFRS, tax code), system fluency (NetSuite, SAP, Workday, QuickBooks, Sage), and ownership scope (entities closed, audits supported, headcount managed). Generic 'detail-oriented and deadline-driven' bullets do not move the needle \u2014 specific systems, specific frameworks, and specific outcomes do. This guide gives you 40+ accounting skills grouped into 6 clusters, 12 quantified bullet examples spanning staff to manager-level roles, and the exact ATS keywords recruiters and Big Four firms search for in 2026.",
     "skillClusters": [
       {
-        "name": "Technical",
+        "name": "Technical accounting & frameworks",
         "items": [
-          "GAAP",
-          "Reconciliation",
-          "Reporting",
-          "Tax"
+          "US GAAP and disclosure requirements",
+          "IFRS (especially IFRS 15, 16, 9 for revenue, leases, financial instruments)",
+          "ASC 606 revenue recognition",
+          "ASC 842 lease accounting",
+          "Consolidations and intercompany eliminations",
+          "Multi-currency accounting and FX revaluation",
+          "Equity accounting (stock-based comp, ASC 718)",
+          "Cost accounting and standard costing",
+          "Indirect tax (VAT, GST, sales tax) and direct tax basics"
         ]
       },
       {
-        "name": "Systems",
+        "name": "ERP & accounting systems",
         "items": [
-          "ERP",
-          "Excel",
-          "QuickBooks",
-          "NetSuite"
+          "NetSuite (multi-book, multi-subsidiary)",
+          "SAP S/4HANA and SAP ECC",
+          "Oracle Fusion Cloud and Oracle EBS",
+          "Workday Financial Management",
+          "Microsoft Dynamics 365 Business Central",
+          "Sage Intacct, Sage 50, Sage 200",
+          "QuickBooks Online and Desktop",
+          "Xero (popular in UK/AU SMB)",
+          "FreeAgent, Wave, Zoho Books"
         ]
       },
       {
-        "name": "Soft skills",
+        "name": "Close, reporting & analytics",
         "items": [
-          "Attention to detail",
-          "Deadlines",
-          "Audit support"
+          "Month-end, quarter-end, year-end close cycles",
+          "Account reconciliations (balance sheet, intercompany, bank)",
+          "Financial statement preparation (P&L, balance sheet, cash flow)",
+          "Management reporting and variance analysis",
+          "Excel (pivot tables, XLOOKUP, Power Query, modelling)",
+          "Power BI, Tableau, Looker for finance dashboards",
+          "BlackLine, FloQast for close automation",
+          "Adra, Trintech for reconciliation automation",
+          "SQL for finance analytics (BigQuery, Snowflake basics)"
+        ]
+      },
+      {
+        "name": "Audit, controls & compliance",
+        "items": [
+          "External audit liaison (Big Four and mid-tier)",
+          "SOX 404 controls design and testing",
+          "Internal controls and segregation of duties",
+          "ICFR documentation and walkthroughs",
+          "PCAOB and IAASB audit standards exposure",
+          "AML/KYC compliance for regulated industries",
+          "Fraud detection and forensic accounting basics",
+          "Risk assessment and remediation tracking"
+        ]
+      },
+      {
+        "name": "Tax & treasury",
+        "items": [
+          "Federal, state, and local corporate tax preparation",
+          "VAT/GST returns and indirect tax filings",
+          "Transfer pricing documentation",
+          "1099, W-2, and payroll tax compliance",
+          "Cash flow forecasting and treasury operations",
+          "Banking relationship management",
+          "FX hedging exposure and reporting"
+        ]
+      },
+      {
+        "name": "Leadership & soft skills",
+        "items": [
+          "Team leadership and staff supervision",
+          "Process documentation and SOX narratives",
+          "Cross-functional collaboration with FP&A, Treasury, Legal",
+          "Stakeholder communication (CFO, audit committee, auditors)",
+          "Mentoring junior accountants and CPA candidates",
+          "Project management for system implementations and migrations",
+          "Change management for process and policy changes"
         ]
       }
     ],
     "bulletExamples": [
-      "Managed month-end close for 3 entities; reduced close time by 3 days through process improvement and checklist.",
-      "Prepared financial statements and supporting schedules for annual audit; zero material adjustments.",
-      "Reconciled 50+ accounts; identified and corrected $200K variance. Implemented new controls to prevent recurrence."
+      "Owned month-end close for 4 US entities and 2 UK subsidiaries on NetSuite OneWorld; reduced close cycle from 9 to 5 business days through reconciliation automation in BlackLine and a redesigned close checklist.",
+      "Led ASC 606 revenue recognition implementation for $42M SaaS subscription business; documented policy memo, built revenue waterfall in NetSuite ARM, and trained 6-person finance team. Audit completed with zero material adjustments.",
+      "Prepared and reviewed monthly financial statements for $180M division; explained variances to CFO and division GM, owning all P&L, balance sheet, and cash flow presentation.",
+      "Managed Big Four annual audit (PwC) end-to-end: built PBC tracker, owned 280 audit requests, and resolved technical positions on revenue and lease accounting. Audit closed two weeks ahead of schedule.",
+      "Implemented SOX 404 control framework for newly-public SaaS company; documented 64 key controls, designed quarterly testing programme, and remediated 3 deficiencies before year-end attestation.",
+      "Migrated general ledger from QuickBooks to NetSuite for $28M e-commerce business in 14 weeks; configured chart of accounts, multi-book setup, and integrated Shopify, Stripe, and ADP payroll.",
+      "Reconciled 75+ balance sheet accounts monthly; identified and corrected $340K cumulative misstatement in inventory reserve and implemented new monthly review controls to prevent recurrence.",
+      "Prepared US federal and 14-state corporate income tax returns for $95M consolidated group; worked with EY on R&D tax credit study generating $620K in credits.",
+      "Built three-statement consolidation model in Excel for 9 entities across US, UK, and Singapore; replaced 14 disconnected workbooks and cut consolidation time from 3 days to 4 hours.",
+      "Hired, onboarded, and managed 4 staff accountants; promoted 2 to senior level within 18 months and held 100% retention across the team.",
+      "Led implementation of FloQast close automation across 12-person accounting team; cut reconciliation review time 38% and improved close-to-report cycle by 2 days.",
+      "Prepared monthly VAT returns and EC Sales Lists for UK and EU operations; managed HMRC enquiry and resolved \u00a385K refund within statutory deadline."
     ],
-    "body": "Lead with scope (entities, accounts, audit) and outcomes (close time, accuracy). List systems and certifications. WadeCV can help you align your accounting experience with job descriptions."
+    "body": "An accounting CV in 2026 is read first by an ATS that matches keywords against the job description, and second by a hiring manager scanning for system fluency, technical depth, and scope of ownership. Vague bullets like 'prepared financial statements' or 'helped with audit' lose immediately to candidates who write 'prepared monthly financial statements for $180M division' or 'managed Big Four audit (PwC) end-to-end with 280 PBC requests'.\n\nLead every bullet with scope and an outcome. Scope is entities (number and revenue), accounts (count or category), audits (firm and timeline), or budgets (size). Outcomes are close-cycle days, audit adjustments avoided, errors corrected, or hours saved through automation. 'Reconciled 75+ accounts monthly with zero material adjustments at year-end' is a stronger line than 'performed reconciliations'.\n\nERP system fluency is the single highest-leverage signal on an accounting CV. Recruiters and Big Four firms filter directly on system names \u2014 NetSuite, SAP S/4HANA, Workday, Oracle Fusion, QuickBooks, Sage Intacct, Xero. List the specific module if you've used one ('NetSuite OneWorld with multi-book' beats 'NetSuite'). Cloud ERP experience (NetSuite, Workday, Oracle Fusion, Dynamics 365) is in higher demand than legacy on-prem systems and pays meaningfully more in 2026.\n\nClose-automation tooling has become a near-table-stakes skill at mid-market and above. BlackLine, FloQast, Trintech, and Adra are explicitly listed in many controller and accounting manager job postings. If you've used one, put it on your CV with the outcome (cycle time reduced, controls automated, FTE hours saved). If you haven't, basic familiarity through a free trial or a Coursera/Udemy course can be enough to claim awareness.\n\nFor public accounting candidates moving to industry, translate audit experience into industry-relevant terms. 'Audit senior on $500M manufacturing client' becomes 'Owned year-end audit fieldwork for $500M client; led 4-person team across revenue, inventory, and PP&E; identified $280K control deficiency and presented remediation plan to client CFO'. The work is the same; the framing has to match the role you want.\n\nFor career changers entering accounting from bookkeeping, finance, or analyst roles, certifications carry weight. Listing 'CPA candidate (3 of 4 sections passed)', 'ACCA Part-Qualified', or 'CIMA passed finalist' immediately signals direction and commitment. Pair with QuickBooks ProAdvisor, Xero Advisor, or NetSuite Foundation certifications for stronger SMB roles.\n\nIf you write a CV (UK, EU, India, Australia) rather than a resume (US, Canada), match the regional spelling and framework focus. UK CVs typically use IFRS, ACCA/ACA/ICAEW certifications, and \u00a3 figures; US resumes use GAAP, CPA, and $ figures. Multinational candidates should call out dual fluency \u2014 'IFRS and US GAAP technical reviews' is a high-value signal.\n\nWadeCV reads each accounting job description and rewrites your CV to mirror the systems, frameworks, and reporting cadence it specifies \u2014 in the right regional spelling and accounting standard. Upload your CV, paste the job link, and you'll see a fit analysis with the gaps highlighted in 30 seconds.",
+    "relatedSlugs": [
+      "financial-analyst",
+      "business-analyst",
+      "operations-manager"
+    ],
+    "faq": [
+      {
+        "question": "What are the most important accountant skills to put on a CV or resume in 2026?",
+        "answer": "Technical: GAAP or IFRS depending on region, ASC 606 revenue recognition, ASC 842 leases, consolidations, and SOX 404 controls. Systems: ERP fluency (NetSuite, SAP S/4HANA, Workday, Oracle Fusion, QuickBooks, Sage Intacct, Xero) is the single highest-leverage signal. Process: month-end close cycle, reconciliations, audit liaison. Tooling: Excel (advanced), BlackLine or FloQast for close automation, and increasingly basic SQL or Power BI for finance analytics."
+      },
+      {
+        "question": "What accounting keywords should I include for ATS to pick up my resume?",
+        "answer": "Pull keywords directly from the posting: framework names (GAAP, IFRS, ASC 606, ASC 842, SOX 404), ERP names with exact spelling (NetSuite, SAP S/4HANA, Workday, Oracle Fusion, QuickBooks, Sage Intacct, Xero), close-automation tools (BlackLine, FloQast, Trintech), certifications (CPA, ACCA, ACA, CIMA, CMA, CA), and process terms (month-end close, reconciliation, audit, consolidation, intercompany). ATS systems like Greenhouse, Workday Recruiting, and iCIMS match exact strings, so use the same capitalisation as the posting."
+      },
+      {
+        "question": "What are good accountant resume bullet examples?",
+        "answer": "Lead with scope and an outcome. Strong examples: 'Owned month-end close for 4 US entities on NetSuite OneWorld; reduced close cycle from 9 to 5 business days', 'Managed Big Four audit (PwC) end-to-end with 280 PBC requests; closed two weeks ahead of schedule', 'Reconciled 75+ balance sheet accounts monthly; identified and corrected $340K cumulative misstatement in inventory reserve'. Avoid generic bullets like 'prepared financial statements' or 'helped with audit' \u2014 they could apply to any accountant at any level."
+      },
+      {
+        "question": "Should I list QuickBooks, NetSuite, and SAP all on my CV if I've used them?",
+        "answer": "Yes \u2014 ERP fluency is the highest-leverage signal on an accounting CV and recruiters filter on exact system names. List each system with the depth signal: module used (NetSuite OneWorld, SAP FI/CO), version (S/4HANA vs ECC), and the most senior task you owned in it (configured chart of accounts, owned month-end close, designed integrations). Three deep ERP listings beats six shallow ones."
+      },
+      {
+        "question": "How do I write an accountant CV with no experience or as a graduate?",
+        "answer": "Lead with certifications in progress (CPA candidate, ACCA Part-Qualified, CIMA finalist), relevant coursework (intermediate accounting, cost accounting, audit), and any internship or part-time bookkeeping work. List specific systems even from coursework or self-study (QuickBooks, Xero, Excel modelling). Quantify any internship work \u2014 'reconciled 30 accounts monthly during 12-week internship' is more credible than 'gained accounting experience'. Add free certifications: QuickBooks ProAdvisor, Xero Advisor, NetSuite Foundation, or Coursera financial accounting courses signal initiative."
+      },
+      {
+        "question": "Should I list CPA or ACCA on my accountant resume?",
+        "answer": "Yes \u2014 always. Active CPA, ACA, ACCA, CIMA, CMA, or CA designations belong directly under your name in the header (e.g. 'Jane Smith, CPA') and in your professional summary. Candidate status counts too: 'CPA candidate, 3 of 4 sections passed' or 'ACCA Part-Qualified (12 of 14 papers)'. State licence (US) or country/jurisdiction (international) helps for cross-border applications. Lapsed credentials should be left off unless reactivation is genuinely planned."
+      },
+      {
+        "question": "What's the difference between an accountant CV in the UK vs US?",
+        "answer": "UK accountant CVs typically reference IFRS, ACCA/ACA/ICAEW or CIMA designations, HMRC and VAT compliance, and \u00a3 figures. US accountant resumes reference US GAAP, CPA designation by state, IRS/state tax compliance, and $ figures. UK CVs run 2 pages comfortably; US resumes target 1\u20132 pages. Multinational candidates should highlight dual standards fluency ('IFRS and US GAAP technical reviews' or 'managed UK and US year-end close') as a key differentiator for global roles."
+      },
+      {
+        "question": "How many accounting skills should I list on my CV?",
+        "answer": "10\u201318 specific skills grouped into 3\u20134 categories (Technical Accounting, ERP & Systems, Close & Reporting, Audit & Compliance). Lead with what the posting names. Avoid filler like 'attention to detail' or 'team player' \u2014 every line should either match a posting keyword (GAAP, NetSuite, SOX) or be backed up by a quantified bullet in your experience section. For specialist roles (Tax Manager, Audit Senior, Revenue Accountant), go deeper in one area rather than wider across all functions."
+      }
+    ],
+    "commonMistakes": [
+      "Writing 'prepared financial statements' without entity count, scope, or audience \u2014 every accountant claims this",
+      "Listing 'ERP' or 'accounting software' instead of NetSuite, SAP S/4HANA, QuickBooks by name \u2014 ATS filters on exact tool names",
+      "Omitting close-cycle metrics (days to close, reconciliation count, audit adjustments) which are the most quantifiable accounting outcomes",
+      "Forgetting close-automation tooling (BlackLine, FloQast) \u2014 these are explicitly named in mid-market and above job postings",
+      "Listing 'CPA' without state, exam progress, or active status \u2014 recruiters need to know if you're licensed",
+      "Mixing GAAP and IFRS terminology without context \u2014 specify which framework applied to which role",
+      "Burying ERP system names in paragraph form instead of putting them in a scannable Skills section",
+      "Generic 'audit experience' instead of naming the firm (PwC, EY, KPMG, Deloitte, BDO, Grant Thornton, RSM) and the audit type"
+    ]
   },
   {
     "slug": "financial-analyst",
@@ -1160,61 +1360,114 @@
   },
   {
     "slug": "digital-marketing",
-    "title": "Skills for Digital Marketing Resume",
-    "metaDescription": "Digital marketing skills to list on your resume in 2026. Channel-by-channel skill clusters, ATS keywords, and results-driven bullet examples for marketing roles.",
-    "intro": "Digital marketers must show fluency across multiple channels \u2014 SEO, paid search, email, social, and analytics. Employers scan for specific tools and platforms, not just generic 'marketing' skills. This guide organises digital marketing skills by channel and shows how to quantify your impact.",
+    "title": "Digital Marketing Skills for Your CV or Resume (50+ Examples for 2026)",
+    "metaDescription": "Complete digital marketing skills for your CV or resume in 2026. Channel-by-channel skills (SEO, paid, email, social, analytics), AI tooling, ATS keywords, and bullet examples for every level.",
+    "intro": "A 2026 digital marketing CV needs to prove three things in under six seconds: which channels you've owned, which platforms you've actually used, and the revenue or growth you've generated. Vague claims like 'managed social media' or 'ran campaigns' lose to candidates who write 'managed $480K Meta Ads budget at 4.2 ROAS across DTC and B2B funnels'. This guide gives you 50+ skills grouped into 7 clusters, 12 quantified bullet examples, and the ATS keywords British and American recruiters search for in 2026 \u2014 including the AI marketing skills that have moved from nice-to-have to must-have in the past 12 months.",
     "skillClusters": [
       {
-        "name": "SEO & content",
+        "name": "SEO & organic content",
         "items": [
-          "Keyword research (Ahrefs, SEMrush, Moz)",
-          "On-page optimisation",
-          "Technical SEO",
-          "Content strategy",
-          "Link building",
-          "Google Search Console"
+          "Keyword research with Ahrefs, SEMrush, Moz, or Surfer",
+          "On-page optimisation and content briefs",
+          "Technical SEO (Core Web Vitals, schema, crawl budget, JS rendering)",
+          "Programmatic and pSEO content systems",
+          "Internal linking strategy and topic-cluster modelling",
+          "Link building and digital PR outreach",
+          "Google Search Console, Bing Webmaster Tools, Ahrefs Site Audit",
+          "AI search optimisation (GEO) for ChatGPT, Perplexity, Google AI Overviews"
         ]
       },
       {
-        "name": "Paid media",
+        "name": "Paid media & SEM",
         "items": [
-          "Google Ads",
-          "Meta Ads Manager",
-          "LinkedIn Ads",
-          "TikTok Ads",
-          "Programmatic / Display",
-          "ROAS optimisation"
+          "Google Ads (Search, Performance Max, Display, YouTube)",
+          "Meta Ads Manager (Facebook, Instagram, Reels, Audience Network)",
+          "LinkedIn Ads (Sponsored Content, ABM, Conversation Ads)",
+          "TikTok Ads, Reddit Ads, Pinterest Ads",
+          "Programmatic and DSPs (DV360, The Trade Desk, StackAdapt)",
+          "ROAS, CPA, CAC, LTV optimisation",
+          "Bidding strategy (tCPA, tROAS, max conversions)",
+          "Negative keyword and audience exclusion management",
+          "Landing page and creative A/B testing"
         ]
       },
       {
-        "name": "Email & CRM",
+        "name": "Email, CRM & marketing automation",
         "items": [
-          "Klaviyo",
-          "Mailchimp",
-          "HubSpot",
-          "Salesforce Marketing Cloud",
-          "List segmentation",
-          "A/B testing",
-          "Deliverability"
+          "Klaviyo, Mailchimp, ActiveCampaign, Customer.io",
+          "HubSpot Marketing Hub and Salesforce Marketing Cloud",
+          "Marketo, Pardot, Iterable for B2B/enterprise",
+          "Lifecycle and trigger-based flows (welcome, abandonment, win-back)",
+          "List segmentation, RFM modelling, and dynamic content",
+          "A/B and multivariate testing",
+          "Deliverability (SPF, DKIM, DMARC, sender reputation)",
+          "SMS marketing (Attentive, Postscript, Klaviyo SMS)"
         ]
       },
       {
-        "name": "Analytics & reporting",
+        "name": "Social media & content distribution",
         "items": [
-          "Google Analytics 4",
-          "Looker Studio",
-          "Power BI",
-          "Attribution modelling",
-          "Conversion rate optimisation (CRO)"
+          "Organic strategy across LinkedIn, Instagram, TikTok, X, YouTube",
+          "Short-form video (Reels, Shorts, TikTok native)",
+          "Influencer and creator partnerships",
+          "Community management and social listening (Sprout, Hootsuite, Brandwatch)",
+          "Editorial calendar planning in Notion, Asana, or Trello",
+          "Paid social creative testing pipelines"
+        ]
+      },
+      {
+        "name": "Analytics, attribution & CRO",
+        "items": [
+          "Google Analytics 4 (GA4), event modelling, custom dimensions",
+          "Looker Studio, Power BI, Tableau dashboards",
+          "Attribution modelling (data-driven, MMM, last-click)",
+          "Server-side tracking (GTM Server, Stape, Addingwell)",
+          "Conversion rate optimisation (Optimizely, VWO, Convert)",
+          "Heatmaps and session recording (Hotjar, Microsoft Clarity)",
+          "Cohort analysis and funnel diagnosis",
+          "SQL for marketing analytics (BigQuery, Snowflake basics)"
+        ]
+      },
+      {
+        "name": "AI & marketing technology (2026 essentials)",
+        "items": [
+          "ChatGPT, Claude, Gemini for content workflows",
+          "Jasper, Copy.ai, Writer for at-scale copy",
+          "AI-powered SEO (Surfer, Frase, Clearscope)",
+          "Image and video generation (Midjourney, Runway, Sora)",
+          "Customer data platforms (Segment, mParticle, Hightouch)",
+          "Marketing automation orchestration (Zapier, Make, n8n)",
+          "Prompt engineering for marketing systems"
+        ]
+      },
+      {
+        "name": "Strategy, leadership & soft skills",
+        "items": [
+          "Marketing strategy and channel mix planning",
+          "Budget management and forecasting",
+          "Cross-functional collaboration with Sales, Product, Brand",
+          "Agency management and vendor selection",
+          "Stakeholder reporting and board-level communication",
+          "Hiring, mentoring, and team building",
+          "Project management (Agile or sprint-based marketing ops)"
         ]
       }
     ],
     "bulletExamples": [
-      "Grew organic search traffic 140% YoY through a technical SEO overhaul and 60-piece content calendar \u2014 driven by keyword gap analysis in Ahrefs.",
-      "Managed $350K annual Google Ads budget; reduced CPA by 31% through audience segmentation, negative keyword expansion, and landing page A/B testing.",
-      "Built and optimised email welcome sequence in Klaviyo; sequence now drives 18% of total monthly revenue with 42% open rate."
+      "Grew organic search traffic 187% YoY (4.2K \u2192 12.1K monthly visitors) through a technical SEO overhaul, 80-piece content calendar, and topic-cluster restructure \u2014 outperforming paid CAC by 4x.",
+      "Managed \u00a3420K annual Google Ads budget across Search, PMax, and YouTube; reduced CPA 34% (from \u00a382 to \u00a354) through audience segmentation, negative keyword cleanup, and a 14-test landing page programme.",
+      "Built lifecycle email programme in Klaviyo; welcome, browse-abandon, and win-back flows now drive 24% of total monthly revenue with 38% average open rate and 4.1% conversion rate.",
+      "Scaled Meta Ads from $80K to $640K monthly spend over 18 months while improving ROAS from 2.1x to 3.8x through creative testing pipeline (90+ ads/month) and audience cohort modelling.",
+      "Owned full-funnel attribution rebuild: migrated from last-click to data-driven attribution in GA4, set up server-side tracking via GTM Server, and aligned reporting across Sales/Marketing in HubSpot.",
+      "Launched LinkedIn ABM programme targeting 1,200 enterprise accounts; sourced 38 SQLs and \u00a31.4M closed-won pipeline in first two quarters.",
+      "Led TikTok organic and paid strategy from cold start; grew to 84K followers in 9 months and added \u00a3220K incremental DTC revenue at 2.9x ROAS.",
+      "Implemented AI content workflow combining ChatGPT, Claude, and Surfer SEO; cut blog production cost from \u00a3380 to \u00a3110 per piece while increasing average word count and ranking page-1 within 8 weeks for 60% of new posts.",
+      "Rebuilt marketing analytics stack (Segment, BigQuery, Looker Studio); replaced 12 disconnected dashboards with one source of truth for CAC, LTV, and channel ROAS \u2014 cut weekly reporting time from 6 hours to 25 minutes.",
+      "Led 6-person marketing team across SEO, paid, content, and lifecycle; owned \u00a31.8M annual budget and grew MRR 142% over 18-month tenure.",
+      "Reduced CAC payback from 14 to 7 months by reallocating spend from Display to retargeting and lifecycle email after multi-touch attribution analysis surfaced channel inefficiency.",
+      "Designed and launched referral programme in Friendbuy; 11% of new customer acquisition now comes from referrals at 70% lower CAC than paid social."
     ],
-    "body": "Digital marketing resumes are strongest when they show channel-specific results with real numbers. Don't just say you 'managed social media' \u2014 specify the platform, audience size, and engagement or growth achieved. Tool fluency is essential; list specific platforms for each channel. WadeCV can tailor your marketing skills to each employer's channel mix and industry.",
+    "body": "A digital marketing CV in 2026 lives or dies on three signals: channels owned, platforms named, and metrics moved. Recruiters and hiring managers scan in seconds for the specific tools and the specific outcomes \u2014 not for adjectives like 'creative' or 'data-driven'.\n\nThe single biggest mistake is writing 'managed social media' or 'ran ads'. Everyone's done that. Write 'scaled Meta Ads from $80K to $640K monthly at 3.8x ROAS' or 'grew TikTok from 0 to 84K followers in 9 months'. The numbers are what hiring managers screen for, and they are what get your CV into the shortlist pile.\n\nTool fluency is now table stakes. List the platforms by name (Klaviyo, not 'email tool'; Ahrefs, not 'SEO software'; GA4, not 'analytics'). ATS systems like Greenhouse, Lever, and Workday match on exact strings, and recruiter Boolean searches do too. The most over-hired-for tools in 2026 digital marketing job postings are: Google Ads, Meta Ads Manager, GA4, HubSpot, Klaviyo, Ahrefs/SEMrush, and increasingly AI tooling like ChatGPT, Claude, Surfer, and Jasper.\n\nAI fluency has moved from differentiator to must-have in the last 12 months. Job descriptions for senior marketers explicitly list 'experience using AI tools in content/campaign workflows' or 'familiarity with ChatGPT, Claude, or equivalent for marketing applications'. If you've used these tools to ship work, put them on your CV with a concrete outcome \u2014 'cut blog production cost from \u00a3380 to \u00a3110 per piece using ChatGPT + Surfer workflow' is far stronger than 'familiar with AI tools'.\n\nFor analytics-heavy roles, technical depth pays. Even basic SQL fluency, server-side tracking experience, or attribution modelling work moves you out of the generalist pile. List the warehouses (BigQuery, Snowflake), the CDPs (Segment, mParticle), and the attribution methodologies (data-driven, MMM, multi-touch) you've actually used.\n\nFor leadership roles, lead with budget owned, headcount managed, and revenue or pipeline impact. 'Led 6-person team owning \u00a31.8M annual budget; grew MRR 142% over 18 months' beats five paragraphs of strategy buzzwords. CMOs and VPs hiring you want to see whether you can move the P&L.\n\nIf you are writing a CV (UK, EU, Australia, India) rather than a resume (US, Canada), match the regional spelling and terminology of the posting. 'Optimised', 'organisations', and 'analyse' for British English; 'optimized', 'organizations', and 'analyze' for American. Recruiters notice mismatches as a signal you did not read the posting carefully.\n\nWadeCV reads each digital marketing job description and rewrites your CV to mirror the channels, tools, and metrics it specifies \u2014 in the right regional spelling. Upload your CV, paste the job link, and you'll see a fit analysis with the gaps highlighted in 30 seconds.",
     "relatedSlugs": [
       "marketing-manager",
       "social-media-manager",
@@ -1222,14 +1475,47 @@
     ],
     "faq": [
       {
-        "question": "What are the most in-demand digital marketing skills in 2026?",
-        "answer": "Paid media (especially Google Ads and Meta Ads), marketing analytics (GA4, Looker Studio, attribution), and SEO remain top priorities. AI fluency \u2014 using tools like ChatGPT or Jasper in content workflows \u2014 is increasingly mentioned in job descriptions."
+        "question": "What are the most in-demand digital marketing skills for a CV in 2026?",
+        "answer": "Paid media (Google Ads, Meta Ads, LinkedIn Ads), marketing analytics (GA4, Looker Studio, attribution modelling), SEO with technical depth, lifecycle email (Klaviyo, HubSpot), and AI tool fluency (ChatGPT, Claude, Surfer SEO) are the most-cited skills in 2026 job descriptions. Server-side tracking and SQL for marketing analytics are increasingly differentiators for senior roles."
+      },
+      {
+        "question": "What digital marketing keywords should I put on my resume to pass ATS?",
+        "answer": "Pull keywords directly from the posting: tool names (Google Ads, Meta Ads Manager, GA4, HubSpot, Klaviyo, Ahrefs, SEMrush), metric abbreviations (ROAS, CAC, LTV, CPA, CTR), channel terms (paid social, programmatic, lifecycle email, organic search), and methodology (attribution, A/B testing, CRO, MMM). ATS filters match exact strings, so use the same capitalisation and spelling as the posting \u2014 'GA4' beats 'Google Analytics 4' if that's how the posting writes it."
+      },
+      {
+        "question": "How do I quantify digital marketing achievements on my CV?",
+        "answer": "Every bullet should answer 'how much, how many, by what %, vs. what baseline'. Use percentage growth (organic traffic +187% YoY), absolute spend (\u00a3420K Google Ads budget), efficiency metrics (CPA reduced 34%), and revenue impact (24% of monthly revenue from email programme). If you don't have access to numbers, use proxies: posts published, campaigns launched, headcount managed, accounts targeted."
+      },
+      {
+        "question": "Should I list AI tools like ChatGPT and Claude on my marketing CV?",
+        "answer": "Yes \u2014 in 2026, AI fluency is explicitly listed in most senior digital marketing job descriptions. List the specific tools (ChatGPT, Claude, Jasper, Surfer, Midjourney, Runway) and pair them with concrete outcomes ('cut blog production cost 71% using ChatGPT + Surfer workflow'). Listing AI tools without an outcome looks like padding; listing them with measurable impact looks like leverage."
+      },
+      {
+        "question": "What's the difference between digital marketing CV and resume in the UK vs US?",
+        "answer": "Functionally similar, but a UK CV is often slightly longer (2 pages is standard, not unusual to see 3) and uses British spelling ('optimised', 'organisation', 'analyse'). US resumes target 1\u20132 pages and use American spelling. Salary expectations are rarely included in either. Photo, date of birth, and marital status should be excluded from both \u2014 these are still common in some EU CVs but increasingly considered outdated."
+      },
+      {
+        "question": "How do I write a digital marketing CV with no experience or as a career changer?",
+        "answer": "Lead with measurable side projects, certifications, and freelance work. Run a personal blog and grew it to X visitors? That's an SEO portfolio. Managed Meta Ads for a friend's small business? That's paid media experience with real budget and ROAS. List relevant certifications (Google Ads, Meta Blueprint, HubSpot Inbound, GA4) and any AI tool experience. Career changers should translate prior roles into marketing language \u2014 'data analyst' becomes 'marketing analytics and attribution', 'sales rep' becomes 'B2B pipeline generation and CRM management'."
+      },
+      {
+        "question": "How long should the skills section on a digital marketing CV be?",
+        "answer": "8\u201315 specific skills grouped into 2\u20134 categories (e.g. Paid Media, SEO & Content, Analytics, Marketing Automation). Avoid filler like 'Microsoft Office' or 'attention to detail'. Every line should either match a posting keyword or be backed up by a quantified bullet in your experience section. For specialist roles (e.g. SEO Lead, Paid Acquisition Manager), go deeper in one area rather than wider across all channels."
+      },
+      {
+        "question": "Should I list social media platforms or just 'social media management' on my CV?",
+        "answer": "Always list specific platforms \u2014 'LinkedIn, Instagram, TikTok, YouTube' beats 'social media'. Hiring for B2B SaaS wants LinkedIn experience; DTC e-commerce wants Meta and TikTok; B2C entertainment wants TikTok and YouTube. Listing platforms also lets you show channel-specific results (Instagram +84K followers, TikTok +220K, LinkedIn 4M impressions) which are more credible than aggregate 'social media engagement' numbers."
       }
     ],
     "commonMistakes": [
-      "Generic 'social media' without platform, audience size, or metrics",
-      "No mention of specific tools \u2014 ATS filters on platform names",
-      "Missing ROAS, CPA, or growth metrics on paid campaigns"
+      "Writing 'managed social media' or 'ran campaigns' without naming the platform, budget, or outcome \u2014 every digital marketer claims this",
+      "Listing tool categories ('email tool', 'analytics platform') instead of specific platforms (Klaviyo, GA4) \u2014 ATS filters on exact tool names",
+      "Omitting metrics on paid campaigns \u2014 ROAS, CPA, CAC, and budget owned are non-negotiable for any paid-media role",
+      "Forgetting AI tools \u2014 in 2026 job descriptions explicitly request ChatGPT, Claude, or equivalent fluency",
+      "Using American spelling on a UK posting (or vice versa) \u2014 signals you didn't tailor the CV to the role",
+      "Burying budget figures and channel mix in paragraphs instead of leading every bullet with a number",
+      "Listing every platform you've ever logged into \u2014 depth in 4\u20135 tools beats shallow exposure to 20",
+      "No mention of attribution methodology for senior analytics or growth roles \u2014 last-click vs data-driven vs MMM is a common interview question"
     ]
   },
   {
