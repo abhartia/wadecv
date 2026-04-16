@@ -3,16 +3,9 @@
 import { useAnalyticsConsent } from "@/lib/consent/analytics-consent";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { isGpcEnabled } from "@/lib/consent/region";
-import { useEffect, useState } from "react";
 
 export default function PrivacyChoicesPage() {
-  const { consent, region, setAnalyticsConsent } = useAnalyticsConsent();
-  const [gpc, setGpc] = useState(false);
-
-  useEffect(() => {
-    setGpc(isGpcEnabled());
-  }, []);
+  const { consent, region, gpc, setAnalyticsConsent } = useAnalyticsConsent();
 
   const effectiveConsent = gpc ? "denied" : consent;
 

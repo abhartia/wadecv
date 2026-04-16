@@ -1,19 +1,26 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useSyncExternalStore } from "react";
 import { detectRegion, isGpcEnabled, type ConsentRegion } from "./region";
 
 export type ConsentState = "granted" | "denied" | "pending";
 
-type AnalyticsConsentContextValue = {
+type Snapshot = {
   consent: ConsentState;
   region: ConsentRegion | null;
-  setAnalyticsConsent: (value: boolean) => void;
+  gpc: boolean;
 };
 
-const AnalyticsConsentContext = createContext<AnalyticsConsentContextValue | undefined>(undefined);
-
 const STORAGE_KEY = "wadecv_analytics_consent";
+const SERVER_SNAPSHOT: Snapshot = { consent: "denied", region: null, gpc: false };
+
+let initialized = false;
+let state: Snapshot = SERVER_SNAPSHOT;
+const listeners = new Set<() => void>();
+
+function emit() {
+  for (const l of listeners) l();
+}
 
 function readStored(): "true" | "false" | null {
   try {
@@ -25,50 +32,76 @@ function readStored(): "true" | "false" | null {
   return null;
 }
 
-export function AnalyticsConsentProvider({ children }: { children: React.ReactNode }) {
-  const [consent, setConsent] = useState<ConsentState>("denied");
-  const [region, setRegion] = useState<ConsentRegion | null>(null);
+function computeInitialSnapshot(): Snapshot {
+  const region = detectRegion();
+  const gpc = isGpcEnabled();
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
+  if (gpc) return { consent: "denied", region, gpc };
 
-    const detectedRegion = detectRegion();
-    setRegion(detectedRegion);
+  const stored = readStored();
+  if (stored === "true") return { consent: "granted", region, gpc };
+  if (stored === "false") return { consent: "denied", region, gpc };
 
-    if (isGpcEnabled()) {
-      setConsent("denied");
-      return;
-    }
-
-    const stored = readStored();
-    if (stored === "true") {
-      setConsent("granted");
-      return;
-    }
-    if (stored === "false") {
-      setConsent("denied");
-      return;
-    }
-
-    // No explicit choice yet.
-    if (detectedRegion === "EEA_UK") {
-      setConsent("pending");
-    } else {
-      setConsent("granted");
-    }
-  }, []);
-
-  const setAnalyticsConsent = (value: boolean) => {
-    setConsent(value ? "granted" : "denied");
-    try {
-      window.localStorage.setItem(STORAGE_KEY, value ? "true" : "false");
-    } catch {
-      // ignore
-    }
+  return {
+    consent: region === "EEA_UK" ? "pending" : "granted",
+    region,
+    gpc,
   };
+}
+
+function ensureInitialized() {
+  if (initialized || typeof window === "undefined") return;
+  initialized = true;
+  state = computeInitialSnapshot();
+}
+
+function subscribe(listener: () => void) {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+}
+
+function getSnapshot(): Snapshot {
+  ensureInitialized();
+  return state;
+}
+
+function getServerSnapshot(): Snapshot {
+  return SERVER_SNAPSHOT;
+}
+
+function writeConsent(value: boolean) {
+  try {
+    window.localStorage.setItem(STORAGE_KEY, value ? "true" : "false");
+  } catch {
+    // ignore
+  }
+  state = { ...state, consent: value ? "granted" : "denied" };
+  emit();
+}
+
+type AnalyticsConsentContextValue = {
+  consent: ConsentState;
+  region: ConsentRegion | null;
+  gpc: boolean;
+  setAnalyticsConsent: (value: boolean) => void;
+};
+
+const AnalyticsConsentContext = createContext<AnalyticsConsentContextValue | undefined>(undefined);
+
+export function AnalyticsConsentProvider({ children }: { children: React.ReactNode }) {
+  const snapshot = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   return (
-    <AnalyticsConsentContext.Provider value={{ consent, region, setAnalyticsConsent }}>
+    <AnalyticsConsentContext.Provider
+      value={{
+        consent: snapshot.consent,
+        region: snapshot.region,
+        gpc: snapshot.gpc,
+        setAnalyticsConsent: writeConsent,
+      }}
+    >
       {children}
     </AnalyticsConsentContext.Provider>
   );
