@@ -11,19 +11,19 @@ const BASE_URL =
     : "https://wadecv.com");
 
 export const metadata = {
-  title: "11 Best AI Resume Builders in 2026 (Tested & Ranked) | WadeCV",
+  title: "12 Best AI Resume Builders in 2026 (Tested & Ranked) | WadeCV",
   description:
-    "We tested WadeCV, Teal, Jobscan, Zety, FlowCV, Kickresume, Novoresume, Wobo AI, AiApply, Enhancv, and ChatGPT to find the best AI resume builder in 2026. Full comparison with pros, cons, and pricing.",
+    "We tested WadeCV, Teal, Jobscan, Zety, FlowCV, Kickresume, Novoresume, Wobo AI, AiApply, Enhancv, ChatGPT, and Claude AI to find the best AI resume builder in 2026. Full comparison with pros, cons, and pricing.",
   openGraph: {
-    title: "11 Best AI Resume Builders in 2026 (Tested & Ranked)",
+    title: "12 Best AI Resume Builders in 2026 (Tested & Ranked)",
     description:
-      "We tested 11 AI resume builders including WadeCV, Teal, Jobscan, Zety, AiApply, and Enhancv. Here is the honest comparison.",
+      "We tested 12 AI resume builders including WadeCV, Teal, Jobscan, Claude AI, ChatGPT, AiApply, and Enhancv. Here is the honest comparison.",
   },
   twitter: {
     card: "summary" as const,
-    title: "11 Best AI Resume Builders in 2026 (Tested & Ranked)",
+    title: "12 Best AI Resume Builders in 2026 (Tested & Ranked)",
     description:
-      "Full breakdown of the top AI resume builders: WadeCV, Teal, Jobscan, AiApply, Enhancv, and more.",
+      "Full breakdown of the top AI resume builders: WadeCV, Teal, Jobscan, Claude AI, ChatGPT, AiApply, and more.",
   },
 };
 
@@ -276,6 +276,30 @@ const TOOLS: Tool[] = [
     tailoringScore: 2,
     easeScore: 3,
   },
+  {
+    name: "Claude AI",
+    tagline: "Anthropic's chatbot — strong writing, no resume tooling",
+    bestFor:
+      "Brainstorming narrative summaries and drafting bullets with the best generalist writing model",
+    pricing: "Free tier with message limits; Claude Pro at $20/month",
+    verdict: "avoid",
+    pros: [
+      "Best-in-class general writing quality among AI chatbots",
+      "Claude Projects lets you attach your CV as persistent context",
+      "Lower hallucination rate than most general chatbots",
+      "Strong at nuanced career-transition narratives",
+    ],
+    cons: [
+      "Cannot open LinkedIn, Indeed, or Greenhouse job URLs from chat",
+      "Output is prose or Markdown — you format the DOCX yourself",
+      "No structured fit score or gap analysis",
+      "No cover letter pairing or application tracking",
+      "Every new job is a fresh prompt — no repeatable pipeline",
+    ],
+    atsScore: 1,
+    tailoringScore: 2,
+    easeScore: 3,
+  },
 ];
 
 const SCORE_BAR = (score: number) => "★".repeat(score) + "☆".repeat(5 - score);
@@ -311,7 +335,7 @@ export default function BestAiResumeBuilderPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "11 Best AI Resume Builders in 2026 (Tested & Ranked)",
+    headline: "12 Best AI Resume Builders in 2026 (Tested & Ranked)",
     description: metadata.description,
     author: { "@type": "Organization", name: "WadeCV" },
     publisher: { "@type": "Organization", name: "WadeCV", url: BASE_URL },
@@ -319,7 +343,7 @@ export default function BestAiResumeBuilderPage() {
       "@type": "WebPage",
       "@id": `${BASE_URL}/best-ai-resume-builder-2026`,
     },
-    dateModified: "2026-04-16",
+    dateModified: "2026-04-17",
   };
 
   const faqJsonLd = {
@@ -344,22 +368,25 @@ export default function BestAiResumeBuilderPage() {
       />
 
       <h1 className="text-3xl font-bold mb-3">
-        11 Best AI Resume Builders in 2026 (Tested &amp; Ranked)
+        12 Best AI Resume Builders in 2026 (Tested &amp; Ranked)
       </h1>
       <p className="text-sm text-muted-foreground mb-6">
         Last updated: April 2026 · Tools tested: WadeCV, Teal, Jobscan,
         Zety, FlowCV, Kickresume, Novoresume, Wobo AI, AiApply, Enhancv,
-        ChatGPT
+        ChatGPT, Claude AI
       </p>
 
       <p className="text-muted-foreground mb-8">
         AI resume builders are not created equal. Some are glorified template
         editors with a GPT button bolted on. Others automate mass applications
-        with generic resumes. The best tools are genuinely built around the
-        job-tailoring workflow — keyword extraction, ATS formatting, and gap
-        analysis. We tested eleven of the most-searched tools in 2026 and
-        ranked them on three criteria that actually matter: ATS compatibility,
-        job-tailoring quality, and ease of use.
+        with generic resumes. And some — like ChatGPT and Claude — are great
+        general writing tools that users have adopted for resumes, even though
+        they lack resume-specific workflow. The best purpose-built tools are
+        genuinely designed around the job-tailoring workflow — keyword
+        extraction, ATS formatting, and gap analysis. We tested twelve of the
+        most-searched tools in 2026 and ranked them on three criteria that
+        actually matter: ATS compatibility, job-tailoring quality, and ease
+        of use.
       </p>
 
       {/* Quick comparison table */}
@@ -594,6 +621,19 @@ export default function BestAiResumeBuilderPage() {
                       className="underline underline-offset-2"
                     >
                       WadeCV vs ChatGPT head-to-head comparison
+                    </Link>
+                    .
+                  </p>
+                )}
+
+                {tool.name === "Claude AI" && (
+                  <p className="text-sm text-muted-foreground">
+                    See our{" "}
+                    <Link
+                      href="/wadecv-vs-claude"
+                      className="underline underline-offset-2"
+                    >
+                      WadeCV vs Claude AI head-to-head comparison
                     </Link>
                     .
                   </p>

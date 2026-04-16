@@ -19,6 +19,7 @@ const CATEGORY_HUBS: CrossLink[] = [
 
 const TOOL_COMPARISONS: CrossLink[] = [
   { href: "/ai-resume-builder-comparison", label: "WadeCV vs ChatGPT" },
+  { href: "/wadecv-vs-claude", label: "WadeCV vs Claude AI" },
   { href: "/wadecv-vs-teal", label: "WadeCV vs Teal" },
   { href: "/wadecv-vs-jobscan", label: "WadeCV vs Jobscan" },
   { href: "/wadecv-vs-wobo", label: "WadeCV vs Wobo AI" },

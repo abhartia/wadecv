@@ -4,6 +4,152 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 
 ---
 
+## 2026-04-17 — Session 16: WadeCV vs Claude AI Comparison (+500% New Rising Signal)
+
+### Data Pulled
+- [x] GA4 analytics data → `ga4_data.json` — 14 users, 49 sessions, homepage 2 clicks at pos 4.6 (20% CTR)
+- [x] GSC data → `gsc_data.json` — **347 impressions (up from 335, +3.6%)**, 43 pages (+1), 50 queries, 2 clicks
+- [x] Trends data → `trends_data.json` — **"claude ai" +500% rising** (was +450%), "indeed cv builder" +182,900% breakout, "ats resume checker" +63,500%
+
+### Key Findings
+- **MILESTONE: `/wadecv-vs-zety` INDEXED** at pos 45.5, 2 impr (first appearance, took 4 days from Session 11)
+- **Digital marketing growing FAST:** 43 impr (up from 36, +19%), pos 70.4 (improving from 71.6). This is PRE-overhaul momentum (Session 15 too recent).
+- **Python developer emerging:** 9 impr at pos 66.4 (up from 8 at pos 66.2)
+- **Homepage clicks working:** 2 clicks at pos 4.6, 20% CTR — best performer
+- **First mobile click ever:** 1 click on 15 mobile impressions (6.67% CTR) vs 0.3% desktop
+- **Listicle holding:** `/best-ai-resume-builder-2026` at pos 8.3, 3 impr (pos dipped from 7.5 but more impressions)
+- **`/wadecv-vs-jobscan`:** 3 impr (up from 1), pos 48.3 stable
+- **CLAUDE AI BIG SIGNAL:** "claude ai" +500% rising, "claude" +450% rising — new hottest competitor query
+- **Signup events still 0** after 9 days of instrumentation — volume still too low to distinguish broken instrumentation from no signups
+- **`/ats/lever` ongoing anomaly:** 65 impr at pos 8.0, 0 clicks after 6 days post-Session-9 overhaul — needs investigation
+- Stripe referral stable at 34 sessions
+
+### Changes Made
+
+#### 1. "WadeCV vs Claude AI" Comparison Page (HIGH IMPACT — big bet of session)
+**Why:** Claude AI is the hottest new rising signal for "ai resume builder" (+500% today, up from +450% yesterday). First-mover before any competitor claims this query. Queued since Session 10 (Apr 12).
+
+**File created:**
+- `frontend/src/app/(resources)/wadecv-vs-claude/page.tsx`
+  - 12-row feature comparison (added "Writing quality" where Claude legitimately wins — avoids false-positive stacking)
+  - 6-item FAQ with FAQPage + Article JSON-LD
+  - datePublished / dateModified = 2026-04-17
+  - InlineCta mid-page (variant="job")
+  - CrossCategoryLinks with contextLinks (ChatGPT comparison, listicle, Jobscan, Teal)
+  - Positioned as complementary ("use both") — preserves brand credibility for Claude Pro users who might be prospects
+
+**Files changed:**
+- `frontend/src/app/sitemap.ts` — added `/wadecv-vs-claude` at priority 0.9 (higher than other comparison pages)
+- `frontend/src/components/seo/cross-category-links.tsx` — added Claude AI to TOOL_COMPARISONS (now 7 links, creating ~170 new internal links across SEO pages)
+- `frontend/src/app/(resources)/best-ai-resume-builder-2026/page.tsx` — expanded to "12 Best" with Claude AI entry (tagline, pros/cons, scores, bestFor, pricing), updated meta title/description, added Claude AI comparison link section, bumped dateModified to 2026-04-17
+
+#### 2. Build verified
+- `next build` passes: `/wadecv-vs-claude` confirmed in static output, 184 pages total (up from 183), 0 errors
+
+### Not Yet Done (For Future Sessions)
+- [ ] Monitor `/wadecv-vs-claude` indexing (2026-04-22+)
+- [ ] Monitor Session 15 skills overhauls (customer-service, digital-marketing, accountant) — next check 2026-04-23+
+- [ ] Monitor Session 14 career-change new entries for indexing (2026-04-23+)
+- [ ] Monitor `/wadecv-vs-enhancv` indexing (2026-04-23+)
+- [ ] Monitor `/wadecv-vs-aiapply` indexing (2026-04-22+)
+- [ ] **Investigate `/ats/lever` zero-clicks anomaly** — 65 impr at pos 8.0, 0 clicks after content overhaul 6 days ago. Check if Google is rewriting title, rich results rendering, query intent (navigational?)
+- [ ] Apply overhaul pattern to `/skills/python-developer` (9 impr, pos 66.4)
+- [ ] Consider UK-specific landing page ("cv builder free uk" +250% still rising after 4+ weeks)
+- [ ] Consider "How to Humanize Your AI Resume" content page (humanize ai +450%)
+- [ ] Consider ATS Resume Checker content ("ats resume checker" +63,500%)
+- [ ] Monitor listicle position — at pos 8.3 with 3 impr (position dipped from 7.5)
+- [ ] Verify signup instrumentation when a real organic user hits /auth/register
+- [ ] Create topic cluster hub/pillar pages (queued since Session 2)
+- [ ] Add author credentials/expert signals to content pages
+- [ ] Investigate why `/wadecv-vs-teal` is NOT indexed after 12 days while `/wadecv-vs-jobscan` and `/wadecv-vs-zety` indexed faster
+
+---
+
+## 2026-04-16 — Session 15: Top-3 Skills Page Content Overhaul (45% of impressions)
+
+### Data Pulled
+- [x] GA4 analytics data → `ga4_data.json`
+- [x] GSC data → `gsc_data.json` — same as Session 14 morning pull (1-2 day API lag): 335 impressions, 42 pages, 50 queries, 2 clicks
+- [x] Trends data → `trends_data.json` — mostly 429 rate-limited (only intent_signals returned); core stable
+
+### Key Findings
+- **Top 3 skills pages drive 45% of all impressions** (152/335) but stuck at pos 71-84 with thin content
+  - `/skills/customer-service`: 91 impr, pos 83.8 (350 char body, 0 FAQ)
+  - `/skills/digital-marketing`: 36 impr, pos 71.6 (368 char body, 1 FAQ)
+  - `/skills/accountant`: 25 impr, pos 72.1 (189 char body, 0 FAQ)
+- **Same content-thinness pattern as ATS pages** before Session 9 overhaul (which is still in reindex window)
+- 14+ unique customer-service query variants (skills for cv/resume, bullet points, keywords, summary, qualities, list of, etc.)
+- 12 digital-marketing query variants (`digital marketing cv` is biggest at 15 impr)
+- 13 accountant query variants (resume skills, keywords, examples, skills for cv/resume)
+- Daily impressions: Apr 14 = 18 (Mon), Apr 12-13 = 11 each (weekend)
+- Funnel: 14 form_start, but still 0 signup_start events (GA4)
+- Stripe referral down to 34 sessions (slowly decreasing)
+
+### Changes Made
+
+#### 1. Customer Service Skills Overhaul (HIGHEST IMPACT — 91 impr top page)
+**Why:** #1 traffic page stuck at pos 83.8 with 14+ query variants. Same playbook as Session 9 ATS overhaul.
+
+**File changed:** `frontend/content/seo/skills.json` — `customer-service` entry
+- Title: SEO-rewritten "Customer Service Skills for Your Resume or CV (40+ Examples for 2026)"
+- Skill clusters: 4 → 6 (added Helpdesk/CRM platforms, Channels/ticketing, Metrics/reporting, Leadership)
+- Cluster items: 18 → 45 (specific tools: Zendesk, Salesforce Service Cloud, Intercom, Freshdesk, HubSpot Service, Gorgias, Front, Help Scout, Kustomer, ServiceNow, Genesys, NICE)
+- Bullets: 3 → 12 (agent → senior → team lead progression, all quantified)
+- Body: 350 → ~3,400 chars
+- FAQ: 0 → 8 (targets exact GSC queries)
+- commonMistakes: 0 → 7
+
+#### 2. Digital Marketing Skills Overhaul (HIGH IMPACT — fastest grower)
+**Why:** 36 impr at pos 71.6, growing +44% recently. `digital marketing cv` at 15 impr is the biggest single non-customer-service query.
+
+**File changed:** `frontend/content/seo/skills.json` — `digital-marketing` entry
+- Skill clusters: 4 → 7 (added Social media, AI & MarTech, Strategy/leadership)
+- Cluster items: 24 → 55+ (added AI tools: ChatGPT, Claude, Jasper, Surfer, Midjourney, Runway, Sora; CDPs: Segment, mParticle, Hightouch, GTM Server)
+- Bullets: 3 → 12 (mixed £/$ for UK terminology pull)
+- Body: 368 → ~3,800 chars (covers AI fluency as 2026 must-have)
+- FAQ: 1 → 8 (targets `digital marketing cv` plus AI tools, ATS, no-experience, career changer)
+- commonMistakes: 3 → 8
+
+#### 3. Accountant Skills Overhaul (HIGH IMPACT — emerging cluster)
+**Why:** 25 impr across 13 query variants (resume skills, keywords, examples). Most aggressive content-gap candidate (189 → 3,700 chars).
+
+**File changed:** `frontend/content/seo/skills.json` — `accountant` entry
+- Skill clusters: 3 → 6 (added Audit/Controls/Compliance, Tax & Treasury, Leadership)
+- Cluster items: 11 → 48 (added IFRS, ASC 606/842, NetSuite OneWorld, SAP S/4HANA, Workday, Oracle Fusion, Sage Intacct, Xero, BlackLine, FloQast, SOX 404)
+- Bullets: 3 → 12 (Big Four firm names, ASC 606 implementation, ERP migration, SOX, multi-entity close)
+- Body: 189 → ~3,700 chars (UK/US framework split, ERP fluency leverage, public→industry transition, certifications)
+- FAQ: 0 → 8 (targets all 13 ranked queries, plus CPA/ACCA, no-experience, UK vs US)
+- commonMistakes: 0 → 8
+
+#### 4. Skills template dateModified bumped
+- `frontend/src/app/(resources)/skills/[slug]/page.tsx` — dateModified `2026-04-07` → `2026-04-16` (signals freshness across all 28 skills pages)
+
+#### 5. Build verified
+- `npm run build` passes: 183 static pages, 0 errors
+
+### Combined Impact
+~10,900 new body chars + 24 new FAQ entries + 23 commonMistakes + 36 quantified bullet examples + 148 specific tool/method names across the 3 pages.
+
+### Not Yet Done (For Future Sessions)
+- [ ] Watch position lift on `/skills/customer-service`, `/skills/digital-marketing`, `/skills/accountant` (2026-04-23+)
+- [ ] Watch overall `/skills/*` cluster impressions Apr 17-19 for dip from simultaneous template-mate updates
+- [ ] Apply same overhaul pattern to next-tier skills pages: `/skills/python-developer` (8 impr, pos 66), `/skills/operations-manager` (6 impr), `/skills/executive-assistant` (4 impr)
+- [ ] Monitor Session 14 career-change new entries for indexing (2026-04-23+)
+- [ ] Monitor `/wadecv-vs-enhancv` indexed (2026-04-23+)
+- [ ] Check comparison pages indexed after expanded internal linking — `/wadecv-vs-teal` should be next (2026-04-20+)
+- [ ] Check `/wadecv-vs-aiapply` indexed (2026-04-22+)
+- [ ] Check ATS content overhaul impact (2026-04-18+ — 2 more days)
+- [ ] Monitor listicle position growth — at pos 7.5 with 2 impr
+- [ ] Monitor first `signup_start`/`signup_success` events in GA4
+- [ ] Consider "How to Humanize Your AI Resume" content page (humanize ai +450%)
+- [ ] Consider "WadeCV vs Claude AI" comparison
+- [ ] Consider UK-specific landing page ("cv builder free uk" +250% still rising)
+- [ ] Create topic cluster hub/pillar pages (queued since Session 2)
+- [ ] Add author credentials/expert signals to content pages
+- [ ] Investigate why `/wadecv-vs-teal` is NOT indexed after 11 days while `/wadecv-vs-jobscan` indexed in 8
+
+---
+
 ## 2026-04-16 — Session 14: Enhancv Comparison + Career-Change Expansion (Best-Positioned Category)
 
 ### Data Pulled
