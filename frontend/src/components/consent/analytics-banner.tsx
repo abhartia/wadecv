@@ -1,20 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useAnalyticsConsent } from "@/lib/consent/analytics-consent";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export function AnalyticsBanner() {
-  const { hasAnalyticsConsent, setAnalyticsConsent } = useAnalyticsConsent();
-  const [mounted, setMounted] = useState(false);
+  const { consent, setAnalyticsConsent } = useAnalyticsConsent();
 
-  useEffect(() => {
-    queueMicrotask(() => setMounted(true));
-  }, []);
-
-  if (!mounted) return null;
-  if (hasAnalyticsConsent !== null) return null;
+  if (consent !== "pending") return null;
 
   return (
     <div className="fixed bottom-0 inset-x-0 z-40 border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
@@ -54,4 +47,3 @@ export function AnalyticsBanner() {
     </div>
   );
 }
-

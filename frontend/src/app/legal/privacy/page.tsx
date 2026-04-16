@@ -2,7 +2,7 @@ export default function PrivacyPage() {
   return (
     <article className="prose dark:prose-invert max-w-none">
       <h1>Privacy Policy</h1>
-      <p className="text-muted-foreground"><strong>Last updated:</strong> March 2, 2026</p>
+      <p className="text-muted-foreground"><strong>Last updated:</strong> April 17, 2026</p>
 
       <h2>1. Information We Collect</h2>
       <h3>Account Information</h3>
@@ -93,10 +93,21 @@ export default function PrivacyPage() {
         individual users.
       </p>
       <p>
-        Analytics cookies and related tracking are controlled via an in-product banner and settings. You can
-        choose to accept or decline analytics on your first visit, and you can change this choice later in the
-        app. If you decline, only essential cookies will be used and we will not send non-essential analytics
-        events to Google.
+        GA4 is loaded with Google Consent Mode v2. We never enable advertising storage, ad user
+        data, or ad personalization signals — those categories are always set to denied.
+      </p>
+      <p>
+        For visitors whose browser timezone is in the EEA or United Kingdom, analytics storage is
+        set to denied by default and a consent banner is shown; we only enable analytics storage
+        after you accept. For visitors elsewhere (including the United States), analytics storage
+        is enabled by default in accordance with applicable US state privacy laws (including the
+        California Consumer Privacy Act as amended by the CPRA), and you may opt out at any time
+        via{" "}
+        <a href="/legal/privacy-choices">Your Privacy Choices</a>.
+      </p>
+      <p>
+        We honor the Global Privacy Control (GPC) browser signal. If your browser sends GPC, we
+        treat it as an opt-out of analytics regardless of region or saved preference.
       </p>
       <p>
         For more information about how Google Analytics handles data, please see Google&apos;s documentation on

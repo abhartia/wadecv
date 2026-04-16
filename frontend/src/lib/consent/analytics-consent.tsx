@@ -1,9 +1,13 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
+import { detectRegion, isGpcEnabled, type ConsentRegion } from "./region";
+
+export type ConsentState = "granted" | "denied" | "pending";
 
 type AnalyticsConsentContextValue = {
-  hasAnalyticsConsent: boolean | null;
+  consent: ConsentState;
+  region: ConsentRegion | null;
   setAnalyticsConsent: (value: boolean) => void;
 };
 
@@ -11,24 +15,51 @@ const AnalyticsConsentContext = createContext<AnalyticsConsentContextValue | und
 
 const STORAGE_KEY = "wadecv_analytics_consent";
 
+function readStored(): "true" | "false" | null {
+  try {
+    const v = window.localStorage.getItem(STORAGE_KEY);
+    if (v === "true" || v === "false") return v;
+  } catch {
+    // ignore
+  }
+  return null;
+}
+
 export function AnalyticsConsentProvider({ children }: { children: React.ReactNode }) {
-  const [hasAnalyticsConsent, setHasAnalyticsConsent] = useState<boolean | null>(null);
+  const [consent, setConsent] = useState<ConsentState>("denied");
+  const [region, setRegion] = useState<ConsentRegion | null>(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    try {
-      const stored = window.localStorage.getItem(STORAGE_KEY);
-      queueMicrotask(() => {
-        if (stored === "true") setHasAnalyticsConsent(true);
-        if (stored === "false") setHasAnalyticsConsent(false);
-      });
-    } catch {
-      // ignore
+
+    const detectedRegion = detectRegion();
+    setRegion(detectedRegion);
+
+    if (isGpcEnabled()) {
+      setConsent("denied");
+      return;
+    }
+
+    const stored = readStored();
+    if (stored === "true") {
+      setConsent("granted");
+      return;
+    }
+    if (stored === "false") {
+      setConsent("denied");
+      return;
+    }
+
+    // No explicit choice yet.
+    if (detectedRegion === "EEA_UK") {
+      setConsent("pending");
+    } else {
+      setConsent("granted");
     }
   }, []);
 
   const setAnalyticsConsent = (value: boolean) => {
-    setHasAnalyticsConsent(value);
+    setConsent(value ? "granted" : "denied");
     try {
       window.localStorage.setItem(STORAGE_KEY, value ? "true" : "false");
     } catch {
@@ -37,7 +68,7 @@ export function AnalyticsConsentProvider({ children }: { children: React.ReactNo
   };
 
   return (
-    <AnalyticsConsentContext.Provider value={{ hasAnalyticsConsent, setAnalyticsConsent }}>
+    <AnalyticsConsentContext.Provider value={{ consent, region, setAnalyticsConsent }}>
       {children}
     </AnalyticsConsentContext.Provider>
   );
@@ -50,4 +81,3 @@ export function useAnalyticsConsent() {
   }
   return ctx;
 }
-
