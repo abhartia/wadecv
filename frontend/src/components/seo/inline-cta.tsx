@@ -12,7 +12,8 @@ type Variant =
   | "resume-bullets"
   | "ats"
   | "career-change"
-  | "physical-mail";
+  | "physical-mail"
+  | "humanize";
 
 const VARIANT_CONFIG: Record<
   Variant,
@@ -58,6 +59,12 @@ const VARIANT_CONFIG: Record<
     heading: "Generate, print, and mail your resume",
     description:
       "WadeCV creates a tailored CV and mails a printed copy directly to the company via USPS — stand out from the digital pile.",
+    buttonText: "Try it free — no credit card needed",
+  },
+  humanize: {
+    heading: "Humanize your AI resume by tailoring it to each role",
+    description:
+      "Paste a job URL and WadeCV rewrites your AI-generated draft with real keywords, specific bullets, and language that sounds like you — not a chatbot.",
     buttonText: "Try it free — no credit card needed",
   },
 };

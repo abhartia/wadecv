@@ -4,6 +4,75 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 
 ---
 
+## 2026-04-18 — Session 17: Humanize AI Resume Page + Python Developer Overhaul
+
+### Data Pulled
+- [x] GA4 analytics data → `ga4_data.json` — 52 sessions, homepage 2 clicks
+- [x] GSC data → `gsc_data.json` — **352 impressions (up from 347, +1.4%)**, 45 pages (+2), 2 clicks
+- [x] Trends data → `trends_data.json` — "humanize ai" 13,200% rising, "chatgpt resume" UP (60.8 vs 45.2 avg), "teal resume" UP (39.0 vs 30.0 avg)
+
+### Key Findings
+- **Session 15 overhaul working FAST:** `/skills/digital-marketing` jumped 36i→45i (+25%) in just 2 days post-overhaul. Pattern confirmed.
+- **`/ats/lever` root cause confirmed:** Navigational intent trap. 65i at pos 8.0, 0 clicks. Users searching "Lever" navigate to lever.co. Content-focused page cannot win CTR for branded navigational queries. Patience for informational query rankings from Session 8 overhaul.
+- **New indexed pages:** `/cv-vs-resume` (1i at pos 78), `resume-bullets/machine-learning` (1i), `resume-bullets/python-developer` (1i)
+- **Python developer growing:** 10i at pos 67.5 (was 9i in Session 16)
+- **"humanize ai" at 13,200% rising** — biggest non-Wobo trend signal, no competitor has claimed it
+
+### Changes Made
+
+#### 1. "How to Humanize Your AI Resume" Page (HIGH IMPACT — big bet of session)
+**Why:** 13,200% rising signal. Users creating AI resumes need to humanize them — WadeCV's tailoring IS the humanization tool. First-mover on this query cluster.
+
+**Files created:**
+- `frontend/src/app/(resources)/humanize-ai-resume/page.tsx`
+  - 7 AI-sign detection cards (example quotes for each pattern)
+  - 7 technique cards (Why/How/Before/After examples for each technique)
+  - New "humanize" InlineCta variant mid-page
+  - "Can ATS detect AI?" section (detailed)
+  - "How WadeCV humanizes through tailoring" section
+  - 8 FAQ entries with FAQPage + Article JSON-LD
+  - datePublished/dateModified: 2026-04-18
+
+**Files changed:**
+- `frontend/src/components/seo/inline-cta.tsx` — added "humanize" variant
+- `frontend/src/app/sitemap.ts` — added `/humanize-ai-resume` at priority 0.9
+- `frontend/src/components/seo/cross-category-links.tsx` — added to CATEGORY_HUBS (~170 new internal links)
+
+#### 2. Python Developer Skills Overhaul (HIGH IMPACT)
+**Why:** 10i at pos 67.5, growing, queued since Session 16. Same playbook as Session 15 which already shows +25% in 2 days.
+
+**File changed:** `frontend/content/seo/skills.json` — `python-developer` entry
+- Skill clusters: 4 → 7 (added Data Engineering, Cloud & Serverless, Code Quality)
+- Cluster items: ~31 → 90+ (LangChain, LlamaIndex, Hugging Face, Polars, Prefect, Dagster, Pinecone, pyright, Ruff added)
+- Bullet examples: 3 → 12 (all domains, junior to lead level)
+- Body: 356 → 2,225 chars
+- FAQ: 1 → 8
+- commonMistakes: 3 → 8
+
+#### 3. Build verified
+- `npm run build`: **186 static pages** (up from 184), 0 errors, `/humanize-ai-resume` confirmed
+
+### Not Yet Done (For Future Sessions)
+- [ ] Monitor `/humanize-ai-resume` indexing (2026-04-23+)
+- [ ] Monitor `/skills/python-developer` position lift from today's overhaul (2026-04-23+)
+- [ ] Monitor `/skills/digital-marketing` continuing to lift (Session 15, 2026-04-23+)
+- [ ] Monitor Session 15 customer-service and accountant overhuals (2026-04-23+)
+- [ ] Monitor Session 14 career-change new entries for indexing (2026-04-23+)
+- [ ] Monitor `/wadecv-vs-claude` indexing (2026-04-23+)
+- [ ] Monitor `/wadecv-vs-enhancv` indexing (2026-04-23+)
+- [ ] Monitor `/wadecv-vs-aiapply`, `/wadecv-vs-rezi`, `/wadecv-vs-flowcv`, `/wadecv-vs-wobo`, `/wadecv-vs-teal` indexing (2026-04-23+)
+- [ ] **Investigate `/ats/lever` informational query rankings after Session 8 overhaul** — check if "how to pass lever ats" type queries are appearing (2026-04-22+)
+- [ ] Apply overhaul pattern to `/skills/operations-manager` (6 impr, pos 77.2) — next candidate
+- [ ] Apply overhaul pattern to `/skills/executive-assistant` (4 impr, pos 90.5) — next candidate
+- [ ] Consider UK-specific landing page ("cv builder free uk" +130% still rising)
+- [ ] Consider ATS Resume Checker content page ("ats resume checker" signal from Session 16 — not confirmed in today's trends but worth monitoring)
+- [ ] Monitor listicle position — at pos 8.3, 3 impr
+- [ ] Monitor signup events in GA4 — InlineCta added 4 days ago, no signups yet
+- [ ] Consider operations-manager, executive-assistant cluster completions next
+- [ ] Investigate why `/wadecv-vs-teal` still NOT indexed after 12 days
+
+---
+
 ## 2026-04-17 — Session 16: WadeCV vs Claude AI Comparison (+500% New Rising Signal)
 
 ### Data Pulled

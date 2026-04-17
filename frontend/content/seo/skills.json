@@ -1670,83 +1670,193 @@
   },
   {
     "slug": "python-developer",
-    "title": "Skills for Python Developer Resume",
-    "metaDescription": "Python skills to list on your resume in 2026. Framework clusters, ATS keywords, and impact-driven bullet examples for backend, data, and automation Python roles.",
-    "intro": "Python is the most in-demand programming language across web development, data engineering, ML, and DevOps automation. Employers want to see specific frameworks and libraries alongside real projects. This guide covers the Python skill clusters that appear most often in job descriptions.",
+    "title": "Python Developer Skills for Your Resume or CV (50+ Examples for 2026)",
+    "metaDescription": "Python skills to list on your resume in 2026: 50+ specific frameworks, tools, and keywords across web, data, ML, DevOps, and AI. ATS-optimised bullet examples for junior to senior Python roles.",
+    "intro": "Python is the most in-demand programming language across web development, data engineering, machine learning, DevOps automation, and AI integrations. Employers want to see specific frameworks and libraries alongside real projects \u2014 not just 'Python' as a bullet point. This guide covers the Python skill clusters that appear most frequently in job descriptions, with quantified bullet examples and common resume mistakes to avoid.",
     "skillClusters": [
       {
-        "name": "Web & APIs",
+        "name": "Web Frameworks & APIs",
         "items": [
           "FastAPI",
           "Django",
           "Flask",
+          "Starlette",
+          "Litestar",
           "REST APIs",
           "GraphQL",
-          "Pydantic",
-          "SQLAlchemy",
-          "Celery"
+          "gRPC",
+          "WebSockets",
+          "Pydantic v2",
+          "SQLAlchemy 2.0",
+          "Alembic",
+          "Celery",
+          "Redis Queue"
         ]
       },
       {
-        "name": "Data & ML",
+        "name": "Data Engineering & Pipelines",
         "items": [
+          "Apache Airflow",
+          "Prefect",
+          "Dagster",
+          "dbt",
+          "Apache Spark (PySpark)",
           "Pandas",
+          "Polars",
           "NumPy",
+          "Apache Kafka",
+          "SQLAlchemy ORM",
+          "Great Expectations",
+          "Delta Lake",
+          "Apache Iceberg"
+        ]
+      },
+      {
+        "name": "Machine Learning & AI",
+        "items": [
           "scikit-learn",
           "PyTorch",
-          "TensorFlow",
-          "Jupyter",
-          "Matplotlib",
-          "Seaborn"
+          "TensorFlow / Keras",
+          "Hugging Face Transformers",
+          "LangChain",
+          "LlamaIndex",
+          "OpenAI API",
+          "Anthropic API",
+          "MLflow",
+          "Weights & Biases",
+          "Optuna",
+          "ONNX",
+          "Ray"
         ]
       },
       {
-        "name": "Infrastructure & automation",
+        "name": "Infrastructure & DevOps",
         "items": [
           "Docker",
           "Kubernetes",
-          "Airflow",
-          "AWS Lambda",
-          "Terraform (Python CDK)",
-          "CI/CD",
+          "AWS Lambda (Python CDK)",
+          "Terraform (CDKTF)",
+          "GitHub Actions",
+          "CircleCI",
+          "Ansible",
           "pytest",
-          "asyncio"
+          "Hypothesis",
+          "asyncio",
+          "multiprocessing",
+          "mypy",
+          "Ruff / Black"
         ]
       },
       {
-        "name": "Databases & storage",
+        "name": "Databases & Storage",
         "items": [
           "PostgreSQL",
           "MySQL",
-          "Redis",
+          "SQLite",
           "MongoDB",
+          "Redis",
           "Elasticsearch",
-          "SQLAlchemy ORM",
-          "Alembic"
+          "Snowflake (Python connector)",
+          "BigQuery",
+          "DynamoDB (boto3)",
+          "Pinecone / Weaviate (vector DBs)"
+        ]
+      },
+      {
+        "name": "Cloud & Serverless",
+        "items": [
+          "AWS (EC2, S3, Lambda, SQS, RDS)",
+          "GCP (Cloud Run, Cloud Functions)",
+          "Azure (App Service, Functions, AKS)",
+          "boto3",
+          "google-cloud-python",
+          "Serverless Framework",
+          "AWS SAM"
+        ]
+      },
+      {
+        "name": "Code Quality & Testing",
+        "items": [
+          "pytest",
+          "unittest",
+          "pytest-asyncio",
+          "factory_boy",
+          "Faker",
+          "coverage.py",
+          "mypy",
+          "pyright",
+          "Ruff",
+          "Black",
+          "isort",
+          "pre-commit hooks",
+          "Bandit (security)"
         ]
       }
     ],
     "bulletExamples": [
-      "Built a FastAPI microservice processing 10K requests/second with sub-20ms p99 latency; deployed on Kubernetes with auto-scaling and blue/green deployments.",
-      "Wrote automated ETL pipeline in Python/Airflow ingesting 50GB/day from 12 sources into PostgreSQL; reduced analyst data prep time from 3 hours to 5 minutes.",
-      "Refactored legacy Django monolith into async FastAPI services; improved throughput 4x and reduced server costs by $40K/year."
+      "Built a FastAPI microservice processing 12K requests/second with sub-20ms p99 latency; deployed on Kubernetes with HPA auto-scaling and zero-downtime blue/green deployments.",
+      "Wrote automated ETL pipeline in Python/Airflow ingesting 50GB/day from 15 sources into Snowflake; reduced analyst data-prep time from 3 hours to 4 minutes.",
+      "Refactored legacy Django monolith into async FastAPI services; improved throughput 4\u00d7 and cut AWS spend by $42K/year through right-sized ECS tasks.",
+      "Fine-tuned Llama 3 on internal support tickets using Hugging Face PEFT/LoRA; deployed via FastAPI to handle 800+ support queries/day with 91% resolution accuracy, reducing Tier-1 ticket volume by 40%.",
+      "Built LangChain-powered RAG pipeline over 200K internal documents (Pinecone + OpenAI embeddings); reduced average research time for analysts from 45 min to 3 min.",
+      "Designed dbt + Airflow data warehouse on BigQuery (8TB, 120+ models); enabled self-serve analytics for 35 stakeholders and eliminated 6 ad-hoc SQL requests/week.",
+      "Migrated monolithic PostgreSQL schema (22 tables, 50M rows) to multi-tenant architecture with Alembic migrations; achieved zero-downtime deploy with <2ms query regression.",
+      "Led backend team of 5 engineers to ship Python/FastAPI core platform from 0 to production in 11 weeks; service now handles 2M API calls/day with 99.95% uptime.",
+      "Wrote pytest suite covering 94% of business logic (620 tests); integrated with GitHub Actions CI, cutting regression escapes from 4/month to 0 in 6 months.",
+      "Built real-time fraud detection pipeline with PySpark on Databricks, processing 4M events/hour; reduced false-positive rate from 12% to 3.1%, saving $2.8M/year in manual review costs.",
+      "Developed Python CLI tool (Click + Rich) to automate infra provisioning across 3 AWS accounts; reduced onboarding time for new engineers from 2 days to 90 minutes.",
+      "Integrated OpenAI Assistants API into Django app; built threaded conversation engine with Celery task queue and Redis caching, serving 8K active users with <500ms median response."
     ],
-    "body": "Python developer resumes must show the domain (web, data, ML, DevOps) alongside framework fluency. Don't just list libraries \u2014 show what you built with them and at what scale. Test coverage and code quality habits (pytest, type hints, CI) signal senior-level engineering. WadeCV can tailor your Python skills to each role's specific stack and domain focus.",
+    "body": "Python developer resumes must communicate three things clearly: your domain specialisation (web, data, ML, DevOps, AI), your framework depth, and your engineering maturity.\n\nDomain first. Python spans too many disciplines for a generic list to be useful. Backend web developers need FastAPI/Django/Flask front-and-centre. Data engineers lead with Airflow, dbt, PySpark, and cloud connectors. ML engineers show PyTorch/TensorFlow plus MLflow/W&B for experiment tracking. DevOps/platform engineers feature Docker, Kubernetes, Terraform CDK, and CI tooling. Structure your skills section to match your primary domain \u2014 recruiters scan for category-level signals before reading individual tools.\n\nFramework depth over breadth. Listing 30 libraries without context signals surface-level familiarity. Pair each major framework with an achievement: what you built, at what scale, with what outcome. 'FastAPI (built auth service handling 8K RPM at 12ms p99)' is worth more than a list of 10 framework names.\n\nEngineering maturity signals. Senior engineers demonstrate type safety (mypy, pyright), testing coverage (pytest, factory_boy, Hypothesis), code quality automation (Ruff, Black, pre-commit), and asynchronous programming (asyncio, async/await). Include at least one bullet that references your testing or code quality practices \u2014 this differentiates mid-level from senior candidates.\n\nAI and LLM fluency is now a differentiator. In 2026, Python developers who can integrate LLMs \u2014 LangChain, LlamaIndex, Hugging Face, OpenAI/Anthropic APIs \u2014 command a meaningful salary premium. If you have shipped anything with an LLM API, RAG pipeline, or fine-tuned model, it belongs prominently on your resume.\n\nUK note: Python developer roles in the UK often specify 'Python developer' or 'Python engineer' rather than 'software engineer'. Mirror the exact job-title language in your summary. Mentioning GDPR-compliant data handling or SOC 2 experience is also valued in UK/EU financial and healthtech roles.\n\nWadeCV can tailor your Python skills section to match the specific domain, framework stack, and seniority level of each role you apply for \u2014 including rewriting your bullets to mirror the exact language in the job description.",
     "relatedSlugs": [
       "software-engineer",
       "data-analyst",
-      "machine-learning"
+      "machine-learning",
+      "cloud-computing"
     ],
     "faq": [
       {
         "question": "Should I list all Python frameworks I know on my resume?",
-        "answer": "List the frameworks relevant to the role you're applying for. A web role wants FastAPI/Django/Flask; a data role wants Pandas/NumPy/Spark; an ML role wants PyTorch/scikit-learn. Tailoring your skills section to each job description is more effective than exhaustive lists."
+        "answer": "List the frameworks most relevant to the role you are applying for. A backend web role wants FastAPI/Django/Flask; a data engineering role wants Airflow/dbt/PySpark/Pandas; an ML role wants PyTorch/scikit-learn/Hugging Face. Including frameworks you used only briefly \u2014 or only know from tutorials \u2014 wastes space and can backfire in technical interviews. Tailor your skills section to each application."
+      },
+      {
+        "question": "What Python skills are most in demand in 2026?",
+        "answer": "Based on current job postings: FastAPI and async Python for backend web; Airflow, dbt, and Polars for data engineering; PyTorch and Hugging Face Transformers for ML; LangChain, LlamaIndex, and OpenAI/Anthropic API integration for AI-adjacent roles; Kubernetes and AWS Lambda for platform/DevOps. Type safety (mypy/pyright) and testing (pytest) are increasingly expected at senior level across all domains."
+      },
+      {
+        "question": "How should a junior Python developer write their resume?",
+        "answer": "Focus on projects over professional experience if your work history is limited. For each project, name the specific frameworks used, what problem it solved, and any measurable outcome (e.g., response time, data volume processed, users served). Include your GitHub profile. Show testing habits (pytest) and code quality practices (Black, Ruff, type hints) \u2014 these signal engineering maturity above what most junior candidates demonstrate."
+      },
+      {
+        "question": "What is the difference between a Python developer and a software engineer resume?",
+        "answer": "A Python developer resume leads with Python-specific frameworks and domain tools. A software engineer resume is more language-agnostic, emphasising system design, architecture, and cross-language experience. For Python-specific job postings, use 'Python Developer' or 'Python Engineer' in your summary and lead with Python frameworks. For broader engineering roles, emphasise architectural decisions and systems-level thinking alongside your Python work."
+      },
+      {
+        "question": "Should Python developers include their test coverage on their resume?",
+        "answer": "Yes, if it is strong \u2014 85%+ coverage is a meaningful signal. Mentioning your testing approach (pytest, factory_boy, Hypothesis for property-based testing) and the coverage percentage demonstrates engineering rigour that differentiates mid-level from senior candidates. If your team does not track coverage formally, reference your approach: 'wrote unit and integration tests for all business logic; maintained pre-commit hooks with Ruff and Black'."
+      },
+      {
+        "question": "How do I list Python on a UK CV?",
+        "answer": "The same principles apply: lead with your domain (web, data, ML), list specific frameworks rather than just Python, and include quantified bullet examples. UK Python roles often list Django and Flask more than FastAPI (though FastAPI is growing). For data engineering roles in the UK, dbt + BigQuery/Snowflake and Airflow are the standard stack. UK employers in finance and healthtech particularly value GDPR-compliant data handling and SOC 2 / ISO 27001 awareness."
+      },
+      {
+        "question": "How do I write Python resume bullets if I have no professional experience?",
+        "answer": "Use your personal projects and open-source contributions as experience. Structure each project bullet like a professional bullet: state what you built, the tech stack, and a measurable outcome. 'Built a FastAPI REST API with PostgreSQL backend, dockerised and deployed to Fly.io, serving 200 requests/day' is more effective than 'worked on a personal Python project'. Contributing to an open-source Python project \u2014 even small documentation fixes \u2014 is worth mentioning as it shows engagement with the ecosystem."
+      },
+      {
+        "question": "What Python AI and LLM skills should I add to my resume?",
+        "answer": "The most in-demand LLM/AI Python skills in 2026: LangChain and LlamaIndex for RAG and agent pipelines; Hugging Face Transformers and PEFT/LoRA for fine-tuning; OpenAI and Anthropic SDK integration (API calls, function calling, tool use, streaming); Pinecone, Weaviate, or pgvector for vector databases; MLflow or Weights & Biases for experiment tracking; and asyncio-based streaming response handling. Even one shipped project using any of these is worth highlighting prominently."
       }
     ],
     "commonMistakes": [
-      "Listing 'Python' without any frameworks or domain context",
-      "No scale or performance metrics on projects",
-      "Omitting testing, typing, or code quality signals"
+      "Listing 'Python' as the only programming language entry with no frameworks",
+      "Using domain-agnostic bullets ('worked on backend' vs 'built FastAPI service handling 8K RPM')",
+      "No scale or performance metrics on any project",
+      "Listing frameworks across multiple domains without indicating primary expertise",
+      "Omitting testing, type checking, or code quality signals \u2014 this is expected at senior level",
+      "Not mentioning async/await or concurrency experience for backend or data roles",
+      "Using years-of-experience framing instead of achievement bullets",
+      "Failing to tailor the skills section to each role's specific domain and stack"
     ]
   },
   {

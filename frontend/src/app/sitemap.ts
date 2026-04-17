@@ -46,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/wadecv-vs-enhancv`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/wadecv-vs-claude`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/cv-vs-resume`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/humanize-ai-resume`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.9 },
   ];
 
   const jobUrls = getJobs().map((j) => ({

@@ -355,9 +355,9 @@
     {
       "page": "https://wadecv.com/",
       "clicks": 2,
-      "impressions": 10,
-      "ctr": 20.0,
-      "position": 4.6
+      "impressions": 9,
+      "ctr": 22.22,
+      "position": 5
     },
     {
       "page": "http://wadecv.com/",
@@ -607,9 +607,9 @@
     {
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 43,
+      "impressions": 45,
       "ctr": 0,
-      "position": 70.4
+      "position": 69.5
     },
     {
       "page": "https://wadecv.com/skills/executive-assistant",
@@ -649,9 +649,9 @@
     {
       "page": "https://wadecv.com/skills/python-developer",
       "clicks": 0,
-      "impressions": 9,
+      "impressions": 10,
       "ctr": 0,
-      "position": 66.4
+      "position": 67.5
     },
     {
       "page": "https://wadecv.com/wadecv-vs-jobscan",
@@ -1105,9 +1105,9 @@
       "query": "digital marketing cv",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 17,
+      "impressions": 18,
       "ctr": 0,
-      "position": 68.8
+      "position": 68.6
     },
     {
       "query": "digital marketing cvs",
@@ -1145,9 +1145,9 @@
       "query": "digital marketing skills resume",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 5,
+      "impressions": 6,
       "ctr": 0,
-      "position": 46.4
+      "position": 44.7
     },
     {
       "query": "executive assistant resume skills",
@@ -1334,6 +1334,14 @@
       "position": 68
     },
     {
+      "query": "python resume",
+      "page": "https://wadecv.com/skills/python-developer",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 77
+    },
+    {
       "query": "python skills resume",
       "page": "https://wadecv.com/skills/python-developer",
       "clicks": 0,
@@ -1460,14 +1468,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 99
-    },
-    {
-      "query": "skills cv customer service",
-      "page": "https://wadecv.com/skills/customer-service",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 85
     }
   ],
   "daily_trend_90d": [
@@ -1764,15 +1764,22 @@
       "impressions": 15,
       "ctr": 0,
       "position": 55.3
+    },
+    {
+      "date": "2026-04-16",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 59.7
     }
   ],
   "devices_30d": [
     {
       "device": "DESKTOP",
       "clicks": 1,
-      "impressions": 332,
+      "impressions": 334,
       "ctr": 0.3,
-      "position": 55.7
+      "position": 55.9
     },
     {
       "device": "MOBILE",
@@ -1795,7 +1802,7 @@
       "clicks": 1,
       "impressions": 172,
       "ctr": 0.58,
-      "position": 55.9
+      "position": 56.3
     },
     {
       "country": "are",
@@ -1870,14 +1877,14 @@
     {
       "country": "fra",
       "clicks": 0,
-      "impressions": 4,
+      "impressions": 5,
       "ctr": 0,
-      "position": 27.2
+      "position": 29
     },
     {
       "country": "gbr",
       "clicks": 0,
-      "impressions": 96,
+      "impressions": 97,
       "ctr": 0,
       "position": 70.9
     },

@@ -15,6 +15,7 @@ const CATEGORY_HUBS: CrossLink[] = [
     label: "Best AI Resume Builders 2026",
   },
   { href: "/cv-vs-resume", label: "CV vs Resume Guide" },
+  { href: "/humanize-ai-resume", label: "How to Humanize Your AI Resume" },
 ];
 
 const TOOL_COMPARISONS: CrossLink[] = [
