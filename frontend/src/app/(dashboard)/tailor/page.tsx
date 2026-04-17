@@ -3,7 +3,7 @@
 import { useState, useCallback, Suspense, useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "@/lib/auth";
-import { api, ApiError, CVGenerationProgressEvent, CVGenerationStage } from "@/lib/api";
+import { api, ApiError, StreamingNotAvailableError, CVGenerationProgressEvent, CVGenerationStage } from "@/lib/api";
 import {
   trackCvDownload,
   trackCvImportFailure,
@@ -1106,26 +1106,70 @@ function TailorContent() {
 
   const handleRegenerateForJob = async () => {
     if (!token || !jobId) return;
+    let usedStreaming = false;
+    const previousStep = step;
     setLoading(true);
+    setStep("generate");
+    setGenerationProgress(5);
+    setGenerationStage("start");
+    setGenerationEvents([]);
     try {
-      const result = await api.generateCV(
-        {
-          job_id: jobId,
-        },
-        token,
-      );
-      setCvId(result.id);
-      setCvData(result.generated_cv_data);
-      setFitAnalysis(result.fit_analysis ?? null);
-      setGapFeedback({});
-      setCoverLetterContent("");
-      setCoverLetterGenerated(false);
-      await refreshUser();
-      toast.success("CV regenerated for this application (no credits used).");
+      const result = await (async () => {
+        try {
+          return await api.generateCVStream(
+            { job_id: jobId },
+            token,
+            (event: CVGenerationProgressEvent) => {
+              usedStreaming = true;
+              if (typeof event.progress === "number") {
+                setGenerationProgress(event.progress);
+              }
+              if (event.stage && event.stage !== "error") {
+                setGenerationStage(event.stage);
+              }
+              setGenerationEvents((prev) => [
+                ...prev,
+                { id: prev.length, stage: event.stage, message: event.message },
+              ]);
+
+              if (event.type === "done" && event.result) {
+                const final = event.result;
+                setCvId(final.id);
+                setCvData(final.generated_cv_data);
+                setFitAnalysis(final.fit_analysis as FitAnalysis | null);
+                setGapFeedback({});
+                setCoverLetterContent("");
+                setCoverLetterGenerated(false);
+                void refreshUser();
+                toast.success("CV regenerated for this application (no credits used).");
+                setStep("edit");
+              }
+            },
+          );
+        } catch (err) {
+          if (err instanceof StreamingNotAvailableError) {
+            return await api.generateCV({ job_id: jobId }, token);
+          }
+          throw err;
+        }
+      })();
+      if (!usedStreaming) {
+        setCvId(result.id);
+        setCvData(result.generated_cv_data);
+        setFitAnalysis(result.fit_analysis ?? null);
+        setGapFeedback({});
+        setCoverLetterContent("");
+        setCoverLetterGenerated(false);
+        await refreshUser();
+        toast.success("CV regenerated for this application (no credits used).");
+        setStep("edit");
+      }
     } catch (err: unknown) {
       toast.error((err as Error).message || "Regeneration failed");
+      setStep(previousStep);
     } finally {
       setLoading(false);
+      setGenerationStage(null);
     }
   };
 
