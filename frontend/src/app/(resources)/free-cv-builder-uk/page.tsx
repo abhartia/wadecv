@@ -279,13 +279,27 @@ export default function FreeCvBuilderUkPage() {
         WadeCV tailors your existing CV to every UK role you apply for, free
         to start.
       </p>
-      <p className="text-muted-foreground mb-8">
+      <p className="text-muted-foreground mb-6">
         Upload your CV once. Paste a job URL from Indeed, Reed, Totaljobs, or
         LinkedIn. WadeCV analyses the job description, identifies the skill and
         keyword gaps, and rewrites your CV with role-specific language,
         UK-standard formatting, and ATS-optimised structure — in under a
         minute.
       </p>
+
+      <div className="mb-8 rounded-md border border-muted bg-muted/30 p-4 text-xs text-muted-foreground">
+        <strong className="text-foreground">Data residency notice:</strong>{" "}
+        WadeCV is operated from the United States. CV content and account
+        data are stored on Microsoft Azure in the United States (Azure East
+        US region). For UK users, this transfer is lawful under UK GDPR
+        Article 49(1)(b) — necessary for the performance of your contract
+        with WadeCV. You can delete your account and all data at any time.
+        See the{" "}
+        <Link href="/legal/privacy" className="underline">
+          Privacy Policy
+        </Link>{" "}
+        for details on transfer safeguards and your rights.
+      </div>
 
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">

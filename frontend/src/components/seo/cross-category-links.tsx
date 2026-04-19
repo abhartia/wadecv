@@ -38,7 +38,14 @@ type Props = {
 
 export function CrossCategoryLinks({ currentCategory, contextLinks }: Props) {
   const hubs = CATEGORY_HUBS.filter((h) => h.href !== currentCategory);
-  const allLinks = [...(contextLinks ?? []), ...hubs].slice(0, 6);
+  const seen = new Set<string>();
+  const allLinks = [...(contextLinks ?? []), ...hubs]
+    .filter((l) => {
+      if (seen.has(l.href)) return false;
+      seen.add(l.href);
+      return true;
+    })
+    .slice(0, 6);
   const comparisons = TOOL_COMPARISONS.filter(
     (c) => c.href !== currentCategory,
   ).slice(0, 3);
