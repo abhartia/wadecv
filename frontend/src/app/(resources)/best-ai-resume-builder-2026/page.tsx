@@ -343,7 +343,7 @@ export default function BestAiResumeBuilderPage() {
       "@type": "WebPage",
       "@id": `${BASE_URL}/best-ai-resume-builder-2026`,
     },
-    dateModified: "2026-04-17",
+    dateModified: "2026-04-19",
   };
 
   const faqJsonLd = {
@@ -667,8 +667,16 @@ export default function BestAiResumeBuilderPage() {
             <span className="font-medium text-foreground">
               For diagnosing ATS failures on an existing resume:
             </span>{" "}
-            Jobscan. Expensive, but the keyword match analysis is the most
-            detailed available.
+            Jobscan is the best-known paid option. For a free alternative that
+            includes the tailored rewrite,{" "}
+            <Link
+              href="/ats-resume-checker"
+              className="underline underline-offset-2"
+            >
+              WadeCV&apos;s ATS Resume Checker
+            </Link>{" "}
+            scores your resume against any job URL for free on signup — no
+            credit card required.
           </p>
           <p>
             <span className="font-medium text-foreground">

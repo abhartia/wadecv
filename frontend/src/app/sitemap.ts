@@ -48,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/cv-vs-resume`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/humanize-ai-resume`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/free-cv-builder-uk`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/ats-resume-checker`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.9 },
   ];
 
   const jobUrls = getJobs().map((j) => ({

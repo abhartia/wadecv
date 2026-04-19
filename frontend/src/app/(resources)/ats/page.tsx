@@ -13,7 +13,7 @@ export default function AtsIndexPage() {
   return (
     <article>
       <h1 className="text-3xl font-bold mb-4">ATS Resume Guides</h1>
-      <div className="text-muted-foreground mb-8 space-y-4">
+      <div className="text-muted-foreground mb-6 space-y-4">
         <p>
           Many employers use applicant tracking systems (ATS) to screen resumes before a human sees them. How your resume is formatted and which keywords it contains can determine whether you make it through. Each ATS parses and ranks applications slightly differently, so a one-size-fits-all resume often underperforms.
         </p>
@@ -22,6 +22,18 @@ export default function AtsIndexPage() {
         </p>
         <p>
           A small amount of format and keyword tuning can significantly improve your chances of getting in front of a recruiter.
+        </p>
+      </div>
+      <div className="mb-8 rounded-lg border border-primary/30 bg-primary/5 p-4">
+        <p className="text-sm">
+          <strong className="text-foreground">
+            Want an instant ATS score for a specific job?
+          </strong>{" "}
+          <Link href="/ats-resume-checker" className="underline font-medium">
+            Use the free WadeCV ATS Resume Checker
+          </Link>{" "}
+          — paste a job URL, upload your resume, and get a score with keyword
+          gaps and parsing warnings in 30 seconds.
         </p>
       </div>
       <ul className="space-y-3">

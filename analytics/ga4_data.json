@@ -3,8 +3,8 @@
     "activeUsers": "14",
     "sessions": "53",
     "screenPageViews": "103",
-    "averageSessionDuration": "656.54089656603776",
-    "bounceRate": "0.45283018867924529",
+    "averageSessionDuration": "656.63119907547184",
+    "bounceRate": "0.43396226415094341",
     "newUsers": "12"
   },
   "traffic_summary_prev_30d": {
@@ -154,8 +154,8 @@
       "pagePath": "/",
       "screenPageViews": "40",
       "activeUsers": "14",
-      "averageSessionDuration": "394.79305610256409",
-      "bounceRate": "0.38461538461538464"
+      "averageSessionDuration": "394.91577489743588",
+      "bounceRate": "0.358974358974359"
     },
     {
       "pagePath": "/tailor",
@@ -242,8 +242,8 @@
       "sessions": "10",
       "activeUsers": "6",
       "screenPageViews": "17",
-      "avgDuration": "1321.9196931000001",
-      "bounceRate": "0.5"
+      "avgDuration": "1322.3982964000002",
+      "bounceRate": "0.4"
     },
     {
       "channel": "Paid Search",
@@ -251,14 +251,6 @@
       "activeUsers": "5",
       "screenPageViews": "5",
       "avgDuration": "0",
-      "bounceRate": "1"
-    },
-    {
-      "channel": "Unassigned",
-      "sessions": "3",
-      "activeUsers": "2",
-      "screenPageViews": "1",
-      "avgDuration": "2.579628",
       "bounceRate": "1"
     },
     {
@@ -275,6 +267,14 @@
       "activeUsers": "2",
       "screenPageViews": "2",
       "avgDuration": "0",
+      "bounceRate": "1"
+    },
+    {
+      "channel": "Unassigned",
+      "sessions": "1",
+      "activeUsers": "1",
+      "screenPageViews": "1",
+      "avgDuration": "7.738884",
       "bounceRate": "1"
     }
   ],
@@ -305,7 +305,7 @@
       "device": "mobile",
       "sessions": "8",
       "activeUsers": "6",
-      "bounceRate": "0.625"
+      "bounceRate": "0.5"
     }
   ],
   "countries": [
@@ -442,8 +442,8 @@
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
       "screenPageViews": "40",
       "activeUsers": "14",
-      "avgDuration": "394.79305610256409",
-      "bounceRate": "0.38461538461538464"
+      "avgDuration": "394.91577489743588",
+      "bounceRate": "0.358974358974359"
     },
     {
       "pagePath": "/tailor",
@@ -543,14 +543,14 @@
       "activeUsers": "6"
     },
     {
-      "source": "(not set)",
-      "sessions": "3",
-      "activeUsers": "2"
-    },
-    {
       "source": "m.facebook.com",
       "sessions": "2",
       "activeUsers": "2"
+    },
+    {
+      "source": "(not set)",
+      "sessions": "1",
+      "activeUsers": "1"
     }
   ]
 }

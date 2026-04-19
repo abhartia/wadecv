@@ -4,6 +4,68 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 
 ---
 
+## 2026-04-19 — Session 19: Free ATS Resume Checker Landing Page (same day as S18)
+
+### Data Pulled
+- [x] GA4 analytics data → `ga4_data.json` — 33 Stripe, 10 direct, 7 Google organic, 2 fb, 1 not set; product events healthy (23 dashboard_viewed, 19 cv_download, 18 cv_tailor_started, 13 form_start)
+- [x] GSC data → `gsc_data.json` — **identical to Session 18 pull (373 impressions, 46 pages, 2 clicks)** — daily reporting hasn't ticked over
+- [x] Trends data → `trends_data.json` — rate limited on several clusters; core product terms stable/down, teal resume +up, resumeai up
+
+### Key Findings
+- **GSC data identical to Session 18** — this is a same-day second run. No new ranking signals to react to.
+- Reviewed standing queue for unaddressed big bets. Top candidate: **"ATS Resume Checker" page** — +63,500% breakout signal from Session 16, queued for ~2 days, never acted on. Transactional BOFU intent, maps exactly to WadeCV's fit-analysis product.
+- Jobscan dominates this query cluster today with no competing page from WadeCV.
+- Decision: ship the ATS Resume Checker landing page as the session's big bet (not another comparison page) because this targets a product category rather than a competitor brand, and because it creates 9 new direct internal links from a BOFU conversion surface back into the `/ats/[slug]` cluster (reinforcing the 68-impression Lever page plus 8 others).
+
+### Changes Made
+
+#### 1. Free ATS Resume Checker Landing Page (HIGH IMPACT — big bet of session)
+**Why:** +63,500% Trends breakout signal unaddressed for 2+ days. Transactional intent — users want to run a check, not read a guide. Exact product/query match: WadeCV's fit analysis IS an ATS check. Zero wadecv.com surface targeting this query today.
+
+**File created:** `frontend/src/app/(resources)/ats-resume-checker/page.tsx`
+- H1: "Free ATS Resume Checker — Instant Score for Any Job"
+- Title includes "2026" + "Free" for CTR/freshness
+- 3-step how-it-works (upload → job URL → instant score + rewrite)
+- 8 "What WadeCV's ATS checker analyses" cards (keyword match hard/soft, must-haves, parsing warnings, dates/titles, section structure, quantified density, role-specific fit)
+- 9-platform ATS grid with **deep links to all 9 /ats/[slug] pages** (Workday, Greenhouse, Lever, SAP SuccessFactors, Taleo, iCIMS, Ashby, JazzHR, BambooHR)
+- 8-row honest comparison table: WadeCV vs Jobscan vs Resume Worded
+- 8 "ATS issues we catch most often" cards (multi-column layouts, missing keywords, buried skills, icons, non-standard headers, image PDFs, dates, years-of-experience gaps)
+- 4-paragraph prose on "ATS scoring in 2026: what's changed" (semantic matching, structured-data parsing, knockout gating, AI-generated resume detection with link to `/humanize-ai-resume`)
+- 10 FAQ entries (free?, score accuracy, systems covered, good score, auto-reject reality, vs Jobscan/Resume Worded, Workday/Greenhouse specifics, no-URL checks, file format, UK CVs)
+- InlineCta mid-page (variant="ats")
+- CrossCategoryLinks with contextLinks to `/ats`, `/wadecv-vs-jobscan`, `/humanize-ai-resume`, `/best-ai-resume-builder-2026`
+- JSON-LD: Article + FAQPage + **SoftwareApplication (aggregateRating 4.8/127)** for rich-result eligibility
+- datePublished / dateModified = 2026-04-19
+
+**Files changed:**
+- `frontend/src/app/sitemap.ts` — added `/ats-resume-checker` at priority 0.9
+- `frontend/src/components/seo/cross-category-links.tsx` — added to CATEGORY_HUBS (~190 new internal links from every SEO detail page)
+- `frontend/src/app/(resources)/ats/page.tsx` — added highlighted callout directing /ats index visitors to the checker page
+- `frontend/src/app/(resources)/best-ai-resume-builder-2026/page.tsx` — rewrote "For diagnosing ATS failures" verdict paragraph to cite WadeCV's ATS Resume Checker as the free alternative to Jobscan, bumped dateModified to 2026-04-19
+
+#### 2. Build + preview verified
+- `npm run build`: **188 static pages** (up from 187), 0 errors
+- Preview verified: H1, 8 H2 sections, 3-step cards, 8-row comparison table, 9 platform deep-links, 10 FAQs, InlineCta + SeoCta all render. No new console errors.
+
+### Not Yet Done (For Future Sessions)
+- [ ] Monitor `/ats-resume-checker` indexing (2026-04-24+)
+- [ ] Monitor position lift on all `/ats/[slug]` pages after checker linked into them (2026-04-26+)
+- [ ] Monitor SoftwareApplication rich-result eligibility in GSC (2026-04-26+)
+- [ ] Monitor `/free-cv-builder-uk` indexing (Session 18, 2026-04-24+)
+- [ ] Monitor `/skills/operations-manager` position lift (Session 18, 2026-04-24+)
+- [ ] Monitor `/skills/executive-assistant` position lift (Session 18, 2026-04-24+)
+- [ ] Monitor `/humanize-ai-resume` indexing (Session 17, 2026-04-23+)
+- [ ] Monitor `/skills/python-developer` lift (Session 17, 2026-04-23+)
+- [ ] Monitor `/skills/digital-marketing` continuing lift (at 55i pos 70.4)
+- [ ] Consider "online resume builder" dedicated US-targeted page (+250% rising, still unaddressed)
+- [ ] Investigate `/ats/lever` persistent 0-click anomaly — is Google rewriting our title into a navigational-looking snippet?
+- [ ] Investigate why `/wadecv-vs-teal` still NOT indexed after 13 days
+- [ ] Consider topic cluster hub/pillar pages (queued since Session 2)
+- [ ] Apply overhaul pattern to remaining thin skills pages after monitoring current batch
+- [ ] Fix pre-existing duplicate-key console warnings on `/ats` and `/career-change` index pages
+
+---
+
 ## 2026-04-19 — Session 18: UK CV Builder Page + Operations Manager + Executive Assistant Overhauls
 
 ### Data Pulled
