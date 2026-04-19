@@ -4,6 +4,88 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 
 ---
 
+## 2026-04-19 — Session 18: UK CV Builder Page + Operations Manager + Executive Assistant Overhauls
+
+### Data Pulled
+- [x] GA4 analytics data → `ga4_data.json` — 7 organic Google sessions, 2 clicks on homepage
+- [x] GSC data → `gsc_data.json` — **373 impressions (up from 352, +5.96%)**, 46 pages (+1), 2 clicks
+- [x] Trends data → `trends_data.json` — wobo ai 88,550%, claude 400%, flowcv 500%, online resume builder 250%
+
+### Key Findings
+- **Digital marketing overhaul velocity confirmed:** 36i → 45i → 55i (+52% in 72h since Session 15 overhaul). Fastest position improvement pattern yet.
+- **Comparison pages indexing:** `/wadecv-vs-jobscan` at 5i pos 55.4 (growing!), `/wadecv-vs-zety` at 3i pos 51.3 — both indexed
+- **UK at 28% of impressions** — consistent across all sessions, no UK-targeted content until today
+- **Operations-manager and executive-assistant** at 6i/77.2 and 4i/90.5 — both queued since Session 15, overhauled today
+- **Sunday pattern confirmed:** daily impressions ~10 on weekends vs 18-23 on weekdays
+- **Signup events still 0** from organic — volume too low to distinguish from broken instrumentation
+
+### Changes Made
+
+#### 1. Free CV Builder UK Page (HIGH IMPACT — big bet of session, 7-session-queued item)
+**Why:** UK is 28% of all impressions consistently. "cv builder free uk" has been queued since Session 10 (Apr 12). Transactional query with high conversion intent. Zero UK-targeted content existed until today.
+
+**File created:** `frontend/src/app/(resources)/free-cv-builder-uk/page.tsx`
+- UK vs International 5-difference section (CV/resume, 2-page standard, no photo, A4, UK qualifications)
+- 3-step how-it-works for UK workflow
+- 6-feature grid (UK ATS, British English, sector language, job-specific, cover letter, DOCX)
+- 5-ATS employer section: Workday, SAP SuccessFactors, Oracle Taleo, Greenhouse, Lever + named UK employers
+- UK CV format 2026 prose section
+- 8 FAQ with FAQPage + Article JSON-LD
+- InlineCta (uk variant), CrossCategoryLinks, bottom CTA
+- datePublished/dateModified: 2026-04-19
+
+**Files changed:**
+- `frontend/src/components/seo/inline-cta.tsx` — added "uk" variant
+- `frontend/src/app/sitemap.ts` — added `/free-cv-builder-uk` at priority 0.9
+- `frontend/src/components/seo/cross-category-links.tsx` — added to CATEGORY_HUBS (~190 new internal links)
+
+#### 2. Operations Manager Skills Overhaul (HIGH IMPACT)
+**Why:** 6i at pos 77.2, queued since Session 15. Same playbook as digital marketing (+52% in 72h).
+
+**File changed:** `frontend/content/seo/skills.json` — `operations-manager` entry
+- Title: SEO-rewritten
+- Skill clusters: 4 → 7 (added supply chain, project/change management, H&S/compliance)
+- Cluster items: ~27 → 80+ (SAP S/4HANA, NetSuite, PRINCE2, NEBOSH, ISO 9001, WMS/TMS, Power BI, Power Automate)
+- Bullets: 3 → 12
+- Body: 395 → 1,351 chars
+- FAQ: 1 → 8
+- commonMistakes: 3 → 8
+
+#### 3. Executive Assistant Skills Overhaul (HIGH IMPACT)
+**Why:** 4i at pos 90.5, queued since Session 15. Worst-positioned skills page. EA roles are high-volume universally.
+
+**File changed:** `frontend/content/seo/skills.json` — `executive-assistant` entry
+- Title: SEO-rewritten
+- Skill clusters: 3 → 6 (added project co-ordination, board governance, executive operations)
+- Cluster items: ~13 → 65+ (Salesforce, Concur, Asana, DocuSign, Copilot/AI, board packs, AGM, NDA)
+- Bullets: 3 → 12
+- Body: 190 → 1,361 chars
+- FAQ: 0 → 8
+- commonMistakes: 0 → 8
+
+#### 4. Build verified
+- `npm run build`: **187 static pages** (up from 186), 0 errors
+
+### Not Yet Done (For Future Sessions)
+- [ ] Monitor `/free-cv-builder-uk` indexing (2026-04-24+)
+- [ ] Monitor `/skills/operations-manager` position lift from today's overhaul (2026-04-24+)
+- [ ] Monitor `/skills/executive-assistant` position lift from today's overhaul (2026-04-24+)
+- [ ] Monitor `/humanize-ai-resume` indexing (2026-04-23+)
+- [ ] Monitor `/skills/python-developer` position lift from Session 17 overhaul (2026-04-23+)
+- [ ] Monitor `/skills/digital-marketing` continuing to lift — at 55i pos 70.4 (+52% in 72h!) (2026-04-23+)
+- [ ] Monitor `/wadecv-vs-claude` indexing (2026-04-22+)
+- [ ] Monitor `/wadecv-vs-enhancv` indexing (2026-04-23+)
+- [ ] Monitor Session 14 career-change new entries for indexing (2026-04-23+)
+- [ ] Monitor all comparison pages: /wadecv-vs-aiapply, /wadecv-vs-rezi, /wadecv-vs-flowcv, /wadecv-vs-wobo, /wadecv-vs-teal (2026-04-23+)
+- [ ] **Investigate `/ats/lever` informational query rankings after Session 8 overhaul** (2026-04-22+)
+- [ ] Consider "ATS Resume Checker" content page if signal reappears in Trends
+- [ ] Consider "online resume builder" dedicated page (+250% rising signal, not yet addressed)
+- [ ] Monitor signup events in GA4 — InlineCta now on all SEO pages + /free-cv-builder-uk + /humanize-ai-resume
+- [ ] Apply overhaul pattern to remaining thin skills pages after monitoring current batch
+- [ ] Investigate why `/wadecv-vs-teal` still NOT indexed after 13 days
+
+---
+
 ## 2026-04-18 — Session 17: Humanize AI Resume Page + Python Developer Overhaul
 
 ### Data Pulled

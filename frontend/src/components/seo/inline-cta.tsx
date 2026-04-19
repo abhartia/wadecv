@@ -13,7 +13,8 @@ type Variant =
   | "ats"
   | "career-change"
   | "physical-mail"
-  | "humanize";
+  | "humanize"
+  | "uk";
 
 const VARIANT_CONFIG: Record<
   Variant,
@@ -65,6 +66,12 @@ const VARIANT_CONFIG: Record<
     heading: "Humanize your AI resume by tailoring it to each role",
     description:
       "Paste a job URL and WadeCV rewrites your AI-generated draft with real keywords, specific bullets, and language that sounds like you — not a chatbot.",
+    buttonText: "Try it free — no credit card needed",
+  },
+  uk: {
+    heading: "Build a tailored CV for every UK job — free to start",
+    description:
+      "Upload your existing CV, paste a UK job URL, and WadeCV rewrites your CV with role-specific keywords, UK formatting, and ATS-optimised bullets in seconds.",
     buttonText: "Try it free — no credit card needed",
   },
 };

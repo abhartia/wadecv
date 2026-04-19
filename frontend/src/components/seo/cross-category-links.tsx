@@ -16,6 +16,7 @@ const CATEGORY_HUBS: CrossLink[] = [
   },
   { href: "/cv-vs-resume", label: "CV vs Resume Guide" },
   { href: "/humanize-ai-resume", label: "How to Humanize Your AI Resume" },
+  { href: "/free-cv-builder-uk", label: "Free CV Builder for UK Jobs" },
 ];
 
 const TOOL_COMPARISONS: CrossLink[] = [
