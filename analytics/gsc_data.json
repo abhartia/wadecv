@@ -362,7 +362,7 @@
     {
       "page": "https://wadecv.com/ats/lever",
       "clicks": 0,
-      "impressions": 68,
+      "impressions": 66,
       "ctr": 0,
       "position": 8.0
     },
@@ -400,6 +400,13 @@
       "impressions": 1,
       "ctr": 0,
       "position": 3
+    },
+    {
+      "page": "https://wadecv.com/career-change/teacher-to-corporate-training",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
     },
     {
       "page": "https://wadecv.com/career-change/teacher-to-edtech",
@@ -614,9 +621,9 @@
     {
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 55,
+      "impressions": 60,
       "ctr": 0,
-      "position": 70.4
+      "position": 69.8
     },
     {
       "page": "https://wadecv.com/skills/executive-assistant",
@@ -666,6 +673,13 @@
       "impressions": 5,
       "ctr": 0,
       "position": 55.4
+    },
+    {
+      "page": "https://wadecv.com/wadecv-vs-wobo",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 59
     },
     {
       "page": "https://wadecv.com/wadecv-vs-zety",
@@ -1120,9 +1134,9 @@
       "query": "digital marketing cv",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 21,
+      "impressions": 23,
       "ctr": 0,
-      "position": 68.4
+      "position": 67.8
     },
     {
       "query": "digital marketing cvs",
@@ -1160,9 +1174,9 @@
       "query": "digital marketing skills resume",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 9,
       "ctr": 0,
-      "position": 47.9
+      "position": 46.4
     },
     {
       "query": "executive assistant resume skills",
@@ -1248,9 +1262,9 @@
       "query": "marketing cv skills",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 70.5
+      "position": 70.3
     },
     {
       "query": "marketing resume skills",
@@ -1264,9 +1278,9 @@
       "query": "marketing skills for cv",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 99
+      "position": 95
     },
     {
       "query": "marketing skills in cv",
@@ -1785,22 +1799,29 @@
       "impressions": 10,
       "ctr": 0,
       "position": 41.1
+    },
+    {
+      "date": "2026-04-18",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 49.9
     }
   ],
   "devices_30d": [
     {
       "device": "DESKTOP",
       "clicks": 1,
-      "impressions": 357,
+      "impressions": 361,
       "ctr": 0.28,
-      "position": 55.4
+      "position": 55.8
     },
     {
       "device": "MOBILE",
       "clicks": 1,
-      "impressions": 13,
-      "ctr": 7.69,
-      "position": 13.2
+      "impressions": 14,
+      "ctr": 7.14,
+      "position": 13.1
     }
   ],
   "countries_30d": [
@@ -1814,8 +1835,8 @@
     {
       "country": "usa",
       "clicks": 1,
-      "impressions": 180,
-      "ctr": 0.56,
+      "impressions": 181,
+      "ctr": 0.55,
       "position": 56.5
     },
     {
@@ -1898,16 +1919,16 @@
     {
       "country": "fra",
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 7,
       "ctr": 0,
-      "position": 30
+      "position": 30.7
     },
     {
       "country": "gbr",
       "clicks": 0,
-      "impressions": 102,
+      "impressions": 105,
       "ctr": 0,
-      "position": 70.8
+      "position": 70.6
     },
     {
       "country": "hkg",
@@ -1926,9 +1947,9 @@
     {
       "country": "ind",
       "clicks": 0,
-      "impressions": 15,
+      "impressions": 16,
       "ctr": 0,
-      "position": 24
+      "position": 28.2
     },
     {
       "country": "ita",

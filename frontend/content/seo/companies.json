@@ -85,34 +85,92 @@
   {
     "slug": "mckinsey",
     "name": "McKinsey & Company",
-    "metaDescription": "McKinsey resume format: one-page structure, impact bullets, and keywords that pass the screening round. What MBB recruiters actually look for.",
-    "intro": "McKinsey hires from many backgrounds—business, STEM, law, medicine—and values problem-solving, leadership, and impact. Your resume needs to tell a clear story of achievement and progression. This guide covers what McKinsey looks for and how to present it.",
+    "metaDescription": "McKinsey resume format 2026: one-page pre-MBA structure, Personal Impact and Entrepreneurial Drive keywords, and what the PEI and screening round actually look for.",
+    "intro": "McKinsey screens resumes against a specific set of Distinctive Traits — Personal Impact, Entrepreneurial Drive, Inclusive Leadership and Courageous Change — and a quantitative filter that expects nearly every bullet to have a number. The resume round is a binary gate before the Problem Solving Game (Solve) and the Personal Experience Interview (PEI). This guide covers exactly what partners, EMs and recruiters read for, how to structure the page for Associate, BA, Senior Associate, Engagement Manager and experienced hire tracks, and how to avoid the three reasons resumes get rejected at screen.",
     "hiringRequirements": [
-      "Outstanding academic performance and evidence of intellectual curiosity",
-      "Structured problem-solving and analytical rigour",
-      "Leadership experience in academic, professional, or extracurricular settings",
-      "Strong communication and ability to work in teams",
-      "Integrity and professionalism"
+      "Outstanding academic record — top-decile GPA (3.7+ / First Class / 2:1 minimum at target schools) or exceptional performance at a non-target institution",
+      "Structured problem-solving demonstrated through case competitions, consulting clubs, student-led strategy projects, or prior consulting internships",
+      "Distinctive leadership with named role (President, VP, Captain, Founder) and measurable outcome — membership grown, revenue raised, policy changed",
+      "Entrepreneurial drive — a venture, non-profit, publication, patent, or self-initiated project that went beyond expectations",
+      "Quantified impact in every bullet — % saved, $ raised, users reached, team size led, weeks shaved",
+      "Evidence of inclusive collaboration across diverse teams (international, cross-functional, multi-stakeholder)",
+      "Communication fluency — published writing, public speaking, teaching, or presenting to senior audiences",
+      "Alignment with a specific practice or capability (Strategy & Corporate Finance, Operations, Digital/QuantumBlack, Implementation, Public & Social Sector, Healthcare, Risk) if targeting as an experienced hire"
     ],
     "keywords": [
       "analysis",
       "strategy",
       "client",
+      "hypothesis-driven",
       "recommendations",
       "leadership",
       "team",
       "impact",
       "quantitative",
       "stakeholder",
-      "project",
+      "engagement",
       "framework",
       "executive",
       "problem-solving",
       "modelling",
-      "research"
+      "research",
+      "growth strategy",
+      "operating model",
+      "PMO",
+      "due diligence",
+      "market entry",
+      "board",
+      "C-suite",
+      "workstream",
+      "synthesis",
+      "MECE"
     ],
-    "sampleSnippet": "Led team of 4 in capstone project for Fortune 500 client; developed market entry strategy and financial model adopted by C-suite. Presented findings to board-level stakeholders and delivered 80-page recommendation deck.",
-    "body": "McKinsey resumes are typically one page for pre-MBA, two for experienced hires. Lead with education and then experience, using clear bullets with outcomes. Quantify wherever possible—team size, scope of projects, and impact. Tailoring your resume to the practice or industry you are targeting (e.g. digital, operations, healthcare) can strengthen your fit. WadeCV can help you reframe your experience to match consulting job descriptions and highlight your strongest achievements.",
+    "sampleSnippet": "Led 4-person team in capstone engagement for Fortune 500 retailer; built market-entry model across 12 countries that identified $180M incremental revenue opportunity, adopted by CEO and rolled out over 18 months. Presented to board of directors and delivered 80-page final recommendation; synthesised insights from 40+ expert interviews and 200+ data sources.",
+    "body": "McKinsey resumes are one page for undergraduate, MBA and most experienced hires up to Engagement Manager — two pages are accepted only for Associate Partner level and above. The page structure partners expect is education first (degree, institution, classification, honours, relevant coursework, study-abroad), then professional experience reverse-chronologically, then leadership and extracurriculars, then additional (languages, certifications, publications, awards). Skills and interests sit at the very bottom and should be specific — 'French (native), Mandarin (professional working), Stata, SQL, Python' rather than 'Microsoft Office'.\n\nEvery bullet should answer three questions a screener asks in the six seconds they spend on your resume: What did you own, what did you do differently, and what measurable outcome did you produce? The canonical McKinsey bullet starts with a strong verb (Led, Built, Negotiated, Synthesised, Advised, Launched, Scaled), names the scope (team size, client revenue, geographies, data volume), describes the action (the analysis, model, experiment, or framework you applied), and closes with a quantified result ('reducing cost-to-serve by 22%', 'growing MAU 3.4x in eight months', 'delivering $12M in first-year run-rate savings').\n\nPractice and capability signalling matters more than most candidates realise. Partners skim for fit with the hiring office's book of work — a Strategy & Corporate Finance partner in London reads differently from a QuantumBlack partner in New York or an Implementation partner in Chicago. If you are targeting a specific practice, mirror their language: 'zero-based budgeting', 'revenue growth management', 'operations diagnostic', 'advanced analytics', 'agile transformation', 'capability building'. A resume that reads like a generic 'strategy consultant' is less compelling than one that reads like a 'Operations consultant with a focus on supply-chain redesign for industrial clients'.\n\nThe three most common reasons McKinsey resumes get rejected at screen: (1) no quantification — bullets describing responsibilities rather than outcomes; (2) weak distinctive traits section — extracurriculars listed without a role title or outcome; (3) format that wastes space — long paragraph intros, wide margins, 12pt body text. Tailor to the target office and practice, quantify everything, and cut ruthlessly. WadeCV aligns your existing CV with McKinsey-style job descriptions, surfaces your most quantified bullets, and restructures the page to the one-page PEI-ready format. For an overview of how MBB screens differ from Big 4 consulting, see the [consulting resume pillar guide](/consulting-resume).",
+    "faq": [
+      {
+        "question": "How long should a McKinsey resume be?",
+        "answer": "One page for undergraduate applicants, MBAs, Associates and Senior Associates — non-negotiable. Engagement Manager and Associate Partner candidates may use one and a half to two pages if the content justifies it. Anything over two pages will be rejected at the CV screen regardless of the content. Use 10-11pt body text, 0.5-0.7 inch margins, and compact spacing to fit a 6-8 year career cleanly."
+      },
+      {
+        "question": "What GPA do I need for McKinsey?",
+        "answer": "McKinsey does not publish a cut-off, but in practice resumes from target schools need a 3.7+ GPA or UK First Class / 2:1 to pass the automated screen. Non-target-school candidates need 3.8+ or a First, plus exceptional leadership, prior consulting internship, or Olympiad/competition results to compensate. If your GPA is below 3.5 / lower 2:1, list strong secondary signals (test scores, honours, distinctions, awards) before the GPA and consider adding 'Dean's List' or major-specific GPA if significantly higher."
+      },
+      {
+        "question": "What keywords does McKinsey's resume screen look for?",
+        "answer": "The screen looks for evidence of McKinsey's Distinctive Traits. 'Led', 'built', 'founded', 'launched', 'grew', 'scaled', 'negotiated', 'advised', 'synthesised' signal Personal Impact and Entrepreneurial Drive. Named leadership titles ('President of X', 'Founder of Y', 'Captain of Z') signal Inclusive Leadership. Practice-specific terms ('operating model', 'growth strategy', 'due diligence', 'go-to-market', 'cost transformation', 'digital transformation') signal Courageous Change. Include numbers in almost every bullet — McKinsey's internal heuristic is that a strong resume has 80%+ of bullets quantified."
+      },
+      {
+        "question": "Do I need an MBA to work at McKinsey?",
+        "answer": "No. McKinsey hires three main tracks: undergraduate (Business Analyst), advanced degree (Associate for MBA, PhD, JD, MD), and experienced hire (various titles including Associate, Senior Associate, Engagement Manager, depending on prior years of work). Experienced hires from industry, government, non-profits, and the military are common and often fast-tracked. Your resume must emphasise the functional expertise or industry depth that the hiring office is recruiting for."
+      },
+      {
+        "question": "How do I tailor my resume for a specific McKinsey practice?",
+        "answer": "Review the McKinsey Insights page for the practice you are targeting (Strategy, Operations, Digital/QuantumBlack, Implementation, Sustainability, Healthcare, Marketing & Sales, Public Sector, Risk). Note the vocabulary, the frameworks, and the industries featured. Rewrite your bullets to use that vocabulary when honestly applicable — 'led operating model redesign', 'delivered zero-based budgeting wave', 'built ML model for churn prediction', 'ran change programme for 800 FTEs'. Move the most relevant experiences to the top of your professional experience section even if they are not the most recent."
+      },
+      {
+        "question": "Should I include consulting clubs and case competitions on my McKinsey resume?",
+        "answer": "Yes — especially for undergraduate and MBA applicants, case competitions, consulting clubs, and student-led strategy projects are primary signals of consulting fit. List them under Leadership & Extracurriculars with a role title, measurable outcome, and a consulting-relevant verb. 'Won 1st place in 78-team Cornell Consulting Competition; developed go-to-market strategy for pre-seed fintech client adopted for $2M seed round' is stronger than 'Participated in consulting club'."
+      },
+      {
+        "question": "What does the McKinsey Personal Experience Interview (PEI) resume bar look like?",
+        "answer": "The PEI explicitly asks candidates to tell stories against Personal Impact, Entrepreneurial Drive, Inclusive Leadership, and Courageous Change. If your resume doesn't contain at least one bullet that clearly maps to each of those traits, your candidacy is weaker. Before you submit, confirm you have: (1) a story of measurable impact with a named outcome, (2) a story of going beyond the scope / entrepreneurial initiative, (3) a story of leading or bringing along a diverse group, and (4) a story of driving change through resistance. Each story should appear as a bullet on your resume and be ready to expand to 4-6 minutes in interview."
+      },
+      {
+        "question": "What are the most common reasons McKinsey rejects a resume?",
+        "answer": "Three patterns dominate: (1) No numbers — bullets describe responsibilities ('managed a team', 'analysed data', 'presented findings') without outcomes. (2) Format waste — long paragraph intros, large fonts, wide margins, leaving half the page blank. (3) Generic consulting language that signals no specific practice fit. Fix these and a previously-rejected resume can pass screen. WadeCV runs your CV through a McKinsey job description, quantifies bullets with real numbers from your history, and restructures the page to MBB one-page format."
+      }
+    ],
+    "commonMistakes": [
+      "Using responsibility-based bullets ('responsible for', 'managed', 'oversaw') instead of outcome-based ones with numbers",
+      "Leaving GPA off the resume when it is above 3.7 — recruiters assume a missing GPA is below their screen threshold",
+      "Listing generic extracurriculars without a role title and outcome ('member of consulting club' vs 'President, Cornell Consulting Club — grew membership from 40 to 180')",
+      "Two-page resumes for undergraduate and MBA applicants — automatic rejection at most offices",
+      "Using 'McKinsey-style' language copied from the website without evidence to back it up",
+      "Omitting language proficiency levels (native / fluent / professional / conversational) when applying to non-US offices where bilingualism is required",
+      "Burying the most relevant practice experience at the bottom because it isn't the most recent",
+      "Generic skills section ('Microsoft Office, teamwork, leadership') — use specific tools (Stata, Alteryx, Tableau, PowerPoint mastery) and named languages"
+    ],
     "relatedSlugs": [
       "bcg",
       "bain",
@@ -286,14 +344,17 @@
   {
     "slug": "deloitte",
     "name": "Deloitte",
-    "metaDescription": "Deloitte resume guide: client-impact bullets, advisory keywords, and how to structure your resume for consulting, audit, and tech roles.",
-    "intro": "Deloitte hires across consulting, audit, tax, and advisory. This guide covers typical hiring expectations and how to tailor your resume for Deloitte roles.",
+    "metaDescription": "Deloitte resume guide 2026: Big 4 advisory structure, service-line keywords (Consulting, Audit, Tax, Risk, Financial Advisory), and what US and UK recruiters screen for.",
+    "intro": "Deloitte is the largest of the Big 4 professional services firms, hiring across five service lines: Consulting, Audit & Assurance, Tax, Risk & Financial Advisory, and Deloitte Digital. Each service line has its own screening criteria — Consulting looks MBB-like for Monitor Deloitte, Deloitte S&A and Human Capital; Audit looks for accounting fundamentals; Tax looks for regulatory depth; Risk Advisory looks for controls and cyber expertise. This guide covers exactly how to tailor a Deloitte resume for each service line and offering (Strategy, Customer, Technology, Operations, Human Capital, Risk, Audit, Tax).",
     "hiringRequirements": [
-      "Strong academic record",
-      "Analytical and problem-solving skills",
-      "Communication and teamwork",
-      "Relevant experience or internships",
-      "Professionalism and integrity"
+      "Strong academic record — 3.3+ GPA / 2:1 minimum, with 3.7+ / First preferred for Consulting and Financial Advisory roles",
+      "Analytical and problem-solving skills demonstrated through coursework, case competitions, or prior internships",
+      "Service-line relevant technical skills: Excel + financial modelling (Audit / Tax / Financial Advisory), SQL/Python/cloud platforms (Technology Consulting), HR / org design (Human Capital), cyber + controls (Risk Advisory)",
+      "Professional certifications where relevant: CPA track (Audit/Tax), CFA (Financial Advisory), PMP (Programme Management), CISA/CISSP (Risk/Cyber), AWS/Azure/GCP (Technology Consulting)",
+      "Client-service mindset and ability to manage multiple workstreams in parallel",
+      "Communication proficiency with senior client stakeholders — presentation skills, stakeholder management, clear writing",
+      "Relevant internship or co-op experience at Deloitte, another Big 4 (PwC, EY, KPMG), or a relevant industry",
+      "Commitment to ethics and independence — Deloitte is heavily regulated and screens for integrity signals"
     ],
     "keywords": [
       "client",
@@ -304,10 +365,70 @@
       "recommendation",
       "team",
       "impact",
-      "consulting"
+      "consulting",
+      "audit",
+      "controls",
+      "compliance",
+      "SOX",
+      "transformation",
+      "operating model",
+      "cloud migration",
+      "ERP",
+      "cyber",
+      "risk",
+      "tax",
+      "financial reporting",
+      "due diligence",
+      "engagement",
+      "service line",
+      "delivery"
     ],
-    "sampleSnippet": "Supported client engagement for global retailer; built financial model and conducted market analysis. Presented findings to senior client stakeholders and contributed to final deliverable.",
-    "body": "Deloitte values analytical rigour and client focus. Use clear bullets with project scope and outcomes. Tailor to the practice (strategy, technology, etc.) and level. WadeCV can help you align your experience with Deloitte job descriptions.",
+    "sampleSnippet": "Supported Deloitte Consulting engagement for US healthcare payer; built financial model quantifying $45M run-rate savings from operating model redesign across 3 business units, led 6-person client workshop series, and contributed to 90-page final report and 40-slide steering committee deck. Managed workstream under 2 Managers, delivered to tight timeline over 12-week engagement.",
+    "body": "Deloitte resumes should be one page for undergraduate, MBA, and most experienced-hire Senior Consultant applications. Manager and above can extend to two pages if the depth of engagement experience requires it. Structure the page education first (with certifications if relevant), then professional experience reverse-chronologically, then additional (technical skills, languages, publications). Unlike MBB where the additional section is where 'spikes' live, at Deloitte the additional section is typically where certifications, CPA/CFA progress, and specific software fluencies go — it reads more like a traditional corporate resume.\n\nBullets should lead with a strong verb, name the engagement or client type, describe the specific action, and close with an outcome. Deloitte's outcomes do not have to be MBB-grade numbers — 'supported X engagement, delivered Y output' is acceptable for early-career roles — but quantification still strengthens the CV. Great Deloitte bullets combine commercial language with delivery framing: 'Led SAP S/4HANA migration workstream for global industrial client; coordinated with 4 offshore developers, delivered configuration and integration testing to plan, enabling go-live on schedule with zero Severity-1 defects in first 30 days.'\n\nService-line signalling matters enormously at Deloitte. Monitor Deloitte (Strategy), Deloitte S&A (Strategy & Analytics), and Human Capital compete directly with MBB for top-tier strategy talent; your resume there should look like an MBB CV. Technology Consulting (SAP, Oracle, Salesforce, ServiceNow, AWS/Azure/GCP) wants implementation depth — system names, module names, go-live experience, user volumes, configuration versus custom-code ratios. Audit & Assurance wants accounting fundamentals: Revenue Recognition (ASC 606), Lease Accounting (ASC 842), SOX 404 testing, ICFR, PCAOB inspection experience. Tax wants technical depth in specific tax areas (Federal Corporate, State & Local, Transfer Pricing, M&A, International). Risk & Financial Advisory splits between Financial Advisory (M&A, valuation, forensic accounting) and Risk Advisory (cyber, controls, regulatory). Tailor the resume to the specific service line and offering.\n\nDeloitte also recruits heavily for Deloitte Digital (design, UX, product, engineering) and Deloitte ConvergeHEALTH (life sciences analytics) — these units look more like tech companies than traditional consulting, and the CV should reflect that: portfolio links, shipped products, GitHub, certifications (AWS Certified, Google UX Design Professional). The common resume-screen rejections at Deloitte: (1) generic 'Big 4 consulting' framing when the role is a specific service line; (2) no certifications or certification progress for Audit, Tax, Risk roles; (3) unclear engagement scope on consulting bullets. WadeCV aligns your CV with a specific Deloitte job description, rewrites bullets with service-line vocabulary, and tailors certifications and skills. For how Deloitte compares to MBB and other Big 4, see the [consulting resume pillar guide](/consulting-resume).",
+    "faq": [
+      {
+        "question": "How long should a Deloitte resume be?",
+        "answer": "One page for undergraduate, MBA, and Senior Consultant applications. Manager and above can go to two pages if engagement history justifies it. For Audit, Tax, and Financial Advisory roles, a US-style 1-page resume is standard; for Consulting roles at MBA level in UK/Europe, a 2-page CV is acceptable if every bullet adds substance. Use 10-11pt body text and 0.5-inch margins; dense is better than padded."
+      },
+      {
+        "question": "Is Deloitte Consulting as competitive as MBB?",
+        "answer": "Monitor Deloitte (the strategy arm from the 2013 Monitor Group acquisition) and Deloitte S&A (Strategy & Analytics) recruit at MBB levels and often interview the same MBA candidates. Other Deloitte Consulting offerings — Human Capital, Customer & Marketing, Operations Transformation, Technology Consulting — are less directly MBB-competitive but still selective. The resume expectations mirror the practice: MBB-grade bullets for Monitor/S&A, implementation-depth bullets for Tech Consulting, HR/org-design bullets for Human Capital."
+      },
+      {
+        "question": "What certifications help for a Deloitte Audit resume?",
+        "answer": "CPA is effectively required for US Audit roles, though candidates can be hired pre-CPA if they commit to passing within 18 months. List CPA exam progress explicitly ('CPA: passed FAR, AUD, REG; scheduled BEC for Q2 2026'). CA / ACCA / ACA are the UK equivalents. For International Audit, CIA (Certified Internal Auditor) or CISA (Certified Information Systems Auditor) add value. Include ICFR, SOX 404, PCAOB inspection exposure, and specific accounting framework experience (ASC 606, ASC 842, IFRS 15, IFRS 16) on the CV."
+      },
+      {
+        "question": "What does Deloitte Technology Consulting look for?",
+        "answer": "Implementation depth. Named systems: SAP (S/4HANA, Ariba, SuccessFactors), Oracle (Fusion, EBS, NetSuite), Salesforce (Sales Cloud, Service Cloud, Marketing Cloud), ServiceNow (ITSM, HRSD, CSM), Workday, AWS / Azure / GCP cloud platforms. Implementation methodology fluency: Activate, SAP RUN, SAFe, Agile at scale. Configuration vs custom-code ratios matter — Deloitte Tech Consulting leans 'configuration-first'. List project codes: 'led SAP S/4HANA RISE greenfield go-live for 12,000-user industrial client, coordinated with 8-person Deloitte + 20-person SAP team'."
+      },
+      {
+        "question": "How is Deloitte different from PwC, EY, and KPMG?",
+        "answer": "Structurally similar: all Big 4 firms have Audit, Tax, Advisory / Consulting, and Risk. Vocabulary differs. Deloitte uses 'offerings' and 'service lines'; PwC uses 'practice' and 'line of service'; EY uses 'service line'; KPMG uses 'function'. Deloitte is the largest globally with heaviest Consulting revenue share; PwC is #2 with Deals focus; EY is strong in Tax and M&A; KPMG leans Audit-heavy. Tailor keywords to the firm you are targeting but the resume structure stays the same."
+      },
+      {
+        "question": "Can I move from Deloitte Audit to Deloitte Consulting?",
+        "answer": "Yes — internal mobility is a major Deloitte recruiting advantage. Audit Senior Associates routinely move to Consulting (Financial Advisory, Technology Consulting, Risk Advisory). Your CV for the internal move should emphasise client-delivery experience, industry focus, and any consulting-adjacent work (M&A due diligence, SOX implementation, ERP audit). List the Deloitte tenure as 'Audit Senior Associate, Deloitte & Touche LLP' with bullets showing client impact beyond audit fieldwork."
+      },
+      {
+        "question": "What keywords should I use on a Deloitte resume?",
+        "answer": "Service-line specific. Consulting: 'operating model transformation', 'go-to-market strategy', 'customer experience redesign', 'organisation design', 'change management'. Technology: 'SAP implementation', 'Salesforce configuration', 'cloud migration', 'enterprise architecture', 'API integration'. Audit: 'SOX 404', 'ICFR', 'revenue recognition (ASC 606)', 'lease accounting (ASC 842)', 'PCAOB inspection readiness'. Tax: 'transfer pricing', 'FIN 48', 'SALT', 'international tax', 'M&A tax'. Risk: 'cyber', 'ISO 27001', 'NIST', 'third-party risk', 'regulatory compliance'."
+      },
+      {
+        "question": "What are the most common reasons Deloitte rejects a resume?",
+        "answer": "(1) Generic 'Big 4 Advisory' framing when the role is a specific service line. (2) Missing certifications or certification progress for Audit, Tax, or Risk Advisory. (3) No client-delivery outcomes on consulting bullets — 'participated in engagement' is weak; 'delivered workstream that identified $X savings' is strong. (4) Technology Consulting resumes missing specific system names, modules, or methodology. (5) Two-page CV padded with duplicative bullets. WadeCV aligns your CV with a specific Deloitte job description, matches the service-line vocabulary, and surfaces the certifications and system names that pass the screen."
+      }
+    ],
+    "commonMistakes": [
+      "Using generic 'Big 4' or 'consulting' framing when the role is a specific service line (Monitor Deloitte, Deloitte Digital, Tech Consulting, Risk Advisory)",
+      "Missing certifications (CPA, CFA, CA/ACCA, CISA, PMP, AWS/Azure) or certification progress for roles where they are effectively required",
+      "Bullets describing participation ('assisted with', 'supported', 'participated in') instead of ownership with outcomes",
+      "Technology Consulting resumes without specific system names, module names, or go-live experience (SAP S/4HANA, Salesforce Sales Cloud, Workday HCM)",
+      "Audit resumes missing specific accounting framework experience (ASC 606, ASC 842, IFRS 15, IFRS 16, SOX 404)",
+      "Tax resumes missing technical depth (Federal, State, International, Transfer Pricing, FIN 48)",
+      "Padding the CV to two pages at Senior Consultant level — one page demonstrates editorial judgement",
+      "Skills section listing generic tools ('Microsoft Office') instead of specific fluencies (advanced Excel financial modelling, Alteryx, Power BI, Tableau, SQL, Python)"
+    ],
     "relatedSlugs": [
       "mckinsey",
       "bcg",
@@ -317,14 +438,17 @@
   {
     "slug": "bcg",
     "name": "BCG",
-    "metaDescription": "BCG resume guide: one-page structure, strategy keywords, and impact bullets that pass the MBB screening round.",
-    "intro": "BCG looks for problem-solvers with strong analytical and communication skills. This guide covers what BCG values and how to tailor your resume for their process.",
+    "metaDescription": "BCG resume guide 2026: one-page MBB format, Boston Consulting Group keywords the screener looks for, and what Casey the AI and human partners actually screen for.",
+    "intro": "BCG (Boston Consulting Group) uses a two-stage screen: Casey, a chatbot-led video and case-prep evaluator, and a partner-led CV review. The resume itself is read against four traits — Impact, Drive, People, Perspective — and a quantification bar that mirrors McKinsey's. This guide covers what BCG partners look for by region and practice, how to structure the page for Associate, Consultant, Project Leader and experienced hire tracks, and how to pass the resume round into the Casey Chatbot and case interview stages.",
     "hiringRequirements": [
-      "Outstanding academic and analytical ability",
-      "Structured problem-solving",
-      "Leadership and teamwork",
-      "Communication with senior audiences",
-      "Relevant experience or extracurriculars"
+      "Top-decile academic record — 3.7+ GPA / First Class / 2:1 from target institution, or First / 3.8+ from non-target with standout secondary signals",
+      "Structured problem-solving demonstrated through case competitions, strategy projects, or quantitative research",
+      "Named leadership — President, VP, Captain, Founder — with measurable outcomes (membership grown, revenue raised, competition won)",
+      "Quantified impact in every bullet — percentages, dollars, users, team size, timeline",
+      "Distinct 'spike' — a patent, startup, Olympiad medal, publication, athletic achievement, or military record that marks you apart",
+      "Communication proficiency with senior audiences — teaching, public speaking, published writing, or presenting to executives",
+      "Language skills relevant to the hiring office (German, French, Spanish, Mandarin, Japanese, Portuguese — list level honestly)",
+      "Alignment with a BCG practice or unit (BCG X, Gamma, Platinion, Digital Ventures, Strategy, Operations, Social Impact, Public Sector, Industrial Goods, Healthcare, TMT)"
     ],
     "keywords": [
       "strategy",
@@ -335,10 +459,68 @@
       "team",
       "recommendation",
       "quantitative",
-      "stakeholder"
+      "stakeholder",
+      "growth",
+      "transformation",
+      "operating model",
+      "digital",
+      "go-to-market",
+      "synthesis",
+      "workstream",
+      "benchmarking",
+      "hypothesis",
+      "modeling",
+      "executive",
+      "board",
+      "P&L",
+      "market sizing"
     ],
-    "sampleSnippet": "Led workstream on growth strategy for FTSE 100 client; developed market sizing and option analysis. Co-facilitated executive workshop and contributed to final recommendation.",
-    "body": "BCG resumes should show impact and structure. Quantify projects and outcomes. Tailor to the practice (e.g. technology, public sector) and level. WadeCV can help you align your experience with BCG job descriptions.",
+    "sampleSnippet": "Led 3-person workstream on growth strategy for FTSE 100 consumer client; built market-sizing model across 8 European markets and identified €250M addressable opportunity in D2C channel. Co-facilitated executive workshop with C-suite, drove consensus on €45M three-year investment plan, and contributed to 120-page final deliverable.",
+    "body": "BCG resumes are one page for all Associate, Consultant, and Project Leader applicants. Principals and above can extend to a page and a half only if the content demands it. Structure the page education first (degree, institution, classification, GPA, relevant coursework, exchange terms), then professional experience reverse-chronologically, then leadership and entrepreneurship, then additional information (languages with levels, certifications, publications, awards). The additional section at the bottom is where BCG partners look for your 'spike' — a distinguishing signal that separates you from other 3.8 GPA candidates.\n\nEvery bullet should open with a strong verb (Led, Built, Launched, Scaled, Negotiated, Designed, Advised), state the scope (team size, client revenue, geographies, data volume, duration), describe the action (the hypothesis you tested, the model you built, the pitch you ran), and close with a quantified outcome. BCG partners read for 'so what?' — if a bullet does not answer that question with a number, it gets skimmed. The canonical BCG bullet format: 'Led 4-person team on [engagement type] for [client description]; delivered [specific output] that [measurable outcome].' A bullet without a number is a bullet BCG will not count.\n\nPractice and unit signalling is especially important for BCG because the firm is organised into named units with distinct recruiting pipelines. BCG X (the digital-build arm) recruits engineers, product managers and designers separately from Strategy. BCG Gamma (advanced analytics) looks for data scientists with ML-model-deployment experience. Platinion recruits enterprise architects and cyber experts. If you are targeting one of these units, mirror their vocabulary: 'model ops', 'MLOps', 'causal inference', 'LLM fine-tuning', 'cloud migration', 'zero-trust architecture'. Generic 'strategy consultant' framing is weaker than unit-specific framing.\n\nCasey, the BCG chatbot, is deployed after the resume round and scores candidates on case-prep-adjacent signals. A strong resume alone does not secure an offer, but a weak resume disqualifies. The three most common resume rejections at BCG: (1) no quantified bullets, (2) generic rather than practice-specific language, (3) missing or weak spike in the additional-information section. WadeCV takes your CV, aligns it with a specific BCG job description, quantifies every bullet with real outcomes from your history, and reformats the page to BCG one-page conventions. For an overview of how BCG compares to McKinsey and Bain, see the [consulting resume pillar guide](/consulting-resume).",
+    "faq": [
+      {
+        "question": "How long should a BCG resume be?",
+        "answer": "One page. This is non-negotiable for Associate, Consultant, and Project Leader applications across every BCG office globally. Principals and Managing Directors applying as experienced hires may extend to one and a half pages if the substance justifies it. Use 10-11pt body text, 0.5-inch margins, and cut ruthlessly before going to a second page — screeners read the first page first and may never scroll to the second."
+      },
+      {
+        "question": "What does Casey, the BCG chatbot, assess?",
+        "answer": "Casey is deployed after the resume screen but before the first case interview. It runs candidates through a structured conversation including a mini-case, behavioural questions, and sometimes a video response to a strategy prompt. The resume remains the gatekeeper — Casey does not rescue a weak resume. Your CV must pass the partner-led screen before you see Casey. Casey's existence doesn't change what BCG looks for on the resume: Impact, Drive, People, Perspective, each demonstrated with quantified bullets."
+      },
+      {
+        "question": "Is BCG X or BCG Gamma easier to get into than BCG Strategy?",
+        "answer": "Not easier, just different. BCG X recruits engineers, PMs and designers with build-delivery experience — the bar there is 'has shipped production software to real users', not 'has case-competition wins'. BCG Gamma recruits data scientists with ML-model-deployment experience — the bar is 'has deployed ML models that moved a business KPI'. The resume format for these units mirrors tech-company resumes more than traditional MBB CVs: lead with impact, include a projects/publications section, list languages and frameworks with proficiency. Tailor accordingly."
+      },
+      {
+        "question": "What GPA does BCG require?",
+        "answer": "BCG does not publish a cut-off, but target-school resumes need 3.7+ GPA / First Class / 2:1 minimum to pass automated screens. Non-target applicants need 3.8+ / First plus exceptional spike. If your GPA is below 3.5 / lower 2:1, emphasise strong test scores (GRE 330+, GMAT 730+), major GPA if higher, or a Master's degree with distinction. Do not hide your GPA — missing GPAs are assumed to be sub-threshold."
+      },
+      {
+        "question": "What keywords should I include on a BCG resume?",
+        "answer": "Action verbs that signal Impact and Drive: led, built, launched, scaled, negotiated, founded, grew, drove, delivered. Practice-specific vocabulary when truthfully applicable: 'operating model', 'go-to-market', 'zero-based design', 'cost-to-serve', 'customer experience transformation', 'pricing strategy', 'post-merger integration'. Named tools: Python, R, SQL, Tableau, Alteryx, Salesforce, SAP. And outcome-type keywords: 'delivering $X savings', 'growing revenue by Y%', 'reducing cost by Z%', 'shortening time-to-market by W weeks'."
+      },
+      {
+        "question": "How is a BCG resume different from a McKinsey resume?",
+        "answer": "Structurally almost identical: one page, education first, reverse chronological experience, leadership, additional. The differences are in vocabulary emphasis. BCG favours 'impact', 'growth', 'transformation', 'digital', 'advantage', 'value' — echoing its strategic-advantage branding. McKinsey favours 'hypothesis', 'synthesis', 'framework', 'insight', 'capability'. BCG also places heavier weight on the 'spike' in the additional section than McKinsey does. If you are applying to both, use the same content base and swap 5-8 keywords."
+      },
+      {
+        "question": "Can I get a BCG interview as an experienced hire?",
+        "answer": "Yes — BCG recruits experienced hires into Associate, Consultant, Project Leader, and Principal roles depending on years and functional expertise. The bar is industry or functional depth (e.g. ten years in retail operations, or five years as a product manager who has shipped ML products), a quantified track record of impact, and evidence you can translate that expertise into client-facing consulting. Your resume must emphasise functional spikes — 'built SKU rationalisation framework adopted across 15 retailers' — rather than generic leadership."
+      },
+      {
+        "question": "What are the most common reasons BCG rejects a resume?",
+        "answer": "(1) Bullets describing responsibilities ('owned X, managed Y') without quantified outcomes. (2) Two-page resumes for pre-Principal candidates — automatic screen reject. (3) No spike — an otherwise-solid 3.8 GPA resume with generic extracurriculars looks interchangeable with dozens of others. (4) Missing language proficiency for non-English-speaking office applications. (5) Generic 'consultant' framing when the role is a specific practice or unit (BCG X, Gamma, Platinion). WadeCV aligns your CV with a specific BCG job description, quantifies every bullet, and restructures the page to MBB one-page conventions."
+      }
+    ],
+    "commonMistakes": [
+      "Using duties-based verbs ('responsible for', 'managed', 'supported') instead of outcome verbs with numbers",
+      "Submitting a two-page resume for a Consultant or Associate role — automatic screen reject",
+      "Leaving a GPA off when it is above 3.7 — screeners interpret absence as sub-threshold",
+      "Missing or weak 'spike' in the additional-information section — no patent, Olympiad, startup, publication, athletic achievement, or distinctive award",
+      "Generic consulting language ('strategy consultant', 'client-facing') without unit-specific signals (BCG X, Gamma, Platinion, Strategy, Ops)",
+      "Omitting language proficiency or listing 'conversational' when the hiring office requires fluency",
+      "Front-loading the most recent experience when a less-recent role is more relevant to the target practice",
+      "Skills section listing generic tools ('Microsoft Office, teamwork') rather than specific fluencies (Tableau Server admin, Alteryx certified, Python for data science)"
+    ],
     "relatedSlugs": [
       "mckinsey",
       "bain",
@@ -348,14 +530,17 @@
   {
     "slug": "bain",
     "name": "Bain & Company",
-    "metaDescription": "Bain resume guide: results-focused bullets, client-impact keywords, and what Bain recruiters screen for in 2026.",
-    "intro": "Bain values results-oriented problem-solvers with strong client focus. This guide covers what Bain looks for and how to tailor your resume.",
+    "metaDescription": "Bain resume format 2026: one-page MBB structure, A Bainie Never Lets Another Bainie Fail keywords, and what the 10-second screen + Sova psychometric round actually evaluate.",
+    "intro": "Bain & Company screens resumes against its True North values — Passion, Straight Talk, Outsider Outlook, Grit, Tugboat Spirit — and a heavy private-equity due-diligence bias given Bain's outsized PEG (Private Equity Group) practice. The CV screen leads into the Sova psychometric assessment and partner-led case interview. This guide covers exactly how Bain partners read a resume, how to signal fit with PEG versus Strategy versus Operations versus Digital (Vector), and what to include in your one-page CV to pass the screen.",
     "hiringRequirements": [
-      "Strong academic and analytical background",
-      "Client and results focus",
-      "Team collaboration",
-      "Communication and presence",
-      "Evidence of impact"
+      "Top-decile academic record — 3.7+ GPA / First Class / 2:1 minimum at target schools, with a stretch to 3.8+ / First at non-targets",
+      "Evidence of 'grit' — sustained commitment to a pursuit over 3+ years with measurable progression (sport, music, research, venture, competitive programming)",
+      "Named leadership with a role title, team size, and quantified outcome",
+      "Commercial orientation — lemonade stand, side business, trading, or P&L responsibility beats theoretical strategy coursework",
+      "Quantified impact in every bullet — $ or % or team-size or timeline",
+      "Client-facing or stakeholder-facing experience — internship at a consulting firm, PE fund, bank, or corporate strategy team",
+      "Language proficiency relevant to the hiring office (for London: often French/German/Italian/Spanish; for Dubai: Arabic; for Singapore: Mandarin)",
+      "Practice signalling — PEG (commercial due diligence), Strategy, Operations, Digital (Vector), Customer Experience, or Industry (Retail, Financial Services, Healthcare, Tech, Industrial Goods, PE)"
     ],
     "keywords": [
       "client",
@@ -366,10 +551,69 @@
       "strategy",
       "recommendation",
       "stakeholder",
-      "quantitative"
+      "quantitative",
+      "due diligence",
+      "commercial",
+      "value creation",
+      "growth",
+      "post-merger",
+      "operating model",
+      "transformation",
+      "P&L",
+      "EBITDA",
+      "market sizing",
+      "pricing",
+      "benchmarking",
+      "synthesis",
+      "workstream",
+      "private equity"
     ],
-    "sampleSnippet": "Supported private equity due diligence; built commercial model and identified key value drivers. Delivered findings to partner and client within tight timeline.",
-    "body": "Bain resumes should emphasise results and client impact. Use clear bullets with scope and outcomes. Tailor to the practice and level. WadeCV can help you align your experience with Bain job descriptions.",
+    "sampleSnippet": "Supported private-equity commercial due diligence for £400M LBO target in UK food retail; built 5-year revenue build-up model, identified 4 EBITDA value-creation levers (pricing, SKU mix, store productivity, supply chain) worth £28M combined, and delivered red-flag findings to PEG partner and client investment committee within three-week deadline.",
+    "body": "Bain resumes are one page for all undergraduate, MBA, and experienced-hire Associate Consultant through Consultant roles — the partner reviewing your CV expects to read the entire document in under 60 seconds. Structure: education first (institution, degree, classification, GPA, relevant coursework, study abroad), then professional experience reverse-chronologically, then leadership and extracurriculars, then additional (languages with proficiency levels, technical skills, publications, awards). The additional section is where Bain partners look for 'grit' and 'outsider outlook' — a sustained commitment that separates you from other 3.8 GPA candidates.\n\nBain bullets are notably more commercial than McKinsey's. Where McKinsey emphasises 'hypothesis-driven synthesis' and 'framework application', Bain bullets favour 'commercial impact', 'EBITDA', 'value creation', 'due diligence', 'investment thesis', 'growth opportunity'. The best Bain bullets sound like they belong in a Private Equity investment committee memo: 'Identified £X EBITDA upside from pricing optimisation in commodity categories; quantified by regression analysis of 2 years of SKU-level sales data across 400 stores.' Every bullet should lead with a strong verb, state scope, describe the action, and close with a dollar-or-percent outcome.\n\nBain's Private Equity Group (PEG) is the largest commercial due-diligence practice in consulting — around 30% of Bain's revenue and a major recruiting pipeline. If you are targeting PEG (or any Bain office with a strong PEG practice, especially London, Boston, Chicago, New York), your resume should signal commercial due-diligence readiness: exposure to investor memos, LBO modelling, commercial DD frameworks (market size, growth drivers, competitive position, value-creation levers), and an ability to deliver findings to time pressure. Non-PEG practices (Customer Experience, Digital/Vector, Operations, Advanced Analytics, Private Equity, Performance Improvement) have their own keyword sets — mirror the language of the practice you are targeting.\n\nThe three common resume-screen rejections at Bain: (1) no commercial quantification — bullets that describe strategy projects without a dollar/percent outcome; (2) no 'grit' signal — extracurriculars listed without sustained commitment or progression; (3) two-page resume or fonts below 10pt. Fix these and pass screen. WadeCV aligns your existing CV with a Bain job description, rewrites bullets with quantified commercial outcomes, and reformats the page to Bain's one-page standard. For a cross-MBB comparison and the differences with Big 4 consulting, see the [consulting resume pillar guide](/consulting-resume).",
+    "faq": [
+      {
+        "question": "How long should a Bain resume be?",
+        "answer": "One page for all Associate Consultant, Consultant, and Case Team Leader applications. Managers and above applying as experienced hires may extend to one and a half pages only if the substance demands it. Partners reviewing a Bain CV spend under 60 seconds on the first read — a two-page CV loses the reader. Use 10-11pt body text and 0.5-inch margins and cut ruthlessly."
+      },
+      {
+        "question": "What is Bain's Sova assessment and how does the resume feed into it?",
+        "answer": "Sova is Bain's online psychometric assessment — a combination of situational judgement, numerical, verbal reasoning and personality inventory. It is administered after the resume screen in many Bain offices. The resume remains the gatekeeper: Sova does not rescue a weak CV. Your CV needs to pass partner screening before Sova is unlocked. Sova scores are combined with resume screen and first-round interview performance to make the decision-day call."
+      },
+      {
+        "question": "Does Bain PEG (Private Equity Group) recruit differently?",
+        "answer": "Yes, PEG has its own recruiting pipeline in many offices, with the CV evaluated by PEG partners and managers. PEG CVs emphasise commercial-due-diligence-ready signals: exposure to investor memos, LBO / commercial DD modelling, time-pressured delivery, and commercial rather than strategy framing. If you are targeting PEG, include any private equity, investment banking, corporate development, or transaction-advisory experience prominently and use PEG vocabulary: 'value-creation plan', 'commercial due diligence', 'market-growth build-up', 'red-flag issues', 'synergy quantification'."
+      },
+      {
+        "question": "What GPA does Bain require?",
+        "answer": "Bain does not publish a cut-off, but competitive resumes from target schools have a 3.7+ GPA / First / 2:1. Non-target applicants need 3.8+ / First and either strong standardised test scores (GMAT 730+, GRE 330+) or an unusual spike (Olympiad, D1 athletics, published research, venture exit). Do not hide your GPA — a missing GPA is assumed sub-threshold. If your GPA is mediocre but your major GPA is higher, list both."
+      },
+      {
+        "question": "What keywords should I use on a Bain resume?",
+        "answer": "Commercial and outcome-focused: 'delivered £X EBITDA', 'identified Y% margin upside', 'grew revenue by Z%', 'accelerated time-to-value by W months'. Practice-specific terms: 'commercial due diligence', 'value-creation plan', 'post-merger integration', 'pricing optimisation', 'customer experience redesign', 'operating model'. Action verbs that signal grit and ownership: led, built, scaled, launched, negotiated, drove, delivered, founded. Named tools: Excel (financial modeling), PowerPoint, Tableau, SQL, Python, Alteryx, NetBase, Similarweb."
+      },
+      {
+        "question": "How is a Bain resume different from McKinsey or BCG?",
+        "answer": "Structurally identical — one page, education first, reverse-chronological experience, leadership, additional. The vocabulary differs. McKinsey favours 'hypothesis', 'synthesis', 'framework', 'insight'. BCG favours 'impact', 'growth', 'transformation', 'advantage'. Bain favours 'results', 'commercial', 'value creation', 'EBITDA', 'due diligence'. Bain also weights 'grit' more heavily — a sustained 3-5 year commitment to something difficult (athletics, music, research, venture) is a strong Bain signal. If applying to all three, use the same base and swap vocabulary emphasis."
+      },
+      {
+        "question": "Can I get a Bain interview as an experienced hire?",
+        "answer": "Yes. Bain recruits experienced hires into Associate Consultant, Consultant, Case Team Leader, and Manager roles depending on years and functional expertise. Functional depth matters most: five years in commercial strategy at a Fortune 500, three years at a top-tier PE fund, or deep vertical expertise (healthcare payer strategy, retail pricing, PE value creation) outperforms generic consulting experience. Your CV must signal industry or functional depth — 'led pricing programme that delivered £40M EBITDA uplift for national supermarket' — rather than generic leadership."
+      },
+      {
+        "question": "What are the most common reasons Bain rejects a resume?",
+        "answer": "(1) No commercial quantification — bullets describing strategy without dollar, percent, or time outcomes. (2) Weak 'grit' signal — extracurriculars without sustained commitment. (3) Format violations — two pages, small fonts, dense paragraphs. (4) Generic consulting framing when the role is PEG, Operations, Customer Experience, or Digital/Vector. (5) Missing language proficiency for non-English-speaking office applications. WadeCV aligns your CV with a Bain job description, rewrites bullets with commercial outcomes from your history, and reformats to Bain's one-page standard."
+      }
+    ],
+    "commonMistakes": [
+      "Using generic strategy verbs ('analysed', 'supported', 'contributed') instead of commercial verbs with numbers ('identified £X EBITDA', 'drove Y% margin')",
+      "Submitting a two-page resume for an Associate Consultant or Consultant role — automatic screen reject",
+      "Missing 'grit' signal — extracurriculars listed without sustained multi-year commitment or progression",
+      "Omitting a visible GPA when it is above 3.7 — screeners interpret absence as sub-threshold",
+      "Generic 'strategy consultant' framing when the role is PEG, Customer Experience, Vector, or a specific industry practice",
+      "Wrong office applications — applying to London with only US experience and no language skills, or to Dubai without Arabic",
+      "Missing transaction or commercial exposure for PEG applications — PEG partners need to see investment-memo-ready signals",
+      "Additional-information section that lists generic skills ('Microsoft Office, teamwork') instead of specific proficiencies (advanced Excel financial modelling, Python data science, SQL for analytics)"
+    ],
     "relatedSlugs": [
       "mckinsey",
       "bcg",

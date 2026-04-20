@@ -14,7 +14,8 @@ type Variant =
   | "career-change"
   | "physical-mail"
   | "humanize"
-  | "uk";
+  | "uk"
+  | "consulting";
 
 const VARIANT_CONFIG: Record<
   Variant,
@@ -72,6 +73,12 @@ const VARIANT_CONFIG: Record<
     heading: "Build a tailored CV for every UK job — free to start",
     description:
       "Upload your existing CV, paste a UK job URL, and WadeCV rewrites your CV with role-specific keywords, UK formatting, and ATS-optimised bullets in seconds.",
+    buttonText: "Try it free — no credit card needed",
+  },
+  consulting: {
+    heading: "Get MBB-ready bullets — tailored to a specific consulting role",
+    description:
+      "Paste a McKinsey, BCG, Bain or Big 4 job URL and WadeCV rewrites your CV to the one-page consulting standard: quantified bullets, practice-specific keywords, and the spike partners look for.",
     buttonText: "Try it free — no credit card needed",
   },
 };

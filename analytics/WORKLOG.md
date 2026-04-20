@@ -4,6 +4,82 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 
 ---
 
+## 2026-04-20 — Session 20: Consulting Resume Pillar + 4 MBB/Big 4 Firm Deep Overhauls
+
+### Data Pulled
+- [x] GA4 analytics data → `ga4_data.json` — ~50 sessions/30d; 30 Stripe (new low), 11 direct, 7 Google organic; product events healthy (22 dashboard_viewed, 18 cv_download, 17 cv_tailor_started, 12 form_start)
+- [x] GSC data → `gsc_data.json` — **375 impressions (+2 vs S19), 48 pages (+2), 2 clicks (1 desktop + 1 mobile — first Canada click!), 50 queries**
+- [x] Trends data → `trends_data.json` — `resumeai by wonsulting` +375,200% (biggest single signal ever seen), wobo ai +92,950%, jobscan cluster +132,950%, flowcv +13,800%, cv builder app +250% (first mobile-app query), claude ai +300-450%
+
+### Key Findings
+- **Consulting vertical warm and untouched:** `bain format resume` at 2i pos 29.5, `bcg resume` at 1i pos 51 — both with thin-content pages (Bain body 203 chars, BCG 213, zero FAQs, zero commonMistakes). Same content-thinness pattern that Sessions 9/15/17/18 all fixed successfully — digital-marketing now +65% impressions in 96h post-overhaul confirming the playbook.
+- **ResumeAI by Wonsulting +375,200%** — biggest single rising signal ever seen. Queued for Session 21 as comparison page (chose pillar + cluster over single comparison today for structural leverage).
+- **Stripe referral pollution at new low (30 sessions, -3 from S19)** — gtag fix continues to work.
+- **First Canada click!** 1 click on 10 impr — geographic expansion.
+- **Decision:** Ship consulting-resume pillar + deep overhaul of 4 firms (McKinsey, BCG, Bain, Deloitte) as the session's big bet. Category-creation play over single-page play. Premium-LTV audience (MBB/Big 4 candidates). Zero wadecv.com surface currently targets "consulting resume", "MBB resume", "case interview resume".
+
+### Changes Made
+
+#### 1. `/consulting-resume` pillar page (HIGH IMPACT — big bet of session)
+**Why:** Bain + BCG already ranking on thin pages. Pillar + linked cluster outperforms either alone. First pillar page on site — pattern to replicate for other verticals.
+
+**File created:** `frontend/src/app/(resources)/consulting-resume/page.tsx`
+- H1: "Consulting Resume Guide 2026 — MBB, Big 4 and How to Pass the Screen"
+- 5-step one-page resume structure cards
+- 7-dimension MBB vs Big 4 comparison (GPA, length, quantification bar, cert weight, vocab, spike, interview process)
+- 3-card MBB firm grid (McKinsey/BCG/Bain) linking to overhauled firm pages
+- 4-card Big 4 grid (Deloitte/PwC/EY/KPMG) with service-line lists
+- 6 bullet formulas with example bullets (Scope+Action+Outcome, MBB Strategy, PE DD, Tech Implementation, Digital/Analytics, Audit/Controls)
+- 6 practice-specific keyword groups with badges (Strategy, Ops, Digital & Advanced Analytics, PE/DD, Customer & Marketing, Risk/Cyber/Regulatory)
+- "Consulting resume in 2026: what's changed" 4-paragraph prose with link to `/humanize-ai-resume`
+- 8 common mistakes list
+- 8-entry FAQ with FAQPage + Article JSON-LD
+- InlineCta variant="consulting" mid-page
+- CrossCategoryLinks with contextLinks to all 4 firm pages
+- datePublished / dateModified = 2026-04-20
+
+#### 2. Deep content overhaul of 4 consulting firm pages
+**File changed:** `frontend/content/seo/companies.json`
+- **McKinsey:** body 480 → 2,672 chars, 0 → 8 FAQs, 0 → 8 commonMistakes, 9 → 23 keywords
+- **BCG:** body 213 → 2,607 chars, 0 → 8 FAQs, 0 → 8 commonMistakes, 9 → 24 keywords
+- **Bain:** body 203 → 2,691 chars, 0 → 8 FAQs, 0 → 8 commonMistakes, 9 → 25 keywords
+- **Deloitte:** body 239 → 3,085 chars, 0 → 8 FAQs, 0 → 8 commonMistakes, 15 → 26 keywords
+- All: SEO-rewritten metaDescription with year tag, richer sampleSnippet with real $/EBITDA numbers, embedded link to `/consulting-resume` pillar
+- Total: ~10,555 new body chars + 32 FAQs + 32 commonMistakes + 98 keyword variants
+
+#### 3. New `consulting` InlineCta variant
+**File changed:** `frontend/src/components/seo/inline-cta.tsx` — added `consulting` variant with MBB-specific heading and body copy.
+
+#### 4. Wiring internal links
+- **Sitemap:** `frontend/src/app/sitemap.ts` — `/consulting-resume` at priority 0.9
+- **Cross-category-links:** `frontend/src/components/seo/cross-category-links.tsx` — added `/consulting-resume` to CATEGORY_HUBS (~190 new internal links from every SEO detail page into the pillar)
+- **Company template:** `frontend/src/app/(resources)/company-resume/[company]/page.tsx` — bumped `dateModified` from 2026-04-07 to 2026-04-20 (freshness signal across all 13 company pages)
+
+#### 5. Build + preview verified
+- `npm run build`: **189 static pages** (up from 188), 0 errors
+- Preview `/consulting-resume`: H1 correct, 10 H2 sections, 89 cards (5 structure + 7 MBB-vs-Big4 + 3 MBB firms + 4 Big 4 firms + 6 bullet formulas + 6 practices + 8 FAQ + nested), InlineCta + SeoCta present, all 4 firm deep-links working. No new console errors.
+
+### Not Yet Done (For Future Sessions)
+- [ ] Monitor `/consulting-resume` indexing (2026-04-25+)
+- [ ] Monitor `/company-resume/{mckinsey,bcg,bain,deloitte}` position lift (2026-04-25+)
+- [ ] Monitor `/company-resume/bain` move from pos 29.5 specifically — biggest single warm signal in this batch
+- [ ] **Build `/wadecv-vs-resumeai` comparison page** — +375,200% rising signal, biggest ever seen, still unaddressed (queued for Session 21)
+- [ ] Monitor `/ats-resume-checker` indexing (Session 19, 2026-04-24+)
+- [ ] Monitor `/free-cv-builder-uk` indexing (Session 18, 2026-04-24+)
+- [ ] Monitor `/humanize-ai-resume` indexing (Session 17, 2026-04-23+)
+- [ ] Monitor `/skills/{operations-manager,executive-assistant}` lift (Session 18, 2026-04-24+)
+- [ ] Monitor `/skills/python-developer` lift (Session 17, 2026-04-23+)
+- [ ] Monitor `/skills/digital-marketing` continuing lift — at 60i now (+65% in 96h post-Session-15)
+- [ ] Complete consulting cluster — PwC, EY, KPMG, Strategy&, EY-Parthenon, Monitor Deloitte sub-pages
+- [ ] Investigate `/ats/lever` persistent 0-click anomaly — consider radical retitle to escape navigational intent trap
+- [ ] Investigate why `/wadecv-vs-teal` still NOT indexed after 14 days
+- [ ] Consider "cv builder app" +250% signal — PWA landing page?
+- [ ] Consider "online resume builder" dedicated US-targeted page (+250% still rising)
+- [ ] Fix pre-existing duplicate-key warnings on `/ats` and `/career-change` index pages
+- [ ] Monitor signup events in GA4 — still 0 from organic after 13+ days of InlineCta instrumentation
+
+---
+
 ## 2026-04-19 — Session 19: Free ATS Resume Checker Landing Page (same day as S18)
 
 ### Data Pulled

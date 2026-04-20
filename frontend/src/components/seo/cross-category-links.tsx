@@ -18,6 +18,7 @@ const CATEGORY_HUBS: CrossLink[] = [
   { href: "/humanize-ai-resume", label: "How to Humanize Your AI Resume" },
   { href: "/free-cv-builder-uk", label: "Free CV Builder for UK Jobs" },
   { href: "/ats-resume-checker", label: "Free ATS Resume Checker" },
+  { href: "/consulting-resume", label: "Consulting Resume Guide (MBB + Big 4)" },
 ];
 
 const TOOL_COMPARISONS: CrossLink[] = [
