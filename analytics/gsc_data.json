@@ -362,9 +362,9 @@
     {
       "page": "https://wadecv.com/ats/lever",
       "clicks": 0,
-      "impressions": 66,
+      "impressions": 63,
       "ctr": 0,
-      "position": 8.0
+      "position": 7.9
     },
     {
       "page": "https://wadecv.com/best-ai-resume-builder-2026",
@@ -386,6 +386,13 @@
       "impressions": 4,
       "ctr": 0,
       "position": 5.5
+    },
+    {
+      "page": "https://wadecv.com/career-change/marketing-to-ux-design",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 47
     },
     {
       "page": "https://wadecv.com/career-change/military-to-project-manager",
@@ -502,9 +509,9 @@
     {
       "page": "https://wadecv.com/physical-mail/how-to-mail-your-resume",
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 10,
       "ctr": 0,
-      "position": 33.6
+      "position": 28.7
     },
     {
       "page": "https://wadecv.com/physical-mail/physical-cv-vs-email-application",
@@ -621,9 +628,9 @@
     {
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 60,
+      "impressions": 65,
       "ctr": 0,
-      "position": 69.8
+      "position": 69.0
     },
     {
       "page": "https://wadecv.com/skills/executive-assistant",
@@ -1134,17 +1141,17 @@
       "query": "digital marketing cv",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 23,
+      "impressions": 26,
       "ctr": 0,
-      "position": 67.8
+      "position": 67.1
     },
     {
       "query": "digital marketing cvs",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 9,
+      "impressions": 10,
       "ctr": 0,
-      "position": 73.1
+      "position": 72.9
     },
     {
       "query": "digital marketing keywords resume",
@@ -1174,9 +1181,9 @@
       "query": "digital marketing skills resume",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 9,
+      "impressions": 10,
       "ctr": 0,
-      "position": 46.4
+      "position": 45.3
     },
     {
       "query": "executive assistant resume skills",
@@ -1193,6 +1200,14 @@
       "impressions": 1,
       "ctr": 0,
       "position": 60
+    },
+    {
+      "query": "how to move from marketing to ux",
+      "page": "https://wadecv.com/career-change/marketing-to-ux-design",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 47
     },
     {
       "query": "how to send cv",
@@ -1481,14 +1496,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 50
-    },
-    {
-      "query": "skill customer service cv",
-      "page": "https://wadecv.com/skills/customer-service",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 56
     }
   ],
   "daily_trend_90d": [
@@ -1806,22 +1813,29 @@
       "impressions": 8,
       "ctr": 0,
       "position": 49.9
+    },
+    {
+      "date": "2026-04-19",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 40.6
     }
   ],
   "devices_30d": [
     {
       "device": "DESKTOP",
       "clicks": 1,
-      "impressions": 361,
-      "ctr": 0.28,
-      "position": 55.8
+      "impressions": 365,
+      "ctr": 0.27,
+      "position": 56.0
     },
     {
       "device": "MOBILE",
       "clicks": 1,
-      "impressions": 14,
-      "ctr": 7.14,
-      "position": 13.1
+      "impressions": 15,
+      "ctr": 6.67,
+      "position": 15.3
     }
   ],
   "countries_30d": [
@@ -1835,9 +1849,9 @@
     {
       "country": "usa",
       "clicks": 1,
-      "impressions": 181,
-      "ctr": 0.55,
-      "position": 56.5
+      "impressions": 180,
+      "ctr": 0.56,
+      "position": 56.8
     },
     {
       "country": "are",
@@ -1919,16 +1933,16 @@
     {
       "country": "fra",
       "clicks": 0,
-      "impressions": 7,
+      "impressions": 8,
       "ctr": 0,
-      "position": 30.7
+      "position": 31.2
     },
     {
       "country": "gbr",
       "clicks": 0,
-      "impressions": 105,
+      "impressions": 110,
       "ctr": 0,
-      "position": 70.6
+      "position": 70.1
     },
     {
       "country": "hkg",

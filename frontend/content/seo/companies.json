@@ -180,14 +180,17 @@
   {
     "slug": "goldman-sachs",
     "name": "Goldman Sachs",
-    "metaDescription": "Goldman Sachs resume guide: deal sizes, modelling keywords, and structure that passes the IB, markets, and tech screening rounds.",
-    "intro": "Goldman Sachs recruits for roles across divisions—investment banking, markets, asset management, engineering, and more. Each division has its own focus, but all value rigour, teamwork, and results. This guide outlines how to tailor your resume for Goldman-style roles.",
+    "metaDescription": "Goldman Sachs resume format 2026: one-page banker structure, deal-experience bullets, division keywords (M&A, LevFin, ECM, Markets), and what the Super Day + HireVue screen actually evaluate.",
+    "intro": "Goldman Sachs screens resumes against a bar partners describe as 'commercial intellect plus rigour' — a combination of GPA, quantified deal experience, and a visible 'spike' (Olympiad, D1 athletics, founded venture, published research). The CV screen feeds into HireVue video interview, Pymetrics cognitive assessment, and Super Day (3-6 back-to-back 30-minute behavioural + technical interviews). This guide covers exactly how Goldman partners read a resume, how to signal fit with Investment Banking vs Markets vs Asset Management vs Engineering, and what to include in your one-page CV to pass the screen.",
     "hiringRequirements": [
-      "Strong academic record and quantitative aptitude where relevant",
-      "Attention to detail and ability to work under pressure",
-      "Team collaboration and communication with senior professionals",
-      "Integrity and commitment to client service and risk management",
-      "Relevant internships or experience in finance, tech, or related fields"
+      "Top-decile academic record — 3.5+ GPA / First / 2:1 minimum at targets (Wharton, Stern, Harvard, Columbia, LSE, Oxbridge, Bocconi, INSEAD), 3.7+ at semi-targets and non-targets",
+      "Standardised test scores if strong — SAT 1450+, ACT 32+, GMAT 730+, GRE 330+ — listed in the education block",
+      "Quantified deal experience for IB applicants — $ size, buyer/target/sponsor, your specific workstream, deal outcome (closed, announced, withdrawn)",
+      "Named leadership with a role title, team size, and quantified outcome — investment-club PM, student-government president, founded venture, D1 captain",
+      "Visible 'spike' in the additional section — Olympiad medal, published research, patent, sustained athletic, musical, or entrepreneurial achievement",
+      "Division signalling — IB (M&A, LevFin, ECM, DCM, Sponsors, Industry Groups), GS Asset Management, Global Markets (FICC, Equities), Goldman Sachs Research, GS Engineering, GS Marquee",
+      "Technical fluencies for the skills section — advanced Excel (three-statement, LBO, DCF, M&A accretion/dilution), PowerPoint, Capital IQ, FactSet, Bloomberg; Python and VBA for Markets / Engineering roles",
+      "Language proficiency relevant to the hiring office — French/German/Italian/Spanish for London-EU coverage, Mandarin for Hong Kong, Portuguese/Spanish for Sao Paulo"
     ],
     "keywords": [
       "analysis",
@@ -205,14 +208,78 @@
       "Excel",
       "data",
       "stakeholder",
-      "deadline"
+      "deadline",
+      "sell-side",
+      "buy-side",
+      "IPO",
+      "LBO",
+      "sponsor",
+      "DCF",
+      "accretion/dilution",
+      "CIM",
+      "management presentation",
+      "Super Day",
+      "HireVue",
+      "Pymetrics",
+      "Capital IQ",
+      "FactSet",
+      "Bloomberg",
+      "TMT",
+      "FIG",
+      "Healthcare",
+      "Natural Resources"
     ],
-    "sampleSnippet": "Supported M&A execution for 3 live deals (combined value $2B+); built operating model and valuation materials for client C-suite. Coordinated with legal, tax, and diligence teams across 2 countries.",
-    "body": "Goldman resumes should be precise and outcome-focused. Use numbers—deal sizes, team size, time saved, or scope of analysis. Formatting should be clean and consistent so recruiters can scan quickly. Tailor your resume to the division and level you are applying for. WadeCV can help you align your experience with Goldman-style job descriptions and emphasise the most relevant achievements.",
+    "sampleSnippet": "Built three-statement operating model, DCF, and precedent-transaction analysis for $1.4B Goldman Sachs sell-side advisory of specialty-chemicals target to European strategic acquirer; drafted 62-page confidential information memorandum and 40-page management presentation; deal signed at 11.8x LTM EBITDA, 22% premium to sponsor's entry, closing Q3 2025.",
+    "body": "Goldman Sachs resumes are one page for every Summer Analyst, Full-Time Analyst, Lateral Associate, and Experienced Associate application — no exceptions below Vice President. The partner or VP reviewing your CV spends under 45 seconds on the first read. Structure: education first (institution, degree, GPA to two decimals, classification, relevant coursework, study abroad, SAT/ACT/GMAT/GRE if strong), then professional experience reverse-chronologically with deal experience integrated or broken out, then leadership and extracurriculars, then additional (languages, technical skills, certifications, publications, awards). The additional section is where the 'spike' lives — Olympiad medals, patents, D1 athletics, published research, sustained entrepreneurial outcomes.\n\nGoldman bullets are more precise than peers. Where Morgan Stanley bullets lean 'strategic' and JP Morgan bullets lean 'scale', Goldman bullets favour 'rigour' and 'commercial impact' — specific model names, specific memo deliverables, specific financing or transaction outcomes. The best Goldman IB bullets read like internal deal-team-memo summaries: '$ deal size, buyer/target/sponsor, your specific model or memo deliverable, deal outcome (closed, announced, withdrawn), and the relevant multiple or margin'. For Markets applicants, bullets should state asset class, client-coverage scope (top-N client names, AUM covered), risk metrics (VaR, DV01, delta exposure), and PnL contribution with Greenwich Coalition rankings where available.\n\nGoldman organises Investment Banking by industry group (TMT, Healthcare, FIG, Natural Resources, Industrials, Consumer/Retail, Real Estate) and product group (M&A, LevFin, ECM, DCM, Sponsors). Your CV should signal the industry or product you are targeting — 'TMT sell-side M&A', 'FIG ECM', 'Healthcare LevFin', 'Sponsors coverage' — in the headline and in the most recent deal bullets. Markets organises by FICC (Rates, Credit, Mortgages, FX, Commodities) and Equities (Cash, Derivatives, Prime, Futures, One Delta) — name the specific desk, asset class, and client segment. GS Asset Management, GSAM Alternatives, and Goldman Sachs Research have their own CV norms — more CFA-weighted, research-note-weighted, and sector-coverage-weighted.\n\nThe four common resume-screen rejections at Goldman: (1) deal bullets without $ size, counterparty, or your specific workstream — generic 'supported M&A process' is a screen-kill phrase; (2) missing GPA when above 3.5 — screeners interpret absence as sub-threshold; (3) weak 'spike' — membership-level involvement in societies listed without role title, portfolio, or outcome; (4) two-page resume at Analyst or Associate level. Fix these and pass the HireVue + Super Day gate. WadeCV aligns your existing CV with a specific Goldman Sachs job description, rewrites bullets with quantified deal outcomes from your history, and reformats to Goldman's one-page standard. For cross-bank comparison and the differences with JP Morgan, Morgan Stanley, Citi, BlackRock, and elite boutiques, see the [investment banking resume pillar guide](/investment-banking-resume).",
+    "faq": [
+      {
+        "question": "How long should a Goldman Sachs resume be?",
+        "answer": "One page for every Summer Analyst, Full-Time Analyst, Lateral Associate, and Experienced Associate application. Vice President and above applying as experienced hires may extend to one and a half pages only if the substance demands it. Two pages are accepted only for MD-level or Partner-level lateral applications with 15+ years of named deal experience. Partners and VPs reviewing a Goldman CV spend under 45 seconds on the first read — a two-page CV at junior level loses the reader. Use 10-11pt body text and 0.5-inch margins and cut ruthlessly."
+      },
+      {
+        "question": "What GPA does Goldman Sachs require?",
+        "answer": "Goldman does not publish a cut-off, but competitive resumes from target schools (Wharton, Stern, Harvard, Columbia, Ross, Mendoza, Haas, Johnson, LSE, Oxbridge, Bocconi, INSEAD, HEC) have 3.5+ GPA / First Class / 2:1 minimum. Semi-target and non-target applicants need 3.7+ plus a differentiating signal (winning stock-pitch, investment-club PM role, published research, early PE internship, quant competition medal). Do not hide your GPA — screeners assume absence means sub-3.5. If your cumulative is lower but your finance-major or quantitative-major GPA is higher, list both. Standardised test scores (SAT 1450+, ACT 32+, GMAT 730+, GRE 330+) strengthen the academic signal — list them."
+      },
+      {
+        "question": "What is Goldman's HireVue + Pymetrics + Super Day and how does the resume feed into it?",
+        "answer": "HireVue is Goldman's asynchronous video interview — typically 3-5 questions, 30-60 seconds each, recorded and AI-scored. Pymetrics is a cognitive and behavioural assessment — 12 short games measuring attention, risk tolerance, pattern recognition, and emotional processing. Both feed into the Super Day invite decision along with the resume. Super Day is 3-6 back-to-back 30-minute in-person (or Zoom) behavioural + technical interviews. The resume remains the gatekeeper: HireVue and Pymetrics do not rescue a weak CV. Your resume needs to pass the screener before HireVue is unlocked, and a strong HireVue will not offset a weak resume."
+      },
+      {
+        "question": "How should I tailor my resume to a specific Goldman division?",
+        "answer": "Read the division page (Goldman Sachs Investment Banking, Goldman Sachs Global Markets, Goldman Sachs Asset Management, Goldman Sachs Research, Goldman Sachs Engineering, Goldman Sachs Marquee) and mirror the vocabulary of the target division. IB Analyst: deal size, buyer/target/sponsor, your specific workstream. Markets: asset class, desk, client-coverage scope, risk metrics, PnL contribution. GSAM / Research: coverage universe, AUM, benchmark, alpha. Engineering: systems built, production scale, latency, reliability metrics. Industry-group CVs (TMT, FIG, Healthcare, Natural Resources) should lead with sector-relevant deal experience even if not the most recent role."
+      },
+      {
+        "question": "What keywords should I use on a Goldman Sachs resume?",
+        "answer": "Deal-experience verbs that signal ownership: built, led, structured, negotiated, authored, drafted, priced. Outcome-type language: 'deal signed at $X size', 'financing commitment $Y at SOFR+Zbps', 'priced $A IPO at B% above range with C% first-day pop'. Division vocabulary — 'sell-side M&A', 'sponsor LBO', 'convertible issuance', 'investment-grade DCM', 'high-yield roadshow', 'rates flow', 'long-only coverage'. Named model and memo deliverables signal fluency: 'three-statement operating model', 'LBO capital-structure waterfall', 'M&A accretion/dilution', 'precedent-transaction analysis', 'management presentation', 'confidential information memorandum', 'fairness opinion'. Named tools for skills: advanced Excel, PowerPoint, Capital IQ, FactSet, Bloomberg, VBA, Python, Tableau, Marquee."
+      },
+      {
+        "question": "How is a Goldman Sachs resume different from JP Morgan or Morgan Stanley?",
+        "answer": "Structurally identical — one page, education first, reverse-chronological experience, deal experience integrated or broken out, leadership, additional. The vocabulary and signal differ. Goldman bullets favour 'rigour', 'commercial impact', specific model names, specific memo deliverables. JP Morgan bullets favour 'scale', 'breadth', 'balance-sheet', universal-bank integration. Morgan Stanley bullets favour 'strategic', 'advisory depth', 'TMT dominance', Wealth-and-Asset-Management integration. Goldman weights 'spike' more heavily — Olympiad, D1 athletics, founded venture, published research — while JP Morgan weights breadth of high-quality experience and MS weights advisory judgement. If applying to all three, use the same base CV and swap vocabulary emphasis and most-recent deal experience."
+      },
+      {
+        "question": "Can I get a Goldman Sachs interview from a non-target school?",
+        "answer": "Yes — Goldman increasingly recruits from non-targets if the CV signals finance or technical depth. The path is a winning stock-pitch competition (Cornell Stock Pitch, Ross Portfolio Competition, LSE, WISC), an investment-club PM role with a named portfolio and benchmark-comparable performance, a pre-IB internship at a regional bank or boutique, a sustained quant-research project with named methodology, or an Olympiad medal (Math, Physics, Chemistry, Informatics, Biology). Non-finance majors — Engineering, Physics, Math, CS, Statistics — are well-regarded at Markets desks, GS Engineering, GS Marquee, and TMT / Healthcare industry groups because of the quantitative rigour. Your CV must compensate for the non-target signal with a visible, specific, quantified finance or technical spike."
+      },
+      {
+        "question": "What are the most common reasons Goldman Sachs rejects a resume?",
+        "answer": "(1) Deal bullets without $ size, counterparty, or your specific workstream — 'supported M&A process' is a screen-kill phrase. (2) Missing GPA when above 3.5 — screeners read absence as sub-threshold. (3) Weak 'spike' — extracurriculars listed without role title, duration, or measurable outcome. (4) Two-page resume at Analyst or Associate level — automatic screen reject. (5) Generic 'finance' framing when the role is division-specific (M&A vs LevFin vs ECM vs Markets vs GSAM vs Research vs Engineering). (6) Missing Series 79 / CFA progression on US bulge-bracket or asset-management applications. (7) Missing language proficiency for non-US office applications. (8) Skills section with generic tools rather than named fluencies. WadeCV aligns your CV with a specific Goldman Sachs job description, rewrites bullets with quantified deal outcomes from your history, and reformats to Goldman's one-page standard."
+      }
+    ],
+    "commonMistakes": [
+      "Using generic advisory verbs ('worked on', 'assisted with', 'supported') instead of ownership verbs with specific deliverables ('built three-statement model', 'drafted CIM', 'structured LBO waterfall')",
+      "Submitting a two-page resume for a Summer Analyst, Full-Time Analyst, or Associate role — automatic screen reject",
+      "Missing or hidden GPA when above 3.5 at targets or 3.7 at semi-targets — screeners interpret absence as sub-threshold",
+      "Deal bullets without $ size, buyer/target/sponsor, or deal status — generic 'M&A deal' framing fails screening",
+      "Weak spike section — investment-club membership listed without PM role, portfolio size, benchmark, or performance vs index",
+      "Wrong division framing — applying to Markets with IB-only language, or to GSAM with generic advisory bullets",
+      "Missing Series 79 or CFA progression on US Analyst / Associate applications — recruiters verify with FINRA and CFA Institute",
+      "Additional section with generic skills ('Microsoft Office', 'teamwork') instead of specific fluencies (advanced Excel LBO / M&A accretion, Capital IQ, FactSet, Bloomberg, VBA, Python)"
+    ],
     "relatedSlugs": [
       "jp-morgan",
+      "morgan-stanley",
       "citi",
-      "stripe"
+      "blackrock"
     ]
   },
   {
@@ -622,64 +689,422 @@
   },
   {
     "slug": "jp-morgan",
-    "name": "JPMorgan Chase",
-    "metaDescription": "JPMorgan resume guide: IB, markets, and tech keywords, deal-size formatting, and what the hiring bar looks like across divisions.",
-    "intro": "JPMorgan hires across investment banking, asset management, markets, and technology. This guide covers typical hiring expectations and how to tailor your resume.",
+    "name": "JP Morgan",
+    "metaDescription": "JP Morgan resume format 2026: one-page banker structure, deal-experience bullets, division keywords (M&A, LevFin, ECM, Markets, Private Bank), and what the HireVue + Super Day screen actually evaluate.",
+    "intro": "JP Morgan runs the largest universal-bank platform in investment banking — top-3 in M&A, ECM, DCM, and LevFin globally, integrated with the world's largest Commercial, Corporate, Private, and Asset Management franchises. Recruiters screen CVs against a bar that weights breadth of high-quality experience, client-facing rigour, and balance-sheet-fluency over niche spike. The CV screen feeds into HireVue video interview, Pymetrics cognitive assessment, and Super Day (3-6 back-to-back 30-minute behavioural + technical interviews). This guide covers exactly how JP Morgan recruiters read a resume, how to signal fit with Investment Banking vs Markets vs Private Bank vs JP Morgan Asset Management vs Commercial Bank, and what to include in your one-page CV to pass the screen.",
     "hiringRequirements": [
-      "Strong academic record",
-      "Relevant experience or internships",
-      "Attention to detail and rigour",
-      "Teamwork and communication",
-      "Integrity and compliance mindset"
+      "Strong academic record — 3.5+ GPA / First / 2:1 minimum at targets (Wharton, Stern, Harvard, Michigan Ross, Mendoza, LSE, Oxbridge, Bocconi, INSEAD, HEC), 3.7+ at semi-targets and non-targets",
+      "Standardised test scores if strong — SAT 1450+, ACT 32+, GMAT 730+, GRE 330+ — listed in the education block",
+      "Quantified deal experience for IB applicants — $ size, buyer/target/sponsor, your specific workstream, deal outcome (closed, announced, withdrawn, ongoing)",
+      "Named leadership with a role title, team size, and quantified outcome — investment-club PM, case-competition winner, founded venture, D1 athletics captain",
+      "Breadth of high-quality experience — JP Morgan weights multiple strong internships or extracurricular roles over a single narrow spike",
+      "Division signalling — CIB (Investment Banking, Markets, Treasury Services), Commercial Bank (Middle Market, Large Corporate), Asset & Wealth Management (JPMAM, Private Bank), Corporate & Investment Bank technology",
+      "Technical fluencies — advanced Excel, PowerPoint, Capital IQ, FactSet, Bloomberg, VBA, Python; DCF / LBO / M&A accretion-dilution for IB, VaR / risk metrics for Markets, portfolio attribution for Asset Management",
+      "Language proficiency relevant to the hiring office — French/German/Italian/Spanish for London-EU coverage, Mandarin for Hong Kong, Portuguese/Spanish for LatAm"
     ],
     "keywords": [
-      "client",
       "analysis",
       "financial",
-      "markets",
-      "transaction",
-      "team",
       "modelling",
+      "client",
+      "team",
       "due diligence",
-      "presentation"
+      "transaction",
+      "valuation",
+      "markets",
+      "risk",
+      "compliance",
+      "presentation",
+      "Excel",
+      "data",
+      "stakeholder",
+      "deadline",
+      "sell-side",
+      "buy-side",
+      "IPO",
+      "LBO",
+      "sponsor",
+      "DCF",
+      "accretion/dilution",
+      "CIM",
+      "management presentation",
+      "CIB",
+      "universal bank",
+      "balance sheet",
+      "middle market",
+      "private bank",
+      "JPMAM",
+      "Super Day",
+      "HireVue",
+      "Pymetrics",
+      "Bloomberg"
     ],
-    "sampleSnippet": "Analyst on M&A and capital markets transactions; built models and prepared materials for client presentations. Coordinated with senior team and other groups on execution.",
-    "body": "JPMorgan resumes should be precise and outcome-focused. Use numbers and clear structure. Tailor to the division and level. WadeCV can help you align your experience with JPMorgan job descriptions.",
+    "sampleSnippet": "Built sponsor-side LBO model and capital-structure waterfall for $2.1B JP Morgan-led take-private of European software target; sized $1.35B TLB (6.5x leverage, SOFR+400) and $250M RCF; coordinated with 3-bank JLA syndicate; committee-approved underwrite delivered to sponsor within 11 days, deal closed October 2025.",
+    "body": "JP Morgan resumes are one page for every Summer Analyst, Full-Time Analyst, Lateral Associate, and Experienced Associate application across the Corporate & Investment Bank, Commercial Bank, and Asset & Wealth Management divisions. Structure: education first (institution, degree, GPA to two decimals, classification, relevant coursework, study abroad, SAT/ACT/GMAT/GRE if strong), then professional experience reverse-chronologically with deal experience integrated or broken out, then leadership, then additional (languages, technical skills, certifications, publications). The additional section at JP Morgan is read for breadth and quality — multiple named leadership roles with outcomes outweigh a single narrow extracurricular.\n\nJP Morgan bullets lean 'scale' and 'balance-sheet'. Where Goldman bullets favour 'rigour' and Morgan Stanley bullets favour 'advisory depth', JP Morgan bullets often showcase the universal-bank franchise — multi-product client relationships, balance-sheet-enabled financing, and cross-division integration. For IB Analyst applicants, the ideal JP Morgan bullet names the deal, the structure, your specific workstream, and the outcome: '$1.4B investment-grade bond issuance, $2.1B sponsor LBO, $720M IPO' — with multiple products per client where applicable. Markets bullets should state asset class, client-coverage scope (top-N names, AUM covered), risk metrics (VaR, DV01, delta), and PnL contribution with Greenwich Coalition rankings. JPMAM and Private Bank bullets should state AUM covered, mandate type (Long-only, Long/short, Alts, Multi-asset, Fixed Income), and alpha or benchmark-comparable performance.\n\nJP Morgan organises Investment Banking by industry group (TMT, Healthcare, FIG, Natural Resources, Industrials, Consumer/Retail, Real Estate, Diversified Industrials) and product group (M&A, LevFin, ECM, DCM, Sponsors, Investment-Grade Corporate Bank). Your CV should signal the industry or product you are targeting — 'TMT M&A', 'Healthcare LevFin', 'FIG ECM', 'Industrials Sponsors coverage' — in the headline and most recent deal bullets. The Commercial Bank Analyst programme (Middle Market Banking and Specialized Industries, Large Corporate, Innovation Economy) is a separate pipeline from CIB — CVs should emphasise credit analysis, relationship management, and portfolio-quality monitoring rather than deal-execution language. Asset & Wealth Management has its own track: CFA progression, research-note authorship, and named AUM coverage matter more than deal size.\n\nThe four common resume-screen rejections at JP Morgan: (1) deal bullets without $ size, counterparty, or specific workstream — generic 'supported M&A process' fails screening; (2) missing GPA when above 3.5 — screeners interpret absence as sub-threshold; (3) breadth without depth — multiple generic extracurricular memberships without named role, team size, or measurable outcome; (4) two-page resume at Analyst or Associate level. Fix these and pass the HireVue + Super Day gate. WadeCV aligns your existing CV with a specific JP Morgan job description, rewrites bullets with quantified deal outcomes from your history, and reformats to JP Morgan's one-page standard. For cross-bank comparison and the differences with Goldman Sachs, Morgan Stanley, Citi, BlackRock, and elite boutiques, see the [investment banking resume pillar guide](/investment-banking-resume).",
+    "faq": [
+      {
+        "question": "How long should a JP Morgan resume be?",
+        "answer": "One page for every Summer Analyst, Full-Time Analyst, Lateral Associate, and Experienced Associate application across the Corporate & Investment Bank, Commercial Bank, and Asset & Wealth Management divisions. Vice President and above applying as experienced hires may extend to one and a half pages only if the substance demands it. Two pages are accepted only for MD-level or Managing Director lateral applications with 15+ years of named deal experience. The recruiter screens your CV in under 45 seconds — a two-page CV at junior level is read as inability to prioritise. Use 10-11pt body text and 0.5-inch margins."
+      },
+      {
+        "question": "What GPA does JP Morgan require?",
+        "answer": "JP Morgan does not publish a cut-off, but competitive resumes from target schools (Wharton, Stern, Harvard, Michigan Ross, Mendoza, Columbia, Haas, Johnson, LSE, Oxbridge, Bocconi, INSEAD, HEC) have 3.5+ GPA / First Class / 2:1 minimum. Semi-target and non-target applicants need 3.7+ plus a differentiating signal (winning stock-pitch, investment-club PM role, published research, pre-IB internship, case-competition win). Do not hide your GPA — screeners assume absence means sub-3.5 and screen accordingly. If your cumulative is lower but your finance-major or quantitative-major GPA is higher, list both. Standardised test scores (SAT 1450+, ACT 32+, GMAT 730+) strengthen the academic signal."
+      },
+      {
+        "question": "How does the JP Morgan Corporate & Investment Bank differ from the Commercial Bank for applicants?",
+        "answer": "The CIB runs Investment Banking (M&A, LevFin, ECM, DCM, Sponsors), Markets (FICC, Equities), Treasury Services, and Securities Services — applicants here need deal-execution or markets-risk signals and will rotate through industry or product groups. The Commercial Bank runs Middle Market Banking and Specialized Industries, Large Corporate, and the Innovation Economy business — applicants need credit-analysis fluency, relationship-management signals, and portfolio-monitoring experience rather than advisory deal execution. The two programmes have separate Analyst classes and recruiting pipelines. Your CV should clearly signal which you are targeting: 'IB Analyst — TMT Sponsors' vs 'CB Analyst — Middle Market Coverage'."
+      },
+      {
+        "question": "What is JP Morgan's HireVue + Pymetrics + Super Day process?",
+        "answer": "HireVue is JP Morgan's asynchronous video interview — typically 3-5 questions, 30-60 seconds each, recorded and AI-scored on content, communication, and behavioural signals. Pymetrics is a cognitive and behavioural assessment — 12 short games measuring attention, risk tolerance, pattern recognition, and emotional processing. Both feed into the Super Day invite along with the resume. Super Day is 3-6 back-to-back 30-minute behavioural + technical interviews with bankers at different levels. The resume remains the gatekeeper — HireVue and Pymetrics do not rescue a weak CV. Your CV needs to pass the recruiter screener before HireVue is unlocked."
+      },
+      {
+        "question": "What keywords should I use on a JP Morgan resume?",
+        "answer": "Deal-execution verbs that signal ownership: built, led, structured, negotiated, authored, drafted, priced, committed. Outcome-type language: 'deal signed at $X size', 'financing commitment $Y at SOFR+Zbps', 'priced $A IPO at B% above range with C% first-day pop'. Division vocabulary — 'sell-side M&A', 'sponsor LBO', 'investment-grade bond', 'high-yield issuance', 'convertible', 'cross-border M&A', 'Middle Market coverage', 'Innovation Economy', 'Private Bank AUM'. Named model and memo deliverables signal fluency: 'three-statement operating model', 'LBO capital-structure waterfall', 'accretion/dilution', 'credit memo', 'relationship review'. Named tools for skills: advanced Excel, PowerPoint, Capital IQ, FactSet, Bloomberg, VBA, Python, Moody's CreditView, S&P RatingsXpress."
+      },
+      {
+        "question": "How is a JP Morgan resume different from Goldman Sachs or Morgan Stanley?",
+        "answer": "Structurally identical — one page, education first, reverse-chronological experience, deal experience integrated or broken out, leadership, additional. The vocabulary and signal differ. JP Morgan bullets favour 'scale', 'balance-sheet', 'universal bank', breadth across products per client. Goldman bullets favour 'rigour', 'commercial intellect', specific model and memo deliverables, narrow 'spike' (Olympiad, D1, founded venture). Morgan Stanley bullets favour 'advisory depth', 'strategic', TMT franchise, Wealth+Asset Management integration. JP Morgan weights breadth and quality over narrow spike — multiple strong experiences beat a single standout. If applying to all three, use the same base CV and swap vocabulary emphasis and most-recent deal experience."
+      },
+      {
+        "question": "Can I get a JP Morgan interview as an experienced hire or lateral?",
+        "answer": "Yes. JP Morgan recruits experienced hires and laterals across Analyst, Associate, Vice President, and Executive Director levels in every division. Lateral CVs must signal depth — named industry or product coverage, named deal or mandate history, managed AUM or portfolio size, and specific client names where confidentiality allows. For IB laterals, the CV should list 8-15 named deals across the last 2-5 years with deal size, counterparty, your specific workstream, and outcome. For Markets laterals, named client-coverage (top-N names, AUM covered), specific PnL contribution, and Greenwich Coalition ranking. For Asset Management and Private Bank laterals, named mandates, AUM run, net flows, and alpha or benchmark-comparable performance."
+      },
+      {
+        "question": "What are the most common reasons JP Morgan rejects a resume?",
+        "answer": "(1) Deal bullets without $ size, counterparty, or your specific workstream. (2) Missing GPA when above 3.5 — screeners read absence as sub-threshold. (3) Breadth without depth — multiple generic society memberships without named role or measurable outcome. (4) Two-page resume at Analyst or Associate level — automatic screen reject. (5) Wrong-division framing — applying to Commercial Bank with IB-only language, or to Asset Management with generic advisory bullets. (6) Missing Series 79 or CFA progression on applications that require it. (7) Missing language proficiency for non-US office applications. (8) Additional section with generic tools ('Microsoft Office', 'teamwork') instead of named fluencies. WadeCV aligns your CV with a specific JP Morgan job description, rewrites bullets with quantified deal outcomes, and reformats to JP Morgan's one-page standard."
+      }
+    ],
+    "commonMistakes": [
+      "Using generic verbs ('worked on', 'assisted with', 'supported') instead of ownership verbs with specific deliverables ('built three-statement model', 'drafted credit memo', 'structured LBO waterfall')",
+      "Submitting a two-page resume at Analyst or Associate level — automatic screen reject",
+      "Missing or hidden GPA when above 3.5 at targets or 3.7 at semi-targets — screeners interpret absence as sub-threshold",
+      "Deal bullets without $ size, buyer/target/sponsor, or deal status — generic 'M&A transaction' framing fails",
+      "Applying to Commercial Bank or Asset Management with IB-only framing — each division has its own vocabulary and signal bar",
+      "Weak leadership section — society memberships listed without named role, team size, or quantified outcome",
+      "Missing Series 79, SIE, or CFA progression on US Analyst / Associate applications where required",
+      "Additional section with generic skills ('Microsoft Office', 'teamwork') instead of specific fluencies (Capital IQ, FactSet, Bloomberg, advanced Excel LBO / accretion, Python, VBA)"
+    ],
     "relatedSlugs": [
       "goldman-sachs",
+      "morgan-stanley",
       "citi",
-      "stripe"
+      "blackrock"
     ]
   },
   {
     "slug": "citi",
     "name": "Citi",
-    "metaDescription": "Citi resume guide: global banking keywords, markets and tech role formatting, and how to show scope across divisions.",
-    "intro": "Citi hires for banking, markets, technology, and operations globally. This guide covers what Citi looks for and how to tailor your resume.",
+    "metaDescription": "Citi resume format 2026: one-page banker structure, deal-experience bullets, CIB keywords (M&A, Capital Markets Origination, Markets, TTS), and what the Super Day + HireVue screen actually evaluate.",
+    "intro": "Citi runs the deepest emerging-markets franchise in global investment banking (LatAm, MENA, CEEMEA, Asia ex-Japan) and an integrated Corporate & Investment Banking model that links advisory, markets, treasury, and securities services under one revenue engine. Recruiters screen CVs against a bar that weights cross-border exposure, EM familiarity, and CIB-integration fluency alongside standard advisory signals. The CV screen feeds into HireVue video interview, Pymetrics cognitive assessment, and Super Day. This guide covers exactly how Citi recruiters read a resume, how to signal fit with Banking, Capital Markets Origination, Markets, Treasury & Trade Solutions, and Private Bank, and what to include in your one-page CV to pass the screen.",
     "hiringRequirements": [
-      "Strong academic and analytical foundation",
-      "Relevant experience or interest in financial services",
-      "Collaboration and communication",
-      "Attention to detail",
-      "Diversity of thought and background"
+      "Strong academic record — 3.5+ GPA / First / 2:1 minimum at targets (Wharton, Stern, Harvard, LSE, Oxbridge, Bocconi, INSEAD, HEC, Hong Kong University, IIM), 3.7+ at semi-targets and non-targets",
+      "Standardised test scores if strong — SAT 1450+, GMAT 730+, GRE 330+ — listed in the education block",
+      "Quantified deal experience or client-coverage experience — $ size, counterparty, your specific workstream, outcome",
+      "EM or cross-border exposure is differentiating — named LatAm, MENA, CEEMEA, or Asia ex-Japan experience outperforms generic US-only internship history at Citi",
+      "Named leadership with role title, team size, and measurable outcome — investment-club PM, case-competition winner, founded venture, D1 athletics captain",
+      "Division signalling — BCMA (Banking, Capital Markets and Advisory), Capital Markets Origination (CMO), Markets (FICC, Equities), Treasury & Trade Solutions (TTS), Securities Services, Citi Private Bank, Citi Global Wealth",
+      "Language proficiency — Spanish/Portuguese for LatAm, Arabic/French for MENA, Mandarin/Cantonese for Hong Kong, Polish/Russian/Turkish for CEEMEA, Japanese for Tokyo",
+      "Technical fluencies — advanced Excel, PowerPoint, Capital IQ, FactSet, Bloomberg, Reuters, VBA, Python; DCF / LBO / M&A accretion-dilution for IB, VaR for Markets, portfolio attribution for Wealth"
     ],
     "keywords": [
-      "client",
-      "markets",
       "analysis",
-      "team",
       "financial",
+      "modelling",
+      "client",
+      "team",
+      "due diligence",
       "transaction",
+      "valuation",
+      "markets",
       "risk",
       "compliance",
-      "global"
+      "presentation",
+      "Excel",
+      "data",
+      "stakeholder",
+      "deadline",
+      "sell-side",
+      "buy-side",
+      "IPO",
+      "LBO",
+      "emerging markets",
+      "cross-border",
+      "CIB",
+      "BCMA",
+      "CMO",
+      "TTS",
+      "CEEMEA",
+      "LatAm",
+      "Asia ex-Japan",
+      "FICC",
+      "Bloomberg",
+      "Capital IQ",
+      "Super Day",
+      "HireVue",
+      "Pymetrics"
     ],
-    "sampleSnippet": "Supported trading desk on risk and P&L reporting; automated daily reports and improved accuracy. Worked with front office and middle office on ad hoc requests.",
-    "body": "Citi values global perspective and teamwork. Use clear bullets with scope and outcomes. Tailor to the division and level. WadeCV can help you align your experience with Citi job descriptions.",
+    "sampleSnippet": "Led Citi-managed $500M dual-tranche Reg-S investment-grade issuance for Brazilian state-owned utility; built three-statement model in BRL with USD-hedged scenario; drafted roadshow deck in English and Portuguese; pricing 140bps inside initial guidance with 6.8x peak book, closing Q2 2025.",
+    "body": "Citi resumes are one page for every Summer Analyst, Full-Time Analyst, Lateral Associate, and Experienced Associate application across Banking, Capital Markets, Markets, Treasury & Trade Solutions, Securities Services, and Citi Global Wealth. Structure: education first (institution, degree, GPA to two decimals, classification, relevant coursework, study abroad, standardised test scores if strong), then professional experience reverse-chronologically, then leadership and extracurriculars, then additional (languages with proficiency, technical skills, certifications, publications, awards). Languages at Citi are weighted heavier than at most peers because of the bank's EM footprint — list every language with honest proficiency level.\n\nCiti bullets favour 'cross-border', 'EM', 'integrated CIB', and 'balance-sheet'. Where Goldman bullets emphasise rigour and Morgan Stanley bullets emphasise advisory depth, Citi bullets should showcase cross-border coordination and EM expertise where honestly applicable — 'BRL-denominated issuance with USD hedge', 'cross-border M&A with concurrent LatAm and US SEC workstreams', 'Middle East sovereign wealth coverage', 'CEEMEA financial sponsor origination'. For Capital Markets Origination (CMO) applicants, bullets should list currency, tenor, spread, ratings, and oversubscription. For Markets applicants, asset class, desk, client-coverage scope, risk metrics, and PnL contribution. For Private Bank and Global Wealth applicants, AUM covered, net flows, relationship depth with ultra-high-net-worth families and family offices, and multi-booking-centre structuring.\n\nCiti organises Banking by industry group (TMT, Consumer/Retail, Healthcare, FIG, Industrials, Natural Resources, Real Estate, Latin America, EMEA, Asia) and product group (M&A, LevFin, ECM, DCM, Sponsors, CEEMEA). Capital Markets Origination (CMO) is a named rotational pipeline for junior bankers — CMO Analysts rotate through Debt Capital Markets, Equity Capital Markets, Leveraged Finance, and structured products. The CMO signal on your CV distinguishes you from generic IB applicants: name it explicitly if you have internship or mandate exposure. TTS (Treasury & Trade Solutions) is a separate Analyst track with its own recruiting — CVs should emphasise working-capital advisory, liquidity management, cash-management implementation, and trade-finance structuring.\n\nThe four common resume-screen rejections at Citi: (1) deal bullets without $ size, counterparty, or your specific workstream — generic 'supported issuance' fails screening; (2) missing language proficiency on EM or cross-border office applications — Citi recruiters check this explicitly; (3) generic 'finance' framing when the role is CMO, TTS, BCMA coverage, Markets, or Private Bank; (4) two-page resume at Analyst or Associate level. Fix these and pass the HireVue + Super Day gate. WadeCV aligns your existing CV with a specific Citi job description, rewrites bullets with quantified outcomes from your history, and reformats to Citi's one-page standard. For cross-bank comparison and the differences with Goldman Sachs, JP Morgan, Morgan Stanley, BlackRock, and elite boutiques, see the [investment banking resume pillar guide](/investment-banking-resume).",
+    "faq": [
+      {
+        "question": "How long should a Citi resume be?",
+        "answer": "One page for every Summer Analyst, Full-Time Analyst, Lateral Associate, and Experienced Associate application across Banking, Capital Markets, Markets, TTS, Securities Services, and Private Bank. Vice President and above applying as experienced hires may extend to one and a half pages only if the substance demands it. Two pages are accepted only for MD-level lateral applications with 15+ years of deal experience. The recruiter reviews your CV in under 45 seconds — a two-page CV at junior level loses the reader. Use 10-11pt body text and 0.5-inch margins."
+      },
+      {
+        "question": "What makes a Citi resume different from Goldman Sachs or JP Morgan?",
+        "answer": "Structurally identical — one page, education first, reverse-chronological experience, leadership, additional. The vocabulary and signal differ. Citi bullets favour 'cross-border', 'emerging markets', 'integrated CIB', 'balance-sheet' — reflecting Citi's EM footprint and universal-bank model. Goldman bullets favour 'rigour', narrow spike, specific model/memo deliverables. JP Morgan bullets favour 'scale', 'breadth', 'balance-sheet' across products per client. If you have EM, LatAm, MENA, CEEMEA, or Asia-ex-Japan experience, Citi is where to emphasise it — it is the bank's strongest comparative advantage. Language proficiency at Citi is weighted heavier than at peers: list every language honestly."
+      },
+      {
+        "question": "What is Citi's Capital Markets Origination (CMO) programme and how should my CV reflect it?",
+        "answer": "CMO is Citi's named rotational pipeline for junior bankers in Capital Markets — typically 2-year Analyst rotations through Debt Capital Markets, Equity Capital Markets, Leveraged Finance, and structured products (convertibles, preferreds, hybrid capital, project finance). CMO Analysts emerge with broader product coverage than industry-group counterparts. If you have internship or mandate exposure to CMO product flow (bond issuances, follow-on equity raises, LBO financings, convertible offerings), name the product explicitly and list issuance size, ratings, coupon/tenor, and oversubscription. If you are applying to CMO, make your CMO interest visible in the CV headline or summary — generic IB language is a signal of lower conviction for this specific track."
+      },
+      {
+        "question": "How important is language proficiency on a Citi resume?",
+        "answer": "Very. Citi's EM-heavy footprint — LatAm (Sao Paulo, Mexico City, Bogota, Buenos Aires), MENA (Dubai, Doha, Riyadh), CEEMEA (London EMEA coverage, Johannesburg, Istanbul), Asia ex-Japan (Hong Kong, Singapore, Mumbai, Seoul) — means language proficiency is often a binary screen factor. For London-based LatAm coverage: Spanish or Portuguese expected. For Dubai: Arabic weighted heavier than at peers. For Hong Kong: Mandarin expected for greater China coverage, Cantonese for local. For Sao Paulo: Portuguese required, Spanish strongly preferred. List every language with honest proficiency level (native, fluent, professional, conversational). A missing language on an EM-coverage application is treated as inability to cover the region."
+      },
+      {
+        "question": "What is the difference between Citi Banking (BCMA) and Markets for applicants?",
+        "answer": "Banking (Banking, Capital Markets and Advisory — BCMA) covers M&A, LevFin, ECM, DCM, and industry-group or sponsor coverage. BCMA Analysts need deal-execution signals: three-statement modelling, LBO modelling, CIM/management-presentation drafting, accretion/dilution, precedent-transactions. Markets covers FICC (Rates, Credit, Mortgages, FX, Commodities, Municipals) and Equities (Cash, Derivatives, Prime, Futures). Markets Analysts need risk-management and flow signals: VaR, DV01, delta exposure, client-coverage scope, PnL contribution, Greenwich Coalition ranking. The two divisions have separate Analyst classes and recruiting pipelines — your CV should clearly signal which you are targeting, and Markets Analysts should highlight any quantitative-major or research-competition signal."
+      },
+      {
+        "question": "What is Citi's HireVue + Pymetrics + Super Day process?",
+        "answer": "HireVue is Citi's asynchronous video interview — 3-5 questions, 30-60 seconds each, AI-scored. Pymetrics is a cognitive and behavioural assessment — 12 short games. Both feed into the Super Day invite along with the resume. Super Day is 3-6 back-to-back 30-minute behavioural + technical interviews with bankers at different levels (Associate, VP, Director, MD). The resume remains the gatekeeper — HireVue and Pymetrics do not rescue a weak CV. Your CV needs to pass the recruiter screener before HireVue is unlocked."
+      },
+      {
+        "question": "Can I get a Citi interview from an EM background without a US target school?",
+        "answer": "Yes — Citi actively recruits from EM targets (IIM, ITAM, Monterrey Tec, FGV Sao Paulo, Wits, University of Cape Town, IE, ESADE, HKU, HKUST, CUHK, Peking, Tsinghua, Waseda, Keio). The CV must still signal finance depth — a winning stock-pitch, investment-club PM role, pre-IB internship at a regional bank or Citi sub-advisor, or a published EM-focused research note. EM candidates with strong language proficiency (Spanish, Portuguese, Arabic, Mandarin, Hindi, Japanese) plus finance signal outperform target-school candidates without EM exposure for EM coverage roles. Be explicit about the hiring office in the CV: LatAm (Sao Paulo, Mexico City, Miami), MENA (Dubai), Asia (Hong Kong, Singapore, Mumbai) — recruiters screen CVs by the specific hiring office."
+      },
+      {
+        "question": "What are the most common reasons Citi rejects a resume?",
+        "answer": "(1) Deal bullets without $ size, counterparty, or your specific workstream. (2) Missing language proficiency on EM or cross-border office applications — Citi recruiters verify this explicitly. (3) Generic 'finance' framing when the role is CMO, TTS, BCMA coverage, Markets, or Private Bank. (4) Two-page resume at Analyst or Associate level. (5) Missing GPA when above 3.5 — screeners assume absence means sub-threshold. (6) Weak leadership section — society memberships listed without named role or outcome. (7) Missing Series 79 or SIE progression on US applications where required. (8) Additional section with generic tools ('Microsoft Office', 'teamwork') instead of named fluencies. WadeCV aligns your CV with a specific Citi job description, rewrites bullets with quantified outcomes, and reformats to Citi's one-page standard."
+      }
+    ],
+    "commonMistakes": [
+      "Using generic verbs ('worked on', 'assisted with', 'supported') instead of ownership verbs with specific deliverables ('built three-statement model', 'drafted roadshow deck', 'led Reg-S issuance')",
+      "Submitting a two-page resume at Analyst or Associate level — automatic screen reject",
+      "Missing language proficiency on EM or cross-border office applications — especially for LatAm, MENA, CEEMEA, Asia",
+      "Generic 'finance' framing when the role is CMO, TTS, BCMA industry-group, Markets, or Private Bank — each has distinct vocabulary",
+      "Deal bullets without $ size, counterparty, currency, or deal status — generic framing fails EM-sensitive screening",
+      "Missing or hidden GPA when above 3.5 — screeners interpret absence as sub-threshold",
+      "Weak leadership section — extracurriculars listed without sustained commitment or quantified outcome",
+      "Additional section with generic skills ('Microsoft Office', 'teamwork') instead of specific fluencies (Capital IQ, FactSet, Bloomberg, Reuters, advanced Excel LBO / accretion, Python, VBA)"
+    ],
     "relatedSlugs": [
       "goldman-sachs",
       "jp-morgan",
-      "stripe"
+      "morgan-stanley",
+      "blackrock"
+    ]
+  },
+  {
+    "slug": "morgan-stanley",
+    "name": "Morgan Stanley",
+    "metaDescription": "Morgan Stanley resume format 2026: one-page banker structure, deal-experience bullets, division keywords (M&A, TMT, Wealth Management, Investment Management), and what the Super Day + HireVue screen actually evaluate.",
+    "intro": "Morgan Stanley screens resumes against a bar that weights advisory judgement, TMT and Healthcare industry-group depth, and Wealth + Investment Management integration. #1 or #2 in Global Advisory and global ECM most years, with a Wealth Management business that drives roughly 45% of firm revenue, MS is structurally different from Goldman and JPM. The CV screen feeds into HireVue video interview, Pymetrics cognitive assessment, and Super Day (3-6 back-to-back 30-minute behavioural + technical interviews). This guide covers exactly how Morgan Stanley recruiters read a resume, how to signal fit with Investment Banking vs Institutional Equities vs Wealth Management vs MS Investment Management, and what to include in your one-page CV to pass the screen.",
+    "hiringRequirements": [
+      "Top academic record — 3.5+ GPA / First / 2:1 minimum at targets (Wharton, Stern, Harvard, Columbia, Haas, Ross, LSE, Oxbridge, Bocconi, INSEAD, HEC), 3.7+ at semi-targets and non-targets",
+      "Standardised test scores if strong — SAT 1450+, ACT 32+, GMAT 730+, GRE 330+ — listed in the education block",
+      "Quantified deal experience — $ size, buyer/target/sponsor, your specific workstream, deal outcome; TMT or Healthcare exposure is heavily weighted",
+      "Named leadership with role title, team size, measurable outcome — investment-club PM, stock-pitch competition winner, founded venture, D1 athletics captain",
+      "Advisory judgement signal — evidence of client-facing work, stakeholder management, written deliverables authored (memos, reports, pitch materials)",
+      "Division signalling — Investment Banking (M&A, LevFin, ECM, DCM, Global Capital Markets, Sponsors), Institutional Equities (Cash, Derivatives, Prime Brokerage, ETF), Wealth Management (Financial Advisor, Next-Gen Advisor), MS Investment Management (MSIM)",
+      "Technical fluencies — advanced Excel, PowerPoint, Capital IQ, FactSet, Bloomberg, VBA, Python for Markets / MSIM roles",
+      "Language proficiency relevant to the hiring office — French/German/Italian/Spanish for London-EU, Mandarin for Hong Kong, Japanese for Tokyo, Portuguese for Sao Paulo"
+    ],
+    "keywords": [
+      "analysis",
+      "financial",
+      "modelling",
+      "client",
+      "team",
+      "due diligence",
+      "transaction",
+      "valuation",
+      "markets",
+      "risk",
+      "compliance",
+      "presentation",
+      "Excel",
+      "data",
+      "stakeholder",
+      "deadline",
+      "sell-side",
+      "buy-side",
+      "IPO",
+      "LBO",
+      "sponsor",
+      "DCF",
+      "accretion/dilution",
+      "CIM",
+      "TMT",
+      "Healthcare",
+      "advisory",
+      "Wealth Management",
+      "MSIM",
+      "Institutional Equities",
+      "prime brokerage",
+      "Bloomberg",
+      "Capital IQ",
+      "Super Day",
+      "HireVue"
+    ],
+    "sampleSnippet": "Built three-statement operating model, DCF, and precedent-transaction analysis for $3.8B Morgan Stanley sell-side advisory of TMT target to strategic acquirer; drafted 58-page confidential information memorandum and 44-page management presentation; negotiated final NDA and process letter; deal signed at 14.2x LTM EBITDA, 26% premium to 90-day VWAP, closing Q4 2025.",
+    "body": "Morgan Stanley resumes are one page for every Summer Analyst, Full-Time Analyst, Lateral Associate, and Experienced Associate application across Investment Banking, Institutional Equities, Wealth Management, and MS Investment Management. Structure: education first (institution, degree, GPA to two decimals, classification, relevant coursework, study abroad, SAT/ACT/GMAT/GRE if strong), then professional experience reverse-chronologically with deal experience integrated or broken out, then leadership, then additional (languages, technical skills, certifications, publications, awards). MSIM applicants should move CFA progression to a prominent position in the additional section — it is weighted heavier than at IB-only peers.\n\nMorgan Stanley bullets lean 'advisory' and 'strategic'. Where Goldman bullets favour 'rigour' and JP Morgan bullets favour 'scale' and 'balance-sheet', MS bullets foreground advisory judgement, client-facing work, and strategic-outcome framing — particularly in TMT and Healthcare, where MS has historic dominance. The best MS IB Analyst bullet reads like an MD's fairness-opinion discussion summary: '$ deal size, sector, buyer/target/sponsor, your specific advisory contribution, deal outcome with multiple or premium'. For Institutional Equities (Cash, Derivatives, Prime Brokerage, Futures, ETF, One Delta), bullets should state asset class, client-coverage scope (top-N names, AUM covered), flow-vs-risk metrics, and PnL. Wealth Management Financial Advisor and Next-Gen Advisor tracks use a different CV template — household AUM, net flows, relationship depth, cross-sell metrics, and named planning tools (Morgan Stanley Goals Planning, Smith Barney legacy platform). MSIM Analysts and Associates should name the sleeve (Global Fixed Income, Core Equity, Solutions and Multi-Asset, Alternatives, Private Credit), the AUM covered, the benchmark, and alpha or benchmark-comparable performance.\n\nMS organises Investment Banking by industry group (TMT, Healthcare, FIG, Natural Resources, Industrials, Consumer/Retail, Real Estate) and product group (M&A, LevFin, ECM, DCM, Global Capital Markets, Sponsors). TMT is the flagship franchise — Frank Quattrone's legacy pre-Credit Suisse — and remains #1 or #2 globally most years; MS TMT Analysts will see more tech-M&A and growth-equity-lead-managed IPO flow than peers. Healthcare is the second-flagship franchise, heavy in biotech M&A and orphan-drug advisory. Wealth Management is an entirely separate recruiting pipeline — the Financial Advisor Associate Programme (FAAP), the Morgan Stanley at Work programme (for workplace-financial-wellness coverage), and the E*TRADE-integrated digital-first coverage model. Your CV must signal which pipeline clearly.\n\nThe four common resume-screen rejections at Morgan Stanley: (1) deal bullets without $ size, counterparty, or specific advisory workstream — generic 'supported M&A' fails TMT and Healthcare screens particularly hard; (2) missing GPA when above 3.5 — screeners assume sub-threshold; (3) weak advisory-judgement signal — bullets listing quantitative model work without any client-facing or memo-authorship language; (4) two-page resume at Analyst or Associate level. Fix these and pass the HireVue + Super Day gate. WadeCV aligns your existing CV with a specific Morgan Stanley job description, rewrites bullets with quantified deal outcomes from your history, and reformats to MS's one-page standard. For cross-bank comparison and the differences with Goldman Sachs, JP Morgan, Citi, BlackRock, and elite boutiques, see the [investment banking resume pillar guide](/investment-banking-resume).",
+    "faq": [
+      {
+        "question": "How long should a Morgan Stanley resume be?",
+        "answer": "One page for every Summer Analyst, Full-Time Analyst, Lateral Associate, and Experienced Associate application across Investment Banking, Institutional Equities, Wealth Management, and MS Investment Management. Vice President and above applying as experienced hires may extend to one and a half pages only if the substance demands it. Two pages are accepted only for MD-level or senior lateral applications with 15+ years of deal or coverage experience. The MD or VP reviewing your CV spends under 45 seconds — a two-page CV at junior level loses the reader. Use 10-11pt body text and 0.5-inch margins."
+      },
+      {
+        "question": "Why is Morgan Stanley's TMT franchise weighted heavily on CVs?",
+        "answer": "MS TMT has been #1 or #2 in global tech M&A for most of the past two decades. The Frank Quattrone legacy (pre-Credit Suisse) left a deep bench of TMT MDs, and MS TMT Analysts see outsized flow of named tech-M&A, growth-equity-lead-managed IPOs, and carve-outs. Recruiters for TMT applications explicitly look for: named tech internship experience (any FAANG, a Series B+ startup with commercial traction, a tech-focused VC / growth fund like Insight, General Atlantic, TPG Growth, or Silver Lake), a winning tech-focused stock-pitch or case competition, or a published research note on a tech sub-sector. List these prominently if you have them — they differentiate you from generic MS IB applicants."
+      },
+      {
+        "question": "What makes a Morgan Stanley resume different from Goldman Sachs or JP Morgan?",
+        "answer": "Structurally identical — one page, education first, reverse-chronological experience, deal experience integrated or broken out, leadership, additional. The vocabulary and signal differ. Morgan Stanley bullets favour 'advisory depth', 'strategic', 'TMT franchise', 'client-facing' — reflecting MS's advisory dominance and Wealth + Investment Management integration. Goldman bullets favour 'rigour', 'commercial intellect', narrow spike, specific model and memo deliverables. JP Morgan bullets favour 'scale', 'balance-sheet', 'universal bank', breadth across products per client. MS weights advisory judgement and written deliverables (memos, pitches, fairness opinions drafted) more than the raw model count. If applying to all three, use the same base CV and swap vocabulary emphasis and most-recent deal experience."
+      },
+      {
+        "question": "How do I signal fit with Morgan Stanley Wealth Management vs Investment Banking?",
+        "answer": "Wealth Management (WM) and Investment Banking (IB) are separate recruiting pipelines with different CV templates. IB Analyst CVs emphasise deal execution: $ deal size, counterparty, your workstream, outcome. WM Financial Advisor Associate Programme (FAAP) CVs emphasise relationship management, sales results, planning-tool fluency, and cross-sell. Named metrics for WM: household AUM, net flows, number of households covered, planning-tool fluency (Morgan Stanley Goals Planning, Aladdin Wealth, E*TRADE-integrated tools), Series 7 / 63 / 65 / 66 / CFP progression. WM also runs a distinct Analyst pipeline through the Wealth Management Analyst programme and the MS Next-Gen Financial Advisor track. Your CV must clearly signal which pipeline you are targeting."
+      },
+      {
+        "question": "What is Morgan Stanley's HireVue + Pymetrics + Super Day process?",
+        "answer": "HireVue is MS's asynchronous video interview — 3-5 questions, 30-60 seconds each, AI-scored on content, communication, and behavioural signals. Pymetrics is a cognitive and behavioural assessment — 12 short games measuring attention, risk tolerance, pattern recognition, and emotional processing. Both feed into the Super Day invite along with the resume. Super Day is 3-6 back-to-back 30-minute behavioural + technical interviews with bankers at different levels. The resume remains the gatekeeper — HireVue and Pymetrics do not rescue a weak CV. Your CV needs to pass the recruiter screener before HireVue is unlocked."
+      },
+      {
+        "question": "Should I list CFA progression on a Morgan Stanley resume?",
+        "answer": "Depends on the division. For MSIM (Morgan Stanley Investment Management) — yes, CFA Level 1 or above is a strong differentiator and should be in the additional section. For Institutional Equities research and sales — yes, weighted. For Wealth Management — Series 7 / 63 / 65 / 66 / CFP are more weighted than CFA, though CFA helps for ultra-high-net-worth coverage and MSWM Research. For pure IB Analyst applications — CFA Level 1 is a mild plus (signals finance commitment) but not expected. Always list progression ('CFA Level 2 Candidate, June 2026 sitting') rather than aspirational (never list CFA unless you have passed at least Level 1)."
+      },
+      {
+        "question": "Can I get a Morgan Stanley interview from a non-target school?",
+        "answer": "Yes — MS recruits from non-targets if the CV signals advisory depth or deep domain expertise. The path is a winning case competition (Ross, Wharton, Darden, LSE), a published research note on a tech or healthcare sub-sector, an investment-club PM role with a named portfolio and benchmark performance, a pre-IB internship at a regional bank or boutique (especially TMT or Healthcare focused), or a sustained athletic, research, or entrepreneurial outcome. Non-finance majors — Engineering, CS, Biology — are well-regarded for TMT and Healthcare industry groups. Your CV must compensate for the non-target signal with a visible, specific, quantified advisory or domain spike."
+      },
+      {
+        "question": "What are the most common reasons Morgan Stanley rejects a resume?",
+        "answer": "(1) Deal bullets without $ size, counterparty, or your specific advisory workstream — generic 'supported M&A' is a screen-kill phrase. (2) Missing GPA when above 3.5 — screeners assume sub-threshold. (3) Weak advisory-judgement signal — bullets listing quantitative model work without any client-facing or memo-authorship language. (4) Two-page resume at Analyst or Associate level — automatic screen reject. (5) Wrong-division framing — applying to Wealth Management with IB-only bullets, or to MSIM with generic advisory framing. (6) Missing Series 79 / CFA / Series 7-63-65-66 / CFP progression where relevant to the specific track. (7) Missing language proficiency for non-US office applications. (8) Additional section with generic skills ('Microsoft Office', 'teamwork') instead of named fluencies. WadeCV aligns your CV with a specific Morgan Stanley job description, rewrites bullets with quantified outcomes, and reformats to MS's one-page standard."
+      }
+    ],
+    "commonMistakes": [
+      "Using generic verbs ('worked on', 'assisted with', 'supported') instead of ownership verbs with specific advisory deliverables ('drafted CIM', 'built three-statement model', 'negotiated NDA and process letter')",
+      "Submitting a two-page resume at Analyst or Associate level — automatic screen reject",
+      "Missing or hidden GPA when above 3.5 at targets or 3.7 at semi-targets — screeners interpret absence as sub-threshold",
+      "Deal bullets without $ size, buyer/target/sponsor, or deal status — generic 'M&A transaction' framing fails particularly hard at TMT and Healthcare screens",
+      "Applying to Wealth Management or MSIM with IB-only framing — each division has its own vocabulary and signal bar",
+      "Weak advisory-judgement signal — modelling work listed without any client-facing or memo-authorship language",
+      "Missing Series 79 / CFA / Series 7-63-65-66 / CFP progression where relevant to the specific track",
+      "Additional section with generic skills ('Microsoft Office', 'teamwork') instead of specific fluencies (Capital IQ, FactSet, Bloomberg, advanced Excel LBO / accretion, Aladdin Wealth, Morgan Stanley Goals Planning)"
+    ],
+    "relatedSlugs": [
+      "goldman-sachs",
+      "jp-morgan",
+      "citi",
+      "blackrock"
+    ]
+  },
+  {
+    "slug": "blackrock",
+    "name": "BlackRock",
+    "metaDescription": "BlackRock resume format 2026: one-page asset-management structure, investment-analyst bullets, division keywords (Fundamental Equities, Systematic, Fixed Income, Alternatives, Aladdin), and what the Super Day + HireVue screen actually evaluate.",
+    "intro": "BlackRock is the largest asset manager globally with over $10T AUM across active and index, the Aladdin risk platform running approximately 10% of global investable assets, and a private-markets arm (BlackRock Alternatives, GIP, HPS-integrated, Preqin-powered) that is the firm's fastest-growing segment. Recruiters screen CVs against a bar that weights CFA progression, sustained investment-research signal, Aladdin fluency, and quantitative rigour alongside standard advisory or markets experience. The CV screen feeds into HireVue video interview, Pymetrics cognitive assessment, and Super Day. This guide covers exactly how BlackRock recruiters read a resume, how to signal fit with Fundamental Equities vs Systematic vs Fixed Income vs Multi-Asset vs Alternatives vs Aladdin vs Index, and what to include in your one-page CV to pass the screen.",
+    "hiringRequirements": [
+      "Strong academic record — 3.5+ GPA / First / 2:1 minimum at targets (Wharton, Stern, Harvard, MIT, Princeton, Chicago, LSE, Oxbridge, Bocconi, INSEAD), 3.7+ at semi-targets and non-targets; quantitative majors (Math, Physics, CS, Statistics, Engineering) strongly weighted for Systematic and Aladdin roles",
+      "Standardised test scores if strong — SAT 1450+, GRE 330+, GMAT 730+ — listed in the education block",
+      "CFA progression — Level 1 passed for Fundamental Equities, Fixed Income, Multi-Asset, and research applications; Level 2 candidate status is a strong differentiator",
+      "Investment-research signal — a published research note (student-managed investment fund, investment-club PM, case-competition-winning write-up, university-endowment research project, stock-pitch competition entry)",
+      "Quantified coverage experience — AUM covered, sector or universe size, benchmark, alpha or benchmark-comparable performance",
+      "Division signalling — Fundamental Equities, Systematic, Fixed Income, Multi-Asset Strategies and Solutions (MASS), Alternatives (BlackRock Alternatives, GIP, HPS, Preqin), Index, Aladdin, BlackRock Technology",
+      "Technical fluencies — Aladdin (or willingness to learn), advanced Excel, Python, R, SQL, Bloomberg, FactSet; VBA, MATLAB for Systematic and Aladdin engineering",
+      "Language proficiency relevant to the hiring office — French/German/Italian/Spanish for London-EU, Mandarin for Hong Kong, Japanese for Tokyo, Portuguese for Sao Paulo"
+    ],
+    "keywords": [
+      "investment",
+      "research",
+      "portfolio",
+      "analysis",
+      "risk",
+      "return",
+      "benchmark",
+      "alpha",
+      "tracking error",
+      "AUM",
+      "coverage",
+      "fundamental",
+      "systematic",
+      "fixed income",
+      "equities",
+      "multi-asset",
+      "alternatives",
+      "private markets",
+      "Aladdin",
+      "index",
+      "ETF",
+      "ESG",
+      "CFA",
+      "client",
+      "stewardship",
+      "sustainable",
+      "long-only",
+      "long/short",
+      "factor",
+      "attribution",
+      "Bloomberg",
+      "FactSet",
+      "Python",
+      "R",
+      "SQL"
+    ],
+    "sampleSnippet": "Covered 24-name large-cap US software universe for BlackRock Fundamental Equities long-only mandate ($18B AUM); built three-year revenue-and-margin build-up models with AI-capex layer; maintained comp set; authored 11 quarterly research notes; three high-conviction buys added at combined 340bps portfolio weight, contributing 120bps alpha vs Russell 1000 Growth over 12 months.",
+    "body": "BlackRock resumes are one page for every Summer Analyst, Full-Time Analyst, Lateral Associate, and Experienced Associate application across Fundamental Equities, Systematic, Fixed Income, Multi-Asset Strategies and Solutions, Alternatives (BlackRock Alternatives, GIP, HPS-integrated, Preqin), Index, Aladdin, and BlackRock Technology. Structure: education first (institution, degree, GPA to two decimals, classification, relevant coursework, study abroad, SAT/ACT/GRE/GMAT if strong), then professional experience reverse-chronologically with investment-research experience integrated or broken out, then leadership and investment-research extracurriculars, then additional (languages, technical skills including Aladdin fluency, CFA progression, publications, awards). CFA progression should move to a prominent position in the additional section — at BlackRock it is weighted more than at IB-only peers.\n\nBlackRock bullets are notably different from IB bullets. Where Goldman IB bullets favour 'rigour' and JP Morgan IB bullets favour 'scale', BlackRock bullets favour 'investment-research signal', 'quantified coverage', 'AUM', 'alpha', and 'benchmark'. The best BlackRock Investment Analyst bullet reads like a sleeve PM's portfolio-review summary: 'coverage universe (number of names, sector, AUM), your specific research output (models built, notes authored, theses pitched), portfolio impact (position sizing, weight, alpha or benchmark-comparable performance)'. For Fundamental Equities applicants: name the sector, the AUM, the benchmark (Russell 1000 Growth, Russell 2000 Value, MSCI ACWI, S&P 500), and alpha or benchmark-comparable performance. For Systematic and Aladdin Engineering applicants: factor models built, backtest Sharpe, production throughput, risk-model coverage, named portfolio-construction tools (Aladdin PM, Aladdin Risk, Aladdin for Wealth). For Alternatives applicants (BlackRock Alternatives, GIP, HPS-integrated, Preqin): deal diligence, investment-committee memos authored, named portfolio companies, fund-level IRRs, capital raised.\n\nBlackRock organises its investment platforms by asset class and methodology: Fundamental Equities (active stock-picking), Systematic (quant factor-based), Fixed Income (active and passive across global rates, credit, securitised, municipals), Multi-Asset Strategies and Solutions (MASS — customised solutions for insurance, pension, and sovereign clients), Alternatives (BlackRock Alternatives, including the newly integrated GIP infrastructure platform, HPS private credit, and Preqin data platform), Index (iShares ETFs, institutional index), Aladdin (risk platform run for internal and external clients), and BlackRock Technology (Aladdin Wealth, Aladdin for ETFs, Aladdin Sustainability). Your CV should signal the specific platform — 'Fundamental Equities US Large-Cap Growth', 'Systematic Long/Short Equity', 'Fixed Income Global Rates', 'MASS Insurance Solutions', 'BlackRock Alternatives Private Credit', 'GIP Infrastructure', 'iShares Product Development', 'Aladdin Portfolio Management'. The Aladdin and BlackRock Technology tracks are engineering-heavy — CVs should emphasise systems built, production throughput, latency, and named clients served.\n\nThe four common resume-screen rejections at BlackRock: (1) missing CFA progression on Fundamental Equities, Fixed Income, Multi-Asset, or Alternatives applications — screeners expect at least Level 1 candidate; (2) missing investment-research signal — no published note, no student-managed investment fund involvement, no stock-pitch competition, no investment-club PM role; (3) generic 'finance' framing when the role is Fundamental vs Systematic vs Index vs Alternatives vs Aladdin (each has distinct vocabulary); (4) two-page resume at Analyst or Associate level. Fix these and pass the HireVue + Super Day gate. WadeCV aligns your existing CV with a specific BlackRock job description, rewrites bullets with quantified research and portfolio outcomes from your history, and reformats to BlackRock's one-page standard. For cross-firm comparison and the differences with Goldman Sachs, JP Morgan, Morgan Stanley, Citi, and elite boutiques, see the [investment banking resume pillar guide](/investment-banking-resume).",
+    "faq": [
+      {
+        "question": "How long should a BlackRock resume be?",
+        "answer": "One page for every Summer Analyst, Full-Time Analyst, Lateral Associate, and Experienced Associate application across Fundamental Equities, Systematic, Fixed Income, MASS, Alternatives, Index, Aladdin, and BlackRock Technology. Vice President and above applying as experienced hires may extend to one and a half pages only if the substance demands it. Two pages are accepted only for Managing Director lateral applications with 15+ years of named investment or infrastructure experience. The PM or VP reviewing your CV spends under 45 seconds — a two-page CV at junior level loses the reader. Use 10-11pt body text and 0.5-inch margins."
+      },
+      {
+        "question": "How important is CFA progression on a BlackRock resume?",
+        "answer": "Very important for Fundamental Equities, Fixed Income, Multi-Asset (MASS), and Alternatives applications — CFA Level 1 passed or Level 2 candidate status is a strong differentiator, particularly for non-target school applicants. For Systematic and Aladdin Engineering roles, CFA is less weighted than a quantitative Master's, published research, or Kaggle / ML-competition signal. For iShares Product Development and Index roles, CFA Level 1 is a mild plus. Always list progression honestly — 'CFA Level 2 Candidate, August 2026 sitting' is credible; listing CFA without having passed any level is disqualifying. BlackRock recruiters verify with the CFA Institute."
+      },
+      {
+        "question": "What investment-research signals does BlackRock look for?",
+        "answer": "A published research note is the strongest — a student-managed investment fund write-up (Wharton Investment and Trading Group, Michigan MIIF, Notre Dame Student Investment Fund, LSE Alternative Investments Conference, Oxford Investment Research Society), a winning stock-pitch competition (Cornell Stock Pitch, Pan-Asia Investment Banking Conference, CFA Institute Research Challenge), a university-endowment research project, or a published industry note on a firm's website. Second-strongest is a sustained investment-club PM role with a named portfolio, benchmark, and benchmark-comparable performance. Third is a pre-AM internship at an asset manager (BlackRock, Vanguard, Fidelity, T. Rowe Price, Wellington, Capital Group, AllianceBernstein, MFS, Invesco, State Street Global Advisors). List any of these with named metrics — portfolio size, benchmark, alpha, position count, thesis accuracy."
+      },
+      {
+        "question": "How do I signal fit with BlackRock Fundamental Equities vs Systematic?",
+        "answer": "Fundamental Equities CVs emphasise qualitative research, management-team assessment, sector-coverage depth, three-statement modelling, and written research notes. Name the sector, the AUM, the benchmark, and any named PM you worked under. Systematic CVs emphasise factor-model construction, backtesting, out-of-sample Sharpe, risk-model coverage, production throughput, and named portfolio-construction tools (Aladdin PM, Aladdin Risk). Quantitative majors (Math, Physics, Statistics, CS, Engineering), Master's in Financial Engineering / Math Finance / Computational Finance, Kaggle placement, published quantitative research, or quantitative-finance competition win are heavily weighted for Systematic. The two tracks have distinct vocabulary — do not cross-apply without rewriting."
+      },
+      {
+        "question": "What is BlackRock Alternatives and how should my CV reflect it?",
+        "answer": "BlackRock Alternatives is the private-markets arm covering private equity, private credit, real estate, infrastructure (with the recent integration of GIP — Global Infrastructure Partners), hedge fund solutions, and the HPS Investment Partners private-credit business (also recently integrated). The Preqin data platform integration extends private-markets data coverage. BlackRock Alternatives CVs should emphasise: named deal diligence, investment-committee memos authored, LBO or DCF modelling for private-markets-specific structures (waterfall, carry, DPI, TVPI, IRR), named portfolio companies or infrastructure assets, and any sponsor-coverage or secondaries experience. CFA Level 1 minimum; CFA Level 2 strongly preferred. For GIP applicants: infrastructure-specific signal (project-finance modelling, PPP structuring, energy-transition experience). For HPS applicants: private-credit-specific signal (unitranche, second-lien, direct lending, distressed)."
+      },
+      {
+        "question": "What is Aladdin and how do I signal fluency on my CV?",
+        "answer": "Aladdin (Asset Liability Debt and Derivative Investment Network) is BlackRock's risk, portfolio management, and operations platform, used internally across BlackRock and licensed to approximately 200 external clients running ~10% of global investable assets. Aladdin fluency is a strong differentiator for any BlackRock application. If you have used Aladdin (common at many institutional clients, university endowments, and some pension funds), name it explicitly: 'Aladdin PM (portfolio management)', 'Aladdin Risk', 'Aladdin Wealth', 'Aladdin for ETFs', 'Aladdin Sustainability', 'eFront'. If you have not used Aladdin, list any comparable risk or portfolio-analytics platform (FactSet PA, Barra One, Bloomberg PORT, MSCI RiskMetrics, Charles River, SimCorp) — recruiters read familiarity with peer platforms as transferable. Aladdin Engineering applicants should list specific Aladdin modules built or maintained."
+      },
+      {
+        "question": "Can I get a BlackRock interview from a non-target school?",
+        "answer": "Yes — BlackRock actively recruits from non-targets if the CV signals investment-research depth. The path is a winning research-challenge entry (CFA Institute Research Challenge), a published note, a student-managed investment-fund PM role with benchmark-comparable performance, a pre-AM internship at a regional asset manager or an institutional investor (pension fund, university endowment, sovereign wealth). Quantitative majors from non-target STEM schools (State schools with strong math or physics programmes, engineering schools, Kaggle-ranked data scientists) are well-regarded for Systematic, Aladdin Engineering, and BlackRock Technology. Your CV must compensate for the non-target signal with a visible, specific, quantified investment-research or quantitative spike — a named portfolio, a published note, a competition win, or a Kaggle placement."
+      },
+      {
+        "question": "What are the most common reasons BlackRock rejects a resume?",
+        "answer": "(1) Missing CFA progression on Fundamental Equities, Fixed Income, Multi-Asset, or Alternatives applications — screeners expect at least Level 1 candidate. (2) Missing investment-research signal — no published note, no student-managed-investment-fund role, no stock-pitch competition, no investment-club PM signal. (3) Generic 'finance' framing when the role is Fundamental vs Systematic vs Index vs Alternatives vs Aladdin — each has distinct vocabulary. (4) Two-page resume at Analyst or Associate level — automatic screen reject. (5) Missing Aladdin or comparable-platform fluency on investment-platform applications. (6) Missing language proficiency for non-US office applications. (7) Additional section with generic skills ('Microsoft Office', 'teamwork') instead of named fluencies (Aladdin, FactSet, Bloomberg, Python, R, SQL, VBA). WadeCV aligns your CV with a specific BlackRock job description, rewrites bullets with quantified research and portfolio outcomes, and reformats to BlackRock's one-page standard."
+      }
+    ],
+    "commonMistakes": [
+      "Using generic verbs ('worked on', 'assisted with', 'supported') instead of ownership verbs with specific research deliverables ('built revenue-and-margin model', 'authored 11 quarterly notes', 'pitched three high-conviction buys')",
+      "Submitting a two-page resume at Analyst or Associate level — automatic screen reject",
+      "Missing CFA progression on Fundamental Equities, Fixed Income, Multi-Asset, or Alternatives applications — screeners expect at least Level 1 candidate",
+      "Missing investment-research signal — no published note, no student-managed-investment-fund involvement, no stock-pitch competition, no investment-club PM role",
+      "Generic 'finance' framing when the role is Fundamental vs Systematic vs Index vs Alternatives vs Aladdin — each has distinct vocabulary",
+      "Coverage bullets without AUM, benchmark, universe size, or alpha — generic 'covered a sector' framing fails",
+      "Missing Aladdin or comparable-platform fluency on investment-platform applications — list any risk or portfolio-analytics platform you have used",
+      "Additional section with generic skills ('Microsoft Office', 'teamwork') instead of named fluencies (Aladdin, FactSet, Bloomberg, Python, R, SQL, VBA, MATLAB)"
+    ],
+    "relatedSlugs": [
+      "goldman-sachs",
+      "jp-morgan",
+      "morgan-stanley",
+      "citi"
     ]
   }
 ]

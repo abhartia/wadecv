@@ -4,6 +4,77 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 
 ---
 
+## 2026-04-21 — Session 21: Investment Banking Resume Pillar + 5 BB/AM Firm Deep Overhauls
+
+### Data Pulled
+- [x] GA4 analytics data → ~50 sessions/30d, stable vs S20; ~30 Stripe referral sessions, healthy product events
+- [x] GSC data → **383 impressions (+8 vs S20), 49 pages (+1), 2 clicks (flat), 50 queries**
+- [x] Trends data → rate-limited today (common); relied on known-evergreen reputation of IB/AM vertical
+
+### Key Findings
+- **S20 consulting overhauls now shipped but not yet judgeable** — indexing window closes 2026-04-25+. Do not adjust cluster until lift confirmed.
+- **Finance vertical is structural parallel to consulting:** Goldman Sachs (body 388 chars), JP Morgan (196), Citi (191) all thin; Morgan Stanley and BlackRock entirely missing despite being universe-defining for banker/AM candidates.
+- **ResumeAI comparison page deferred again** — +375,200% signal still unaddressed. Chose category-creation over tactical single-page for the 2nd session running. Must ship S22.
+- **Decision:** Apply S20 pillar + cluster template to IB/AM vertical. Ship `/investment-banking-resume` pillar + 5 firm pages (3 deep overhauls + 2 new) as today's big bet. Premium-LTV audience, zero existing surface before today.
+
+### Changes Made
+
+#### 1. `/investment-banking-resume` pillar page (HIGH IMPACT — big bet of session)
+**Why:** Second pillar page on site, mirroring S20 `/consulting-resume` architecture. Front-runs a vertical where GS/JPM/Citi already have warm but thin pages.
+
+**File created:** `frontend/src/app/(resources)/investment-banking-resume/page.tsx`
+- H1: "Investment Banking Resume Guide 2026 — Bulge Bracket, Elite Boutique & How to Pass the Screen"
+- Article + FAQPage JSON-LD
+- 7-dimension BB vs EB comparison (GPA, length, quantification bar, technical signal, spike, vocab, interview process)
+- 5-section resume structure (Contact, Education, Professional experience, Deal experience, Leadership)
+- 6 bullet formulas with real dollar numbers (M&A sell-side, LevFin/LBO, IPO/ECM, Restructuring, Markets/S&T, Asset Management)
+- 5-firm BB grid (GS/JPM/Citi/MS/BlackRock) linking to overhauled firm pages
+- 8 elite-boutique cards (Evercore, Centerview, Lazard, PJT, Moelis, Perella Weinberg, Qatalyst, Guggenheim)
+- 8 division sections with keyword badges (M&A, LevFin, ECM, DCM, Restructuring, Markets, Asset Management, Sponsors)
+- 8 common mistakes + 8-entry FAQ
+- InlineCta variant="investment-banking" mid-page
+- CrossCategoryLinks with contextLinks to all 5 firm pages + `/consulting-resume` (first cross-pillar link)
+
+#### 2. Deep content overhaul + 2 new finance firm pages
+**File changed:** `frontend/content/seo/companies.json` (13 → 15 entries)
+- **Goldman Sachs:** body 388 → 3,121 chars, 0 → 8 FAQs, 0 → 8 commonMistakes
+- **JP Morgan:** body 196 → 3,391 chars, 0 → 8 FAQs, 0 → 8 commonMistakes
+- **Citi:** body 191 → 3,251 chars, 0 → 8 FAQs, 0 → 8 commonMistakes
+- **Morgan Stanley (NEW):** 3,637 body chars, 8 FAQs, 8 commonMistakes — TMT franchise, Wealth Management weighting, FAAP programme vocab
+- **BlackRock (NEW):** 4,251 body chars, 8 FAQs, 8 commonMistakes — Fundamental / Systematic / Fixed Income / MASS / Alternatives (GIP, HPS, Preqin) / Aladdin / Index, CFA progression weighting
+- All: richer sampleSnippet with real deal numbers ($1.4B sell-side, $2.1B LBO, $720M IPO), embedded link to `/investment-banking-resume`
+- Total: ~17,650 new body chars + 40 FAQs + 40 commonMistakes
+
+#### 3. New `investment-banking` InlineCta variant
+**File changed:** `frontend/src/components/seo/inline-cta.tsx` — added to Variant union + VARIANT_CONFIG with IB-specific heading/body.
+
+#### 4. Wiring internal links
+- **Sitemap:** `frontend/src/app/sitemap.ts` — `/investment-banking-resume` at priority 0.9
+- **Cross-category-links:** `frontend/src/components/seo/cross-category-links.tsx` — added to CATEGORY_HUBS → ~190 new internal links from every SEO detail page into the pillar
+- **Cross-pillar linking:** `/investment-banking-resume` contextLinks include `/consulting-resume`; tests whether Googlebot recognises a pillar-category entity
+
+#### 5. Build verified
+- `npm run build`: **192 static pages** (up from 189), 0 errors
+- New prerendered routes: `/investment-banking-resume`, `/company-resume/morgan-stanley`, `/company-resume/blackrock`
+- Existing routes re-generated with deep content: GS, JPM, Citi
+
+### Not Yet Done (For Future Sessions)
+- [ ] **SHIP S22: `/wadecv-vs-resumeai` comparison page** — +375,200% rising signal, now deferred 2 sessions
+- [ ] Monitor `/investment-banking-resume` indexing (2026-04-26+)
+- [ ] Monitor GS/JPM/Citi/MS/BlackRock position lift (2026-04-26+)
+- [ ] Monitor `/consulting-resume` indexing + Mck/BCG/Bain/Deloitte lift (S20, 2026-04-25+)
+- [ ] Monitor `/ats-resume-checker` (S19, 2026-04-24+), `/free-cv-builder-uk` (S18, 2026-04-24+), `/humanize-ai-resume` (S17, 2026-04-23+)
+- [ ] Monitor skill-overhaul cumulative lift (operations-manager, executive-assistant, python-developer, digital-marketing)
+- [ ] Investigate `/ats/lever` 0-click anomaly (20+ days persistent)
+- [ ] Investigate `/wadecv-vs-teal` still not indexed after 15 days
+- [ ] Complete IB cluster — Citadel, Jane Street, Apollo, Blackstone, KKR, Evercore, Centerview, Lazard, PJT
+- [ ] Complete consulting cluster — PwC, EY, KPMG, Strategy&, EY-Parthenon
+- [ ] "cv builder app" +250% signal — PWA landing page
+- [ ] Fix pre-existing duplicate-key warnings on `/ats` and `/career-change` index pages
+- [ ] Monitor signup_start from organic — still 0 after 14+ days of InlineCta instrumentation
+
+---
+
 ## 2026-04-20 — Session 20: Consulting Resume Pillar + 4 MBB/Big 4 Firm Deep Overhauls
 
 ### Data Pulled

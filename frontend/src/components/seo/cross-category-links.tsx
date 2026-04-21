@@ -19,6 +19,10 @@ const CATEGORY_HUBS: CrossLink[] = [
   { href: "/free-cv-builder-uk", label: "Free CV Builder for UK Jobs" },
   { href: "/ats-resume-checker", label: "Free ATS Resume Checker" },
   { href: "/consulting-resume", label: "Consulting Resume Guide (MBB + Big 4)" },
+  {
+    href: "/investment-banking-resume",
+    label: "Investment Banking Resume Guide (BB + EB)",
+  },
 ];
 
 const TOOL_COMPARISONS: CrossLink[] = [

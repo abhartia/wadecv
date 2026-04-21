@@ -15,7 +15,8 @@ type Variant =
   | "physical-mail"
   | "humanize"
   | "uk"
-  | "consulting";
+  | "consulting"
+  | "investment-banking";
 
 const VARIANT_CONFIG: Record<
   Variant,
@@ -79,6 +80,13 @@ const VARIANT_CONFIG: Record<
     heading: "Get MBB-ready bullets — tailored to a specific consulting role",
     description:
       "Paste a McKinsey, BCG, Bain or Big 4 job URL and WadeCV rewrites your CV to the one-page consulting standard: quantified bullets, practice-specific keywords, and the spike partners look for.",
+    buttonText: "Try it free — no credit card needed",
+  },
+  "investment-banking": {
+    heading:
+      "Get banker-ready bullets — tailored to a specific IB or asset-management role",
+    description:
+      "Paste a Goldman Sachs, JP Morgan, Morgan Stanley, Citi, BlackRock or elite-boutique job URL and WadeCV rewrites your CV to the one-page IB standard: quantified deal bullets, division-specific keywords, and the spike MDs screen for.",
     buttonText: "Try it free — no credit card needed",
   },
 };
