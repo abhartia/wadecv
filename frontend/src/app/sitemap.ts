@@ -45,6 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/wadecv-vs-aiapply`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/wadecv-vs-enhancv`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/wadecv-vs-claude`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/wadecv-vs-resumeai`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/cv-vs-resume`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/humanize-ai-resume`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/free-cv-builder-uk`, lastModified: lastmod, changeFrequency: "monthly", priority: 0.9 },

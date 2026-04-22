@@ -1,27 +1,21 @@
 {
   "traffic_summary_30d": {
-    "activeUsers": "16",
-    "sessions": "52",
-    "screenPageViews": "105",
-    "averageSessionDuration": "608.15796623076926",
-    "bounceRate": "0.46153846153846156",
-    "newUsers": "13"
+    "activeUsers": "17",
+    "sessions": "53",
+    "screenPageViews": "111",
+    "averageSessionDuration": "638.62725871698115",
+    "bounceRate": "0.47169811320754718",
+    "newUsers": "15"
   },
   "traffic_summary_prev_30d": {
     "activeUsers": "20",
-    "sessions": "55",
-    "screenPageViews": "225",
-    "averageSessionDuration": "1293.2576098727272",
-    "bounceRate": "0.4",
+    "sessions": "56",
+    "screenPageViews": "226",
+    "averageSessionDuration": "1270.1637239821428",
+    "bounceRate": "0.4107142857142857",
     "newUsers": "21"
   },
   "daily_trend": [
-    {
-      "date": "20260322",
-      "activeUsers": "0",
-      "sessions": "1",
-      "screenPageViews": "1"
-    },
     {
       "date": "20260323",
       "activeUsers": "1",
@@ -140,44 +134,50 @@
       "date": "20260420",
       "activeUsers": "4",
       "sessions": "4",
-      "screenPageViews": "9"
+      "screenPageViews": "10"
+    },
+    {
+      "date": "20260421",
+      "activeUsers": "2",
+      "sessions": "2",
+      "screenPageViews": "6"
     }
   ],
   "top_pages": [
     {
       "pagePath": "/",
-      "screenPageViews": "39",
-      "activeUsers": "15",
-      "averageSessionDuration": "381.85803715789478",
-      "bounceRate": "0.39473684210526316"
+      "screenPageViews": "40",
+      "activeUsers": "16",
+      "averageSessionDuration": "372.37606889743591",
+      "bounceRate": "0.38461538461538464"
     },
     {
       "pagePath": "/tailor",
-      "screenPageViews": "25",
+      "screenPageViews": "26",
       "activeUsers": "2",
-      "averageSessionDuration": "585.663197625",
-      "bounceRate": "0.25"
+      "averageSessionDuration": "652.48768896",
+      "bounceRate": "0.24"
     },
     {
       "pagePath": "/auth/login",
-      "screenPageViews": "14",
+      "screenPageViews": "15",
       "activeUsers": "2",
-      "averageSessionDuration": "12.274345133333334",
-      "bounceRate": "0.13333333333333333"
+      "averageSessionDuration": "11.168571062500002",
+      "bounceRate": "0.1875"
     },
     {
       "pagePath": "/dashboard",
-      "screenPageViews": "14",
+      "screenPageViews": "15",
       "activeUsers": "2",
-      "averageSessionDuration": "135.42507357142856",
-      "bounceRate": "0.14285714285714285"
+      "averageSessionDuration": "127.8003804",
+      "bounceRate": "0.13333333333333333"
     },
     {
       "pagePath": "/applications",
-      "screenPageViews": "7",
+      "screenPageViews": "8",
       "activeUsers": "2",
-      "averageSessionDuration": "107.35082016666667",
-      "bounceRate": "0"
+      "averageSessionDuration": "83.300467428571423",
+      "bounceRate": "0.14285714285714285"
     },
     {
       "pagePath": "/ats/lever",
@@ -223,28 +223,28 @@
     },
     {
       "pagePath": "/wadecv-vs-jobscan",
-      "screenPageViews": "0",
+      "screenPageViews": "1",
       "activeUsers": "1",
-      "averageSessionDuration": "0",
+      "averageSessionDuration": "0.058725",
       "bounceRate": "1"
     }
   ],
   "traffic_sources": [
     {
       "channel": "Organic Shopping",
-      "sessions": "29",
+      "sessions": "28",
       "activeUsers": "1",
-      "screenPageViews": "71",
-      "avgDuration": "629.4659988275863",
-      "bounceRate": "0.27586206896551724"
+      "screenPageViews": "70",
+      "avgDuration": "651.946927357143",
+      "bounceRate": "0.25"
     },
     {
       "channel": "Direct",
-      "sessions": "13",
-      "activeUsers": "8",
-      "screenPageViews": "25",
-      "avgDuration": "1026.983199",
-      "bounceRate": "0.46153846153846156"
+      "sessions": "16",
+      "activeUsers": "10",
+      "screenPageViews": "33",
+      "avgDuration": "974.06199137499993",
+      "bounceRate": "0.5625"
     },
     {
       "channel": "Paid Search",
@@ -252,14 +252,6 @@
       "activeUsers": "4",
       "screenPageViews": "4",
       "avgDuration": "0",
-      "bounceRate": "1"
-    },
-    {
-      "channel": "Unassigned",
-      "sessions": "4",
-      "activeUsers": "3",
-      "screenPageViews": "2",
-      "avgDuration": "4.72967275",
       "bounceRate": "1"
     },
     {
@@ -276,6 +268,14 @@
       "activeUsers": "2",
       "screenPageViews": "2",
       "avgDuration": "0",
+      "bounceRate": "1"
+    },
+    {
+      "channel": "Unassigned",
+      "sessions": "2",
+      "activeUsers": "1",
+      "screenPageViews": "1",
+      "avgDuration": "3.869442",
       "bounceRate": "1"
     }
   ],
@@ -304,16 +304,16 @@
     },
     {
       "device": "mobile",
-      "sessions": "8",
-      "activeUsers": "6",
-      "bounceRate": "0.5"
+      "sessions": "9",
+      "activeUsers": "7",
+      "bounceRate": "0.55555555555555558"
     }
   ],
   "countries": [
     {
       "country": "United States",
-      "sessions": "33",
-      "activeUsers": "7"
+      "sessions": "34",
+      "activeUsers": "8"
     },
     {
       "country": "Australia",
@@ -322,13 +322,8 @@
     },
     {
       "country": "(not set)",
-      "sessions": "4",
-      "activeUsers": "4"
-    },
-    {
-      "country": "",
-      "sessions": "1",
-      "activeUsers": "1"
+      "sessions": "5",
+      "activeUsers": "5"
     },
     {
       "country": "Canada",
@@ -349,32 +344,37 @@
   "events": [
     {
       "event": "page_view",
-      "eventCount": "105",
-      "totalUsers": "15"
+      "eventCount": "111",
+      "totalUsers": "17"
     },
     {
       "event": "session_start",
-      "eventCount": "50",
-      "totalUsers": "15"
+      "eventCount": "52",
+      "totalUsers": "17"
     },
     {
       "event": "user_engagement",
-      "eventCount": "40",
-      "totalUsers": "7"
+      "eventCount": "44",
+      "totalUsers": "8"
     },
     {
       "event": "scroll",
-      "eventCount": "26",
+      "eventCount": "27",
       "totalUsers": "4"
     },
     {
       "event": "dashboard_viewed",
-      "eventCount": "23",
+      "eventCount": "25",
       "totalUsers": "2"
     },
     {
+      "event": "cv_section_edited",
+      "eventCount": "21",
+      "totalUsers": "1"
+    },
+    {
       "event": "cv_download",
-      "eventCount": "18",
+      "eventCount": "20",
       "totalUsers": "1"
     },
     {
@@ -384,8 +384,8 @@
     },
     {
       "event": "first_visit",
-      "eventCount": "13",
-      "totalUsers": "13"
+      "eventCount": "15",
+      "totalUsers": "15"
     },
     {
       "event": "form_start",
@@ -394,7 +394,7 @@
     },
     {
       "event": "login_attempt",
-      "eventCount": "12",
+      "eventCount": "13",
       "totalUsers": "1"
     },
     {
@@ -453,51 +453,51 @@
     },
     {
       "week": "202617",
-      "activeUsers": "4",
-      "sessions": "4",
-      "screenPageViews": "9"
+      "activeUsers": "5",
+      "sessions": "6",
+      "screenPageViews": "16"
     }
   ],
   "all_pages_with_titles": [
     {
       "pagePath": "/",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "39",
-      "activeUsers": "15",
-      "avgDuration": "381.85803715789478",
-      "bounceRate": "0.39473684210526316"
+      "screenPageViews": "40",
+      "activeUsers": "16",
+      "avgDuration": "372.37606889743591",
+      "bounceRate": "0.38461538461538464"
     },
     {
       "pagePath": "/tailor",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "25",
+      "screenPageViews": "26",
       "activeUsers": "2",
-      "avgDuration": "585.663197625",
-      "bounceRate": "0.25"
+      "avgDuration": "652.48768896",
+      "bounceRate": "0.24"
     },
     {
       "pagePath": "/auth/login",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "14",
+      "screenPageViews": "15",
       "activeUsers": "2",
-      "avgDuration": "12.274345133333334",
-      "bounceRate": "0.13333333333333333"
+      "avgDuration": "11.168571062500002",
+      "bounceRate": "0.1875"
     },
     {
       "pagePath": "/dashboard",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "14",
+      "screenPageViews": "15",
       "activeUsers": "2",
-      "avgDuration": "135.42507357142856",
-      "bounceRate": "0.14285714285714285"
+      "avgDuration": "127.8003804",
+      "bounceRate": "0.13333333333333333"
     },
     {
       "pagePath": "/applications",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "7",
+      "screenPageViews": "8",
       "activeUsers": "2",
-      "avgDuration": "107.35082016666667",
-      "bounceRate": "0"
+      "avgDuration": "83.300467428571423",
+      "bounceRate": "0.14285714285714285"
     },
     {
       "pagePath": "/ats/lever",
@@ -550,22 +550,22 @@
     {
       "pagePath": "/wadecv-vs-jobscan",
       "pageTitle": "WadeCV vs Jobscan: AI Resume Tailoring vs ATS Scanning (2026) | WadeCV",
-      "screenPageViews": "0",
+      "screenPageViews": "1",
       "activeUsers": "1",
-      "avgDuration": "0",
+      "avgDuration": "0.058725",
       "bounceRate": "1"
     }
   ],
   "referrers": [
     {
       "source": "checkout.stripe.com",
-      "sessions": "29",
+      "sessions": "28",
       "activeUsers": "1"
     },
     {
       "source": "(direct)",
-      "sessions": "13",
-      "activeUsers": "8"
+      "sessions": "16",
+      "activeUsers": "10"
     },
     {
       "source": "google",
@@ -574,8 +574,8 @@
     },
     {
       "source": "(not set)",
-      "sessions": "4",
-      "activeUsers": "3"
+      "sessions": "2",
+      "activeUsers": "1"
     },
     {
       "source": "m.facebook.com",

@@ -4,6 +4,91 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 
 ---
 
+## 2026-04-22 — Session 22: `/wadecv-vs-resumeai` Comparison Page + Admin/Recruiter Cluster Overhaul
+
+### Data Pulled
+- [x] GA4 analytics data → 53 sessions / 17 users (30d), +3 vs S21; core product events healthy
+- [x] GSC data → **390 impressions (+7 vs S21), 50 pages (+1), 2 clicks (flat), 50 queries**
+- [x] Trends data → rate-limited (429) again — 2nd consecutive session. `pull_trends.py` needs fix
+
+### Key Findings
+- **POSITION LIFT CONFIRMED: daily-avg position 53.8 (2026-04-14) → 23.7 (2026-04-20) — 30-point improvement in 7 days.** First concrete evidence that S20 consulting pillar + S21 IB pillar work is being weighted. Pillar-cluster playbook validated by GSC.
+- **Customer service cluster: 50+ impressions across 20+ queries** all pointing to `/skills/customer-service` (already rich: 2389 chars, 8 FAQs, 12 bullet examples). Position 60-100 — this is a competitive ceiling, not a content depth issue. Lever applied: freshness-bump `dateModified`.
+- **Admin assistant cluster: 4 queries** split across `/resume-bullets/administrative-assistant` and `/jobs/administrative-assistant`. Both were thin. Actioned.
+- **Recruiter cluster: 3 queries** on `/jobs/recruiter` (body was 470 chars). Actioned.
+- **ResumeAI deferral at breaking point** — +375,200% Trends signal had been deferred 3 consecutive sessions (S20/S21 chose category-creation; S22 ships it).
+
+### Changes Made
+
+#### 1. `/wadecv-vs-resumeai` comparison page (big bet of session, thrice-deferred)
+**File created:** `frontend/src/app/(resources)/wadecv-vs-resumeai/page.tsx`
+- H1: "WadeCV vs ResumeAI by Wonsulting: Full-Tailor AI vs Bullet Rewriter (2026)"
+- 12-row feature comparison table, 9-entry FAQ
+- Explicit positioning: ResumeAI = bullet-level rewriter for new grads; WadeCV = full-resume tailoring from URL
+- Wonsulting-specific vocabulary (WOWS, Jerry Lee, Jonathan Javier, NextPlay) for branded-query match
+- Article + FAQPage JSON-LD
+- 8 contextLinks in CrossCategoryLinks
+- Sitemap priority 0.9
+- Added to TOOL_COMPARISONS array → surfaces on every comparison and pillar page
+
+#### 2. `/jobs/recruiter` deep overhaul
+**File changed:** `frontend/content/seo/jobs.json`
+- Body: 470 chars → 4,100 chars
+- 5 → 9 responsibilities, 5 → 8 required skills with ATS name specificity (Greenhouse, Lever, Ashby, LinkedIn Recruiter)
+- Salary: 1-line → 4-line with US/UK + agency/in-house/exec-search breakdown
+- 10 → 30 resume keywords (Boolean, ATS names, funnel metrics, DEI terms)
+- 0 → 8 FAQs, 0 → 8 commonMistakes, 0 → 5 interviewTips
+- Title: "Recruiter Job Description & Resume Guide" → "Recruiter CV & Resume Guide 2026 — In-House, Agency & Talent Acquisition"
+
+#### 3. `/jobs/administrative-assistant` deep overhaul
+**File changed:** `frontend/content/seo/jobs.json`
+- Body: 600 chars → 3,800 chars
+- 7 → 11 responsibilities, 7 → 10 required skills (Office module specifics, named travel/expense tools)
+- **Bug fixed:** salaryRange field had stripped currency symbols. Replaced with 4-tier US/UK bands.
+- 14 → 39 resume keywords (Concur, Expensify, Slack, Teams, Zoom, Asana, Notion)
+- 1 → 8 FAQs, 3 → 8 commonMistakes, 3 → 5 interviewTips
+- Title: "Administrative Assistant – Job Description & Resume Guide" → "Administrative Assistant CV & Resume Guide 2026 — Tasks, Summary & Keywords"
+
+#### 4. `/resume-bullets/administrative-assistant` deep overhaul
+**File changed:** `frontend/content/seo/resume-bullets.json`
+- Body: 330 chars → 2,400 chars (includes 6 summary/objective templates for entry → office manager → EA transition → legal admin)
+- bulletExamples: 4 → 16 (C-suite, calendar, expenses, events, travel, onboarding, vendor, board, tool stack, correspondence, mailroom, reception, holiday event, equipment, training, relocation)
+- 3 → 7 commonMistakes, 0 → 5 FAQs (new field)
+- Title: "Administrative Assistant Resume Bullet Points" → "Administrative Assistant Resume Bullet Points & Summary Examples (2026)"
+- Directly targets `administrative assistant summary` (1 impr, pos 95)
+
+#### 5. Template freshness bump (130+ pages refreshed in one edit)
+- `frontend/src/app/(resources)/jobs/[slug]/page.tsx`: dateModified 2026-04-07 → 2026-04-22 (all 70+ jobs)
+- `frontend/src/app/(resources)/skills/[slug]/page.tsx`: dateModified 2026-04-16 → 2026-04-22 (all 28 skills)
+- `frontend/src/app/(resources)/resume-bullets/[slug]/page.tsx`: dateModified 2026-04-07 → 2026-04-22 (all 31 bullet guides)
+
+#### 6. Wiring
+- `frontend/src/app/sitemap.ts`: added `/wadecv-vs-resumeai` at priority 0.9
+- `frontend/src/components/seo/cross-category-links.tsx`: added to TOOL_COMPARISONS
+
+#### 7. Build verified
+- `npm run build`: **193 static pages** (up from 192), exit 0, no new errors/warnings
+- `/wadecv-vs-resumeai` prerendered and confirmed in output
+
+### Not Yet Done (For Future Sessions)
+- [ ] Monitor `/wadecv-vs-resumeai` indexing (2026-04-27+)
+- [ ] Monitor `/jobs/recruiter`, `/jobs/administrative-assistant`, `/resume-bullets/administrative-assistant` lift (2026-04-27+)
+- [ ] Monitor S21 IB-pillar + firm-page indexing (2026-04-26+)
+- [ ] Monitor S20 consulting-pillar + firm-page indexing (2026-04-25+)
+- [ ] Monitor daily-avg position — does it hold ≤30 or regress? (baseline 23.7 on 2026-04-20)
+- [ ] **Fix `pull_trends.py` — add backoff + UA rotation** (rate-limited 2 sessions running)
+- [ ] Complete IB cluster — Citadel, Jane Street, Apollo, Blackstone, KKR, Evercore, Centerview, Lazard, PJT
+- [ ] Complete consulting cluster — PwC, EY, KPMG, Strategy&, EY-Parthenon
+- [ ] "cv builder app" +250% signal — PWA landing page candidate
+- [ ] Investigate `/ats/lever` persistent 0-click anomaly (62 impr pos 7.8, 20+ days)
+- [ ] Investigate why `/wadecv-vs-teal` still NOT indexed after 15+ days
+- [ ] Fix duplicate-key warnings on `/ats` and `/career-change` index pages
+- [ ] Monitor signup_start from organic (still 0 after 15+ days)
+- [ ] If customer-service cluster doesn't lift by S26 from freshness-only, try backlink / internal-link density experiment rather than more content
+- [ ] Other thin `/jobs/` entries still candidates for same overhaul template (hr-business-partner already decent body, but lesser-used roles not yet audited)
+
+---
+
 ## 2026-04-21 — Session 21: Investment Banking Resume Pillar + 5 BB/AM Firm Deep Overhauls
 
 ### Data Pulled

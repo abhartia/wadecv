@@ -46,7 +46,7 @@ export default async function JobPage({ params }: Props) {
             author: { "@type": "Organization", name: "WadeCV" },
             publisher: { "@type": "Organization", name: "WadeCV", url: BASE_URL },
             datePublished: "2026-04-01",
-            dateModified: "2026-04-07",
+            dateModified: "2026-04-22",
             mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/jobs/${job.slug}` },
           }),
         }}
