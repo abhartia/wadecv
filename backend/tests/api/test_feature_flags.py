@@ -57,7 +57,10 @@ async def test_rollout_is_stable_per_user(session):
 async def test_rollout_percentage_approximates_target(session):
     session.add(FeatureFlag(name="fifty", enabled=True, rollout_pct=50))
     await session.flush()
-    hits = sum(1 for i in range(500) if await is_enabled(session, "fifty", f"user-{i}"))
+    hits = 0
+    for i in range(500):
+        if await is_enabled(session, "fifty", f"user-{i}"):
+            hits += 1
     # 50% rollout over 500 users — expect well within ±10% of target.
     assert 200 <= hits <= 300, f"got {hits}/500 — rollout hashing looks biased"
 
