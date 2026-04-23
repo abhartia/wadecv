@@ -1,19 +1,19 @@
 {
   "geo_interest_us": {
-    "District of Columbia": 100,
-    "Kansas": 78,
-    "Idaho": 43,
-    "Arizona": 43,
-    "Maryland": 43,
-    "Nevada": 40,
-    "Texas": 40,
-    "Colorado": 40,
-    "Washington": 38,
-    "California": 36,
-    "Georgia": 36,
-    "Florida": 35,
-    "New York": 35,
-    "New Jersey": 35,
-    "Massachusetts": 35
+    "Kansas": 100,
+    "District of Columbia": 86,
+    "Maryland": 54,
+    "Colorado": 52,
+    "Arizona": 48,
+    "Texas": 48,
+    "Utah": 46,
+    "Georgia": 46,
+    "Washington": 46,
+    "California": 44,
+    "Nebraska": 44,
+    "New York": 42,
+    "Oregon": 42,
+    "New Jersey": 40,
+    "Florida": 40
   }
 }

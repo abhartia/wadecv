@@ -127,13 +127,6 @@
       "position": 29.5
     },
     {
-      "query": "bcg resume",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 51
-    },
-    {
       "query": "benefits of mailing a physical resume vs applying through online portals",
       "clicks": 0,
       "impressions": 2,
@@ -349,6 +342,13 @@
       "impressions": 3,
       "ctr": 0,
       "position": 82.7
+    },
+    {
+      "query": "cv skills customer service",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 76
     }
   ],
   "top_pages_30d": [
@@ -362,9 +362,9 @@
     {
       "page": "https://wadecv.com/ats/lever",
       "clicks": 0,
-      "impressions": 62,
+      "impressions": 63,
       "ctr": 0,
-      "position": 7.8
+      "position": 7.9
     },
     {
       "page": "https://wadecv.com/best-ai-resume-builder-2026",
@@ -435,13 +435,6 @@
       "impressions": 2,
       "ctr": 0,
       "position": 29.5
-    },
-    {
-      "page": "https://wadecv.com/company-resume/bcg",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 51
     },
     {
       "page": "https://wadecv.com/company-resume/citi",
@@ -530,9 +523,9 @@
     {
       "page": "https://wadecv.com/physical-mail/physical-cv-vs-email-application",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 11
+      "position": 7.5
     },
     {
       "page": "https://wadecv.com/physical-mail/usps-first-class-mail-job-applications",
@@ -544,9 +537,9 @@
     {
       "page": "https://wadecv.com/physical-mail/why-mail-a-physical-cv",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 8.5
+      "position": 9.7
     },
     {
       "page": "https://wadecv.com/resume-bullets/achievement-examples",
@@ -591,6 +584,13 @@
       "position": 85
     },
     {
+      "page": "https://wadecv.com/resume-bullets/marketing-manager",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 48
+    },
+    {
       "page": "https://wadecv.com/resume-bullets/python-developer",
       "clicks": 0,
       "impressions": 1,
@@ -607,9 +607,9 @@
     {
       "page": "https://wadecv.com/resume-bullets/supply-chain-analyst",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 94
+      "position": 64
     },
     {
       "page": "https://wadecv.com/skills/accountant",
@@ -642,9 +642,9 @@
     {
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 68,
+      "impressions": 74,
       "ctr": 0,
-      "position": 68.8
+      "position": 68.7
     },
     {
       "page": "https://wadecv.com/skills/executive-assistant",
@@ -847,14 +847,6 @@
       "impressions": 2,
       "ctr": 0,
       "position": 29.5
-    },
-    {
-      "query": "bcg resume",
-      "page": "https://wadecv.com/company-resume/bcg",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 51
     },
     {
       "query": "benefits of mailing a physical resume vs applying through online portals",
@@ -1148,17 +1140,17 @@
       "query": "digital marketing cv",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 28,
+      "impressions": 30,
       "ctr": 0,
-      "position": 66.9
+      "position": 66.7
     },
     {
       "query": "digital marketing cvs",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 11,
+      "impressions": 13,
       "ctr": 0,
-      "position": 72.7
+      "position": 72.6
     },
     {
       "query": "digital marketing keywords resume",
@@ -1188,9 +1180,9 @@
       "query": "digital marketing skills resume",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 10,
+      "impressions": 11,
       "ctr": 0,
-      "position": 45.3
+      "position": 44.5
     },
     {
       "query": "executive assistant resume skills",
@@ -1300,9 +1292,9 @@
       "query": "marketing skills for cv",
       "page": "https://wadecv.com/skills/digital-marketing",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 95
+      "position": 94.7
     },
     {
       "query": "marketing skills in cv",
@@ -1503,6 +1495,14 @@
       "impressions": 1,
       "ctr": 0,
       "position": 50
+    },
+    {
+      "query": "skill customer service cv",
+      "page": "https://wadecv.com/skills/customer-service",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 56
     }
   ],
   "daily_trend_90d": [
@@ -1834,22 +1834,29 @@
       "impressions": 11,
       "ctr": 0,
       "position": 23.7
+    },
+    {
+      "date": "2026-04-21",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 42
     }
   ],
   "devices_30d": [
     {
       "device": "DESKTOP",
       "clicks": 1,
-      "impressions": 375,
-      "ctr": 0.27,
-      "position": 55.1
+      "impressions": 386,
+      "ctr": 0.26,
+      "position": 54.7
     },
     {
       "device": "MOBILE",
       "clicks": 1,
-      "impressions": 15,
-      "ctr": 6.67,
-      "position": 15.3
+      "impressions": 16,
+      "ctr": 6.25,
+      "position": 17.4
     }
   ],
   "countries_30d": [
@@ -1863,9 +1870,9 @@
     {
       "country": "usa",
       "clicks": 1,
-      "impressions": 187,
-      "ctr": 0.53,
-      "position": 54.9
+      "impressions": 193,
+      "ctr": 0.52,
+      "position": 54.1
     },
     {
       "country": "are",
@@ -1884,9 +1891,9 @@
     {
       "country": "aus",
       "clicks": 0,
-      "impressions": 5,
+      "impressions": 6,
       "ctr": 0,
-      "position": 83.6
+      "position": 71.7
     },
     {
       "country": "bol",
@@ -1947,14 +1954,14 @@
     {
       "country": "fra",
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 9,
       "ctr": 0,
-      "position": 31.2
+      "position": 31.8
     },
     {
       "country": "gbr",
       "clicks": 0,
-      "impressions": 113,
+      "impressions": 117,
       "ctr": 0,
       "position": 70.0
     },
