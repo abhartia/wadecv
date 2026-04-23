@@ -8,11 +8,9 @@ only happens if the middleware actually ran end-to-end.
 
 from __future__ import annotations
 
-import pytest
 from httpx import AsyncClient
 
 
-@pytest.mark.asyncio
 async def test_rate_limit_headers_are_present(client: AsyncClient):
     r = await client.get("/api/health")
     assert r.status_code == 200
