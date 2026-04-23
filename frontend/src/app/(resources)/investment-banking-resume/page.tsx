@@ -650,7 +650,7 @@ export default function InvestmentBankingResumePage() {
         <p className="text-sm text-muted-foreground mb-4">
           Elite boutiques run small Analyst classes and partner-led deal
           teams. Your resume must signal the specific advisory product —
-          generic 'financial-services' or 'banking' framing is a common reason
+          generic &apos;financial-services&apos; or &apos;banking&apos; framing is a common reason
           for rejection at Centerview, PJT, and Qatalyst.
         </p>
         <div className="space-y-4">
@@ -735,7 +735,7 @@ export default function InvestmentBankingResumePage() {
 
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">
-          IB resume in 2026: what's changed
+          IB resume in 2026: what&apos;s changed
         </h2>
         <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-3">
           <p>
@@ -762,11 +762,11 @@ export default function InvestmentBankingResumePage() {
             AI-assisted CV writing is widespread among applicants and
             recruiters know it. AI-drafted bullets that sound generic but lack
             the deal-specific texture — real deal sizes, real counterparties,
-            real model and memo deliverables — read as 'low-conviction' and
+            real model and memo deliverables — read as &apos;low-conviction&apos; and
             get cut. Humanising an AI-drafted IB CV means replacing vague
-            language ('supported M&A process') with specific signals ('built
+            language (&apos;supported M&amp;A process&apos;) with specific signals (&apos;built
             three-statement operating model and DCF for $1.4B sell-side of
-            specialty-chemicals target'). See our{" "}
+            specialty-chemicals target&apos;). See our{" "}
             <Link href="/humanize-ai-resume" className="underline">
               humanize AI resume guide
             </Link>{" "}

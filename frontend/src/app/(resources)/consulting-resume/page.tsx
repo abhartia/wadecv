@@ -515,7 +515,7 @@ export default function ConsultingResumePage() {
         </h2>
         <p className="text-sm text-muted-foreground mb-4">
           Resume structure is identical across MBB. Vocabulary, screening
-          tools, and 'spike' expectations differ — click through for firm-
+          tools, and &apos;spike&apos; expectations differ — click through for firm-
           specific guides.
         </p>
         <div className="grid sm:grid-cols-3 gap-4">
@@ -550,7 +550,7 @@ export default function ConsultingResumePage() {
         <p className="text-sm text-muted-foreground mb-4">
           Big 4 firms are organised by service line rather than by case vs
           non-case. Your resume must signal the specific service line and
-          offering — a generic 'Big 4 Advisory' framing is a common reason
+          offering — a generic &apos;Big 4 Advisory&apos; framing is a common reason
           for rejection.
         </p>
         <div className="space-y-4">
@@ -649,7 +649,7 @@ export default function ConsultingResumePage() {
 
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">
-          Consulting resume in 2026: what's changed
+          Consulting resume in 2026: what&apos;s changed
         </h2>
         <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-3">
           <p>
