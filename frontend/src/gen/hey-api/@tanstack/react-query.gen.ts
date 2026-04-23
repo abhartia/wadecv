@@ -18,6 +18,7 @@ import {
   getBalanceApiCreditsBalanceGet,
   getCoverLetterApiCoverLetterJobIdGet,
   getCvApiCvCvIdGet,
+  getFlagApiFeatureFlagsNameGet,
   getGapInsightsApiJobsGapInsightsGet,
   getJobApiJobsJobIdGet,
   getMeApiAuthMeGet,
@@ -84,6 +85,9 @@ import type {
   GetCvApiCvCvIdGetData,
   GetCvApiCvCvIdGetError,
   GetCvApiCvCvIdGetResponse,
+  GetFlagApiFeatureFlagsNameGetData,
+  GetFlagApiFeatureFlagsNameGetError,
+  GetFlagApiFeatureFlagsNameGetResponse,
   GetGapInsightsApiJobsGapInsightsGetData,
   GetGapInsightsApiJobsGapInsightsGetResponse,
   GetJobApiJobsJobIdGetData,
@@ -96,6 +100,7 @@ import type {
   GetProfileApiAccountProfileGetData,
   GetProfileApiAccountProfileGetResponse,
   HealthApiHealthGetData,
+  HealthApiHealthGetResponse,
   ListCvsApiCvGetData,
   ListCvsApiCvGetResponse,
   ListJobsApiJobsGetData,
@@ -1271,26 +1276,6 @@ export const uploadProfileCvApiAccountProfileUploadPostMutation = (
   return mutationOptions;
 };
 
-export const healthApiHealthGetQueryKey = (options?: Options<HealthApiHealthGetData>) =>
-  createQueryKey("healthApiHealthGet", options);
-
-/**
- * Health
- */
-export const healthApiHealthGetOptions = (options?: Options<HealthApiHealthGetData>) =>
-  queryOptions<unknown, DefaultError, unknown, ReturnType<typeof healthApiHealthGetQueryKey>>({
-    queryFn: async ({ queryKey, signal }) => {
-      const { data } = await healthApiHealthGet({
-        ...options,
-        ...queryKey[0],
-        signal,
-        throwOnError: true,
-      });
-      return data;
-    },
-    queryKey: healthApiHealthGetQueryKey(options),
-  });
-
 /**
  * Extract Address
  */
@@ -1344,3 +1329,62 @@ export const sendMailApiMailSendPostMutation = (
   };
   return mutationOptions;
 };
+
+export const getFlagApiFeatureFlagsNameGetQueryKey = (
+  options: Options<GetFlagApiFeatureFlagsNameGetData>,
+) => createQueryKey("getFlagApiFeatureFlagsNameGet", options);
+
+/**
+ * Get Flag
+ *
+ * Evaluate a single flag for the current user.
+ *
+ * Returns `{"name": "...", "enabled": false}` when the flag doesn't exist —
+ * callers treat "unknown" and "off" identically, which matches how flags
+ * behave in practice (an unreleased flag is an off flag).
+ */
+export const getFlagApiFeatureFlagsNameGetOptions = (
+  options: Options<GetFlagApiFeatureFlagsNameGetData>,
+) =>
+  queryOptions<
+    GetFlagApiFeatureFlagsNameGetResponse,
+    GetFlagApiFeatureFlagsNameGetError,
+    GetFlagApiFeatureFlagsNameGetResponse,
+    ReturnType<typeof getFlagApiFeatureFlagsNameGetQueryKey>
+  >({
+    queryFn: async ({ queryKey, signal }) => {
+      const { data } = await getFlagApiFeatureFlagsNameGet({
+        ...options,
+        ...queryKey[0],
+        signal,
+        throwOnError: true,
+      });
+      return data;
+    },
+    queryKey: getFlagApiFeatureFlagsNameGetQueryKey(options),
+  });
+
+export const healthApiHealthGetQueryKey = (options?: Options<HealthApiHealthGetData>) =>
+  createQueryKey("healthApiHealthGet", options);
+
+/**
+ * Health
+ */
+export const healthApiHealthGetOptions = (options?: Options<HealthApiHealthGetData>) =>
+  queryOptions<
+    HealthApiHealthGetResponse,
+    DefaultError,
+    HealthApiHealthGetResponse,
+    ReturnType<typeof healthApiHealthGetQueryKey>
+  >({
+    queryFn: async ({ queryKey, signal }) => {
+      const { data } = await healthApiHealthGet({
+        ...options,
+        ...queryKey[0],
+        signal,
+        throwOnError: true,
+      });
+      return data;
+    },
+    queryKey: healthApiHealthGetQueryKey(options),
+  });
