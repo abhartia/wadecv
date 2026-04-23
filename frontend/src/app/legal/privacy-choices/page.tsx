@@ -31,7 +31,11 @@ export default function PrivacyChoicesPage() {
             <div className="text-sm">
               <p className="font-medium">
                 Current status:{" "}
-                <span className={effectiveConsent === "granted" ? "text-green-600" : "text-muted-foreground"}>
+                <span
+                  className={
+                    effectiveConsent === "granted" ? "text-green-600" : "text-muted-foreground"
+                  }
+                >
                   {effectiveConsent === "granted" ? "Enabled" : "Disabled"}
                 </span>
               </p>
@@ -89,9 +93,9 @@ export default function PrivacyChoicesPage() {
       <p>
         California residents have the right to know, delete, correct, and limit the use of their
         personal information, and to opt out of the sale or sharing of personal information. This
-        page provides the opt-out mechanism. See our{" "}
-        <a href="/legal/privacy">Privacy Policy</a> for the full list of rights and how to exercise
-        them, or email <a href="mailto:support@wadecv.com">support@wadecv.com</a>.
+        page provides the opt-out mechanism. See our <a href="/legal/privacy">Privacy Policy</a> for
+        the full list of rights and how to exercise them, or email{" "}
+        <a href="mailto:support@wadecv.com">support@wadecv.com</a>.
       </p>
     </article>
   );

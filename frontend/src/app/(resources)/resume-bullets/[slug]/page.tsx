@@ -7,7 +7,10 @@ import { RelatedGuides } from "@/components/seo/related-guides";
 import { CrossCategoryLinks } from "@/components/seo/cross-category-links";
 import { InlineCta } from "@/components/seo/inline-cta";
 
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com";
+const BASE_URL =
+  process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "https://wadecv.com";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -46,7 +49,10 @@ export default async function ResumeBulletsPage({ params }: Props) {
             publisher: { "@type": "Organization", name: "WadeCV", url: BASE_URL },
             datePublished: "2026-04-01",
             dateModified: "2026-04-22",
-            mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/resume-bullets/${entry.slug}` },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `${BASE_URL}/resume-bullets/${entry.slug}`,
+            },
           }),
         }}
       />
@@ -96,7 +102,11 @@ export default async function ResumeBulletsPage({ params }: Props) {
 
       {entry.faq && <FaqSection faq={entry.faq} />}
 
-      <RelatedGuides relatedSlugs={entry.relatedSlugs} category="resume-bullets" currentSlug={slug} />
+      <RelatedGuides
+        relatedSlugs={entry.relatedSlugs}
+        category="resume-bullets"
+        currentSlug={slug}
+      />
 
       <CrossCategoryLinks currentCategory="/resume-bullets" />
 
@@ -104,7 +114,8 @@ export default async function ResumeBulletsPage({ params }: Props) {
         <CardHeader>
           <CardTitle>Get AI-powered resume bullets</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Paste a job description and your experience—WadeCV will generate tailored CV content and bullets for you.
+            Paste a job description and your experience—WadeCV will generate tailored CV content and
+            bullets for you.
           </p>
         </CardHeader>
         <CardContent>

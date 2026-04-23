@@ -3,7 +3,13 @@
 import { useState, useCallback, Suspense, useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "@/lib/auth";
-import { api, ApiError, StreamingNotAvailableError, CVGenerationProgressEvent, CVGenerationStage } from "@/lib/api";
+import {
+  api,
+  ApiError,
+  StreamingNotAvailableError,
+  CVGenerationProgressEvent,
+  CVGenerationStage,
+} from "@/lib/api";
 import {
   trackCvDownload,
   trackCvImportFailure,
@@ -26,60 +32,193 @@ import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { toast } from "sonner";
-import { Upload, FileText, Briefcase, Wand2, Edit3, Download, Loader2, ArrowLeft, ArrowRight, Link2, Globe, Coins, UserCheck, Settings, Target, CheckCircle2, AlertTriangle, RefreshCw, Mail, ChevronDown, Eye, Send } from "lucide-react";
+import {
+  Upload,
+  FileText,
+  Briefcase,
+  Wand2,
+  Edit3,
+  Download,
+  Loader2,
+  ArrowLeft,
+  ArrowRight,
+  Link2,
+  Globe,
+  Coins,
+  UserCheck,
+  Settings,
+  Target,
+  CheckCircle2,
+  AlertTriangle,
+  RefreshCw,
+  Mail,
+  ChevronDown,
+  Eye,
+  Send,
+} from "lucide-react";
 import { CVEditor } from "@/components/cv-editor/cv-editor";
 import { CvPreview } from "@/components/cv-preview/cv-preview";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { extractAddressApiMailExtractAddressPost, sendMailApiMailSendPost } from "@/gen/hey-api/sdk.gen";
+import {
+  extractAddressApiMailExtractAddressPost,
+  sendMailApiMailSendPost,
+} from "@/gen/hey-api/sdk.gen";
 import { client } from "@/gen/hey-api/client.gen";
 import type { AddressSchema, BodySendMailApiMailSendPost } from "@/gen/hey-api/types.gen";
 import { Checkbox } from "@/components/ui/checkbox";
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import Link from "next/link";
 
 type FitAnalysis = { fit_score: number; strengths: string[]; gaps: string[] };
-type Step = "upload" | "enhance" | "job" | "fit" | "generate" | "edit" | "cover_letter" | "download" | "mail";
+type Step =
+  | "upload"
+  | "enhance"
+  | "job"
+  | "fit"
+  | "generate"
+  | "edit"
+  | "cover_letter"
+  | "download"
+  | "mail";
 
-const ALL_STEPS: Step[] = ["upload", "enhance", "job", "fit", "generate", "edit", "cover_letter", "download", "mail"];
-const PROFILE_STEPS: Step[] = ["job", "fit", "generate", "edit", "cover_letter", "download", "mail"];
+const ALL_STEPS: Step[] = [
+  "upload",
+  "enhance",
+  "job",
+  "fit",
+  "generate",
+  "edit",
+  "cover_letter",
+  "download",
+  "mail",
+];
+const PROFILE_STEPS: Step[] = [
+  "job",
+  "fit",
+  "generate",
+  "edit",
+  "cover_letter",
+  "download",
+  "mail",
+];
 
 const STEP_LABELS: Record<Step, string> = {
-  upload: "Upload CV", enhance: "Add Info", job: "Job Details",
-  generate: "Generate", fit: "Fit Analysis", edit: "Edit",
-  cover_letter: "Cover Letter", download: "Download", mail: "Send Mail",
+  upload: "Upload CV",
+  enhance: "Add Info",
+  job: "Job Details",
+  generate: "Generate",
+  fit: "Fit Analysis",
+  edit: "Edit",
+  cover_letter: "Cover Letter",
+  download: "Download",
+  mail: "Send Mail",
 };
 const STEP_ICONS: Record<Step, React.ElementType> = {
-  upload: Upload, enhance: Edit3, job: Briefcase,
-  generate: Wand2, fit: Target, edit: FileText,
-  cover_letter: Mail, download: Download, mail: Send,
+  upload: Upload,
+  enhance: Edit3,
+  job: Briefcase,
+  generate: Wand2,
+  fit: Target,
+  edit: FileText,
+  cover_letter: Mail,
+  download: Download,
+  mail: Send,
 };
 
 const EMPTY_ADDRESS: AddressSchema = {
-  name: "", address_line1: "", address_line2: "", city: "", state: "", zip: "", country: "US",
+  name: "",
+  address_line1: "",
+  address_line2: "",
+  city: "",
+  state: "",
+  zip: "",
+  country: "US",
 };
 
 const US_STATES = [
-  { value: "AL", label: "Alabama" }, { value: "AK", label: "Alaska" }, { value: "AZ", label: "Arizona" },
-  { value: "AR", label: "Arkansas" }, { value: "CA", label: "California" }, { value: "CO", label: "Colorado" },
-  { value: "CT", label: "Connecticut" }, { value: "DE", label: "Delaware" }, { value: "FL", label: "Florida" },
-  { value: "GA", label: "Georgia" }, { value: "HI", label: "Hawaii" }, { value: "ID", label: "Idaho" },
-  { value: "IL", label: "Illinois" }, { value: "IN", label: "Indiana" }, { value: "IA", label: "Iowa" },
-  { value: "KS", label: "Kansas" }, { value: "KY", label: "Kentucky" }, { value: "LA", label: "Louisiana" },
-  { value: "ME", label: "Maine" }, { value: "MD", label: "Maryland" }, { value: "MA", label: "Massachusetts" },
-  { value: "MI", label: "Michigan" }, { value: "MN", label: "Minnesota" }, { value: "MS", label: "Mississippi" },
-  { value: "MO", label: "Missouri" }, { value: "MT", label: "Montana" }, { value: "NE", label: "Nebraska" },
-  { value: "NV", label: "Nevada" }, { value: "NH", label: "New Hampshire" }, { value: "NJ", label: "New Jersey" },
-  { value: "NM", label: "New Mexico" }, { value: "NY", label: "New York" }, { value: "NC", label: "North Carolina" },
-  { value: "ND", label: "North Dakota" }, { value: "OH", label: "Ohio" }, { value: "OK", label: "Oklahoma" },
-  { value: "OR", label: "Oregon" }, { value: "PA", label: "Pennsylvania" }, { value: "RI", label: "Rhode Island" },
-  { value: "SC", label: "South Carolina" }, { value: "SD", label: "South Dakota" }, { value: "TN", label: "Tennessee" },
-  { value: "TX", label: "Texas" }, { value: "UT", label: "Utah" }, { value: "VT", label: "Vermont" },
-  { value: "VA", label: "Virginia" }, { value: "WA", label: "Washington" }, { value: "WV", label: "West Virginia" },
-  { value: "WI", label: "Wisconsin" }, { value: "WY", label: "Wyoming" }, { value: "DC", label: "District of Columbia" },
+  { value: "AL", label: "Alabama" },
+  { value: "AK", label: "Alaska" },
+  { value: "AZ", label: "Arizona" },
+  { value: "AR", label: "Arkansas" },
+  { value: "CA", label: "California" },
+  { value: "CO", label: "Colorado" },
+  { value: "CT", label: "Connecticut" },
+  { value: "DE", label: "Delaware" },
+  { value: "FL", label: "Florida" },
+  { value: "GA", label: "Georgia" },
+  { value: "HI", label: "Hawaii" },
+  { value: "ID", label: "Idaho" },
+  { value: "IL", label: "Illinois" },
+  { value: "IN", label: "Indiana" },
+  { value: "IA", label: "Iowa" },
+  { value: "KS", label: "Kansas" },
+  { value: "KY", label: "Kentucky" },
+  { value: "LA", label: "Louisiana" },
+  { value: "ME", label: "Maine" },
+  { value: "MD", label: "Maryland" },
+  { value: "MA", label: "Massachusetts" },
+  { value: "MI", label: "Michigan" },
+  { value: "MN", label: "Minnesota" },
+  { value: "MS", label: "Mississippi" },
+  { value: "MO", label: "Missouri" },
+  { value: "MT", label: "Montana" },
+  { value: "NE", label: "Nebraska" },
+  { value: "NV", label: "Nevada" },
+  { value: "NH", label: "New Hampshire" },
+  { value: "NJ", label: "New Jersey" },
+  { value: "NM", label: "New Mexico" },
+  { value: "NY", label: "New York" },
+  { value: "NC", label: "North Carolina" },
+  { value: "ND", label: "North Dakota" },
+  { value: "OH", label: "Ohio" },
+  { value: "OK", label: "Oklahoma" },
+  { value: "OR", label: "Oregon" },
+  { value: "PA", label: "Pennsylvania" },
+  { value: "RI", label: "Rhode Island" },
+  { value: "SC", label: "South Carolina" },
+  { value: "SD", label: "South Dakota" },
+  { value: "TN", label: "Tennessee" },
+  { value: "TX", label: "Texas" },
+  { value: "UT", label: "Utah" },
+  { value: "VT", label: "Vermont" },
+  { value: "VA", label: "Virginia" },
+  { value: "WA", label: "Washington" },
+  { value: "WV", label: "West Virginia" },
+  { value: "WI", label: "Wisconsin" },
+  { value: "WY", label: "Wyoming" },
+  { value: "DC", label: "District of Columbia" },
 ];
 
 const STAGE_ORDER: CVGenerationStage[] = [
@@ -136,19 +275,35 @@ function AddressForm({
       <div className="grid gap-3 sm:grid-cols-2">
         <div className="space-y-1">
           <Label className="text-xs">Name</Label>
-          <Input value={address.name} onChange={(e) => update("name", e.target.value)} placeholder="Company or recipient name" />
+          <Input
+            value={address.name}
+            onChange={(e) => update("name", e.target.value)}
+            placeholder="Company or recipient name"
+          />
         </div>
         <div className="space-y-1">
           <Label className="text-xs">Address Line 1</Label>
-          <Input value={address.address_line1} onChange={(e) => update("address_line1", e.target.value)} placeholder="123 Main St" />
+          <Input
+            value={address.address_line1}
+            onChange={(e) => update("address_line1", e.target.value)}
+            placeholder="123 Main St"
+          />
         </div>
         <div className="space-y-1">
           <Label className="text-xs">Address Line 2</Label>
-          <Input value={address.address_line2 ?? ""} onChange={(e) => update("address_line2", e.target.value)} placeholder="Suite, floor, etc." />
+          <Input
+            value={address.address_line2 ?? ""}
+            onChange={(e) => update("address_line2", e.target.value)}
+            placeholder="Suite, floor, etc."
+          />
         </div>
         <div className="space-y-1">
           <Label className="text-xs">City</Label>
-          <Input value={address.city} onChange={(e) => update("city", e.target.value)} placeholder="City" />
+          <Input
+            value={address.city}
+            onChange={(e) => update("city", e.target.value)}
+            placeholder="City"
+          />
         </div>
         <div className="space-y-1">
           <Label className="text-xs">State</Label>
@@ -158,14 +313,20 @@ function AddressForm({
             </SelectTrigger>
             <SelectContent>
               {US_STATES.map((s) => (
-                <SelectItem key={s.value} value={s.value}>{s.label}</SelectItem>
+                <SelectItem key={s.value} value={s.value}>
+                  {s.label}
+                </SelectItem>
               ))}
             </SelectContent>
           </Select>
         </div>
         <div className="space-y-1">
           <Label className="text-xs">ZIP Code</Label>
-          <Input value={address.zip} onChange={(e) => update("zip", e.target.value)} placeholder="12345" />
+          <Input
+            value={address.zip}
+            onChange={(e) => update("zip", e.target.value)}
+            placeholder="12345"
+          />
         </div>
         <div className="space-y-1">
           <Label className="text-xs">Country</Label>
@@ -199,9 +360,12 @@ function PdfPreviewPanel({
         <div className="flex items-center gap-2">
           {customFile ? (
             <>
-              <Badge variant="secondary" className="text-xs">Custom: {customFile.name}</Badge>
+              <Badge variant="secondary" className="text-xs">
+                Custom: {customFile.name}
+              </Badge>
               <Button variant="ghost" size="sm" onClick={onReset}>
-                <RefreshCw className="mr-1 h-3 w-3" />Reset to generated
+                <RefreshCw className="mr-1 h-3 w-3" />
+                Reset to generated
               </Button>
             </>
           ) : (
@@ -219,7 +383,8 @@ function PdfPreviewPanel({
               />
               <Button variant="outline" size="sm" asChild>
                 <label htmlFor={fileInputId} className="cursor-pointer">
-                  <Upload className="mr-1 h-3 w-3" />Replace with your own PDF
+                  <Upload className="mr-1 h-3 w-3" />
+                  Replace with your own PDF
                 </label>
               </Button>
             </>
@@ -382,7 +547,10 @@ function MailStep({
   useEffect(() => {
     if (addressExtracted || addressLoading || !token || !jobId) return;
     setAddressLoading(true);
-    client.setConfig({ baseUrl: process.env.NEXT_PUBLIC_API_URL, headers: { Authorization: `Bearer ${token}` } });
+    client.setConfig({
+      baseUrl: process.env.NEXT_PUBLIC_API_URL,
+      headers: { Authorization: `Bearer ${token}` },
+    });
     extractAddressApiMailExtractAddressPost({
       body: { job_id: jobId },
     })
@@ -404,7 +572,15 @@ function MailStep({
         setAddressExtracted(true);
         setAddressLoading(false);
       });
-  }, [addressExtracted, addressLoading, token, jobId, setAddressLoading, setAddressExtracted, setToAddress]);
+  }, [
+    addressExtracted,
+    addressLoading,
+    token,
+    jobId,
+    setAddressLoading,
+    setAddressExtracted,
+    setToAddress,
+  ]);
 
   // Pre-fill return address from profile
   useEffect(() => {
@@ -422,15 +598,24 @@ function MailStep({
     }
   }, [user?.mailing_address, fromAddress.address_line1, setFromAddress]);
 
-  const isToValid = toAddress.name && toAddress.address_line1 && toAddress.city && toAddress.state && toAddress.zip;
-  const isFromValid = fromAddress.name && fromAddress.address_line1 && fromAddress.city && fromAddress.state && fromAddress.zip;
+  const isToValid =
+    toAddress.name && toAddress.address_line1 && toAddress.city && toAddress.state && toAddress.zip;
+  const isFromValid =
+    fromAddress.name &&
+    fromAddress.address_line1 &&
+    fromAddress.city &&
+    fromAddress.state &&
+    fromAddress.zip;
   const canSend = isToValid && isFromValid && credits >= MAIL_COST && !mailSending && !mailSent;
 
   const handleSend = async () => {
     if (!token || !canSend) return;
     setMailSending(true);
     try {
-      client.setConfig({ baseUrl: process.env.NEXT_PUBLIC_API_URL, headers: { Authorization: `Bearer ${token}` } });
+      client.setConfig({
+        baseUrl: process.env.NEXT_PUBLIC_API_URL,
+        headers: { Authorization: `Bearer ${token}` },
+      });
       const res = await sendMailApiMailSendPost({
         body: {
           job_id: jobId,
@@ -446,7 +631,9 @@ function MailStep({
         toast.error((res.error as { detail?: string }).detail || "Failed to send mail");
       } else {
         setMailSent(true);
-        toast.success("Physical mail sent! Delivery via USPS First Class typically takes 5\u20137 business days.");
+        toast.success(
+          "Physical mail sent! Delivery via USPS First Class typically takes 5\u20137 business days.",
+        );
         await refreshUser();
       }
     } catch {
@@ -463,7 +650,8 @@ function MailStep({
           <CheckCircle2 className="h-16 w-16 text-green-500 mx-auto" />
           <h3 className="text-2xl font-bold">Mail sent!</h3>
           <p className="text-muted-foreground max-w-md mx-auto">
-            Your physical mail has been submitted for delivery via USPS First Class. It typically arrives in 5–7 business days.
+            Your physical mail has been submitted for delivery via USPS First Class. It typically
+            arrives in 5–7 business days.
           </p>
           <Link href="/applications">
             <Button className="mt-4">View Applications</Button>
@@ -481,7 +669,8 @@ function MailStep({
       <CardHeader>
         <CardTitle>Send Physical Mail</CardTitle>
         <CardDescription>
-          Mail a physical copy of your CV and/or cover letter to the company. Preview what will be sent and optionally replace with your own PDF.
+          Mail a physical copy of your CV and/or cover letter to the company. Preview what will be
+          sent and optionally replace with your own PDF.
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
@@ -511,7 +700,9 @@ function MailStep({
                 />
                 <span className="text-sm">{opt.label}</span>
                 {opt.needsCL && !coverLetterGenerated && (
-                  <span className="text-xs text-muted-foreground ml-auto">Generate a cover letter first</span>
+                  <span className="text-xs text-muted-foreground ml-auto">
+                    Generate a cover letter first
+                  </span>
                 )}
               </label>
             ))}
@@ -553,11 +744,18 @@ function MailStep({
         )}
 
         {/* Return address */}
-        <AddressForm label="Your return address (from)" address={fromAddress} onChange={setFromAddress} />
+        <AddressForm
+          label="Your return address (from)"
+          address={fromAddress}
+          onChange={setFromAddress}
+        />
 
         {/* Save return address checkbox */}
         <label className="flex items-center gap-2 cursor-pointer">
-          <Checkbox checked={saveReturnAddress} onCheckedChange={(v) => setSaveReturnAddress(v === true)} />
+          <Checkbox
+            checked={saveReturnAddress}
+            onCheckedChange={(v) => setSaveReturnAddress(v === true)}
+          />
           <span className="text-sm">Save return address to my profile</span>
         </label>
 
@@ -568,22 +766,22 @@ function MailStep({
             <span className="text-sm">
               Cost: <strong>{MAIL_COST} credits</strong>
             </span>
-            <span className="text-sm text-muted-foreground">
-              (Balance: {credits} credits)
-            </span>
+            <span className="text-sm text-muted-foreground">(Balance: {credits} credits)</span>
           </div>
           <AlertDialog>
             <AlertDialogTrigger asChild>
               <Button disabled={!canSend}>
                 {mailSending ? (
                   <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />Sending...
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Sending...
                   </>
                 ) : credits < MAIL_COST ? (
                   "Insufficient credits"
                 ) : (
                   <>
-                    <Send className="mr-2 h-4 w-4" />Send Mail ({MAIL_COST} credits)
+                    <Send className="mr-2 h-4 w-4" />
+                    Send Mail ({MAIL_COST} credits)
                   </>
                 )}
               </Button>
@@ -595,12 +793,30 @@ function MailStep({
                   <div className="space-y-3 text-sm">
                     <p>You are about to send a physical letter with the following details:</p>
                     <div className="rounded-md border p-3 space-y-1 text-foreground">
-                      <p><strong>Sending:</strong> {mailContentType === "both" ? "CV and cover letter" : mailContentType === "cv_only" ? "CV only" : "Cover letter only"}</p>
-                      <p><strong>To:</strong> {toAddress.name}, {toAddress.address_line1}, {toAddress.city}, {toAddress.state} {toAddress.zip}</p>
-                      <p><strong>From:</strong> {fromAddress.name}, {fromAddress.address_line1}, {fromAddress.city}, {fromAddress.state} {fromAddress.zip}</p>
+                      <p>
+                        <strong>Sending:</strong>{" "}
+                        {mailContentType === "both"
+                          ? "CV and cover letter"
+                          : mailContentType === "cv_only"
+                            ? "CV only"
+                            : "Cover letter only"}
+                      </p>
+                      <p>
+                        <strong>To:</strong> {toAddress.name}, {toAddress.address_line1},{" "}
+                        {toAddress.city}, {toAddress.state} {toAddress.zip}
+                      </p>
+                      <p>
+                        <strong>From:</strong> {fromAddress.name}, {fromAddress.address_line1},{" "}
+                        {fromAddress.city}, {fromAddress.state} {fromAddress.zip}
+                      </p>
                     </div>
-                    <p><strong>Cost:</strong> {MAIL_COST} credits (current balance: {credits})</p>
-                    <p className="text-muted-foreground">Sent via USPS First Class. Delivery typically takes 5–7 business days. This action cannot be undone.</p>
+                    <p>
+                      <strong>Cost:</strong> {MAIL_COST} credits (current balance: {credits})
+                    </p>
+                    <p className="text-muted-foreground">
+                      Sent via USPS First Class. Delivery typically takes 5–7 business days. This
+                      action cannot be undone.
+                    </p>
                   </div>
                 </AlertDialogDescription>
               </AlertDialogHeader>
@@ -608,7 +824,10 @@ function MailStep({
                 <AlertDialogCancel>Cancel</AlertDialogCancel>
                 <AlertDialogAction onClick={handleSend} disabled={mailSending}>
                   {mailSending ? (
-                    <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Sending...</>
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
                   ) : (
                     "Confirm & Send"
                   )}
@@ -631,7 +850,9 @@ function TailorContent() {
   const [profileFlow] = useState<boolean>(() => hasProfile);
   const steps = profileFlow ? PROFILE_STEPS : ALL_STEPS;
 
-  const [step, setStep] = useState<Step>(() => (jobParam ? "edit" : profileFlow ? "job" : "upload"));
+  const [step, setStep] = useState<Step>(() =>
+    jobParam ? "edit" : profileFlow ? "job" : "upload",
+  );
   const [file, setFile] = useState<File | null>(null);
   const [cvId, setCvId] = useState(searchParams.get("cv") || "");
   const [originalContent, setOriginalContent] = useState("");
@@ -655,7 +876,8 @@ function TailorContent() {
   const [clDownloadLoading, setClDownloadLoading] = useState(false);
   const [clSaving, setClSaving] = useState(false);
   const [scrapeError, setScrapeError] = useState<string | null>(null);
-  const [mailContentType, setMailContentType] = useState<BodySendMailApiMailSendPost["content_type"]>("cv_only");
+  const [mailContentType, setMailContentType] =
+    useState<BodySendMailApiMailSendPost["content_type"]>("cv_only");
   const [toAddress, setToAddress] = useState<AddressSchema>({ ...EMPTY_ADDRESS });
   const [fromAddress, setFromAddress] = useState<AddressSchema>({ ...EMPTY_ADDRESS });
   const [saveReturnAddress, setSaveReturnAddress] = useState(true);
@@ -724,9 +946,7 @@ function TailorContent() {
   };
 
   const latestGenerationMessage =
-    generationEvents.length > 0
-      ? generationEvents[generationEvents.length - 1]?.message
-      : null;
+    generationEvents.length > 0 ? generationEvents[generationEvents.length - 1]?.message : null;
 
   const startNewApplication = () => {
     // Clear URL-based job context so we don't immediately reload the old application
@@ -749,7 +969,7 @@ function TailorContent() {
     setGapFeedback({});
     setCoverLetterContent("");
     setCoverLetterGenerated(false);
-    setPageLimit((user?.cv_page_limit === 1 || user?.cv_page_limit === 2) ? user.cv_page_limit : 1);
+    setPageLimit(user?.cv_page_limit === 1 || user?.cv_page_limit === 2 ? user.cv_page_limit : 1);
     setLoading(false);
     setDownloadLoading(false);
     setRefining(false);
@@ -863,7 +1083,8 @@ function TailorContent() {
     if (!jobUrl || !token) return;
     setScrapeError(null);
     if (isLinkedInJobUrl(jobUrl)) {
-      const message = "LinkedIn job URLs can't be scraped automatically. Please paste the full job description into the box below.";
+      const message =
+        "LinkedIn job URLs can't be scraped automatically. Please paste the full job description into the box below.";
       setScrapeError(message);
       toast.error(message);
       return;
@@ -881,7 +1102,8 @@ function TailorContent() {
         toast.success("Job description extracted!");
         trackJobScrapeSuccess();
       } else {
-        const reason = result.reason || "We couldn't reliably extract this job description automatically.";
+        const reason =
+          result.reason || "We couldn't reliably extract this job description automatically.";
         setScrapeError(reason);
         toast.error(reason);
         trackJobScrapeFailure("not_confident");
@@ -901,7 +1123,9 @@ function TailorContent() {
       return;
     }
     if (isLinkedInJobUrl(jobUrl) && !jobDescription) {
-      toast.error("LinkedIn job URLs aren't supported for auto-extraction. Please paste the job description instead.");
+      toast.error(
+        "LinkedIn job URLs aren't supported for auto-extraction. Please paste the job description instead.",
+      );
       return;
     }
     setLoading(true);
@@ -958,7 +1182,8 @@ function TailorContent() {
       }
       const response = await api.downloadCV(cvId, token, format);
       const contentType = response.headers.get("content-type") || "";
-      const expected = format === "pdf" ? "application/pdf" : "officedocument.wordprocessingml.document";
+      const expected =
+        format === "pdf" ? "application/pdf" : "officedocument.wordprocessingml.document";
       if (!response.ok || !contentType.includes(expected)) {
         let message = "Download failed";
         try {
@@ -1077,9 +1302,7 @@ function TailorContent() {
 
   const handleUpdateFitOnly = async () => {
     if (!token || !cvId) return;
-    const filled = Object.fromEntries(
-      Object.entries(gapFeedback).filter(([, v]) => v.trim())
-    );
+    const filled = Object.fromEntries(Object.entries(gapFeedback).filter(([, v]) => v.trim()));
     if (Object.keys(filled).length === 0) {
       toast.error("Please answer at least one gap question to update your fit analysis.");
       return;
@@ -1098,9 +1321,7 @@ function TailorContent() {
   };
 
   const handleGenerateFromFit = async () => {
-    const filled = Object.fromEntries(
-      Object.entries(gapFeedback).filter(([, v]) => v.trim())
-    );
+    const filled = Object.fromEntries(Object.entries(gapFeedback).filter(([, v]) => v.trim()));
     await runRefinement(filled);
   };
 
@@ -1223,7 +1444,8 @@ function TailorContent() {
       }
       const response = await api.downloadCoverLetter(jobId, token, format);
       const contentType = response.headers.get("content-type") || "";
-      const expected = format === "pdf" ? "application/pdf" : "officedocument.wordprocessingml.document";
+      const expected =
+        format === "pdf" ? "application/pdf" : "officedocument.wordprocessingml.document";
       if (!response.ok || !contentType.includes(expected)) {
         let message = "Cover letter not found. Generate one first.";
         try {
@@ -1240,7 +1462,9 @@ function TailorContent() {
         try {
           const errorData = await response.json();
           message = (errorData as { detail?: string }).detail || message;
-        } catch { /* use default message */ }
+        } catch {
+          /* use default message */
+        }
         toast.error(message);
         return;
       }
@@ -1288,13 +1512,10 @@ function TailorContent() {
         </div>
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="gap-1">
-            <Coins className="h-3 w-3" />{user?.credits ?? 0} credits
+            <Coins className="h-3 w-3" />
+            {user?.credits ?? 0} credits
           </Badge>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={startNewApplication}
-          >
+          <Button variant="outline" size="sm" onClick={startNewApplication}>
             <RefreshCw className="mr-1 h-3 w-3" />
             Start New
           </Button>
@@ -1308,7 +1529,8 @@ function TailorContent() {
             <span>Using your saved profile. Just add job details to generate a tailored CV.</span>
             <Link href="/settings">
               <Button variant="ghost" size="sm" className="gap-1 ml-2">
-                <Settings className="h-3 w-3" />Update profile
+                <Settings className="h-3 w-3" />
+                Update profile
               </Button>
             </Link>
           </AlertDescription>
@@ -1325,7 +1547,11 @@ function TailorContent() {
               const isActive = i === stepIdx;
               const isDone = i < stepIdx;
               const isTrackerNavigableStep =
-                s === "fit" || s === "edit" || s === "cover_letter" || s === "download" || s === "mail";
+                s === "fit" ||
+                s === "edit" ||
+                s === "cover_letter" ||
+                s === "download" ||
+                s === "mail";
 
               let isClickable = false;
               if (isTrackerNavigableStep) {
@@ -1369,8 +1595,8 @@ function TailorContent() {
                     isActive
                       ? "text-primary"
                       : isDone
-                      ? "text-primary/60"
-                      : "text-muted-foreground/40"
+                        ? "text-primary/60"
+                        : "text-muted-foreground/40"
                   } ${isClickable ? "cursor-pointer" : "cursor-default"}`}
                 >
                   <Icon className="h-4 w-4" />
@@ -1387,7 +1613,10 @@ function TailorContent() {
         <Card>
           <CardHeader>
             <CardTitle>Upload Your Existing CV</CardTitle>
-            <CardDescription>Upload your current CV in PDF or DOCX format (max 10MB). This will be saved to your profile for future use.</CardDescription>
+            <CardDescription>
+              Upload your current CV in PDF or DOCX format (max 10MB). This will be saved to your
+              profile for future use.
+            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="border-2 border-dashed rounded-lg p-8 text-center hover:border-primary/50 transition-colors flex flex-col items-center justify-center gap-2">
@@ -1403,9 +1632,7 @@ function TailorContent() {
                   onChange={(e) => setFile(e.target.files?.[0] || null)}
                 />
               </Label>
-              {file && (
-                <p className="mt-3 text-sm font-medium">{file.name}</p>
-              )}
+              {file && <p className="mt-3 text-sm font-medium">{file.name}</p>}
             </div>
             <div className="flex justify-end">
               <Button onClick={handleUpload} disabled={!file || loading}>
@@ -1423,13 +1650,16 @@ function TailorContent() {
           <CardHeader>
             <CardTitle>Additional Information</CardTitle>
             <CardDescription>
-              Optionally provide extra details not in your CV (skills, achievements, preferences). This will be saved to your profile.
+              Optionally provide extra details not in your CV (skills, achievements, preferences).
+              This will be saved to your profile.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             {originalContent && (
               <div className="p-3 rounded-lg bg-muted/50 text-sm max-h-40 overflow-y-auto">
-                <p className="font-medium text-xs text-muted-foreground mb-1">Extracted from your CV:</p>
+                <p className="font-medium text-xs text-muted-foreground mb-1">
+                  Extracted from your CV:
+                </p>
                 <p className="whitespace-pre-wrap">{originalContent.slice(0, 500)}...</p>
               </div>
             )}
@@ -1441,17 +1671,22 @@ function TailorContent() {
             />
             <div className="flex justify-between">
               <Button variant="outline" onClick={() => goBack("upload")}>
-                <ArrowLeft className="mr-2 h-4 w-4" />Back
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back
               </Button>
-              <Button onClick={async () => {
-                if (token && additionalInfo) {
-                  try {
-                    await api.updateProfile({ additional_info: additionalInfo }, token);
-                    await refreshUser();
-                  } catch { /* non-critical */ }
-                }
-                setStep("job");
-              }}>
+              <Button
+                onClick={async () => {
+                  if (token && additionalInfo) {
+                    try {
+                      await api.updateProfile({ additional_info: additionalInfo }, token);
+                      await refreshUser();
+                    } catch {
+                      /* non-critical */
+                    }
+                  }
+                  setStep("job");
+                }}
+              >
                 Continue <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
@@ -1464,7 +1699,10 @@ function TailorContent() {
         <Card>
           <CardHeader>
             <CardTitle>Target Job</CardTitle>
-            <CardDescription>Provide the job you want to tailor your CV for. We&apos;ll run a detailed fit analysis first (1 credit), then generate and refine your CV for free.</CardDescription>
+            <CardDescription>
+              Provide the job you want to tailor your CV for. We&apos;ll run a detailed fit analysis
+              first (1 credit), then generate and refine your CV for free.
+            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-3">
@@ -1478,8 +1716,17 @@ function TailorContent() {
                   onChange={(e) => setJobUrl(e.target.value)}
                   className="min-w-0"
                 />
-                <Button variant="outline" onClick={handleScrape} disabled={!jobUrl || scraping} className="sm:shrink-0">
-                  {scraping ? <Loader2 className="h-4 w-4 animate-spin" /> : <Link2 className="h-4 w-4" />}
+                <Button
+                  variant="outline"
+                  onClick={handleScrape}
+                  disabled={!jobUrl || scraping}
+                  className="sm:shrink-0"
+                >
+                  {scraping ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Link2 className="h-4 w-4" />
+                  )}
                   <span className="ml-2 hidden sm:inline">Extract</span>
                 </Button>
               </div>
@@ -1487,15 +1734,20 @@ function TailorContent() {
                 <Alert variant="destructive">
                   <AlertTriangle className="h-4 w-4" />
                   <AlertDescription>
-                    We couldn&apos;t confidently extract this job description automatically. Reason: {scrapeError} Please paste the full job description into the box below.
+                    We couldn&apos;t confidently extract this job description automatically. Reason:{" "}
+                    {scrapeError} Please paste the full job description into the box below.
                   </AlertDescription>
                 </Alert>
               )}
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 flex items-center"><span className="w-full border-t" /></div>
-              <div className="relative flex justify-center text-xs uppercase"><span className="bg-card px-2 text-muted-foreground">or paste directly</span></div>
+              <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-card px-2 text-muted-foreground">or paste directly</span>
+              </div>
             </div>
 
             <div className="space-y-3">
@@ -1523,22 +1775,21 @@ function TailorContent() {
                 </SelectContent>
               </Select>
               <p className="text-xs text-muted-foreground">
-                The AI will keep your CV within the selected length. Your choice is saved for next time.
+                The AI will keep your CV within the selected length. Your choice is saved for next
+                time.
               </p>
             </div>
 
             <div className="flex justify-between">
               {!profileFlow ? (
                 <Button variant="outline" onClick={() => goBack("enhance")}>
-                  <ArrowLeft className="mr-2 h-4 w-4" />Back
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  Back
                 </Button>
               ) : (
                 <div />
               )}
-              <Button
-                onClick={handleGenerate}
-                disabled={(!jobDescription && !jobUrl) || loading}
-              >
+              <Button onClick={handleGenerate} disabled={(!jobDescription && !jobUrl) || loading}>
                 {step === "job" && loading ? (
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 ) : (
@@ -1561,27 +1812,21 @@ function TailorContent() {
               <Loader2 className="h-10 w-10 animate-spin text-primary mx-auto" />
               <h3 className="text-xl font-semibold">Generating your tailored CV...</h3>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                We&apos;re tailoring your CV to this role, analyzing the job description, and polishing the layout so it looks sharp.
-                This usually takes under a minute.
+                We&apos;re tailoring your CV to this role, analyzing the job description, and
+                polishing the layout so it looks sharp. This usually takes under a minute.
               </p>
             </div>
             <div className="space-y-3">
               <Progress value={generationProgress} className="h-2" />
               <div className="flex justify-between text-xs text-muted-foreground">
-                <span>
-                  {generationStage ? STAGE_LABELS[generationStage] : "Starting"}
-                </span>
+                <span>{generationStage ? STAGE_LABELS[generationStage] : "Starting"}</span>
                 <span>{Math.round(generationProgress)}%</span>
               </div>
             </div>
             <div className="border rounded-lg p-3 bg-muted/40 max-h-48 overflow-y-auto text-xs">
-              <div className="font-medium mb-1 text-muted-foreground">
-                Live activity
-              </div>
+              <div className="font-medium mb-1 text-muted-foreground">Live activity</div>
               {generationEvents.length === 0 && (
-                <p className="text-muted-foreground">
-                  Connecting to the generator...
-                </p>
+                <p className="text-muted-foreground">Connecting to the generator...</p>
               )}
               {generationEvents.length > 0 && (
                 <ul className="space-y-1">
@@ -1591,22 +1836,15 @@ function TailorContent() {
                     const last = eventsForStage[eventsForStage.length - 1];
                     const isDoneStage = stage === "done";
                     return (
-                      <li
-                        key={stage}
-                        className="flex items-start gap-2"
-                      >
+                      <li key={stage} className="flex items-start gap-2">
                         <span
                           className={`mt-1 h-1.5 w-1.5 rounded-full ${
                             isDoneStage ? "bg-green-500" : "bg-primary"
                           }`}
                         />
                         <div>
-                          <div className="font-medium">
-                            {STAGE_LABELS[stage]}
-                          </div>
-                          <div className="text-muted-foreground">
-                            {last.message}
-                          </div>
+                          <div className="font-medium">{STAGE_LABELS[stage]}</div>
+                          <div className="text-muted-foreground">{last.message}</div>
                         </div>
                       </li>
                     );
@@ -1632,25 +1870,42 @@ function TailorContent() {
             <CardContent className="flex flex-col items-center gap-4 pt-2">
               <div className="relative h-32 w-32">
                 <svg className="h-32 w-32 -rotate-90" viewBox="0 0 128 128">
-                  <circle cx="64" cy="64" r="56" fill="none" strokeWidth="10" className="stroke-muted" />
                   <circle
-                    cx="64" cy="64" r="56" fill="none" strokeWidth="10"
+                    cx="64"
+                    cy="64"
+                    r="56"
+                    fill="none"
+                    strokeWidth="10"
+                    className="stroke-muted"
+                  />
+                  <circle
+                    cx="64"
+                    cy="64"
+                    r="56"
+                    fill="none"
+                    strokeWidth="10"
                     strokeLinecap="round"
                     strokeDasharray={`${(fitAnalysis.fit_score / 100) * 351.86} 351.86`}
-                    className={fitAnalysis.fit_score >= 70 ? "stroke-green-500" : fitAnalysis.fit_score >= 40 ? "stroke-yellow-500" : "stroke-red-500"}
+                    className={
+                      fitAnalysis.fit_score >= 70
+                        ? "stroke-green-500"
+                        : fitAnalysis.fit_score >= 40
+                          ? "stroke-yellow-500"
+                          : "stroke-red-500"
+                    }
                   />
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-3xl font-bold">{fitAnalysis.fit_score}%</span>
                 </div>
               </div>
-            <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground">
                 {fitAnalysis.fit_score >= 70
                   ? "Strong match for this role"
                   : fitAnalysis.fit_score >= 40
                     ? "Moderate match; your feedback can help"
                     : "This role may be a stretch, but let&apos;s see"}
-            </p>
+              </p>
             </CardContent>
           </Card>
 
@@ -1683,7 +1938,10 @@ function TailorContent() {
                   Potential Gaps
                 </CardTitle>
                 <CardDescription>
-                  Think any of these are wrong? Tell us why and we&apos;ll refine your CV for free and update your memory bank so future CV generations know this about you. You can re-run the fit score and analysis for this job for free whenever you update these answers.
+                  Think any of these are wrong? Tell us why and we&apos;ll refine your CV for free
+                  and update your memory bank so future CV generations know this about you. You can
+                  re-run the fit score and analysis for this job for free whenever you update these
+                  answers.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -1712,7 +1970,8 @@ function TailorContent() {
           )}
 
           <p className="text-xs text-muted-foreground">
-            Answer any gap questions, then use the buttons below. Updating your fit score and analysis for this job is free.
+            Answer any gap questions, then use the buttons below. Updating your fit score and
+            analysis for this job is free.
           </p>
           <div className="flex flex-col-reverse gap-2 sm:flex-row sm:items-center sm:justify-between">
             <Button
@@ -1741,17 +2000,15 @@ function TailorContent() {
           <Card>
             <CardHeader>
               <CardTitle>Edit Your Tailored CV</CardTitle>
-              <CardDescription>Review and fine-tune the generated content before downloading</CardDescription>
+              <CardDescription>
+                Review and fine-tune the generated content before downloading
+              </CardDescription>
               {(jobTitle || companyName) && (
                 <p className="text-sm text-muted-foreground mt-1">
                   Application for{" "}
-                  <span className="font-medium">
-                    {jobTitle || "Untitled position"}
-                  </span>
+                  <span className="font-medium">{jobTitle || "Untitled position"}</span>
                   {" at "}
-                  <span className="font-medium">
-                    {companyName || "Unknown company"}
-                  </span>
+                  <span className="font-medium">{companyName || "Unknown company"}</span>
                 </p>
               )}
             </CardHeader>
@@ -1773,7 +2030,12 @@ function TailorContent() {
           </Tabs>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-between">
-            <Button variant="outline" onClick={handleSave} disabled={loading} className="sm:shrink-0">
+            <Button
+              variant="outline"
+              onClick={handleSave}
+              disabled={loading}
+              className="sm:shrink-0"
+            >
               {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Save Changes
             </Button>
@@ -1823,7 +2085,8 @@ function TailorContent() {
             <CardHeader>
               <CardTitle>Cover Letter</CardTitle>
               <CardDescription>
-                Generate a tailored cover letter for this application, or skip if you don&apos;t need one.
+                Generate a tailored cover letter for this application, or skip if you don&apos;t
+                need one.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -1831,10 +2094,15 @@ function TailorContent() {
                 <div className="text-center py-8 space-y-4">
                   <Mail className="h-12 w-12 text-muted-foreground mx-auto" />
                   <p className="text-muted-foreground">
-                    Our AI will draft a professional cover letter based on your tailored CV and the job description.
+                    Our AI will draft a professional cover letter based on your tailored CV and the
+                    job description.
                   </p>
                   <Button onClick={handleGenerateCoverLetter} disabled={clLoading}>
-                    {clLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Wand2 className="mr-2 h-4 w-4" />}
+                    {clLoading ? (
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    ) : (
+                      <Wand2 className="mr-2 h-4 w-4" />
+                    )}
                     Generate Cover Letter
                   </Button>
                 </div>
@@ -1854,7 +2122,11 @@ function TailorContent() {
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant="outline" disabled={clDownloadLoading}>
-                          {clDownloadLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Download className="mr-2 h-4 w-4" />}
+                          {clDownloadLoading ? (
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          ) : (
+                            <Download className="mr-2 h-4 w-4" />
+                          )}
                           Download Cover Letter
                           <ChevronDown className="ml-1 h-3 w-3" />
                         </Button>
@@ -1868,8 +2140,16 @@ function TailorContent() {
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
-                    <Button variant="ghost" onClick={handleRegenerateCoverLetter} disabled={clLoading}>
-                      {clLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <RefreshCw className="mr-2 h-4 w-4" />}
+                    <Button
+                      variant="ghost"
+                      onClick={handleRegenerateCoverLetter}
+                      disabled={clLoading}
+                    >
+                      {clLoading ? (
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      ) : (
+                        <RefreshCw className="mr-2 h-4 w-4" />
+                      )}
                       Regenerate
                     </Button>
                   </div>
@@ -1880,7 +2160,8 @@ function TailorContent() {
 
           <div className="flex justify-between">
             <Button variant="outline" onClick={() => goBack("edit")}>
-              <ArrowLeft className="mr-2 h-4 w-4" />Back to Edit
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Edit
             </Button>
             <Button onClick={() => setStep("download")}>
               {coverLetterGenerated ? "Continue" : "Skip"} <ArrowRight className="ml-2 h-4 w-4" />
@@ -1900,8 +2181,14 @@ function TailorContent() {
               Download your documents below or track this application.
             </p>
             <div className="flex flex-wrap gap-3 justify-center mt-6">
-              <Button variant="outline" onClick={() => { setStep("edit"); }}>
-                <Edit3 className="mr-2 h-4 w-4" />Edit CV
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setStep("edit");
+                }}
+              >
+                <Edit3 className="mr-2 h-4 w-4" />
+                Edit CV
               </Button>
               {jobDescription.trim() && (
                 <Dialog>
@@ -1962,10 +2249,7 @@ function TailorContent() {
                   </DropdownMenuContent>
                 </DropdownMenu>
               )}
-              <Button
-                variant="outline"
-                onClick={() => setStep("mail")}
-              >
+              <Button variant="outline" onClick={() => setStep("mail")}>
                 <Send className="mr-2 h-4 w-4" />
                 Send Physical Mail
               </Button>

@@ -84,7 +84,8 @@ export default function RegisterPage() {
               <Mail className="h-12 w-12 text-primary mx-auto" />
               <h3 className="text-lg font-semibold">Check your email</h3>
               <p className="text-sm text-muted-foreground">
-                We sent a magic link to <strong>{email}</strong>. Click the link to create your account.
+                We sent a magic link to <strong>{email}</strong>. Click the link to create your
+                account.
               </p>
               <Button variant="ghost" onClick={() => setMagicLinkSent(false)}>
                 Use password instead
@@ -154,8 +155,14 @@ export default function RegisterPage() {
 
           <p className="text-center text-xs text-muted-foreground">
             By creating an account, you agree to our{" "}
-            <Link href="/legal/terms" className="underline">Terms of Service</Link> and{" "}
-            <Link href="/legal/privacy" className="underline">Privacy Policy</Link>.
+            <Link href="/legal/terms" className="underline">
+              Terms of Service
+            </Link>{" "}
+            and{" "}
+            <Link href="/legal/privacy" className="underline">
+              Privacy Policy
+            </Link>
+            .
           </p>
         </CardContent>
       </Card>

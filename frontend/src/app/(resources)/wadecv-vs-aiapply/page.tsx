@@ -6,9 +6,7 @@ import { InlineCta } from "@/components/seo/inline-cta";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ||
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://wadecv.com");
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com");
 
 export const metadata = {
   title: "WadeCV vs AiApply: AI Resume Tailoring vs Auto-Apply Automation (2026) | WadeCV",
@@ -91,8 +89,7 @@ const ROWS: {
   },
   {
     feature: "Application tracking",
-    aiapply:
-      "Tracks all auto-submitted applications with status updates across job boards.",
+    aiapply: "Tracks all auto-submitted applications with status updates across job boards.",
     wadecv:
       "Built-in application tracker to manage jobs and keep track of tailored resumes for each application.",
     verdict: "tie",
@@ -160,8 +157,7 @@ export default function AiApplyComparisonPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline:
-              "WadeCV vs AiApply: AI Resume Tailoring vs Auto-Apply Automation (2026)",
+            headline: "WadeCV vs AiApply: AI Resume Tailoring vs Auto-Apply Automation (2026)",
             description: metadata.description,
             author: { "@type": "Organization", name: "WadeCV" },
             publisher: {
@@ -198,18 +194,15 @@ export default function AiApplyComparisonPage() {
       </h1>
 
       <p className="text-muted-foreground mb-6">
-        AiApply is a fast-rising AI tool that automates job applications across
-        multiple job boards — filling out forms and submitting on your behalf.
-        WadeCV takes the opposite approach: instead of mass-applying, it
-        rewrites your resume for each specific job so every application is
-        targeted and competitive. Here&apos;s how the two tools compare across
-        features, philosophy, and results.
+        AiApply is a fast-rising AI tool that automates job applications across multiple job boards
+        — filling out forms and submitting on your behalf. WadeCV takes the opposite approach:
+        instead of mass-applying, it rewrites your resume for each specific job so every application
+        is targeted and competitive. Here&apos;s how the two tools compare across features,
+        philosophy, and results.
       </p>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          Feature comparison: WadeCV vs AiApply
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Feature comparison: WadeCV vs AiApply</h2>
         <div className="space-y-4">
           {ROWS.map((row) => (
             <Card key={row.feature}>
@@ -251,53 +244,42 @@ export default function AiApplyComparisonPage() {
       <InlineCta variant="job" />
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-3">
-          When AiApply is the better choice
-        </h2>
+        <h2 className="text-xl font-semibold mb-3">When AiApply is the better choice</h2>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li>
-            You want to maximise application volume and apply to as many roles
-            as possible with minimal effort.
+            You want to maximise application volume and apply to as many roles as possible with
+            minimal effort.
           </li>
           <li>
-            You are targeting a broad range of similar roles where a generic
-            resume is acceptable.
+            You are targeting a broad range of similar roles where a generic resume is acceptable.
           </li>
+          <li>Speed matters more than per-application quality — you want to cast a wide net.</li>
           <li>
-            Speed matters more than per-application quality — you want to cast
-            a wide net.
-          </li>
-          <li>
-            You want direct job board integration that submits applications
-            without manual form filling.
+            You want direct job board integration that submits applications without manual form
+            filling.
           </li>
         </ul>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-3">
-          When WadeCV is the better choice
-        </h2>
+        <h2 className="text-xl font-semibold mb-3">When WadeCV is the better choice</h2>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li>
-            You want each application to stand out with a resume tailored to the
-            specific job description.
+            You want each application to stand out with a resume tailored to the specific job
+            description.
           </li>
           <li>
-            You are targeting competitive roles where keyword matching and ATS
-            optimization make the difference.
+            You are targeting competitive roles where keyword matching and ATS optimization make the
+            difference.
           </li>
           <li>
-            You want a gap analysis before applying — understanding exactly how
-            your profile fits each role.
+            You want a gap analysis before applying — understanding exactly how your profile fits
+            each role.
           </li>
           <li>
-            You want a tailored cover letter generated alongside each resume at
-            no extra cost.
+            You want a tailored cover letter generated alongside each resume at no extra cost.
           </li>
-          <li>
-            You prefer pay-per-use pricing instead of a monthly subscription.
-          </li>
+          <li>You prefer pay-per-use pricing instead of a monthly subscription.</li>
         </ul>
       </section>
 
@@ -305,40 +287,34 @@ export default function AiApplyComparisonPage() {
         <h2 className="text-xl font-semibold mb-3">The verdict</h2>
         <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-3">
           <p>
-            AiApply and WadeCV represent two fundamentally different job search
-            strategies. AiApply bets on volume — apply to as many jobs as
-            possible and let the numbers work in your favour. WadeCV bets on
-            quality — make every application count by tailoring your resume to
-            match the exact role.
+            AiApply and WadeCV represent two fundamentally different job search strategies. AiApply
+            bets on volume — apply to as many jobs as possible and let the numbers work in your
+            favour. WadeCV bets on quality — make every application count by tailoring your resume
+            to match the exact role.
           </p>
           <p>
-            For most job seekers, the targeted approach yields better results.
-            A resume customised to the job description gets through ATS filters
-            more reliably and impresses recruiters who can immediately see your
-            relevance. Mass-applied generic resumes often get lost in the
-            volume.
+            For most job seekers, the targeted approach yields better results. A resume customised
+            to the job description gets through ATS filters more reliably and impresses recruiters
+            who can immediately see your relevance. Mass-applied generic resumes often get lost in
+            the volume.
           </p>
           <p>
-            The smart strategy is to combine both: use WadeCV for your
-            top-choice roles where standing out matters most, and consider
-            AiApply for secondary applications where speed is the priority.
+            The smart strategy is to combine both: use WadeCV for your top-choice roles where
+            standing out matters most, and consider AiApply for secondary applications where speed
+            is the priority.
           </p>
         </div>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          Frequently asked questions
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Frequently asked questions</h2>
         <div className="space-y-4">
           {FAQ.map((f) => (
             <Card key={f.question}>
               <CardHeader className="pb-2">
                 <CardTitle className="text-base">{f.question}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {f.answer}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{f.answer}</CardContent>
             </Card>
           ))}
         </div>
@@ -358,16 +334,12 @@ export default function AiApplyComparisonPage() {
         <CardHeader>
           <CardTitle>Try WadeCV free — quality over quantity</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Upload your CV, paste a job URL, and get a fully tailored resume
-            plus cover letter in seconds. 1 free credit included on signup.
+            Upload your CV, paste a job URL, and get a fully tailored resume plus cover letter in
+            seconds. 1 free credit included on signup.
           </p>
         </CardHeader>
         <CardContent>
-          <SeoCta
-            variant="job"
-            label="Tailor your resume now"
-            slug="aiapply-comparison"
-          />
+          <SeoCta variant="job" label="Tailor your resume now" slug="aiapply-comparison" />
         </CardContent>
       </Card>
     </article>

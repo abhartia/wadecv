@@ -5,9 +5,7 @@ export default function LegalLayout({ children }: { children: React.ReactNode })
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
-      <main className="flex-1 container mx-auto px-4 py-12 max-w-3xl">
-        {children}
-      </main>
+      <main className="flex-1 container mx-auto px-4 py-12 max-w-3xl">{children}</main>
       <Footer />
     </div>
   );

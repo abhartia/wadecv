@@ -8,7 +8,10 @@ import { RelatedGuides } from "@/components/seo/related-guides";
 import { CrossCategoryLinks } from "@/components/seo/cross-category-links";
 import { InlineCta } from "@/components/seo/inline-cta";
 
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com";
+const BASE_URL =
+  process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "https://wadecv.com";
 
 type Props = { params: Promise<{ company: string }> };
 
@@ -19,8 +22,15 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${entry.name} Resume Guide: What Recruiters Look For (2026) | WadeCV`,
     description: entry.metaDescription,
-    openGraph: { title: `${entry.name} Resume Guide: What Recruiters Look For (2026)`, description: entry.metaDescription },
-    twitter: { card: "summary", title: `${entry.name} Resume Guide: What Recruiters Look For (2026)`, description: entry.metaDescription },
+    openGraph: {
+      title: `${entry.name} Resume Guide: What Recruiters Look For (2026)`,
+      description: entry.metaDescription,
+    },
+    twitter: {
+      card: "summary",
+      title: `${entry.name} Resume Guide: What Recruiters Look For (2026)`,
+      description: entry.metaDescription,
+    },
   };
 }
 
@@ -47,7 +57,10 @@ export default async function CompanyResumePage({ params }: Props) {
             publisher: { "@type": "Organization", name: "WadeCV", url: BASE_URL },
             datePublished: "2026-04-01",
             dateModified: "2026-04-20",
-            mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/company-resume/${entry.slug}` },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `${BASE_URL}/company-resume/${entry.slug}`,
+            },
           }),
         }}
       />
@@ -67,7 +80,9 @@ export default async function CompanyResumePage({ params }: Props) {
         <h2 className="text-xl font-semibold mb-3">Keywords to include</h2>
         <div className="flex flex-wrap gap-2">
           {entry.keywords.map((k) => (
-            <Badge key={k} variant="secondary">{k}</Badge>
+            <Badge key={k} variant="secondary">
+              {k}
+            </Badge>
           ))}
         </div>
       </section>
@@ -106,7 +121,11 @@ export default async function CompanyResumePage({ params }: Props) {
 
       {entry.faq && <FaqSection faq={entry.faq} />}
 
-      <RelatedGuides relatedSlugs={entry.relatedSlugs} category="company-resume" currentSlug={company} />
+      <RelatedGuides
+        relatedSlugs={entry.relatedSlugs}
+        category="company-resume"
+        currentSlug={company}
+      />
 
       <CrossCategoryLinks currentCategory="/company-resume" />
 
@@ -114,7 +133,8 @@ export default async function CompanyResumePage({ params }: Props) {
         <CardHeader>
           <CardTitle>Ready to tailor your resume for {entry.name}?</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Upload your CV and paste the job description—WadeCV will help you align your experience and generate a tailored resume.
+            Upload your CV and paste the job description—WadeCV will help you align your experience
+            and generate a tailored resume.
           </p>
         </CardHeader>
         <CardContent>

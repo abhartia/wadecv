@@ -7,7 +7,10 @@ import { RelatedGuides } from "@/components/seo/related-guides";
 import { CrossCategoryLinks } from "@/components/seo/cross-category-links";
 import { InlineCta } from "@/components/seo/inline-cta";
 
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com";
+const BASE_URL =
+  process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "https://wadecv.com";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -19,7 +22,11 @@ export async function generateMetadata({ params }: Props) {
     title: `${entry.title} (Step-by-Step Guide) | WadeCV`,
     description: entry.metaDescription,
     openGraph: { title: `${entry.title} (Step-by-Step Guide)`, description: entry.metaDescription },
-    twitter: { card: "summary", title: `${entry.title} (Step-by-Step Guide)`, description: entry.metaDescription },
+    twitter: {
+      card: "summary",
+      title: `${entry.title} (Step-by-Step Guide)`,
+      description: entry.metaDescription,
+    },
   };
 }
 
@@ -46,7 +53,10 @@ export default async function CareerChangePage({ params }: Props) {
             publisher: { "@type": "Organization", name: "WadeCV", url: BASE_URL },
             datePublished: "2026-04-01",
             dateModified: "2026-04-07",
-            mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/career-change/${entry.slug}` },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `${BASE_URL}/career-change/${entry.slug}`,
+            },
           }),
         }}
       />
@@ -54,7 +64,9 @@ export default async function CareerChangePage({ params }: Props) {
       <p className="text-muted-foreground mb-6">{entry.intro}</p>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-3">Transition: {entry.fromRole} → {entry.toRole}</h2>
+        <h2 className="text-xl font-semibold mb-3">
+          Transition: {entry.fromRole} → {entry.toRole}
+        </h2>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           {entry.tips.map((t, i) => (
             <li key={i}>{t}</li>
@@ -87,7 +99,11 @@ export default async function CareerChangePage({ params }: Props) {
 
       {entry.faq && <FaqSection faq={entry.faq} />}
 
-      <RelatedGuides relatedSlugs={entry.relatedSlugs} category="career-change" currentSlug={slug} />
+      <RelatedGuides
+        relatedSlugs={entry.relatedSlugs}
+        category="career-change"
+        currentSlug={slug}
+      />
 
       <CrossCategoryLinks currentCategory="/career-change" />
 
@@ -95,7 +111,8 @@ export default async function CareerChangePage({ params }: Props) {
         <CardHeader>
           <CardTitle>Build your transition CV</CardTitle>
           <p className="text-sm text-muted-foreground">
-            WadeCV helps you reframe your experience for a new field and generate a tailored resume that highlights transferable skills.
+            WadeCV helps you reframe your experience for a new field and generate a tailored resume
+            that highlights transferable skills.
           </p>
         </CardHeader>
         <CardContent>

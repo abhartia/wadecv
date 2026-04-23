@@ -55,4 +55,3 @@ When you manually run CV generation for:
 These expectations should hold regardless of the specific job title; the model
 should infer the appropriate emphasis from the **content** of the job
 description, guided by the prompt instructions.
-

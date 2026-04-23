@@ -183,4 +183,3 @@ jobs:
             --name $AZURE_WEBAPP_FRONTEND \
             --slot $AZURE_WEBAPP_FRONTEND_SLOT \
             --target-slot production
-

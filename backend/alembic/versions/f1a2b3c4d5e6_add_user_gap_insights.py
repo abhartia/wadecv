@@ -27,4 +27,3 @@ def upgrade() -> None:
 def downgrade() -> None:
   op.drop_column("users", "gap_insights_job_count")
   op.drop_column("users", "gap_insights")
-

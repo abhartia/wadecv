@@ -128,9 +128,7 @@ export function CvPreview({ data }: CvPreviewProps) {
 
       {/* Contact */}
       {contactParts.length > 0 && (
-        <p className="text-center text-sm text-[#64748B] mb-4">
-          {contactParts.join("   |   ")}
-        </p>
+        <p className="text-center text-sm text-[#64748B] mb-4">{contactParts.join("   |   ")}</p>
       )}
 
       {/* Horizontal rule */}
@@ -139,9 +137,7 @@ export function CvPreview({ data }: CvPreviewProps) {
       {/* Professional Summary - no header, summary only */}
       {cv.professional_summary && (
         <section className="mb-6">
-          <p className="text-sm leading-relaxed mb-0">
-            {clean(cv.professional_summary)}
-          </p>
+          <p className="text-sm leading-relaxed mb-0">{clean(cv.professional_summary)}</p>
         </section>
       )}
 
@@ -194,9 +190,7 @@ export function CvPreview({ data }: CvPreviewProps) {
                     {[edu.start_date, edu.end_date].filter(Boolean).join(" – ")}
                   </p>
                 )}
-                {edu.details && (
-                  <p className="text-sm mb-0">{clean(edu.details)}</p>
-                )}
+                {edu.details && <p className="text-sm mb-0">{clean(edu.details)}</p>}
               </div>
             ))}
           </div>
@@ -206,7 +200,7 @@ export function CvPreview({ data }: CvPreviewProps) {
       {/* Skills */}
       {cv.skills &&
         (["technical", "soft", "languages", "certifications"] as const).some(
-          (k) => (cv.skills![k]?.length ?? 0) > 0
+          (k) => (cv.skills![k]?.length ?? 0) > 0,
         ) && (
           <section className="mb-6">
             <h2 className="text-xs font-bold uppercase tracking-wide text-[#1E293B] mb-2 mt-4">
@@ -236,18 +230,21 @@ export function CvPreview({ data }: CvPreviewProps) {
         )}
 
       {/* Interests */}
-      {cv.interests != null && (Array.isArray(cv.interests) ? cv.interests.length > 0 : String(cv.interests).trim() !== "") && (
-        <section className="mb-0">
-          <h2 className="text-xs font-bold uppercase tracking-wide text-[#1E293B] mb-2 mt-4">
-            Interests
-          </h2>
-          <p className="text-sm mb-0">
-            {Array.isArray(cv.interests)
-              ? cv.interests.map(clean).join(", ")
-              : clean(cv.interests)}
-          </p>
-        </section>
-      )}
+      {cv.interests != null &&
+        (Array.isArray(cv.interests)
+          ? cv.interests.length > 0
+          : String(cv.interests).trim() !== "") && (
+          <section className="mb-0">
+            <h2 className="text-xs font-bold uppercase tracking-wide text-[#1E293B] mb-2 mt-4">
+              Interests
+            </h2>
+            <p className="text-sm mb-0">
+              {Array.isArray(cv.interests)
+                ? cv.interests.map(clean).join(", ")
+                : clean(cv.interests)}
+            </p>
+          </section>
+        )}
     </div>
   );
 }

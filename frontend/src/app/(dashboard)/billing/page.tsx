@@ -7,7 +7,14 @@ import { api } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { toast } from "sonner";
 import { Loader2, Coins, CheckCircle, CreditCard, Sparkles } from "lucide-react";
 
@@ -49,10 +56,12 @@ function BillingContent() {
     Promise.all([
       api.getPacks(),
       token ? api.getBalance(token) : Promise.resolve({ credits: 0, transactions: [] }),
-    ]).then(([packsData, balanceData]) => {
-      setPacks(packsData);
-      setTransactions(balanceData.transactions);
-    }).finally(() => setLoading(false));
+    ])
+      .then(([packsData, balanceData]) => {
+        setPacks(packsData);
+        setTransactions(balanceData.transactions);
+      })
+      .finally(() => setLoading(false));
   }, [token]);
 
   const handleCheckout = async (packId: string) => {
@@ -89,7 +98,10 @@ function BillingContent() {
             <Coins className="h-12 w-12 text-primary" />
             <div>
               <p className="text-sm text-muted-foreground">Current Balance</p>
-              <p className="text-4xl font-bold">{user?.credits ?? 0} <span className="text-lg font-normal text-muted-foreground">credits</span></p>
+              <p className="text-4xl font-bold">
+                {user?.credits ?? 0}{" "}
+                <span className="text-lg font-normal text-muted-foreground">credits</span>
+              </p>
             </div>
           </div>
         </CardContent>
@@ -103,10 +115,14 @@ function BillingContent() {
             const perCredit = (pack.price_cents / pack.credits / 100).toFixed(2);
             const isPopular = pack.id === "value";
             return (
-              <Card key={pack.id} className={`relative ${isPopular ? "border-primary shadow-lg" : ""}`}>
+              <Card
+                key={pack.id}
+                className={`relative ${isPopular ? "border-primary shadow-lg" : ""}`}
+              >
                 {isPopular && (
                   <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Sparkles className="mr-1 h-3 w-3" />Best Value
+                    <Sparkles className="mr-1 h-3 w-3" />
+                    Best Value
                   </Badge>
                 )}
                 <CardHeader className="text-center">
@@ -120,9 +136,18 @@ function BillingContent() {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-sm mb-4">
-                    <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" />{pack.credits} CV generations</li>
-                    <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" />Free cover letters</li>
-                    <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" />Never expire</li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-primary" />
+                      {pack.credits} CV generations
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-primary" />
+                      Free cover letters
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-primary" />
+                      Never expire
+                    </li>
                   </ul>
                   <Button
                     className="w-full"
@@ -167,7 +192,8 @@ function BillingContent() {
                         <Badge variant="secondary">{t.type}</Badge>
                       </TableCell>
                       <TableCell className={t.amount > 0 ? "text-green-600" : "text-red-600"}>
-                        {t.amount > 0 ? "+" : ""}{t.amount}
+                        {t.amount > 0 ? "+" : ""}
+                        {t.amount}
                       </TableCell>
                       <TableCell className="text-muted-foreground">
                         {new Date(t.created_at).toLocaleDateString()}

@@ -23,7 +23,8 @@ function VerifyContent() {
       return;
     }
 
-    api.verifyEmail(token)
+    api
+      .verifyEmail(token)
       .then(() => setStatus("success"))
       .catch((err) => {
         setStatus("error");
@@ -62,7 +63,9 @@ function VerifyContent() {
             <p className="font-semibold">Verification failed</p>
             <p className="text-sm text-muted-foreground">{error}</p>
             <Link href="/auth/login">
-              <Button variant="outline" className="mt-4">Back to login</Button>
+              <Button variant="outline" className="mt-4">
+                Back to login
+              </Button>
             </Link>
           </div>
         )}

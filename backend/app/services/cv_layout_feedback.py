@@ -2,6 +2,7 @@
 CV layout feedback: render CV to image, send to GPT-5 Mini for visual balance/layout
 tweaks, return a list of actionable suggestions to pass into generate_cv as additional_info.
 """
+
 import base64
 import io
 import json
@@ -31,7 +32,9 @@ Guidelines:
 - If the CV already looks well balanced, return an empty tweaks array: {"tweaks": []}.
 - Each tweak should be one short sentence that we can pass to a CV generator to apply."""
 
-LAYOUT_FEEDBACK_USER = """Review this CV image and return your JSON with the "tweaks" array as specified."""
+LAYOUT_FEEDBACK_USER = (
+    """Review this CV image and return your JSON with the "tweaks" array as specified."""
+)
 
 LAYOUT_FEEDBACK_USER_TWO_PAGES = """The following two images are page 1 and page 2 of a 2-page CV. Review both pages and return your JSON with the "tweaks" array as specified."""
 
@@ -98,7 +101,7 @@ def _pdf_to_png_base64(pdf_bytes: bytes, page_limit: int = 1) -> list[str] | Non
         # Poppler is not available; degrade gracefully and avoid noisy warnings
         logger.info("Poppler (pdfinfo) not installed; skipping CV layout feedback: %s", e)
         return None
-    except Exception as e:  # noqa: BLE001
+    except Exception as e:
         logger.warning("PDF to image conversion failed: %s", e)
         return None
 
@@ -127,7 +130,9 @@ async def get_cv_layout_feedback(
         return []
 
     num_images = len(images_b64)
-    logger.info("Layout feedback: sending %s image(s) to vision (page_limit=%s)", num_images, page_limit)
+    logger.info(
+        "Layout feedback: sending %s image(s) to vision (page_limit=%s)", num_images, page_limit
+    )
 
     try:
         if page_limit == 1 and num_images == 2:
@@ -191,7 +196,7 @@ def count_cv_pdf_pages(cv_data: dict, page_limit: int = 1) -> int:
     """
     try:
         pdf_bytes = build_cv_pdf(cv_data, page_limit=page_limit)
-    except Exception as e:  # noqa: BLE001
+    except Exception as e:
         logger.warning("build_cv_pdf failed in count_cv_pdf_pages: %s", e)
         return page_limit
 
@@ -204,6 +209,6 @@ def count_cv_pdf_pages(cv_data: dict, page_limit: int = 1) -> int:
             page_limit,
         )
         return num_pages
-    except Exception as e:  # noqa: BLE001
+    except Exception as e:
         logger.warning("PdfReader failed in count_cv_pdf_pages: %s", e)
         return page_limit

@@ -6,7 +6,7 @@ from pypdf import PdfReader, PdfWriter, Transformation
 from reportlab.lib.pagesizes import LETTER
 
 from app.config import get_settings
-from app.services.docx_builder import build_cv_pdf, build_cover_letter_pdf
+from app.services.docx_builder import build_cover_letter_pdf, build_cv_pdf
 
 logger = logging.getLogger(__name__)
 
@@ -20,9 +20,9 @@ def _build_address_page(to_address: dict, from_address: dict) -> bytes:
     Lob overlays mailing addresses, barcodes, and postage on page 1.
     This dedicated page keeps the actual CV/cover letter content clean.
     """
-    from reportlab.platypus import SimpleDocTemplate, Spacer, Paragraph
     from reportlab.lib.styles import getSampleStyleSheet
     from reportlab.lib.units import inch
+    from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
 
     buf = io.BytesIO()
     doc = SimpleDocTemplate(
@@ -36,10 +36,12 @@ def _build_address_page(to_address: dict, from_address: dict) -> bytes:
     styles = getSampleStyleSheet()
     story: list = []
     story.append(Spacer(1, 0))
-    story.append(Paragraph(
-        "This page is used for mailing purposes. Your documents follow on the next page(s).",
-        styles["Normal"],
-    ))
+    story.append(
+        Paragraph(
+            "This page is used for mailing purposes. Your documents follow on the next page(s).",
+            styles["Normal"],
+        )
+    )
     doc.build(story)
     return buf.getvalue()
 
@@ -61,7 +63,9 @@ def _resize_to_letter(pdf_bytes: bytes) -> bytes:
         # Center the content on the letter page
         tx = (LETTER_W - w * scale) / 2
         ty = (LETTER_H - h * scale) / 2
-        page.add_transformation(Transformation().scale(scale, scale).translate(tx / scale, ty / scale))
+        page.add_transformation(
+            Transformation().scale(scale, scale).translate(tx / scale, ty / scale)
+        )
         page.mediabox.upper_right = (LETTER_W, LETTER_H)
         page.mediabox.lower_left = (0, 0)
         writer.add_page(page)

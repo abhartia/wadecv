@@ -28,4 +28,3 @@ server-command = ["python", "server.py"]
 
 [tool.setuptools]
 py-modules = ["server", "google_clients", "seo_analysis", "patch_models"]
-

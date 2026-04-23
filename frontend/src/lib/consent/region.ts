@@ -67,5 +67,7 @@ export function detectRegion(): ConsentRegion {
 
 export function isGpcEnabled(): boolean {
   if (typeof navigator === "undefined") return false;
-  return (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl === true;
+  return (
+    (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl === true
+  );
 }

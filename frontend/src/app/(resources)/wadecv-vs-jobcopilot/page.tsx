@@ -5,25 +5,20 @@ import { CrossCategoryLinks } from "@/components/seo/cross-category-links";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ||
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://wadecv.com");
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com");
 
 export const metadata = {
-  title:
-    "WadeCV vs JobCopilot: AI Resume & Job Application Tools Compared (2026) | WadeCV",
+  title: "WadeCV vs JobCopilot: AI Resume & Job Application Tools Compared (2026) | WadeCV",
   description:
     "WadeCV vs JobCopilot compared: AI resume tailoring, automated job applications, ATS optimization, cover letters, and pricing. Find out which AI tool fits your job search.",
   openGraph: {
-    title:
-      "WadeCV vs JobCopilot: AI Resume & Job Application Tools Compared (2026)",
+    title: "WadeCV vs JobCopilot: AI Resume & Job Application Tools Compared (2026)",
     description:
       "WadeCV vs JobCopilot feature-by-feature comparison for AI resume tools, job automation, and pricing.",
   },
   twitter: {
     card: "summary" as const,
-    title:
-      "WadeCV vs JobCopilot: AI Resume & Job Application Tools Compared (2026)",
+    title: "WadeCV vs JobCopilot: AI Resume & Job Application Tools Compared (2026)",
     description:
       "WadeCV vs JobCopilot: resume tailoring, job automation, pricing, and features compared.",
   },
@@ -77,16 +72,14 @@ const ROWS: {
   },
   {
     feature: "Cover letter generation",
-    jobcopilot:
-      "AI-generated cover letters included with automated applications.",
+    jobcopilot: "AI-generated cover letters included with automated applications.",
     wadecv:
       "Generates a tailored cover letter alongside every tailored resume, matched to the same job description — included free with every tailoring.",
     verdict: "tie",
   },
   {
     feature: "ATS optimization",
-    jobcopilot:
-      "Basic ATS-friendly formatting across automated applications.",
+    jobcopilot: "Basic ATS-friendly formatting across automated applications.",
     wadecv:
       "Generates an ATS-safe DOCX with correct headings, bullet structure, and keyword placement — optimization is built into the generation process.",
     verdict: "wadecv",
@@ -161,8 +154,7 @@ export default function JobCopilotComparisonPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline:
-              "WadeCV vs JobCopilot: AI Resume & Job Application Tools Compared (2026)",
+            headline: "WadeCV vs JobCopilot: AI Resume & Job Application Tools Compared (2026)",
             description: metadata.description,
             author: { "@type": "Organization", name: "WadeCV" },
             publisher: {
@@ -195,23 +187,19 @@ export default function JobCopilotComparisonPage() {
       />
 
       <h1 className="text-3xl font-bold mb-4">
-        WadeCV vs JobCopilot: AI Resume &amp; Job Application Tools Compared
-        (2026)
+        WadeCV vs JobCopilot: AI Resume &amp; Job Application Tools Compared (2026)
       </h1>
 
       <p className="text-muted-foreground mb-6">
-        JobCopilot is a fast-growing AI job application tool that automates the
-        process of applying to jobs at scale. WadeCV takes a different approach:
-        instead of automating submissions, it focuses on deeply tailoring your
-        resume for each specific role. One prioritizes volume, the other
-        prioritizes quality. Here&apos;s how they compare across features,
-        workflow, and pricing.
+        JobCopilot is a fast-growing AI job application tool that automates the process of applying
+        to jobs at scale. WadeCV takes a different approach: instead of automating submissions, it
+        focuses on deeply tailoring your resume for each specific role. One prioritizes volume, the
+        other prioritizes quality. Here&apos;s how they compare across features, workflow, and
+        pricing.
       </p>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          Feature comparison: WadeCV vs JobCopilot
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Feature comparison: WadeCV vs JobCopilot</h2>
         <div className="space-y-4">
           {ROWS.map((row) => (
             <Card key={row.feature}>
@@ -251,53 +239,47 @@ export default function JobCopilotComparisonPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-3">
-          When JobCopilot is the better choice
-        </h2>
+        <h2 className="text-xl font-semibold mb-3">When JobCopilot is the better choice</h2>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li>
-            You want to maximize the number of applications you send — casting a
-            wide net across many job boards.
+            You want to maximize the number of applications you send — casting a wide net across
+            many job boards.
           </li>
           <li>
-            You prefer a hands-off approach where the tool handles application
-            submission automatically.
+            You prefer a hands-off approach where the tool handles application submission
+            automatically.
           </li>
           <li>
-            You are applying to roles where volume matters more than deep
-            customization — such as entry-level positions or broad job searches.
+            You are applying to roles where volume matters more than deep customization — such as
+            entry-level positions or broad job searches.
           </li>
           <li>
-            You want a centralized dashboard tracking all your auto-applied
-            jobs and responses.
+            You want a centralized dashboard tracking all your auto-applied jobs and responses.
           </li>
         </ul>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-3">
-          When WadeCV is the better choice
-        </h2>
+        <h2 className="text-xl font-semibold mb-3">When WadeCV is the better choice</h2>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li>
-            You want each resume deeply tailored to a specific job — not just
-            keyword-swapped, but rewritten section by section.
+            You want each resume deeply tailored to a specific job — not just keyword-swapped, but
+            rewritten section by section.
           </li>
           <li>
-            You want a gap analysis showing exactly what your resume is missing
-            before you tailor it.
+            You want a gap analysis showing exactly what your resume is missing before you tailor
+            it.
           </li>
           <li>
-            You are applying to competitive roles where a generic resume will
-            not get past the first screen.
+            You are applying to competitive roles where a generic resume will not get past the first
+            screen.
           </li>
           <li>
-            You want a tailored cover letter generated alongside each resume at
-            no extra cost.
+            You want a tailored cover letter generated alongside each resume at no extra cost.
           </li>
           <li>
-            You prefer pay-per-use pricing instead of a monthly subscription —
-            only pay when you apply.
+            You prefer pay-per-use pricing instead of a monthly subscription — only pay when you
+            apply.
           </li>
         </ul>
       </section>
@@ -306,41 +288,34 @@ export default function JobCopilotComparisonPage() {
         <h2 className="text-xl font-semibold mb-3">The verdict</h2>
         <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-3">
           <p>
-            JobCopilot and WadeCV solve different problems. JobCopilot is an
-            application automation tool — it gets your resume in front of as many
-            hiring managers as possible, as quickly as possible. WadeCV is a
-            resume tailoring tool — it makes sure each resume you send is
+            JobCopilot and WadeCV solve different problems. JobCopilot is an application automation
+            tool — it gets your resume in front of as many hiring managers as possible, as quickly
+            as possible. WadeCV is a resume tailoring tool — it makes sure each resume you send is
             precisely matched to the job you are applying for.
           </p>
           <p>
-            For competitive roles at companies you genuinely want to work at,
-            the quality of your resume matters more than the number of
-            applications you send. A deeply tailored resume that addresses the
-            specific requirements of a job description will consistently
+            For competitive roles at companies you genuinely want to work at, the quality of your
+            resume matters more than the number of applications you send. A deeply tailored resume
+            that addresses the specific requirements of a job description will consistently
             outperform a mass-applied generic one.
           </p>
           <p>
-            The strongest strategy combines both: use WadeCV for your
-            high-priority applications where a tailored resume makes the
-            difference, and use JobCopilot for broader coverage where volume
-            helps you discover opportunities.
+            The strongest strategy combines both: use WadeCV for your high-priority applications
+            where a tailored resume makes the difference, and use JobCopilot for broader coverage
+            where volume helps you discover opportunities.
           </p>
         </div>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          Frequently asked questions
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Frequently asked questions</h2>
         <div className="space-y-4">
           {FAQ.map((f) => (
             <Card key={f.question}>
               <CardHeader className="pb-2">
                 <CardTitle className="text-base">{f.question}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {f.answer}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{f.answer}</CardContent>
             </Card>
           ))}
         </div>
@@ -363,16 +338,12 @@ export default function JobCopilotComparisonPage() {
         <CardHeader>
           <CardTitle>Try WadeCV free — no subscription needed</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Upload your CV, paste a job URL, and get a fully tailored resume plus
-            cover letter in seconds. 1 free credit included on signup.
+            Upload your CV, paste a job URL, and get a fully tailored resume plus cover letter in
+            seconds. 1 free credit included on signup.
           </p>
         </CardHeader>
         <CardContent>
-          <SeoCta
-            variant="job"
-            label="Tailor your resume now"
-            slug="jobcopilot-comparison"
-          />
+          <SeoCta variant="job" label="Tailor your resume now" slug="jobcopilot-comparison" />
         </CardContent>
       </Card>
     </article>

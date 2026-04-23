@@ -38,9 +38,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <div className="flex min-h-screen flex-col">
         <PageviewListener />
         <Navbar />
-        <main className="flex-1 container mx-auto px-4 py-8">
-          {children}
-        </main>
+        <main className="flex-1 container mx-auto px-4 py-8">{children}</main>
         <Footer />
       </div>
     </QueryClientProvider>

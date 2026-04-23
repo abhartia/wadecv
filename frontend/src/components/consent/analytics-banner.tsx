@@ -15,8 +15,8 @@ export function AnalyticsBanner() {
         <div className="space-y-1">
           <p className="text-sm font-medium">Analytics & cookies</p>
           <p className="text-xs text-muted-foreground">
-            We use Google Analytics to understand how WadeCV is used so we can improve it. You can change your
-            choice at any time in the privacy settings.
+            We use Google Analytics to understand how WadeCV is used so we can improve it. You can
+            change your choice at any time in the privacy settings.
           </p>
           <p className="text-xs text-muted-foreground">
             See our{" "}

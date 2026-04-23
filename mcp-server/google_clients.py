@@ -219,4 +219,3 @@ __all__ = [
     "SearchConsoleClient",
     "default_date_ranges_for_weeks",
 ]
-

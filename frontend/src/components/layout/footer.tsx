@@ -25,39 +25,108 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-3">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/#how-it-works" className="hover:text-foreground transition-colors">How It Works</Link></li>
-              <li><Link href="/#pricing" className="hover:text-foreground transition-colors">Pricing</Link></li>
+              <li>
+                <Link href="/#how-it-works" className="hover:text-foreground transition-colors">
+                  How It Works
+                </Link>
+              </li>
+              <li>
+                <Link href="/#pricing" className="hover:text-foreground transition-colors">
+                  Pricing
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-3">Resources</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/jobs" className="hover:text-foreground transition-colors">Job Guides</Link></li>
-              <li><Link href="/company-resume" className="hover:text-foreground transition-colors">Company Resumes</Link></li>
-              <li><Link href="/skills" className="hover:text-foreground transition-colors">Skills by Role</Link></li>
-              <li><Link href="/resume-bullets" className="hover:text-foreground transition-colors">Resume Bullets</Link></li>
-              <li><Link href="/ats" className="hover:text-foreground transition-colors">ATS Guides</Link></li>
-              <li><Link href="/career-change" className="hover:text-foreground transition-colors">Career Change</Link></li>
-              <li><Link href="/physical-mail" className="hover:text-foreground transition-colors">Mail Your CV</Link></li>
+              <li>
+                <Link href="/jobs" className="hover:text-foreground transition-colors">
+                  Job Guides
+                </Link>
+              </li>
+              <li>
+                <Link href="/company-resume" className="hover:text-foreground transition-colors">
+                  Company Resumes
+                </Link>
+              </li>
+              <li>
+                <Link href="/skills" className="hover:text-foreground transition-colors">
+                  Skills by Role
+                </Link>
+              </li>
+              <li>
+                <Link href="/resume-bullets" className="hover:text-foreground transition-colors">
+                  Resume Bullets
+                </Link>
+              </li>
+              <li>
+                <Link href="/ats" className="hover:text-foreground transition-colors">
+                  ATS Guides
+                </Link>
+              </li>
+              <li>
+                <Link href="/career-change" className="hover:text-foreground transition-colors">
+                  Career Change
+                </Link>
+              </li>
+              <li>
+                <Link href="/physical-mail" className="hover:text-foreground transition-colors">
+                  Mail Your CV
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-3">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/legal/terms" className="hover:text-foreground transition-colors">Terms of Service</Link></li>
-              <li><Link href="/legal/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/legal/privacy-choices" className="hover:text-foreground transition-colors">Your Privacy Choices</Link></li>
-              <li><Link href="/legal/refund" className="hover:text-foreground transition-colors">Refund Policy</Link></li>
-              <li><Link href="/legal/ai-disclosure" className="hover:text-foreground transition-colors">AI Disclosure</Link></li>
+              <li>
+                <Link href="/legal/terms" className="hover:text-foreground transition-colors">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/legal/privacy" className="hover:text-foreground transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/legal/privacy-choices"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Your Privacy Choices
+                </Link>
+              </li>
+              <li>
+                <Link href="/legal/refund" className="hover:text-foreground transition-colors">
+                  Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/legal/ai-disclosure"
+                  className="hover:text-foreground transition-colors"
+                >
+                  AI Disclosure
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-3">Support</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="mailto:support@wadecv.com" className="hover:text-foreground transition-colors">support@wadecv.com</a></li>
+              <li>
+                <a
+                  href="mailto:support@wadecv.com"
+                  className="hover:text-foreground transition-colors"
+                >
+                  support@wadecv.com
+                </a>
+              </li>
             </ul>
           </div>
         </div>

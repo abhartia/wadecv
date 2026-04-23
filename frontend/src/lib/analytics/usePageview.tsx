@@ -15,4 +15,3 @@ export function usePageview() {
     pageview(path);
   }, [pathname, searchParams]);
 }
-

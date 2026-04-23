@@ -83,19 +83,14 @@ const VARIANT_CONFIG: Record<
     buttonText: "Try it free — no credit card needed",
   },
   "investment-banking": {
-    heading:
-      "Get banker-ready bullets — tailored to a specific IB or asset-management role",
+    heading: "Get banker-ready bullets — tailored to a specific IB or asset-management role",
     description:
       "Paste a Goldman Sachs, JP Morgan, Morgan Stanley, Citi, BlackRock or elite-boutique job URL and WadeCV rewrites your CV to the one-page IB standard: quantified deal bullets, division-specific keywords, and the spike MDs screen for.",
     buttonText: "Try it free — no credit card needed",
   },
 };
 
-const BENEFITS = [
-  "1 free credit on signup",
-  "AI-powered fit analysis",
-  "ATS-optimised formatting",
-];
+const BENEFITS = ["1 free credit on signup", "AI-powered fit analysis", "ATS-optimised formatting"];
 
 type InlineCtaProps = {
   variant: Variant;
@@ -125,10 +120,7 @@ export function InlineCta({ variant, slug }: InlineCtaProps) {
         </ul>
 
         <div className="pt-1">
-          <Link
-            href="/auth/register"
-            onClick={() => trackSeoCtaClick(variant, slug)}
-          >
+          <Link href="/auth/register" onClick={() => trackSeoCtaClick(variant, slug)}>
             <Button size="lg" className="w-full sm:w-auto">
               {config.buttonText}
             </Button>

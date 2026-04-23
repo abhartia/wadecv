@@ -6,4 +6,3 @@ export function PageviewListener() {
   usePageview();
   return null;
 }
-

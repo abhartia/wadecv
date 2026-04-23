@@ -95,4 +95,3 @@ export function trackSeoCtaClick(variant: string, slug?: string) {
 export function trackSeoNavClick(link: string) {
   trackEvent("seo_nav_click", { link });
 }
-

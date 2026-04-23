@@ -25,6 +25,7 @@ async def generate_cover_letter(
     job_id: str | None = None,
 ) -> str:
     import json
+
     cv_summary = json.dumps(cv_data, indent=2)
 
     user_prompt = f"## Tailored CV Data\n{cv_summary}\n\n## Job Description\n{job_description}"

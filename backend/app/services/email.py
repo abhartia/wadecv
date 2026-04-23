@@ -1,7 +1,7 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
+from typing import Any
 
 import resend
-from typing import Any, Dict, List, Optional, Union
 
 from app.config import get_settings
 
@@ -16,11 +16,12 @@ def _get_client():
 def send_magic_link(to_email: str, token: str):
     client = _get_client()
     link = f"{settings.frontend_url}/auth/magic-link/verify?token={token}"
-    client.Emails.send({
-        "from": settings.email_from,
-        "to": [to_email],
-        "subject": "Sign in to WadeCV",
-        "html": f"""
+    client.Emails.send(
+        {
+            "from": settings.email_from,
+            "to": [to_email],
+            "subject": "Sign in to WadeCV",
+            "html": f"""
         <div style="font-family: sans-serif; max-width: 480px; margin: 0 auto;">
             <h2>Sign in to WadeCV</h2>
             <p>Click the button below to sign in to your account. This link expires in 15 minutes.</p>
@@ -33,17 +34,19 @@ def send_magic_link(to_email: str, token: str):
             </p>
         </div>
         """,
-    })
+        }
+    )
 
 
 def send_verification_email(to_email: str, token: str):
     client = _get_client()
     link = f"{settings.frontend_url}/auth/verify-email?token={token}"
-    client.Emails.send({
-        "from": settings.email_from,
-        "to": [to_email],
-        "subject": "Verify your WadeCV email",
-        "html": f"""
+    client.Emails.send(
+        {
+            "from": settings.email_from,
+            "to": [to_email],
+            "subject": "Verify your WadeCV email",
+            "html": f"""
         <div style="font-family: sans-serif; max-width: 480px; margin: 0 auto;">
             <h2>Verify your email</h2>
             <p>Thanks for signing up to WadeCV! Please verify your email address.</p>
@@ -53,36 +56,39 @@ def send_verification_email(to_email: str, token: str):
             </a>
         </div>
         """,
-    })
+        }
+    )
 
 
 def send_deletion_confirmation(to_email: str):
     client = _get_client()
-    client.Emails.send({
-        "from": settings.email_from,
-        "to": [to_email],
-        "subject": "Your WadeCV account has been deleted",
-        "html": """
+    client.Emails.send(
+        {
+            "from": settings.email_from,
+            "to": [to_email],
+            "subject": "Your WadeCV account has been deleted",
+            "html": """
         <div style="font-family: sans-serif; max-width: 480px; margin: 0 auto;">
             <h2>Account Deleted</h2>
             <p>Your WadeCV account and all associated data have been permanently deleted.</p>
             <p>If you did not request this, please contact us immediately.</p>
         </div>
         """,
-    })
+        }
+    )
 
 
 def send_signup_notification(
     user_email: str,
     signup_method: str = "password_register",
-    user_id: Optional[str] = None,
+    user_id: str | None = None,
 ) -> None:
     """Notify the site owner (support_forward_to) when a new user signs up."""
     to = settings.support_forward_to
     if not to:
         return
     client = _get_client()
-    timestamp = datetime.now(timezone.utc).isoformat()
+    timestamp = datetime.now(UTC).isoformat()
     id_line = f"<p><strong>User ID:</strong> {user_id}</p>" if user_id else ""
     html = f"""
     <div style="font-family: sans-serif; max-width: 480px; margin: 0 auto;">
@@ -93,29 +99,28 @@ def send_signup_notification(
         <p><strong>Signed up at:</strong> {timestamp}</p>
     </div>
     """
-    client.Emails.send({
-        "from": settings.email_from,
-        "to": [to],
-        "subject": "New WadeCV signup",
-        "html": html,
-    })
+    client.Emails.send(
+        {
+            "from": settings.email_from,
+            "to": [to],
+            "subject": "New WadeCV signup",
+            "html": html,
+        }
+    )
 
 
-def forward_inbound_support_email(payload: Dict[str, Any]):
+def forward_inbound_support_email(payload: dict[str, Any]):
     client = _get_client()
 
-    email_id: Optional[str] = payload.get("email_id")
-    original_from: Optional[str] = payload.get("from")
-    original_to: Optional[Union[str, List[str]]] = payload.get("to")
-    subject: Optional[str] = payload.get("subject")
-    text: Optional[str] = payload.get("text")
-    html: Optional[str] = payload.get("html")
-    message_id: Optional[str] = payload.get("id") or payload.get("message_id")
+    email_id: str | None = payload.get("email_id")
+    original_from: str | None = payload.get("from")
+    original_to: str | list[str] | None = payload.get("to")
+    subject: str | None = payload.get("subject")
+    text: str | None = payload.get("text")
+    html: str | None = payload.get("html")
+    message_id: str | None = payload.get("id") or payload.get("message_id")
 
-    if isinstance(original_to, list):
-        original_to_str = ", ".join(original_to)
-    else:
-        original_to_str = original_to or ""
+    original_to_str = ", ".join(original_to) if isinstance(original_to, list) else original_to or ""
 
     if email_id and (not text and not html):
         try:
@@ -143,18 +148,22 @@ def forward_inbound_support_email(payload: Dict[str, Any]):
         meta_html = meta_block.replace("\n", "<br />")
         body_html = f"<p>{meta_html}</p><hr />{html}"
         body_text = f"{meta_block}\n\n{text or ''}"
-        client.Emails.send({
-            "from": settings.email_from,
-            "to": [target],
-            "subject": f"[Support] {effective_subject}",
-            "text": body_text,
-            "html": body_html,
-        })
+        client.Emails.send(
+            {
+                "from": settings.email_from,
+                "to": [target],
+                "subject": f"[Support] {effective_subject}",
+                "text": body_text,
+                "html": body_html,
+            }
+        )
     else:
         body_text = f"{meta_block}\n\n{text or ''}"
-        client.Emails.send({
-            "from": settings.email_from,
-            "to": [target],
-            "subject": f"[Support] {effective_subject}",
-            "text": body_text,
-        })
+        client.Emails.send(
+            {
+                "from": settings.email_from,
+                "to": [target],
+                "subject": f"[Support] {effective_subject}",
+                "text": body_text,
+            }
+        )

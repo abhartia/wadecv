@@ -7,13 +7,10 @@ import { InlineCta } from "@/components/seo/inline-cta";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ||
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://wadecv.com");
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com");
 
 export const metadata = {
-  title:
-    "Consulting Resume Guide 2026 — MBB, Big 4 and How to Pass the Screen | WadeCV",
+  title: "Consulting Resume Guide 2026 — MBB, Big 4 and How to Pass the Screen | WadeCV",
   description:
     "The one-page consulting resume that passes McKinsey, BCG, Bain and Big 4 screens in 2026. Exact structure, quantified bullet formulas, practice-specific keywords, and how MBB differs from Big 4.",
   openGraph: {
@@ -226,98 +223,92 @@ const BIG4_FIRMS: {
   },
   {
     name: "KPMG",
-    serviceLines: [
-      "Advisory / Consulting",
-      "Audit",
-      "Tax",
-      "Deal Advisory",
-    ],
+    serviceLines: ["Advisory / Consulting", "Audit", "Tax", "Deal Advisory"],
     distinctive:
       "Audit-heavier revenue mix than other Big 4; strong in regulated industries (banking, insurance, public sector).",
   },
 ];
 
-const PRACTICES: { name: string; keywords: string[]; bulletSignals: string }[] =
-  [
-    {
-      name: "Strategy",
-      keywords: [
-        "market entry",
-        "growth strategy",
-        "operating model",
-        "corporate strategy",
-        "portfolio review",
-        "competitive positioning",
-      ],
-      bulletSignals:
-        "Three-year plans, C-suite adoption, market-sizing models, strategic-option evaluation.",
-    },
-    {
-      name: "Operations",
-      keywords: [
-        "cost transformation",
-        "zero-based budgeting",
-        "lean",
-        "supply chain",
-        "procurement",
-        "footprint optimisation",
-      ],
-      bulletSignals:
-        "£M savings delivered, wave-based implementation, Lean Six Sigma certification, procurement savings %, factory productivity.",
-    },
-    {
-      name: "Digital & Advanced Analytics",
-      keywords: [
-        "digital transformation",
-        "cloud migration",
-        "MLOps",
-        "advanced analytics",
-        "AI / GenAI",
-        "data platform",
-      ],
-      bulletSignals:
-        "Production ML models, cloud migration GoLive dates, data-platform adoption %, LLM pilots and ROI.",
-    },
-    {
-      name: "Private Equity / Due Diligence",
-      keywords: [
-        "commercial due diligence",
-        "value-creation plan",
-        "LBO",
-        "market growth",
-        "red-flag issues",
-        "synergy",
-      ],
-      bulletSignals:
-        "Deal size, sector, EBITDA value-creation quantified, investment-committee adoption.",
-    },
-    {
-      name: "Customer & Marketing",
-      keywords: [
-        "customer experience",
-        "pricing",
-        "revenue growth management",
-        "CRM",
-        "personalisation",
-        "brand strategy",
-      ],
-      bulletSignals:
-        "NPS uplift, conversion-rate improvement, pricing-programme EBITDA, churn reduction.",
-    },
-    {
-      name: "Risk, Cyber & Regulatory",
-      keywords: [
-        "cyber resilience",
-        "ISO 27001",
-        "NIST CSF",
-        "regulatory compliance",
-        "third-party risk",
-        "controls assurance",
-      ],
-      bulletSignals:
-        "Framework certifications, audit readiness, breach-response led, regulatory remediation delivered.",
-    },
-  ];
+const PRACTICES: { name: string; keywords: string[]; bulletSignals: string }[] = [
+  {
+    name: "Strategy",
+    keywords: [
+      "market entry",
+      "growth strategy",
+      "operating model",
+      "corporate strategy",
+      "portfolio review",
+      "competitive positioning",
+    ],
+    bulletSignals:
+      "Three-year plans, C-suite adoption, market-sizing models, strategic-option evaluation.",
+  },
+  {
+    name: "Operations",
+    keywords: [
+      "cost transformation",
+      "zero-based budgeting",
+      "lean",
+      "supply chain",
+      "procurement",
+      "footprint optimisation",
+    ],
+    bulletSignals:
+      "£M savings delivered, wave-based implementation, Lean Six Sigma certification, procurement savings %, factory productivity.",
+  },
+  {
+    name: "Digital & Advanced Analytics",
+    keywords: [
+      "digital transformation",
+      "cloud migration",
+      "MLOps",
+      "advanced analytics",
+      "AI / GenAI",
+      "data platform",
+    ],
+    bulletSignals:
+      "Production ML models, cloud migration GoLive dates, data-platform adoption %, LLM pilots and ROI.",
+  },
+  {
+    name: "Private Equity / Due Diligence",
+    keywords: [
+      "commercial due diligence",
+      "value-creation plan",
+      "LBO",
+      "market growth",
+      "red-flag issues",
+      "synergy",
+    ],
+    bulletSignals:
+      "Deal size, sector, EBITDA value-creation quantified, investment-committee adoption.",
+  },
+  {
+    name: "Customer & Marketing",
+    keywords: [
+      "customer experience",
+      "pricing",
+      "revenue growth management",
+      "CRM",
+      "personalisation",
+      "brand strategy",
+    ],
+    bulletSignals:
+      "NPS uplift, conversion-rate improvement, pricing-programme EBITDA, churn reduction.",
+  },
+  {
+    name: "Risk, Cyber & Regulatory",
+    keywords: [
+      "cyber resilience",
+      "ISO 27001",
+      "NIST CSF",
+      "regulatory compliance",
+      "third-party risk",
+      "controls assurance",
+    ],
+    bulletSignals:
+      "Framework certifications, audit readiness, breach-response led, regulatory remediation delivered.",
+  },
+];
 
 const COMMON_MISTAKES = [
   "Two-page resume for any pre-Partner consulting application — automatic screen reject at MBB, dispreferred at Big 4",
@@ -382,8 +373,7 @@ export default function ConsultingResumePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline:
-              "Consulting Resume Guide 2026 — MBB, Big 4 and How to Pass the Screen",
+            headline: "Consulting Resume Guide 2026 — MBB, Big 4 and How to Pass the Screen",
             description: metadata.description,
             author: { "@type": "Organization", name: "WadeCV" },
             publisher: {
@@ -420,17 +410,16 @@ export default function ConsultingResumePage() {
       </h1>
 
       <p className="text-muted-foreground mb-4">
-        Consulting resumes are screened by partners in under 60 seconds. The
-        bar is high, the conventions are specific, and the difference between
-        a McKinsey-style one-page CV and a Deloitte Audit CV is not cosmetic —
-        it is structural. This guide covers the exact page structure partners
-        expect, the bullet formulas that pass MBB and Big 4 screens, the
-        vocabulary you need per practice, and the common reasons otherwise
-        strong candidates get rejected at CV review.
+        Consulting resumes are screened by partners in under 60 seconds. The bar is high, the
+        conventions are specific, and the difference between a McKinsey-style one-page CV and a
+        Deloitte Audit CV is not cosmetic — it is structural. This guide covers the exact page
+        structure partners expect, the bullet formulas that pass MBB and Big 4 screens, the
+        vocabulary you need per practice, and the common reasons otherwise strong candidates get
+        rejected at CV review.
       </p>
       <p className="text-muted-foreground mb-6">
-        Read it top-to-bottom if you are preparing applications, or jump to
-        the firm you are targeting —{" "}
+        Read it top-to-bottom if you are preparing applications, or jump to the firm you are
+        targeting —{" "}
         <Link href="/company-resume/mckinsey" className="underline">
           McKinsey
         </Link>
@@ -454,9 +443,9 @@ export default function ConsultingResumePage() {
           The one-page consulting resume: exact structure
         </h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Every section in this order. No deviations for pre-Principal / pre-
-          Partner applications. The partner reviewing your CV reads top-down
-          and expects to find the information in the canonical position.
+          Every section in this order. No deviations for pre-Principal / pre- Partner applications.
+          The partner reviewing your CV reads top-down and expects to find the information in the
+          canonical position.
         </p>
         <div className="space-y-3">
           {RESUME_STRUCTURE.map((s) => (
@@ -469,22 +458,17 @@ export default function ConsultingResumePage() {
                   {s.section}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {s.detail}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{s.detail}</CardContent>
             </Card>
           ))}
         </div>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          MBB vs Big 4: 7 screening differences
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">MBB vs Big 4: 7 screening differences</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          MBB (McKinsey, BCG, Bain) and Big 4 (Deloitte, PwC, EY, KPMG) share
-          the one-page structure, but their screening bars differ in specific
-          ways. Tailor accordingly.
+          MBB (McKinsey, BCG, Bain) and Big 4 (Deloitte, PwC, EY, KPMG) share the one-page
+          structure, but their screening bars differ in specific ways. Tailor accordingly.
         </p>
         <div className="space-y-3">
           {MBB_VS_BIG4.map((d, i) => (
@@ -496,12 +480,10 @@ export default function ConsultingResumePage() {
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground space-y-2">
                 <div>
-                  <span className="text-foreground font-medium">MBB:</span>{" "}
-                  {d.mbb}
+                  <span className="text-foreground font-medium">MBB:</span> {d.mbb}
                 </div>
                 <div>
-                  <span className="text-foreground font-medium">Big 4:</span>{" "}
-                  {d.big4}
+                  <span className="text-foreground font-medium">Big 4:</span> {d.big4}
                 </div>
               </CardContent>
             </Card>
@@ -510,31 +492,20 @@ export default function ConsultingResumePage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          The MBB firms: McKinsey, BCG, Bain
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">The MBB firms: McKinsey, BCG, Bain</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Resume structure is identical across MBB. Vocabulary, screening
-          tools, and &apos;spike&apos; expectations differ — click through for firm-
-          specific guides.
+          Resume structure is identical across MBB. Vocabulary, screening tools, and
+          &apos;spike&apos; expectations differ — click through for firm- specific guides.
         </p>
         <div className="grid sm:grid-cols-3 gap-4">
           {MBB_FIRMS.map((f) => (
-            <Link
-              key={f.slug}
-              href={`/company-resume/${f.slug}`}
-              className="block group"
-            >
+            <Link key={f.slug} href={`/company-resume/${f.slug}`} className="block group">
               <Card className="h-full transition-colors group-hover:bg-muted/50">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-base group-hover:text-primary">
-                    {f.name}
-                  </CardTitle>
+                  <CardTitle className="text-base group-hover:text-primary">{f.name}</CardTitle>
                   <p className="text-xs text-muted-foreground">{f.tagline}</p>
                 </CardHeader>
-                <CardContent className="text-sm text-muted-foreground">
-                  {f.distinctive}
-                </CardContent>
+                <CardContent className="text-sm text-muted-foreground">{f.distinctive}</CardContent>
               </Card>
             </Link>
           ))}
@@ -544,14 +515,11 @@ export default function ConsultingResumePage() {
       <InlineCta variant="consulting" slug="consulting-resume" />
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          The Big 4: Deloitte, PwC, EY, KPMG
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">The Big 4: Deloitte, PwC, EY, KPMG</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Big 4 firms are organised by service line rather than by case vs
-          non-case. Your resume must signal the specific service line and
-          offering — a generic &apos;Big 4 Advisory&apos; framing is a common reason
-          for rejection.
+          Big 4 firms are organised by service line rather than by case vs non-case. Your resume
+          must signal the specific service line and offering — a generic &apos;Big 4 Advisory&apos;
+          framing is a common reason for rejection.
         </p>
         <div className="space-y-4">
           {BIG4_FIRMS.map((f) => (
@@ -572,9 +540,7 @@ export default function ConsultingResumePage() {
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground space-y-2">
                 <div>
-                  <span className="text-foreground font-medium">
-                    Service lines:
-                  </span>{" "}
+                  <span className="text-foreground font-medium">Service lines:</span>{" "}
                   {f.serviceLines.join(" · ")}
                 </div>
                 <div>{f.distinctive}</div>
@@ -589,10 +555,9 @@ export default function ConsultingResumePage() {
           Six bullet formulas that pass partner screens
         </h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Each formula is tested against a specific screening pattern — MBB
-          strategy, PE due diligence, technology implementation, advanced
-          analytics, audit, or generic consulting. Use the one that matches
-          the target role.
+          Each formula is tested against a specific screening pattern — MBB strategy, PE due
+          diligence, technology implementation, advanced analytics, audit, or generic consulting.
+          Use the one that matches the target role.
         </p>
         <div className="space-y-4">
           {BULLET_FORMULAS.map((b, i) => (
@@ -612,14 +577,11 @@ export default function ConsultingResumePage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          Practice-specific keywords: what to mirror
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Practice-specific keywords: what to mirror</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Consulting firms organise around practices (Strategy, Operations,
-          Digital, PEG, Customer, Risk) and your CV should mirror the
-          vocabulary of the target practice wherever it is honestly
-          applicable.
+          Consulting firms organise around practices (Strategy, Operations, Digital, PEG, Customer,
+          Risk) and your CV should mirror the vocabulary of the target practice wherever it is
+          honestly applicable.
         </p>
         <div className="grid sm:grid-cols-2 gap-4">
           {PRACTICES.map((p) => (
@@ -636,9 +598,7 @@ export default function ConsultingResumePage() {
                   ))}
                 </div>
                 <p className="text-xs">
-                  <span className="text-foreground font-medium">
-                    Bullet signals:
-                  </span>{" "}
+                  <span className="text-foreground font-medium">Bullet signals:</span>{" "}
                   {p.bulletSignals}
                 </p>
               </CardContent>
@@ -653,51 +613,42 @@ export default function ConsultingResumePage() {
         </h2>
         <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-3">
           <p>
-            Consulting CV screening in 2026 is more automated than it was
-            five years ago but the bar the partner applies has not relaxed.
-            Tools like BCG&apos;s Casey chatbot and Bain&apos;s Sova psychometric
-            assessment sit between the CV screen and the first case
-            interview, but neither rescues a weak CV — the resume remains
-            the gatekeeper across MBB and Big 4.
+            Consulting CV screening in 2026 is more automated than it was five years ago but the bar
+            the partner applies has not relaxed. Tools like BCG&apos;s Casey chatbot and Bain&apos;s
+            Sova psychometric assessment sit between the CV screen and the first case interview, but
+            neither rescues a weak CV — the resume remains the gatekeeper across MBB and Big 4.
           </p>
           <p>
-            What has changed is the weight on digital and GenAI signals.
-            BCG X, BCG Gamma, McKinsey QuantumBlack, Deloitte Digital and
-            Deloitte ConvergeHEALTH recruit more heavily than ever for
-            candidates with shipped production experience: deployed ML
-            models, cloud migrations with measurable KPIs, LLM pilots with
-            ROI, data-platform adoption percentages. If you have worked on
-            any of these and are targeting a digital practice, lead with
-            them rather than traditional strategy bullets.
+            What has changed is the weight on digital and GenAI signals. BCG X, BCG Gamma, McKinsey
+            QuantumBlack, Deloitte Digital and Deloitte ConvergeHEALTH recruit more heavily than
+            ever for candidates with shipped production experience: deployed ML models, cloud
+            migrations with measurable KPIs, LLM pilots with ROI, data-platform adoption
+            percentages. If you have worked on any of these and are targeting a digital practice,
+            lead with them rather than traditional strategy bullets.
           </p>
           <p>
-            AI detection on submitted resumes is not yet widespread among
-            consulting firms, but AI-assisted CV writing creates a
-            different problem: bullets that sound generic enough to survive
-            ATS but lack the practice-specific texture partners read for.
-            Humanising an AI-drafted CV with firm and practice vocabulary,
-            real numbers from your history, and the correct section
-            structure is essential. See our{" "}
+            AI detection on submitted resumes is not yet widespread among consulting firms, but
+            AI-assisted CV writing creates a different problem: bullets that sound generic enough to
+            survive ATS but lack the practice-specific texture partners read for. Humanising an
+            AI-drafted CV with firm and practice vocabulary, real numbers from your history, and the
+            correct section structure is essential. See our{" "}
             <Link href="/humanize-ai-resume" className="underline">
               humanize AI resume guide
             </Link>{" "}
             for techniques that work at consulting screening scale.
           </p>
           <p>
-            Finally: the rise of internal-mobility consulting offers.
-            Deloitte, PwC, EY and KPMG increasingly move Audit Seniors into
-            Consulting without an external application. If you are at Big 4
-            considering this path, your internal CV should emphasise
-            client-delivery outcomes, industry focus, and certification
-            progression — the same way an external candidate would tailor.
+            Finally: the rise of internal-mobility consulting offers. Deloitte, PwC, EY and KPMG
+            increasingly move Audit Seniors into Consulting without an external application. If you
+            are at Big 4 considering this path, your internal CV should emphasise client-delivery
+            outcomes, industry focus, and certification progression — the same way an external
+            candidate would tailor.
           </p>
         </div>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          Eight common consulting resume mistakes
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Eight common consulting resume mistakes</h2>
         <ul className="list-disc pl-6 space-y-2 text-sm text-muted-foreground">
           {COMMON_MISTAKES.map((m, i) => (
             <li key={i}>{m}</li>
@@ -706,18 +657,14 @@ export default function ConsultingResumePage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          Frequently asked questions
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Frequently asked questions</h2>
         <div className="space-y-4">
           {FAQ.map((f) => (
             <Card key={f.question}>
               <CardHeader className="pb-2">
                 <CardTitle className="text-base">{f.question}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {f.answer}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{f.answer}</CardContent>
             </Card>
           ))}
         </div>
@@ -741,15 +688,12 @@ export default function ConsultingResumePage() {
 
       <Card>
         <CardHeader>
-          <CardTitle>
-            Tailor your CV to a specific MBB or Big 4 role — free to start
-          </CardTitle>
+          <CardTitle>Tailor your CV to a specific MBB or Big 4 role — free to start</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Paste a McKinsey, BCG, Bain, Deloitte, PwC, EY or KPMG job URL.
-            WadeCV analyses the practice, the level, and the job description,
-            then rewrites your CV with quantified bullets, practice-specific
-            keywords, and the one-page consulting format partners expect. 1
-            free credit on signup — no credit card needed.
+            Paste a McKinsey, BCG, Bain, Deloitte, PwC, EY or KPMG job URL. WadeCV analyses the
+            practice, the level, and the job description, then rewrites your CV with quantified
+            bullets, practice-specific keywords, and the one-page consulting format partners expect.
+            1 free credit on signup — no credit card needed.
           </p>
         </CardHeader>
         <CardContent>

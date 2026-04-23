@@ -7,13 +7,10 @@ import { InlineCta } from "@/components/seo/inline-cta";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ||
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://wadecv.com");
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com");
 
 export const metadata = {
-  title:
-    "Free ATS Resume Checker — Instant Score for Any Job (2026) | WadeCV",
+  title: "Free ATS Resume Checker — Instant Score for Any Job (2026) | WadeCV",
   description:
     "Check your resume against any job posting in 30 seconds. WadeCV scores keyword match, ATS parsing, format issues, and missing qualifications — then rewrites the gaps. Free to start.",
   openGraph: {
@@ -315,8 +312,7 @@ export default function AtsResumeCheckerPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline:
-              "Free ATS Resume Checker — Instant Score for Any Job (2026)",
+            headline: "Free ATS Resume Checker — Instant Score for Any Job (2026)",
             description: metadata.description,
             author: { "@type": "Organization", name: "WadeCV" },
             publisher: {
@@ -377,24 +373,20 @@ export default function AtsResumeCheckerPage() {
       </h1>
 
       <p className="text-muted-foreground mb-4">
-        Most ATS resume checkers give you a generic score against a template.
-        That&apos;s not how real ATS works. Workday, Greenhouse, Lever, Taleo,
-        and SuccessFactors score your resume against a specific job — the
-        keywords in that posting, the must-have qualifications, the parsing
-        requirements of that ATS. WadeCV&apos;s checker does the same: paste a
-        job URL, upload your resume, and get an instant score that reflects
-        how that exact employer&apos;s ATS will rank you.
+        Most ATS resume checkers give you a generic score against a template. That&apos;s not how
+        real ATS works. Workday, Greenhouse, Lever, Taleo, and SuccessFactors score your resume
+        against a specific job — the keywords in that posting, the must-have qualifications, the
+        parsing requirements of that ATS. WadeCV&apos;s checker does the same: paste a job URL,
+        upload your resume, and get an instant score that reflects how that exact employer&apos;s
+        ATS will rank you.
       </p>
       <p className="text-muted-foreground mb-6">
-        Free to start. One credit on signup covers a full check — keyword
-        match, parsing warnings, must-have coverage, and a tailored rewrite.
-        No credit card required.
+        Free to start. One credit on signup covers a full check — keyword match, parsing warnings,
+        must-have coverage, and a tailored rewrite. No credit card required.
       </p>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          How the WadeCV ATS check works
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">How the WadeCV ATS check works</h2>
         <div className="grid sm:grid-cols-3 gap-4">
           {HOW_IT_WORKS.map((step) => (
             <Card key={step.step}>
@@ -406,21 +398,17 @@ export default function AtsResumeCheckerPage() {
                   {step.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {step.detail}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{step.detail}</CardContent>
             </Card>
           ))}
         </div>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          What WadeCV&apos;s ATS checker analyses
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">What WadeCV&apos;s ATS checker analyses</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Eight checks run against every resume-and-job pair. Each one maps to
-          a specific signal real ATS systems use to rank candidates.
+          Eight checks run against every resume-and-job pair. Each one maps to a specific signal
+          real ATS systems use to rank candidates.
         </p>
         <div className="grid sm:grid-cols-2 gap-4">
           {WHAT_WE_CHECK.map((c) => (
@@ -428,9 +416,7 @@ export default function AtsResumeCheckerPage() {
               <CardHeader className="pb-2">
                 <CardTitle className="text-base">{c.title}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {c.description}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{c.description}</CardContent>
             </Card>
           ))}
         </div>
@@ -439,27 +425,20 @@ export default function AtsResumeCheckerPage() {
       <InlineCta variant="ats" slug="ats-resume-checker" />
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-3">
-          ATS systems WadeCV checks against
-        </h2>
+        <h2 className="text-xl font-semibold mb-3">ATS systems WadeCV checks against</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          When you paste a job URL, WadeCV detects the ATS behind it and
-          tailors the check to that platform&apos;s specific parsing and
-          scoring rules. Here are the 9 systems we support — click any for
-          a detailed guide.
+          When you paste a job URL, WadeCV detects the ATS behind it and tailors the check to that
+          platform&apos;s specific parsing and scoring rules. Here are the 9 systems we support —
+          click any for a detailed guide.
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {ATS_SYSTEMS.map((a) => (
             <Link key={a.slug} href={`/ats/${a.slug}`} className="block group">
               <Card className="h-full transition-colors group-hover:bg-muted/50">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-base group-hover:text-primary">
-                    {a.system}
-                  </CardTitle>
+                  <CardTitle className="text-base group-hover:text-primary">{a.system}</CardTitle>
                 </CardHeader>
-                <CardContent className="text-sm text-muted-foreground">
-                  {a.notes}
-                </CardContent>
+                <CardContent className="text-sm text-muted-foreground">{a.notes}</CardContent>
               </Card>
             </Link>
           ))}
@@ -467,12 +446,10 @@ export default function AtsResumeCheckerPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          WadeCV vs other ATS resume checkers
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">WadeCV vs other ATS resume checkers</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          The three most commonly compared ATS checkers are WadeCV, Jobscan,
-          and Resume Worded. Here&apos;s how they differ.
+          The three most commonly compared ATS checkers are WadeCV, Jobscan, and Resume Worded.
+          Here&apos;s how they differ.
         </p>
         <div className="overflow-x-auto rounded-lg border">
           <table className="w-full text-sm">
@@ -482,26 +459,17 @@ export default function AtsResumeCheckerPage() {
                 <th className="text-left p-3 font-semibold">
                   <Badge>WadeCV</Badge>
                 </th>
-                <th className="text-left p-3 font-semibold text-muted-foreground">
-                  Jobscan
-                </th>
-                <th className="text-left p-3 font-semibold text-muted-foreground">
-                  Resume Worded
-                </th>
+                <th className="text-left p-3 font-semibold text-muted-foreground">Jobscan</th>
+                <th className="text-left p-3 font-semibold text-muted-foreground">Resume Worded</th>
               </tr>
             </thead>
             <tbody>
               {COMPARISON.map((row, i) => (
-                <tr
-                  key={row.feature}
-                  className={i % 2 === 0 ? "bg-background" : "bg-muted/20"}
-                >
+                <tr key={row.feature} className={i % 2 === 0 ? "bg-background" : "bg-muted/20"}>
                   <td className="p-3 font-medium">{row.feature}</td>
                   <td className="p-3 text-muted-foreground">{row.wadecv}</td>
                   <td className="p-3 text-muted-foreground">{row.jobscan}</td>
-                  <td className="p-3 text-muted-foreground">
-                    {row.resumeWorded}
-                  </td>
+                  <td className="p-3 text-muted-foreground">{row.resumeWorded}</td>
                 </tr>
               ))}
             </tbody>
@@ -521,12 +489,10 @@ export default function AtsResumeCheckerPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          8 ATS issues WadeCV catches most often
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">8 ATS issues WadeCV catches most often</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Across the resumes we check, these are the structural and content
-          problems that most commonly cause ATS rejection or low ranking.
+          Across the resumes we check, these are the structural and content problems that most
+          commonly cause ATS rejection or low ranking.
         </p>
         <div className="space-y-3">
           {COMMON_ATS_ISSUES.map((issue) => (
@@ -534,59 +500,46 @@ export default function AtsResumeCheckerPage() {
               <CardHeader className="pb-2">
                 <CardTitle className="text-base">{issue.title}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {issue.detail}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{issue.detail}</CardContent>
             </Card>
           ))}
         </div>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-3">
-          ATS scoring in 2026: what&apos;s changed
-        </h2>
+        <h2 className="text-xl font-semibold mb-3">ATS scoring in 2026: what&apos;s changed</h2>
         <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-3">
           <p>
-            ATS scoring in 2026 is no longer just about keyword frequency.
-            Workday, Greenhouse, and Ashby have all shifted toward semantic
-            keyword matching — where synonyms (&quot;led&quot; ≈
-            &quot;managed&quot; ≈ &quot;directed&quot;) score partial matches
-            rather than zero. That means stuffing your resume with the exact
-            words from the job description is less effective than it was in
-            2022, but keyword coverage still matters for the many older ATS
-            systems still in use (Taleo, iCIMS, SuccessFactors on older
+            ATS scoring in 2026 is no longer just about keyword frequency. Workday, Greenhouse, and
+            Ashby have all shifted toward semantic keyword matching — where synonyms
+            (&quot;led&quot; ≈ &quot;managed&quot; ≈ &quot;directed&quot;) score partial matches
+            rather than zero. That means stuffing your resume with the exact words from the job
+            description is less effective than it was in 2022, but keyword coverage still matters
+            for the many older ATS systems still in use (Taleo, iCIMS, SuccessFactors on older
             contracts).
           </p>
           <p>
-            The second shift is toward structured-data parsing. Workday,
-            SuccessFactors, and Ashby all extract work history into named
-            fields (employer, job title, start date, end date,
-            responsibilities) before scoring. If your resume uses a format
-            where these fields are ambiguous — dates inside bullet points,
-            employer name merged with job title, multi-column layouts —
-            structured parsing fails and your resume is scored on raw text
-            alone. That usually means a lower score than your experience
-            warrants.
+            The second shift is toward structured-data parsing. Workday, SuccessFactors, and Ashby
+            all extract work history into named fields (employer, job title, start date, end date,
+            responsibilities) before scoring. If your resume uses a format where these fields are
+            ambiguous — dates inside bullet points, employer name merged with job title,
+            multi-column layouts — structured parsing fails and your resume is scored on raw text
+            alone. That usually means a lower score than your experience warrants.
           </p>
           <p>
-            The third shift is must-have gating. More employers now configure
-            their ATS with hard knockout questions (&quot;Do you have 5+
-            years of X?&quot;, &quot;Are you authorised to work in the
-            UK?&quot;, &quot;Do you hold an active security clearance?&quot;).
-            A resume with a 90% keyword match but a missed knockout gets
-            auto-rejected. WadeCV&apos;s checker surfaces every knockout-
-            style must-have specifically, so you can address them before
+            The third shift is must-have gating. More employers now configure their ATS with hard
+            knockout questions (&quot;Do you have 5+ years of X?&quot;, &quot;Are you authorised to
+            work in the UK?&quot;, &quot;Do you hold an active security clearance?&quot;). A resume
+            with a 90% keyword match but a missed knockout gets auto-rejected. WadeCV&apos;s checker
+            surfaces every knockout- style must-have specifically, so you can address them before
             submitting.
           </p>
           <p>
-            The fourth shift is AI-generated resume detection. Some ATS
-            systems and recruiter tools now flag resumes that read as
-            AI-generated (uniform sentence rhythm, vague achievement language,
-            generic action verbs). A checker that only scores keyword match
-            misses this. WadeCV&apos;s tailoring process rewrites your resume
-            with specific, job-relevant language grounded in your actual
-            experience — see our guide on{" "}
+            The fourth shift is AI-generated resume detection. Some ATS systems and recruiter tools
+            now flag resumes that read as AI-generated (uniform sentence rhythm, vague achievement
+            language, generic action verbs). A checker that only scores keyword match misses this.
+            WadeCV&apos;s tailoring process rewrites your resume with specific, job-relevant
+            language grounded in your actual experience — see our guide on{" "}
             <Link href="/humanize-ai-resume" className="underline">
               how to humanize your AI resume
             </Link>{" "}
@@ -596,18 +549,14 @@ export default function AtsResumeCheckerPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          Frequently asked questions
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Frequently asked questions</h2>
         <div className="space-y-4">
           {FAQ.map((f) => (
             <Card key={f.question}>
               <CardHeader className="pb-2">
                 <CardTitle className="text-base">{f.question}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {f.answer}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{f.answer}</CardContent>
             </Card>
           ))}
         </div>
@@ -634,21 +583,15 @@ export default function AtsResumeCheckerPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle>
-            Score your resume against any job — free in 30 seconds
-          </CardTitle>
+          <CardTitle>Score your resume against any job — free in 30 seconds</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Upload your resume, paste a job URL, and get an instant ATS score
-            with keyword gaps, parsing warnings, and a tailored rewrite. 1
-            free credit on signup — no credit card required.
+            Upload your resume, paste a job URL, and get an instant ATS score with keyword gaps,
+            parsing warnings, and a tailored rewrite. 1 free credit on signup — no credit card
+            required.
           </p>
         </CardHeader>
         <CardContent>
-          <SeoCta
-            variant="ats"
-            label="Check your resume free"
-            slug="ats-resume-checker"
-          />
+          <SeoCta variant="ats" label="Check your resume free" slug="ats-resume-checker" />
         </CardContent>
       </Card>
     </article>

@@ -1,0 +1,8 @@
+# Default owner for everything in this repo
+* @abhartia
+
+# Critical paths — always require an explicit review
+/backend/alembic/          @abhartia
+/.github/workflows/        @abhartia
+/backend/app/config.py     @abhartia
+/backend/app/utils/auth.py @abhartia

@@ -2,7 +2,6 @@
 
 import re
 
-
 # Characters that are invalid or problematic in filenames on common OSes
 _FILENAME_UNSAFE_RE = re.compile(r'[\s\\/:*?"<>|]+')
 

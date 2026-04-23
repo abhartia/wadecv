@@ -54,7 +54,7 @@ export function CVEditor({ data, onChange }: CVEditorProps) {
   const cv = data as unknown as CVData;
   const syncKey = useMemo(
     () => JSON.stringify({ s: cv.skills, i: cv.interests }),
-    [cv.skills, cv.interests]
+    [cv.skills, cv.interests],
   );
   return <CVEditorInner key={syncKey} data={data} onChange={onChange} />;
 }
@@ -62,7 +62,9 @@ export function CVEditor({ data, onChange }: CVEditorProps) {
 function CVEditorInner({ data, onChange }: CVEditorProps) {
   const cv = data as unknown as CVData;
 
-  const [skillsInput, setSkillsInput] = useState<Record<"technical" | "soft" | "languages" | "certifications", string>>({
+  const [skillsInput, setSkillsInput] = useState<
+    Record<"technical" | "soft" | "languages" | "certifications", string>
+  >({
     technical: (cv.skills?.technical || []).join(", "),
     soft: (cv.skills?.soft || []).join(", "),
     languages: (cv.skills?.languages || []).join(", "),
@@ -124,7 +126,10 @@ function CVEditorInner({ data, onChange }: CVEditorProps) {
   };
 
   const addEducation = () => {
-    const edu = [...(cv.education || []), { degree: "", institution: "", location: "", start_date: "", end_date: "", details: "" }];
+    const edu = [
+      ...(cv.education || []),
+      { degree: "", institution: "", location: "", start_date: "", end_date: "", details: "" },
+    ];
     update(["education"], edu);
   };
 
@@ -147,27 +152,45 @@ function CVEditorInner({ data, onChange }: CVEditorProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label>Full Name</Label>
-              <Input value={cv.personal_info?.full_name || ""} onChange={(e) => update(["personal_info", "full_name"], e.target.value)} />
+              <Input
+                value={cv.personal_info?.full_name || ""}
+                onChange={(e) => update(["personal_info", "full_name"], e.target.value)}
+              />
             </div>
             <div className="space-y-2">
               <Label>Email</Label>
-              <Input value={cv.personal_info?.email || ""} onChange={(e) => update(["personal_info", "email"], e.target.value)} />
+              <Input
+                value={cv.personal_info?.email || ""}
+                onChange={(e) => update(["personal_info", "email"], e.target.value)}
+              />
             </div>
             <div className="space-y-2">
               <Label>Phone</Label>
-              <Input value={cv.personal_info?.phone || ""} onChange={(e) => update(["personal_info", "phone"], e.target.value)} />
+              <Input
+                value={cv.personal_info?.phone || ""}
+                onChange={(e) => update(["personal_info", "phone"], e.target.value)}
+              />
             </div>
             <div className="space-y-2">
               <Label>Location</Label>
-              <Input value={cv.personal_info?.location || ""} onChange={(e) => update(["personal_info", "location"], e.target.value)} />
+              <Input
+                value={cv.personal_info?.location || ""}
+                onChange={(e) => update(["personal_info", "location"], e.target.value)}
+              />
             </div>
             <div className="space-y-2">
               <Label>LinkedIn</Label>
-              <Input value={cv.personal_info?.linkedin || ""} onChange={(e) => update(["personal_info", "linkedin"], e.target.value)} />
+              <Input
+                value={cv.personal_info?.linkedin || ""}
+                onChange={(e) => update(["personal_info", "linkedin"], e.target.value)}
+              />
             </div>
             <div className="space-y-2">
               <Label>Website</Label>
-              <Input value={cv.personal_info?.website || ""} onChange={(e) => update(["personal_info", "website"], e.target.value)} />
+              <Input
+                value={cv.personal_info?.website || ""}
+                onChange={(e) => update(["personal_info", "website"], e.target.value)}
+              />
             </div>
           </div>
         </CardContent>
@@ -195,11 +218,13 @@ function CVEditorInner({ data, onChange }: CVEditorProps) {
               <Briefcase className="h-5 w-5" /> Experience
             </CardTitle>
             <Button variant="outline" size="sm" onClick={addExperience}>
-              <Plus className="mr-1 h-4 w-4" />Add
+              <Plus className="mr-1 h-4 w-4" />
+              Add
             </Button>
           </div>
           <p className="mt-2 text-xs text-muted-foreground">
-            Include your full relevant work history with clear start and end dates for each role so recruiters and ATS can see your total years of experience.
+            Include your full relevant work history with clear start and end dates for each role so
+            recruiters and ATS can see your total years of experience.
           </p>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -217,92 +242,126 @@ function CVEditorInner({ data, onChange }: CVEditorProps) {
                 if (!Number.isFinite(year)) return null;
                 return year * 12 + (Number.isFinite(month) ? month : 1);
               };
-              const score = (item: { exp: NonNullable<CVData["experience"]>[number]; index: number }) => {
+              const score = (item: {
+                exp: NonNullable<CVData["experience"]>[number];
+                index: number;
+              }) => {
                 const endScore =
                   item.exp.end_date && item.exp.end_date.toLowerCase().includes("present")
                     ? Number.POSITIVE_INFINITY
-                    : parseYearMonth(item.exp.end_date) ?? parseYearMonth(item.exp.start_date);
+                    : (parseYearMonth(item.exp.end_date) ?? parseYearMonth(item.exp.start_date));
                 // Fallback to index order if no dates
                 return endScore ?? item.index;
               };
               return score(b) - score(a);
             })
             .map(({ exp, index: i }) => (
-            <div key={i} className="space-y-4">
-              {i > 0 && <Separator />}
-              <div className="flex justify-between items-start">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
-                  <div className="space-y-2">
-                    <Label>Job Title</Label>
-                    <Input value={exp.job_title || ""} onChange={(e) => update(["experience", String(i), "job_title"], e.target.value)} />
-                  </div>
-                  <div className="space-y-2">
-                    <Label>Company</Label>
-                    <Input value={exp.company || ""} onChange={(e) => update(["experience", String(i), "company"], e.target.value)} />
-                  </div>
-                  <div className="space-y-2">
-                    <Label>Location</Label>
-                    <Input value={exp.location || ""} onChange={(e) => update(["experience", String(i), "location"], e.target.value)} />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="flex gap-2">
-                      <div className="space-y-2 flex-1">
-                        <Label>
-                          Start Date <span className="text-destructive">*</span>
-                        </Label>
-                        <Input
-                          placeholder="YYYY-MM (required)"
-                          value={exp.start_date || ""}
-                          onChange={(e) => update(["experience", String(i), "start_date"], e.target.value)}
-                          required
-                        />
-                      </div>
-                      <div className="space-y-2 flex-1">
-                        <Label>End Date</Label>
-                        <Input
-                          placeholder="YYYY-MM or Present"
-                          value={exp.end_date || ""}
-                          onChange={(e) => update(["experience", String(i), "end_date"], e.target.value)}
-                        />
-                      </div>
+              <div key={i} className="space-y-4">
+                {i > 0 && <Separator />}
+                <div className="flex justify-between items-start">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
+                    <div className="space-y-2">
+                      <Label>Job Title</Label>
+                      <Input
+                        value={exp.job_title || ""}
+                        onChange={(e) =>
+                          update(["experience", String(i), "job_title"], e.target.value)
+                        }
+                      />
                     </div>
-                    <p className="text-xs text-muted-foreground">
-                      Use a consistent format (e.g. 2019-06) and the word Present for your current role so your total experience is clear.
-                    </p>
+                    <div className="space-y-2">
+                      <Label>Company</Label>
+                      <Input
+                        value={exp.company || ""}
+                        onChange={(e) =>
+                          update(["experience", String(i), "company"], e.target.value)
+                        }
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label>Location</Label>
+                      <Input
+                        value={exp.location || ""}
+                        onChange={(e) =>
+                          update(["experience", String(i), "location"], e.target.value)
+                        }
+                      />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <div className="flex gap-2">
+                        <div className="space-y-2 flex-1">
+                          <Label>
+                            Start Date <span className="text-destructive">*</span>
+                          </Label>
+                          <Input
+                            placeholder="YYYY-MM (required)"
+                            value={exp.start_date || ""}
+                            onChange={(e) =>
+                              update(["experience", String(i), "start_date"], e.target.value)
+                            }
+                            required
+                          />
+                        </div>
+                        <div className="space-y-2 flex-1">
+                          <Label>End Date</Label>
+                          <Input
+                            placeholder="YYYY-MM or Present"
+                            value={exp.end_date || ""}
+                            onChange={(e) =>
+                              update(["experience", String(i), "end_date"], e.target.value)
+                            }
+                          />
+                        </div>
+                      </div>
+                      <p className="text-xs text-muted-foreground">
+                        Use a consistent format (e.g. 2019-06) and the word Present for your current
+                        role so your total experience is clear.
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <Button variant="ghost" size="icon" className="ml-2 text-destructive" onClick={() => removeExperience(i)}>
-                  <Trash2 className="h-4 w-4" />
-                </Button>
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <Label>Bullet Points</Label>
-                  <Button variant="ghost" size="sm" onClick={() => addBullet(i)}>
-                    <Plus className="mr-1 h-3 w-3" />Add bullet
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="ml-2 text-destructive"
+                    onClick={() => removeExperience(i)}
+                  >
+                    <Trash2 className="h-4 w-4" />
                   </Button>
                 </div>
-                {(exp.bullets || []).map((bullet, bi) => (
-                  <div key={bi} className="flex gap-2">
-                    <Textarea
-                      rows={2}
-                      value={bullet}
-                      onChange={(e) => {
-                        const newExp = JSON.parse(JSON.stringify(cv.experience));
-                        newExp[i].bullets[bi] = e.target.value;
-                        update(["experience"], newExp);
-                      }}
-                      className="flex-1"
-                    />
-                    <Button variant="ghost" size="icon" className="text-destructive shrink-0" onClick={() => removeBullet(i, bi)}>
-                      <Trash2 className="h-4 w-4" />
+
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <Label>Bullet Points</Label>
+                    <Button variant="ghost" size="sm" onClick={() => addBullet(i)}>
+                      <Plus className="mr-1 h-3 w-3" />
+                      Add bullet
                     </Button>
                   </div>
-                ))}
+                  {(exp.bullets || []).map((bullet, bi) => (
+                    <div key={bi} className="flex gap-2">
+                      <Textarea
+                        rows={2}
+                        value={bullet}
+                        onChange={(e) => {
+                          const newExp = JSON.parse(JSON.stringify(cv.experience));
+                          newExp[i].bullets[bi] = e.target.value;
+                          update(["experience"], newExp);
+                        }}
+                        className="flex-1"
+                      />
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="text-destructive shrink-0"
+                        onClick={() => removeBullet(i, bi)}
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </CardContent>
       </Card>
 
@@ -314,7 +373,8 @@ function CVEditorInner({ data, onChange }: CVEditorProps) {
               <GraduationCap className="h-5 w-5" /> Education
             </CardTitle>
             <Button variant="outline" size="sm" onClick={addEducation}>
-              <Plus className="mr-1 h-4 w-4" />Add
+              <Plus className="mr-1 h-4 w-4" />
+              Add
             </Button>
           </div>
         </CardHeader>
@@ -326,28 +386,54 @@ function CVEditorInner({ data, onChange }: CVEditorProps) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
                   <div className="space-y-2">
                     <Label>Degree</Label>
-                    <Input value={edu.degree || ""} onChange={(e) => update(["education", String(i), "degree"], e.target.value)} />
+                    <Input
+                      value={edu.degree || ""}
+                      onChange={(e) => update(["education", String(i), "degree"], e.target.value)}
+                    />
                   </div>
                   <div className="space-y-2">
                     <Label>Institution</Label>
-                    <Input value={edu.institution || ""} onChange={(e) => update(["education", String(i), "institution"], e.target.value)} />
+                    <Input
+                      value={edu.institution || ""}
+                      onChange={(e) =>
+                        update(["education", String(i), "institution"], e.target.value)
+                      }
+                    />
                   </div>
                   <div className="flex gap-2">
                     <div className="space-y-2 flex-1">
                       <Label>Start Date</Label>
-                      <Input value={edu.start_date || ""} onChange={(e) => update(["education", String(i), "start_date"], e.target.value)} />
+                      <Input
+                        value={edu.start_date || ""}
+                        onChange={(e) =>
+                          update(["education", String(i), "start_date"], e.target.value)
+                        }
+                      />
                     </div>
                     <div className="space-y-2 flex-1">
                       <Label>End Date</Label>
-                      <Input value={edu.end_date || ""} onChange={(e) => update(["education", String(i), "end_date"], e.target.value)} />
+                      <Input
+                        value={edu.end_date || ""}
+                        onChange={(e) =>
+                          update(["education", String(i), "end_date"], e.target.value)
+                        }
+                      />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <Label>Details</Label>
-                    <Input value={edu.details || ""} onChange={(e) => update(["education", String(i), "details"], e.target.value)} />
+                    <Input
+                      value={edu.details || ""}
+                      onChange={(e) => update(["education", String(i), "details"], e.target.value)}
+                    />
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" className="ml-2 text-destructive" onClick={() => removeEducation(i)}>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="ml-2 text-destructive"
+                  onClick={() => removeEducation(i)}
+                >
                   <Trash2 className="h-4 w-4" />
                 </Button>
               </div>
@@ -374,7 +460,10 @@ function CVEditorInner({ data, onChange }: CVEditorProps) {
                 onChange={(e) => {
                   const value = e.target.value;
                   setSkillsInput((prev) => ({ ...prev, [category]: value }));
-                  const items = e.target.value.split(",").map((s) => s.trim()).filter(Boolean);
+                  const items = e.target.value
+                    .split(",")
+                    .map((s) => s.trim())
+                    .filter(Boolean);
                   update(["skills", category], items);
                 }}
               />
@@ -398,7 +487,10 @@ function CVEditorInner({ data, onChange }: CVEditorProps) {
             onChange={(e) => {
               const value = e.target.value;
               setInterestsInput(value);
-              const items = value.split(",").map((s) => s.trim()).filter(Boolean);
+              const items = value
+                .split(",")
+                .map((s) => s.trim())
+                .filter(Boolean);
               update(["interests"], items.length ? items : []);
             }}
           />

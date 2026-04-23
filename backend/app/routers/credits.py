@@ -3,22 +3,25 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
-from app.models.user import User
 from app.models.credit import CreditTransaction
-from app.schemas.credit import CreditPack, CheckoutRequest, CheckoutResponse, CreditBalanceResponse, CreditTransactionResponse
-from app.utils.auth import get_current_user
+from app.models.user import User
+from app.schemas.credit import (
+    CheckoutRequest,
+    CheckoutResponse,
+    CreditBalanceResponse,
+    CreditPack,
+    CreditTransactionResponse,
+)
 from app.services.credits import CREDIT_PACKS
 from app.services.stripe_service import PaymentError, create_checkout_session
+from app.utils.auth import get_current_user
 
 router = APIRouter()
 
 
 @router.get("/packs", response_model=list[CreditPack])
 async def get_packs():
-    return [
-        CreditPack(id=pack_id, **pack)
-        for pack_id, pack in CREDIT_PACKS.items()
-    ]
+    return [CreditPack(id=pack_id, **pack) for pack_id, pack in CREDIT_PACKS.items()]
 
 
 @router.get("/balance", response_model=CreditBalanceResponse)
@@ -38,8 +41,11 @@ async def get_balance(
         credits=user.credits,
         transactions=[
             CreditTransactionResponse(
-                id=str(t.id), amount=t.amount, type=t.type,
-                description=t.description, created_at=t.created_at.isoformat(),
+                id=str(t.id),
+                amount=t.amount,
+                type=t.type,
+                description=t.description,
+                created_at=t.created_at.isoformat(),
             )
             for t in transactions
         ],

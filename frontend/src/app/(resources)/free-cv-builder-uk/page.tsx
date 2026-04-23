@@ -7,13 +7,10 @@ import { InlineCta } from "@/components/seo/inline-cta";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ||
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://wadecv.com");
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com");
 
 export const metadata = {
-  title:
-    "Free AI CV Builder for UK Job Seekers — Tailored to Every Role | WadeCV",
+  title: "Free AI CV Builder for UK Job Seekers — Tailored to Every Role | WadeCV",
   description:
     "Build a tailored, ATS-optimised CV for every UK job application in seconds. Upload your existing CV, paste a job URL, and WadeCV rewrites it to match what UK employers want — free to start.",
   openGraph: {
@@ -24,8 +21,7 @@ export const metadata = {
   twitter: {
     card: "summary" as const,
     title: "Free AI CV Builder for UK Job Seekers",
-    description:
-      "Build a tailored CV for every UK job application in seconds. Free to start.",
+    description: "Build a tailored CV for every UK job application in seconds. Free to start.",
   },
 };
 
@@ -122,28 +118,13 @@ const UK_ATS_EMPLOYERS: {
 }[] = [
   {
     ats: "Workday",
-    employers: [
-      "KPMG",
-      "PwC",
-      "Deloitte",
-      "EY",
-      "Rolls-Royce",
-      "Centrica",
-      "Standard Chartered",
-    ],
+    employers: ["KPMG", "PwC", "Deloitte", "EY", "Rolls-Royce", "Centrica", "Standard Chartered"],
     notes:
       "Workday parses CVs into structured fields. Headers like 'Professional Experience', 'Education', and 'Skills' map cleanly. Avoid tables, columns, and graphics.",
   },
   {
     ats: "SAP SuccessFactors",
-    employers: [
-      "Unilever",
-      "BP",
-      "Shell",
-      "BT Group",
-      "Lloyds Banking Group",
-      "Barclays",
-    ],
+    employers: ["Unilever", "BP", "Shell", "BT Group", "Lloyds Banking Group", "Barclays"],
     notes:
       "SAP SuccessFactors weights keyword density. Mirror the job description language precisely — SuccessFactors scores keyword frequency, not just presence.",
   },
@@ -162,15 +143,7 @@ const UK_ATS_EMPLOYERS: {
   },
   {
     ats: "Greenhouse",
-    employers: [
-      "Monzo",
-      "Deliveroo",
-      "Revolut",
-      "GoCardless",
-      "Wise",
-      "Depop",
-      "Bulb",
-    ],
+    employers: ["Monzo", "Deliveroo", "Revolut", "GoCardless", "Wise", "Depop", "Bulb"],
     notes:
       "UK tech and fintech scale-ups use Greenhouse. It is less aggressive on keyword matching than enterprise ATS — but reviewers use internal scorecards, so specific skill names still matter.",
   },
@@ -234,8 +207,7 @@ export default function FreeCvBuilderUkPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline:
-              "Free AI CV Builder for UK Job Seekers — Tailored to Every Role",
+            headline: "Free AI CV Builder for UK Job Seekers — Tailored to Every Role",
             description: metadata.description,
             author: { "@type": "Organization", name: "WadeCV" },
             publisher: {
@@ -272,29 +244,24 @@ export default function FreeCvBuilderUkPage() {
       </h1>
 
       <p className="text-muted-foreground mb-4">
-        Most CV builders give you a template. UK employers don&apos;t want
-        templates — they want a CV that speaks directly to their job
-        description, uses the right terminology for their sector, and passes
-        the ATS that sits between your application and a human reviewer.
-        WadeCV tailors your existing CV to every UK role you apply for, free
-        to start.
+        Most CV builders give you a template. UK employers don&apos;t want templates — they want a
+        CV that speaks directly to their job description, uses the right terminology for their
+        sector, and passes the ATS that sits between your application and a human reviewer. WadeCV
+        tailors your existing CV to every UK role you apply for, free to start.
       </p>
       <p className="text-muted-foreground mb-6">
-        Upload your CV once. Paste a job URL from Indeed, Reed, Totaljobs, or
-        LinkedIn. WadeCV analyses the job description, identifies the skill and
-        keyword gaps, and rewrites your CV with role-specific language,
-        UK-standard formatting, and ATS-optimised structure — in under a
-        minute.
+        Upload your CV once. Paste a job URL from Indeed, Reed, Totaljobs, or LinkedIn. WadeCV
+        analyses the job description, identifies the skill and keyword gaps, and rewrites your CV
+        with role-specific language, UK-standard formatting, and ATS-optimised structure — in under
+        a minute.
       </p>
 
       <div className="mb-8 rounded-md border border-muted bg-muted/30 p-4 text-xs text-muted-foreground">
-        <strong className="text-foreground">Data residency notice:</strong>{" "}
-        WadeCV is operated from the United States. CV content and account
-        data are stored on Microsoft Azure in the United States (Azure East
-        US region). For UK users, this transfer is lawful under UK GDPR
-        Article 49(1)(b) — necessary for the performance of your contract
-        with WadeCV. You can delete your account and all data at any time.
-        See the{" "}
+        <strong className="text-foreground">Data residency notice:</strong> WadeCV is operated from
+        the United States. CV content and account data are stored on Microsoft Azure in the United
+        States (Azure East US region). For UK users, this transfer is lawful under UK GDPR Article
+        49(1)(b) — necessary for the performance of your contract with WadeCV. You can delete your
+        account and all data at any time. See the{" "}
         <Link href="/legal/privacy" className="underline">
           Privacy Policy
         </Link>{" "}
@@ -302,13 +269,10 @@ export default function FreeCvBuilderUkPage() {
       </div>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          UK CV vs US resume: 5 key differences
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">UK CV vs US resume: 5 key differences</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          If you are applying for UK jobs for the first time — or converting
-          from US or international applications — these differences matter.
-          WadeCV handles them automatically.
+          If you are applying for UK jobs for the first time — or converting from US or
+          international applications — these differences matter. WadeCV handles them automatically.
         </p>
         <div className="space-y-3">
           {UK_US_DIFFERENCES.map((d, i) => (
@@ -318,25 +282,18 @@ export default function FreeCvBuilderUkPage() {
                   <Badge className="text-xs">UK</Badge>
                   {d.uk}
                   <span className="text-muted-foreground font-normal text-sm">
-                    vs{" "}
-                    <span className="line-through opacity-60">
-                      {d.international}
-                    </span>
+                    vs <span className="line-through opacity-60">{d.international}</span>
                   </span>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {d.why}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{d.why}</CardContent>
             </Card>
           ))}
         </div>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          How WadeCV builds your UK CV
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">How WadeCV builds your UK CV</h2>
         <div className="grid sm:grid-cols-3 gap-4">
           {HOW_IT_WORKS.map((step) => (
             <Card key={step.step}>
@@ -348,27 +305,21 @@ export default function FreeCvBuilderUkPage() {
                   {step.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {step.detail}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{step.detail}</CardContent>
             </Card>
           ))}
         </div>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          What makes WadeCV right for UK applications
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">What makes WadeCV right for UK applications</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {UK_FEATURES.map((f) => (
             <Card key={f.title}>
               <CardHeader className="pb-2">
                 <CardTitle className="text-base">{f.title}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {f.description}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{f.description}</CardContent>
             </Card>
           ))}
         </div>
@@ -377,13 +328,11 @@ export default function FreeCvBuilderUkPage() {
       <InlineCta variant="uk" slug="free-cv-builder-uk" />
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-3">
-          Which ATS do major UK employers use?
-        </h2>
+        <h2 className="text-xl font-semibold mb-3">Which ATS do major UK employers use?</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Your CV is almost certainly read by an Applicant Tracking System
-          before a human sees it. Here are the ATS platforms behind the UK
-          employers most people apply to — and how to optimise for each.
+          Your CV is almost certainly read by an Applicant Tracking System before a human sees it.
+          Here are the ATS platforms behind the UK employers most people apply to — and how to
+          optimise for each.
         </p>
         <div className="space-y-4">
           {UK_ATS_EMPLOYERS.map((a) => (
@@ -396,15 +345,12 @@ export default function FreeCvBuilderUkPage() {
                   </span>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {a.notes}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{a.notes}</CardContent>
             </Card>
           ))}
         </div>
         <p className="text-sm text-muted-foreground mt-4">
-          WadeCV tailors your CV for the specific ATS behind each role.
-          See the full{" "}
+          WadeCV tailors your CV for the specific ATS behind each role. See the full{" "}
           <Link href="/ats" className="underline">
             ATS optimisation guides
           </Link>{" "}
@@ -413,38 +359,30 @@ export default function FreeCvBuilderUkPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-3">
-          UK CV format: the essentials for 2026
-        </h2>
+        <h2 className="text-xl font-semibold mb-3">UK CV format: the essentials for 2026</h2>
         <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-3">
           <p>
-            A strong UK CV in 2026 follows a consistent structure: contact
-            details at the top (name, professional email, phone, LinkedIn URL,
-            and optionally your city — no full address), followed by a
-            professional summary of 3-5 sentences tailored to the role, then
-            professional experience in reverse chronological order, education,
-            and skills.
+            A strong UK CV in 2026 follows a consistent structure: contact details at the top (name,
+            professional email, phone, LinkedIn URL, and optionally your city — no full address),
+            followed by a professional summary of 3-5 sentences tailored to the role, then
+            professional experience in reverse chronological order, education, and skills.
           </p>
           <p>
-            Each position in your work history should include the employer
-            name, your job title, dates (Month Year – Month Year), and 3-6
-            bullet points showing accomplishments rather than duties. UK
-            recruiters respond strongly to quantified achievements: cost saved,
-            revenue generated, team size, percentage improvements. Bullets
-            starting with action verbs — Delivered, Built, Reduced, Led,
-            Negotiated — outperform passive descriptions.
+            Each position in your work history should include the employer name, your job title,
+            dates (Month Year – Month Year), and 3-6 bullet points showing accomplishments rather
+            than duties. UK recruiters respond strongly to quantified achievements: cost saved,
+            revenue generated, team size, percentage improvements. Bullets starting with action
+            verbs — Delivered, Built, Reduced, Led, Negotiated — outperform passive descriptions.
           </p>
           <p>
-            Education should list your institution, degree, grade (First,
-            2:1, 2:2, Pass), and graduation year. A-levels and GCSEs are
-            relevant for early-career candidates; for experienced professionals,
-            professional certifications (ACCA, CIMA, CIPD, PRINCE2, CIM, CFA)
-            often matter more than undergraduate grades.
+            Education should list your institution, degree, grade (First, 2:1, 2:2, Pass), and
+            graduation year. A-levels and GCSEs are relevant for early-career candidates; for
+            experienced professionals, professional certifications (ACCA, CIMA, CIPD, PRINCE2, CIM,
+            CFA) often matter more than undergraduate grades.
           </p>
           <p>
-            WadeCV handles the structure automatically — your tailored output
-            follows UK formatting standards including A4 margins, consistent
-            date formats, and section ordering. You can{" "}
+            WadeCV handles the structure automatically — your tailored output follows UK formatting
+            standards including A4 margins, consistent date formats, and section ordering. You can{" "}
             <Link href="/cv-vs-resume" className="underline">
               read the full CV vs resume guide
             </Link>{" "}
@@ -454,18 +392,14 @@ export default function FreeCvBuilderUkPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          Frequently asked questions
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Frequently asked questions</h2>
         <div className="space-y-4">
           {FAQ.map((f) => (
             <Card key={f.question}>
               <CardHeader className="pb-2">
                 <CardTitle className="text-base">{f.question}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {f.answer}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{f.answer}</CardContent>
             </Card>
           ))}
         </div>
@@ -486,21 +420,15 @@ export default function FreeCvBuilderUkPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle>
-            Build your UK CV — tailored to every job, free to start
-          </CardTitle>
+          <CardTitle>Build your UK CV — tailored to every job, free to start</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Upload your CV, paste a job URL from Indeed, Reed, Totaljobs or
-            LinkedIn, and WadeCV creates a tailored, ATS-ready UK CV in under
-            a minute. 1 free credit on signup — no credit card needed.
+            Upload your CV, paste a job URL from Indeed, Reed, Totaljobs or LinkedIn, and WadeCV
+            creates a tailored, ATS-ready UK CV in under a minute. 1 free credit on signup — no
+            credit card needed.
           </p>
         </CardHeader>
         <CardContent>
-          <SeoCta
-            variant="job"
-            label="Build your UK CV for free"
-            slug="free-cv-builder-uk"
-          />
+          <SeoCta variant="job" label="Build your UK CV for free" slug="free-cv-builder-uk" />
         </CardContent>
       </Card>
     </article>

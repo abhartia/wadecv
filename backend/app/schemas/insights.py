@@ -18,4 +18,3 @@ class GapInsightsResponse(BaseModel):
     total_applications: int
     next_refresh_at: int | None = None
     gap_insights: GapInsights | None = None
-

@@ -1,23 +1,32 @@
-import uuid
-from datetime import datetime, timedelta, timezone
+import contextlib
+from datetime import UTC, datetime, timedelta
 
-from fastapi import APIRouter, Depends, HTTPException, status, Response
+from fastapi import APIRouter, Depends, HTTPException, Response, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.database import get_db
-from app.models.user import User, MagicLink
-from app.models.credit import CreditTransaction
-from app.schemas.auth import (
-    RegisterRequest, LoginRequest, MagicLinkRequest,
-    MagicLinkVerify, TokenResponse, UserResponse,
-)
-from app.utils.auth import (
-    hash_password, verify_password, create_access_token,
-    create_refresh_token, create_magic_link_token, decode_token, get_current_user,
-)
 from app.config import get_settings
+from app.database import get_db
+from app.models.credit import CreditTransaction
+from app.models.user import MagicLink, User
+from app.schemas.auth import (
+    LoginRequest,
+    MagicLinkRequest,
+    MagicLinkVerify,
+    RegisterRequest,
+    TokenResponse,
+    UserResponse,
+)
 from app.services.email import send_magic_link, send_signup_notification, send_verification_email
+from app.utils.auth import (
+    create_access_token,
+    create_magic_link_token,
+    create_refresh_token,
+    decode_token,
+    get_current_user,
+    hash_password,
+    verify_password,
+)
 
 router = APIRouter()
 settings = get_settings()
@@ -46,19 +55,18 @@ async def register(req: RegisterRequest, db: AsyncSession = Depends(get_db)):
     if req.password:
         token = create_magic_link_token()
         ml = MagicLink(
-            user_id=user.id, token=token,
-            expires_at=datetime.now(timezone.utc) + timedelta(hours=24),
+            user_id=user.id,
+            token=token,
+            expires_at=datetime.now(UTC) + timedelta(hours=24),
         )
         db.add(ml)
-        try:
+        with contextlib.suppress(Exception):
             send_verification_email(req.email, token)
-        except Exception:
-            pass
 
-    try:
-        send_signup_notification(user.email, signup_method="password_register", user_id=str(user.id))
-    except Exception:
-        pass
+    with contextlib.suppress(Exception):
+        send_signup_notification(
+            user.email, signup_method="password_register", user_id=str(user.id)
+        )
 
     access = create_access_token(str(user.id))
     refresh = create_refresh_token(str(user.id))
@@ -67,7 +75,9 @@ async def register(req: RegisterRequest, db: AsyncSession = Depends(get_db)):
 
 @router.post("/login", response_model=TokenResponse)
 async def login(req: LoginRequest, db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(User).where(User.email == req.email, User.deleted_at.is_(None)))
+    result = await db.execute(
+        select(User).where(User.email == req.email, User.deleted_at.is_(None))
+    )
     user = result.scalar_one_or_none()
     if not user or not user.password_hash:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
@@ -81,7 +91,9 @@ async def login(req: LoginRequest, db: AsyncSession = Depends(get_db)):
 
 @router.post("/magic-link")
 async def request_magic_link(req: MagicLinkRequest, db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(User).where(User.email == req.email, User.deleted_at.is_(None)))
+    result = await db.execute(
+        select(User).where(User.email == req.email, User.deleted_at.is_(None))
+    )
     user = result.scalar_one_or_none()
 
     if not user:
@@ -92,23 +104,20 @@ async def request_magic_link(req: MagicLinkRequest, db: AsyncSession = Depends(g
             user_id=user.id, amount=1, type="signup_bonus", description="Free signup credit"
         )
         db.add(tx)
-        try:
+        with contextlib.suppress(Exception):
             send_signup_notification(user.email, signup_method="magic_link", user_id=str(user.id))
-        except Exception:
-            pass
 
     token = create_magic_link_token()
     ml = MagicLink(
-        user_id=user.id, token=token,
-        expires_at=datetime.now(timezone.utc) + timedelta(minutes=settings.magic_link_expire_minutes),
+        user_id=user.id,
+        token=token,
+        expires_at=datetime.now(UTC) + timedelta(minutes=settings.magic_link_expire_minutes),
     )
     db.add(ml)
     await db.flush()
 
-    try:
+    with contextlib.suppress(Exception):
         send_magic_link(req.email, token)
-    except Exception:
-        pass
 
     return {"message": "If an account exists, a magic link has been sent to your email."}
 
@@ -119,8 +128,10 @@ async def verify_magic_link(req: MagicLinkVerify, db: AsyncSession = Depends(get
         select(MagicLink).where(MagicLink.token == req.token, MagicLink.used.is_(False))
     )
     ml = result.scalar_one_or_none()
-    if not ml or ml.expires_at < datetime.now(timezone.utc):
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid or expired link")
+    if not ml or ml.expires_at < datetime.now(UTC):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid or expired link"
+        )
 
     ml.used = True
     result = await db.execute(select(User).where(User.id == ml.user_id))
@@ -138,8 +149,10 @@ async def verify_email(req: MagicLinkVerify, db: AsyncSession = Depends(get_db))
         select(MagicLink).where(MagicLink.token == req.token, MagicLink.used.is_(False))
     )
     ml = result.scalar_one_or_none()
-    if not ml or ml.expires_at < datetime.now(timezone.utc):
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid or expired link")
+    if not ml or ml.expires_at < datetime.now(UTC):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid or expired link"
+        )
 
     ml.used = True
     result = await db.execute(select(User).where(User.id == ml.user_id))
@@ -152,7 +165,9 @@ async def verify_email(req: MagicLinkVerify, db: AsyncSession = Depends(get_db))
 async def refresh_tokens(req_body: dict):
     refresh_token = req_body.get("refresh_token")
     if not refresh_token:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Refresh token required")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Refresh token required"
+        )
 
     payload = decode_token(refresh_token)
     if payload.get("type") != "refresh":

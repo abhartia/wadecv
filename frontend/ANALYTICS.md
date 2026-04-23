@@ -67,4 +67,3 @@ Global scripts are injected by:
   - Login success/failure
   - Tailor CV flow (upload/import, generate, edit, download)
   - Cover letter generation and downloads
-

@@ -1,7 +1,7 @@
 import asyncio
 import io
 import os
-from typing import Any, Dict, List
+from typing import Any
 
 import pytest
 from pypdf import PdfReader
@@ -10,11 +10,10 @@ from app.services.cv_generator import generate_cv
 from app.services.cv_layout_feedback import get_cv_layout_feedback
 from app.services.docx_builder import build_cv_pdf
 
-
 LIVE_AI_ENV_VAR = "RUN_LIVE_AI_TESTS"
 
 
-ONE_PAGE_CASES: List[Dict[str, str]] = [
+ONE_PAGE_CASES: list[dict[str, str]] = [
     {
         "id": "case_01_junior_backend_engineer",
         "original_content": """
@@ -723,7 +722,7 @@ skip_if_no_live_ai = pytest.mark.skipif(
 )
 
 
-async def _run_full_layout_flow(case: Dict[str, Any]) -> None:
+async def _run_full_layout_flow(case: dict[str, Any]) -> None:
     original_content = case["original_content"]
     job_description = case["job_description"]
     case_id = case["id"]
@@ -787,6 +786,5 @@ async def test_one_page_cv_overflow_full_layout_flow_parallel() -> None:
 @skip_if_no_live_ai
 @pytest.mark.asyncio
 @pytest.mark.parametrize("case", ONE_PAGE_CASES, ids=[c["id"] for c in ONE_PAGE_CASES])
-async def test_one_page_cv_overflow_full_layout_flow_parametrized(case: Dict[str, Any]) -> None:
+async def test_one_page_cv_overflow_full_layout_flow_parametrized(case: dict[str, Any]) -> None:
     await _run_full_layout_flow(case)
-

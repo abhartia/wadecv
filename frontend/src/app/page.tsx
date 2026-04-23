@@ -4,7 +4,20 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { FileText, Upload, Wand2, Download, CheckCircle, Sparkles, Shield, Zap, AlertTriangle, Send, Mail, Package } from "lucide-react";
+import {
+  FileText,
+  Upload,
+  Wand2,
+  Download,
+  CheckCircle,
+  Sparkles,
+  Shield,
+  Zap,
+  AlertTriangle,
+  Send,
+  Mail,
+  Package,
+} from "lucide-react";
 
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || "https://wadecv.com";
 
@@ -77,9 +90,9 @@ export default function LandingPage() {
               <span className="text-primary block mt-2">perfectly tailored CV</span>
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground mb-8">
-              Add a job, run a fit analysis to see how you match, then generate your tailored CV for free.
-              Add clarifications on any gaps and our AI reframes your real experience for the role.
-              You can even mail a printed copy directly to the company via USPS.
+              Add a job, run a fit analysis to see how you match, then generate your tailored CV for
+              free. Add clarifications on any gaps and our AI reframes your real experience for the
+              role. You can even mail a printed copy directly to the company via USPS.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/auth/register">
@@ -118,7 +131,9 @@ export default function LandingPage() {
                 <div className="text-4xl font-bold text-primary/20">01</div>
                 <h3 className="text-xl font-semibold">Upload Your CV (Once)</h3>
                 <p className="text-muted-foreground">
-                  Upload your existing CV (PDF or DOCX) and optionally add extra details about your experience. We save this as your base profile so you don&apos;t have to re-upload every time.
+                  Upload your existing CV (PDF or DOCX) and optionally add extra details about your
+                  experience. We save this as your base profile so you don&apos;t have to re-upload
+                  every time.
                 </p>
               </div>
 
@@ -129,7 +144,8 @@ export default function LandingPage() {
                 <div className="text-4xl font-bold text-primary/20">02</div>
                 <h3 className="text-xl font-semibold">Run Fit Analysis (1 credit)</h3>
                 <p className="text-muted-foreground">
-                  Paste a job URL or description and run fit analysis. You get a match score, strengths, and potential gaps.
+                  Paste a job URL or description and run fit analysis. You get a match score,
+                  strengths, and potential gaps.
                 </p>
               </div>
 
@@ -140,7 +156,9 @@ export default function LandingPage() {
                 <div className="text-4xl font-bold text-primary/20">03</div>
                 <h3 className="text-xl font-semibold">Generate, Edit & Download</h3>
                 <p className="text-muted-foreground">
-                  Add clarifications on any gaps (or skip if they&apos;re all correct), then generate your tailored CV for free. Edit in the dashboard and download a polished DOCX, and get a free cover letter for the same role.
+                  Add clarifications on any gaps (or skip if they&apos;re all correct), then
+                  generate your tailored CV for free. Edit in the dashboard and download a polished
+                  DOCX, and get a free cover letter for the same role.
                 </p>
               </div>
             </div>
@@ -157,7 +175,14 @@ export default function LandingPage() {
                 <CardContent className="flex flex-col items-center gap-4 pt-2">
                   <div className="relative h-32 w-32">
                     <svg className="h-32 w-32 -rotate-90" viewBox="0 0 128 128">
-                      <circle cx="64" cy="64" r="56" fill="none" strokeWidth="10" className="stroke-muted" />
+                      <circle
+                        cx="64"
+                        cy="64"
+                        r="56"
+                        fill="none"
+                        strokeWidth="10"
+                        className="stroke-muted"
+                      />
                       <circle
                         cx="64"
                         cy="64"
@@ -174,7 +199,8 @@ export default function LandingPage() {
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground text-center">
-                    Strong match for this role. WadeCV highlights where you&apos;re already a great fit and surfaces the experience that matters most.
+                    Strong match for this role. WadeCV highlights where you&apos;re already a great
+                    fit and surfaces the experience that matters most.
                   </p>
                 </CardContent>
               </Card>
@@ -186,30 +212,37 @@ export default function LandingPage() {
                     Potential Gaps (Mock)
                   </CardTitle>
                   <p className="text-xs text-muted-foreground">
-                    Add clarifications here, then generate your tailored CV for free—no extra credit.
+                    Add clarifications here, then generate your tailored CV for free—no extra
+                    credit.
                   </p>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
                     <div className="flex items-start gap-2 text-sm">
                       <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0" />
-                      Limited explicit experience in Ad Tech measurement platforms, attribution, incrementality, or in-flight optimization
+                      Limited explicit experience in Ad Tech measurement platforms, attribution,
+                      incrementality, or in-flight optimization
                     </div>
                     <div className="rounded-md border bg-muted/40 px-3 py-2 text-xs text-muted-foreground">
-                      “I led measurement strategy for a global Ad Tech partner, including incrementality testing and in-flight bid optimization across multiple campaigns.”
+                      “I led measurement strategy for a global Ad Tech partner, including
+                      incrementality testing and in-flight bid optimization across multiple
+                      campaigns.”
                     </div>
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-start gap-2 text-sm">
                       <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0" />
-                      No direct reference to launching external-facing measurement dashboards for agencies/advertisers
+                      No direct reference to launching external-facing measurement dashboards for
+                      agencies/advertisers
                     </div>
                     <div className="rounded-md border bg-muted/40 px-3 py-2 text-xs text-muted-foreground">
-                      “I owned the rollout of a self-serve analytics portal for 200+ enterprise advertisers, including UX, instrumentation, and GTM enablement.”
+                      “I owned the rollout of a self-serve analytics portal for 200+ enterprise
+                      advertisers, including UX, instrumentation, and GTM enablement.”
                     </div>
                   </div>
                   <p className="text-xs text-muted-foreground">
-                    Your corrections feed back into your personal memory bank so every future CV generation gets smarter.
+                    Your corrections feed back into your personal memory bank so every future CV
+                    generation gets smarter.
                   </p>
                 </CardContent>
               </Card>
@@ -223,20 +256,48 @@ export default function LandingPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold sm:text-4xl mb-4">Why WadeCV?</h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                A tailored CV that actually sounds like you and is rooted in your real experience, not made‑up bullet points.
+                A tailored CV that actually sounds like you and is rooted in your real experience,
+                not made‑up bullet points.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {[
-                { icon: Sparkles, title: "AI-Powered", desc: "Uses advanced AI to tailor your CV for each specific job application." },
-                { icon: Zap, title: "Lightning Fast", desc: "Get a professionally tailored CV in seconds, not hours of manual editing." },
-                { icon: FileText, title: "ATS-Friendly", desc: "Clean formatting that passes Applicant Tracking Systems every time." },
-                { icon: Shield, title: "Cover Letters", desc: "Generate matching cover letters for free with every tailored CV." },
-                { icon: Send, title: "Physical Mail", desc: "Send a printed CV and cover letter directly to any US company via USPS First Class." },
-                { icon: CheckCircle, title: "Track Applications", desc: "Keep track of all your job applications in one organized dashboard." },
+                {
+                  icon: Sparkles,
+                  title: "AI-Powered",
+                  desc: "Uses advanced AI to tailor your CV for each specific job application.",
+                },
+                {
+                  icon: Zap,
+                  title: "Lightning Fast",
+                  desc: "Get a professionally tailored CV in seconds, not hours of manual editing.",
+                },
+                {
+                  icon: FileText,
+                  title: "ATS-Friendly",
+                  desc: "Clean formatting that passes Applicant Tracking Systems every time.",
+                },
+                {
+                  icon: Shield,
+                  title: "Cover Letters",
+                  desc: "Generate matching cover letters for free with every tailored CV.",
+                },
+                {
+                  icon: Send,
+                  title: "Physical Mail",
+                  desc: "Send a printed CV and cover letter directly to any US company via USPS First Class.",
+                },
+                {
+                  icon: CheckCircle,
+                  title: "Track Applications",
+                  desc: "Keep track of all your job applications in one organized dashboard.",
+                },
               ].map((f, i) => (
-                <Card key={i} className="border-0 shadow-sm bg-muted/30 hover:bg-muted/50 transition-colors">
+                <Card
+                  key={i}
+                  className="border-0 shadow-sm bg-muted/30 hover:bg-muted/50 transition-colors"
+                >
                   <CardContent className="pt-6">
                     <f.icon className="h-10 w-10 text-primary mb-4" />
                     <h3 className="font-semibold text-lg mb-2">{f.title}</h3>
@@ -260,13 +321,20 @@ export default function LandingPage() {
                   Go beyond the inbox — mail your application directly
                 </h2>
                 <p className="text-muted-foreground text-lg">
-                  Most applicants hit &ldquo;submit&rdquo; and hope for the best. Stand out by sending a professionally
-                  printed copy of your CV and cover letter straight to the hiring manager&apos;s desk.
+                  Most applicants hit &ldquo;submit&rdquo; and hope for the best. Stand out by
+                  sending a professionally printed copy of your CV and cover letter straight to the
+                  hiring manager&apos;s desk.
                 </p>
                 <ul className="space-y-3">
                   {[
-                    { icon: FileText, text: "Professionally formatted CV printed on high-quality paper" },
-                    { icon: Mail, text: "Matching cover letter included — personalized for the role" },
+                    {
+                      icon: FileText,
+                      text: "Professionally formatted CV printed on high-quality paper",
+                    },
+                    {
+                      icon: Mail,
+                      text: "Matching cover letter included — personalized for the role",
+                    },
                     { icon: Package, text: "Delivered via USPS First Class in 5–7 business days" },
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
@@ -276,8 +344,9 @@ export default function LandingPage() {
                   ))}
                 </ul>
                 <p className="text-sm text-muted-foreground">
-                  Physical mail gets noticed. In a world of overflowing inboxes, a tangible application
-                  signals genuine interest and effort that digital submissions alone can&apos;t convey.
+                  Physical mail gets noticed. In a world of overflowing inboxes, a tangible
+                  application signals genuine interest and effort that digital submissions alone
+                  can&apos;t convey.
                 </p>
                 <Link href="/auth/register">
                   <Button size="lg" className="mt-2">
@@ -296,7 +365,7 @@ export default function LandingPage() {
                   <ol className="space-y-4 text-sm">
                     {[
                       "Generate your tailored CV (and optional cover letter) as usual",
-                      "Click \"Send Physical Mail\" on the download step",
+                      'Click "Send Physical Mail" on the download step',
                       "Preview the PDF, enter the company address, and confirm",
                       "We print and mail it via USPS First Class for 5 credits",
                     ].map((step, i) => (
@@ -320,7 +389,8 @@ export default function LandingPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold sm:text-4xl mb-4">Simple, Transparent Pricing</h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                1 credit = 1 fit analysis per job. CV generation and refinements for that job are free. Cover letters always free.
+                1 credit = 1 fit analysis per job. CV generation and refinements for that job are
+                free. Cover letters always free.
               </p>
             </div>
 
@@ -330,9 +400,14 @@ export default function LandingPage() {
                 { name: "Value", credits: 50, price: "$15", per: "$0.30", popular: true },
                 { name: "Pro", credits: 100, price: "$20", per: "$0.20", popular: false },
               ].map((plan) => (
-                <Card key={plan.name} className={`relative ${plan.popular ? "border-primary shadow-lg md:scale-105" : ""}`}>
+                <Card
+                  key={plan.name}
+                  className={`relative ${plan.popular ? "border-primary shadow-lg md:scale-105" : ""}`}
+                >
                   {plan.popular && (
-                    <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">Most Popular</Badge>
+                    <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">
+                      Most Popular
+                    </Badge>
                   )}
                   <CardHeader className="text-center pb-2">
                     <CardTitle className="text-xl">{plan.name}</CardTitle>
@@ -345,13 +420,28 @@ export default function LandingPage() {
                   </CardHeader>
                   <CardContent className="space-y-3 pt-4">
                     <ul className="space-y-2 text-sm">
-                      <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" />{plan.credits} job fit analyses (CV + refinements free per job)</li>
-                      <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" />Free cover letters</li>
-                      <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" />DOCX downloads</li>
-                      <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" />Application tracking</li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-primary" />
+                        {plan.credits} job fit analyses (CV + refinements free per job)
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-primary" />
+                        Free cover letters
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-primary" />
+                        DOCX downloads
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-primary" />
+                        Application tracking
+                      </li>
                     </ul>
                     <Link href="/auth/register" className="block">
-                      <Button className="w-full mt-4" variant={plan.popular ? "default" : "outline"}>
+                      <Button
+                        className="w-full mt-4"
+                        variant={plan.popular ? "default" : "outline"}
+                      >
                         Get Started
                       </Button>
                     </Link>
@@ -367,8 +457,12 @@ export default function LandingPage() {
           <div className="container mx-auto px-4 text-center">
             <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
               <Shield className="inline h-4 w-4 mr-1" />
-              WadeCV uses AI to generate CVs and cover letters. All AI-generated content should
-              be reviewed for accuracy before use. <Link href="/legal/ai-disclosure" className="underline hover:text-foreground">Learn more</Link>.
+              WadeCV uses AI to generate CVs and cover letters. All AI-generated content should be
+              reviewed for accuracy before use.{" "}
+              <Link href="/legal/ai-disclosure" className="underline hover:text-foreground">
+                Learn more
+              </Link>
+              .
             </p>
           </div>
         </section>

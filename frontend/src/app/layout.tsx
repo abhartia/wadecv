@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_APP_URL
       ? process.env.NEXT_PUBLIC_APP_URL.replace(/\/$/, "")
-      : "https://wadecv.com"
+      : "https://wadecv.com",
   ),
   title: "WadeCV - AI-Powered CV Tailoring",
   description:
@@ -33,12 +33,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "WadeCV - AI-Powered CV Tailoring",
-    description: "Create perfectly tailored CVs for every job application using AI. Generate, edit, download, and mail printed copies directly to companies via USPS.",
+    description:
+      "Create perfectly tailored CVs for every job application using AI. Generate, edit, download, and mail printed copies directly to companies via USPS.",
   },
   twitter: {
     card: "summary",
     title: "WadeCV - AI-Powered CV Tailoring",
-    description: "Create perfectly tailored CVs using AI. Mail printed copies directly to companies via USPS.",
+    description:
+      "Create perfectly tailored CVs using AI. Mail printed copies directly to companies via USPS.",
   },
 };
 

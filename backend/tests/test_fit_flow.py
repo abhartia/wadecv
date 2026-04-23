@@ -3,10 +3,10 @@ import uuid
 import pytest
 from httpx import AsyncClient
 
-from app.main import app
-from app.models.user import User
-from app.models.cv import CV
 from app.database import async_session_maker
+from app.main import app
+from app.models.cv import CV
+from app.models.user import User
 
 
 @pytest.mark.asyncio
@@ -234,7 +234,7 @@ async def test_fit_only_refine_updates_fit_without_generating_cv(monkeypatch):
         assert fit_response.status_code == 200
         fit_data = fit_response.json()
         cv_id = fit_data["id"]
-        original_fit = fit_data["fit_analysis"]
+        fit_data["fit_analysis"]
 
         # Capture credits after the paid fit.
         async with async_session_maker() as session:
@@ -329,4 +329,3 @@ async def test_multiple_fit_only_refines_keep_credits_constant(monkeypatch):
             db_user = await session.get(User, user_id)
             assert db_user is not None
             assert db_user.credits == credits_after_fit
-

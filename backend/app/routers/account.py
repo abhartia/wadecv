@@ -1,15 +1,15 @@
-from datetime import datetime, timezone
+import contextlib
+from datetime import UTC, datetime
 
-from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, status
-from sqlalchemy import select
+from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
 from app.models.user import User
 from app.schemas.auth import ChangePasswordRequest, ProfileUpdateRequest, UserResponse
+from app.services.email import send_deletion_confirmation
 from app.utils.auth import get_current_user, hash_password, verify_password
 from app.utils.parsing import parse_cv_file
-from app.services.email import send_deletion_confirmation
 
 router = APIRouter()
 
@@ -21,7 +21,9 @@ async def change_password(
     db: AsyncSession = Depends(get_db),
 ):
     if not user.password_hash:
-        raise HTTPException(status_code=400, detail="Account uses magic link authentication. Set a password first.")
+        raise HTTPException(
+            status_code=400, detail="Account uses magic link authentication. Set a password first."
+        )
 
     if not verify_password(req.current_password, user.password_hash):
         raise HTTPException(status_code=400, detail="Current password is incorrect")
@@ -59,13 +61,11 @@ async def delete_account(
     db: AsyncSession = Depends(get_db),
 ):
     email = user.email
-    user.deleted_at = datetime.now(timezone.utc)
+    user.deleted_at = datetime.now(UTC)
     user.email = f"deleted_{user.id}@deleted.wadecv.com"
 
-    try:
+    with contextlib.suppress(Exception):
         send_deletion_confirmation(email)
-    except Exception:
-        pass
 
     return {"message": "Account scheduled for deletion. All data will be permanently removed."}
 

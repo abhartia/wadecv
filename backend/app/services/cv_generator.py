@@ -22,7 +22,7 @@ Guidelines:
 - Each reason should be a single clear sentence"""
 
 
-CV_SYSTEM_PROMPT = """You are an expert CV/resume writer. Given a candidate's existing CV content and a job description, 
+CV_SYSTEM_PROMPT = """You are an expert CV/resume writer. Given a candidate's existing CV content and a job description,
 create a tailored, professional CV optimized for the target role.
 
 Return ONLY a valid JSON object with this exact structure:
@@ -123,7 +123,11 @@ async def generate_cv(
     page_limit: Literal[1, 2] = 1,
 ) -> dict:
     page_instruction = PAGE_LIMIT_ONE_PROMPT if page_limit == 1 else PAGE_LIMIT_TWO_PROMPT
-    system_prompt = CV_SYSTEM_PROMPT + page_instruction + "\n\nReturn ONLY valid JSON. No explanation, no formatting, no comments."
+    system_prompt = (
+        CV_SYSTEM_PROMPT
+        + page_instruction
+        + "\n\nReturn ONLY valid JSON. No explanation, no formatting, no comments."
+    )
 
     user_prompt_parts = [
         f"## Existing CV Content\n{original_content}",
@@ -155,7 +159,7 @@ async def generate_cv(
         # drop the first ```... line
         cleaned = "\n".join(lines[1:])
         if cleaned.endswith("```"):
-            cleaned = cleaned[: -3].strip()
+            cleaned = cleaned[:-3].strip()
 
     # Try to isolate the JSON object between the first "{" and the last "}"
     if "{" in cleaned and "}" in cleaned:

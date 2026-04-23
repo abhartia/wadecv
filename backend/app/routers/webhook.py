@@ -1,5 +1,4 @@
 import logging
-from typing import Any, Dict, List, Optional, Union
 
 import stripe
 from fastapi import APIRouter, HTTPException, Request
@@ -22,9 +21,7 @@ async def stripe_webhook(request: Request):
     sig_header = request.headers.get("stripe-signature")
 
     try:
-        event = stripe.Webhook.construct_event(
-            payload, sig_header, settings.stripe_webhook_secret
-        )
+        event = stripe.Webhook.construct_event(payload, sig_header, settings.stripe_webhook_secret)
     except ValueError:
         raise HTTPException(status_code=400, detail="Invalid payload")
     except stripe.error.SignatureVerificationError:
@@ -41,10 +38,10 @@ async def stripe_webhook(request: Request):
 
 class ResendEmailReceivedData(BaseModel):
     email_id: str
-    from_: Optional[str] = Field(None, alias="from")
-    to: Optional[List[str]] = None
-    subject: Optional[str] = None
-    message_id: Optional[str] = None
+    from_: str | None = Field(None, alias="from")
+    to: list[str] | None = None
+    subject: str | None = None
+    message_id: str | None = None
 
     model_config = {"populate_by_name": True, "extra": "allow"}
 

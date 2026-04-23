@@ -5,9 +5,7 @@ import { CrossCategoryLinks } from "@/components/seo/cross-category-links";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ||
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://wadecv.com");
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com");
 
 export const metadata = {
   title: "WadeCV vs Zety: AI Resume Tailoring vs Resume Template Builder (2026) | WadeCV",
@@ -34,88 +32,77 @@ const ROWS: {
 }[] = [
   {
     feature: "Core approach",
-    zety:
-      "Template-based resume builder with 20+ professional templates, drag-and-drop editing, and pre-written content suggestions.",
+    zety: "Template-based resume builder with 20+ professional templates, drag-and-drop editing, and pre-written content suggestions.",
     wadecv:
       "AI resume tailoring tool that imports your existing CV, analyzes a specific job description, and rewrites your resume to match each role.",
     verdict: "tie",
   },
   {
     feature: "Job-specific tailoring",
-    zety:
-      "Not available. Zety helps you build one resume using templates and suggestions, but does not customize per job application.",
+    zety: "Not available. Zety helps you build one resume using templates and suggestions, but does not customize per job application.",
     wadecv:
       "Paste a job URL and the AI rewrites your entire resume — summary, bullets, and skills — to match the specific role. One-click tailoring per application.",
     verdict: "wadecv",
   },
   {
     feature: "Templates & design",
-    zety:
-      "20+ professional templates with drag-and-drop editor, customizable colors, fonts, and layouts. Strong visual design options.",
+    zety: "20+ professional templates with drag-and-drop editor, customizable colors, fonts, and layouts. Strong visual design options.",
     wadecv:
       "Focuses on content over design — imports your existing format and outputs a clean, ATS-safe DOCX. No template gallery.",
     verdict: "zety",
   },
   {
     feature: "AI content suggestions",
-    zety:
-      "Pre-written phrases and bullet point suggestions based on job title. Content is generic and not tailored to a specific job posting.",
+    zety: "Pre-written phrases and bullet point suggestions based on job title. Content is generic and not tailored to a specific job posting.",
     wadecv:
       "AI rewrites your actual experience to align with each specific job description. Content is tailored per-application, not generic.",
     verdict: "wadecv",
   },
   {
     feature: "Job description input",
-    zety:
-      "No job URL scraping. Resume content is built from templates and pre-written suggestions, not from a specific job posting.",
+    zety: "No job URL scraping. Resume content is built from templates and pre-written suggestions, not from a specific job posting.",
     wadecv:
       "Scrapes job descriptions from LinkedIn, Indeed, Greenhouse, Lever, and other job boards automatically from a URL.",
     verdict: "wadecv",
   },
   {
     feature: "Fit / gap analysis",
-    zety:
-      "Not available. Zety does not analyze how well your resume matches a specific job description.",
+    zety: "Not available. Zety does not analyze how well your resume matches a specific job description.",
     wadecv:
       "Full gap analysis showing missing skills, keyword mismatches, and experience gaps — then closes them automatically during tailoring.",
     verdict: "wadecv",
   },
   {
     feature: "Cover letter",
-    zety:
-      "Separate cover letter builder with templates. Built independently from your resume content.",
+    zety: "Separate cover letter builder with templates. Built independently from your resume content.",
     wadecv:
       "AI-generated cover letter tailored to each job description, included free with every resume tailoring.",
     verdict: "wadecv",
   },
   {
     feature: "ATS optimization",
-    zety:
-      "ATS-friendly templates designed to pass applicant tracking systems. Formatting is optimized, but keywords are not job-specific.",
+    zety: "ATS-friendly templates designed to pass applicant tracking systems. Formatting is optimized, but keywords are not job-specific.",
     wadecv:
       "Every resume is generated with ATS-safe formatting and keywords from the specific job description embedded naturally in your experience bullets.",
     verdict: "tie",
   },
   {
     feature: "Resume import",
-    zety:
-      "Can import an existing resume, but primarily designed for building from scratch using their template editor.",
+    zety: "Can import an existing resume, but primarily designed for building from scratch using their template editor.",
     wadecv:
       "Built around importing your existing CV. Upload once, then tailor for every application. Your real experience is the foundation.",
     verdict: "wadecv",
   },
   {
     feature: "Application tracking",
-    zety:
-      "Not available. Zety focuses on resume and cover letter creation.",
+    zety: "Not available. Zety focuses on resume and cover letter creation.",
     wadecv:
       "Built-in application tracker to manage jobs and keep track of tailored resumes for each application.",
     verdict: "wadecv",
   },
   {
     feature: "Pricing model",
-    zety:
-      "Free to create a resume, but downloading or exporting requires a subscription ($24.99/month or approximately $2.70/week billed every 4 weeks).",
+    zety: "Free to create a resume, but downloading or exporting requires a subscription ($24.99/month or approximately $2.70/week billed every 4 weeks).",
     wadecv:
       "Pay-per-use credits — no subscription. Starter: 20 credits for $10 ($0.50/resume). 1 free credit on signup.",
     verdict: "wadecv",
@@ -159,8 +146,7 @@ export default function ZetyComparisonPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline:
-              "WadeCV vs Zety: AI Resume Tailoring vs Resume Template Builder (2026)",
+            headline: "WadeCV vs Zety: AI Resume Tailoring vs Resume Template Builder (2026)",
             description: metadata.description,
             author: { "@type": "Organization", name: "WadeCV" },
             publisher: {
@@ -197,17 +183,14 @@ export default function ZetyComparisonPage() {
       </h1>
 
       <p className="text-muted-foreground mb-6">
-        Zety is a popular online resume builder known for its 20+ professional
-        templates and drag-and-drop editor. WadeCV takes a different approach:
-        instead of building a resume from scratch, it imports your existing CV
-        and uses AI to rewrite it for each specific job application. Here&apos;s
-        how the two tools compare across features, pricing, and workflow.
+        Zety is a popular online resume builder known for its 20+ professional templates and
+        drag-and-drop editor. WadeCV takes a different approach: instead of building a resume from
+        scratch, it imports your existing CV and uses AI to rewrite it for each specific job
+        application. Here&apos;s how the two tools compare across features, pricing, and workflow.
       </p>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          Feature comparison: WadeCV vs Zety
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Feature comparison: WadeCV vs Zety</h2>
         <div className="space-y-4">
           {ROWS.map((row) => (
             <Card key={row.feature}>
@@ -247,52 +230,39 @@ export default function ZetyComparisonPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-3">
-          When Zety is the better choice
-        </h2>
+        <h2 className="text-xl font-semibold mb-3">When Zety is the better choice</h2>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li>
-            You need to build a resume from scratch and want professional
-            templates with drag-and-drop editing.
+            You need to build a resume from scratch and want professional templates with
+            drag-and-drop editing.
           </li>
           <li>
-            You are a first-time resume creator and want pre-written content
-            suggestions to get started quickly.
+            You are a first-time resume creator and want pre-written content suggestions to get
+            started quickly.
           </li>
-          <li>
-            Visual design is a priority and you want to choose from 20+
-            polished layouts.
-          </li>
-          <li>
-            You also need a cover letter builder with matching templates.
-          </li>
+          <li>Visual design is a priority and you want to choose from 20+ polished layouts.</li>
+          <li>You also need a cover letter builder with matching templates.</li>
         </ul>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-3">
-          When WadeCV is the better choice
-        </h2>
+        <h2 className="text-xl font-semibold mb-3">When WadeCV is the better choice</h2>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li>
-            You already have a resume and want to tailor it for each job you
-            apply to without manual editing.
+            You already have a resume and want to tailor it for each job you apply to without manual
+            editing.
           </li>
           <li>
-            You want automated job URL scraping — paste a link and get a
-            tailored resume in seconds.
+            You want automated job URL scraping — paste a link and get a tailored resume in seconds.
           </li>
           <li>
-            You want a full gap analysis that identifies missing skills and
-            experience, then fixes them automatically.
+            You want a full gap analysis that identifies missing skills and experience, then fixes
+            them automatically.
           </li>
           <li>
-            You want a tailored cover letter generated alongside each resume at
-            no extra cost.
+            You want a tailored cover letter generated alongside each resume at no extra cost.
           </li>
-          <li>
-            You prefer pay-per-use pricing instead of a recurring subscription.
-          </li>
+          <li>You prefer pay-per-use pricing instead of a recurring subscription.</li>
         </ul>
       </section>
 
@@ -300,39 +270,33 @@ export default function ZetyComparisonPage() {
         <h2 className="text-xl font-semibold mb-3">The verdict</h2>
         <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-3">
           <p>
-            Zety and WadeCV solve different problems in the job application
-            process. Zety helps you create a visually polished resume from
-            scratch with professional templates and pre-written content
-            suggestions. WadeCV assumes you already have a resume and focuses on
+            Zety and WadeCV solve different problems in the job application process. Zety helps you
+            create a visually polished resume from scratch with professional templates and
+            pre-written content suggestions. WadeCV assumes you already have a resume and focuses on
             the per-application tailoring that makes each submission unique.
           </p>
           <p>
-            For job seekers applying to many roles, WadeCV&apos;s one-click
-            tailoring saves significant time compared to sending the same generic
-            resume to every application. For those starting from scratch or
-            wanting a template-driven design experience, Zety provides a more
-            complete resume creation workflow.
+            For job seekers applying to many roles, WadeCV&apos;s one-click tailoring saves
+            significant time compared to sending the same generic resume to every application. For
+            those starting from scratch or wanting a template-driven design experience, Zety
+            provides a more complete resume creation workflow.
           </p>
           <p>
-            The best workflow combines both: build your base resume with Zety,
-            then use WadeCV to tailor it for every application.
+            The best workflow combines both: build your base resume with Zety, then use WadeCV to
+            tailor it for every application.
           </p>
         </div>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          Frequently asked questions
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Frequently asked questions</h2>
         <div className="space-y-4">
           {FAQ.map((f) => (
             <Card key={f.question}>
               <CardHeader className="pb-2">
                 <CardTitle className="text-base">{f.question}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {f.answer}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{f.answer}</CardContent>
             </Card>
           ))}
         </div>
@@ -352,16 +316,12 @@ export default function ZetyComparisonPage() {
         <CardHeader>
           <CardTitle>Try WadeCV free — no subscription needed</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Upload your CV, paste a job URL, and get a fully tailored resume
-            plus cover letter in seconds. 1 free credit included on signup.
+            Upload your CV, paste a job URL, and get a fully tailored resume plus cover letter in
+            seconds. 1 free credit included on signup.
           </p>
         </CardHeader>
         <CardContent>
-          <SeoCta
-            variant="job"
-            label="Tailor your resume now"
-            slug="zety-comparison"
-          />
+          <SeoCta variant="job" label="Tailor your resume now" slug="zety-comparison" />
         </CardContent>
       </Card>
     </article>

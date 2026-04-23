@@ -42,7 +42,7 @@ async def extract_job_metadata(job_description: str) -> dict:
             json_mode=True,
             max_tokens=4000,
         )
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc:
         logger.warning("Job metadata AI call failed: %s", exc, exc_info=True)
         return {"job_title": None, "company_name": None}
 

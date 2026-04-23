@@ -151,7 +151,8 @@ export function getSkillBySlug(slug: string): SkillEntry | null {
 }
 
 export function getResumeBullets(): ResumeBulletEntry[] {
-  if (!resumeBulletsCache) resumeBulletsCache = loadJsonFile<ResumeBulletEntry[]>("resume-bullets.json");
+  if (!resumeBulletsCache)
+    resumeBulletsCache = loadJsonFile<ResumeBulletEntry[]>("resume-bullets.json");
   return resumeBulletsCache;
 }
 
@@ -169,7 +170,8 @@ export function getAtsBySlug(slug: string): AtsEntry | null {
 }
 
 export function getCareerChanges(): CareerChangeEntry[] {
-  if (!careerChangeCache) careerChangeCache = loadJsonFile<CareerChangeEntry[]>("career-change.json");
+  if (!careerChangeCache)
+    careerChangeCache = loadJsonFile<CareerChangeEntry[]>("career-change.json");
   return careerChangeCache;
 }
 
@@ -178,7 +180,8 @@ export function getCareerChangeBySlug(slug: string): CareerChangeEntry | null {
 }
 
 export function getPhysicalMailEntries(): PhysicalMailEntry[] {
-  if (!physicalMailCache) physicalMailCache = loadJsonFile<PhysicalMailEntry[]>("physical-mail.json");
+  if (!physicalMailCache)
+    physicalMailCache = loadJsonFile<PhysicalMailEntry[]>("physical-mail.json");
   return physicalMailCache;
 }
 
@@ -186,7 +189,14 @@ export function getPhysicalMailBySlug(slug: string): PhysicalMailEntry | null {
   return getPhysicalMailEntries().find((e) => e.slug === slug) ?? null;
 }
 
-export type SeoCategory = "jobs" | "company-resume" | "skills" | "resume-bullets" | "ats" | "career-change" | "physical-mail";
+export type SeoCategory =
+  | "jobs"
+  | "company-resume"
+  | "skills"
+  | "resume-bullets"
+  | "ats"
+  | "career-change"
+  | "physical-mail";
 
 const CATEGORY_BASE_PATH: Record<SeoCategory, string> = {
   jobs: "/jobs",

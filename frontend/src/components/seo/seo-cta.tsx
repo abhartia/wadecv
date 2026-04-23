@@ -4,7 +4,14 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { trackSeoCtaClick } from "@/lib/analytics/events";
 
-type Variant = "job" | "company" | "skills" | "resume-bullets" | "ats" | "career-change" | "physical-mail";
+type Variant =
+  | "job"
+  | "company"
+  | "skills"
+  | "resume-bullets"
+  | "ats"
+  | "career-change"
+  | "physical-mail";
 
 const DEFAULT_LABELS: Record<Variant, string> = {
   job: "Generate a resume optimized for this job",
@@ -26,10 +33,7 @@ type SeoCtaProps = {
 export function SeoCta({ variant, label, slug }: SeoCtaProps) {
   const text = label ?? DEFAULT_LABELS[variant];
   return (
-    <Link
-      href="/auth/register"
-      onClick={() => trackSeoCtaClick(variant, slug)}
-    >
+    <Link href="/auth/register" onClick={() => trackSeoCtaClick(variant, slug)}>
       <Button size="lg" className="w-full sm:w-auto">
         {text}
       </Button>

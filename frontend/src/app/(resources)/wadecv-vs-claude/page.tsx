@@ -6,13 +6,10 @@ import { InlineCta } from "@/components/seo/inline-cta";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ||
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://wadecv.com");
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com");
 
 export const metadata = {
-  title:
-    "WadeCV vs Claude AI for Resumes: Which Is Better in 2026? | WadeCV",
+  title: "WadeCV vs Claude AI for Resumes: Which Is Better in 2026? | WadeCV",
   description:
     "Using Claude AI to write your resume vs. a purpose-built tailoring tool like WadeCV. Job URL scraping, ATS formatting, gap analysis, and DOCX output compared side by side.",
   openGraph: {
@@ -174,8 +171,7 @@ export default function ClaudeComparisonPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline:
-              "WadeCV vs Claude AI for Resumes: Which Is Better in 2026?",
+            headline: "WadeCV vs Claude AI for Resumes: Which Is Better in 2026?",
             description: metadata.description,
             author: { "@type": "Organization", name: "WadeCV" },
             publisher: {
@@ -212,21 +208,17 @@ export default function ClaudeComparisonPage() {
       </h1>
 
       <p className="text-muted-foreground mb-6">
-        Claude AI is Anthropic&apos;s general-purpose chat assistant and one of
-        the most capable AI writing tools on the market. Millions of job seekers
-        now paste their CV plus a job description into Claude and ask it to
-        rewrite. It works — to a point. WadeCV takes a different approach:
-        instead of a blank chat box, it runs a repeatable tailoring pipeline
-        built specifically for resumes — job URL scraping, structured fit
-        analysis, ATS-safe DOCX output, and a matched cover letter on every
-        run. Here is how the two compare across features, workflow, and
-        output quality.
+        Claude AI is Anthropic&apos;s general-purpose chat assistant and one of the most capable AI
+        writing tools on the market. Millions of job seekers now paste their CV plus a job
+        description into Claude and ask it to rewrite. It works — to a point. WadeCV takes a
+        different approach: instead of a blank chat box, it runs a repeatable tailoring pipeline
+        built specifically for resumes — job URL scraping, structured fit analysis, ATS-safe DOCX
+        output, and a matched cover letter on every run. Here is how the two compare across
+        features, workflow, and output quality.
       </p>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          Feature comparison: WadeCV vs Claude AI
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Feature comparison: WadeCV vs Claude AI</h2>
         <div className="space-y-4">
           {ROWS.map((row) => (
             <Card key={row.feature}>
@@ -268,57 +260,53 @@ export default function ClaudeComparisonPage() {
       <InlineCta variant="job" />
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-3">
-          When Claude AI is the better choice
-        </h2>
+        <h2 className="text-xl font-semibold mb-3">When Claude AI is the better choice</h2>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li>
-            You want to brainstorm how to frame a difficult career transition,
-            employment gap, or pivot before you start writing bullets.
+            You want to brainstorm how to frame a difficult career transition, employment gap, or
+            pivot before you start writing bullets.
           </li>
           <li>
-            You are drafting a narrative personal statement, bio, or LinkedIn
-            summary where tone and voice matter more than keyword density.
+            You are drafting a narrative personal statement, bio, or LinkedIn summary where tone and
+            voice matter more than keyword density.
           </li>
           <li>
-            You already have Claude Pro or Projects set up and prefer a
-            conversational workflow where you can iterate through chat.
+            You already have Claude Pro or Projects set up and prefer a conversational workflow
+            where you can iterate through chat.
           </li>
           <li>
-            You are writing a single resume for a role you have deep context on,
-            and do not need ATS parsing guarantees or a repeatable pipeline.
+            You are writing a single resume for a role you have deep context on, and do not need ATS
+            parsing guarantees or a repeatable pipeline.
           </li>
         </ul>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-3">
-          When WadeCV is the better choice
-        </h2>
+        <h2 className="text-xl font-semibold mb-3">When WadeCV is the better choice</h2>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li>
-            You are applying to more than two or three roles and want a
-            repeatable workflow rather than a fresh prompt for every job.
+            You are applying to more than two or three roles and want a repeatable workflow rather
+            than a fresh prompt for every job.
           </li>
           <li>
-            You want to paste a LinkedIn, Indeed, Greenhouse, or Lever URL and
-            skip the copy-paste dance entirely.
+            You want to paste a LinkedIn, Indeed, Greenhouse, or Lever URL and skip the copy-paste
+            dance entirely.
           </li>
           <li>
-            You want a structured fit score and gap list before you commit to
-            tailoring, not a paragraph of general feedback.
+            You want a structured fit score and gap list before you commit to tailoring, not a
+            paragraph of general feedback.
           </li>
           <li>
-            You need a DOCX that uploads cleanly into ATS portals without
-            post-editing in Word or Google Docs.
+            You need a DOCX that uploads cleanly into ATS portals without post-editing in Word or
+            Google Docs.
           </li>
           <li>
-            You want a tailored cover letter generated alongside every CV with
-            consistent keywords and tone, at no extra cost.
+            You want a tailored cover letter generated alongside every CV with consistent keywords
+            and tone, at no extra cost.
           </li>
           <li>
-            You are applying to US roles where mailing a printed CV directly to
-            the hiring manager may cut through an overloaded inbox.
+            You are applying to US roles where mailing a printed CV directly to the hiring manager
+            may cut through an overloaded inbox.
           </li>
         </ul>
       </section>
@@ -327,49 +315,40 @@ export default function ClaudeComparisonPage() {
         <h2 className="text-xl font-semibold mb-3">The verdict</h2>
         <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-3">
           <p>
-            Claude AI is a powerful general writing tool. For long-form prose,
-            tone-matching, and reasoning through nuanced phrasing, it is
-            arguably the best generalist chatbot available in 2026. Used well,
-            it produces strong resume content.
+            Claude AI is a powerful general writing tool. For long-form prose, tone-matching, and
+            reasoning through nuanced phrasing, it is arguably the best generalist chatbot available
+            in 2026. Used well, it produces strong resume content.
           </p>
           <p>
-            The gap opens when you try to use it as a production resume pipeline
-            across many roles. Every application is a fresh prompt. You copy
-            the job description by hand, you format the output into a DOCX by
-            hand, you fact-check for hallucinated credentials by hand, you
-            rewrite the cover letter separately, and you track the applications
-            in your own spreadsheet. Claude does the writing well; you do
-            everything else.
+            The gap opens when you try to use it as a production resume pipeline across many roles.
+            Every application is a fresh prompt. You copy the job description by hand, you format
+            the output into a DOCX by hand, you fact-check for hallucinated credentials by hand, you
+            rewrite the cover letter separately, and you track the applications in your own
+            spreadsheet. Claude does the writing well; you do everything else.
           </p>
           <p>
-            WadeCV is narrower — it does not brainstorm career strategy or
-            write your LinkedIn bio. What it does is absorb your CV once, then
-            let you paste a job URL and get a complete tailored resume,
-            cover letter, and fit analysis in seconds. If you are job searching
-            at any real volume, that workflow difference compounds quickly.
+            WadeCV is narrower — it does not brainstorm career strategy or write your LinkedIn bio.
+            What it does is absorb your CV once, then let you paste a job URL and get a complete
+            tailored resume, cover letter, and fit analysis in seconds. If you are job searching at
+            any real volume, that workflow difference compounds quickly.
           </p>
           <p>
-            The realistic answer for most job seekers is to use both: Claude
-            for thinking through hard career questions and drafting narrative,
-            WadeCV for turning that thinking into job-specific tailored
-            applications that actually get uploaded.
+            The realistic answer for most job seekers is to use both: Claude for thinking through
+            hard career questions and drafting narrative, WadeCV for turning that thinking into
+            job-specific tailored applications that actually get uploaded.
           </p>
         </div>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          Frequently asked questions
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Frequently asked questions</h2>
         <div className="space-y-4">
           {FAQ.map((f) => (
             <Card key={f.question}>
               <CardHeader className="pb-2">
                 <CardTitle className="text-base">{f.question}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {f.answer}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{f.answer}</CardContent>
             </Card>
           ))}
         </div>
@@ -389,17 +368,12 @@ export default function ClaudeComparisonPage() {
         <CardHeader>
           <CardTitle>Try WadeCV free — purpose-built for tailoring</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Upload your CV once, paste a job URL, and get a fit score, a
-            tailored resume, and a matching cover letter in under 60 seconds.
-            1 free credit included on signup.
+            Upload your CV once, paste a job URL, and get a fit score, a tailored resume, and a
+            matching cover letter in under 60 seconds. 1 free credit included on signup.
           </p>
         </CardHeader>
         <CardContent>
-          <SeoCta
-            variant="job"
-            label="Tailor your resume now"
-            slug="claude-comparison"
-          />
+          <SeoCta variant="job" label="Tailor your resume now" slug="claude-comparison" />
         </CardContent>
       </Card>
     </article>

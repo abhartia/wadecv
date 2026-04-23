@@ -27,7 +27,11 @@ type RelatedGuidesProps = {
   currentSlug?: string;
 };
 
-function getFallbackSlugs(category: SeoCategory, currentSlug: string | undefined, max: number): string[] {
+function getFallbackSlugs(
+  category: SeoCategory,
+  currentSlug: string | undefined,
+  max: number,
+): string[] {
   let slugs: string[] = [];
   switch (category) {
     case "jobs":
@@ -56,10 +60,9 @@ function getFallbackSlugs(category: SeoCategory, currentSlug: string | undefined
 }
 
 export function RelatedGuides({ relatedSlugs, category, currentSlug }: RelatedGuidesProps) {
-  const slugsToShow =
-    relatedSlugs?.length
-      ? relatedSlugs
-      : getFallbackSlugs(category, currentSlug, 4);
+  const slugsToShow = relatedSlugs?.length
+    ? relatedSlugs
+    : getFallbackSlugs(category, currentSlug, 4);
   if (!slugsToShow.length) return null;
 
   const base = CATEGORY_BASE_PATH[category];

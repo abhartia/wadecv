@@ -7,9 +7,7 @@ import { InlineCta } from "@/components/seo/inline-cta";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ||
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://wadecv.com");
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com");
 
 export const metadata = {
   title:
@@ -262,145 +260,144 @@ const ELITE_BOUTIQUES: {
   },
 ];
 
-const DIVISIONS: { name: string; keywords: string[]; bulletSignals: string }[] =
-  [
-    {
-      name: "M&A (Mergers & Acquisitions)",
-      keywords: [
-        "sell-side",
-        "buy-side",
-        "fairness opinion",
-        "accretion/dilution",
-        "synergies",
-        "DCF",
-        "precedent transactions",
-        "CIM",
-        "pitch",
-        "VDR / diligence",
-      ],
-      bulletSignals:
-        "Deal size, buyer/target/sponsor, your deliverable (model, CIM, management presentation, fairness opinion), and deal status at exit.",
-    },
-    {
-      name: "Leveraged Finance",
-      keywords: [
-        "LBO",
-        "sponsor",
-        "TLB",
-        "RCF",
-        "senior secured",
-        "high yield",
-        "OID",
-        "PIK",
-        "covenant-lite",
-        "SOFR",
-      ],
-      bulletSignals:
-        "Financing quantum, tranche structure (TLB/TLA/RCF/HY), leverage multiple (net debt / EBITDA), pricing (SOFR+bps), commitment vs underwrite, deal outcome.",
-    },
-    {
-      name: "Equity Capital Markets",
-      keywords: [
-        "IPO",
-        "follow-on",
-        "convertible",
-        "ATM",
-        "S-1",
-        "F-1",
-        "book-building",
-        "green shoe",
-        "lock-up",
-        "syndicate",
-      ],
-      bulletSignals:
-        "Offering size, P/E or P/S multiple, syndicate position (sole book, joint book, co-manager), pricing outcome (% of range), first-day performance.",
-    },
-    {
-      name: "Debt Capital Markets",
-      keywords: [
-        "investment grade",
-        "high yield",
-        "senior notes",
-        "indenture",
-        "make-whole",
-        "tender offer",
-        "consent solicitation",
-        "roadshow",
-        "bookrunner",
-        "ratings",
-      ],
-      bulletSignals:
-        "Issuance size, coupon and tenor, ratings (Moody's / S&P / Fitch), oversubscription, spread to benchmark, use of proceeds.",
-    },
-    {
-      name: "Restructuring",
-      keywords: [
-        "Chapter 11",
-        "Chapter 7",
-        "DIP financing",
-        "liability management",
-        "ad-hoc group",
-        "UCC",
-        "plan of reorganization",
-        "disclosure statement",
-        "liquidation waterfall",
-        "exchange offer",
-      ],
-      bulletSignals:
-        "Debtor or creditor mandate, DIP size, recovery-waterfall analysis, plan confirmation outcome, time to emergence.",
-    },
-    {
-      name: "Sales & Trading / Markets",
-      keywords: [
-        "market-making",
-        "client coverage",
-        "flow",
-        "rates",
-        "FX",
-        "credit",
-        "equities",
-        "structured products",
-        "VaR",
-        "Greeks",
-      ],
-      bulletSignals:
-        "Asset class, client-coverage scope (AUM covered, top-N clients), risk metrics (VaR, DV01, delta exposure), PnL contribution, Greenwich ranking.",
-    },
-    {
-      name: "Asset Management / Investment Analyst",
-      keywords: [
-        "long-only",
-        "long/short",
-        "active management",
-        "index",
-        "ETF",
-        "alpha",
-        "tracking error",
-        "benchmark",
-        "AUM",
-        "research note",
-      ],
-      bulletSignals:
-        "Coverage universe (size, sector), AUM impact, buy/sell call accuracy, alpha generation, position sizing, analyst rating / PM adoption.",
-    },
-    {
-      name: "Private Equity Coverage / Sponsors",
-      keywords: [
-        "financial sponsors",
-        "LBO coverage",
-        "dividend recap",
-        "continuation fund",
-        "GP-led secondary",
-        "portfolio company",
-        "add-on",
-        "take-private",
-        "carve-out",
-        "club deal",
-      ],
-      bulletSignals:
-        "Sponsor names covered, number of live processes, capital advised on (debt + equity), named transactions and outcome.",
-    },
-  ];
+const DIVISIONS: { name: string; keywords: string[]; bulletSignals: string }[] = [
+  {
+    name: "M&A (Mergers & Acquisitions)",
+    keywords: [
+      "sell-side",
+      "buy-side",
+      "fairness opinion",
+      "accretion/dilution",
+      "synergies",
+      "DCF",
+      "precedent transactions",
+      "CIM",
+      "pitch",
+      "VDR / diligence",
+    ],
+    bulletSignals:
+      "Deal size, buyer/target/sponsor, your deliverable (model, CIM, management presentation, fairness opinion), and deal status at exit.",
+  },
+  {
+    name: "Leveraged Finance",
+    keywords: [
+      "LBO",
+      "sponsor",
+      "TLB",
+      "RCF",
+      "senior secured",
+      "high yield",
+      "OID",
+      "PIK",
+      "covenant-lite",
+      "SOFR",
+    ],
+    bulletSignals:
+      "Financing quantum, tranche structure (TLB/TLA/RCF/HY), leverage multiple (net debt / EBITDA), pricing (SOFR+bps), commitment vs underwrite, deal outcome.",
+  },
+  {
+    name: "Equity Capital Markets",
+    keywords: [
+      "IPO",
+      "follow-on",
+      "convertible",
+      "ATM",
+      "S-1",
+      "F-1",
+      "book-building",
+      "green shoe",
+      "lock-up",
+      "syndicate",
+    ],
+    bulletSignals:
+      "Offering size, P/E or P/S multiple, syndicate position (sole book, joint book, co-manager), pricing outcome (% of range), first-day performance.",
+  },
+  {
+    name: "Debt Capital Markets",
+    keywords: [
+      "investment grade",
+      "high yield",
+      "senior notes",
+      "indenture",
+      "make-whole",
+      "tender offer",
+      "consent solicitation",
+      "roadshow",
+      "bookrunner",
+      "ratings",
+    ],
+    bulletSignals:
+      "Issuance size, coupon and tenor, ratings (Moody's / S&P / Fitch), oversubscription, spread to benchmark, use of proceeds.",
+  },
+  {
+    name: "Restructuring",
+    keywords: [
+      "Chapter 11",
+      "Chapter 7",
+      "DIP financing",
+      "liability management",
+      "ad-hoc group",
+      "UCC",
+      "plan of reorganization",
+      "disclosure statement",
+      "liquidation waterfall",
+      "exchange offer",
+    ],
+    bulletSignals:
+      "Debtor or creditor mandate, DIP size, recovery-waterfall analysis, plan confirmation outcome, time to emergence.",
+  },
+  {
+    name: "Sales & Trading / Markets",
+    keywords: [
+      "market-making",
+      "client coverage",
+      "flow",
+      "rates",
+      "FX",
+      "credit",
+      "equities",
+      "structured products",
+      "VaR",
+      "Greeks",
+    ],
+    bulletSignals:
+      "Asset class, client-coverage scope (AUM covered, top-N clients), risk metrics (VaR, DV01, delta exposure), PnL contribution, Greenwich ranking.",
+  },
+  {
+    name: "Asset Management / Investment Analyst",
+    keywords: [
+      "long-only",
+      "long/short",
+      "active management",
+      "index",
+      "ETF",
+      "alpha",
+      "tracking error",
+      "benchmark",
+      "AUM",
+      "research note",
+    ],
+    bulletSignals:
+      "Coverage universe (size, sector), AUM impact, buy/sell call accuracy, alpha generation, position sizing, analyst rating / PM adoption.",
+  },
+  {
+    name: "Private Equity Coverage / Sponsors",
+    keywords: [
+      "financial sponsors",
+      "LBO coverage",
+      "dividend recap",
+      "continuation fund",
+      "GP-led secondary",
+      "portfolio company",
+      "add-on",
+      "take-private",
+      "carve-out",
+      "club deal",
+    ],
+    bulletSignals:
+      "Sponsor names covered, number of live processes, capital advised on (debt + equity), named transactions and outcome.",
+  },
+];
 
 const COMMON_MISTAKES = [
   "Two-page resume at Analyst or Associate level — automatic screen reject at every bulge bracket and elite boutique",
@@ -420,8 +417,7 @@ const FAQ = [
       "One page for every Analyst, Associate, and Vice President application across bulge-bracket and elite-boutique firms. Two pages are only acceptable for Managing Director or Partner-level lateral moves where there are 15+ years of named deal experience to list. A two-page CV at Analyst or Associate is an automatic screen reject — partners review your CV in under 45 seconds and a second page is read as inability to prioritise. Use 10-11pt body text, 0.5-inch margins, and cut ruthlessly.",
   },
   {
-    question:
-      "What is the difference between a bulge-bracket and elite-boutique resume?",
+    question: "What is the difference between a bulge-bracket and elite-boutique resume?",
     answer:
       "Structurally identical — one page, education first, reverse-chronological experience, deal experience either integrated or broken out, then leadership and additional. The bar differs: elite boutiques (Centerview, PJT, Qatalyst, Evercore, Lazard, Moelis, Perella Weinberg, Guggenheim) expect deeper modelling signal — specific paper-LBO and three-statement fluency — while bulge brackets (Goldman Sachs, JP Morgan, Morgan Stanley, Citi, Bank of America, Barclays, Deutsche Bank, UBS, Credit Suisse legacy) weight breadth across divisions and product. Vocabulary differs by division: M&A, LevFin, ECM, DCM, Restructuring, Markets all have distinct keyword sets you must mirror.",
   },
@@ -436,8 +432,7 @@ const FAQ = [
       "Four elements: (1) deal type and size — '$1.4B sell-side advisory', '$720M IPO', '$350M DIP facility'; (2) client / buyer / target — 'specialty-chemicals target to European strategic acquirer', 'NYSE-listed vertical SaaS issuer'; (3) your specific workstream and deliverable — 'built three-statement operating model, DCF, and precedent-transaction analysis' or 'drafted S-1 business section'; (4) outcome — 'signed at 11.8x LTM EBITDA, 22% sponsor premium'. Avoid 'worked on', 'assisted with', 'supported the team' — these signal you did not own a workstream.",
   },
   {
-    question:
-      "Do I need Series 79, CFA, or CPA progression on my IB resume?",
+    question: "Do I need Series 79, CFA, or CPA progression on my IB resume?",
     answer:
       "For US Analyst/Associate roles, Series 79 is required within weeks of joining — list 'Series 79 expected [date]' for incoming Analysts. CFA Level 1 is a differentiator for markets / research / asset-management roles (especially BlackRock, T. Rowe, Wellington, Fidelity, and active equity desks) and a modest plus for IB. CPA is rarely weighted in advisory but strongly weighted at BlackRock Alternatives for private-markets accounting roles, and at Lazard / PJT Restructuring for workout and financial-restructuring candidates. List only what you hold or are actively progressing — false certification claims are disqualifying.",
   },
@@ -447,14 +442,12 @@ const FAQ = [
       "Read the firm's division page (JP Morgan Markets, Morgan Stanley TMT, Goldman Sachs Industrials, Citi CIB, BlackRock Fundamental Equities) and the posted job description. Mirror the division's vocabulary wherever honestly applicable — 'sell-side M&A', 'sponsor LBO', 'convertible issuance', 'ad-hoc creditor group', 'rates flow', 'long-only research'. Move the most division-relevant deal experience to the top of professional experience, even if not the most recent. Named model and memo deliverables signal fluency: 'three-statement operating model', 'LBO capital-structure waterfall', 'management presentation', 'confidential information memorandum', 'research initiation note'. See the individual firm guides for specific Goldman Sachs, JP Morgan, Morgan Stanley, Citi, and BlackRock tailoring details.",
   },
   {
-    question:
-      "Can I get an IB interview from a non-target school or non-finance major?",
+    question: "Can I get an IB interview from a non-target school or non-finance major?",
     answer:
       "Yes — bulge brackets and boutiques increasingly recruit from non-targets if the CV signals finance depth. The path is a winning stock-pitch competition (Cornell, Ross, WISC, UCL, IOC), an investment-club PM role with a named portfolio and benchmark-comparable performance, a pre-IB internship at a regional bank or boutique, or a sustained research project with named methodology. Non-finance majors — Engineering, Physics, Math, CS — are well-regarded at Markets desks and at TMT / Healthcare industry groups because of the quantitative rigour. Your CV must compensate for the non-target signal with a visible, specific, quantified finance 'spike'.",
   },
   {
-    question:
-      "What are the most common reasons IB resumes get rejected at screen?",
+    question: "What are the most common reasons IB resumes get rejected at screen?",
     answer:
       "(1) Deal bullets without dollar size, counterparty, and your specific workstream. (2) Two-page resume at Analyst or Associate level. (3) Missing or weak spike — membership-level involvement in investment societies without named PM role, portfolio, or benchmark performance. (4) Generic 'finance' or 'banking' framing when the role is division-specific (M&A vs LevFin vs Restructuring vs Markets vs DCM). (5) Missing language proficiency for non-English-speaking offices. (6) No Series 79 / CFA signal on US bulge-bracket or asset-management applications. (7) Skills section with generic tools ('Microsoft Office', 'teamwork') rather than named fluencies (advanced Excel three-statement / LBO / M&A accretion-dilution, Capital IQ, FactSet, Bloomberg, VBA). WadeCV takes your existing CV, aligns it with a specific Goldman Sachs, JP Morgan, Morgan Stanley, Citi, or BlackRock job description, and fixes each of these failure patterns in one pass.",
   },
@@ -503,23 +496,21 @@ export default function InvestmentBankingResumePage() {
       />
 
       <h1 className="text-3xl font-bold mb-4">
-        Investment Banking Resume Guide 2026 — Bulge Bracket, Elite Boutique
-        and How to Pass the Screen
+        Investment Banking Resume Guide 2026 — Bulge Bracket, Elite Boutique and How to Pass the
+        Screen
       </h1>
 
       <p className="text-muted-foreground mb-4">
-        Investment banking resumes are screened by VPs, Directors, and MDs in
-        under 45 seconds. The bar is high, the conventions are specific, and
-        the difference between a Goldman M&A resume and a BlackRock
-        Investment-Analyst resume is not cosmetic — it is structural. This
-        guide covers the exact page structure recruiters expect, the
-        deal-experience bullet formulas that pass bulge-bracket and
-        elite-boutique screens, the vocabulary you need per division, and the
+        Investment banking resumes are screened by VPs, Directors, and MDs in under 45 seconds. The
+        bar is high, the conventions are specific, and the difference between a Goldman M&A resume
+        and a BlackRock Investment-Analyst resume is not cosmetic — it is structural. This guide
+        covers the exact page structure recruiters expect, the deal-experience bullet formulas that
+        pass bulge-bracket and elite-boutique screens, the vocabulary you need per division, and the
         common reasons otherwise strong candidates get rejected at CV review.
       </p>
       <p className="text-muted-foreground mb-6">
-        Read it top-to-bottom if you are preparing Analyst, Associate, VP or
-        lateral applications, or jump to the firm you are targeting —{" "}
+        Read it top-to-bottom if you are preparing Analyst, Associate, VP or lateral applications,
+        or jump to the firm you are targeting —{" "}
         <Link href="/company-resume/goldman-sachs" className="underline">
           Goldman Sachs
         </Link>
@@ -543,13 +534,11 @@ export default function InvestmentBankingResumePage() {
       </p>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          The one-page IB resume: exact structure
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">The one-page IB resume: exact structure</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Every section in this order. No deviations for Analyst, Associate,
-          or VP applications. The banker reviewing your CV reads top-down and
-          expects to find the information in the canonical position.
+          Every section in this order. No deviations for Analyst, Associate, or VP applications. The
+          banker reviewing your CV reads top-down and expects to find the information in the
+          canonical position.
         </p>
         <div className="space-y-3">
           {RESUME_STRUCTURE.map((s) => (
@@ -562,9 +551,7 @@ export default function InvestmentBankingResumePage() {
                   {s.section}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {s.detail}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{s.detail}</CardContent>
             </Card>
           ))}
         </div>
@@ -575,11 +562,10 @@ export default function InvestmentBankingResumePage() {
           Bulge bracket vs elite boutique: 7 screening differences
         </h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Bulge brackets (Goldman Sachs, JP Morgan, Morgan Stanley, Citi, Bank
-          of America, Barclays, Deutsche Bank, UBS) and elite boutiques
-          (Evercore, Centerview, Lazard, PJT, Moelis, Perella Weinberg,
-          Qatalyst, Guggenheim) share the one-page structure, but their
-          screening bars differ in specific ways. Tailor accordingly.
+          Bulge brackets (Goldman Sachs, JP Morgan, Morgan Stanley, Citi, Bank of America, Barclays,
+          Deutsche Bank, UBS) and elite boutiques (Evercore, Centerview, Lazard, PJT, Moelis,
+          Perella Weinberg, Qatalyst, Guggenheim) share the one-page structure, but their screening
+          bars differ in specific ways. Tailor accordingly.
         </p>
         <div className="space-y-3">
           {BB_VS_EB.map((d, i) => (
@@ -591,16 +577,10 @@ export default function InvestmentBankingResumePage() {
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground space-y-2">
                 <div>
-                  <span className="text-foreground font-medium">
-                    Bulge bracket:
-                  </span>{" "}
-                  {d.bulge}
+                  <span className="text-foreground font-medium">Bulge bracket:</span> {d.bulge}
                 </div>
                 <div>
-                  <span className="text-foreground font-medium">
-                    Elite boutique:
-                  </span>{" "}
-                  {d.boutique}
+                  <span className="text-foreground font-medium">Elite boutique:</span> {d.boutique}
                 </div>
               </CardContent>
             </Card>
@@ -610,31 +590,21 @@ export default function InvestmentBankingResumePage() {
 
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">
-          The bulge brackets: Goldman Sachs, JP Morgan, Morgan Stanley, Citi,
-          BlackRock
+          The bulge brackets: Goldman Sachs, JP Morgan, Morgan Stanley, Citi, BlackRock
         </h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Resume structure is identical across bulge brackets and large asset
-          managers. Division mix, culture, and screening tools differ — click
-          through for firm-specific guides.
+          Resume structure is identical across bulge brackets and large asset managers. Division
+          mix, culture, and screening tools differ — click through for firm-specific guides.
         </p>
         <div className="grid sm:grid-cols-2 gap-4">
           {FIRMS.map((f) => (
-            <Link
-              key={f.slug}
-              href={`/company-resume/${f.slug}`}
-              className="block group"
-            >
+            <Link key={f.slug} href={`/company-resume/${f.slug}`} className="block group">
               <Card className="h-full transition-colors group-hover:bg-muted/50">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-base group-hover:text-primary">
-                    {f.name}
-                  </CardTitle>
+                  <CardTitle className="text-base group-hover:text-primary">{f.name}</CardTitle>
                   <p className="text-xs text-muted-foreground">{f.tagline}</p>
                 </CardHeader>
-                <CardContent className="text-sm text-muted-foreground">
-                  {f.distinctive}
-                </CardContent>
+                <CardContent className="text-sm text-muted-foreground">{f.distinctive}</CardContent>
               </Card>
             </Link>
           ))}
@@ -644,14 +614,12 @@ export default function InvestmentBankingResumePage() {
       <InlineCta variant="investment-banking" slug="investment-banking-resume" />
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          Elite boutiques: the eight firms that matter
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Elite boutiques: the eight firms that matter</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Elite boutiques run small Analyst classes and partner-led deal
-          teams. Your resume must signal the specific advisory product —
-          generic &apos;financial-services&apos; or &apos;banking&apos; framing is a common reason
-          for rejection at Centerview, PJT, and Qatalyst.
+          Elite boutiques run small Analyst classes and partner-led deal teams. Your resume must
+          signal the specific advisory product — generic &apos;financial-services&apos; or
+          &apos;banking&apos; framing is a common reason for rejection at Centerview, PJT, and
+          Qatalyst.
         </p>
         <div className="space-y-4">
           {ELITE_BOUTIQUES.map((f) => (
@@ -661,8 +629,7 @@ export default function InvestmentBankingResumePage() {
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground space-y-2">
                 <div>
-                  <span className="text-foreground font-medium">Focus:</span>{" "}
-                  {f.focus}
+                  <span className="text-foreground font-medium">Focus:</span> {f.focus}
                 </div>
                 <div>{f.distinctive}</div>
               </CardContent>
@@ -672,13 +639,10 @@ export default function InvestmentBankingResumePage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          Six bullet formulas that pass banker screens
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Six bullet formulas that pass banker screens</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Each formula is tested against a specific division screen — M&A
-          sell-side, LevFin, ECM, Restructuring, Markets, or Asset Management.
-          Use the one that matches the target role.
+          Each formula is tested against a specific division screen — M&A sell-side, LevFin, ECM,
+          Restructuring, Markets, or Asset Management. Use the one that matches the target role.
         </p>
         <div className="space-y-4">
           {BULLET_FORMULAS.map((b, i) => (
@@ -698,14 +662,11 @@ export default function InvestmentBankingResumePage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          Division-specific keywords: what to mirror
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Division-specific keywords: what to mirror</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Investment banks organise around divisions (M&A, LevFin, ECM, DCM,
-          Restructuring, Markets, Sponsors, Asset Management) and your CV
-          should mirror the vocabulary of the target division wherever it is
-          honestly applicable.
+          Investment banks organise around divisions (M&A, LevFin, ECM, DCM, Restructuring, Markets,
+          Sponsors, Asset Management) and your CV should mirror the vocabulary of the target
+          division wherever it is honestly applicable.
         </p>
         <div className="grid sm:grid-cols-2 gap-4">
           {DIVISIONS.map((d) => (
@@ -722,9 +683,7 @@ export default function InvestmentBankingResumePage() {
                   ))}
                 </div>
                 <p className="text-xs">
-                  <span className="text-foreground font-medium">
-                    Bullet signals:
-                  </span>{" "}
+                  <span className="text-foreground font-medium">Bullet signals:</span>{" "}
                   {d.bulletSignals}
                 </p>
               </CardContent>
@@ -734,62 +693,51 @@ export default function InvestmentBankingResumePage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          IB resume in 2026: what&apos;s changed
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">IB resume in 2026: what&apos;s changed</h2>
         <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-3">
           <p>
-            Investment-banking CV screening in 2026 is more automated than it
-            was five years ago, but the bar the MD applies on the Super Day
-            read has not relaxed. HireVue video interviews and Pymetrics
-            cognitive assessments now sit between the resume screen and the
-            first in-person round at Goldman, JP Morgan, Morgan Stanley and
-            Citi — but neither rescues a weak CV. The resume remains the
-            gatekeeper across bulge-bracket and elite-boutique firms.
+            Investment-banking CV screening in 2026 is more automated than it was five years ago,
+            but the bar the MD applies on the Super Day read has not relaxed. HireVue video
+            interviews and Pymetrics cognitive assessments now sit between the resume screen and the
+            first in-person round at Goldman, JP Morgan, Morgan Stanley and Citi — but neither
+            rescues a weak CV. The resume remains the gatekeeper across bulge-bracket and
+            elite-boutique firms.
           </p>
           <p>
-            What has changed is the weight on private-markets and
-            alternatives signals. BlackRock Alternatives, GIP, HPS (now
-            BlackRock-integrated), Preqin (now BlackRock-integrated), and the
-            private-markets pods at Goldman, JP Morgan, and Morgan Stanley are
-            the fastest-growing revenue segments and the heaviest lateral
-            hirers. If your experience includes LBO modelling, sponsor
-            coverage, continuation-fund advisory, GP-led secondaries, or
-            private-credit analysis, lead with those bullets over generic
-            advisory experience when targeting a sponsors or alts role.
+            What has changed is the weight on private-markets and alternatives signals. BlackRock
+            Alternatives, GIP, HPS (now BlackRock-integrated), Preqin (now BlackRock-integrated),
+            and the private-markets pods at Goldman, JP Morgan, and Morgan Stanley are the
+            fastest-growing revenue segments and the heaviest lateral hirers. If your experience
+            includes LBO modelling, sponsor coverage, continuation-fund advisory, GP-led
+            secondaries, or private-credit analysis, lead with those bullets over generic advisory
+            experience when targeting a sponsors or alts role.
           </p>
           <p>
-            AI-assisted CV writing is widespread among applicants and
-            recruiters know it. AI-drafted bullets that sound generic but lack
-            the deal-specific texture — real deal sizes, real counterparties,
-            real model and memo deliverables — read as &apos;low-conviction&apos; and
-            get cut. Humanising an AI-drafted IB CV means replacing vague
-            language (&apos;supported M&amp;A process&apos;) with specific signals (&apos;built
-            three-statement operating model and DCF for $1.4B sell-side of
-            specialty-chemicals target&apos;). See our{" "}
+            AI-assisted CV writing is widespread among applicants and recruiters know it. AI-drafted
+            bullets that sound generic but lack the deal-specific texture — real deal sizes, real
+            counterparties, real model and memo deliverables — read as &apos;low-conviction&apos;
+            and get cut. Humanising an AI-drafted IB CV means replacing vague language
+            (&apos;supported M&amp;A process&apos;) with specific signals (&apos;built
+            three-statement operating model and DCF for $1.4B sell-side of specialty-chemicals
+            target&apos;). See our{" "}
             <Link href="/humanize-ai-resume" className="underline">
               humanize AI resume guide
             </Link>{" "}
             for techniques that work at banker screening scale.
           </p>
           <p>
-            Finally: the rise of direct Associate-to-Buyside lateral flows.
-            Mega-funds (Blackstone, KKR, Apollo, Carlyle, Bain Capital, TPG)
-            and large long-only managers (BlackRock, Fidelity, T. Rowe Price,
-            Wellington, Capital Group) recruit heavily from third-year IB
-            Analysts and first-year Associates. Your lateral CV should
-            emphasise deal-by-deal experience with named model and memo
-            deliverables, position yourself within a sector or product
-            franchise, and show any CFA / CPA / published research
-            progression.
+            Finally: the rise of direct Associate-to-Buyside lateral flows. Mega-funds (Blackstone,
+            KKR, Apollo, Carlyle, Bain Capital, TPG) and large long-only managers (BlackRock,
+            Fidelity, T. Rowe Price, Wellington, Capital Group) recruit heavily from third-year IB
+            Analysts and first-year Associates. Your lateral CV should emphasise deal-by-deal
+            experience with named model and memo deliverables, position yourself within a sector or
+            product franchise, and show any CFA / CPA / published research progression.
           </p>
         </div>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          Eight common IB resume mistakes
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Eight common IB resume mistakes</h2>
         <ul className="list-disc pl-6 space-y-2 text-sm text-muted-foreground">
           {COMMON_MISTAKES.map((m, i) => (
             <li key={i}>{m}</li>
@@ -798,18 +746,14 @@ export default function InvestmentBankingResumePage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          Frequently asked questions
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Frequently asked questions</h2>
         <div className="space-y-4">
           {FAQ.map((f) => (
             <Card key={f.question}>
               <CardHeader className="pb-2">
                 <CardTitle className="text-base">{f.question}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {f.answer}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{f.answer}</CardContent>
             </Card>
           ))}
         </div>
@@ -845,15 +789,13 @@ export default function InvestmentBankingResumePage() {
       <Card>
         <CardHeader>
           <CardTitle>
-            Tailor your CV to a specific bulge-bracket or elite-boutique role
-            — free to start
+            Tailor your CV to a specific bulge-bracket or elite-boutique role — free to start
           </CardTitle>
           <p className="text-sm text-muted-foreground">
-            Paste a Goldman Sachs, JP Morgan, Morgan Stanley, Citi, BlackRock
-            or elite-boutique job URL. WadeCV analyses the division, the
-            level, and the job description, rewrites every bullet with
-            quantified deal outcomes from your history, and reformats to the
-            one-page banker standard. First fit analysis is free.
+            Paste a Goldman Sachs, JP Morgan, Morgan Stanley, Citi, BlackRock or elite-boutique job
+            URL. WadeCV analyses the division, the level, and the job description, rewrites every
+            bullet with quantified deal outcomes from your history, and reformats to the one-page
+            banker standard. First fit analysis is free.
           </p>
         </CardHeader>
         <CardContent>

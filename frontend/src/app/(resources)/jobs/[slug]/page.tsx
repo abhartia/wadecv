@@ -8,7 +8,10 @@ import { RelatedGuides } from "@/components/seo/related-guides";
 import { CrossCategoryLinks } from "@/components/seo/cross-category-links";
 import { InlineCta } from "@/components/seo/inline-cta";
 
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com";
+const BASE_URL =
+  process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "https://wadecv.com";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -90,7 +93,9 @@ export default async function JobPage({ params }: Props) {
         <h2 className="text-xl font-semibold mb-3">Top resume keywords for this job</h2>
         <div className="flex flex-wrap gap-2">
           {job.resumeKeywords.map((k) => (
-            <Badge key={k} variant="secondary">{k}</Badge>
+            <Badge key={k} variant="secondary">
+              {k}
+            </Badge>
           ))}
         </div>
       </section>
@@ -139,7 +144,8 @@ export default async function JobPage({ params }: Props) {
         <CardHeader>
           <CardTitle>Ready to tailor your CV for this role?</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Upload your CV and paste a job description—WadeCV will highlight your fit and generate a tailored resume.
+            Upload your CV and paste a job description—WadeCV will highlight your fit and generate a
+            tailored resume.
           </p>
         </CardHeader>
         <CardContent>

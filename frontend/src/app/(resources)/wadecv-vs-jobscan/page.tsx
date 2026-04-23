@@ -5,9 +5,7 @@ import { CrossCategoryLinks } from "@/components/seo/cross-category-links";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ||
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://wadecv.com");
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com");
 
 export const metadata = {
   title: "WadeCV vs Jobscan: AI Resume Tailoring vs ATS Scanning (2026) | WadeCV",
@@ -58,24 +56,21 @@ const ROWS: {
   },
   {
     feature: "Job URL scraping",
-    jobscan:
-      "You paste the job description text into a text box manually.",
+    jobscan: "You paste the job description text into a text box manually.",
     wadecv:
       "Paste a LinkedIn, Indeed, Greenhouse, or Lever URL and the job description is scraped automatically.",
     verdict: "wadecv",
   },
   {
     feature: "Fit / gap analysis",
-    jobscan:
-      "Match rate percentage with hard skills, soft skills, and keyword frequency analysis.",
+    jobscan: "Match rate percentage with hard skills, soft skills, and keyword frequency analysis.",
     wadecv:
       "Full gap analysis that identifies missing skills and experience, then closes those gaps automatically during tailoring.",
     verdict: "tie",
   },
   {
     feature: "Cover letter generation",
-    jobscan:
-      "AI cover letter builder available on paid plans.",
+    jobscan: "AI cover letter builder available on paid plans.",
     wadecv:
       "Generates a tailored cover letter alongside every tailored resume, matched to the same job description — included free with every tailoring.",
     verdict: "wadecv",
@@ -84,30 +79,25 @@ const ROWS: {
     feature: "LinkedIn optimization",
     jobscan:
       "Scans your LinkedIn profile against job descriptions and suggests improvements — a unique Jobscan feature.",
-    wadecv:
-      "Focused on resume and cover letter output. No LinkedIn profile optimization.",
+    wadecv: "Focused on resume and cover letter output. No LinkedIn profile optimization.",
     verdict: "jobscan",
   },
   {
     feature: "Resume builder & templates",
-    jobscan:
-      "Built-in resume builder with ATS-friendly templates.",
-    wadecv:
-      "Works from your existing CV — imports and tailors rather than building from scratch.",
+    jobscan: "Built-in resume builder with ATS-friendly templates.",
+    wadecv: "Works from your existing CV — imports and tailors rather than building from scratch.",
     verdict: "jobscan",
   },
   {
     feature: "Section-by-section editing",
-    jobscan:
-      "Edit within the resume builder interface.",
+    jobscan: "Edit within the resume builder interface.",
     wadecv:
       "Edit any section independently — summary, experience, skills — after the AI tailors the full resume.",
     verdict: "tie",
   },
   {
     feature: "Physical mail delivery",
-    jobscan:
-      "Not available.",
+    jobscan: "Not available.",
     wadecv:
       "Send a printed resume via USPS directly from the app — useful for high-priority applications.",
     verdict: "wadecv",
@@ -159,8 +149,7 @@ export default function JobscanComparisonPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline:
-              "WadeCV vs Jobscan: AI Resume Tailoring vs ATS Scanning (2026)",
+            headline: "WadeCV vs Jobscan: AI Resume Tailoring vs ATS Scanning (2026)",
             description: metadata.description,
             author: { "@type": "Organization", name: "WadeCV" },
             publisher: {
@@ -197,18 +186,15 @@ export default function JobscanComparisonPage() {
       </h1>
 
       <p className="text-muted-foreground mb-6">
-        Jobscan is the most popular ATS resume scanner on the market — it tells
-        you how well your resume matches a job description and what keywords
-        you&apos;re missing. WadeCV takes a different approach: instead of
-        scoring your resume and leaving the edits to you, it rewrites your
-        entire resume to match each job automatically. Here&apos;s how the two
-        tools compare feature by feature.
+        Jobscan is the most popular ATS resume scanner on the market — it tells you how well your
+        resume matches a job description and what keywords you&apos;re missing. WadeCV takes a
+        different approach: instead of scoring your resume and leaving the edits to you, it rewrites
+        your entire resume to match each job automatically. Here&apos;s how the two tools compare
+        feature by feature.
       </p>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          Feature comparison: WadeCV vs Jobscan
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Feature comparison: WadeCV vs Jobscan</h2>
         <div className="space-y-4">
           {ROWS.map((row) => (
             <Card key={row.feature}>
@@ -248,51 +234,32 @@ export default function JobscanComparisonPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-3">
-          When Jobscan is the better choice
-        </h2>
+        <h2 className="text-xl font-semibold mb-3">When Jobscan is the better choice</h2>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li>
-            You want to learn how ATS systems work and understand exactly why
-            your resume is or isn&apos;t passing screening.
+            You want to learn how ATS systems work and understand exactly why your resume is or
+            isn&apos;t passing screening.
           </li>
-          <li>
-            You need LinkedIn profile optimization alongside resume scanning.
-          </li>
-          <li>
-            You prefer to manually control every edit and keyword placement in
-            your resume.
-          </li>
-          <li>
-            You want a resume builder with templates to create a new resume from
-            scratch.
-          </li>
+          <li>You need LinkedIn profile optimization alongside resume scanning.</li>
+          <li>You prefer to manually control every edit and keyword placement in your resume.</li>
+          <li>You want a resume builder with templates to create a new resume from scratch.</li>
         </ul>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-3">
-          When WadeCV is the better choice
-        </h2>
+        <h2 className="text-xl font-semibold mb-3">When WadeCV is the better choice</h2>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li>
-            You already have a resume and want to tailor it for each job you
-            apply to — without spending 30 minutes editing per application.
+            You already have a resume and want to tailor it for each job you apply to — without
+            spending 30 minutes editing per application.
           </li>
           <li>
-            You want the AI to actually rewrite your resume, not just tell you
-            what to change.
+            You want the AI to actually rewrite your resume, not just tell you what to change.
           </li>
+          <li>You need a tailored cover letter generated alongside each resume.</li>
+          <li>You want to pay per resume instead of committing to a $50+/month subscription.</li>
           <li>
-            You need a tailored cover letter generated alongside each resume.
-          </li>
-          <li>
-            You want to pay per resume instead of committing to a $50+/month
-            subscription.
-          </li>
-          <li>
-            You want a clean, ATS-safe DOCX output ready to upload — not a
-            score with a to-do list.
+            You want a clean, ATS-safe DOCX output ready to upload — not a score with a to-do list.
           </li>
         </ul>
       </section>
@@ -301,40 +268,33 @@ export default function JobscanComparisonPage() {
         <h2 className="text-xl font-semibold mb-3">The verdict</h2>
         <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-3">
           <p>
-            Jobscan is the gold standard for ATS scanning and keyword analysis.
-            If you want to understand exactly how your resume matches a job
-            description and learn the rules of ATS optimization, Jobscan is the
-            more educational tool. But it stops at diagnosis — you still have to
-            do the work of rewriting.
+            Jobscan is the gold standard for ATS scanning and keyword analysis. If you want to
+            understand exactly how your resume matches a job description and learn the rules of ATS
+            optimization, Jobscan is the more educational tool. But it stops at diagnosis — you
+            still have to do the work of rewriting.
           </p>
           <p>
-            WadeCV picks up where scanning leaves off. It takes your existing
-            resume and a job URL, runs a gap analysis, and then rewrites your
-            entire resume to close those gaps — all automatically. For job
-            seekers who want the result (a tailored resume) rather than the
+            WadeCV picks up where scanning leaves off. It takes your existing resume and a job URL,
+            runs a gap analysis, and then rewrites your entire resume to close those gaps — all
+            automatically. For job seekers who want the result (a tailored resume) rather than the
             process (keyword lists), WadeCV is faster and cheaper.
           </p>
           <p>
-            The two tools work well together: use WadeCV to generate tailored
-            resumes, then optionally run them through Jobscan for a second-opinion
-            ATS check before submitting.
+            The two tools work well together: use WadeCV to generate tailored resumes, then
+            optionally run them through Jobscan for a second-opinion ATS check before submitting.
           </p>
         </div>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          Frequently asked questions
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Frequently asked questions</h2>
         <div className="space-y-4">
           {FAQ.map((f) => (
             <Card key={f.question}>
               <CardHeader className="pb-2">
                 <CardTitle className="text-base">{f.question}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {f.answer}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{f.answer}</CardContent>
             </Card>
           ))}
         </div>
@@ -354,16 +314,12 @@ export default function JobscanComparisonPage() {
         <CardHeader>
           <CardTitle>Try WadeCV free — no subscription needed</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Upload your CV, paste a job URL, and get a fully tailored resume
-            plus cover letter in seconds. 1 free credit included on signup.
+            Upload your CV, paste a job URL, and get a fully tailored resume plus cover letter in
+            seconds. 1 free credit included on signup.
           </p>
         </CardHeader>
         <CardContent>
-          <SeoCta
-            variant="job"
-            label="Tailor your resume now"
-            slug="jobscan-comparison"
-          />
+          <SeoCta variant="job" label="Tailor your resume now" slug="jobscan-comparison" />
         </CardContent>
       </Card>
     </article>

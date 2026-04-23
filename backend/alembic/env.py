@@ -3,16 +3,17 @@ from logging.config import fileConfig
 
 from sqlalchemy import pool
 from sqlalchemy.ext.asyncio import async_engine_from_config
-from alembic import context
 
-from app.database import Base
-from app.config import get_settings
+import app.models.cover_letter
+import app.models.credit
+import app.models.cv
+import app.models.feature_flag
+import app.models.job
+import app.models.physical_mail
 import app.models.user  # noqa: F401
-import app.models.cv  # noqa: F401
-import app.models.job  # noqa: F401
-import app.models.cover_letter  # noqa: F401
-import app.models.credit  # noqa: F401
-import app.models.physical_mail  # noqa: F401
+from alembic import context
+from app.config import get_settings
+from app.database import Base
 
 config = context.config
 settings = get_settings()

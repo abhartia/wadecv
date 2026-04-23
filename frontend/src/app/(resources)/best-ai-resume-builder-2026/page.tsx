@@ -6,9 +6,7 @@ import { CrossCategoryLinks } from "@/components/seo/cross-category-links";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ||
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://wadecv.com");
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com");
 
 export const metadata = {
   title: "12 Best AI Resume Builders in 2026 (Tested & Ranked) | WadeCV",
@@ -197,10 +195,7 @@ const TOOLS: Tool[] = [
     bestFor: "Automating large-scale job applications",
     pricing: "Subscription-based (varies)",
     verdict: "niche",
-    pros: [
-      "Automates repetitive application form filling",
-      "Fast — applies to many jobs quickly",
-    ],
+    pros: ["Automates repetitive application form filling", "Fast — applies to many jobs quickly"],
     cons: [
       "Volume over quality — low-personalization output",
       "Mass-applying reduces your response rate per application",
@@ -371,22 +366,18 @@ export default function BestAiResumeBuilderPage() {
         12 Best AI Resume Builders in 2026 (Tested &amp; Ranked)
       </h1>
       <p className="text-sm text-muted-foreground mb-6">
-        Last updated: April 2026 · Tools tested: WadeCV, Teal, Jobscan,
-        Zety, FlowCV, Kickresume, Novoresume, Wobo AI, AiApply, Enhancv,
-        ChatGPT, Claude AI
+        Last updated: April 2026 · Tools tested: WadeCV, Teal, Jobscan, Zety, FlowCV, Kickresume,
+        Novoresume, Wobo AI, AiApply, Enhancv, ChatGPT, Claude AI
       </p>
 
       <p className="text-muted-foreground mb-8">
-        AI resume builders are not created equal. Some are glorified template
-        editors with a GPT button bolted on. Others automate mass applications
-        with generic resumes. And some — like ChatGPT and Claude — are great
-        general writing tools that users have adopted for resumes, even though
-        they lack resume-specific workflow. The best purpose-built tools are
-        genuinely designed around the job-tailoring workflow — keyword
-        extraction, ATS formatting, and gap analysis. We tested twelve of the
-        most-searched tools in 2026 and ranked them on three criteria that
-        actually matter: ATS compatibility, job-tailoring quality, and ease
-        of use.
+        AI resume builders are not created equal. Some are glorified template editors with a GPT
+        button bolted on. Others automate mass applications with generic resumes. And some — like
+        ChatGPT and Claude — are great general writing tools that users have adopted for resumes,
+        even though they lack resume-specific workflow. The best purpose-built tools are genuinely
+        designed around the job-tailoring workflow — keyword extraction, ATS formatting, and gap
+        analysis. We tested twelve of the most-searched tools in 2026 and ranked them on three
+        criteria that actually matter: ATS compatibility, job-tailoring quality, and ease of use.
       </p>
 
       {/* Quick comparison table */}
@@ -417,9 +408,7 @@ export default function BestAiResumeBuilderPage() {
                       </Badge>
                     )}
                   </td>
-                  <td className="py-2 pr-4 text-muted-foreground">
-                    {tool.bestFor}
-                  </td>
+                  <td className="py-2 pr-4 text-muted-foreground">{tool.bestFor}</td>
                   <td className="py-2 pr-4 text-muted-foreground text-xs">
                     {SCORE_BAR(tool.atsScore)}
                   </td>
@@ -442,13 +431,9 @@ export default function BestAiResumeBuilderPage() {
             <Card key={tool.name} id={tool.name.toLowerCase().replace(/\s+/g, "-")}>
               <CardHeader className="pb-2">
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <span className="text-muted-foreground font-normal text-base">
-                    #{i + 1}
-                  </span>
+                  <span className="text-muted-foreground font-normal text-base">#{i + 1}</span>
                   {tool.name}
-                  {tool.verdict === "top-pick" && (
-                    <Badge className="text-xs">Top pick</Badge>
-                  )}
+                  {tool.verdict === "top-pick" && <Badge className="text-xs">Top pick</Badge>}
                   {tool.verdict === "runner-up" && (
                     <Badge variant="secondary" className="text-xs">
                       Runner-up
@@ -510,8 +495,7 @@ export default function BestAiResumeBuilderPage() {
                 </div>
 
                 <p className="text-sm text-muted-foreground">
-                  <span className="font-medium text-foreground">Pricing:</span>{" "}
-                  {tool.pricing}
+                  <span className="font-medium text-foreground">Pricing:</span> {tool.pricing}
                 </p>
 
                 {tool.name === "WadeCV" && (
@@ -525,10 +509,7 @@ export default function BestAiResumeBuilderPage() {
                 {tool.name === "Teal" && (
                   <p className="text-sm text-muted-foreground">
                     See our{" "}
-                    <Link
-                      href="/wadecv-vs-teal"
-                      className="underline underline-offset-2"
-                    >
+                    <Link href="/wadecv-vs-teal" className="underline underline-offset-2">
                       WadeCV vs Teal head-to-head comparison
                     </Link>
                     .
@@ -538,10 +519,7 @@ export default function BestAiResumeBuilderPage() {
                 {tool.name === "Jobscan" && (
                   <p className="text-sm text-muted-foreground">
                     See our{" "}
-                    <Link
-                      href="/wadecv-vs-jobscan"
-                      className="underline underline-offset-2"
-                    >
+                    <Link href="/wadecv-vs-jobscan" className="underline underline-offset-2">
                       WadeCV vs Jobscan head-to-head comparison
                     </Link>
                     .
@@ -551,10 +529,7 @@ export default function BestAiResumeBuilderPage() {
                 {tool.name === "Wobo AI" && (
                   <p className="text-sm text-muted-foreground">
                     See our{" "}
-                    <Link
-                      href="/wadecv-vs-wobo"
-                      className="underline underline-offset-2"
-                    >
+                    <Link href="/wadecv-vs-wobo" className="underline underline-offset-2">
                       WadeCV vs Wobo AI head-to-head comparison
                     </Link>
                     .
@@ -564,10 +539,7 @@ export default function BestAiResumeBuilderPage() {
                 {tool.name === "Zety" && (
                   <p className="text-sm text-muted-foreground">
                     See our{" "}
-                    <Link
-                      href="/wadecv-vs-zety"
-                      className="underline underline-offset-2"
-                    >
+                    <Link href="/wadecv-vs-zety" className="underline underline-offset-2">
                       WadeCV vs Zety head-to-head comparison
                     </Link>
                     .
@@ -577,10 +549,7 @@ export default function BestAiResumeBuilderPage() {
                 {tool.name === "FlowCV" && (
                   <p className="text-sm text-muted-foreground">
                     See our{" "}
-                    <Link
-                      href="/wadecv-vs-flowcv"
-                      className="underline underline-offset-2"
-                    >
+                    <Link href="/wadecv-vs-flowcv" className="underline underline-offset-2">
                       WadeCV vs FlowCV head-to-head comparison
                     </Link>
                     .
@@ -590,10 +559,7 @@ export default function BestAiResumeBuilderPage() {
                 {tool.name === "AiApply" && (
                   <p className="text-sm text-muted-foreground">
                     See our{" "}
-                    <Link
-                      href="/wadecv-vs-aiapply"
-                      className="underline underline-offset-2"
-                    >
+                    <Link href="/wadecv-vs-aiapply" className="underline underline-offset-2">
                       WadeCV vs AiApply head-to-head comparison
                     </Link>
                     .
@@ -603,10 +569,7 @@ export default function BestAiResumeBuilderPage() {
                 {tool.name === "Enhancv" && (
                   <p className="text-sm text-muted-foreground">
                     See our{" "}
-                    <Link
-                      href="/wadecv-vs-enhancv"
-                      className="underline underline-offset-2"
-                    >
+                    <Link href="/wadecv-vs-enhancv" className="underline underline-offset-2">
                       WadeCV vs Enhancv head-to-head comparison
                     </Link>
                     .
@@ -629,10 +592,7 @@ export default function BestAiResumeBuilderPage() {
                 {tool.name === "Claude AI" && (
                   <p className="text-sm text-muted-foreground">
                     See our{" "}
-                    <Link
-                      href="/wadecv-vs-claude"
-                      className="underline underline-offset-2"
-                    >
+                    <Link href="/wadecv-vs-claude" className="underline underline-offset-2">
                       WadeCV vs Claude AI head-to-head comparison
                     </Link>
                     .
@@ -652,47 +612,40 @@ export default function BestAiResumeBuilderPage() {
             <span className="font-medium text-foreground">
               For tailoring your resume to specific jobs:
             </span>{" "}
-            WadeCV. It is the only tool that automates the full workflow — job
-            URL scraping, gap analysis, tailored rewrite, and ATS-safe export —
-            without a monthly subscription.
+            WadeCV. It is the only tool that automates the full workflow — job URL scraping, gap
+            analysis, tailored rewrite, and ATS-safe export — without a monthly subscription.
           </p>
           <p>
             <span className="font-medium text-foreground">
               For managing a large job search pipeline:
             </span>{" "}
-            Teal. The application tracker is genuinely useful if you are
-            applying to 20+ roles and want to stay organised.
+            Teal. The application tracker is genuinely useful if you are applying to 20+ roles and
+            want to stay organised.
           </p>
           <p>
             <span className="font-medium text-foreground">
               For diagnosing ATS failures on an existing resume:
             </span>{" "}
-            Jobscan is the best-known paid option. For a free alternative that
-            includes the tailored rewrite,{" "}
-            <Link
-              href="/ats-resume-checker"
-              className="underline underline-offset-2"
-            >
+            Jobscan is the best-known paid option. For a free alternative that includes the tailored
+            rewrite,{" "}
+            <Link href="/ats-resume-checker" className="underline underline-offset-2">
               WadeCV&apos;s ATS Resume Checker
             </Link>{" "}
-            scores your resume against any job URL for free on signup — no
-            credit card required.
+            scores your resume against any job URL for free on signup — no credit card required.
           </p>
           <p>
             <span className="font-medium text-foreground">
               For building your first resume from scratch:
             </span>{" "}
-            Zety, Novoresume, or Kickresume — then switch to WadeCV once you
-            have a base CV to tailor.
+            Zety, Novoresume, or Kickresume — then switch to WadeCV once you have a base CV to
+            tailor.
           </p>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">
-          Frequently asked questions
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Frequently asked questions</h2>
         <div className="space-y-6">
           {FAQ.map((item) => (
             <div key={item.q}>
@@ -709,9 +662,8 @@ export default function BestAiResumeBuilderPage() {
         <CardHeader>
           <CardTitle>Try the top-ranked tool free</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Upload your CV, paste a job URL, get a fit score, and generate a
-            tailored resume — all in under 2 minutes. Your first analysis is
-            free.
+            Upload your CV, paste a job URL, get a fit score, and generate a tailored resume — all
+            in under 2 minutes. Your first analysis is free.
           </p>
         </CardHeader>
         <CardContent>

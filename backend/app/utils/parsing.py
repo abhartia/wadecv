@@ -1,6 +1,7 @@
 import io
-from docx import Document
+
 import pdfplumber
+from docx import Document
 
 
 def parse_pdf(file_bytes: bytes) -> str:

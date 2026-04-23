@@ -108,4 +108,3 @@ Once configured, you can:
    - `frontend/content/seo/career-change.json`
 
 From there, you (or Cursor automations) can apply the suggested JSON deltas and any safe code changes, keeping WadeCV’s SEO content strategy evolving week-on-week.
-

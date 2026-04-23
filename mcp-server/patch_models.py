@@ -86,4 +86,3 @@ __all__ = [
     "CodePatchProposal",
     "SeoChangeBatch",
 ]
-

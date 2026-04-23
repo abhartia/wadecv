@@ -6,7 +6,10 @@ import { FaqSection } from "@/components/seo/faq-section";
 import { RelatedGuides } from "@/components/seo/related-guides";
 import { InlineCta } from "@/components/seo/inline-cta";
 
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com";
+const BASE_URL =
+  process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "https://wadecv.com";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -45,7 +48,10 @@ export default async function PhysicalMailPage({ params }: Props) {
             publisher: { "@type": "Organization", name: "WadeCV", url: BASE_URL },
             datePublished: "2026-04-01",
             dateModified: "2026-04-07",
-            mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/physical-mail/${entry.slug}` },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `${BASE_URL}/physical-mail/${entry.slug}`,
+            },
           }),
         }}
       />
@@ -77,13 +83,18 @@ export default async function PhysicalMailPage({ params }: Props) {
 
       {entry.faq && <FaqSection faq={entry.faq} />}
 
-      <RelatedGuides relatedSlugs={entry.relatedSlugs} category="physical-mail" currentSlug={slug} />
+      <RelatedGuides
+        relatedSlugs={entry.relatedSlugs}
+        category="physical-mail"
+        currentSlug={slug}
+      />
 
       <Card>
         <CardHeader>
           <CardTitle>Ready to mail your application?</CardTitle>
           <p className="text-sm text-muted-foreground">
-            WadeCV lets you generate a tailored CV, preview it, and mail a printed copy directly to any US company — all in one workflow.
+            WadeCV lets you generate a tailored CV, preview it, and mail a printed copy directly to
+            any US company — all in one workflow.
           </p>
         </CardHeader>
         <CardContent>

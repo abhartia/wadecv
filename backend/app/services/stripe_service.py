@@ -1,7 +1,6 @@
 import logging
 
 import stripe
-from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.config import get_settings
@@ -63,7 +62,11 @@ async def create_checkout_session(db: AsyncSession, user: User, pack_id: str) ->
         if "No such customer" in message:
             logger.warning(
                 "Stripe reported missing customer; recreating for user.",
-                extra={"user_id": str(user.id), "pack_id": pack_id, "stripe_customer_id": user.stripe_customer_id},
+                extra={
+                    "user_id": str(user.id),
+                    "pack_id": pack_id,
+                    "stripe_customer_id": user.stripe_customer_id,
+                },
             )
             user.stripe_customer_id = None
             await db.flush()
@@ -91,7 +94,9 @@ async def create_checkout_session(db: AsyncSession, user: User, pack_id: str) ->
                 "Stripe invalid request error during checkout session creation.",
                 extra={"user_id": str(user.id), "pack_id": pack_id},
             )
-            raise PaymentError("There was an issue with the payment service. Please try again.") from e
+            raise PaymentError(
+                "There was an issue with the payment service. Please try again."
+            ) from e
     except stripe.error.StripeError as e:
         logger.exception(
             "Stripe error during checkout session creation.",
@@ -113,6 +118,7 @@ async def handle_checkout_completed(db: AsyncSession, session_data: dict):
         return
 
     from uuid import UUID
+
     await add_credits(
         db=db,
         user_id=UUID(user_id),

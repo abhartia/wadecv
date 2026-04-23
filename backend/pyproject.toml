@@ -1,0 +1,57 @@
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--strict-config",
+    "--cov=app",
+    "--cov-report=term-missing",
+    "--cov-report=xml",
+    "--cov-fail-under=40",
+]
+markers = [
+    "integration: tests that hit a real Postgres (skipped if no DATABASE_URL_TEST)",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["app"]
+omit = [
+    "app/main.py",
+    "alembic/*",
+    "tests/*",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+exclude = ["alembic/versions"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+    "RUF", # ruff-specific
+]
+ignore = [
+    "E501",   # line length handled by formatter
+    "B008",   # fastapi Depends() in defaults is the idiom
+    "B904",   # raise-from — existing handlers don't chain; would require audit
+    "RUF001", # ambiguous unicode in strings — intentional in prompt templates
+    "RUF006", # fire-and-forget asyncio tasks are used deliberately in routers
+    "UP031",  # %-formatting is fine where it already exists
+    "N806",   # existing variable naming is acceptable
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B011"]
+
+[tool.ruff.format]
+quote-style = "double"

@@ -1,4 +1,4 @@
-from enum import Enum
+from enum import StrEnum
 from typing import Literal
 
 from pydantic import BaseModel
@@ -70,7 +70,7 @@ class CVResponse(BaseModel):
     model_config = {"from_attributes": True}
 
 
-class CVGenerationStage(str, Enum):
+class CVGenerationStage(StrEnum):
     START = "start"
     SETUP = "setup"
     SCRAPING_JOB = "scraping_job"

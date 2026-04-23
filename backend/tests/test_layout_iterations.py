@@ -1,4 +1,4 @@
-from typing import Any, Dict
+from typing import Any
 
 import pytest
 
@@ -10,7 +10,7 @@ from app.routers.cv import _apply_layout_feedback_and_regenerate
 
 class DummyEmit:
     def __init__(self) -> None:
-        self.events: list[Dict[str, Any]] = []
+        self.events: list[dict[str, Any]] = []
 
     async def __call__(self, event) -> None:  # type: ignore[no-untyped-def]
         self.events.append(event.model_dump())
@@ -26,13 +26,15 @@ async def test_layout_iteration_stops_when_within_page_limit(monkeypatch):
     cv_data_first = {"data": 1}
 
     # First call: too many pages, returns one tweak; second call: within limit.
-    layout_calls: list[Dict[str, Any]] = []
+    layout_calls: list[dict[str, Any]] = []
 
-    async def fake_get_cv_layout_feedback(cv_data: dict, page_limit: int = 1, user_id: str | None = None, cv_id: str | None = None) -> list[str]:  # noqa: D103
+    async def fake_get_cv_layout_feedback(
+        cv_data: dict, page_limit: int = 1, user_id: str | None = None, cv_id: str | None = None
+    ) -> list[str]:
         layout_calls.append({"cv_data": cv_data, "page_limit": page_limit})
         return ["shorten summary"]
 
-    def fake_count_cv_pdf_pages(cv_data: dict, page_limit: int = 1) -> int:  # noqa: D103
+    def fake_count_cv_pdf_pages(cv_data: dict, page_limit: int = 1) -> int:
         # First regenerated CV still overflows; second one fits.
         if cv_data.get("iteration") == 1:
             return page_limit + 1
@@ -76,10 +78,12 @@ async def test_layout_iterations_respect_max_iterations(monkeypatch):
 
     cv_data_first = {"data": 1}
 
-    async def fake_get_cv_layout_feedback(cv_data: dict, page_limit: int = 1, user_id: str | None = None, cv_id: str | None = None) -> list[str]:  # noqa: D103
+    async def fake_get_cv_layout_feedback(
+        cv_data: dict, page_limit: int = 1, user_id: str | None = None, cv_id: str | None = None
+    ) -> list[str]:
         return ["shorten summary"]
 
-    def fake_count_cv_pdf_pages(cv_data: dict, page_limit: int = 1) -> int:  # noqa: D103
+    def fake_count_cv_pdf_pages(cv_data: dict, page_limit: int = 1) -> int:
         # Always overflow to force hitting max_layout_iterations.
         return page_limit + 1
 
@@ -111,4 +115,3 @@ async def test_layout_iterations_respect_max_iterations(monkeypatch):
 
     # We expect to stop after max_iters iterations.
     assert result["iteration"] == max_iters
-

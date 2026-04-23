@@ -40,4 +40,3 @@
 
 - These tests call the **live AI/model API and the layout vision model**, so they are slower and should typically be run on demand (not on every quick edit).
 - The tests will be **skipped by default** unless `RUN_LIVE_AI_TESTS=1` is set in the environment.
-

@@ -1,9 +1,9 @@
 import json
 import logging
 
-from openai import AsyncAzureOpenAI
 from langfuse import Langfuse
 from langfuse.openai import AsyncAzureOpenAI as LangfuseAzureOpenAI
+from openai import AsyncAzureOpenAI
 
 from app.config import get_settings
 
@@ -172,10 +172,12 @@ async def generate_completion_with_image(
     images = image_base64 if isinstance(image_base64, list) else [image_base64]
     user_content: list = [{"type": "text", "text": user_prompt}]
     for b64 in images:
-        user_content.append({
-            "type": "image_url",
-            "image_url": {"url": f"data:image/png;base64,{b64}"},
-        })
+        user_content.append(
+            {
+                "type": "image_url",
+                "image_url": {"url": f"data:image/png;base64,{b64}"},
+            }
+        )
 
     messages = [
         {"role": role, "content": system_prompt},

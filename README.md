@@ -1,151 +1,188 @@
 # WadeCV
 
-AI-powered CV tailoring system. Upload your CV, paste a job link, and get a professionally crafted resume tailored to the role in seconds.
+[![CI](https://github.com/abhartia/wadecv/actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
+[![Next.js 16](https://img.shields.io/badge/next.js-16-black.svg)](https://nextjs.org/)
 
-## Features
+AI-powered CV tailoring. Upload your CV, paste a job link, get a professionally
+tailored resume streamed back in seconds — and optionally a printed copy
+mailed to the hiring company via USPS.
 
-- **AI CV Generation** -- Tailors your existing CV for specific job descriptions using Azure OpenAI (GPT-5-mini)
-- **Job URL Scraping** -- Automatically extracts job descriptions from LinkedIn, Indeed, Greenhouse, Lever, and more
-- **Cover Letter Generation** -- Free AI-generated cover letters for every tailored CV
-- **Online CV Editor** -- Edit generated CVs section-by-section before downloading
-- **DOCX Export** -- Download professionally formatted Word documents
-- **Application Tracker** -- Track all your job applications in one place
-- **Credit System** -- Pay-per-use pricing with Stripe integration
-- **Dark Mode** -- Full dark mode support
+Live demo: **[wadecv.com](https://wadecv.com)**
 
-## CV data guarantees
+---
 
-- **Complete, dated work history** -- Generated CVs preserve the candidate's full relevant work history and include clear start/end dates (or \"Present\") for each role so recruiters and ATS can infer total years of experience without hidden gaps introduced by the system.
+## Why this repo is worth reading
 
-## Tech Stack
+This is a solo side project that takes production quality seriously. A few
+things worth calling out if you're evaluating the codebase:
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend | Next.js 16, React, TypeScript, Tailwind CSS, shadcn/ui |
-| Backend | FastAPI, Python 3.12, SQLAlchemy, Alembic |
-| Database | PostgreSQL (Azure Flexible Server) |
-| AI | Azure OpenAI (GPT-5-mini), Langfuse |
-| Payments | Stripe (Checkout Sessions) |
-| Email | Resend |
-| Hosting | Azure App Service |
+- **End-to-end type safety**, with no hand-written API client. Pydantic → OpenAPI →
+  `@hey-api/openapi-ts` → TanStack Query. A CI job regenerates the client on
+  every PR and fails the build if the diff is non-empty, so backend/frontend
+  drift becomes a red build instead of a 422 in production. See
+  [ADR 0001](docs/adr/0001-hey-api-client.md).
+- **Streaming LLM responses over SSE.** CV generation takes 10–30s; the
+  frontend consumes a `text/event-stream` from FastAPI so users see progress
+  token-by-token rather than waiting behind a spinner. Langfuse traces every
+  call.
+- **Zero-downtime deploys via Azure slot swap.** Every merge to `main` ships
+  to a warm staging slot, then atomically swaps into production. Rollback is
+  a second swap. See [ADR 0002](docs/adr/0002-azure-slot-swap.md).
+- **Feature flags in Postgres, not a vendor.** Global kill switch, percentage
+  rollout, user allowlist — one table, one FastAPI dependency. Swappable for
+  LaunchDarkly in a single file when the cost is worth it.
+  See [ADR 0003](docs/adr/0003-feature-flags-in-db.md).
+- **Observability that actually works on a solo budget.** Sentry (free tier,
+  env-gated — app runs fine without a DSN), `structlog` JSON output with a
+  request-ID middleware so every log line across backend services can be
+  stitched to one request.
+- **CI that gates merges, not just builds.** `ruff`, `pytest` against a real
+  Postgres service container (no SQLite stand-in — the prod DB uses JSONB
+  and migrations would lie), Vitest, Playwright smoke, `alembic upgrade` +
+  `downgrade -1` reversibility check, `gitleaks`, and the OpenAPI drift guard.
 
-## Project Structure
+## Architecture at a glance
 
+```mermaid
+flowchart LR
+    subgraph Browser
+        UI[Next.js 16 App Router<br/>shadcn/ui + TanStack Query]
+    end
+    subgraph Azure App Service
+        API[FastAPI async<br/>+ slowapi rate limits<br/>+ structlog JSON]
+    end
+    subgraph Azure Flexible Server
+        PG[(PostgreSQL 16)]
+    end
+    subgraph External
+        LLM[Azure OpenAI<br/>GPT-5-mini]
+        STRIPE[Stripe]
+        RESEND[Resend]
+        LOB[Lob<br/>physical mail]
+        SENTRY[Sentry]
+        LF[Langfuse]
+    end
+
+    UI -- hey-api generated client --> API
+    API -- asyncpg --> PG
+    API -- streamed tokens over SSE --> UI
+    API --> LLM
+    API --> STRIPE
+    API --> RESEND
+    API --> LOB
+    API -- errors + traces --> SENTRY
+    UI -- errors --> SENTRY
+    API -- LLM traces --> LF
 ```
-wadecv/
-├── backend/          # FastAPI backend
-│   ├── app/
-│   │   ├── models/   # SQLAlchemy ORM models
-│   │   ├── schemas/  # Pydantic request/response schemas
-│   │   ├── routers/  # API route handlers
-│   │   ├── services/ # Business logic
-│   │   └── utils/    # Auth, parsing utilities
-│   └── alembic/      # Database migrations
-├── frontend/         # Next.js frontend
-│   └── src/
-│       ├── app/      # App Router pages
-│       ├── components/  # React components (shadcn/ui)
-│       └── lib/      # API client, auth context
-├── docker-compose.yml
-└── .env.example
-```
 
-## Getting Started
+Full architecture doc: [docs/architecture.md](docs/architecture.md).
+Runbook (local setup, common failure modes): [docs/runbook.md](docs/runbook.md).
 
-### Prerequisites
+## Tech stack
 
-- Python 3.12+
-- Node.js 20+
-- PostgreSQL 16+
-- Azure OpenAI access
-- Stripe account
-- Resend account (for email)
-- Langfuse account
+| Layer | Stack |
+|-------|-------|
+| Frontend | Next.js 16 (App Router), React 19, TypeScript strict, Tailwind v4, shadcn/ui, TanStack Query, React Hook Form + Zod |
+| Backend | FastAPI, Python 3.12, async SQLAlchemy 2.0, Alembic, Pydantic v2, slowapi |
+| Database | PostgreSQL 16 (Azure Flexible Server), JSONB for payloads |
+| AI | Azure OpenAI (GPT-5-mini) with Langfuse tracing |
+| Payments | Stripe (Checkout + webhooks) |
+| Email | Resend (transactional + magic links) |
+| Physical mail | Lob |
+| Observability | Sentry (gated on `SENTRY_DSN`), `structlog` JSON, request-ID middleware |
+| Deploys | Azure App Service + ACR, staging-slot swap |
+| Tests | pytest + pytest-asyncio + httpx (backend), Vitest + React Testing Library (frontend unit), Playwright (e2e) |
+| Tooling | ruff, prettier, pre-commit, gitleaks, Dependabot |
 
-### 1. Clone and configure
+## Quick start
 
 ```bash
-git clone https://github.com/yourusername/wadecv.git
+git clone https://github.com/abhartia/wadecv.git
 cd wadecv
-cp .env.example .env
-# Edit .env with your actual credentials
-```
+cp backend/.env.example backend/.env    # fill in keys you have; unset ones no-op
+cp frontend/.env.example frontend/.env.local
 
-### 2. Start with Docker (recommended)
+# Install pre-commit hooks (runs ruff, prettier, eslint on every commit)
+pip install pre-commit && pre-commit install
 
-```bash
+# One-shot: Postgres, backend, frontend
 docker compose up -d
 ```
 
-This starts PostgreSQL, the backend (port 8000), and the frontend (port 3000).
+Or run each piece manually — see [docs/runbook.md](docs/runbook.md).
 
-### 3. Or run manually
+## Repo layout
 
-**Backend:**
-
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-alembic upgrade head
-uvicorn app.main:app --reload --port 8000
+```
+wadecv/
+├── backend/                FastAPI service
+│   ├── app/
+│   │   ├── models/         SQLAlchemy ORM models
+│   │   ├── schemas/        Pydantic request/response schemas
+│   │   ├── routers/        Route handlers (thin; logic lives in services/)
+│   │   ├── services/       Business logic (LLM, Stripe, Lob, email)
+│   │   ├── middleware/     Request-ID, structured logging
+│   │   └── utils/          JWT, password hashing, parsing
+│   ├── alembic/versions/   Migrations (reversible, CI-verified)
+│   ├── tests/
+│   │   ├── api/            Integration tests against real Postgres
+│   │   └── test_*.py       Unit tests (CV layout, fit logic)
+│   └── pyproject.toml      pytest + ruff config
+├── frontend/               Next.js app
+│   ├── src/
+│   │   ├── app/            App Router pages + error boundaries
+│   │   ├── components/     React components (shadcn-composed)
+│   │   ├── gen/            Generated hey-api client (checked in, CI-verified)
+│   │   ├── hooks/          Custom hooks (feature flags, auth guards)
+│   │   └── lib/            Auth context, API helpers
+│   ├── e2e/                Playwright specs
+│   └── vitest.config.ts    Unit test config
+├── docs/
+│   ├── adr/                Architecture decision records
+│   ├── architecture.md
+│   └── runbook.md
+├── .github/workflows/
+│   ├── ci.yml              PR gate: lint, test, e2e, client-sync, gitleaks
+│   └── azure-appservice-cicd.yml  Deploy (slot swap)
+└── docker-compose.yml
 ```
 
-**Frontend:**
+## Testing
 
 ```bash
+# Backend
+cd backend
+pytest --cov                 # real Postgres via docker-compose, or CI service container
+
+# Frontend
 cd frontend
-npm install
-cp .env.local.example .env.local
-npm run dev
+npm run lint
+npm run typecheck
+npm test                     # Vitest
+npx playwright test          # E2E smoke
+
+# Everything, as pre-commit would see it
+pre-commit run --all-files
 ```
 
-### 4. Run database migrations
+## What I'd do with a real eng team
 
-```bash
-cd backend
-alembic upgrade head
-```
+Called out honestly so reviewers can see the known edges:
 
-### 5. Set up Stripe webhook (for local dev)
-
-```bash
-stripe listen --forward-to localhost:8000/api/webhook/stripe
-```
-
-## API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/auth/register` | Register new account |
-| POST | `/api/auth/login` | Email + password login |
-| POST | `/api/auth/magic-link` | Request magic link |
-| POST | `/api/auth/magic-link/verify` | Verify magic link |
-| GET | `/api/auth/me` | Get current user |
-| POST | `/api/cv/upload` | Upload CV file |
-| POST | `/api/cv/generate` | Generate tailored CV (costs 1 credit) |
-| PUT | `/api/cv/{id}` | Update CV data |
-| GET | `/api/cv/{id}/download` | Download CV as DOCX |
-| GET | `/api/jobs/` | List applications |
-| PATCH | `/api/jobs/{id}` | Update application status |
-| POST | `/api/jobs/scrape` | Scrape job URL |
-| GET | `/api/credits/packs` | List credit packs |
-| POST | `/api/credits/checkout` | Create Stripe checkout |
-| POST | `/api/cover-letter/generate` | Generate cover letter (free) |
-| GET | `/api/cover-letter/{job_id}/download` | Download cover letter as DOCX |
-| DELETE | `/api/account/delete` | Delete account and all data |
-
-## Credit Pricing
-
-| Pack | Credits | Price | Per CV |
-|------|---------|-------|--------|
-| Starter | 20 | $10 | $0.50 |
-| Value | 50 | $15 | $0.30 |
-| Pro | 100 | $20 | $0.20 |
-
-New users get 1 free credit on signup.
+- **Load testing.** No k6 suite yet. Unknown throughput ceilings on the LLM
+  streaming endpoint.
+- **Bundle size gate.** Added `next/bundle-analyzer` to devDeps but no CI
+  threshold — would wire `size-limit` once there's a budget to defend.
+- **Storybook.** shadcn primitives are solid without it; would add for design-system
+  work if more than one person were touching UI.
+- **Full OpenTelemetry.** Langfuse covers the LLM path. A proper OTel collector
+  is overkill at current volume — I'd add one when we have more than one
+  backend service.
+- **Admin UI for feature flags.** Today: `UPDATE feature_flags SET enabled = ...`.
+  Two screens of shadcn would solve it; deferred until it's annoying.
 
 ## License
 
-Proprietary. All rights reserved.
+[MIT](LICENSE).

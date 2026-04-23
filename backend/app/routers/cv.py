@@ -5,7 +5,15 @@ import unicodedata
 import uuid
 from collections.abc import Awaitable, Callable
 
-from fastapi import APIRouter, BackgroundTasks, Depends, File, HTTPException, Query, UploadFile, status
+from fastapi import (
+    APIRouter,
+    BackgroundTasks,
+    Depends,
+    File,
+    HTTPException,
+    Query,
+    UploadFile,
+)
 from fastapi.responses import StreamingResponse
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -16,9 +24,9 @@ from app.models.job import Job
 from app.models.user import User
 from app.schemas.cv import (
     CVFitRequest,
+    CVGenerateRequest,
     CVGenerationProgressEvent,
     CVGenerationStage,
-    CVGenerateRequest,
     CVListItem,
     CVRefineRequest,
     CVResponse,
@@ -239,16 +247,12 @@ async def _run_cv_generation(
         except ValueError:
             raise HTTPException(status_code=400, detail="Invalid job_id")
 
-        result = await db.execute(
-            select(Job).where(Job.id == job_uuid, Job.user_id == user.id)
-        )
+        result = await db.execute(select(Job).where(Job.id == job_uuid, Job.user_id == user.id))
         job = result.scalar_one_or_none()
         if not job:
             raise HTTPException(status_code=404, detail="Job not found")
 
-        result = await db.execute(
-            select(CV).where(CV.id == job.cv_id, CV.user_id == user.id)
-        )
+        result = await db.execute(select(CV).where(CV.id == job.cv_id, CV.user_id == user.id))
         cv = result.scalar_one_or_none()
         if not cv:
             raise HTTPException(status_code=404, detail="CV not found for job")
@@ -416,7 +420,7 @@ async def _run_cv_generation(
         )
         try:
             scraped = await scrape_job_url(req.job_url)
-        except Exception:  # noqa: BLE001
+        except Exception:
             if not job_description:
                 raise HTTPException(
                     status_code=400,
@@ -450,7 +454,7 @@ async def _run_cv_generation(
                 job_title = metadata.get("job_title")
             if not company_name:
                 company_name = metadata.get("company_name")
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             logger.warning("Job metadata extraction failed: %s", exc, exc_info=True)
 
     logger.info(
@@ -878,9 +882,7 @@ async def fit_cv(
         except ValueError:
             raise HTTPException(status_code=400, detail="Invalid cv_id")
 
-        result = await db.execute(
-            select(CV).where(CV.id == cv_uuid, CV.user_id == user.id)
-        )
+        result = await db.execute(select(CV).where(CV.id == cv_uuid, CV.user_id == user.id))
         cv = result.scalar_one_or_none()
         if not cv:
             raise HTTPException(status_code=404, detail="CV not found")
@@ -895,8 +897,7 @@ async def fit_cv(
         raise HTTPException(
             status_code=400,
             detail=(
-                "No CV uploaded and no profile set up. "
-                "Upload a CV or set up your profile first."
+                "No CV uploaded and no profile set up. Upload a CV or set up your profile first."
             ),
         )
 
@@ -914,7 +915,7 @@ async def fit_cv(
     if req.job_url:
         try:
             scraped = await scrape_job_url(req.job_url)
-        except Exception:  # noqa: BLE001
+        except Exception:
             if not job_description:
                 raise HTTPException(
                     status_code=400,
@@ -940,7 +941,7 @@ async def fit_cv(
                 job_title = metadata.get("job_title")
             if not company_name:
                 company_name = metadata.get("company_name")
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             logger.warning("Job metadata extraction failed in fit_cv: %s", exc, exc_info=True)
 
     logger.info(
@@ -1024,9 +1025,7 @@ async def refine_fit_only(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
-    result = await db.execute(
-        select(CV).where(CV.id == uuid.UUID(cv_id), CV.user_id == user.id)
-    )
+    result = await db.execute(select(CV).where(CV.id == uuid.UUID(cv_id), CV.user_id == user.id))
     cv = result.scalar_one_or_none()
     if not cv:
         raise HTTPException(status_code=404, detail="CV not found")
@@ -1062,7 +1061,7 @@ async def generate_cv_stream(
                     result=None,
                 )
             )
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             logger.warning("Streaming CV generation failed: %s", exc, exc_info=True)
             await emit(
                 CVGenerationProgressEvent(
@@ -1133,7 +1132,7 @@ async def refine_cv_stream(
                     result=None,
                 )
             )
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             logger.warning("Streaming CV refinement failed: %s", exc, exc_info=True)
             await emit(
                 CVGenerationProgressEvent(
@@ -1171,9 +1170,7 @@ async def update_cv(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
-    result = await db.execute(
-        select(CV).where(CV.id == uuid.UUID(cv_id), CV.user_id == user.id)
-    )
+    result = await db.execute(select(CV).where(CV.id == uuid.UUID(cv_id), CV.user_id == user.id))
     cv = result.scalar_one_or_none()
     if not cv:
         raise HTTPException(status_code=404, detail="CV not found")
@@ -1203,9 +1200,7 @@ async def get_cv(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
-    result = await db.execute(
-        select(CV).where(CV.id == uuid.UUID(cv_id), CV.user_id == user.id)
-    )
+    result = await db.execute(select(CV).where(CV.id == uuid.UUID(cv_id), CV.user_id == user.id))
     cv = result.scalar_one_or_none()
     if not cv:
         raise HTTPException(status_code=404, detail="CV not found")
@@ -1231,9 +1226,7 @@ async def refine_cv(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
-    result = await db.execute(
-        select(CV).where(CV.id == uuid.UUID(cv_id), CV.user_id == user.id)
-    )
+    result = await db.execute(select(CV).where(CV.id == uuid.UUID(cv_id), CV.user_id == user.id))
     cv = result.scalar_one_or_none()
     if not cv:
         raise HTTPException(status_code=404, detail="CV not found")
@@ -1260,14 +1253,16 @@ async def list_cvs(
         if cv.jobs:
             job_title = cv.jobs[0].job_title
             company_name = cv.jobs[0].company_name
-        items.append(CVListItem(
-            id=str(cv.id),
-            original_filename=cv.original_filename,
-            status=cv.status,
-            created_at=cv.created_at.isoformat(),
-            job_title=job_title,
-            company_name=company_name,
-        ))
+        items.append(
+            CVListItem(
+                id=str(cv.id),
+                original_filename=cv.original_filename,
+                status=cv.status,
+                created_at=cv.created_at.isoformat(),
+                job_title=job_title,
+                company_name=company_name,
+            )
+        )
     return items
 
 
@@ -1282,9 +1277,7 @@ async def download_cv(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
-    result = await db.execute(
-        select(CV).where(CV.id == uuid.UUID(cv_id), CV.user_id == user.id)
-    )
+    result = await db.execute(select(CV).where(CV.id == uuid.UUID(cv_id), CV.user_id == user.id))
     cv = result.scalar_one_or_none()
     if not cv or not cv.generated_cv_data:
         raise HTTPException(status_code=404, detail="Generated CV not found")
@@ -1305,10 +1298,7 @@ async def download_cv(
     if cv.jobs:
         job = cv.jobs[0]
         job_suffix = job_suffix_for_filename(job.company_name, job.job_title)
-    if job_suffix:
-        mid = f"_{job_suffix}_"
-    else:
-        mid = "_"
+    mid = f"_{job_suffix}_" if job_suffix else "_"
     if first_name and last_name:
         base = f"{last_name}_{first_name}_Resume{mid}{date_str}"
     elif first_name:

@@ -101,25 +101,30 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!token) return;
 
-    const interval = setInterval(async () => {
-      const refreshToken = localStorage.getItem("refresh_token");
-      if (!refreshToken) return;
+    const interval = setInterval(
+      async () => {
+        const refreshToken = localStorage.getItem("refresh_token");
+        if (!refreshToken) return;
 
-      try {
-        const tokens = await api.refreshToken(refreshToken);
-        saveTokens(tokens.access_token, tokens.refresh_token);
-        const u = await api.getMe(tokens.access_token);
-        setUser(u);
-      } catch {
-        clearTokens();
-      }
-    }, 10 * 60 * 1000);
+        try {
+          const tokens = await api.refreshToken(refreshToken);
+          saveTokens(tokens.access_token, tokens.refresh_token);
+          const u = await api.getMe(tokens.access_token);
+          setUser(u);
+        } catch {
+          clearTokens();
+        }
+      },
+      10 * 60 * 1000,
+    );
 
     return () => clearInterval(interval);
   }, [token]);
 
   useEffect(() => {
-    const onTokensRefreshed = async (e: CustomEvent<{ access_token: string; refresh_token: string }>) => {
+    const onTokensRefreshed = async (
+      e: CustomEvent<{ access_token: string; refresh_token: string }>,
+    ) => {
       const { access_token, refresh_token } = e.detail;
       saveTokens(access_token, refresh_token);
       try {
@@ -130,7 +135,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
     };
     window.addEventListener("tokensRefreshed", onTokensRefreshed as unknown as EventListener);
-    return () => window.removeEventListener("tokensRefreshed", onTokensRefreshed as unknown as EventListener);
+    return () =>
+      window.removeEventListener("tokensRefreshed", onTokensRefreshed as unknown as EventListener);
   }, []);
 
   const login = async (email: string, password: string) => {
@@ -160,7 +166,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, token, loading, login, register, loginWithMagicLink, logout, refreshUser }}>
+    <AuthContext.Provider
+      value={{ user, token, loading, login, register, loginWithMagicLink, logout, refreshUser }}
+    >
       {children}
     </AuthContext.Provider>
   );

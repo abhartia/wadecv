@@ -1,10 +1,9 @@
+from fastapi import HTTPException, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from fastapi import HTTPException, status
 
-from app.models.user import User
 from app.models.credit import CreditTransaction
-
+from app.models.user import User
 
 CREDIT_PACKS = {
     "starter": {"name": "Starter", "credits": 20, "price_cents": 1000, "price_display": "$10"},

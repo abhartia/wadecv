@@ -5,9 +5,7 @@ import { CrossCategoryLinks } from "@/components/seo/cross-category-links";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ||
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://wadecv.com");
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com");
 
 export const metadata = {
   title: "WadeCV vs Teal: Which AI Resume Builder Is Better in 2026? | WadeCV",
@@ -148,8 +146,7 @@ export default function TealComparisonPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline:
-              "WadeCV vs Teal: Which AI Resume Builder Is Better in 2026?",
+            headline: "WadeCV vs Teal: Which AI Resume Builder Is Better in 2026?",
             description: metadata.description,
             author: { "@type": "Organization", name: "WadeCV" },
             publisher: {
@@ -186,13 +183,15 @@ export default function TealComparisonPage() {
       </h1>
 
       <p className="text-muted-foreground mb-6">
-        Teal and WadeCV are both AI-powered tools for job seekers — but they solve different problems. Teal is built around resume creation, keyword tracking, and job pipeline management. WadeCV is built for one specific high-value task: taking your existing resume and tailoring it to a specific job description, automatically. Here&apos;s the side-by-side breakdown.
+        Teal and WadeCV are both AI-powered tools for job seekers — but they solve different
+        problems. Teal is built around resume creation, keyword tracking, and job pipeline
+        management. WadeCV is built for one specific high-value task: taking your existing resume
+        and tailoring it to a specific job description, automatically. Here&apos;s the side-by-side
+        breakdown.
       </p>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          Feature comparison: WadeCV vs Teal
-        </h2>
+        <h2 className="text-xl font-semibold mb-4">Feature comparison: WadeCV vs Teal</h2>
         <div className="space-y-4">
           {ROWS.map((row) => (
             <Card key={row.feature}>
@@ -234,18 +233,10 @@ export default function TealComparisonPage() {
       <section className="mb-8">
         <h2 className="text-xl font-semibold mb-3">When Teal is the better choice</h2>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-          <li>
-            You need to build a resume from scratch and want templates and a visual editor.
-          </li>
-          <li>
-            You want a full job tracker (pipeline, contacts, notes) as part of the same tool.
-          </li>
-          <li>
-            You prefer a monthly subscription model with unlimited access to all features.
-          </li>
-          <li>
-            You want to manually review and apply every keyword suggestion yourself.
-          </li>
+          <li>You need to build a resume from scratch and want templates and a visual editor.</li>
+          <li>You want a full job tracker (pipeline, contacts, notes) as part of the same tool.</li>
+          <li>You prefer a monthly subscription model with unlimited access to all features.</li>
+          <li>You want to manually review and apply every keyword suggestion yourself.</li>
         </ul>
       </section>
 
@@ -253,19 +244,23 @@ export default function TealComparisonPage() {
         <h2 className="text-xl font-semibold mb-3">When WadeCV is the better choice</h2>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li>
-            You already have a base resume and want to tailor it to a specific job fast — without manual editing.
+            You already have a base resume and want to tailor it to a specific job fast — without
+            manual editing.
           </li>
           <li>
             You want the AI to actually rewrite your resume, not just highlight gaps for you to fix.
           </li>
           <li>
-            You need a clean, ATS-safe DOCX output ready to upload — not a PDF from a drag-and-drop builder.
+            You need a clean, ATS-safe DOCX output ready to upload — not a PDF from a drag-and-drop
+            builder.
           </li>
           <li>
-            You prefer paying per resume (no monthly commitment) and are applying to a focused set of roles.
+            You prefer paying per resume (no monthly commitment) and are applying to a focused set
+            of roles.
           </li>
           <li>
-            You want a fit analysis before committing to tailoring, so you know if the role is worth pursuing.
+            You want a fit analysis before committing to tailoring, so you know if the role is worth
+            pursuing.
           </li>
         </ul>
       </section>
@@ -274,13 +269,21 @@ export default function TealComparisonPage() {
         <h2 className="text-xl font-semibold mb-3">The verdict</h2>
         <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-3">
           <p>
-            Teal is strong if you&apos;re at the start of your job search and need to build a resume and track your pipeline. WadeCV wins decisively on the tailoring workflow: it goes further than keyword highlighting by rewriting your entire resume for each role, outputting an ATS-safe DOCX, and generating a matched cover letter — all from a single job URL.
+            Teal is strong if you&apos;re at the start of your job search and need to build a resume
+            and track your pipeline. WadeCV wins decisively on the tailoring workflow: it goes
+            further than keyword highlighting by rewriting your entire resume for each role,
+            outputting an ATS-safe DOCX, and generating a matched cover letter — all from a single
+            job URL.
           </p>
           <p>
-            If you already have a resume and are actively applying, WadeCV&apos;s pay-per-tailoring model is more cost-effective than a monthly subscription — especially when you&apos;re targeting a specific set of roles rather than a broad spray-and-pray approach.
+            If you already have a resume and are actively applying, WadeCV&apos;s pay-per-tailoring
+            model is more cost-effective than a monthly subscription — especially when you&apos;re
+            targeting a specific set of roles rather than a broad spray-and-pray approach.
           </p>
           <p>
-            The two tools can also be complementary: use Teal to manage your job pipeline and track applications, and WadeCV to generate the tailored resume and cover letter for each role you&apos;re serious about.
+            The two tools can also be complementary: use Teal to manage your job pipeline and track
+            applications, and WadeCV to generate the tailored resume and cover letter for each role
+            you&apos;re serious about.
           </p>
         </div>
       </section>
@@ -293,9 +296,7 @@ export default function TealComparisonPage() {
               <CardHeader className="pb-2">
                 <CardTitle className="text-base">{f.question}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
-                {f.answer}
-              </CardContent>
+              <CardContent className="text-sm text-muted-foreground">{f.answer}</CardContent>
             </Card>
           ))}
         </div>
@@ -315,7 +316,8 @@ export default function TealComparisonPage() {
         <CardHeader>
           <CardTitle>Try WadeCV free — no subscription needed</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Upload your CV, paste a job URL, and get a fully tailored resume plus cover letter in seconds. 1 free credit included on signup.
+            Upload your CV, paste a job URL, and get a fully tailored resume plus cover letter in
+            seconds. 1 free credit included on signup.
           </p>
         </CardHeader>
         <CardContent>

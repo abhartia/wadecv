@@ -1,11 +1,12 @@
 import io
 import re
+
 from docx import Document
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.opc.constants import RELATIONSHIP_TYPE
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
-from docx.opc.constants import RELATIONSHIP_TYPE
-from docx.shared import Pt, Inches, RGBColor
-from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.shared import Inches, Pt, RGBColor
 from docx.text.run import Run
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_CENTER, TA_LEFT
@@ -13,7 +14,6 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.platypus import ListFlowable, ListItem, Paragraph, SimpleDocTemplate, Spacer, Table
-
 
 _CONTROL_CHARS_RE = re.compile(
     "[" + "".join(chr(c) for c in range(32) if c not in (9, 10, 13)) + "]"
@@ -27,10 +27,10 @@ _UNICODE_NORMALIZATION_MAP = {
     "\u2014": "-",
     "\u2212": "-",
     "\u2022": " ",
-    "\u00B7": " ",
-    "\u25A0": " ",
-    "\u25AA": " ",
-    "\u00A0": " ",
+    "\u00b7": " ",
+    "\u25a0": " ",
+    "\u25aa": " ",
+    "\u00a0": " ",
 }
 
 
@@ -42,7 +42,7 @@ def _clean_text(value: object | None) -> str:
     if value is None:
         return ""
     # If we get a list/tuple/set (e.g. model returns a list of lines), join them.
-    if isinstance(value, (list, tuple, set)):
+    if isinstance(value, list | tuple | set):
         value = ", ".join(str(v) for v in value if v is not None)
     elif not isinstance(value, str):
         value = str(value)
@@ -76,7 +76,9 @@ def _contact_link_url(key: str, value: str) -> str | None:
     return None
 
 
-def _add_hyperlink_run(paragraph, text: str, url: str, font_name: str, font_size_pt: int, color_rgb: tuple):
+def _add_hyperlink_run(
+    paragraph, text: str, url: str, font_name: str, font_size_pt: int, color_rgb: tuple
+):
     """Add a run that is a clickable hyperlink, with the same styling as contact text."""
     part = paragraph.part
     r_id = part.relate_to(url, RELATIONSHIP_TYPE.HYPERLINK, is_external=True)
@@ -92,7 +94,9 @@ def _add_hyperlink_run(paragraph, text: str, url: str, font_name: str, font_size
     paragraph._p.append(hyperlink)
 
 
-def _add_heading(doc: Document, text: str, level: int = 1, heading_pt: int = 13, space_before: int = 0):
+def _add_heading(
+    doc: Document, text: str, level: int = 1, heading_pt: int = 13, space_before: int = 0
+):
     heading = doc.add_heading(_clean_text(text), level=level)
     heading.paragraph_format.space_before = Pt(space_before)
     for run in heading.runs:
@@ -102,7 +106,14 @@ def _add_heading(doc: Document, text: str, level: int = 1, heading_pt: int = 13,
     return heading
 
 
-def _add_paragraph(doc: Document, text: str, bold: bool = False, italic: bool = False, size: int = 11, space_after: int = 2):
+def _add_paragraph(
+    doc: Document,
+    text: str,
+    bold: bool = False,
+    italic: bool = False,
+    size: int = 11,
+    space_after: int = 2,
+):
     p = doc.add_paragraph()
     run = p.add_run(_clean_text(text))
     run.font.name = "Calibri"
@@ -128,9 +139,9 @@ def _add_separator(doc: Document, space_before: int = 2, space_after: int = 2):
     p = doc.add_paragraph()
     p.paragraph_format.space_before = Pt(space_before)
     p.paragraph_format.space_after = Pt(space_after)
-    pf = p.paragraph_format
-    from docx.oxml.ns import qn
     from docx.oxml import OxmlElement
+    from docx.oxml.ns import qn
+
     pBdr = OxmlElement("w:pBdr")
     bottom = OxmlElement("w:bottom")
     bottom.set(qn("w:val"), "single")
@@ -216,7 +227,13 @@ def build_cv_docx(cv_data: dict, page_limit: int = 1) -> bytes:
 
     experience = cv_data.get("experience", []) or []
     if experience:
-        _add_heading(doc, "Professional Experience", level=2, heading_pt=heading_pt, space_before=space_before_heading)
+        _add_heading(
+            doc,
+            "Professional Experience",
+            level=2,
+            heading_pt=heading_pt,
+            space_before=space_before_heading,
+        )
         for exp in experience:
             title_line = _clean_text(exp.get("job_title", ""))
             company = _clean_text(exp.get("company", ""))
@@ -256,7 +273,9 @@ def build_cv_docx(cv_data: dict, page_limit: int = 1) -> bytes:
 
     education = cv_data.get("education", []) or []
     if education:
-        _add_heading(doc, "Education", level=2, heading_pt=heading_pt, space_before=space_before_heading)
+        _add_heading(
+            doc, "Education", level=2, heading_pt=heading_pt, space_before=space_before_heading
+        )
         for edu in education:
             degree = _clean_text(edu.get("degree", ""))
             institution = _clean_text(edu.get("institution", ""))
@@ -291,7 +310,9 @@ def build_cv_docx(cv_data: dict, page_limit: int = 1) -> bytes:
 
     skills = cv_data.get("skills", {}) or {}
     if any(skills.get(k) for k in ["technical", "soft", "languages", "certifications"]):
-        _add_heading(doc, "Skills", level=2, heading_pt=heading_pt, space_before=space_before_heading)
+        _add_heading(
+            doc, "Skills", level=2, heading_pt=heading_pt, space_before=space_before_heading
+        )
         for category, label in [
             ("technical", "Technical"),
             ("soft", "Soft Skills"),
@@ -317,10 +338,18 @@ def build_cv_docx(cv_data: dict, page_limit: int = 1) -> bytes:
         if isinstance(interests_raw, str):
             interests_list = [interests_raw.strip()] if interests_raw.strip() else []
         else:
-            interests_list = [_clean_text(str(item)).strip() for item in (interests_raw or []) if _clean_text(str(item)).strip()]
+            interests_list = [
+                _clean_text(str(item)).strip()
+                for item in (interests_raw or [])
+                if _clean_text(str(item)).strip()
+            ]
         if interests_list:
-            _add_heading(doc, "Interests", level=2, heading_pt=heading_pt, space_before=space_before_heading)
-            _add_paragraph(doc, ", ".join(interests_list), size=body_pt, space_after=space_after_body)
+            _add_heading(
+                doc, "Interests", level=2, heading_pt=heading_pt, space_before=space_before_heading
+            )
+            _add_paragraph(
+                doc, ", ".join(interests_list), size=body_pt, space_after=space_after_body
+            )
 
     buf = io.BytesIO()
     doc.save(buf)
@@ -425,7 +454,11 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 1) -> bytes:
         link_url = _contact_link_url(key, val)
         escaped = val.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         if link_url:
-            contact_segments.append('<a href="%s" color="#64748B">%s</a>' % (link_url.replace("&", "&amp;"), escaped))
+            contact_segments.append(
+                '<a href="{}" color="#64748B">{}</a>'.format(
+                    link_url.replace("&", "&amp;"), escaped
+                )
+            )
         else:
             contact_segments.append(escaped)
     if contact_segments:
@@ -463,7 +496,7 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 1) -> bytes:
                 if compact:
                     title_html = '<b><font size="%d">%s</font></b>' % (header_font, title_html)
                 else:
-                    title_html = "<b>%s</b>" % title_html
+                    title_html = f"<b>{title_html}</b>"
                 line_parts.append(title_html)
             if company:
                 line_parts.append(_pdf_esc(company))
@@ -472,7 +505,11 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 1) -> bytes:
                 # Don't escape line_parts here—they already contain safe markup (tags + escaped text)
                 line = "  |  ".join(line_parts)
                 if meta_parts:
-                    line += '  |  <i><font color="#64748B" size="%d">' % meta_font + "  |  ".join(_pdf_esc(p) for p in meta_parts) + "</font></i>"
+                    line += (
+                        '  |  <i><font color="#64748B" size="%d">' % meta_font
+                        + "  |  ".join(_pdf_esc(p) for p in meta_parts)
+                        + "</font></i>"
+                    )
                 story.append(Paragraph(line, styles["CvBody"]))
 
             bullets = [b for b in (exp.get("bullets") or []) if b]
@@ -509,7 +546,7 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 1) -> bytes:
                 if compact:
                     degree_html = '<b><font size="%d">%s</font></b>' % (header_font, degree_html)
                 else:
-                    degree_html = "<b>%s</b>" % degree_html
+                    degree_html = f"<b>{degree_html}</b>"
                 line_parts.append(degree_html)
             if institution:
                 line_parts.append(_pdf_esc(institution))
@@ -517,12 +554,18 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 1) -> bytes:
                 # Don't escape line_parts—they already contain safe markup (tags + escaped text)
                 line = "  |  ".join(line_parts)
                 if dates:
-                    line += '  |  <i><font color="#64748B" size="%d">' % meta_font + _pdf_esc(dates) + "</font></i>"
+                    line += (
+                        '  |  <i><font color="#64748B" size="%d">' % meta_font
+                        + _pdf_esc(dates)
+                        + "</font></i>"
+                    )
                 story.append(Paragraph(line, styles["CvBody"]))
 
             details = _clean_text(edu.get("details", ""))
             if details:
-                story.append(Paragraph(details.replace("&", "&amp;").replace("<", "&lt;"), styles["CvBody"]))
+                story.append(
+                    Paragraph(details.replace("&", "&amp;").replace("<", "&lt;"), styles["CvBody"])
+                )
         story.append(Spacer(1, space_after_block))
 
     skills = cv_data.get("skills", {}) or {}
@@ -540,20 +583,24 @@ def build_cv_pdf(cv_data: dict, page_limit: int = 1) -> bytes:
                 raw_items = [raw_items]
             items = [_clean_text(str(item)) for item in (raw_items or [])]
             if items:
-                story.append(
-                    Paragraph(f"{label}: " + ", ".join(items), styles["CvBody"])
-                )
+                story.append(Paragraph(f"{label}: " + ", ".join(items), styles["CvBody"]))
 
     interests_raw = cv_data.get("interests")
     if interests_raw is not None:
         if isinstance(interests_raw, str):
             interests_list = [interests_raw.strip()] if interests_raw.strip() else []
         else:
-            interests_list = [_clean_text(str(item)).strip() for item in (interests_raw or []) if _clean_text(str(item)).strip()]
+            interests_list = [
+                _clean_text(str(item)).strip()
+                for item in (interests_raw or [])
+                if _clean_text(str(item)).strip()
+            ]
         if interests_list:
             story.append(Spacer(1, space_before_heading))
             story.append(Paragraph("Interests", styles["CvHeading"]))
-            story.append(Paragraph(", ".join(_pdf_esc(t) for t in interests_list), styles["CvBody"]))
+            story.append(
+                Paragraph(", ".join(_pdf_esc(t) for t in interests_list), styles["CvBody"])
+            )
 
     if not story:
         story.append(Paragraph("CV data is not available.", styles["CvBody"]))
@@ -598,7 +645,7 @@ def build_cover_letter_docx(content: str, personal_info: dict | None = None) -> 
 
         doc.add_paragraph()
 
-    blocks = re.split(r'\n\s*\n', content) if '\n\n' in content else content.split('\n')
+    blocks = re.split(r"\n\s*\n", content) if "\n\n" in content else content.split("\n")
     for block in blocks:
         block = _clean_text(block).strip()
         if block:
@@ -613,9 +660,7 @@ def build_cover_letter_docx(content: str, personal_info: dict | None = None) -> 
     return buf.getvalue()
 
 
-def build_cover_letter_pdf(
-    content: str, personal_info: dict | None = None
-) -> bytes:
+def build_cover_letter_pdf(content: str, personal_info: dict | None = None) -> bytes:
     """
     Build a simple, well-formatted PDF version of the cover letter.
     """
@@ -676,9 +721,7 @@ def build_cover_letter_pdf(
             if val:
                 contact_parts.append(val)
         if contact_parts:
-            story.append(
-                Paragraph("  |  ".join(contact_parts), styles["ClContact"])
-            )
+            story.append(Paragraph("  |  ".join(contact_parts), styles["ClContact"]))
 
         story.append(Spacer(1, 12))
 

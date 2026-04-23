@@ -6,13 +6,40 @@ import { api } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { toast } from "sonner";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Loader2, Briefcase, FileText, Download, Mail, ExternalLink, ChevronDown, Edit3 } from "lucide-react";
+import {
+  Loader2,
+  Briefcase,
+  FileText,
+  Download,
+  Mail,
+  ExternalLink,
+  ChevronDown,
+  Edit3,
+} from "lucide-react";
 
 interface Job {
   id: string;
@@ -55,7 +82,8 @@ export default function ApplicationsPage() {
   useEffect(() => {
     if (!token) return;
     setLoading(true);
-    api.listJobs(token, filter === "all" ? undefined : filter)
+    api
+      .listJobs(token, filter === "all" ? undefined : filter)
       .then(setJobs)
       .finally(() => setLoading(false));
   }, [token, filter]);
@@ -64,8 +92,8 @@ export default function ApplicationsPage() {
     if (!token) return;
 
     // Optimistically update in the UI so it feels responsive
-    setJobs(prev =>
-      prev.map(j => (j.id === jobId ? { ...j, application_status: newStatus } : j)),
+    setJobs((prev) =>
+      prev.map((j) => (j.id === jobId ? { ...j, application_status: newStatus } : j)),
     );
 
     try {
@@ -101,7 +129,8 @@ export default function ApplicationsPage() {
     try {
       const response = await api.downloadCoverLetter(jobId, token, format);
       const contentType = response.headers.get("content-type") || "";
-      const expected = format === "pdf" ? "application/pdf" : "officedocument.wordprocessingml.document";
+      const expected =
+        format === "pdf" ? "application/pdf" : "officedocument.wordprocessingml.document";
       if (!response.ok || !contentType.includes(expected)) {
         let message = "Cover letter not found. Generate one first.";
         try {
@@ -143,7 +172,8 @@ export default function ApplicationsPage() {
     try {
       const response = await api.downloadCV(cvId, token, format);
       const contentType = response.headers.get("content-type") || "";
-      const expected = format === "pdf" ? "application/pdf" : "officedocument.wordprocessingml.document";
+      const expected =
+        format === "pdf" ? "application/pdf" : "officedocument.wordprocessingml.document";
       if (!response.ok || !contentType.includes(expected)) {
         let message = "Download failed";
         try {
@@ -189,9 +219,7 @@ export default function ApplicationsPage() {
         });
 
   const toggleFitSort = () => {
-    setFitSort((current) =>
-      current === "none" ? "desc" : current === "desc" ? "asc" : "none",
-    );
+    setFitSort((current) => (current === "none" ? "desc" : current === "desc" ? "asc" : "none"));
   };
 
   return (
@@ -245,12 +273,8 @@ export default function ApplicationsPage() {
                       className="inline-flex items-center gap-1"
                     >
                       <span>Fit</span>
-                      {fitSort === "desc" && (
-                        <ChevronDown className="h-3 w-3" />
-                      )}
-                      {fitSort === "asc" && (
-                        <ChevronDown className="h-3 w-3 rotate-180" />
-                      )}
+                      {fitSort === "desc" && <ChevronDown className="h-3 w-3" />}
+                      {fitSort === "asc" && <ChevronDown className="h-3 w-3 rotate-180" />}
                     </button>
                   </TableHead>
                   <TableHead>Status</TableHead>

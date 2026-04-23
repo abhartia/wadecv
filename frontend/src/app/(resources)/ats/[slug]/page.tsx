@@ -7,7 +7,10 @@ import { RelatedGuides } from "@/components/seo/related-guides";
 import { CrossCategoryLinks } from "@/components/seo/cross-category-links";
 import { InlineCta } from "@/components/seo/inline-cta";
 
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com";
+const BASE_URL =
+  process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "https://wadecv.com";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -18,8 +21,15 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `How to Pass ${entry.name} ATS Screening (2026 Guide) | WadeCV`,
     description: entry.metaDescription,
-    openGraph: { title: `How to Pass ${entry.name} ATS Screening (2026 Guide)`, description: entry.metaDescription },
-    twitter: { card: "summary", title: `How to Pass ${entry.name} ATS Screening (2026 Guide)`, description: entry.metaDescription },
+    openGraph: {
+      title: `How to Pass ${entry.name} ATS Screening (2026 Guide)`,
+      description: entry.metaDescription,
+    },
+    twitter: {
+      card: "summary",
+      title: `How to Pass ${entry.name} ATS Screening (2026 Guide)`,
+      description: entry.metaDescription,
+    },
   };
 }
 
@@ -111,7 +121,8 @@ export default async function AtsPage({ params }: Props) {
         <CardHeader>
           <CardTitle>Optimize your resume for ATS</CardTitle>
           <p className="text-sm text-muted-foreground">
-            WadeCV helps you create clean, keyword-aligned resumes that work with {entry.name} and other applicant tracking systems.
+            WadeCV helps you create clean, keyword-aligned resumes that work with {entry.name} and
+            other applicant tracking systems.
           </p>
         </CardHeader>
         <CardContent>

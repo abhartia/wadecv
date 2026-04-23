@@ -80,4 +80,3 @@ export function setUserProperties(props: GAEventParams) {
 
   gtag("set", "user_properties", props);
 }
-

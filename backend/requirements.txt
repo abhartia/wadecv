@@ -20,3 +20,8 @@ stripe>=11.3.0
 resend>=2.5.0
 python-dotenv>=1.0.1
 pypdf>=5.0.0
+# Observability
+sentry-sdk[fastapi]>=2.18.0
+structlog>=24.4.0
+# Rate limiting
+slowapi>=0.1.9

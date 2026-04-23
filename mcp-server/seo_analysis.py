@@ -445,4 +445,3 @@ __all__ = [
     "build_weekly_insights",
     "build_seo_change_proposals",
 ]
-

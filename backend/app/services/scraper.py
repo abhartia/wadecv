@@ -1,12 +1,12 @@
-import httpx
-from bs4 import BeautifulSoup
-from urllib.parse import urlparse
 import json
 import logging
-from typing import Any, Tuple
+from typing import Any
+from urllib.parse import urlparse
+
+import httpx
+from bs4 import BeautifulSoup
 
 from app.services.ai import generate_completion
-
 
 logger = logging.getLogger(__name__)
 
@@ -150,7 +150,7 @@ async def _validate_scraped_job(
     job_description: str,
     job_title: str | None,
     company_name: str | None,
-) -> Tuple[bool, str | None, str]:
+) -> tuple[bool, str | None, str]:
     """
     Use an LLM to assess whether the scraped content looks like a real job description
     and, when successful, return a cleaned-up version of the description.
@@ -160,7 +160,11 @@ async def _validate_scraped_job(
     if not job_description or len(job_description) < 200:
         # In this case we treat validation as failed and just echo back the original text
         # as the \"cleaned\" version so callers always have something to work with.
-        return False, "The scraped text was too short to be a full job description.", job_description
+        return (
+            False,
+            "The scraped text was too short to be a full job description.",
+            job_description,
+        )
 
     # Trim very long descriptions to keep token usage reasonable; allow enough context to see where form starts.
     trimmed_description = job_description[:6000]
@@ -235,10 +239,7 @@ async def _validate_scraped_job(
             reason = str(reason)
         # Accept both snake_case and camelCase from the model
         cleaned = data.get("cleaned_description") or data.get("cleanedDescription") or ""
-        if cleaned is not None:
-            cleaned = str(cleaned).strip()
-        else:
-            cleaned = ""
+        cleaned = str(cleaned).strip() if cleaned is not None else ""
         # If the model explicitly says success is false but did not supply a reason,
         # backfill a generic message so the frontend has something user-facing.
         if not success and not reason:
@@ -285,7 +286,7 @@ async def scrape_job_url(url: str) -> dict:
     )
 
     # Prefer cleaned output whenever the model returned one; only fall back to raw when cleaned is empty
-    job_description = (cleaned if cleaned else (description or ""))
+    job_description = cleaned if cleaned else (description or "")
 
     return {
         "job_description": job_description,

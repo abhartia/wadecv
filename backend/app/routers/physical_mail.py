@@ -6,21 +6,21 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
-from app.models.user import User
-from app.models.job import Job
-from app.models.cv import CV
 from app.models.cover_letter import CoverLetter
+from app.models.cv import CV
+from app.models.job import Job
 from app.models.physical_mail import PhysicalMail
+from app.models.user import User
 from app.schemas.physical_mail import (
     ExtractAddressRequest,
     ExtractAddressResponse,
     PhysicalMailResponse,
 )
-from app.utils.auth import get_current_user
 from app.services.address_extraction import extract_company_address
 from app.services.credits import add_credits, deduct_credits
-from app.services.lob_service import build_mail_pdf, merge_pdfs, send_letter, _resize_to_letter
-from app.services.docx_builder import build_cv_pdf, build_cover_letter_pdf
+from app.services.docx_builder import build_cover_letter_pdf, build_cv_pdf
+from app.services.lob_service import _resize_to_letter, merge_pdfs, send_letter
+from app.utils.auth import get_current_user
 
 logger = logging.getLogger(__name__)
 
@@ -35,9 +35,7 @@ async def extract_address(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
-    result = await db.execute(
-        select(Job).where(Job.id == req.job_id, Job.user_id == user.id)
-    )
+    result = await db.execute(select(Job).where(Job.id == req.job_id, Job.user_id == user.id))
     job = result.scalar_one_or_none()
     if not job:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Job not found")
@@ -69,9 +67,7 @@ async def send_mail(
         raise HTTPException(status_code=400, detail="Invalid content_type")
 
     # Load job
-    result = await db.execute(
-        select(Job).where(Job.id == job_id, Job.user_id == user.id)
-    )
+    result = await db.execute(select(Job).where(Job.id == job_id, Job.user_id == user.id))
     job = result.scalar_one_or_none()
     if not job:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Job not found")
@@ -80,15 +76,15 @@ async def send_mail(
     result = await db.execute(select(CV).where(CV.id == job.cv_id))
     cv = result.scalar_one_or_none()
     if not cv or not cv.generated_cv_data:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="CV has not been generated yet")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="CV has not been generated yet"
+        )
 
     # Load cover letter if needed
     cover_letter_content = None
     personal_info = cv.generated_cv_data.get("personal_info")
     if content_type in ("cover_letter_only", "both"):
-        result = await db.execute(
-            select(CoverLetter).where(CoverLetter.job_id == job.id)
-        )
+        result = await db.execute(select(CoverLetter).where(CoverLetter.job_id == job.id))
         cl = result.scalar_one_or_none()
         if not cl and not custom_cover_letter_pdf:
             raise HTTPException(
@@ -108,12 +104,12 @@ async def send_mail(
     if custom_cover_letter_pdf and custom_cover_letter_pdf.filename:
         custom_cl_bytes = await custom_cover_letter_pdf.read()
         if len(custom_cl_bytes) > 10 * 1024 * 1024:
-            raise HTTPException(status_code=400, detail="Custom cover letter PDF too large (max 10MB)")
+            raise HTTPException(
+                status_code=400, detail="Custom cover letter PDF too large (max 10MB)"
+            )
 
     # Deduct credits
-    await deduct_credits(
-        db, user.id, MAIL_CREDIT_COST, "physical_mail", "Physical mail sending"
-    )
+    await deduct_credits(db, user.id, MAIL_CREDIT_COST, "physical_mail", "Physical mail sending")
 
     # Build PDF — use custom uploads when provided, otherwise generate
     try:
@@ -138,7 +134,9 @@ async def send_mail(
         pdf_bytes = _resize_to_letter(pdf_bytes)
     except Exception as exc:
         logger.error("Failed to build mail PDF: %s", exc, exc_info=True)
-        await add_credits(db, user.id, MAIL_CREDIT_COST, "physical_mail_refund", "Refund: mail PDF build failed")
+        await add_credits(
+            db, user.id, MAIL_CREDIT_COST, "physical_mail_refund", "Refund: mail PDF build failed"
+        )
         await db.commit()
         raise HTTPException(status_code=500, detail="Failed to build mail PDF")
 
@@ -149,7 +147,9 @@ async def send_mail(
         lob_letter_id = await send_letter(to_addr, from_addr, pdf_bytes, description)
     except Exception as exc:
         logger.error("Lob API call failed: %s", exc, exc_info=True)
-        await add_credits(db, user.id, MAIL_CREDIT_COST, "physical_mail_refund", "Refund: Lob API failed")
+        await add_credits(
+            db, user.id, MAIL_CREDIT_COST, "physical_mail_refund", "Refund: Lob API failed"
+        )
 
         mail_record = PhysicalMail(
             user_id=user.id,
@@ -171,7 +171,9 @@ async def send_mail(
             user_msg = "There was an issue with the PDF format. Please try uploading a US Letter (8.5 x 11 in) PDF."
         else:
             user_msg = "Something went wrong while sending your mail. Please try again later."
-        raise HTTPException(status_code=502, detail=f"{user_msg} Your 5 credits have been refunded.")
+        raise HTTPException(
+            status_code=502, detail=f"{user_msg} Your 5 credits have been refunded."
+        )
 
     # Save record
     mail_record = PhysicalMail(

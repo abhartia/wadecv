@@ -12,12 +12,11 @@ from app.services.docx_builder import _clean_text
         ("range\u201320", "range-20"),
         ("value\u221210", "value-10"),
         ("skills \u2022 Python \u2022 SQL", "skills   Python   SQL"),
-        ("middle\u00B7dot", "middle dot"),
-        ("\u25A0 boxed", "  boxed"),
-        ("non\u00A0breaking space", "non breaking space"),
+        ("middle\u00b7dot", "middle dot"),
+        ("\u25a0 boxed", "  boxed"),
+        ("non\u00a0breaking space", "non breaking space"),
     ],
 )
 def test_clean_text_normalizes_problematic_unicode(raw: str, expected: str) -> None:
     cleaned = _clean_text(raw)
     assert cleaned == expected
-

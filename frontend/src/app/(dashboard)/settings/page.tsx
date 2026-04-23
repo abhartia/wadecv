@@ -10,9 +10,27 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { toast } from "sonner";
-import { Loader2, User, Lock, Trash2, AlertTriangle, Shield, FileText, Upload, CheckCircle } from "lucide-react";
+import {
+  Loader2,
+  User,
+  Lock,
+  Trash2,
+  AlertTriangle,
+  Shield,
+  FileText,
+  Upload,
+  CheckCircle,
+} from "lucide-react";
 
 export default function SettingsPage() {
   const { user, token, logout, refreshUser } = useAuth();
@@ -106,7 +124,10 @@ export default function SettingsPage() {
           </div>
           <div className="space-y-2">
             <Label>Account Created</Label>
-            <Input value={user?.created_at ? new Date(user.created_at).toLocaleDateString() : ""} disabled />
+            <Input
+              value={user?.created_at ? new Date(user.created_at).toLocaleDateString() : ""}
+              disabled
+            />
           </div>
         </CardContent>
       </Card>
@@ -167,7 +188,11 @@ export default function SettingsPage() {
                 onClick={() => fileInputRef.current?.click()}
                 disabled={uploadLoading}
               >
-                {uploadLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Upload className="mr-2 h-4 w-4" />}
+                {uploadLoading ? (
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                ) : (
+                  <Upload className="mr-2 h-4 w-4" />
+                )}
                 {user?.has_profile ? "Re-upload CV" : "Upload CV"}
               </Button>
             </div>
@@ -284,13 +309,12 @@ export default function SettingsPage() {
           <CardTitle className="flex items-center gap-2">
             <Shield className="h-5 w-5" /> Data & Privacy
           </CardTitle>
-          <CardDescription>
-            Manage your data and privacy settings
-          </CardDescription>
+          <CardDescription>Manage your data and privacy settings</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <p className="text-sm text-muted-foreground">
-            Your data is stored securely on Azure servers. You can request deletion of all your data at any time.
+            Your data is stored securely on Azure servers. You can request deletion of all your data
+            at any time.
           </p>
           <Separator />
           <div className="flex items-start gap-4 p-4 rounded-lg border border-destructive/20 bg-destructive/5">
@@ -298,24 +322,33 @@ export default function SettingsPage() {
             <div className="flex-1">
               <h4 className="font-semibold text-destructive">Danger Zone</h4>
               <p className="text-sm text-muted-foreground mt-1">
-                Permanently delete your account and all associated data including CVs, cover letters, and application history. This action cannot be undone.
+                Permanently delete your account and all associated data including CVs, cover
+                letters, and application history. This action cannot be undone.
               </p>
               <Dialog open={deleteOpen} onOpenChange={setDeleteOpen}>
                 <DialogTrigger asChild>
                   <Button variant="destructive" size="sm" className="mt-3">
-                    <Trash2 className="mr-2 h-4 w-4" />Delete Account
+                    <Trash2 className="mr-2 h-4 w-4" />
+                    Delete Account
                   </Button>
                 </DialogTrigger>
                 <DialogContent>
                   <DialogHeader>
                     <DialogTitle>Are you absolutely sure?</DialogTitle>
                     <DialogDescription>
-                      This will permanently delete your account and all associated data. Your remaining credits will be forfeited. This action cannot be undone.
+                      This will permanently delete your account and all associated data. Your
+                      remaining credits will be forfeited. This action cannot be undone.
                     </DialogDescription>
                   </DialogHeader>
                   <DialogFooter>
-                    <Button variant="outline" onClick={() => setDeleteOpen(false)}>Cancel</Button>
-                    <Button variant="destructive" onClick={handleDeleteAccount} disabled={deleteLoading}>
+                    <Button variant="outline" onClick={() => setDeleteOpen(false)}>
+                      Cancel
+                    </Button>
+                    <Button
+                      variant="destructive"
+                      onClick={handleDeleteAccount}
+                      disabled={deleteLoading}
+                    >
                       {deleteLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                       Yes, delete my account
                     </Button>

@@ -7,7 +7,10 @@ import { RelatedGuides } from "@/components/seo/related-guides";
 import { CrossCategoryLinks } from "@/components/seo/cross-category-links";
 import { InlineCta } from "@/components/seo/inline-cta";
 
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com";
+const BASE_URL =
+  process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") || process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "https://wadecv.com";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -106,7 +109,8 @@ export default async function SkillPage({ params }: Props) {
         <CardHeader>
           <CardTitle>Build a resume that highlights these skills</CardTitle>
           <p className="text-sm text-muted-foreground">
-            WadeCV helps you tailor your CV to the role and surface the right skills and bullets for each application.
+            WadeCV helps you tailor your CV to the role and surface the right skills and bullets for
+            each application.
           </p>
         </CardHeader>
         <CardContent>

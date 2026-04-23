@@ -7,7 +7,14 @@ export default function robots(): MetadataRoute.Robots {
       ? `https://${process.env.VERCEL_URL}`
       : "https://wadecv.com";
 
-  const publicDisallow = ["/api/", "/dashboard", "/tailor", "/applications", "/settings", "/billing"];
+  const publicDisallow = [
+    "/api/",
+    "/dashboard",
+    "/tailor",
+    "/applications",
+    "/settings",
+    "/billing",
+  ];
 
   return {
     rules: [

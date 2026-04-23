@@ -100,7 +100,11 @@ async function tryRefreshTokens(): Promise<string | null> {
 }
 
 /** Performs fetch; on 401 with a token, tries refresh and one retry with new token. */
-async function fetchWithAuth(url: string, init: RequestInit, token: string | null): Promise<Response> {
+async function fetchWithAuth(
+  url: string,
+  init: RequestInit,
+  token: string | null,
+): Promise<Response> {
   const headers = new Headers(init.headers);
   if (token) headers.set("Authorization", `Bearer ${token}`);
   const res = await fetch(url, { ...init, headers, credentials: "include" });
@@ -122,10 +126,14 @@ async function request<T>(endpoint: string, options: FetchOptions = {}): Promise
     headers["Content-Type"] = "application/json";
   }
 
-  const res = await fetchWithAuth(`${API_URL}${endpoint}`, {
-    ...fetchOptions,
-    headers,
-  }, token ?? null);
+  const res = await fetchWithAuth(
+    `${API_URL}${endpoint}`,
+    {
+      ...fetchOptions,
+      headers,
+    },
+    token ?? null,
+  );
 
   if (!res.ok) {
     const body = await res.json().catch(() => ({ detail: "An error occurred" }));
@@ -190,21 +198,30 @@ export const api = {
       created_at: string;
     }>("/api/auth/me", { token }),
 
-  logout: () =>
-    request("/api/auth/logout", { method: "POST" }),
+  logout: () => request("/api/auth/logout", { method: "POST" }),
 
   // CV
   uploadCV: (file: File, token: string) => {
     const formData = new FormData();
     formData.append("file", file);
-    return request<{ id: string; original_filename: string; original_content: string; status: string; created_at: string }>(
-      "/api/cv/upload",
-      { method: "POST", body: formData, token }
-    );
+    return request<{
+      id: string;
+      original_filename: string;
+      original_content: string;
+      status: string;
+      created_at: string;
+    }>("/api/cv/upload", { method: "POST", body: formData, token });
   },
 
   fitCV: (
-    data: { cv_id?: string; job_id?: string; job_url?: string; job_description?: string; additional_info?: string; page_limit?: 1 | 2 },
+    data: {
+      cv_id?: string;
+      job_id?: string;
+      job_url?: string;
+      job_description?: string;
+      additional_info?: string;
+      page_limit?: 1 | 2;
+    },
     token: string,
   ) =>
     request<CVGenerateResponse>("/api/cv/fit", {
@@ -213,7 +230,17 @@ export const api = {
       token,
     }),
 
-  generateCV: (data: { cv_id?: string; job_id?: string; job_url?: string; job_description?: string; additional_info?: string; page_limit?: 1 | 2 }, token: string) =>
+  generateCV: (
+    data: {
+      cv_id?: string;
+      job_id?: string;
+      job_url?: string;
+      job_description?: string;
+      additional_info?: string;
+      page_limit?: 1 | 2;
+    },
+    token: string,
+  ) =>
     request<CVGenerateResponse>("/api/cv/generate", {
       method: "POST",
       body: JSON.stringify(data),
@@ -221,7 +248,14 @@ export const api = {
     }),
 
   generateCVStream: async (
-    data: { cv_id?: string; job_id?: string; job_url?: string; job_description?: string; additional_info?: string; page_limit?: 1 | 2 },
+    data: {
+      cv_id?: string;
+      job_id?: string;
+      job_url?: string;
+      job_description?: string;
+      additional_info?: string;
+      page_limit?: 1 | 2;
+    },
     token: string,
     onEvent?: (event: CVGenerationProgressEvent) => void,
   ): Promise<CVGenerateResponse> => {
@@ -294,8 +328,7 @@ export const api = {
       }
     } catch (err) {
       if (!sawEvent || err instanceof StreamingNotAvailableError) {
-        const message =
-          err instanceof Error ? err.message : "Streaming not available";
+        const message = err instanceof Error ? err.message : "Streaming not available";
         const status = err instanceof ApiError ? err.status : 0;
         throw new StreamingNotAvailableError(message, status);
       }
@@ -309,7 +342,11 @@ export const api = {
     return finalResult;
   },
 
-  refineFitAnalysis: (cvId: string, data: { gap_feedback: Record<string, string> }, token: string) =>
+  refineFitAnalysis: (
+    cvId: string,
+    data: { gap_feedback: Record<string, string> },
+    token: string,
+  ) =>
     request<CVGenerateResponse>(`/api/cv/${cvId}/fit/refine`, {
       method: "POST",
       body: JSON.stringify(data),
@@ -442,30 +479,37 @@ export const api = {
     }>("/api/cv/" + cvId, { token }),
 
   listCVs: (token: string) =>
-    request<Array<{ id: string; original_filename: string; status: string; created_at: string; job_title: string | null; company_name: string | null }>>("/api/cv/", { token }),
+    request<
+      Array<{
+        id: string;
+        original_filename: string;
+        status: string;
+        created_at: string;
+        job_title: string | null;
+        company_name: string | null;
+      }>
+    >("/api/cv/", { token }),
 
   downloadCV: (cvId: string, token: string, format: "docx" | "pdf" = "docx") =>
-    fetchWithAuth(
-      `${API_URL}/api/cv/${cvId}/download?format=${format}`,
-      {},
-      token
-    ),
+    fetchWithAuth(`${API_URL}/api/cv/${cvId}/download?format=${format}`, {}, token),
 
   // Jobs
   listJobs: (token: string, status?: string) =>
-    request<Array<{
-      id: string;
-      cv_id: string;
-      job_url: string | null;
-      job_description: string;
-      company_name: string | null;
-      job_title: string | null;
-      application_status: string;
-      applied_at: string | null;
-      created_at: string;
-      fit_score: number | null;
-      has_cover_letter: boolean;
-    }>>(`/api/jobs/${status ? `?status_filter=${status}` : ""}`, { token }),
+    request<
+      Array<{
+        id: string;
+        cv_id: string;
+        job_url: string | null;
+        job_description: string;
+        company_name: string | null;
+        job_title: string | null;
+        application_status: string;
+        applied_at: string | null;
+        created_at: string;
+        fit_score: number | null;
+        has_cover_letter: boolean;
+      }>
+    >(`/api/jobs/${status ? `?status_filter=${status}` : ""}`, { token }),
 
   getJob: (jobId: string, token: string) =>
     request<{
@@ -485,22 +529,39 @@ export const api = {
     request(`/api/jobs/${jobId}`, { method: "PATCH", body: JSON.stringify(data), token }),
 
   scrapeJob: (url: string, token: string) =>
-    request<{ job_description: string; job_title: string | null; company_name: string | null; success: boolean; reason: string | null }>(
-      "/api/jobs/scrape",
-      { method: "POST", body: JSON.stringify({ url }), token }
-    ),
+    request<{
+      job_description: string;
+      job_title: string | null;
+      company_name: string | null;
+      success: boolean;
+      reason: string | null;
+    }>("/api/jobs/scrape", { method: "POST", body: JSON.stringify({ url }), token }),
 
   getGapInsights: (token: string) =>
     request<GapInsightsResponse>("/api/jobs/gap-insights/", { token }),
 
   // Credits
   getPacks: () =>
-    request<Array<{ id: string; name: string; credits: number; price_cents: number; price_display: string }>>("/api/credits/packs"),
+    request<
+      Array<{
+        id: string;
+        name: string;
+        credits: number;
+        price_cents: number;
+        price_display: string;
+      }>
+    >("/api/credits/packs"),
 
   getBalance: (token: string) =>
     request<{
       credits: number;
-      transactions: Array<{ id: string; amount: number; type: string; description: string; created_at: string }>;
+      transactions: Array<{
+        id: string;
+        amount: number;
+        type: string;
+        description: string;
+        created_at: string;
+      }>;
     }>("/api/credits/balance", { token }),
 
   createCheckout: (packId: string, token: string) =>
@@ -514,27 +575,23 @@ export const api = {
   generateCoverLetter: (jobId: string, token: string) =>
     request<{ id: string; job_id: string; cv_id: string; content: string; created_at: string }>(
       "/api/cover-letter/generate",
-      { method: "POST", body: JSON.stringify({ job_id: jobId }), token }
+      { method: "POST", body: JSON.stringify({ job_id: jobId }), token },
     ),
 
   getCoverLetter: (jobId: string, token: string) =>
     request<{ id: string; job_id: string; cv_id: string; content: string; created_at: string }>(
       `/api/cover-letter/${jobId}`,
-      { token }
+      { token },
     ),
 
   updateCoverLetter: (jobId: string, content: string, token: string) =>
     request<{ id: string; job_id: string; cv_id: string; content: string; created_at: string }>(
       `/api/cover-letter/${jobId}`,
-      { method: "PUT", body: JSON.stringify({ content }), token }
+      { method: "PUT", body: JSON.stringify({ content }), token },
     ),
 
   downloadCoverLetter: (jobId: string, token: string, format: "docx" | "pdf" = "docx") =>
-    fetchWithAuth(
-      `${API_URL}/api/cover-letter/${jobId}/download?format=${format}`,
-      {},
-      token
-    ),
+    fetchWithAuth(`${API_URL}/api/cover-letter/${jobId}/download?format=${format}`, {}, token),
 
   deleteCoverLetter: (jobId: string, token: string) =>
     request(`/api/cover-letter/${jobId}`, { method: "DELETE", token }),
@@ -554,11 +611,13 @@ export const api = {
       token,
     }),
 
-  deleteAccount: (token: string) =>
-    request("/api/account/delete", { method: "DELETE", token }),
+  deleteAccount: (token: string) => request("/api/account/delete", { method: "DELETE", token }),
 
   // Profile
-  updateProfile: (data: { base_cv_content?: string; additional_info?: string; cv_page_limit?: 1 | 2 }, token: string) =>
+  updateProfile: (
+    data: { base_cv_content?: string; additional_info?: string; cv_page_limit?: 1 | 2 },
+    token: string,
+  ) =>
     request<{
       id: string;
       email: string;
@@ -570,10 +629,7 @@ export const api = {
       additional_info: string | null;
       cv_page_limit: number;
       created_at: string;
-    }>(
-      "/api/account/profile",
-      { method: "PUT", body: JSON.stringify(data), token }
-    ),
+    }>("/api/account/profile", { method: "PUT", body: JSON.stringify(data), token }),
 
   uploadProfile: (file: File, token: string) => {
     const formData = new FormData();
@@ -589,10 +645,7 @@ export const api = {
       additional_info: string | null;
       cv_page_limit: number;
       created_at: string;
-    }>(
-      "/api/account/profile/upload",
-      { method: "POST", body: formData, token }
-    );
+    }>("/api/account/profile/upload", { method: "POST", body: formData, token });
   },
 };
 

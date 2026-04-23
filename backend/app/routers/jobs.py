@@ -6,13 +6,13 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
-from app.models.user import User
 from app.models.job import Job
-from app.schemas.job import JobResponse, JobUpdateRequest, ScrapeRequest, ScrapeResponse
+from app.models.user import User
 from app.schemas.insights import GapInsightsResponse
-from app.utils.auth import get_current_user
-from app.services.scraper import scrape_job_url
+from app.schemas.job import JobResponse, JobUpdateRequest, ScrapeRequest, ScrapeResponse
 from app.services.gap_insights import build_gap_insights_for_user
+from app.services.scraper import scrape_job_url
+from app.utils.auth import get_current_user
 
 router = APIRouter()
 
@@ -126,9 +126,13 @@ async def update_job(
     await db.flush()
 
     return JobResponse(
-        id=str(job.id), cv_id=str(job.cv_id), job_url=job.job_url,
-        job_description=job.job_description, company_name=job.company_name,
-        job_title=job.job_title, application_status=job.application_status,
+        id=str(job.id),
+        cv_id=str(job.cv_id),
+        job_url=job.job_url,
+        job_description=job.job_description,
+        company_name=job.company_name,
+        job_title=job.job_title,
+        application_status=job.application_status,
         applied_at=job.applied_at.isoformat() if job.applied_at else None,
         created_at=job.created_at.isoformat(),
     )
@@ -140,4 +144,4 @@ async def scrape_job(req: ScrapeRequest, user: User = Depends(get_current_user))
         result = await scrape_job_url(req.url)
         return ScrapeResponse(**result)
     except Exception as e:
-        raise HTTPException(status_code=400, detail=f"Failed to scrape URL: {str(e)}")
+        raise HTTPException(status_code=400, detail=f"Failed to scrape URL: {e!s}")

@@ -4,11 +4,24 @@ import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth";
 import { api } from "@/lib/api";
-import { getGapInsightsApiJobsGapInsightsGetOptions, listJobsApiJobsGetOptions } from "@/gen/hey-api/@tanstack/react-query.gen";
+import {
+  getGapInsightsApiJobsGapInsightsGetOptions,
+  listJobsApiJobsGetOptions,
+} from "@/gen/hey-api/@tanstack/react-query.gen";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Coins, Plus, Briefcase, ArrowRight, Loader2, Sparkles, Upload, Check, X } from "lucide-react";
+import {
+  Coins,
+  Plus,
+  Briefcase,
+  ArrowRight,
+  Loader2,
+  Sparkles,
+  Upload,
+  Check,
+  X,
+} from "lucide-react";
 
 interface JobItem {
   id: string;
@@ -50,10 +63,7 @@ const getStatusLabel = (status: string) => {
 
 export default function DashboardPage() {
   const { user, token } = useAuth();
-  const {
-    data: jobsData,
-    isLoading: jobsLoading,
-  } = useQuery({
+  const { data: jobsData, isLoading: jobsLoading } = useQuery({
     ...listJobsApiJobsGetOptions(
       token
         ? {
@@ -67,10 +77,7 @@ export default function DashboardPage() {
     enabled: !!token,
   });
 
-  const {
-    data: gapInsights,
-    isLoading: gapInsightsLoading,
-  } = useQuery({
+  const { data: gapInsights, isLoading: gapInsightsLoading } = useQuery({
     ...getGapInsightsApiJobsGapInsightsGetOptions(
       token
         ? {
@@ -98,8 +105,7 @@ export default function DashboardPage() {
   const isExplicitRejection = (job: JobItem) =>
     job.application_status === "rejected" || job.application_status === "cv_rejected";
 
-  const isTimedOut = (job: JobItem) =>
-    new Date(job.created_at) < oneWeekAgo && !isAccepted(job);
+  const isTimedOut = (job: JobItem) => new Date(job.created_at) < oneWeekAgo && !isAccepted(job);
 
   const numeratorAcceptedJobs = jobs.filter(isAccepted);
   const denominatorJobs = jobs.filter(
@@ -138,10 +144,15 @@ export default function DashboardPage() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-3xl font-bold">Dashboard</h1>
-          <p className="text-muted-foreground mt-1">Welcome back! Here&apos;s an overview of your activity.</p>
+          <p className="text-muted-foreground mt-1">
+            Welcome back! Here&apos;s an overview of your activity.
+          </p>
         </div>
         <Link href="/tailor" className="w-full sm:w-auto">
-          <Button className="w-full sm:w-auto"><Plus className="mr-2 h-4 w-4" />Tailor New CV</Button>
+          <Button className="w-full sm:w-auto">
+            <Plus className="mr-2 h-4 w-4" />
+            Tailor New CV
+          </Button>
         </Link>
       </div>
 
@@ -156,7 +167,10 @@ export default function DashboardPage() {
               </div>
               <Coins className="h-10 w-10 text-primary/20" />
             </div>
-            <Link href="/billing" className="text-sm text-primary hover:underline mt-2 inline-block">
+            <Link
+              href="/billing"
+              className="text-sm text-primary hover:underline mt-2 inline-block"
+            >
               Buy more credits <ArrowRight className="inline h-3 w-3" />
             </Link>
           </CardContent>
@@ -170,7 +184,10 @@ export default function DashboardPage() {
               </div>
               <Briefcase className="h-10 w-10 text-primary/20" />
             </div>
-            <Link href="/applications" className="text-sm text-primary hover:underline mt-2 inline-block">
+            <Link
+              href="/applications"
+              className="text-sm text-primary hover:underline mt-2 inline-block"
+            >
               View all <ArrowRight className="inline h-3 w-3" />
             </Link>
           </CardContent>
@@ -204,12 +221,14 @@ export default function DashboardPage() {
               <div className="flex-1">
                 <h3 className="font-semibold text-lg">Set up your profile to get started</h3>
                 <p className="text-muted-foreground text-sm mt-1">
-                  Upload your CV once and we&apos;ll remember it. Then you can generate tailored CVs just by adding a job description.
+                  Upload your CV once and we&apos;ll remember it. Then you can generate tailored CVs
+                  just by adding a job description.
                 </p>
               </div>
               <Link href="/tailor">
                 <Button className="gap-2 shrink-0">
-                  <Upload className="h-4 w-4" />Set Up Profile
+                  <Upload className="h-4 w-4" />
+                  Set Up Profile
                 </Button>
               </Link>
             </div>
@@ -231,162 +250,157 @@ export default function DashboardPage() {
             </p>
           )}
 
-          {!gapInsightsLoading && gapInsights && !gapInsights.available && gapInsights.total_applications < 10 && (
-            <p className="text-sm text-muted-foreground">
-              You&apos;ll see personalised gap insights after you&apos;ve created at least 10
-              applications. You currently have{" "}
-              <span className="font-medium">{gapInsights.total_applications}</span>.
-            </p>
-          )}
-
-          {!gapInsightsLoading && gapInsights && gapInsights.available && gapInsights.gap_insights && (
-            <div className="space-y-4">
+          {!gapInsightsLoading &&
+            gapInsights &&
+            !gapInsights.available &&
+            gapInsights.total_applications < 10 && (
               <p className="text-sm text-muted-foreground">
-                {gapInsights.gap_insights.summary_text}
+                You&apos;ll see personalised gap insights after you&apos;ve created at least 10
+                applications. You currently have{" "}
+                <span className="font-medium">{gapInsights.total_applications}</span>.
               </p>
+            )}
 
-              {Array.isArray(gapInsights.gap_insights.themes) && gapInsights.gap_insights.themes.length > 0 && (
-                <div className="space-y-3">
-                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    Key themes in your gaps
-                  </p>
-                  <div className="space-y-2">
-                    {gapInsights.gap_insights.themes
-                      .slice()
-                      .sort((a, b) => (b.count ?? 0) - (a.count ?? 0))
-                      .map((theme) => (
-                      <div key={theme.label} className="rounded-md border p-3 space-y-1">
-                        <div className="flex items-center justify-between gap-2">
-                          <span className="text-sm font-medium">{theme.label}</span>
-                          {typeof theme.count === "number" && theme.count > 0 && (
-                            <Badge variant="outline" className="text-[10px]">
-                              {theme.count} {theme.count === 1 ? "gap" : "gaps"}
-                            </Badge>
-                          )}
-                        </div>
-                        <p className="text-xs text-muted-foreground">
-                          {theme.description}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {gapInsights.next_refresh_at != null && (
-                <p className="text-xs text-muted-foreground">
-                  Updates every 10 applications. Next update at{" "}
-                  <span className="font-medium">
-                    {gapInsights.next_refresh_at}
-                  </span>{" "}
-                  applications (you&apos;re currently at{" "}
-                  <span className="font-medium">
-                    {gapInsights.total_applications}
-                  </span>
-                  ).
+          {!gapInsightsLoading &&
+            gapInsights &&
+            gapInsights.available &&
+            gapInsights.gap_insights && (
+              <div className="space-y-4">
+                <p className="text-sm text-muted-foreground">
+                  {gapInsights.gap_insights.summary_text}
                 </p>
-              )}
-            </div>
-          )}
+
+                {Array.isArray(gapInsights.gap_insights.themes) &&
+                  gapInsights.gap_insights.themes.length > 0 && (
+                    <div className="space-y-3">
+                      <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        Key themes in your gaps
+                      </p>
+                      <div className="space-y-2">
+                        {gapInsights.gap_insights.themes
+                          .slice()
+                          .sort((a, b) => (b.count ?? 0) - (a.count ?? 0))
+                          .map((theme) => (
+                            <div key={theme.label} className="rounded-md border p-3 space-y-1">
+                              <div className="flex items-center justify-between gap-2">
+                                <span className="text-sm font-medium">{theme.label}</span>
+                                {typeof theme.count === "number" && theme.count > 0 && (
+                                  <Badge variant="outline" className="text-[10px]">
+                                    {theme.count} {theme.count === 1 ? "gap" : "gaps"}
+                                  </Badge>
+                                )}
+                              </div>
+                              <p className="text-xs text-muted-foreground">{theme.description}</p>
+                            </div>
+                          ))}
+                      </div>
+                    </div>
+                  )}
+
+                {gapInsights.next_refresh_at != null && (
+                  <p className="text-xs text-muted-foreground">
+                    Updates every 10 applications. Next update at{" "}
+                    <span className="font-medium">{gapInsights.next_refresh_at}</span> applications
+                    (you&apos;re currently at{" "}
+                    <span className="font-medium">{gapInsights.total_applications}</span>
+                    ).
+                  </p>
+                )}
+              </div>
+            )}
         </CardContent>
       </Card>
 
       {/* Recent Applications */}
       <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Recent Applications</CardTitle>
-            <CardDescription>Track your job applications</CardDescription>
-          </CardHeader>
-          <CardContent>
-            {jobs.length === 0 ? (
-              <div className="text-center py-8 text-muted-foreground">
-                <Briefcase className="h-10 w-10 mx-auto mb-2 opacity-50" />
-                <p>No applications yet.</p>
-              </div>
-            ) : (
-              <div className="space-y-3">
-                {jobs.slice(0, 5).map((job) => {
-                  const isAccepted =
-                    job.application_status === "cv_accepted" ||
-                    job.application_status === "accepted";
-                  const isRejected =
-                    job.application_status === "cv_rejected" ||
-                    job.application_status === "rejected";
-                  return (
-                    <div
-                      key={job.id}
-                      className="flex flex-col gap-3 p-3 rounded-lg border hover:bg-muted/50 transition-colors sm:flex-row sm:items-center sm:justify-between"
-                    >
-                      <Link href={`/tailor?job=${job.id}`} className="min-w-0 flex-1">
-                        <div>
-                          <p className="font-medium truncate">
-                            {job.job_title || "Untitled Position"}
-                          </p>
-                          <p className="text-sm text-muted-foreground truncate">
-                            {job.company_name || "Unknown Company"}
-                          </p>
-                          <p className="text-xs text-muted-foreground mt-0.5">
-                            {new Date(job.created_at).toLocaleString()}
-                          </p>
-                        </div>
-                      </Link>
-                      <div className="flex flex-wrap items-center gap-2 shrink-0 sm:ml-4">
-                        <div className="flex flex-col items-start sm:items-end gap-1">
-                          {job.fit_score != null && (
-                            <Badge
-                              variant="outline"
-                              className={
-                                job.fit_score >= 70
-                                  ? "border-emerald-500 text-emerald-600 dark:text-emerald-300"
-                                  : job.fit_score >= 40
-                                    ? "border-amber-500 text-amber-600 dark:text-amber-300"
-                                    : "border-red-500 text-red-600 dark:text-red-300"
-                              }
-                            >
-                              {job.fit_score}% fit
-                            </Badge>
-                          )}
+        <CardHeader>
+          <CardTitle className="text-lg">Recent Applications</CardTitle>
+          <CardDescription>Track your job applications</CardDescription>
+        </CardHeader>
+        <CardContent>
+          {jobs.length === 0 ? (
+            <div className="text-center py-8 text-muted-foreground">
+              <Briefcase className="h-10 w-10 mx-auto mb-2 opacity-50" />
+              <p>No applications yet.</p>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {jobs.slice(0, 5).map((job) => {
+                const isAccepted =
+                  job.application_status === "cv_accepted" || job.application_status === "accepted";
+                const isRejected =
+                  job.application_status === "cv_rejected" || job.application_status === "rejected";
+                return (
+                  <div
+                    key={job.id}
+                    className="flex flex-col gap-3 p-3 rounded-lg border hover:bg-muted/50 transition-colors sm:flex-row sm:items-center sm:justify-between"
+                  >
+                    <Link href={`/tailor?job=${job.id}`} className="min-w-0 flex-1">
+                      <div>
+                        <p className="font-medium truncate">
+                          {job.job_title || "Untitled Position"}
+                        </p>
+                        <p className="text-sm text-muted-foreground truncate">
+                          {job.company_name || "Unknown Company"}
+                        </p>
+                        <p className="text-xs text-muted-foreground mt-0.5">
+                          {new Date(job.created_at).toLocaleString()}
+                        </p>
+                      </div>
+                    </Link>
+                    <div className="flex flex-wrap items-center gap-2 shrink-0 sm:ml-4">
+                      <div className="flex flex-col items-start sm:items-end gap-1">
+                        {job.fit_score != null && (
                           <Badge
-                            variant="secondary"
-                            className={statusColors[job.application_status] || ""}
+                            variant="outline"
+                            className={
+                              job.fit_score >= 70
+                                ? "border-emerald-500 text-emerald-600 dark:text-emerald-300"
+                                : job.fit_score >= 40
+                                  ? "border-amber-500 text-amber-600 dark:text-amber-300"
+                                  : "border-red-500 text-red-600 dark:text-red-300"
+                            }
                           >
-                            {getStatusLabel(job.application_status)}
+                            {job.fit_score}% fit
                           </Badge>
-                        </div>
-                        <div className="flex gap-1 items-center">
-                          <Button
-                            type="button"
-                            variant="ghost"
-                            size="icon"
-                            className={`min-h-[44px] min-w-[44px] ${isAccepted ? "opacity-100" : "opacity-60"}`}
-                            disabled={isAccepted}
-                            onClick={() =>
-                              handleUpdateApplicationStatus(job.id, "cv_accepted")
-                            }
-                          >
-                            <Check className="h-4 w-4" />
-                          </Button>
-                          <Button
-                            type="button"
-                            variant="ghost"
-                            size="icon"
-                            className={`min-h-[44px] min-w-[44px] ${isRejected ? "opacity-100" : "opacity-60"}`}
-                            disabled={isRejected}
-                            onClick={() =>
-                              handleUpdateApplicationStatus(job.id, "cv_rejected")
-                            }
-                          >
-                            <X className="h-4 w-4" />
-                          </Button>
-                        </div>
+                        )}
+                        <Badge
+                          variant="secondary"
+                          className={statusColors[job.application_status] || ""}
+                        >
+                          {getStatusLabel(job.application_status)}
+                        </Badge>
+                      </div>
+                      <div className="flex gap-1 items-center">
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="icon"
+                          className={`min-h-[44px] min-w-[44px] ${isAccepted ? "opacity-100" : "opacity-60"}`}
+                          disabled={isAccepted}
+                          onClick={() => handleUpdateApplicationStatus(job.id, "cv_accepted")}
+                        >
+                          <Check className="h-4 w-4" />
+                        </Button>
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="icon"
+                          className={`min-h-[44px] min-w-[44px] ${isRejected ? "opacity-100" : "opacity-60"}`}
+                          disabled={isRejected}
+                          onClick={() => handleUpdateApplicationStatus(job.id, "cv_rejected")}
+                        >
+                          <X className="h-4 w-4" />
+                        </Button>
                       </div>
                     </div>
-                  );
-                })}
-              </div>
-            )}
-          </CardContent>
-        </Card>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 }

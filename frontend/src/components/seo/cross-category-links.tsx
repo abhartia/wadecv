@@ -53,9 +53,7 @@ export function CrossCategoryLinks({ currentCategory, contextLinks }: Props) {
       return true;
     })
     .slice(0, 6);
-  const comparisons = TOOL_COMPARISONS.filter(
-    (c) => c.href !== currentCategory,
-  ).slice(0, 3);
+  const comparisons = TOOL_COMPARISONS.filter((c) => c.href !== currentCategory).slice(0, 3);
 
   if (!allLinks.length) return null;
 
@@ -77,18 +75,14 @@ export function CrossCategoryLinks({ currentCategory, contextLinks }: Props) {
       </ul>
       {comparisons.length > 0 && (
         <>
-          <h3 className="text-lg font-semibold mt-6 mb-3">
-            Compare AI resume tools
-          </h3>
+          <h3 className="text-lg font-semibold mt-6 mb-3">Compare AI resume tools</h3>
           <ul className="grid gap-3 sm:grid-cols-3">
             {comparisons.map(({ href, label }) => (
               <li key={href}>
                 <Link href={href} className="block group">
                   <Card className="transition-colors group-hover:bg-muted/50 h-full">
                     <CardContent className="py-3">
-                      <span className="font-medium text-sm group-hover:text-primary">
-                        {label}
-                      </span>
+                      <span className="font-medium text-sm group-hover:text-primary">{label}</span>
                     </CardContent>
                   </Card>
                 </Link>

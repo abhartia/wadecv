@@ -6,5 +6,3 @@ export function isAnalyticsEnabled() {
   if (!GA_MEASUREMENT_ID) return false;
   return true;
 }
-
-

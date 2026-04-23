@@ -1,5 +1,5 @@
-import uuid
 import io
+import uuid
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from fastapi.responses import StreamingResponse
@@ -7,15 +7,19 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
-from app.models.user import User
-from app.models.job import Job
-from app.models.cv import CV
 from app.models.cover_letter import CoverLetter
-from app.schemas.cover_letter import CoverLetterGenerateRequest, CoverLetterUpdateRequest, CoverLetterResponse
-from app.utils.auth import get_current_user
-from app.utils.filename import job_suffix_for_filename
+from app.models.cv import CV
+from app.models.job import Job
+from app.models.user import User
+from app.schemas.cover_letter import (
+    CoverLetterGenerateRequest,
+    CoverLetterResponse,
+    CoverLetterUpdateRequest,
+)
 from app.services.cover_letter import generate_cover_letter
 from app.services.docx_builder import build_cover_letter_docx, build_cover_letter_pdf
+from app.utils.auth import get_current_user
+from app.utils.filename import job_suffix_for_filename
 
 router = APIRouter()
 
@@ -36,13 +40,16 @@ async def generate(
     result = await db.execute(select(CV).where(CV.id == job.cv_id))
     cv = result.scalar_one_or_none()
     if not cv or not cv.generated_cv_data:
-        raise HTTPException(status_code=400, detail="CV must be generated before creating a cover letter")
+        raise HTTPException(
+            status_code=400, detail="CV must be generated before creating a cover letter"
+        )
 
-    existing = await db.execute(
-        select(CoverLetter).where(CoverLetter.job_id == job.id)
-    )
+    existing = await db.execute(select(CoverLetter).where(CoverLetter.job_id == job.id))
     if existing.scalar_one_or_none():
-        raise HTTPException(status_code=409, detail="Cover letter already exists for this job. Delete it first to regenerate.")
+        raise HTTPException(
+            status_code=409,
+            detail="Cover letter already exists for this job. Delete it first to regenerate.",
+        )
 
     content = await generate_cover_letter(
         cv_data=cv.generated_cv_data,
@@ -52,15 +59,20 @@ async def generate(
     )
 
     if not content or not content.strip():
-        raise HTTPException(status_code=502, detail="AI failed to generate cover letter content. Please try again.")
+        raise HTTPException(
+            status_code=502, detail="AI failed to generate cover letter content. Please try again."
+        )
 
     cl = CoverLetter(job_id=job.id, cv_id=cv.id, content=content)
     db.add(cl)
     await db.flush()
 
     return CoverLetterResponse(
-        id=str(cl.id), job_id=str(cl.job_id), cv_id=str(cl.cv_id),
-        content=cl.content, created_at=cl.created_at.isoformat(),
+        id=str(cl.id),
+        job_id=str(cl.job_id),
+        cv_id=str(cl.cv_id),
+        content=cl.content,
+        created_at=cl.created_at.isoformat(),
     )
 
 
@@ -83,8 +95,11 @@ async def get_cover_letter(
         raise HTTPException(status_code=404, detail="Cover letter not found")
 
     return CoverLetterResponse(
-        id=str(cl.id), job_id=str(cl.job_id), cv_id=str(cl.cv_id),
-        content=cl.content, created_at=cl.created_at.isoformat(),
+        id=str(cl.id),
+        job_id=str(cl.job_id),
+        cv_id=str(cl.cv_id),
+        content=cl.content,
+        created_at=cl.created_at.isoformat(),
     )
 
 
@@ -111,8 +126,11 @@ async def update_cover_letter(
     await db.flush()
 
     return CoverLetterResponse(
-        id=str(cl.id), job_id=str(cl.job_id), cv_id=str(cl.cv_id),
-        content=cl.content, created_at=cl.created_at.isoformat(),
+        id=str(cl.id),
+        job_id=str(cl.job_id),
+        cv_id=str(cl.cv_id),
+        content=cl.content,
+        created_at=cl.created_at.isoformat(),
     )
 
 
@@ -141,7 +159,9 @@ async def download_cover_letter(
 
     result = await db.execute(select(CV).where(CV.id == cl.cv_id))
     cv = result.scalar_one_or_none()
-    personal_info = cv.generated_cv_data.get("personal_info") if cv and cv.generated_cv_data else None
+    personal_info = (
+        cv.generated_cv_data.get("personal_info") if cv and cv.generated_cv_data else None
+    )
 
     full_name = ""
     if personal_info:
@@ -159,10 +179,7 @@ async def download_cover_letter(
             last_name = parts[-1]
     date_str = cl.created_at.date().isoformat()
     job_suffix = job_suffix_for_filename(job.company_name, job.job_title)
-    if job_suffix:
-        mid = f"_{job_suffix}_"
-    else:
-        mid = "_"
+    mid = f"_{job_suffix}_" if job_suffix else "_"
     if first_name and last_name:
         base = f"{last_name}_{first_name}_Cover_Letter{mid}{date_str}"
     elif first_name:
@@ -177,7 +194,7 @@ async def download_cover_letter(
         return StreamingResponse(
             io.BytesIO(pdf_bytes),
             media_type="application/pdf",
-            headers={"Content-Disposition": f'attachment; filename=\"{filename}\"'},
+            headers={"Content-Disposition": f'attachment; filename="{filename}"'},
         )
 
     # default to DOCX
@@ -186,7 +203,7 @@ async def download_cover_letter(
     return StreamingResponse(
         io.BytesIO(docx_bytes),
         media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        headers={"Content-Disposition": f'attachment; filename=\"{filename}\"'},
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
     )
 
 
