@@ -129,21 +129,25 @@ erDiagram
 | LLM traces | Every Azure OpenAI call | Langfuse |
 | Rate-limit rejections | 429 responses | `slowapi` + logs |
 
-## Browser-facing security headers
+## Security response headers
 
-Baseline set applied to every frontend route from
+Applied at both edges of the stack — see [ADR 0004](adr/0004-security-headers.md)
+for the full rationale per header. Frontend baseline lives in
 [`frontend/src/lib/security-headers.ts`](../frontend/src/lib/security-headers.ts)
-and wired in `frontend/next.config.ts`. Locked by a Vitest unit test and
-re-asserted against a live response in the Playwright smoke suite.
+(locked by Vitest + Playwright); backend baseline is
+`SecurityHeadersMiddleware` in
+[`backend/app/middleware/security_headers.py`](../backend/app/middleware/security_headers.py)
+(locked by `backend/tests/api/test_security_headers.py`).
 
-| Header | Value |
-|--------|-------|
-| `Strict-Transport-Security` | `max-age=63072000; includeSubDomains; preload` |
-| `X-Content-Type-Options` | `nosniff` |
-| `X-Frame-Options` | `DENY` |
-| `Referrer-Policy` | `strict-origin-when-cross-origin` |
-| `Permissions-Policy` | camera/mic/geo/usb/topics/FLoC denied; `payment=(self)` for Stripe |
-| `Cross-Origin-Opener-Policy` | `same-origin` |
+| Header | Value | Edges |
+|--------|-------|-------|
+| `Strict-Transport-Security` | `max-age=63072000; includeSubDomains; preload` | Frontend always; backend in production only |
+| `X-Content-Type-Options` | `nosniff` | Both |
+| `X-Frame-Options` | `DENY` | Both |
+| `Referrer-Policy` | `strict-origin-when-cross-origin` | Both |
+| `Permissions-Policy` | camera/mic/geo/usb/topics/FLoC denied; `payment=(self)` on the frontend for Stripe | Both |
+| `Cross-Origin-Opener-Policy` | `same-origin` | Both |
+| `Cross-Origin-Resource-Policy` | `same-site` | Backend (API responses) |
 
 Not yet set: `Content-Security-Policy`. A meaningful CSP for this app needs a
 nonce-based middleware pass (Next inline hydration script, GA4, Sentry ingest,
