@@ -362,16 +362,16 @@
     {
       "page": "https://wadecv.com/ats/lever",
       "clicks": 0,
-      "impressions": 63,
+      "impressions": 64,
       "ctr": 0,
-      "position": 7.9
+      "position": 8.0
     },
     {
       "page": "https://wadecv.com/best-ai-resume-builder-2026",
       "clicks": 0,
-      "impressions": 4,
+      "impressions": 5,
       "ctr": 0,
-      "position": 8.8
+      "position": 7.8
     },
     {
       "page": "https://wadecv.com/career-change",
@@ -565,9 +565,9 @@
     {
       "page": "https://wadecv.com/resume-bullets/cybersecurity-analyst",
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 7
+      "position": 7.8
     },
     {
       "page": "https://wadecv.com/resume-bullets/data-analyst",
@@ -689,18 +689,18 @@
       "position": 67.5
     },
     {
+      "page": "https://wadecv.com/skills/retail-manager",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 18
+    },
+    {
       "page": "https://wadecv.com/wadecv-vs-flowcv",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 12
-    },
-    {
-      "page": "https://wadecv.com/wadecv-vs-jobscan",
-      "clicks": 0,
-      "impressions": 5,
-      "ctr": 0,
-      "position": 55.4
     }
   ],
   "query_page_30d": [
@@ -1841,15 +1841,22 @@
       "impressions": 13,
       "ctr": 0,
       "position": 42
+    },
+    {
+      "date": "2026-04-22",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 10.2
     }
   ],
   "devices_30d": [
     {
       "device": "DESKTOP",
       "clicks": 1,
-      "impressions": 386,
+      "impressions": 391,
       "ctr": 0.26,
-      "position": 54.7
+      "position": 54.1
     },
     {
       "device": "MOBILE",
@@ -1863,16 +1870,16 @@
     {
       "country": "can",
       "clicks": 1,
-      "impressions": 10,
-      "ctr": 10.0,
-      "position": 40.3
+      "impressions": 11,
+      "ctr": 9.09,
+      "position": 37.4
     },
     {
       "country": "usa",
       "clicks": 1,
-      "impressions": 193,
-      "ctr": 0.52,
-      "position": 54.1
+      "impressions": 195,
+      "ctr": 0.51,
+      "position": 53.6
     },
     {
       "country": "are",
@@ -1884,9 +1891,9 @@
     {
       "country": "arg",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 14
+      "position": 16
     },
     {
       "country": "aus",
@@ -1933,9 +1940,9 @@
     {
       "country": "deu",
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 8
+      "position": 8.5
     },
     {
       "country": "egy",

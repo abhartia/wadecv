@@ -9,6 +9,23 @@ import json
 import os
 import random
 import time
+
+# pytrends 4.9.x calls urllib3.util.retry.Retry(method_whitelist=...), which
+# urllib3 2.0+ renamed to allowed_methods. Translate at the boundary so we don't
+# need to pin urllib3<2 across the project.
+from urllib3.util import retry as _urllib3_retry
+
+_original_retry_init = _urllib3_retry.Retry.__init__
+
+
+def _patched_retry_init(self, *args, **kwargs):
+    if "method_whitelist" in kwargs and "allowed_methods" not in kwargs:
+        kwargs["allowed_methods"] = kwargs.pop("method_whitelist")
+    return _original_retry_init(self, *args, **kwargs)
+
+
+_urllib3_retry.Retry.__init__ = _patched_retry_init
+
 from pytrends.request import TrendReq
 
 MAX_RETRIES = 5
