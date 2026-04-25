@@ -5,6 +5,40 @@ export type ClientOptions = {
 };
 
 /**
+ * Body_send_mail_api_mail_send_post
+ */
+export type BodySendMailApiMailSendPost = {
+  /**
+   * Job Id
+   */
+  job_id: string;
+  /**
+   * Content Type
+   */
+  content_type: string;
+  /**
+   * To Address
+   */
+  to_address: string;
+  /**
+   * From Address
+   */
+  from_address: string;
+  /**
+   * Save Return Address
+   */
+  save_return_address?: boolean;
+  /**
+   * Custom Cv Pdf
+   */
+  custom_cv_pdf?: Blob | File | null;
+  /**
+   * Custom Cover Letter Pdf
+   */
+  custom_cover_letter_pdf?: Blob | File | null;
+};
+
+/**
  * Body_upload_cv_api_cv_upload_post
  */
 export type BodyUploadCvApiCvUploadPost = {
@@ -372,6 +406,68 @@ export type CreditTransactionResponse = {
 };
 
 /**
+ * ExtractAddressRequest
+ */
+export type ExtractAddressRequest = {
+  /**
+   * Job Id
+   */
+  job_id: string;
+};
+
+/**
+ * ExtractAddressResponse
+ */
+export type ExtractAddressResponse = {
+  /**
+   * Found
+   */
+  found: boolean;
+  /**
+   * Name
+   */
+  name?: string;
+  /**
+   * Address Line1
+   */
+  address_line1?: string;
+  /**
+   * Address Line2
+   */
+  address_line2?: string;
+  /**
+   * City
+   */
+  city?: string;
+  /**
+   * State
+   */
+  state?: string;
+  /**
+   * Zip
+   */
+  zip?: string;
+  /**
+   * Country
+   */
+  country?: string;
+};
+
+/**
+ * FeatureFlagResponse
+ */
+export type FeatureFlagResponse = {
+  /**
+   * Name
+   */
+  name: string;
+  /**
+   * Enabled
+   */
+  enabled: boolean;
+};
+
+/**
  * GapInsightTheme
  */
 export type GapInsightTheme = {
@@ -536,6 +632,40 @@ export type MagicLinkVerify = {
    * Token
    */
   token: string;
+};
+
+/**
+ * PhysicalMailResponse
+ */
+export type PhysicalMailResponse = {
+  /**
+   * Id
+   */
+  id: string;
+  /**
+   * Job Id
+   */
+  job_id: string;
+  /**
+   * Lob Letter Id
+   */
+  lob_letter_id: string | null;
+  /**
+   * Content Type
+   */
+  content_type: string;
+  /**
+   * Status
+   */
+  status: string;
+  /**
+   * Credits Charged
+   */
+  credits_charged: number;
+  /**
+   * Created At
+   */
+  created_at: string;
 };
 
 /**
@@ -747,160 +877,6 @@ export type ValidationError = {
   ctx?: {
     [key: string]: unknown;
   };
-};
-
-/**
- * AddressSchema
- */
-export type AddressSchema = {
-  /**
-   * Name
-   */
-  name: string;
-  /**
-   * Address Line1
-   */
-  address_line1: string;
-  /**
-   * Address Line2
-   */
-  address_line2?: string;
-  /**
-   * City
-   */
-  city: string;
-  /**
-   * State
-   */
-  state: string;
-  /**
-   * Zip
-   */
-  zip: string;
-  /**
-   * Country
-   */
-  country?: string;
-};
-
-/**
- * ExtractAddressRequest
- */
-export type ExtractAddressRequest = {
-  /**
-   * Job Id
-   */
-  job_id: string;
-};
-
-/**
- * ExtractAddressResponse
- */
-export type ExtractAddressResponse = {
-  /**
-   * Found
-   */
-  found: boolean;
-  /**
-   * Name
-   */
-  name?: string;
-  /**
-   * Address Line1
-   */
-  address_line1?: string;
-  /**
-   * Address Line2
-   */
-  address_line2?: string;
-  /**
-   * City
-   */
-  city?: string;
-  /**
-   * State
-   */
-  state?: string;
-  /**
-   * Zip
-   */
-  zip?: string;
-  /**
-   * Country
-   */
-  country?: string;
-};
-
-/**
- * Body_send_mail_api_mail_send_post
- */
-export type BodySendMailApiMailSendPost = {
-  /**
-   * Job Id
-   */
-  job_id: string;
-  /**
-   * Content Type
-   */
-  content_type: "cv_only" | "cover_letter_only" | "both";
-  /**
-   * To Address
-   *
-   * JSON-encoded address object
-   */
-  to_address: string;
-  /**
-   * From Address
-   *
-   * JSON-encoded address object
-   */
-  from_address: string;
-  /**
-   * Save Return Address
-   */
-  save_return_address?: boolean;
-  /**
-   * Custom Cv Pdf
-   */
-  custom_cv_pdf?: Blob | File;
-  /**
-   * Custom Cover Letter Pdf
-   */
-  custom_cover_letter_pdf?: Blob | File;
-};
-
-/**
- * PhysicalMailResponse
- */
-export type PhysicalMailResponse = {
-  /**
-   * Id
-   */
-  id: string;
-  /**
-   * Job Id
-   */
-  job_id: string;
-  /**
-   * Lob Letter Id
-   */
-  lob_letter_id?: string | null;
-  /**
-   * Content Type
-   */
-  content_type: string;
-  /**
-   * Status
-   */
-  status: string;
-  /**
-   * Credits Charged
-   */
-  credits_charged: number;
-  /**
-   * Created At
-   */
-  created_at: string;
 };
 
 export type RegisterApiAuthRegisterPostData = {
@@ -1945,20 +1921,6 @@ export type UploadProfileCvApiAccountProfileUploadPostResponses = {
 export type UploadProfileCvApiAccountProfileUploadPostResponse =
   UploadProfileCvApiAccountProfileUploadPostResponses[keyof UploadProfileCvApiAccountProfileUploadPostResponses];
 
-export type HealthApiHealthGetData = {
-  body?: never;
-  path?: never;
-  query?: never;
-  url: "/api/health";
-};
-
-export type HealthApiHealthGetResponses = {
-  /**
-   * Successful Response
-   */
-  200: unknown;
-};
-
 export type ExtractAddressApiMailExtractAddressPostData = {
   body: ExtractAddressRequest;
   path?: never;
@@ -2012,3 +1974,56 @@ export type SendMailApiMailSendPostResponses = {
 
 export type SendMailApiMailSendPostResponse =
   SendMailApiMailSendPostResponses[keyof SendMailApiMailSendPostResponses];
+
+export type GetFlagApiFeatureFlagsNameGetData = {
+  body?: never;
+  path: {
+    /**
+     * Name
+     */
+    name: string;
+  };
+  query?: never;
+  url: "/api/feature-flags/{name}";
+};
+
+export type GetFlagApiFeatureFlagsNameGetErrors = {
+  /**
+   * Validation Error
+   */
+  422: HttpValidationError;
+};
+
+export type GetFlagApiFeatureFlagsNameGetError =
+  GetFlagApiFeatureFlagsNameGetErrors[keyof GetFlagApiFeatureFlagsNameGetErrors];
+
+export type GetFlagApiFeatureFlagsNameGetResponses = {
+  /**
+   * Successful Response
+   */
+  200: FeatureFlagResponse;
+};
+
+export type GetFlagApiFeatureFlagsNameGetResponse =
+  GetFlagApiFeatureFlagsNameGetResponses[keyof GetFlagApiFeatureFlagsNameGetResponses];
+
+export type HealthApiHealthGetData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/api/health";
+};
+
+export type HealthApiHealthGetResponses = {
+  /**
+   * Response Health Api Health Get
+   *
+   * Successful Response
+   */
+  200: {
+    [key: string]: string;
+  };
+};
+
+export type HealthApiHealthGetResponse =
+  HealthApiHealthGetResponses[keyof HealthApiHealthGetResponses];
