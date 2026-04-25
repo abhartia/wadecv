@@ -1952,72 +1952,170 @@
   },
   {
     "slug": "customer-service-representative",
-    "title": "Customer Service Representative \u2013 Job Description & Resume Guide",
-    "metaDescription": "Customer service representative job description, skills, and resume keywords. How to write a customer service resume that highlights communication, problem-solving, and metrics.",
-    "intro": "Customer service representatives are the front line of every company \u2014 handling inquiries, resolving complaints, processing orders, and building customer loyalty. This role exists in virtually every industry, from retail and banking to SaaS and healthcare. Here\u2019s what hiring managers look for on a customer service resume.",
+    "title": "Customer Service Representative CV & Resume Guide 2026 \u2014 Skills, Metrics & Keywords",
+    "metaDescription": "Customer service representative resume guide for 2026: full responsibility list, named CRM/helpdesk tools (Zendesk, Salesforce Service Cloud, Intercom Fin AI), CSAT/FCR/AHT/NPS/CES metric definitions, 12 bullet examples for B2C, B2B SaaS, fintech and BPO, and ATS-ready keyword set.",
+    "intro": "A customer service representative CV \u2014 or resume, in the US \u2014 has to prove four things to a recruiter scanning for under 60 seconds: the volume you handle (contacts per day, tickets per week), the quality you sustain (CSAT, FCR, AHT, NPS, QA score), the named platforms you have actually used (Zendesk, Salesforce Service Cloud, Intercom, Freshdesk, Gorgias, Genesys, NICE), and the channels you have worked (phone, chat, email, social, async). This guide covers the full responsibilities, the metric stack by role, 12 bullet examples spanning B2C retail, B2B SaaS, fintech and BPO contact centres, the keywords that pass ATS screens in 2026, and the eight mistakes that keep customer service candidates on page 7 of recruiter searches.",
     "responsibilities": [
-      "Respond to customer inquiries via phone, email, chat, and social media",
-      "Troubleshoot product or service issues and escalate when necessary",
-      "Process orders, returns, refunds, and account changes accurately",
-      "Document customer interactions in CRM systems (Salesforce, Zendesk, Freshdesk)",
-      "Meet or exceed response time, resolution rate, and CSAT targets",
-      "Identify upsell and cross-sell opportunities during interactions",
-      "Collaborate with product and operations teams to relay customer feedback"
+      "Handle inbound contacts across phone, email, live chat, social media DMs, async support tools and SMS \u2014 maintain stated CSAT, FCR and AHT targets",
+      "Operate the helpdesk / CRM as a power user: Zendesk (Support, Guide, Talk, Explore), Salesforce Service Cloud, Intercom, Freshdesk, HubSpot Service Hub, Gorgias or Front",
+      "Triage tickets, apply tags, run macros, and use canned responses or KCS articles consistently to compress handle time without sacrificing quality",
+      "Resolve complex billing, refund, returns, account-update and product-issue cases end-to-end \u2014 escalate to Tier 2 / Tier 3 only when required by SLA or policy",
+      "De-escalate frustrated customers using empathy + acknowledgement + framing \u2014 retain at-risk accounts and turn detractors into promoters where possible",
+      "Document interactions in the CRM with structured tags so analytics and product teams can mine voice-of-customer signals; flag bug reports for engineering triage",
+      "Meet or exceed published SLAs (first-response time, resolution time, CSAT survey response rate, QA score) and maintain schedule adherence above 95%",
+      "Identify upsell, cross-sell and renewal signals during interactions; pass qualified leads to Account Management or Customer Success",
+      "Author or update knowledge-base articles using KCS v6 Practices; build new macros and templates that reduce repeat handle time across the team",
+      "Calibrate against QA scorecards (Klaus, MaestroQA, Stella Connect); attend weekly QA reviews and apply coaching feedback to next-week metrics",
+      "Pilot or operate AI-deflection tools (Intercom Fin AI, Zendesk AI, Ada, Forethought, Decagon) where deployed; review AI-handled conversations for hallucinations and edge-case routing",
+      "Cover phone, chat or email queues across regional shifts (US/EMEA/APAC) \u2014 manage handoffs cleanly and update status notes for the next on-shift agent"
     ],
     "requiredSkills": [
-      "Clear written and verbal communication",
-      "Active listening and empathy",
-      "Problem-solving and conflict resolution",
-      "CRM software (Salesforce, Zendesk, HubSpot, Freshdesk)",
-      "Multitasking and time management in high-volume environments",
-      "Product knowledge and ability to learn new systems quickly",
-      "Patience and composure under pressure"
+      "Clear written and verbal communication \u2014 tone-matching for formal, casual, technical and crisis contexts",
+      "Active listening, empathetic acknowledgement and de-escalation under pressure",
+      "Named helpdesk / CRM fluency: Zendesk, Salesforce Service Cloud, Intercom, Freshdesk, HubSpot, Gorgias, Front, Help Scout, Kustomer or ServiceNow CSM",
+      "Channel range: phone, live chat, email, social DM, async, SMS \u2014 plus regional language coverage where applicable",
+      "Metric literacy: CSAT, NPS, CES, FCR, AHT, QA score, schedule adherence, ticket / contact volume",
+      "Knowledge-management skills \u2014 KCS v6 Practices, macro authoring, template creation, knowledge-base maintenance in Guru / Slab / Notion / Confluence",
+      "QA literacy \u2014 calibrating against Klaus / MaestroQA / Stella Connect rubrics; receiving and applying coaching feedback",
+      "Telephony / contact-centre familiarity \u2014 Genesys Cloud, NICE CXone, Five9, Talkdesk, AWS Connect, Twilio Flex, Aircall or Dialpad",
+      "Workflow tooling \u2014 Slack, Microsoft Teams, Zoom, Notion, Asana for cross-functional follow-up; Jira / Linear for engineering bug-triage handoff",
+      "AI-in-support familiarity \u2014 evaluating, configuring or operating Intercom Fin, Zendesk AI, Ada, Forethought, Ultimate.ai, Decagon or Cresta agent-assist"
     ],
-    "salaryRange": ",000\u2013,000 for entry-level; ,000\u2013,000 for senior or specialized roles; team leads and managers earn more.",
+    "salaryRange": "United States: $38,000\u2013$48,000 entry-level CSR; $48,000\u2013$62,000 senior / specialist; $62,000\u2013$85,000 team lead / supervisor. United Kingdom: \u00a322,000\u2013\u00a328,000 entry; \u00a328,000\u2013\u00a338,000 senior; \u00a338,000\u2013\u00a350,000 team lead. Customer Success Manager (SaaS): $75,000\u2013$120,000 plus variable. Bilingual / multilingual support adds 10\u201325% premium in most markets.",
     "careerPath": [
-      "Customer Service Representative",
-      "Senior CSR / Specialist",
-      "Team Lead",
+      "Customer Service Representative (Tier 1)",
+      "Senior CSR / Tier 2 Specialist",
+      "Team Lead / Supervisor",
       "Customer Service Manager",
-      "Director of Customer Experience"
+      "Customer Success Manager (alternate track)",
+      "Director / VP of Customer Experience"
     ],
     "resumeKeywords": [
       "customer service",
+      "customer support",
+      "omnichannel support",
       "CSAT",
       "NPS",
-      "first-call resolution",
-      "CRM",
-      "Salesforce",
+      "CES",
+      "first contact resolution",
+      "FCR",
+      "AHT",
+      "average handle time",
+      "QA score",
+      "schedule adherence",
       "Zendesk",
-      "ticket resolution",
-      "upselling",
-      "cross-selling",
+      "Zendesk Support",
+      "Zendesk Guide",
+      "Zendesk Explore",
+      "Salesforce Service Cloud",
+      "Lightning console",
+      "Omni-Channel",
+      "Intercom",
+      "Intercom Fin AI",
+      "Freshdesk",
+      "Freshchat",
+      "HubSpot Service Hub",
+      "Gorgias",
+      "Front",
+      "Help Scout",
+      "Kustomer",
+      "ServiceNow CSM",
+      "Genesys Cloud",
+      "NICE CXone",
+      "Five9",
+      "Talkdesk",
+      "Aircall",
+      "AWS Connect",
+      "Twilio Flex",
+      "Klaus",
+      "MaestroQA",
+      "Stella Connect",
+      "Calabrio",
+      "Verint",
+      "Assembled",
+      "Guru",
+      "KCS v6",
+      "Knowledge-Centred Service",
+      "macro authoring",
+      "ticket triage",
+      "tier 1 support",
+      "tier 2 escalation",
+      "voice of customer",
+      "VOC",
+      "deflection rate",
+      "Ada",
+      "Forethought",
+      "Ultimate.ai",
+      "Decagon",
+      "Cresta",
+      "Gainsight",
+      "ChurnZero",
+      "Totango",
+      "NRR",
+      "GRR",
+      "logo churn",
       "complaint resolution",
       "SLA",
       "response time",
+      "ticket volume",
       "customer retention",
-      "multitasking"
+      "de-escalation"
     ],
-    "body": "Customer service resumes should emphasize metrics: tickets resolved per day, CSAT scores, first-call resolution rates, and any upsell revenue generated. Highlight the channels you\u2019ve worked (phone, email, live chat, social media) and the CRM tools you\u2019ve used. WadeCV tailors your customer service experience to each job description so the right metrics and skills are highlighted for that specific role.",
+    "body": "A customer service representative resume in 2026 is screened against a four-part bar: volume + quality + tooling + channel mix. Bullets that say 'helped customers' without numbers are filtered out before a human reads them. Bullets like 'Resolved 78 contacts/day across phone, Zendesk live chat and email at 4.7/5 CSAT and 86% FCR over 14 months' are screening passes.\n\nThe metric stack moves with role level. Tier 1 agents are screened on contacts/day, CSAT, FCR, AHT and QA score. Tier 2 specialists add complex-case ownership, escalation rate, and KCS authoring. Team leads are screened on team CSAT, team FCR, schedule adherence and attrition. Customer Success Managers (the alternate track) are screened on NRR, GRR, logo churn, and book size in $ARR. Match the metric stack to the level of the role you are applying for.\n\nVocabulary differs by industry. B2C retail support uses 'order issue', 'returns flow', 'refund SLA', 'fulfilment partner'; B2B SaaS support uses 'ticket', 'macro', 'KCS article', 'engineering triage', 'voice of customer'; fintech support uses 'dispute', 'chargeback', 'KYC', 'fraud-flag escalation'; BPO / contact-centre work uses 'queue', 'shrinkage', 'WFM', 'occupancy'. Pick the vocabulary that matches the job you are applying for, even within customer service.\n\nNamed platform experience is the single highest-leverage signal in 2026. Recruiters search candidate databases with boolean queries ('Zendesk' AND 'Salesforce', 'Gainsight' AND 'ChurnZero', 'Intercom Fin' AND 'Ada'). Resumes that list categories ('helpdesk software', 'CRM') instead of named tools are invisible to those searches. List every platform you have used in production, with modules where you can ('Zendesk Support, Guide, Talk and Explore' beats 'Zendesk').\n\nWadeCV takes your existing customer service CV, extracts the platform stack and metric expectations from the target job URL, and rewrites your bullets with the volume + quality + impact pattern, the right tool names, and the regional spelling that matches the posting. The first fit-analysis run is free with the credit included on signup. See our broader \ud83d\udd17 [customer service resume guide](/customer-service-resume) for role-by-role metrics, six bullet formulas and the platform vocabulary recruiters search for.",
     "commonMistakes": [
-      "Saying \u201chelped customers\u201d without specifying volume, channel, or outcome",
-      "Omitting CRM tools and ticketing systems you\u2019ve used",
-      "Not quantifying performance (CSAT score, resolution rate, tickets/day)"
+      "Bullets that open with 'helped', 'assisted' or 'supported' \u2014 they read as filler and get filtered out",
+      "Generic 'CRM' or 'helpdesk software' instead of named tools (Zendesk, Salesforce Service Cloud, Intercom, Gorgias)",
+      "CSAT score quoted without sample size or time window \u2014 4.9/5 over 12 surveys is not the same as 4.9/5 over 12,000",
+      "AHT improvement quoted without quality context \u2014 reads as rushed cases without a CSAT pair",
+      "Missing channel mix \u2014 phone-only, chat-only, omnichannel, async and BPO are different roles with different vocabulary",
+      "No metrics in the professional summary \u2014 recruiters skim the summary first; volume / CSAT / FCR / NPS belong there",
+      "Listing 'Microsoft Office' or 'Google Workspace' as a customer service skill instead of named CRM / helpdesk / WFM platforms",
+      "CSM-track resume that omits NRR, GRR, logo churn or book size in $ARR \u2014 these are the four screening numbers in 2026"
     ],
     "interviewTips": [
-      "Prepare a story about handling a difficult customer and how you resolved it",
-      "Know the company\u2019s products so you can discuss how you\u2019d support their customers",
-      "Be ready to discuss your approach to balancing speed and quality in responses"
+      "Prepare a 90-second 'difficult customer' story using STAR \u2014 situation, named tool, action steps, quantified outcome (CSAT survey, retention, expansion)",
+      "Know the company's product, support channels, AI deflection stack and published support SLAs before the interview \u2014 ask one specific question about their voice-of-customer process",
+      "Have specific numbers ready: top contact-driver themes you have seen, your highest CSAT month with sample size, your largest macro / KCS article impact in % of repeat-contact reduction",
+      "For Senior / Lead interviews, prepare a coaching example with a specific agent metric move (CSAT 4.3 \u2192 4.7 in 6 months, FCR 74% \u2192 86%) and the mechanism you used (QA calibration, 1:1 cadence, side-by-side)",
+      "For CSM-track interviews, prepare a save-play with named-account specifics: $ARR at risk, 60-90 day plan, multi-thread strategy, retention or expansion outcome"
     ],
     "relatedSlugs": [
+      "customer-success-manager",
       "account-executive",
-      "hr-business-partner",
-      "recruiter"
+      "hr-business-partner"
     ],
     "faq": [
       {
         "question": "What skills should I highlight on a customer service resume?",
-        "answer": "Focus on communication, problem-solving, CRM proficiency, and metrics. Hiring managers want to see that you can handle volume while maintaining quality \u2014 so include CSAT scores, resolution rates, and specific tools you\u2019ve used."
+        "answer": "Open with named platforms (Zendesk, Salesforce Service Cloud, Intercom Fin AI, Freshdesk, Gorgias) and quantified metrics (CSAT 4.5+/5, FCR 80%+, QA score 90%+, contact volume per day). Add channel range (phone, chat, email, social, async), KCS v6 / macro-authoring fluency, QA-tool literacy (Klaus, MaestroQA, Stella Connect), and de-escalation experience. For Senior or Lead roles, add coaching, schedule adherence, attrition and side-by-side training. For CSM-track roles, add NRR, GRR, logo churn, book size in $ARR, Gainsight / ChurnZero / Totango."
+      },
+      {
+        "question": "What is a good CSAT score to put on a customer service resume?",
+        "answer": "4.5/5 is the baseline screening signal in mature contact centres; 4.7+ is top-quartile. Always pair with sample size and time window: '4.7/5 CSAT over 14 months on 1,200+ surveyed contacts/month' is a screening pass; '4.9/5 CSAT' with no scope reads as cherry-picked. If your environment uses NPS rather than CSAT, lead with the NPS score and movement (e.g. +12 points YoY)."
+      },
+      {
+        "question": "How do I write a customer service resume bullet that gets read?",
+        "answer": "Use the volume + quality + impact pattern: open with a strong verb (Resolved, Owned, Lifted, Reduced, Authored, Led), state the volume (78 contacts/day, 14,000 quarterly tickets), state the quality (4.7/5 CSAT, 86% FCR, 92% QA score), and close with a business outcome (28% AHT reduction, $1.27M ARR retained, 9-point NPS lift). Include at least one named tool per role (Zendesk, Salesforce, Intercom Fin, Gainsight) so the bullet survives boolean keyword searches. Avoid 'helped', 'assisted', 'supported' as opening verbs \u2014 they read as filler."
+      },
+      {
+        "question": "Which CRM and helpdesk tools should I list on a customer service CV?",
+        "answer": "List every named platform you have used in production, with modules where you can. The high-frequency 2026 recruiter searches are: Zendesk (Support, Guide, Talk, Explore), Salesforce Service Cloud + Lightning console + Omni-Channel, Intercom (Inbox, Articles, Resolution Bot, Fin AI), Freshdesk / Freshchat, HubSpot Service Hub, Gorgias, Front, Help Scout, Kustomer, ServiceNow CSM, Genesys Cloud, NICE CXone and Five9. For customer success roles, add Gainsight, ChurnZero, Totango, Catalyst or Vitally. For AI-deflection experience add Intercom Fin, Zendesk AI, Ada, Forethought, Ultimate.ai or Decagon."
+      },
+      {
+        "question": "What is the difference between a customer service and a customer success resume?",
+        "answer": "Customer service resumes lead with reactive volume metrics: contacts/day, CSAT, FCR, AHT, QA score, schedule adherence. The screener wants to know you can hold the queue at quality. Customer success resumes lead with retention and expansion metrics: NRR, GRR, logo churn, book size in $ARR, account count. The screener wants to know you can renew and expand a book. Vocabulary differs: CS uses 'queue', 'ticket', 'macro', 'escalation'; CSM uses 'QBR', 'EBR', 'success plan', 'multi-thread', 'health score'."
+      },
+      {
+        "question": "How do I tailor a customer service resume for a specific industry (B2C retail, SaaS, fintech, healthcare)?",
+        "answer": "Match the vocabulary and platform stack. B2C retail: 'order issue', 'returns flow', 'refund SLA', Gorgias + Shopify. B2B SaaS: 'ticket', 'macro', 'KCS article', 'engineering triage', Zendesk + Salesforce + Intercom Fin. Fintech: 'dispute', 'chargeback', 'KYC', 'fraud-flag', Stripe Radar / Adyen. Healthcare: 'PHI', 'HIPAA', 'patient access', Salesforce Health Cloud / Epic messaging. Reorder the platforms and metrics on your CV so the first 6 seconds of skim hit the industry-specific signals first."
+      },
+      {
+        "question": "Should I list AI-in-support experience on my customer service resume?",
+        "answer": "Yes \u2014 in 2026 it is a leading screening signal for Senior, Lead and Manager roles. If you have shipped, configured, evaluated or operated Intercom Fin AI, Zendesk AI, Ada, Forethought, Ultimate.ai, Decagon or Cresta agent-assist, lead the relevant role with the deflection rate, ROI and CSAT delta. Even if your AI involvement is review-and-flag (auditing AI-handled tickets for hallucinations or routing errors), naming the tool you reviewed is a screening pass for AI-savvy support teams."
+      },
+      {
+        "question": "How does WadeCV help me tailor a customer service representative resume?",
+        "answer": "Paste any customer service or customer success job URL \u2014 Zendesk, Stripe, Shopify, Klaviyo, HubSpot, an early-stage SaaS startup or a BPO contact-centre posting. WadeCV extracts the named platform stack, the metric expectations (CSAT, FCR, NRR, GRR), the channel mix and the level. WadeCV then rewrites your existing CV with the volume + quality + impact pattern, surfaces the right tool names, and adapts regional spelling and metric vocabulary to the posting. The first fit-analysis run is free with the credit included on signup."
       }
     ]
   },

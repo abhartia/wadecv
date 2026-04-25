@@ -4,6 +4,89 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 
 ---
 
+## 2026-04-25 — Session 25: `/customer-service-resume` Pillar + 2 Cluster Overhauls (Largest Volume Cluster)
+
+### Data Pulled
+- [x] GA4 → 18 active users / 52 sessions (-3 / -9 vs prev 30d), 22 dashboard_viewed, 17 cv_download, 14 cv_tailor_started, 29 cv_section_edited. Referrers: Stripe 24 (still misclassified as "Organic Shopping"), Direct 18, Google 5, chatgpt.com 2, fb 2. Organic Search = 2 sessions (unchanged).
+- [x] GSC → **423 impressions (+26 vs S24, +6.5%), 50 pages, 50 queries, 2 clicks (1 desktop + 1 mobile, 1 USA + 1 Canada).** Daily 2026-04-23 = pos **16.8 / 16 impr** (new low). Daily 2026-04-22 = pos 10.2 / 5 impr (confirmed from S24).
+- [x] Trends → **2nd consecutive clean pull** since S24 urllib3 fix. wobo ai +13,400% on "resume builder", flowcv +16,650% on "ai resume builder", cv builder free uk +204,150%, kickresume reviews +170%, customize resume up. All top signals already covered except kickresume.
+
+### Key Findings
+- **`/skills/customer-service` is the biggest single page on site** — 91 impressions / 24 queries / pos 83.8. Up from 81 in S22 (+12% w/w from freshness alone) but position unchanged at 80s. S22 worklog explicitly queued: "if customer-service cluster doesn't lift by S26 from S22 freshness, run pillar → /skills/customer-service internal-link density experiment (not more content)". Acted 1 session early — freshness has plateaued, structural lever needed.
+- **Two thin pages found in the cluster.** `/jobs/customer-service-representative`: body 491 chars, 1 FAQ, 3 commonMistakes, **broken `salaryRange` currency-strip bug** (same one S22 fixed on admin and S23 fixed on accountant). `/resume-bullets/customer-service`: body 460 chars, 5 bullets, 0 FAQs, 0 commonMistakes. Exact thin-page diagnostic pattern that has converted 8+ prior times.
+- **`/skills/accountant` lift confirmed** — 25 impressions today, was 0/thin in S22. S23 jobs+resume-bullets accountant overhaul is diffracting impressions to the existing skills page. 2-day index window.
+- **Daily-avg position compression continues** — newest day (2026-04-23) = 16.8. Weekly floor moved from ~52 → ~17 across 7 days.
+- **`/ats/lever` 0-click anomaly = 23 consecutive days** (68 impr / pos 7.9 / 0 clicks). Crosses S22 threshold rule but with the inverted shape — impressions did NOT drop, so the rule said wait. Different rule needed: queue radical retitle for S26.
+- **`/career-change/military-to-project-manager`** at pos 6.5 / 12 impr / 0 clicks; `/career-change/admin-to-product-manager` at pos 4.3 / 6 impr / 0 clicks. Page-1 ranks with no CTR. Could be SERP feature crowding or title-intent mismatch. Need higher row-limit query-page data before A/B titling.
+- **No drop-everything trend signal.** kickresume cluster rising (no /wadecv-vs-kickresume page yet), customize resume rising (held since S24), but customer-service pillar is the bigger lever.
+
+### Changes Made
+
+#### 1. `/customer-service-resume` pillar page (HIGH IMPACT — big bet of session)
+**File created:** `frontend/src/app/(resources)/customer-service-resume/page.tsx` (595 lines)
+- H1: "Customer Service Resume Guide 2026 — Skills, Bullets & Templates by Role"
+- Article + FAQPage JSON-LD
+- 5-step exact resume structure (headline / core skills / professional experience / tools+certs+languages / education)
+- 6-role benchmark table with metric stack and vocabulary per role (Agent → Senior → Team Lead → CSM → Manager → Director of CX)
+- 6 bullet formulas with worked examples (Volume+Quality+Channel, Improvement+Scope, De-escalation+Retention, CSM/NRR, Team Lead/Coaching, VOC/Cross-Functional)
+- 6 platform clusters with 40+ named tools (Helpdesk/CRM, Contact-Centre/Telephony, CS Platforms, QA+KM+WFM, AI/Automation, Vertical/Commerce)
+- 6-metric dictionary (CSAT, NPS, CES, FCR, AHT, NRR/GRR) with 2026 benchmarks
+- 4-paragraph "what's changed in 2026" prose linking to `/humanize-ai-resume`
+- 8 common mistakes
+- 8-entry FAQ
+- 2 InlineCta blocks (variant="skills" + variant="career-change")
+- CrossCategoryLinks with 8 contextLinks deep-linking to `/skills/customer-service`, `/resume-bullets/customer-service`, `/jobs/customer-service-representative`, `/jobs/customer-success-manager`, `/career-change/sales-to-customer-success`, `/career-change`, `/ats-resume-checker`, `/humanize-ai-resume`
+
+#### 2. `/jobs/customer-service-representative` deep overhaul
+**File changed:** `frontend/content/seo/jobs.json`
+- Body: 491 → ~3,400 chars (industry tailoring B2C / SaaS / fintech / healthcare / BPO; 2026 AI-deflection; named-platform boolean-search guidance; CSM-track separation; embedded link to `/customer-service-resume`)
+- Title: "Customer Service Representative – Job Description & Resume Guide" → "Customer Service Representative CV & Resume Guide 2026 — Skills, Metrics & Keywords"
+- Responsibilities: 7 → 12, Required skills: 7 → 10
+- **salaryRange currency-strip bug fixed** — replaced ",000–,000 entry-level" with full US/UK 4-band ($38-48k entry → $62-85k team lead, £22-28k → £38-50k, plus CSM and bilingual premium)
+- careerPath: 5 → 6 (added CSM as alternate track)
+- Resume keywords: 15 → 67 (Zendesk modules, Salesforce Service Cloud + Lightning + Omni-Channel, Intercom Fin AI, Gorgias, Front, Help Scout, Kustomer, ServiceNow CSM, Genesys, NICE, Five9, Klaus, MaestroQA, Calabrio, Verint, Assembled, Guru, KCS v6, Ada, Forethought, Decagon, Cresta, Gainsight, ChurnZero, NRR, GRR, etc.)
+- FAQ: 1 → 8, commonMistakes: 3 → 8, interviewTips: 3 → 5
+
+#### 3. `/resume-bullets/customer-service` deep overhaul
+**File changed:** `frontend/content/seo/resume-bullets.json`
+- Body: 460 → ~3,800 chars (4-signal screening framework + 5 summary/objective templates from Tier 1 to Director of CX with full text; named-platform vocabulary; embedded link to `/customer-service-resume`)
+- Title: "Customer Service Resume Bullet Points" → "Customer Service Resume Bullet Points & Summary Examples (2026)"
+- bulletExamples: 5 → **16** (Tier 1 omnichannel, KCS authoring, save play, CSM/NRR, team-lead coaching, VOC, AI-deflection, de-escalation, e-commerce, QA calibration, fintech disputes, healthcare/HIPAA, AI agent rollout, training, VOC report, helpdesk migration)
+- impactFormulas: 3 → 5
+- 0 → 7 FAQs (new field), 0 → 8 commonMistakes (new field), relatedSlugs: added
+
+#### 4. Wiring
+- `frontend/src/app/sitemap.ts` — `/customer-service-resume` at priority 0.9
+- `frontend/src/components/seo/cross-category-links.tsx` — added to CATEGORY_HUBS (~190 new internal links from every SEO detail page into the pillar)
+
+#### 5. Build + preview verified
+- `npm run build`: exit 0, **195 static pages** (up from 194), Compiled in 12.4s
+- Preview localhost:3000: `/customer-service-resume` returns 200, 232KB HTML, 9 H2 sections, 87 cards, 17 article links, Article + FAQPage JSON-LD both present, no console errors
+- All 4 cluster pages render: `/customer-service-resume`, `/jobs/customer-service-representative`, `/resume-bullets/customer-service`, `/skills/customer-service`
+
+### Not Yet Done (For Future Sessions)
+- [ ] Monitor `/customer-service-resume` indexing (2026-04-30+)
+- [ ] Monitor `/jobs/customer-service-representative` + `/resume-bullets/customer-service` lift (2026-04-30+)
+- [ ] Monitor whether `/skills/customer-service` position breaks below 80 (it should — that was the entire goal of the pillar)
+- [ ] Monitor `/wadecv-vs-resume-io` indexing (S24, 2026-04-29+)
+- [ ] Monitor `/jobs/accountant` + `/resume-bullets/accountant` lift (S23, 2026-04-28+)
+- [ ] Monitor `/wadecv-vs-resumeai`, `/jobs/recruiter`, admin-assistant cluster (S22, 2026-04-27+)
+- [ ] Monitor IB pillar + 5 firm pages (S21, 2026-04-26+)
+- [ ] **S26 priority: radical retitle of `/ats/lever`** — 23 consecutive days at pos 7.9 / 68 impr / 0 clicks. Crosses worklog threshold. Try title that signals "WadeCV is a tool, not a guide" — e.g. "Pass Lever ATS — Tailor Your Resume Free in 60 Seconds"
+- [ ] **S26 priority: kickresume cluster** — `kickresume reviews` +170%, `is kickresume free` +100%, no `/wadecv-vs-kickresume` page yet (only listicle row)
+- [ ] **S26 priority: customer-service-resume H1 / meta CTR test once indexed** — page targets "customer service resume" but verify which exact query GSC routes to it before optimizing
+- [ ] Investigate `/career-change/military-to-project-manager` and `/career-change/admin-to-product-manager` 0-click on page-1 ranks (need higher row-limit query-page data first)
+- [ ] Complete IB cluster — Citadel, Jane Street, Apollo, Blackstone, KKR, Evercore, Centerview, Lazard, PJT
+- [ ] Complete consulting cluster — PwC, EY, KPMG, Strategy&, EY-Parthenon
+- [ ] Consider 4th pillar in S27+ if customer-service pillar drives lift — candidates: `/product-management-resume`, `/software-engineer-resume`, `/data-science-resume`, `/sales-resume`
+- [ ] "cv builder app" +350% signal — PWA landing page candidate (held 6 sessions; signal grew from +250 in S24)
+- [ ] Investigate why `/wadecv-vs-teal` still NOT indexed after 17+ days
+- [ ] Fix pre-existing duplicate-key warnings on `/ats` and `/career-change` index pages
+- [ ] `signup_start` from organic still 0 after 18+ days of InlineCta instrumentation — keep monitoring
+- [ ] Consider extending `pull_gsc.py` to fetch top 200 queries (current rowLimit=50) so smaller-cluster pages aren't capped
+
+---
+
 ## 2026-04-24 — Session 24: Trends Rate-limit Mystery Solved + `/wadecv-vs-resume-io` Comparison Page
 
 ### Data Pulled

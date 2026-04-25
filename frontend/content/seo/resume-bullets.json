@@ -79,22 +79,80 @@
   },
   {
     "slug": "customer-service",
-    "title": "Customer Service Resume Bullet Points",
-    "metaDescription": "Customer service resume bullet examples and impact formulas. How to show volume, quality, and improvement in support roles.",
-    "intro": "Customer service resume bullets should show volume handled, quality metrics, and any process or training impact. This guide provides examples and formulas so you can present your support experience clearly and with impact.",
+    "title": "Customer Service Resume Bullet Points & Summary Examples (2026)",
+    "metaDescription": "16 customer service resume bullet examples, 5 impact formulas, and 5 summary templates from Tier 1 agent through CSM. CSAT, FCR, AHT, NPS, NRR \u2014 the metrics that get you screened in 2026.",
+    "intro": "Customer service resume bullets in 2026 are filtered against four signals: volume (contacts per day, tickets per week), quality (CSAT, FCR, AHT, NPS, QA score), named platforms (Zendesk, Salesforce Service Cloud, Intercom Fin AI, Gainsight), and impact (handle-time reduction, retention $, NPS movement). This guide gives you 16 bullet examples spanning Tier 1 agent through Customer Success Manager, five summary / objective templates, the impact formulas that recruiters scan for, and the eight mistakes that knock customer service candidates out of the screen.",
     "bulletExamples": [
-      "Handled 60+ customer contacts daily across phone, email, and chat; maintained CSAT above 4.5/5 and first-contact resolution rate of 85%.",
-      "Reduced average handle time by 20% through knowledge base updates and scripting; shared best practices with team of 15.",
-      "Resolved 95% of escalations without supervisor intervention; trained 3 peers on de-escalation and product expertise.",
-      "Identified top 5 driver issues and worked with product to fix; repeat contacts dropped by 25% in 2 quarters.",
-      "Led pilot for new CRM; documented workflows and trained 20 agents; rollout completed 2 weeks ahead of schedule."
+      "Resolved 78 customer contacts per day across phone, email and Zendesk live chat; sustained 4.7/5 CSAT, 86% first-contact resolution and 92% QA score across 14 consecutive months.",
+      "Authored 24 Zendesk macros and 11 KCS v6 knowledge-base articles for billing-and-refund flows; reduced average handle time on those topics by 31% and cut tier-2 escalations by 22% across a team of 18.",
+      "Owned a churn-flagged book of 28 mid-market SaaS accounts ($1.4M ARR); ran 60-day save-plan playbook in Salesforce Service Cloud + Gainsight and retained 25 of 28 accounts, preserving $1.27M ARR and surfacing 3 expansion opportunities worth $340K.",
+      "Managed a book of 42 enterprise SaaS accounts representing $11.8M ARR; delivered 124% NRR and 96% GRR over fiscal 2025 by running quarterly EBRs, building 12-month success plans, and multi-threading C-suite sponsors at 38 of 42 accounts.",
+      "Led a team of 11 omnichannel agents across US/EMEA shifts; lifted team CSAT from 4.3 to 4.7 and FCR from 74% to 86% in 6 months through weekly QA calibration in Klaus, 1:1 coaching plans, and a side-by-side Tier 2 escalation programme.",
+      "Identified the top 5 contact drivers from 14,000 quarterly tickets in Zendesk Explore; partnered with Product and Engineering to ship 4 fixes (refund flow, password reset, mobile crash, payment retry); reduced repeat contact rate by 27% and lifted product NPS by 9 points in two quarters.",
+      "Configured Intercom Fin AI for tier-1 deflection across billing and account-update flows; achieved 38% deflection rate at 4.6/5 CSAT in 90 days; reviewed 600+ AI-handled conversations weekly for hallucinations and routing accuracy.",
+      "De-escalated 110+ at-risk customer interactions per quarter (NPS detractors and refund-eligible cases); converted 78% to neutral or promoter, preserving an estimated $94K monthly recurring revenue.",
+      "Owned a Gorgias + Shopify queue of 1,200 weekly tickets across 3 e-commerce brands; shipped 14 macros and 6 automation flows, reducing first-response time from 4h 12m to 38m and AHT from 9m to 5m 50s.",
+      "Calibrated against MaestroQA scorecards on 8 randomly sampled tickets per week; improved personal QA score from 84% to 96% over 5 months and was selected as one of 3 peer-QA reviewers across a 60-agent contact centre.",
+      "Resolved 40+ chargeback and dispute cases per week across Stripe Radar and Adyen; built escalation playbook with Risk team that reduced fraud-flagged false positives by 18% and saved 22 customer-hours weekly.",
+      "Processed 240+ HIPAA-compliant patient inquiries weekly via Salesforce Health Cloud and Epic messaging; sustained 4.8/5 patient-experience score and zero PHI compliance incidents over 18 months.",
+      "Operated a Decagon AI agent rollout for tier-1 SaaS support; tuned 27 intent flows and shipped 9 hand-off improvements; deflection rose from 22% to 41% while CSAT held at 4.5/5.",
+      "Trained 14 new-hire support agents through 6-week onboarding programme; reduced time-to-CSAT-target from 9 weeks to 6 weeks and lifted week-12 retention from 68% to 84%.",
+      "Authored quarterly voice-of-customer report from 8,500 surveyed contacts in Zendesk + Delighted; presented 6 actionable themes to product leadership and tracked 4 to shipped fixes within two release cycles.",
+      "Led migration from Freshdesk to Zendesk Suite for a 24-agent contact centre; ran data backfill, macro / view rebuild, and 2-week cutover with zero queue downtime; team productivity recovered to baseline within 8 days."
     ],
     "impactFormulas": [
-      "Volume + quality (e.g. 'Handled X contacts daily with Y CSAT')",
-      "Improvement + scope (e.g. 'Reduced handle time by X%'; 'Cut repeat contacts by Y%')",
-      "Leadership + outcome (e.g. 'Trained N agents'; 'Led rollout affecting X users')"
+      "Volume + quality + channel (e.g. 'Resolved X contacts/day across [channels]; sustained [CSAT] and [FCR] over [period]')",
+      "Improvement + scope (e.g. 'Authored N macros / KB articles; reduced AHT by X%; cut escalations by Y% across team of N')",
+      "Save / retention + dollar value (e.g. 'Owned [N risk-flagged accounts / $ARR book]; retained [X of N], preserving [$amount] ARR')",
+      "NRR / GRR / book size (CSM track) (e.g. 'Managed [N accounts / $ARR]; delivered [NRR%] and [GRR%]; multi-threaded at [N of N] accounts')",
+      "Leadership / coaching + metric move (e.g. 'Led team of N; lifted [team metric] from X to Y in N months via [QA / 1:1 / WFM mechanism]')"
     ],
-    "body": "Use metrics that matter to the role: contact volume, CSAT, resolution rate, handle time, and any process or training impact. Show progression\u2014taking on harder cases, training others, or improving tools and playbooks.\n\nTailoring your resume to the channel (phone, chat, email) and industry will help. WadeCV can help you align your customer service experience with job descriptions and highlight your strongest contributions."
+    "body": "Customer service resume bullets in 2026 are screened on the same four-signal pattern at every level: volume, quality, named platform, and impact. The metric stack moves with the role.\n\nTier 1 agents lead with contacts/day, CSAT (4.5+/5), FCR (80%+), and QA score (90%+). Tier 2 specialists add complex-case ownership, escalation rate, KCS / macro authoring impact, and AI-deflection involvement. Team leads / supervisors lead with team CSAT and team FCR, schedule adherence (95%+), attrition, and a coaching mechanism (QA calibration, 1:1 cadence, side-by-side). Customer Success Managers \u2014 the alternate track \u2014 lead with NRR (110%+), GRR (90%+), logo churn (<5%), and book size in $ARR or account count.\n\nNamed platform vocabulary is non-negotiable in 2026. Recruiters search candidate databases boolean-style \u2014 'Zendesk' AND 'Salesforce', 'Gainsight' AND 'ChurnZero', 'Intercom Fin' AND 'Ada'. Bullets that say 'CRM' or 'helpdesk software' instead of named tools are filtered before a human reads them. Every bullet should contain at least one named tool: Zendesk, Salesforce Service Cloud, Intercom (with Fin AI for 2026), Freshdesk, Gorgias, Front, Help Scout, Kustomer, ServiceNow CSM, Genesys Cloud, NICE CXone, Five9, Klaus, MaestroQA, Calabrio, Verint, Assembled, Guru, Gainsight, ChurnZero, Totango, Catalyst, Vitally, or AI tooling (Intercom Fin, Zendesk AI, Ada, Forethought, Ultimate.ai, Decagon, Cresta).\n\n**Five customer service summary / objective templates**\n\n1. **Tier 1 omnichannel agent (1-3 years):** \"Omnichannel customer service agent with 3 years across SaaS and e-commerce, sustaining 4.7/5 CSAT and 86% FCR while handling 78 contacts/day in Zendesk and Intercom Fin. Authored 24 macros and 11 KCS articles that cut tier-2 escalations by 22% across a team of 18. Now seeking a Senior Agent or Tier 2 Specialist role at a high-growth SaaS company.\"\n\n2. **Senior agent / Tier 2 specialist (3-5 years):** \"Senior support specialist with 4 years owning complex billing, refund and integration cases for B2B SaaS clients in Salesforce Service Cloud and Zendesk. Sustained 4.8/5 CSAT and 89% FCR on tier-2 escalations; configured Intercom Fin AI deflection achieving 38% deflection at 4.6/5 CSAT. KCS v6 author. Targeting a Knowledge Manager or Tier 3 escalation lead role.\"\n\n3. **Team Lead / Supervisor (4-7 years):** \"Customer service team lead with 6 years across BPO and SaaS contact centres; led teams of 8-14 omnichannel agents on Zendesk + Genesys Cloud. Lifted team CSAT from 4.3 to 4.7 and team FCR from 74% to 86% in 6 months through weekly Klaus QA calibration, structured 1:1 cadence, and a side-by-side Tier 2 escalation programme. Sustained 96% schedule adherence and reduced attrition from 24% to 11%.\"\n\n4. **Customer Success Manager (3-7 years SaaS):** \"Customer Success Manager with 5 years managing books of 30-80 SaaS accounts ($8-12M ARR) using Gainsight, Salesforce Service Cloud and Slack. Delivered 124% NRR and 96% GRR in fiscal 2025 by running quarterly EBRs, building 12-month success plans, and multi-threading C-suite sponsors at 38 of 42 accounts. Specialise in mid-market SaaS retention and expansion.\"\n\n5. **Manager / Director of CX (7-15 years):** \"Customer experience leader with 12 years across SaaS, fintech and e-commerce; built and scaled support functions of 20-60 agents across global shifts. Reduced cost-to-serve 28% while lifting CSAT from 4.4 to 4.7 and NPS by 14 points through AI-deflection rollout (Intercom Fin + Decagon), KCS v6 implementation, and a redesigned QA-and-coaching loop. P&L responsibility for $4.8M annual support budget.\"\n\nWadeCV takes your existing customer service CV, extracts the platform stack and metric expectations from the target job URL, and rewrites your bullets with the volume + quality + impact pattern. See the full [customer service resume guide](/customer-service-resume) for role-by-role metric benchmarks, six bullet formulas and the platform vocabulary recruiters search for in 2026.",
+    "commonMistakes": [
+      "'Helped customers' or 'assisted with inquiries' \u2014 no volume, no quality, no impact, immediate filter-out",
+      "CSAT score quoted without sample size or time window \u2014 4.9/5 over 12 surveys is not the same as 4.9/5 over 12,000",
+      "AHT improvement quoted alone \u2014 without a CSAT or FCR pair it reads as rushed cases, not a process win",
+      "Generic 'CRM' or 'help desk software' instead of named tools (Zendesk, Salesforce Service Cloud, Intercom, Gorgias)",
+      "Missing channel mix \u2014 phone-only, chat-only, omnichannel and async support are different roles with different vocabulary",
+      "CSM-track resume that omits NRR, GRR, logo churn or book size in $ARR \u2014 the four screening numbers in 2026",
+      "Listing 'Microsoft Office' or 'Google Workspace' as a customer service skill instead of named CRM / helpdesk / WFM platforms",
+      "Manager / Director resume framed at agent-level (CSAT-only) rather than function-level (forecast accuracy, attrition, cost-to-serve, P&L)"
+    ],
+    "faq": [
+      {
+        "question": "What is the structure of a customer service resume bullet?",
+        "answer": "Volume + quality + named tool + impact, in that order. Open with a strong verb (Resolved, Owned, Lifted, Reduced, Authored, Led), state the volume (78 contacts/day, 14,000 quarterly tickets, book of 42 accounts), state the quality (4.7/5 CSAT, 86% FCR, 92% QA score), name at least one tool (Zendesk, Salesforce Service Cloud, Gainsight, Intercom Fin), and close with the business impact (28% AHT reduction, $1.27M ARR retained, 9-point NPS lift)."
+      },
+      {
+        "question": "How many bullets should a customer service representative resume have per role?",
+        "answer": "4-6 bullets per role at most. Lead with the highest-impact bullet (the one with volume + quality + named tool + impact) and follow with 3-5 supporting bullets that show breadth \u2014 channel range, process improvement, escalation handling, training, AI-deflection involvement. For team-lead and CSM roles, you can extend to 6-8 bullets per role to cover team metrics, retention work, and cross-functional contributions."
+      },
+      {
+        "question": "Should a customer service resume bullet quote CSAT or NPS or both?",
+        "answer": "Quote whichever metric your team measured. Most contact-centre and B2C support functions track CSAT; SaaS post-onboarding and renewal flows track NPS; service-design-driven teams track CES. If your team tracked all three, lead with CSAT for tier-1 agent roles and NPS / CES for senior specialist or manager roles. Always pair the score with sample size and time window so it can be interpreted."
+      },
+      {
+        "question": "How do I write a customer service summary or objective?",
+        "answer": "3-4 lines, top of the resume, written for the specific role. Include level (Agent / Senior / Lead / CSM / Manager), years of experience, primary channels (phone, chat, email, omnichannel), top two metrics with sample size, named CRM / helpdesk experience (with modules), and the role you are targeting. See the five summary templates above for Tier 1 through Director of CX patterns."
+      },
+      {
+        "question": "Should I list AI-in-support experience on a customer service bullet?",
+        "answer": "Yes \u2014 in 2026 it is a leading screening signal for Senior, Lead, Manager and Director roles. If you have shipped, configured, evaluated or operated Intercom Fin AI, Zendesk AI, Ada, Forethought, Ultimate.ai, Decagon, or Cresta agent-assist, lead the relevant role with the deflection rate, ROI and CSAT delta. Even review-and-flag work (auditing AI-handled tickets for hallucinations) is worth naming the tool \u2014 recruiters filter for it."
+      },
+      {
+        "question": "How do I tailor customer service bullets for different industries?",
+        "answer": "B2C retail: 'order issue', 'returns flow', 'refund SLA', Gorgias + Shopify, fulfilment partner. B2B SaaS: 'ticket', 'macro', 'KCS article', 'engineering triage', Zendesk + Salesforce + Intercom Fin. Fintech: 'dispute', 'chargeback', 'KYC', 'fraud-flag', Stripe Radar / Adyen. Healthcare: 'PHI', 'HIPAA', 'patient access', Salesforce Health Cloud / Epic messaging. BPO contact centre: 'queue', 'shrinkage', 'WFM', 'occupancy', Genesys / NICE CXone. Pick the vocabulary that matches the job posting."
+      },
+      {
+        "question": "How does WadeCV help me write better customer service resume bullets?",
+        "answer": "Paste any customer service or customer success job URL \u2014 Zendesk, Stripe, Shopify, Klaviyo, HubSpot, a SaaS startup or a BPO contact-centre posting. WadeCV extracts the named platform stack, metric expectations (CSAT, FCR, NRR, GRR, AHT), channel mix and level. WadeCV then rewrites your existing bullets with the volume + quality + named tool + impact pattern, surfaces the right tool names, and adapts regional spelling and metric vocabulary to the posting. The first fit-analysis run is free with the credit included on signup."
+      }
+    ],
+    "relatedSlugs": [
+      "administrative-assistant",
+      "marketing-manager",
+      "data-analyst"
+    ]
   },
   {
     "slug": "nurse",

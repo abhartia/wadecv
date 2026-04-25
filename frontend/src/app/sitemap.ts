@@ -203,6 +203,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: `${BASE_URL}/customer-service-resume`,
+      lastModified: lastmod,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
   ];
 
   const jobUrls = getJobs().map((j) => ({

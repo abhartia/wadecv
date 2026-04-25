@@ -23,6 +23,10 @@ const CATEGORY_HUBS: CrossLink[] = [
     href: "/investment-banking-resume",
     label: "Investment Banking Resume Guide (BB + EB)",
   },
+  {
+    href: "/customer-service-resume",
+    label: "Customer Service Resume Guide (Agent → CSM)",
+  },
 ];
 
 const TOOL_COMPARISONS: CrossLink[] = [
