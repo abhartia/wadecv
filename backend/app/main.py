@@ -30,6 +30,7 @@ from slowapi.util import get_remote_address
 from app.config import get_settings
 from app.logging_config import configure_logging, get_logger
 from app.middleware.request_id import RequestIDMiddleware
+from app.middleware.security_headers import SecurityHeadersMiddleware
 from app.routers import (
     account,
     auth,
@@ -105,9 +106,16 @@ app = FastAPI(
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
-# Request-ID runs BEFORE SlowAPI so 429s are also correlated
-app.add_middleware(RequestIDMiddleware)
+# Middleware runs in REVERSE order of registration. We want, outermost → innermost:
+#   RequestID → SecurityHeaders → SlowAPI → app
+# so request ids are minted first, security headers land on every response
+# (including 429s), and rate-limit headers are added last.
 app.add_middleware(SlowAPIMiddleware)
+app.add_middleware(
+    SecurityHeadersMiddleware,
+    enable_hsts=settings.environment == "production",
+)
+app.add_middleware(RequestIDMiddleware)
 
 allowed_origins = [
     settings.frontend_url,
