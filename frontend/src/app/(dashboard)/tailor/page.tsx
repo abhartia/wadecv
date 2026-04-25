@@ -86,7 +86,20 @@ import {
   sendMailApiMailSendPost,
 } from "@/gen/hey-api/sdk.gen";
 import { client } from "@/gen/hey-api/client.gen";
-import type { AddressSchema, BodySendMailApiMailSendPost } from "@/gen/hey-api/types.gen";
+import type { BodySendMailApiMailSendPost } from "@/gen/hey-api/types.gen";
+
+// Mirror of backend `AddressSchema` (app/schemas/physical_mail.py). The Mail /send
+// endpoint takes JSON-stringified address fields via multipart form, so the type
+// isn't reachable from the generated client — we keep it in lockstep here.
+type AddressSchema = {
+  name: string;
+  address_line1: string;
+  address_line2: string;
+  city: string;
+  state: string;
+  zip: string;
+  country: string;
+};
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   AlertDialog,
