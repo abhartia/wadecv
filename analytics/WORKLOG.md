@@ -4,6 +4,144 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 
 ---
 
+## 2026-04-24 — Session 24: Trends Rate-limit Mystery Solved + `/wadecv-vs-resume-io` Comparison Page
+
+### Data Pulled
+- [x] GA4 analytics data → 22 dashboard_viewed, 17 cv_download, 14 cv_tailor_started, 29 cv_section_edited, 11 form_start, 10 login_attempt, 9 login_success. 24 Stripe referrals (-2 from S23 — continuing to normalize), 17 direct, 6 Google organic, 2 chatgpt.com, 2 fb.
+- [x] GSC data → **397 impressions (-1 vs S23, flat), 50 pages, 50 queries, 2 clicks.** Daily position 2026-04-22 = **10.2** (continuing compression trend).
+- [x] Trends data → **FULL PULL UNBLOCKED** after 3 dark sessions. wobo ai +2600%, resume.io +400%, cv builder free uk +147,850%, resumeai by wonsulting +300%, rezi +300%, customize resume +93%, teal resume +33%. Top states for `ai resume builder`: DC, Kansas, New Hampshire, Maryland, Connecticut.
+
+### Key Findings
+- **S23's "rate-limit fix" did not actually work — the real bug was a urllib3 2.0 incompatibility.** pytrends 4.9.x calls `urllib3.util.retry.Retry(method_whitelist=...)`, but urllib3 2.0+ renamed that kwarg to `allowed_methods`. Every pytrends call was raising `TypeError` before hitting the network. The error string happened to contain "429" and "too many" fragments in one of the transient error paths so the S22/S23 agent (me) pattern-matched to "rate-limited" without reading the full exception. Fixed today with a `Retry.__init__` monkey-patch that translates `method_whitelist` → `allowed_methods` at import time.
+- **resume.io +400% rising** for `resume builder` queries. One of the largest rising signals today and NO WadeCV comparison page exists. Household-name competitor (20M+ users), structurally differentiable from WadeCV (template-builder vs tailoring engine, download paywall vs pay-per-use). Shipped today.
+- **Daily position 2026-04-22 = 10.2** — continuing the compression trend (weekly: 56.1 → 41.1 → 49.9 → 40.6 → 23.7 → 42.0 → 10.2). Even with single-day noise factored in, the weekly mean has dropped from ~52 to ~30 in 7 days.
+- **wobo ai +2600%** — biggest single rising value. Existing `/wadecv-vs-wobo` covers this.
+- **cv builder free uk +147,850%** — existing `/free-cv-builder-uk` (S18) covers this.
+- **customize resume +93%** — new rising signal, no dedicated page. Overlaps with homepage messaging; hold one session.
+
+### Changes Made
+
+#### 1. `/wadecv-vs-resume-io` comparison page (HIGH IMPACT — big bet of session)
+**File created:** `frontend/src/app/(resources)/wadecv-vs-resume-io/page.tsx`
+- H1: "WadeCV vs Resume.io: Job-Tailored AI vs Template Builder (2026)"
+- 12-row feature comparison (one honest "Resume.io wins" on templates/design to avoid false-stacking)
+- 9-entry FAQ (pricing paywall, ATS template safety, AI Writer scope, high-volume workflow, career-changers, combined workflow, competitor category, UK/international)
+- Article + FAQPage JSON-LD, CrossCategoryLinks with 8 contextLinks, SeoCta variant="job"
+- datePublished / dateModified = 2026-04-24
+
+#### 2. Listicle expanded 12 → 13 tools
+**File changed:** `frontend/src/app/(resources)/best-ai-resume-builder-2026/page.tsx`
+- Inserted Resume.io as #6 (between FlowCV and Kickresume)
+- 5-pro / 5-con with explicit download-paywall callout
+- Deep-link to `/wadecv-vs-resume-io` via standard head-to-head link pattern
+- Title, meta, H1, intro prose, JSON-LD all updated from "12" to "13" tools
+- dateModified bumped to 2026-04-24
+
+#### 3. Wiring
+- `frontend/src/app/sitemap.ts` — added `/wadecv-vs-resume-io` at priority 0.9
+- `frontend/src/components/seo/cross-category-links.tsx` — added Resume.io to TOOL_COMPARISONS (9 entries total)
+
+#### 4. `analytics/pull_trends.py` — real fix (urllib3 compat)
+**File changed:** `analytics/pull_trends.py`
+- Added monkey-patch of `urllib3.util.retry.Retry.__init__` to translate deprecated `method_whitelist` kwarg to `allowed_methods` at import time.
+- S23's UA rotation / backoff / fresh-client machinery retained as defense-in-depth against real future 429s.
+- Result: first complete trend pull since S20. All 5 keyword groups + related-queries + geo data returned.
+
+#### 5. Build verified
+- `npm run build` exit 0, **194 static pages** (up from 193)
+- `/wadecv-vs-resume-io` confirmed in prerendered output
+- No new warnings beyond pre-existing `/ats` and `/career-change` duplicate-key warnings (carried since S16)
+
+### Not Yet Done (For Future Sessions)
+- [ ] Monitor `/wadecv-vs-resume-io` indexing (2026-04-29+)
+- [ ] Monitor S23 `/jobs/accountant` + `/resume-bullets/accountant` lift (2026-04-28+)
+- [ ] Monitor `/wadecv-vs-resumeai` indexing (S22, 2026-04-27+)
+- [ ] Monitor `/jobs/recruiter`, `/jobs/administrative-assistant`, `/resume-bullets/administrative-assistant` lift (S22, 2026-04-27+)
+- [ ] Monitor S21 IB-pillar + firm-page indexing (2026-04-26+)
+- [ ] Monitor S20 consulting-pillar + firm-page indexing (2026-04-25+); specifically why `/company-resume/bcg` dropped 2026-04-23
+- [ ] Monitor daily-avg position weekly rolling average — new floor 10.2 on 2026-04-22
+- [ ] If customer-service cluster doesn't lift by S26 from S22 freshness, try pillar-page → `/skills/customer-service` internal-link density experiment
+- [ ] Complete IB cluster — Citadel, Jane Street, Apollo, Blackstone, KKR, Evercore, Centerview, Lazard, PJT
+- [ ] Complete consulting cluster — PwC, EY, KPMG, Strategy&, EY-Parthenon
+- [ ] Consider third pillar page if compression continues — candidates: `/product-management-resume`, `/software-engineer-resume`, `/data-science-resume`
+- [ ] `/customize-resume` landing if the +93% signal repeats next session
+- [ ] "cv builder app" +250% signal — PWA landing page candidate (held 5 sessions)
+- [ ] Investigate `/ats/lever` 0-click anomaly (64 impr pos 8.0, 22+ days) — retitle experiment if impressions drop below 30
+- [ ] Investigate why `/wadecv-vs-teal` still NOT indexed after 16+ days — consider GSC URL Inspection API resubmission
+- [ ] Fix pre-existing duplicate-key warnings on `/ats` and `/career-change` index pages
+- [ ] Monitor signup_start from organic — still 0 after 17+ days of InlineCta instrumentation
+
+---
+
+## 2026-04-23 — Session 23: Accounting Cluster Deep Overhaul + pull_trends.py Rate-limit Fix
+
+### Data Pulled
+- [x] GA4 analytics data → product events healthy (25 dashboard_viewed, 19 cv_download, 16 cv_tailor_started, 13 form_start, 12 login_attempt, 11 login_success), 26 Stripe + 16 direct + 6 Google organic
+- [x] GSC data → **398 impressions (+10 vs S22), 50 pages (flat), 50 queries (flat), 2 clicks (flat)**
+- [x] Trends data → **rate-limited (429) on all 5 cluster pulls — third consecutive session.** Geographic data only (KS/DC/MD/CO/AZ for 'ai resume builder').
+
+### Key Findings
+- **Accounting cluster breakout: 12 queries, 15 impressions, pos 55-98** all mapping to thin `/jobs/accountant` (424-char body, 1 FAQ, 3 commonMistakes) and `/resume-bullets/accountant` (516-char body, 5 bullet examples, 1 FAQ). Exact "thin-page" diagnostic pattern that has converted 7 prior times (digital-marketing, python-developer, operations-manager, executive-assistant, recruiter, admin-assistant, customer-service).
+- **Customer service: 19 queries, 42 impressions** still top cluster by volume but page already maximally rich — freshness-bump from S22 still in patience window.
+- **1 newly-indexed page:** `/resume-bullets/marketing-manager` (1i pos 48) — from S22 freshness cascade.
+- **1 dropped page:** `/company-resume/bcg` — indexing churn, monitor; content-overhauled S20.
+- **Accountant `salaryRange` had same currency-strip bug** S22 fixed on admin (`",000–,000"`). Fixed.
+- **Daily position:** 2026-04-20 = 23.7 (held), 2026-04-21 = 42 (one-day noise — same oscillation seen in prior week).
+
+### Changes Made
+
+#### 1. `/jobs/accountant` deep overhaul (HIGH IMPACT — big bet of session)
+**File changed:** `frontend/content/seo/jobs.json`
+- Body: 424 → 3,059 chars (tailoring by discipline: tax/public/corporate/government/non-profit; 2026 evolutions: AI-assisted close, ESG/CSRD, ERP consolidation)
+- Title: "Accountant – Job Description & Resume Guide" → "Accountant CV & Resume Guide 2026 — Skills, Keywords & Summary Examples"
+- Responsibilities: 7 → 11 (ASC 606/842, close calendar, SOX, ERP migration)
+- Required skills: 7 → 10 (named ERP vendors, close-management tools, data-wrangling)
+- Salary range: **broken currency symbols fixed** — now 5-band US+UK with CPA/ACCA/Big-4 premium
+- Resume keywords: 18 → 54 (added ASC 606/842/740, SOX 404, BlackLine, FloQast, Workiva, Alteryx, Hyperion, Adaptive, ACA, ACCA, CMA)
+- FAQ: 1 → 8, CM: 3 → 8, interviewTips: 3 → 5
+
+#### 2. `/resume-bullets/accountant` deep overhaul (HIGH IMPACT)
+**File changed:** `frontend/content/seo/resume-bullets.json`
+- Body: 516 → 3,423 chars (role-level tailoring + 5 summary/objective templates from staff through controller)
+- Bullet examples: 5 → 16 (staff close, tax returns, SOX 404, NetSuite migration, ASC 606, FP&A, Big 4, FloQast rollout, IFRS consolidation, ASC 842 lease transition, team supervision)
+- Impact formulas: 3 → 5 (added scale+dollars, system+migration)
+- FAQ: 1 → 7 (new field of structure guidance and WadeCV integration), CM: 3 → 8
+- Title: "Accountant Resume Bullet Points" → "Accountant Resume Bullet Points & Summary Examples (2026)"
+
+#### 3. `pull_trends.py` rate-limit structural fix
+**File changed:** `analytics/pull_trends.py`
+- Fresh `TrendReq` client per keyword group (breaks session chain Google rate-limits on)
+- 5 rotating user-agent strings
+- Exponential backoff with jitter on 429 (8s → 16s → 32s → 64s → 128s + 0-50% jitter, 5 retries)
+- 12-20s random inter-group sleep
+- Related-queries failures best-effort (don't block next group)
+- Not re-run today (current IP still 429'd from earlier attempt); next session's cron run will validate
+
+#### 4. Build verified
+- `npm run build`: exit 0, **193 static pages** (same as S22 — only JSON-driven entries modified, no new routes)
+- No new warnings/errors beyond pre-existing `/ats` and `/career-change` duplicate-key warnings
+
+### Not Yet Done (For Future Sessions)
+- [ ] Monitor `/jobs/accountant` lift (2026-04-28+)
+- [ ] Monitor `/resume-bullets/accountant` lift (2026-04-28+)
+- [ ] Re-run `pull_trends.py` in next session to confirm rate-limit fix works end-to-end
+- [ ] Monitor `/wadecv-vs-resumeai` indexing (S22, 2026-04-27+)
+- [ ] Monitor `/jobs/recruiter`, `/jobs/administrative-assistant`, `/resume-bullets/administrative-assistant` lift (S22, 2026-04-27+)
+- [ ] Monitor S21 IB-pillar + firm-page indexing (2026-04-26+)
+- [ ] Monitor S20 consulting-pillar + firm-page indexing (2026-04-25+) — specifically why `/company-resume/bcg` dropped today
+- [ ] Monitor daily-avg position **weekly rolling average, not single-day** — baseline 23.7 on 2026-04-20
+- [ ] If customer-service cluster doesn't lift by S26 from S22 freshness, run pillar → `/skills/customer-service` internal-link density experiment (not more content)
+- [ ] Complete IB cluster — Citadel, Jane Street, Apollo, Blackstone, KKR, Evercore, Centerview, Lazard, PJT
+- [ ] Complete consulting cluster — PwC, EY, KPMG, Strategy&, EY-Parthenon
+- [ ] "cv builder app" +250% signal — PWA landing page candidate (held since S20; waiting on fresh Trends)
+- [ ] Investigate `/ats/lever` 0-click anomaly (63 impr pos 7.9, 21+ days) — retitle experiment if impr drop below 30
+- [ ] Investigate why `/wadecv-vs-teal` still NOT indexed after 16+ days
+- [ ] Fix pre-existing duplicate-key warnings on `/ats` and `/career-change` index pages
+- [ ] Monitor signup_start from organic — still 0 after 16+ days of InlineCta instrumentation
+- [ ] If `/skills/accountant` picks up the 12-query cluster after today's `/jobs`+`/resume-bullets` diffract impressions, monitor canonical preference
+
+---
+
 ## 2026-04-22 — Session 22: `/wadecv-vs-resumeai` Comparison Page + Admin/Recruiter Cluster Overhaul
 
 ### Data Pulled
