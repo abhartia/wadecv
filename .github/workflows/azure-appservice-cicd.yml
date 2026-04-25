@@ -155,7 +155,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: Deploy backend to staging slot
         if: needs.build-backend.result == 'success'
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         with:
           app-name: ${{ env.AZURE_WEBAPP_BACKEND }}
           slot-name: ${{ env.AZURE_WEBAPP_BACKEND_SLOT }}
@@ -170,7 +170,7 @@ jobs:
             --target-slot production
       - name: Deploy frontend to staging slot
         if: needs.build-frontend.result == 'success'
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         with:
           app-name: ${{ env.AZURE_WEBAPP_FRONTEND }}
           slot-name: ${{ env.AZURE_WEBAPP_FRONTEND_SLOT }}
