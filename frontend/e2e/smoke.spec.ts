@@ -32,3 +32,23 @@ test("app has no uncaught console errors on the landing page", async ({ page }) 
   // Allow known noisy console.warn (deprecation notices) but fail on errors.
   expect(errors, `console errors: ${errors.join(" | ")}`).toEqual([]);
 });
+
+test("landing page serves baseline security headers", async ({ request }) => {
+  const res = await request.get("/");
+  expect(res.status()).toBe(200);
+  const headers = res.headers();
+
+  expect(headers["x-content-type-options"]).toBe("nosniff");
+  expect(headers["x-frame-options"]).toBe("DENY");
+  expect(headers["referrer-policy"]).toBe("strict-origin-when-cross-origin");
+  expect(headers["cross-origin-opener-policy"]).toBe("same-origin");
+
+  // Permissions-Policy must lock down FLoC / topics + powerful APIs.
+  const pp = headers["permissions-policy"] ?? "";
+  for (const directive of ["camera=()", "microphone=()", "browsing-topics=()"]) {
+    expect(pp, `expected ${directive}`).toContain(directive);
+  }
+
+  // HSTS is already present from a prior commit; re-asserting pins the policy.
+  expect(headers["strict-transport-security"]).toMatch(/max-age=\d+/);
+});

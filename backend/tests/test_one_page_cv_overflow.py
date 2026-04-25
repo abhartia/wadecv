@@ -771,9 +771,9 @@ async def _run_full_layout_flow(case: dict[str, Any]) -> None:
     reader = PdfReader(io.BytesIO(pdf_bytes))
     num_pages = len(reader.pages)
 
-    assert (
-        num_pages == 1
-    ), f"Case {case_id} produced {num_pages} pages after full layout flow (tweaks={len(layout_tweaks)})."
+    assert num_pages == 1, (
+        f"Case {case_id} produced {num_pages} pages after full layout flow (tweaks={len(layout_tweaks)})."
+    )
 
 
 @skip_if_no_live_ai
