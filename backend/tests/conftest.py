@@ -13,11 +13,9 @@ TRUNCATEs.
 
 from __future__ import annotations
 
-import asyncio
 import os
 from collections.abc import AsyncIterator
 
-import pytest
 import pytest_asyncio
 from asgi_lifespan import LifespanManager
 from httpx import ASGITransport, AsyncClient
@@ -39,14 +37,7 @@ from app.database import Base, get_db
 from app.main import app
 
 
-@pytest.fixture(scope="session")
-def event_loop():
-    loop = asyncio.new_event_loop()
-    yield loop
-    loop.close()
-
-
-@pytest_asyncio.fixture(scope="session")
+@pytest_asyncio.fixture(loop_scope="session", scope="session")
 async def engine():
     eng = create_async_engine(os.environ["DATABASE_URL"], echo=False, pool_pre_ping=True)
     async with eng.begin() as conn:
@@ -57,7 +48,7 @@ async def engine():
     await eng.dispose()
 
 
-@pytest_asyncio.fixture
+@pytest_asyncio.fixture(loop_scope="session")
 async def session(engine) -> AsyncIterator[AsyncSession]:
     connection = await engine.connect()
     trans = await connection.begin()
@@ -68,7 +59,7 @@ async def session(engine) -> AsyncIterator[AsyncSession]:
     await connection.close()
 
 
-@pytest_asyncio.fixture
+@pytest_asyncio.fixture(loop_scope="session")
 async def client(session: AsyncSession) -> AsyncIterator[AsyncClient]:
     """HTTPX client wired to the FastAPI app with a scoped test DB session."""
 
@@ -83,15 +74,17 @@ async def client(session: AsyncSession) -> AsyncIterator[AsyncClient]:
     app.dependency_overrides.clear()
 
 
-@pytest_asyncio.fixture
+@pytest_asyncio.fixture(loop_scope="session")
 async def authed_user(session: AsyncSession):
     """Create a real user row + access token. Returns (user, access_token)."""
     from app.models.credit import CreditTransaction
     from app.models.user import User
     from app.utils.auth import create_access_token, hash_password
 
+    # Use @example.com (IANA reserved) so pydantic EmailStr accepts it across
+    # email-validator versions — .test / .local can be rejected by stricter releases.
     user = User(
-        email=f"user-{os.urandom(4).hex()}@test.local",
+        email=f"user-{os.urandom(4).hex()}@example.com",
         password_hash=hash_password("correct-horse-battery-staple"),
         email_verified=True,
         credits=5,

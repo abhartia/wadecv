@@ -48,6 +48,9 @@ import type {
   GetCvApiCvCvIdGetData,
   GetCvApiCvCvIdGetErrors,
   GetCvApiCvCvIdGetResponses,
+  GetFlagApiFeatureFlagsNameGetData,
+  GetFlagApiFeatureFlagsNameGetErrors,
+  GetFlagApiFeatureFlagsNameGetResponses,
   GetGapInsightsApiJobsGapInsightsGetData,
   GetGapInsightsApiJobsGapInsightsGetResponses,
   GetJobApiJobsJobIdGetData,
@@ -860,17 +863,6 @@ export const uploadProfileCvApiAccountProfileUploadPost = <ThrowOnError extends 
   });
 
 /**
- * Health
- */
-export const healthApiHealthGet = <ThrowOnError extends boolean = false>(
-  options?: Options<HealthApiHealthGetData, ThrowOnError>,
-) =>
-  (options?.client ?? client).get<HealthApiHealthGetResponses, unknown, ThrowOnError>({
-    url: "/api/health",
-    ...options,
-  });
-
-/**
  * Extract Address
  */
 export const extractAddressApiMailExtractAddressPost = <ThrowOnError extends boolean = false>(
@@ -909,4 +901,37 @@ export const sendMailApiMailSendPost = <ThrowOnError extends boolean = false>(
       "Content-Type": null,
       ...options.headers,
     },
+  });
+
+/**
+ * Get Flag
+ *
+ * Evaluate a single flag for the current user.
+ *
+ * Returns `{"name": "...", "enabled": false}` when the flag doesn't exist —
+ * callers treat "unknown" and "off" identically, which matches how flags
+ * behave in practice (an unreleased flag is an off flag).
+ */
+export const getFlagApiFeatureFlagsNameGet = <ThrowOnError extends boolean = false>(
+  options: Options<GetFlagApiFeatureFlagsNameGetData, ThrowOnError>,
+) =>
+  (options.client ?? client).get<
+    GetFlagApiFeatureFlagsNameGetResponses,
+    GetFlagApiFeatureFlagsNameGetErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: "bearer", type: "http" }],
+    url: "/api/feature-flags/{name}",
+    ...options,
+  });
+
+/**
+ * Health
+ */
+export const healthApiHealthGet = <ThrowOnError extends boolean = false>(
+  options?: Options<HealthApiHealthGetData, ThrowOnError>,
+) =>
+  (options?.client ?? client).get<HealthApiHealthGetResponses, unknown, ThrowOnError>({
+    url: "/api/health",
+    ...options,
   });
