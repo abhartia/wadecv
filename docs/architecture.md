@@ -129,6 +129,26 @@ erDiagram
 | LLM traces | Every Azure OpenAI call | Langfuse |
 | Rate-limit rejections | 429 responses | `slowapi` + logs |
 
+## Browser-facing security headers
+
+Baseline set applied to every frontend route from
+[`frontend/src/lib/security-headers.ts`](../frontend/src/lib/security-headers.ts)
+and wired in `frontend/next.config.ts`. Locked by a Vitest unit test and
+re-asserted against a live response in the Playwright smoke suite.
+
+| Header | Value |
+|--------|-------|
+| `Strict-Transport-Security` | `max-age=63072000; includeSubDomains; preload` |
+| `X-Content-Type-Options` | `nosniff` |
+| `X-Frame-Options` | `DENY` |
+| `Referrer-Policy` | `strict-origin-when-cross-origin` |
+| `Permissions-Policy` | camera/mic/geo/usb/topics/FLoC denied; `payment=(self)` for Stripe |
+| `Cross-Origin-Opener-Policy` | `same-origin` |
+
+Not yet set: `Content-Security-Policy`. A meaningful CSP for this app needs a
+nonce-based middleware pass (Next inline hydration script, GA4, Sentry ingest,
+Stripe.js, Lob). Tracked as a separate ADR-worthy change.
+
 ## Scaling limits known today
 
 - **Pool size** is `settings.db_pool_size` (default 10) + `max_overflow=20`
