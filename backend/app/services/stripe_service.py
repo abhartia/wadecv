@@ -1,9 +1,12 @@
 import logging
 
 import stripe
+from sqlalchemy import select
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.config import get_settings
+from app.models.credit import CreditTransaction
 from app.models.user import User
 from app.services.credits import CREDIT_PACKS, add_credits
 
@@ -119,11 +122,37 @@ async def handle_checkout_completed(db: AsyncSession, session_data: dict):
 
     from uuid import UUID
 
-    await add_credits(
-        db=db,
-        user_id=UUID(user_id),
-        amount=credits_amount,
-        transaction_type="purchase",
-        description=f"Purchased {CREDIT_PACKS.get(pack_id, {}).get('name', '')} pack ({credits_amount} credits)",
-        stripe_session_id=session_id,
-    )
+    # Stripe retries delivery on any non-2xx — and occasionally double-fires
+    # on transient network errors even when we did return 200. We treat the
+    # checkout session id as the idempotency key. The cheap pre-check
+    # avoids spamming logs with IntegrityError on the common retry path;
+    # the unique partial index on credit_transactions.stripe_session_id
+    # is the race-safe authority underneath.
+    if session_id:
+        existing = await db.execute(
+            select(CreditTransaction.id).where(CreditTransaction.stripe_session_id == session_id)
+        )
+        if existing.scalar_one_or_none() is not None:
+            logger.info(
+                "stripe_webhook_duplicate_skipped",
+                extra={"stripe_session_id": session_id, "user_id": user_id},
+            )
+            return
+
+    try:
+        await add_credits(
+            db=db,
+            user_id=UUID(user_id),
+            amount=credits_amount,
+            transaction_type="purchase",
+            description=f"Purchased {CREDIT_PACKS.get(pack_id, {}).get('name', '')} pack ({credits_amount} credits)",
+            stripe_session_id=session_id,
+        )
+    except IntegrityError:
+        # Lost the race against a concurrent delivery of the same event.
+        # The other transaction won; this one is a true no-op.
+        await db.rollback()
+        logger.info(
+            "stripe_webhook_duplicate_race",
+            extra={"stripe_session_id": session_id, "user_id": user_id},
+        )
