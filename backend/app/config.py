@@ -52,6 +52,14 @@ class Settings(BaseSettings):
         default="",
         description="Forwarding address for support emails. Required in production.",
     )
+    resend_webhook_secret: str = Field(
+        default="",
+        description=(
+            "Svix-format secret (`whsec_...`) for Resend inbound webhook "
+            "signature verification. Required in production. Empty in dev "
+            "skips verification so docker compose works zero-config."
+        ),
+    )
 
     # Lob (physical mail)
     lob_api_key: str = ""
@@ -104,6 +112,10 @@ class Settings(BaseSettings):
             missing.append("stripe_secret_key")
         if not self.azure_openai_api_key:
             missing.append("azure_openai_api_key")
+        if not self.resend_webhook_secret:
+            # The inbound-support webhook is publicly addressable; in
+            # production we refuse to start without HMAC verification.
+            missing.append("resend_webhook_secret")
         if missing:
             raise RuntimeError(f"Missing required production settings: {', '.join(missing)}")
 
