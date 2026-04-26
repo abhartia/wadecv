@@ -718,43 +718,166 @@
   },
   {
     "slug": "marketing-manager",
-    "title": "Marketing Manager Job Description & Resume Guide",
-    "metaDescription": "Marketing manager job description: responsibilities, skills, salary, and resume keywords for growth and brand roles.",
-    "intro": "Marketing managers own campaigns, channels, or segments: demand gen, brand, content, or product marketing. The role varies by company and focus. This guide covers typical job requirements and how to tailor your resume.",
+    "title": "Marketing Manager CV & Resume Guide 2026 \u2014 Skills, Metrics & Keywords by Track",
+    "metaDescription": "Marketing manager CV: 12 responsibilities, 10 skills, 60+ resume keywords, 8 FAQs and salary bands by track (demand gen, brand, content, product, lifecycle, growth) for B2B SaaS and DTC roles in 2026.",
+    "intro": "Marketing managers own campaigns, channels or segments \u2014 demand gen, brand, content, product, lifecycle or growth \u2014 and the screening bar in 2026 is precise. Recruiters scan for marketing-sourced pipeline, blended CAC, ROAS, MQL\u2192SQL conversion and named platforms (HubSpot, Salesforce Marketing Cloud, Marketo, GA4, Meta CAPI, LinkedIn Campaign Manager). This guide covers responsibilities, the 2026 metric and tooling stack by track, and how to tailor the resume so it survives both ATS and recruiter screens. See the full pillar at /digital-marketing-resume.",
     "responsibilities": [
-      "Plan and execute marketing campaigns and initiatives",
-      "Manage channels (email, paid, social, content) and budgets",
-      "Analyse performance and report on ROI",
-      "Work with sales, product, and external partners",
-      "Support brand positioning and messaging"
+      "Plan and execute multi-channel marketing campaigns end-to-end (brief \u2192 creative \u2192 launch \u2192 measurement) against a quarterly pipeline or revenue target",
+      "Own a paid acquisition budget across Meta, LinkedIn, Google Ads (Search, Performance Max, Demand Gen) and YouTube; report blended CAC, ROAS and channel-mix shifts weekly",
+      "Operate the marketing-automation stack (HubSpot Marketing Hub, Marketo Engage, Salesforce Marketing Cloud, Customer.io, Klaviyo) end-to-end: segments, journeys, lead scoring, lifecycle triggers",
+      "Define MQL / SQL / SQO criteria with Sales and RevOps; own the marketing-sourced and marketing-influenced pipeline number reported to leadership",
+      "Operate the analytics + tracking stack \u2014 GA4, server-side GTM, Looker Studio / Looker / Mode, Segment / RudderStack, BigQuery / Snowflake \u2014 and partner with data on attribution and incrementality",
+      "Run a quarterly experimentation cadence (Optimizely, VWO, Statsig) covering paid creative, landing pages, lifecycle copy, pricing-page and signup; report wins with confidence intervals and annualised impact",
+      "Lead SEO + content strategy: programmatic SEO clusters, pillar / cluster architecture, technical SEO (Core Web Vitals, schema, internal linking) and editorial calendar",
+      "Manage agencies, freelancers and in-house specialists; review media plans, creative briefs and content calendars; own creative QA",
+      "Build and maintain a marketing dashboard with weekly self-serve reporting for executive, sales and product stakeholders",
+      "Forecast spend, pipeline contribution and headcount for the next 1-4 quarters; reconcile actuals to plan with the CFO / FP&A monthly",
+      "Own brand consistency across channels: tone, visual system, narrative architecture and messaging frameworks",
+      "Operate AI-driven workflows (ChatGPT, Claude, Surfer, Clay, Apollo, AirOps, Cassidy) for content production, ABM enrichment, ad-creative variants and lifecycle copy"
     ],
     "requiredSkills": [
-      "Channel expertise (e.g. demand gen, content, brand)",
-      "Data and analytics; comfort with marketing tools",
-      "Project management and cross-functional collaboration",
-      "Written and verbal communication",
-      "Understanding of customer and buyer journey"
+      "Multi-channel campaign ownership across paid (Meta, LinkedIn, Google Ads), organic (SEO, content), lifecycle (email, in-app, push) and partner",
+      "Marketing automation fluency with at least one enterprise platform (HubSpot Marketing Hub Enterprise, Marketo Engage, Salesforce Marketing Cloud, Pardot / Account Engagement)",
+      "Analytics and attribution with GA4, server-side GTM, Looker Studio / Looker / Mode / Hex; SQL or warehouse-native dashboarding (BigQuery / Snowflake + dbt) is increasingly required",
+      "Demand gen funnel mechanics: ICP definition, lead scoring, MQL/SQL/SQO criteria, lifecycle stage definitions, MMM and incrementality literacy",
+      "Budget and forecast management: blended CAC, payback period, channel-mix optimisation, agency $ managed, marketing budget as % of ARR",
+      "Experimentation and CRO: hypothesis design, test sizing, confidence intervals, holdout vs incrementality, winning-test rollout discipline",
+      "Stakeholder management across Sales, RevOps, Product, Design, Engineering and Finance; weekly self-serve reporting habit",
+      "Content + brand: editorial calendar, narrative architecture, voice / tone framework, programmatic SEO at scale",
+      "AI workflow design \u2014 name the tool stack, the automation, and the FTE-equivalent productivity gain",
+      "Project management at multi-campaign cadence (Asana, Jira, Linear, Notion, Monday) with cross-functional gating"
     ],
-    "salaryRange": "Often $75,000\u2013$130,000 depending on level and location.",
+    "salaryRange": "US: $85,000\u2013$110,000 IC manager early career; $110,000\u2013$145,000 mid-level B2B SaaS; $145,000\u2013$180,000+ Senior Manager / Group Manager at well-funded SaaS; +$25,000\u2013$60,000 in NYC, SF, LA. UK: \u00a355,000\u2013\u00a380,000 manager; \u00a380,000\u2013\u00a3110,000+ Senior Manager at SaaS scale-ups; LSE-listed and US-HQ subsidiaries pay 15-25% premium. Equity: 0.05-0.25% at Series A/B; 0.02-0.10% at Series C+.",
     "careerPath": [
+      "Marketing Coordinator / Specialist",
       "Marketing Manager",
       "Senior Marketing Manager",
-      "Director of Marketing",
-      "VP Marketing"
+      "Group / Principal Marketing Manager",
+      "Director of Marketing / Head of Demand Gen",
+      "VP Marketing",
+      "CMO"
     ],
     "resumeKeywords": [
-      "campaign",
-      "demand gen",
-      "ROI",
-      "conversion",
-      "brand",
-      "content",
-      "SEO",
-      "paid media",
-      "lead",
-      "pipeline"
+      "marketing-sourced ARR",
+      "marketing-influenced pipeline",
+      "blended CAC",
+      "CAC payback",
+      "ROAS",
+      "iROAS",
+      "MQL",
+      "SQL",
+      "SQO",
+      "MMM",
+      "media-mix modelling",
+      "incrementality test",
+      "geo holdout",
+      "GA4",
+      "server-side GTM",
+      "BigQuery",
+      "Snowflake",
+      "dbt",
+      "Looker Studio",
+      "Looker",
+      "Mode",
+      "Hex",
+      "HubSpot Marketing Hub",
+      "Marketo Engage",
+      "Salesforce Marketing Cloud",
+      "Pardot",
+      "Account Engagement",
+      "Customer.io",
+      "Iterable",
+      "Braze",
+      "Klaviyo",
+      "Segment",
+      "RudderStack",
+      "Hightouch",
+      "Census",
+      "Meta Ads Manager",
+      "Conversion API",
+      "CAPI",
+      "LinkedIn Campaign Manager",
+      "Google Ads",
+      "Performance Max",
+      "Demand Gen",
+      "Ahrefs",
+      "Semrush",
+      "Surfer",
+      "Webflow",
+      "Optimizely",
+      "VWO",
+      "Statsig",
+      "Eppo",
+      "Mutiny",
+      "Intellimize",
+      "Clay",
+      "Apollo",
+      "ABM",
+      "lead scoring",
+      "lifecycle stage",
+      "journey builder",
+      "narrative architecture",
+      "category design",
+      "share of voice"
     ],
-    "body": "Marketing manager resumes should lead with results: pipeline, conversion rates, or brand metrics. Use numbers and show ownership of budgets or channels. Tailor to the type of marketing (B2B, B2C, product) and channels in the job description.\n\nWadeCV can help you align your marketing experience with job descriptions."
+    "body": "Marketing manager screening in 2026 is precise. Recruiters at well-funded SaaS and DTC teams filter on (a) named platform tier (HubSpot Pro vs Enterprise, Marketo Standard vs Select), (b) marketing-sourced or marketing-influenced pipeline $, (c) blended CAC and CAC payback rather than channel CTR, and (d) AI-workflow fluency by named workflow rather than tool list. The CV that wins this screen leads with marketing-sourced or marketing-influenced ARR contribution, names the warehouse-native stack (GA4 + server-side GTM + BigQuery + Looker / Mode), and reads as a function-level operator rather than a channel specialist.\n\nTailor the CV to the marketing track. Demand gen / B2B SaaS: lead with MQL \u2192 SQL \u2192 SQO conversion, marketing-sourced pipeline $, blended CAC, CAC payback, and the named lead-scoring + ABM stack (HubSpot lead scoring, 6sense / Demandbase, Clay + Apollo enrichment, LinkedIn Matched Audiences). Performance / growth: lead with quarterly spend, ROAS / iROAS, channel mix, conversion API + server-side tracking, and incrementality testing. Lifecycle / CRM: lead with NRR or repeat-purchase rate, trial-to-paid conversion, and the lifecycle platform (Customer.io, Iterable, Braze, Klaviyo, Marketo Journey Builder). Content / SEO: lead with non-brand organic sessions delta, programmatic-page count, conversion or pipeline from organic, and the framework (Next.js + JSON content + ISR for N programmatic pages). Brand / category: lead with reach, share of voice, brand-aided awareness movement, earned-media placements and influenced pipeline.\n\nThe 2026 differentiator is AI-workflow fluency. List the workflow, the tool, and the FTE-equivalent productivity gain \u2014 'Built a Claude + Surfer + Webflow content engine producing 40 long-form pages monthly (\u22481.5 FTE equivalent), generating 14K incremental organic sessions and 38 SQLs/quarter at $0 incremental ad spend' is a Senior Manager+ signal. Pair the CV with a measurable side project (Substack, podcast, Indie Hackers launch) and a named conference talk if you have one \u2014 they read as load-bearing operator signals at Director+.\n\nFor the full 2026 playbook by track, level and metric stack \u2014 including the 6 bullet formulas that pass screen \u2014 see /digital-marketing-resume.",
+    "commonMistakes": [
+      "Bullets that say 'managed campaigns' or 'ran ads' without channel, spend, ROAS / CAC or pipeline outcome \u2014 the screen filters those before a human reads them",
+      "No named platforms \u2014 'marketing automation tools' instead of 'HubSpot Marketing Hub Enterprise + Marketo Engage' is invisible to boolean recruiter searches",
+      "Quoting MQL volume without SQL or SQO conversion \u2014 recruiters read MQL-only resumes as candidates who do not own the handoff to Sales",
+      "ROAS quoted without channel mix or attribution model \u2014 '8\u00d7 ROAS' on last-click Meta + brand search is not the same as 8\u00d7 iROAS in a geo-holdout test",
+      "AI fluency listed as 'familiar with ChatGPT' \u2014 name the workflow you have shipped (content engine, ABM enrichment, ad-creative variants) and the FTE-equivalent productivity gain",
+      "Missing the warehouse-native stack \u2014 GA4 + GTM + BigQuery + dbt + Looker + Segment + Hightouch is the 2026 expected baseline at mid-market and enterprise SaaS",
+      "Director / VP resume framed at channel-specialist level (CTR, open rate) rather than function-level (marketing-sourced ARR, pipeline coverage, headcount, marketing P&L)",
+      "Generic positioning ('results-driven marketer') instead of role-targeted (Senior Performance Marketer, $4M quarterly spend, 4.6\u00d7 ROAS, $2,910 blended CAC, B2B SaaS DACH/UK)"
+    ],
+    "interviewTips": [
+      "Prepare 3 case studies in the channel + volume + outcome format with confidence-interval / sample-size context where you have it",
+      "Be ready to walk the marketing P&L, channel mix and quarterly forecast on a whiteboard \u2014 Director+ interviews almost always include a forecast model exercise",
+      "Bring a teardown of the company's current marketing motion: GA4 / Wappalyzer / SimilarWeb / Ahrefs analysis of their stack, organic profile and paid presence",
+      "Have a clear point-of-view on incrementality vs MMM vs MTA \u2014 Senior+ interviews increasingly include an attribution case discussion",
+      "Prepare an AI-workflow story with the FTE-equivalent productivity gain and the dollar-cost saved \u2014 it is the 2026 differentiator at every level"
+    ],
+    "relatedSlugs": [
+      "digital-marketing-manager",
+      "content-writer",
+      "social-media-manager",
+      "product-manager-startup"
+    ],
+    "faq": [
+      {
+        "question": "What metrics should a marketing manager lead a CV with in 2026?",
+        "answer": "It depends on the track. Demand gen / B2B SaaS: marketing-sourced pipeline $, MQL \u2192 SQL \u2192 SQO conversion, blended CAC, CAC payback. Performance / growth: quarterly spend, ROAS / iROAS, blended CAC, channel mix, conversion API + server-side coverage, incrementality test results. Lifecycle / CRM: NRR or repeat-purchase rate, trial-to-paid conversion, revenue per send, lifecycle platform. Content / SEO: non-brand organic sessions delta, programmatic-page count, conversion or pipeline from organic. Brand / category: reach, share of voice, brand-aided awareness movement, earned media, influenced pipeline. Always pair the number with the time window and a baseline so the screener can interpret it."
+      },
+      {
+        "question": "Which platforms and tools should a marketing manager list on a CV?",
+        "answer": "List every platform you have used in production, with the tier and modules where you can. The high-frequency 2026 recruiter search terms: GA4, server-side Google Tag Manager, HubSpot Marketing Hub (Pro / Enterprise), Salesforce Marketing Cloud, Marketo Engage, Pardot / Account Engagement, Customer.io, Iterable, Braze, Klaviyo, Segment, RudderStack, Hightouch, Census, Meta Ads Manager + Conversion API, LinkedIn Campaign Manager, Google Ads (Performance Max, Demand Gen), Ahrefs, Semrush, Screaming Frog, Surfer, Webflow, Looker Studio / Looker / Mode / Hex, Mixpanel, Amplitude, Optimizely, VWO, Statsig, Eppo, dbt and Snowflake / BigQuery. For AI: name workflows, not familiarity (Clay-driven enrichment, Surfer-driven SEO content, AirOps content pipeline, Cassidy ABM agent)."
+      },
+      {
+        "question": "How do I write a marketing manager CV bullet that passes ATS and recruiter screens?",
+        "answer": "Use the channel + volume + outcome pattern: open with a strong verb (Owned, Scaled, Shipped, Lifted, Reduced, Built), state the channel and unit of work (paid spend, organic sessions, sends, experiments), state the volume ($1.4M quarterly Meta budget, 412 SQLs, 32 experiments, 84K monthly organic sessions), and close with the business outcome (4.6\u00d7 ROAS, $2,910 CAC, $5.2M influenced pipeline, +$840K ARR run-rate). Avoid 'managed', 'helped', 'assisted' as opening verbs \u2014 they read as filler. Include at least one named platform per role so the bullet survives boolean recruiter search."
+      },
+      {
+        "question": "What's the difference between a Marketing Manager, Senior Marketing Manager and Director of Marketing CV?",
+        "answer": "Marketing Manager: channel or segment ownership, monthly campaign cadence, $200K-$1M quarterly budget, ROAS / CTR / open rate / conversion as headline metrics, 6-12 monthly campaigns shipped. Senior Marketing Manager: multi-channel ownership, blended CAC, CAC payback, MQL \u2192 SQL conversion, agency $ managed, mentoring 1-3 ICs. Director of Marketing: function-wide ownership, marketing-sourced ARR, pipeline coverage ratio, marketing budget as % of ARR (8-25%), headcount 5-25, marketing P&L, board-level metric ownership, RevOps + Sales SLA ownership. Mismatching the framing gets the CV filtered into the wrong pipeline."
+      },
+      {
+        "question": "How should I show AI fluency on a marketing manager CV without sounding generic?",
+        "answer": "Name the workflow, the tool stack, and the FTE-equivalent productivity gain or dollar impact. Weak: 'Familiar with ChatGPT and Jasper.' Strong: 'Built a Claude + Surfer + Webflow content engine producing 40 SEO-optimised long-form pages monthly (\u22481.5 FTE equivalent), generating 14K incremental organic sessions and 38 SQLs/quarter at $0 incremental ad spend.' For ABM: 'Operated a Clay + Apollo + GPT-4 enrichment pipeline qualifying 1,800 net-new accounts/month against the ICP at 22% reply-rate on outbound \u2014 replaced ~$11K/month in outsourced research.' AI fluency is now the 2026 sophistication marker."
+      },
+      {
+        "question": "Should I include side projects on a marketing manager CV?",
+        "answer": "Yes if they are measurable and recent. A Substack with subscriber count, a podcast with download numbers, an Indie Hackers / Product Hunt launch with revenue, a published case study on a major industry blog (HubSpot, MarketingProfs, Reforge, Demand Curve), or a conference talk (SaaStr, MAU, Lifecycle Marketing Summit) all read as load-bearing operator signals. Skip vanity-only projects without metrics \u2014 they read as filler at Manager+ levels. For Director+ roles, include analyst-relations work (Gartner / Forrester briefings), board-level metric ownership and IPO-readiness work."
+      },
+      {
+        "question": "How do I tailor a marketing CV for B2B SaaS vs DTC vs B2C?",
+        "answer": "B2B SaaS: lead with marketing-sourced ARR, MQL \u2192 SQL \u2192 SQO, blended CAC, CAC payback, ABM mechanics, RevOps alignment, named CRM (Salesforce, HubSpot). DTC ecommerce: lead with ROAS, blended CAC, repeat-purchase rate, AOV, LTV, named DTC stack (Shopify, Klaviyo, Triple Whale, Northbeam, Polar, Meta CAPI Gateway, Recharge). B2C consumer: lead with reach, brand-aided awareness movement, share of voice, earned media, app installs / DAU / WAU if mobile. The metric stack and the named tools differ enough that a generic 'multi-channel marketing manager' framing reads as under-positioned at any of the three."
+      },
+      {
+        "question": "How does WadeCV help me tailor a marketing manager CV?",
+        "answer": "Paste any marketing or growth job URL \u2014 HubSpot, Klaviyo, Stripe, Notion, a Series B SaaS, or a DTC brand posting \u2014 and WadeCV extracts the platform stack the employer uses, the metrics the role is measured on (CAC, ROAS, MQL/SQL conversion, marketing-sourced pipeline, NRR, activation), the marketing motion (PLG / SLG / hybrid / DTC) and the level. WadeCV then rewrites your existing CV with the channel + volume + outcome pattern, surfaces the right platform names, adapts the regional spelling and metric vocabulary to the posting, and routes the framing toward the correct track (demand gen vs growth vs lifecycle vs brand). The first fit-analysis run is free with the 1 credit included on signup."
+      }
+    ]
   },
   {
     "slug": "financial-analyst",
@@ -2331,71 +2454,177 @@
   },
   {
     "slug": "digital-marketing-manager",
-    "title": "Digital Marketing Manager \u2013 Job Description & Resume Guide",
-    "metaDescription": "Digital marketing manager responsibilities, skills, salary, and resume keywords. How to tailor your resume for marketing roles in 2026.",
-    "intro": "Digital marketing managers plan and execute campaigns across channels \u2014 SEO, paid media, email, social, and content. This guide covers typical responsibilities, skills, and resume keywords so you can position your marketing experience for these roles.",
+    "title": "Digital Marketing Manager CV & Resume Guide 2026 \u2014 Skills, Stack, Metrics & Keywords",
+    "metaDescription": "Digital marketing manager CV: 12 responsibilities, 10 skills, 60+ resume keywords (GA4, server-side GTM, HubSpot Marketing Hub, Marketo, Meta CAPI, LinkedIn Campaign Manager), 8 FAQs and salary bands by company size for 2026.",
+    "intro": "Digital marketing managers plan and execute campaigns across channels \u2014 SEO, paid media, email, lifecycle, content and social \u2014 and the 2026 screening bar is precise. Recruiters scan for named platforms (GA4, server-side GTM, HubSpot Marketing Hub Enterprise, Marketo Engage, Meta Ads Manager + Conversion API, LinkedIn Campaign Manager, Klaviyo, Customer.io), specific metrics (CAC, ROAS, MQL/SQL conversion, marketing-sourced pipeline) and the warehouse-native stack (BigQuery / Snowflake + dbt + Looker / Mode). This guide covers the responsibilities, skills, salary bands and CV vocabulary that pass screen at well-funded SaaS and DTC. See the full pillar at /digital-marketing-resume.",
     "responsibilities": [
-      "Develop and execute digital marketing strategies across SEO, SEM, social media, email, and content",
-      "Manage paid advertising budgets and optimize campaigns for ROI across Google Ads, Meta, and LinkedIn",
-      "Analyze marketing performance using GA4, Google Search Console, and platform analytics",
-      "Oversee content calendar and coordinate with writers, designers, and external agencies",
-      "Run A/B tests on landing pages, email campaigns, and ad creatives to improve conversion rates",
-      "Report on KPIs including CAC, ROAS, conversion rates, and traffic growth to leadership"
+      "Develop and execute multi-channel digital marketing strategy across SEO, SEM, paid social, lifecycle, content and partner \u2014 against a quarterly pipeline or revenue target",
+      "Own paid acquisition budget across Meta Ads (Advantage+, Conversion API), LinkedIn Campaign Manager (Conversion API, Matched Audiences), Google Ads (Search, Performance Max, Demand Gen, YouTube), TikTok and DV360 / The Trade Desk where applicable",
+      "Run a quarterly experimentation cadence (Optimizely, VWO, Statsig, Eppo) across paid creative, landing pages, lifecycle copy, pricing-page and signup; report wins with confidence intervals and annualised impact",
+      "Operate the analytics + tracking stack \u2014 GA4 (Explorations, BigQuery export), server-side Google Tag Manager, Looker Studio / Looker / Mode / Hex, Segment / RudderStack \u2014 and partner with data on attribution and incrementality (geo holdouts, MMM, MTA)",
+      "Operate the marketing-automation stack (HubSpot Marketing Hub, Marketo Engage, Salesforce Marketing Cloud, Customer.io, Iterable, Braze, Klaviyo) end-to-end: segments, journeys, lead scoring, lifecycle triggers",
+      "Define MQL / SQL / SQO criteria with Sales and RevOps; own the marketing-sourced and marketing-influenced pipeline number reported to leadership weekly",
+      "Lead SEO + content programme: programmatic SEO at scale (pillar / cluster), technical SEO (Core Web Vitals, schema, internal linking), editorial calendar and named-tool stack (Ahrefs / Semrush / Sistrix / Surfer / Webflow)",
+      "Operate AI-driven workflows (ChatGPT, Claude, Gemini, Surfer, Clay, Apollo, AirOps, Cassidy, n8n) for content production, ABM enrichment, ad-creative variants and lifecycle copy \u2014 measured by FTE-equivalent productivity gain",
+      "Manage agencies, freelancers and in-house specialists; review media plans, creative briefs and content calendars; own creative QA and performance review cycles",
+      "Build and maintain the weekly self-serve marketing dashboard for executive, sales and product stakeholders; reconcile to Salesforce / HubSpot CRM data monthly",
+      "Forecast spend, pipeline contribution and headcount for next 1-4 quarters; reconcile actuals to plan with CFO / FP&A monthly; defend marketing P&L at quarterly business reviews",
+      "Own the brand and category narrative across paid, organic and earned channels; partner with Product Marketing on positioning, messaging frameworks and competitive intelligence"
     ],
     "requiredSkills": [
-      "Google Ads and Meta Ads platform management",
-      "SEO strategy and execution (on-page, technical, link building)",
-      "Marketing analytics (GA4, Google Search Console, Data Studio)",
-      "Email marketing and automation (Mailchimp, HubSpot, Klaviyo)",
-      "Content marketing strategy and editorial planning",
-      "Budget management and ROI optimization"
+      "Multi-channel paid media: Meta Ads (Advantage+, Conversion API, CAPI Gateway), LinkedIn Campaign Manager (Matched Audiences, ABM lists, Conversion API), Google Ads (Performance Max, Demand Gen), TikTok, programmatic DSPs",
+      "Marketing automation fluency at enterprise tier: HubSpot Marketing Hub Enterprise, Marketo Engage, Salesforce Marketing Cloud (Email Studio + Journey Builder + MCP), Pardot / Account Engagement",
+      "Analytics + attribution: GA4 (with BigQuery export), server-side GTM, Looker Studio / Looker / Mode / Hex, Mixpanel / Amplitude / Heap; SQL or warehouse-native dashboarding (BigQuery / Snowflake + dbt) increasingly required at mid-market+",
+      "SEO + content: Ahrefs, Semrush, Sistrix, Conductor, Botify, Screaming Frog, Sitebulb, Surfer, Clearscope, MarketMuse; programmatic SEO at scale on Next.js / Astro / Webflow",
+      "Lifecycle + CDP: Customer.io, Iterable, Braze, Klaviyo, Segment, RudderStack, Hightouch, Census, Optimizely, VWO, Statsig",
+      "Demand-gen mechanics: ICP definition, lead scoring, MQL/SQL/SQO criteria, lifecycle stages, ABM platform (6sense, Demandbase, RollWorks), pipeline forecasting",
+      "Budget + forecast: blended CAC, payback period, channel-mix optimisation, agency $ managed, marketing budget as % of ARR",
+      "AI workflow design: name the tool stack, the automation, and the FTE-equivalent productivity gain \u2014 Clay enrichment, Surfer-driven SEO content, AirOps content pipeline, Cassidy ABM agent, n8n / Make / Zapier workflow plumbing",
+      "Stakeholder management across Sales, RevOps, Product, Design, Engineering and Finance; weekly self-serve reporting habit",
+      "Project management at multi-campaign cadence (Asana, Jira, Linear, Notion, Monday) with cross-functional gating and creative QA discipline"
     ],
-    "salaryRange": "$65,000\u2013$120,000 depending on experience, location, and company size; senior roles at tech companies can exceed $140,000.",
+    "salaryRange": "US: $90,000\u2013$115,000 IC manager early career; $115,000\u2013$150,000 mid-level B2B SaaS; $150,000\u2013$190,000+ Senior / Group at Series C+ SaaS; +$25,000\u2013$70,000 at FAANG-tier in NYC, SF, LA, Seattle. UK: \u00a360,000\u2013\u00a385,000 manager; \u00a385,000\u2013\u00a3120,000+ Senior at SaaS scale-ups; LSE-listed and US-HQ subsidiaries pay 15-25% premium. Equity: 0.05-0.20% Series A/B; 0.02-0.08% Series C+. DTC and e-commerce premiums for performance-marketing specialists with named iROAS / MMM credibility.",
     "careerPath": [
       "Marketing Coordinator",
       "Digital Marketing Specialist",
       "Digital Marketing Manager",
-      "Senior Marketing Manager",
-      "Director of Marketing",
-      "VP of Marketing / CMO"
+      "Senior Digital Marketing Manager / Performance Marketing Lead",
+      "Group / Principal Manager",
+      "Director of Marketing / Head of Demand Gen / Head of Performance",
+      "VP Marketing",
+      "CMO"
     ],
     "resumeKeywords": [
-      "SEO",
-      "SEM",
-      "Google Ads",
-      "Meta Ads",
-      "email marketing",
-      "content marketing",
       "GA4",
-      "conversion rate optimization",
-      "A/B testing",
+      "server-side GTM",
+      "BigQuery",
+      "Snowflake",
+      "dbt",
+      "Looker Studio",
+      "Looker",
+      "Mode",
+      "Hex",
+      "Segment",
+      "RudderStack",
+      "Hightouch",
+      "Census",
+      "Mixpanel",
+      "Amplitude",
+      "HubSpot Marketing Hub",
+      "Marketo Engage",
+      "Salesforce Marketing Cloud",
+      "Pardot",
+      "Account Engagement",
+      "Customer.io",
+      "Iterable",
+      "Braze",
+      "Klaviyo",
+      "Meta Ads Manager",
+      "Conversion API",
+      "CAPI",
+      "Advantage+",
+      "LinkedIn Campaign Manager",
+      "Matched Audiences",
+      "Google Ads",
+      "Performance Max",
+      "Demand Gen",
+      "DV360",
+      "The Trade Desk",
+      "TikTok Ads",
+      "Triple Whale",
+      "Northbeam",
+      "Polar",
+      "Ahrefs",
+      "Semrush",
+      "Surfer",
+      "Clearscope",
+      "Webflow",
+      "Optimizely",
+      "VWO",
+      "Statsig",
+      "Eppo",
+      "Mutiny",
+      "Intellimize",
+      "Clay",
+      "Apollo",
+      "6sense",
+      "Demandbase",
+      "AirOps",
+      "Cassidy",
       "ROAS",
-      "CAC",
-      "marketing automation",
-      "social media marketing",
-      "lead generation",
-      "campaign management"
+      "iROAS",
+      "MMM",
+      "incrementality",
+      "geo holdout",
+      "blended CAC",
+      "CAC payback",
+      "MQL",
+      "SQL",
+      "SQO",
+      "marketing-sourced ARR",
+      "marketing-influenced pipeline",
+      "lead scoring",
+      "lifecycle stage",
+      "journey builder",
+      "ABM"
     ],
-    "body": "Digital marketing manager roles require a mix of analytical and creative skills. On your resume, lead with measurable results: traffic growth percentages, ROAS improvements, conversion rate lifts, and campaign budgets managed. Specify the channels and tools you have used.\n\nTailoring your resume to highlight the specific channels mentioned in the job description (SEO vs paid vs email vs social) makes a significant difference. WadeCV can help you reframe your marketing experience to match each job description so your strongest campaign results are highlighted.",
+    "body": "Digital marketing manager screening at well-funded SaaS and DTC in 2026 is heavily boolean-search-driven. Recruiters filter on (a) named platform tier (HubSpot Pro vs Enterprise, Marketo Standard vs Select, Meta CAPI vs CAPI Gateway), (b) attribution sophistication (last-click vs iROAS vs MMM), (c) blended CAC and CAC payback rather than single-channel CTR, and (d) AI-workflow fluency by named workflow rather than tool list. Resumes that omit the warehouse-native analytics stack (GA4 + server-side GTM + BigQuery + dbt + Looker / Mode) get filtered out of mid-market and enterprise screens.\n\nLead the CV with the headline metric stack: 'Owns $X quarterly paid spend across Meta + LinkedIn + Google Ads at Y\u00d7 ROAS and $Z blended CAC; delivered M MQLs / N SQLs / P opps and $X.YM marketing-sourced pipeline against quarterly target.' Then layer in the named platform stack and the AI-workflow productivity story. Specify the marketing motion (PLG / SLG / hybrid / DTC) \u2014 the same headline numbers read differently against each.\n\nThe 2026 differentiator is incrementality + AI fluency. iROAS measured via geo holdout, MMM lift, or PSI testing separates senior performance marketers from channel specialists. AI workflow named by tool + FTE-equivalent productivity gain ('Built a Claude + Surfer + Webflow content engine producing 40 long-form pages monthly \u22481.5 FTE equivalent, generating 14K incremental organic sessions and 38 SQLs/quarter at $0 incremental ad spend') separates Senior Manager+ from IC.\n\nFor the full 2026 playbook by track, level and metric stack \u2014 including the 6 bullet formulas that pass screen \u2014 see /digital-marketing-resume.",
     "commonMistakes": [
-      "Listing channels managed without performance metrics",
-      "Using vague language like 'managed social media' without specifics",
-      "Not including budget sizes or team sizes managed"
+      "Bullets that say 'managed campaigns', 'ran ads', 'oversaw social media' without channel, spend, ROAS / CAC or pipeline outcome \u2014 the screen filters those before a human reads them",
+      "ROAS quoted without channel mix or attribution model \u2014 '8\u00d7 ROAS' on last-click Meta + brand search is not the same as 8\u00d7 iROAS in a geo-holdout test",
+      "Quoting MQL volume without SQL or SQO conversion \u2014 recruiters read MQL-only resumes as candidates who do not own the handoff to Sales",
+      "Missing the warehouse-native stack \u2014 GA4 + server-side GTM + BigQuery + dbt + Looker + Segment + Hightouch is the 2026 expected baseline at mid-market and enterprise SaaS",
+      "AI fluency listed as 'familiar with ChatGPT' \u2014 name the workflow you have shipped (content engine, ABM enrichment, ad-creative variants, lifecycle copy) and the FTE-equivalent productivity gain",
+      "Generic positioning ('digital marketing manager with X years of experience') instead of role-targeted (Senior Performance Marketer, $4M quarterly spend, 4.6\u00d7 ROAS, $2,910 blended CAC, B2B SaaS DACH/UK)",
+      "Overweight on listing channels (10+ channels in core skills) and underweight on platform tier and named modules \u2014 recruiter searches return tier-and-module hits, not channel keyword hits",
+      "Missing budget size, team size and agency $ managed \u2014 Director+ screening looks for these three numbers in the first 30 seconds"
     ],
     "interviewTips": [
-      "Prepare case studies with before/after metrics for campaigns you ran",
-      "Be ready to discuss how you allocate budget across channels",
-      "Show familiarity with the company's current marketing presence"
+      "Prepare 3 case studies in the channel + volume + outcome format with confidence-interval / sample-size context where you have it",
+      "Be ready to walk the marketing P&L, channel mix and quarterly forecast on a whiteboard \u2014 Director+ interviews almost always include a forecast model exercise",
+      "Bring a teardown of the company's current marketing motion: GA4 / Wappalyzer / SimilarWeb / Ahrefs analysis of their stack, organic profile and paid presence",
+      "Have a clear point-of-view on incrementality vs MMM vs MTA \u2014 Senior+ interviews increasingly include an attribution case discussion",
+      "Prepare an AI-workflow story with the FTE-equivalent productivity gain and the dollar-cost saved \u2014 it is the 2026 differentiator at every level",
+      "Be ready to discuss the warehouse-native marketing stack \u2014 GA4 + GTM + BigQuery + dbt + Looker + Segment + Hightouch \u2014 and where you would invest in tracking maturity first"
     ],
     "relatedSlugs": [
+      "marketing-manager",
       "content-writer",
       "social-media-manager",
       "product-manager-startup"
     ],
     "faq": [
       {
-        "question": "What skills do hiring managers look for in digital marketing managers?",
-        "answer": "Data-driven decision making, multi-channel campaign management, and the ability to tie marketing activities to revenue. Specific platform expertise (Google Ads, Meta Ads, SEO tools) and analytics proficiency (GA4, Data Studio) are consistently requested."
+        "question": "What skills do hiring managers look for in digital marketing managers in 2026?",
+        "answer": "Three things in priority order: (1) named platform tier and modules \u2014 HubSpot Marketing Hub Enterprise + Marketo Engage + Salesforce Marketing Cloud Journey Builder, GA4 + server-side GTM + BigQuery, Meta Conversion API + LinkedIn Conversion API + Performance Max; (2) attribution sophistication \u2014 iROAS via geo holdout / MMM / PSI rather than last-click ROAS; (3) AI-workflow fluency by named workflow with FTE-equivalent productivity gain. Channel mix and tactical campaign experience are baseline expectations at Manager level \u2014 they are no longer the differentiator."
+      },
+      {
+        "question": "Which platforms and tools should a digital marketing manager list on a CV?",
+        "answer": "GA4 (with BigQuery export), server-side GTM, HubSpot Marketing Hub (Pro / Enterprise), Salesforce Marketing Cloud, Marketo Engage, Pardot / Account Engagement, Customer.io, Iterable, Braze, Klaviyo, Segment, RudderStack, Hightouch, Census, Meta Ads Manager + Conversion API, LinkedIn Campaign Manager + Matched Audiences, Google Ads (Performance Max, Demand Gen), DV360, The Trade Desk, TikTok Ads, Ahrefs, Semrush, Surfer, Webflow, Looker Studio / Looker / Mode / Hex, Mixpanel, Amplitude, Optimizely, VWO, Statsig, Eppo, Mutiny, Intellimize, dbt, Snowflake, BigQuery. For DTC: add Triple Whale, Northbeam, Polar, Recharge, Shopify. For ABM: add 6sense, Demandbase, RollWorks, Clay, Apollo. Recruiters filter on tier and modules \u2014 list them."
+      },
+      {
+        "question": "What's the difference between a Digital Marketing Manager and Performance Marketing Manager CV?",
+        "answer": "Digital Marketing Manager: multi-channel ownership across paid + organic + lifecycle + content. Headline metric stack = blended CAC + CAC payback + marketing-sourced pipeline. Performance Marketing Manager: paid-acquisition focus across Meta + LinkedIn + Google + programmatic. Headline metric stack = quarterly spend + ROAS / iROAS + CAC by channel + incrementality test results. Performance Marketing leads with attribution sophistication (iROAS, MMM, geo holdouts); Digital Marketing leads with full-funnel ownership and pipeline contribution. Mismatching the framing routes the CV to the wrong pipeline."
+      },
+      {
+        "question": "How do I show iROAS, MMM and incrementality on a digital marketing CV?",
+        "answer": "Lead with the test design and the lift result: 'Ran 6-market geo-holdout incrementality test on Meta + LinkedIn paid spend over 8 weeks; measured 38% incremental contribution against last-click attribution that had reported 100% \u2014 re-allocated $420K/quarter from over-attributed brand search to under-attributed lower-funnel paid social.' Or for MMM: 'Operated quarterly MMM (Recast / Robyn / in-house) covering $4.6M paid spend; identified 22% over-investment in Performance Max and 18% under-investment in podcast / OOH; reallocation lifted blended ROAS 17% over two quarters.' iROAS / MMM / geo-holdout are the 2026 sophistication marker for Senior+ performance roles."
+      },
+      {
+        "question": "Should I include AI workflow on a digital marketing manager CV?",
+        "answer": "Yes \u2014 and it is the 2026 differentiator at every level. Name the workflow, the tool stack and the FTE-equivalent productivity gain or dollar impact. Weak: 'Familiar with ChatGPT and Jasper.' Strong (content): 'Built a Claude + Surfer + Webflow content engine producing 40 SEO-optimised long-form pages monthly (\u22481.5 FTE equivalent), generating 14K incremental organic sessions and 38 SQLs/quarter at $0 incremental ad spend.' Strong (ABM): 'Operated a Clay + Apollo + GPT-4 enrichment pipeline qualifying 1,800 net-new accounts/month against the ICP at 22% reply-rate on outbound \u2014 replaced ~$11K/month in outsourced research.' Strong (creative): 'Shipped a Midjourney + Runway + Meta Advantage+ creative pipeline producing 60 ad variants/week \u2014 lifted ad-creative ROAS 23% by feeding the algorithm faster than agency cadence allowed.'"
+      },
+      {
+        "question": "How do I write a digital marketing manager bullet that passes ATS and recruiter screens?",
+        "answer": "Use the channel + volume + outcome pattern: open with a strong verb (Owned, Scaled, Shipped, Lifted, Reduced, Built), state the channel and unit of work, state the volume ($1.4M quarterly Meta budget, 412 SQLs, 32 experiments, 84K monthly organic sessions), close with the business outcome (4.6\u00d7 ROAS, $2,910 CAC, $5.2M influenced pipeline, +$840K ARR run-rate, 23% activation lift). Avoid 'managed', 'helped', 'oversaw' as opening verbs. Include at least one named platform per bullet (HubSpot, Meta CAPI, GA4, LinkedIn, Klaviyo) so the bullet survives boolean recruiter search. Quote the test confidence (95% CI, n=48,000) where available \u2014 it reads as senior."
+      },
+      {
+        "question": "What salary should a Senior Digital Marketing Manager target in 2026?",
+        "answer": "US base: $145,000\u2013$190,000 at well-funded Series B-D B2B SaaS; +$25,000\u2013$70,000 in NYC, SF, LA, Seattle; +$50,000\u2013$120,000 at FAANG-tier; bonus 15-25% target; equity 0.02-0.10% at Series C+ depending on stage and ARR. UK: \u00a385,000\u2013\u00a3120,000+ at SaaS scale-ups; +20-35% at LSE-listed or US-HQ subsidiaries. DTC and e-commerce premiums for named iROAS / MMM credibility (Triple Whale / Northbeam / Polar literacy adds 8-15%). Equity vs cash trade-offs: prefer equity at Series A/B if ARR > $5M; prefer cash at pre-PMF or post-PE-buyout."
+      },
+      {
+        "question": "How does WadeCV help me tailor a digital marketing manager CV?",
+        "answer": "Paste any digital marketing or growth job URL \u2014 HubSpot, Klaviyo, Notion, Stripe, Series B SaaS or DTC brand posting \u2014 and WadeCV extracts the platform stack the employer uses, the metrics the role is measured on (CAC, ROAS, iROAS, MQL/SQL conversion, marketing-sourced pipeline, NRR, activation), the marketing motion (PLG / SLG / hybrid / DTC) and the level. WadeCV then rewrites your existing CV with the channel + volume + outcome pattern, surfaces the right platform names by tier and module, adapts regional spelling and metric vocabulary to the posting, and routes the framing toward the correct track. The first fit-analysis run is free with the 1 credit on signup."
       }
     ]
   },

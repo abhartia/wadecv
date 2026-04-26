@@ -355,14 +355,14 @@
     {
       "page": "https://wadecv.com/",
       "clicks": 2,
-      "impressions": 10,
-      "ctr": 20.0,
-      "position": 5.5
+      "impressions": 11,
+      "ctr": 18.18,
+      "position": 5.9
     },
     {
       "page": "https://wadecv.com/ats/lever",
       "clicks": 0,
-      "impressions": 68,
+      "impressions": 69,
       "ctr": 0,
       "position": 7.9
     },
@@ -495,9 +495,9 @@
     {
       "page": "https://wadecv.com/jobs/python-developer",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 76.5
+      "position": 75
     },
     {
       "page": "https://wadecv.com/jobs/recruiter",
@@ -589,6 +589,13 @@
       "impressions": 3,
       "ctr": 0,
       "position": 85
+    },
+    {
+      "page": "https://wadecv.com/resume-bullets/frontend-developer",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
     },
     {
       "page": "https://wadecv.com/resume-bullets/machine-learning",
@@ -694,13 +701,6 @@
       "impressions": 2,
       "ctr": 0,
       "position": 70.5
-    },
-    {
-      "page": "https://wadecv.com/skills/python-developer",
-      "clicks": 0,
-      "impressions": 10,
-      "ctr": 0,
-      "position": 67.5
     }
   ],
   "query_page_30d": [
@@ -1372,9 +1372,9 @@
       "query": "python developer resume",
       "page": "https://wadecv.com/jobs/python-developer",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 71
+      "position": 71.5
     },
     {
       "query": "python developer resume",
@@ -1855,22 +1855,29 @@
       "impressions": 16,
       "ctr": 0,
       "position": 16.8
+    },
+    {
+      "date": "2026-04-24",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 22.8
     }
   ],
   "devices_30d": [
     {
       "device": "DESKTOP",
       "clicks": 1,
-      "impressions": 407,
-      "ctr": 0.25,
-      "position": 52.7
+      "impressions": 410,
+      "ctr": 0.24,
+      "position": 52.5
     },
     {
       "device": "MOBILE",
       "clicks": 1,
-      "impressions": 16,
-      "ctr": 6.25,
-      "position": 17.4
+      "impressions": 17,
+      "ctr": 5.88,
+      "position": 16.9
     }
   ],
   "countries_30d": [
@@ -1884,9 +1891,9 @@
     {
       "country": "usa",
       "clicks": 1,
-      "impressions": 207,
+      "impressions": 209,
       "ctr": 0.48,
-      "position": 51.3
+      "position": 51.2
     },
     {
       "country": "are",
@@ -1919,9 +1926,9 @@
     {
       "country": "bra",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 5.5
+      "position": 6
     },
     {
       "country": "che",

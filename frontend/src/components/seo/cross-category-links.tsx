@@ -27,6 +27,10 @@ const CATEGORY_HUBS: CrossLink[] = [
     href: "/customer-service-resume",
     label: "Customer Service Resume Guide (Agent → CSM)",
   },
+  {
+    href: "/digital-marketing-resume",
+    label: "Digital Marketing CV Guide (Channels & Stack)",
+  },
 ];
 
 const TOOL_COMPARISONS: CrossLink[] = [

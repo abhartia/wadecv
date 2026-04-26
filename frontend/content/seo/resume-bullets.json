@@ -227,19 +227,81 @@
   },
   {
     "slug": "marketing-manager",
-    "title": "Marketing Manager Resume Bullet Points",
-    "metaDescription": "Marketing manager resume bullet examples. How to show campaign and pipeline impact.",
-    "intro": "Marketing manager bullets should show campaign scope, pipeline, and ROI. This guide gives you examples and formulas for demand gen, brand, and content roles.",
+    "title": "Marketing Manager Resume Bullet Points & Summary Examples (2026)",
+    "metaDescription": "16 marketing manager resume bullet examples by track (demand gen, performance, lifecycle, content, brand, growth) with named platforms (HubSpot, GA4, Meta CAPI, Marketo, LinkedIn) and 5 summary templates from Coordinator to Director.",
+    "intro": "Marketing manager bullets in 2026 are screened on three things: named platform tier, channel + volume + outcome structure, and AI-workflow productivity gain. This guide gives you 16 worked bullet examples across the six marketing tracks (demand gen, performance, lifecycle, content / SEO, brand, growth experimentation), 5 summary templates by level, the 5 impact formulas that pass screen, and the named-tool vocabulary recruiters search for. See the full pillar at /digital-marketing-resume.",
     "bulletExamples": [
-      "Ran demand gen campaigns that generated $2M pipeline; improved MQL-to-SQL conversion by 20% through lead scoring and nurture.",
-      "Launched new brand campaign across 4 channels; increased unaided awareness by 15% in target segment.",
-      "Built content engine producing 30+ assets per quarter; SEO traffic grew 40% YoY."
+      "Owned a $1.4M quarterly Meta + LinkedIn + Google Ads budget across DACH and UK; delivered 4.6× ROAS and $2,910 blended CAC vs $3,500 target, generating 412 SQLs and $5.2M influenced pipeline.",
+      "Re-architected the post-trial lifecycle in HubSpot + Customer.io across 14 behavioural triggers and 6 ICP segments; lifted trial-to-paid conversion from 11.2% to 18.4% in 90 days, adding $612K ARR/quarter.",
+      "Shipped a 190-page programmatic SEO cluster across job-role + ATS + skill verticals on Next.js + JSON content + ISR; lifted non-brand organic sessions from 11K to 84K monthly in 6 months and grew SQL contribution from organic from 4% to 17% of pipeline ($2.8M influenced).",
+      "Owned demand-gen for a $40M ARR Series B SaaS; hit 980 MQLs / 240 SQLs / 88 opps quarterly at $4,180 blended CAC; partnered with Sales and RevOps to deliver $9.4M qualified pipeline (138% of target) and $2.1M closed-won (112%).",
+      "Ran a 6-market geo-holdout incrementality test on Meta + LinkedIn paid spend over 8 weeks; measured 38% incremental contribution against last-click attribution that had reported 100% — re-allocated $420K/quarter from over-attributed brand search to under-attributed lower-funnel paid social.",
+      "Built a Claude + Surfer + Webflow content engine producing 40 SEO-optimised long-form pages monthly (≈1.5 FTE equivalent), generating 14K incremental organic sessions and 38 SQLs/quarter at $0 incremental ad spend.",
+      "Operated a Clay + Apollo + GPT-4 ABM enrichment pipeline qualifying 1,800 net-new accounts/month against the ICP at 22% reply-rate on outbound — replaced ~$11K/month in outsourced research and grew SDR-sourced pipeline 31% QoQ.",
+      "Launched a category-narrative campaign (paid LinkedIn + earned PR + podcast tour) in B2B fintech; reached 4.2M senior finance impressions, earned 18 tier-1 placements, and lifted brand-aided awareness from 9% to 17% with $3.6M influenced pipeline in two quarters.",
+      "Shipped 32 growth experiments across signup, onboarding and pricing-page in 2 quarters in Statsig; the winning pricing-page redesign lifted free-to-paid conversion 23% (95% CI, n=48,000) and the onboarding-checklist test lifted day-7 activation 18%, together adding ~$840K ARR run-rate.",
+      "Migrated marketing automation from Mailchimp to Marketo Engage Select for a 2,400-account ABM motion; rebuilt 12 Journey Builder programs, lead-scoring model, and Salesforce sync; cut MQL-to-SQL conversion latency from 9 days to 18 hours and grew SAL volume 41% in one quarter.",
+      "Stood up the GA4 + server-side GTM + BigQuery + Looker Studio + Segment + Hightouch warehouse-native marketing stack from scratch; reduced reporting latency from weekly manual to real-time and unblocked 4 incrementality tests in the next quarter.",
+      "Owned $4.6M annual paid budget at a Series C DTC fashion brand across Meta (Advantage+, CAPI Gateway), TikTok and Google PMax; held 4.8× blended ROAS while doubling spend; lifted 30-day repeat-purchase rate from 22% to 28% via Klaviyo lifecycle re-segmentation.",
+      "Led a 15-person marketing org (3 ICs + 4 specialists + 8 agency contractors) at a $40M ARR Series B SaaS; delivered marketing-sourced pipeline of $14M (122% of plan) at $11.2K blended CAC and 14-month payback; managed $2.6M agency / tooling spend.",
+      "Defended a $6.4M annual marketing budget through a 9-month down-round and CFO scrutiny; cut spend 18% while protecting MQL volume by killing 2 underperforming channels (PMax brand cannibalisation, low-intent display) and reinvesting in lifecycle + organic.",
+      "Authored the 2026 ICP refresh and lead-scoring V3 in HubSpot Marketing Hub Enterprise; partnered with Sales + RevOps to redefine MQL / SQL / SQO criteria; doubled SQL volume per MQL (from 0.18 to 0.37) without raising blended CAC.",
+      "Hired and onboarded 4 marketing ICs in 6 months (Performance, Lifecycle, SEO, Content); designed onboarding ladder, 30/60/90 milestones and weekly 1:1 cadence; achieved positive contribution from each within 90 days against pre-set OKRs."
     ],
     "impactFormulas": [
-      "Campaign + pipeline/conversion (e.g. 'Generated $X pipeline'; 'Improved conversion by Y%')",
-      "Initiative + metric (e.g. 'Launched X'; 'Increased Y by Z%')"
+      "Channel + spend + ROAS / CAC: '[Owned / scaled] [$ spend] across [channels]; delivered [ROAS / CAC / CPL] of [X] against [target]; [pipeline / revenue outcome].'",
+      "Programmatic / organic + scale + outcome: '[Built / shipped] [N pages / cluster] targeting [intent]; lifted [organic sessions / non-brand keywords] from [X] to [Y] in [period]; [conversion / pipeline impact].'",
+      "Lifecycle + audience + outcome: '[Re-architected / launched] [lifecycle program] across [N triggers]; lifted [trial-to-paid / repeat-purchase / NRR] from [X] to [Y]; [revenue impact].'",
+      "Demand-gen funnel: '[Owned / hit] [N MQLs / SQLs / opps] at [unit cost]; partnered with [Sales / RevOps] to deliver [pipeline $] against [target] in [period].'",
+      "Experimentation + confidence: '[Designed / shipped] [N experiments]; the winning test lifted [metric] by [X% / pp] at [confidence / sample size]; [annualised impact].'"
     ],
-    "body": "Lead with pipeline, conversion, or brand metrics. Use clear numbers and channel scope. Tailor to B2B vs B2C. WadeCV can help you align your marketing experience with job descriptions."
+    "body": "Marketing manager bullets in 2026 are screened on three things: (1) named platform tier — HubSpot Marketing Hub Enterprise vs Pro, Marketo Engage Select vs Standard, Meta Conversion API vs CAPI Gateway, GA4 with BigQuery export; (2) channel + volume + outcome structure with a quoted business outcome; (3) AI-workflow productivity gain by named workflow rather than tool list. Bullets that omit the platform tier or the business outcome get filtered before a human reads them.\n\n**Summary / objective templates by level (use one):**\n\n*Marketing Coordinator (entry-level):* 'Marketing coordinator with 1-2 years across email and content campaign execution at [B2B SaaS / DTC brand]; shipped 8-15 campaigns/quarter in [HubSpot / Klaviyo / Marketo] including campaign brief, asset trafficking, UTM hygiene and post-launch reporting. Now seeking a Marketing Specialist role at a high-growth SaaS or DTC company.'\n\n*Digital Marketing Specialist:* 'Digital marketing specialist with 2-4 years across [paid / lifecycle / SEO / content], owning [$X spend / N campaigns / N programs] at [4× ROAS / 2.4% CTR / 32% open rate]. Built and operated the [GA4 + GTM + Looker Studio / HubSpot lifecycle / Ahrefs SEO] stack. Shipped [N experiments] in Optimizely / VWO / Statsig with [winning lifts]. Now seeking a Digital Marketing Manager role at a B2B SaaS scaling from Series A to B.'\n\n*Marketing Manager (mid-level):* 'Marketing manager with 4-7 years across multi-channel campaigns at [B2B SaaS / DTC], owning $X quarterly budget across [Meta + LinkedIn + Google Ads / HubSpot lifecycle / programmatic SEO] at Y× ROAS and $Z blended CAC. Delivered M MQLs / N SQLs / $X.YM marketing-sourced pipeline last fiscal year against quarterly targets. Built and operates [HubSpot Marketing Hub Enterprise / Marketo Engage] with [GA4 + server-side GTM + BigQuery + Looker]. Shipped a Claude + Surfer content engine producing [N pages/month] (≈X FTE equivalent). Now seeking a Senior Marketing Manager role at a Series B/C SaaS or scaling DTC brand.'\n\n*Senior / Head of Performance (Senior+):* 'Senior performance marketer with 6-9 years across B2B SaaS and DTC, owning $1-5M quarterly Meta + LinkedIn + Google Ads spend at 4-6× ROAS and sub-$3K blended CAC. Operates the GA4 + server-side GTM + BigQuery + Looker stack and runs quarterly incrementality tests (geo holdouts, MMM lift) — re-allocated $X/quarter from over-attributed channels in last year. Shipped 30+ experiments at 95% CI; winning tests deliver $XM ARR run-rate. Now seeking a Head of Performance / Director of Demand Gen role at a Series C+ SaaS or growth-stage DTC.'\n\n*Director of Marketing / VP (Director+):* 'Marketing leader with 8-15 years scaling B2B SaaS demand-gen functions from $5M to $80M ARR. Built marketing teams of 6-25 across performance, lifecycle, content / SEO, brand and product marketing. Owned marketing-sourced ARR of $X-YM/year at blended CAC of $X-YK and CAC payback of 11-16 months. Defended $X-YM annual marketing budget through 2 down rounds. Operates board-level marketing scorecard with marketing-sourced ARR, pipeline coverage, brand-aided awareness movement, and headcount efficiency as the four headline metrics. Now seeking a VP Marketing role at a Series C-D B2B SaaS scaling EMEA or APAC.'\n\nThe 2026 differentiator at every level is AI-workflow fluency. Quote the workflow + tool stack + FTE-equivalent productivity gain. See /digital-marketing-resume for the 6 bullet formulas and the named platform vocabulary by track.",
+    "commonMistakes": [
+      "Bullets that say 'managed campaigns', 'ran ads', 'oversaw social media' without channel, spend, ROAS / CAC or pipeline outcome",
+      "No named platforms — 'marketing automation' instead of 'HubSpot Marketing Hub Enterprise + Marketo Engage' is invisible to boolean recruiter searches",
+      "Quoting MQL volume without SQL or SQO conversion — the screen reads MQL-only resumes as candidates who do not own the handoff to Sales",
+      "ROAS quoted without channel mix or attribution model — '8× ROAS' on last-click Meta + brand search is not the same as 8× iROAS in a geo-holdout test",
+      "Missing the warehouse-native stack — GA4 + GTM + BigQuery + dbt + Looker + Segment + Hightouch is the 2026 expected baseline at mid-market and enterprise SaaS",
+      "AI fluency listed as 'familiar with ChatGPT' — name the workflow you have shipped (content engine, ABM enrichment, ad-creative variants) and the FTE-equivalent productivity gain",
+      "Director / VP bullets framed at channel-specialist level (CTR, open rate) rather than function-level (marketing-sourced ARR, pipeline coverage, headcount, marketing P&L)",
+      "Generic positioning ('results-driven marketer') instead of role-targeted (Senior Performance Marketer, $4M quarterly spend, 4.6× ROAS, $2,910 blended CAC, B2B SaaS DACH/UK)"
+    ],
+    "faq": [
+      {
+        "question": "What's the strongest opening verb for a marketing manager bullet?",
+        "answer": "Owned, Scaled, Shipped, Built, Lifted, Reduced, Architected, Operated, Migrated, Defended. These read as ownership and outcome. Avoid 'managed', 'helped', 'assisted', 'oversaw', 'supported' — they read as filler and get the bullet deprioritised in keyword scoring."
+      },
+      {
+        "question": "How long should a marketing manager bullet be?",
+        "answer": "1-2 lines maximum (about 18-32 words). The bullet must contain a strong verb, the channel and unit of work, the volume, and the business outcome. Anything longer reads as a paragraph and gets skimmed past. If you need three lines, split into two bullets — one for the volume / channel and one for the outcome / impact."
+      },
+      {
+        "question": "How many bullets should each marketing role have on a CV?",
+        "answer": "4-6 bullets per role for the most recent 2-3 roles; 2-3 bullets for older roles. Each bullet should cover a different dimension (paid acquisition, lifecycle, content / SEO, experimentation, team / agency, attribution / measurement) so the screener sees the full surface area of the role rather than 6 variants of the same metric."
+      },
+      {
+        "question": "Should a marketing manager CV bullet quote test confidence intervals?",
+        "answer": "Yes if you have them — '95% CI, n=48,000' or 'p<0.05 over 6 weeks geo-holdout' reads as senior. It is the difference between someone who shipped a test and someone who can explain why the result is real. At Senior+ levels this is increasingly expected; at Director+ it is a baseline."
+      },
+      {
+        "question": "How do I show AI workflow on a marketing manager bullet?",
+        "answer": "Name the workflow, the tool stack, and the FTE-equivalent productivity gain. Example: 'Built a Claude + Surfer + Webflow content engine producing 40 SEO-optimised long-form pages monthly (≈1.5 FTE equivalent), generating 14K incremental organic sessions and 38 SQLs/quarter at $0 incremental ad spend.' For ABM: 'Operated a Clay + Apollo + GPT-4 enrichment pipeline qualifying 1,800 net-new accounts/month at 22% reply-rate.' AI fluency without an FTE-equivalent or dollar number reads as a non-signal."
+      },
+      {
+        "question": "What's a strong demand-gen / pipeline bullet?",
+        "answer": "Owns the funnel handoff: 'Owned demand-gen for a $40M ARR Series B SaaS; hit 980 MQLs / 240 SQLs / 88 opps quarterly at $4,180 blended CAC; partnered with Sales and RevOps to deliver $9.4M qualified pipeline (138% of target) and $2.1M closed-won (112%).' Quote the full funnel — MQL + SQL + SQO + ARR — not just MQL volume."
+      },
+      {
+        "question": "Should I use 'CV' or 'resume' in a marketing manager job application?",
+        "answer": "Use the term in the job posting. US, Canada and most APAC postings use 'resume'; UK, Ireland, EU, India, Australia and South Africa use 'CV'. Marketing roles increasingly read both as interchangeable; matching the posting is the safest signal. The structure and bullet format are identical."
+      }
+    ],
+    "relatedSlugs": [
+      "digital-marketing",
+      "social-media-manager",
+      "product-manager",
+      "data-analyst"
+    ]
   },
   {
     "slug": "product-manager",

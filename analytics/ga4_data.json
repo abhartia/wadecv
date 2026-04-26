@@ -1,10 +1,10 @@
 {
   "traffic_summary_30d": {
     "activeUsers": "18",
-    "sessions": "52",
-    "screenPageViews": "101",
-    "averageSessionDuration": "607.62665857692309",
-    "bounceRate": "0.48076923076923078",
+    "sessions": "54",
+    "screenPageViews": "104",
+    "averageSessionDuration": "590.74444961111112",
+    "bounceRate": "0.48148148148148145",
     "newUsers": "16"
   },
   "traffic_summary_prev_30d": {
@@ -135,6 +135,12 @@
       "activeUsers": "1",
       "sessions": "1",
       "screenPageViews": "1"
+    },
+    {
+      "date": "20260425",
+      "activeUsers": "1",
+      "sessions": "2",
+      "screenPageViews": "3"
     }
   ],
   "top_pages": [
@@ -142,15 +148,22 @@
       "pagePath": "/",
       "screenPageViews": "38",
       "activeUsers": "16",
-      "averageSessionDuration": "433.89742600000005",
-      "bounceRate": "0.3783783783783784"
+      "averageSessionDuration": "434.29890340540544",
+      "bounceRate": "0.35135135135135137"
     },
     {
       "pagePath": "/tailor",
-      "screenPageViews": "23",
+      "screenPageViews": "24",
       "activeUsers": "2",
-      "averageSessionDuration": "596.63012776190476",
-      "bounceRate": "0.19047619047619047"
+      "averageSessionDuration": "557.30400226086954",
+      "bounceRate": "0.2608695652173913"
+    },
+    {
+      "pagePath": "/dashboard",
+      "screenPageViews": "13",
+      "activeUsers": "2",
+      "averageSessionDuration": "145.61405307692308",
+      "bounceRate": "0.15384615384615385"
     },
     {
       "pagePath": "/auth/login",
@@ -160,18 +173,11 @@
       "bounceRate": "0.15384615384615385"
     },
     {
-      "pagePath": "/dashboard",
-      "screenPageViews": "12",
-      "activeUsers": "2",
-      "averageSessionDuration": "157.7485575",
-      "bounceRate": "0.083333333333333329"
-    },
-    {
       "pagePath": "/applications",
-      "screenPageViews": "8",
+      "screenPageViews": "9",
       "activeUsers": "2",
-      "averageSessionDuration": "90.774582285714274",
-      "bounceRate": "0"
+      "averageSessionDuration": "79.4277595",
+      "bounceRate": "0.125"
     },
     {
       "pagePath": "/ats/lever",
@@ -241,10 +247,10 @@
     },
     {
       "channel": "Direct",
-      "sessions": "18",
+      "sessions": "20",
       "activeUsers": "11",
-      "screenPageViews": "35",
-      "avgDuration": "836.44969288888888",
+      "screenPageViews": "37",
+      "avgDuration": "762.62063195",
       "bounceRate": "0.5"
     },
     {
@@ -282,9 +288,9 @@
     {
       "channel": "Unassigned",
       "sessions": "2",
-      "activeUsers": "2",
-      "screenPageViews": "1",
-      "avgDuration": "3.869442",
+      "activeUsers": "1",
+      "screenPageViews": "2",
+      "avgDuration": "57.517375",
       "bounceRate": "1"
     }
   ],
@@ -307,9 +313,9 @@
   "devices": [
     {
       "device": "desktop",
-      "sessions": "43",
+      "sessions": "45",
       "activeUsers": "11",
-      "bounceRate": "0.46511627906976744"
+      "bounceRate": "0.46666666666666667"
     },
     {
       "device": "mobile",
@@ -321,7 +327,7 @@
   "countries": [
     {
       "country": "United States",
-      "sessions": "31",
+      "sessions": "33",
       "activeUsers": "9"
     },
     {
@@ -358,37 +364,37 @@
   "events": [
     {
       "event": "page_view",
-      "eventCount": "101",
+      "eventCount": "104",
       "totalUsers": "18"
     },
     {
       "event": "session_start",
-      "eventCount": "51",
+      "eventCount": "53",
       "totalUsers": "18"
     },
     {
       "event": "user_engagement",
-      "eventCount": "45",
+      "eventCount": "47",
       "totalUsers": "10"
     },
     {
       "event": "cv_section_edited",
-      "eventCount": "29",
+      "eventCount": "36",
       "totalUsers": "1"
     },
     {
       "event": "scroll",
-      "eventCount": "25",
+      "eventCount": "26",
       "totalUsers": "5"
     },
     {
       "event": "dashboard_viewed",
-      "eventCount": "22",
+      "eventCount": "23",
       "totalUsers": "2"
     },
     {
       "event": "cv_download",
-      "eventCount": "17",
+      "eventCount": "18",
       "totalUsers": "1"
     },
     {
@@ -468,8 +474,8 @@
     {
       "week": "202617",
       "activeUsers": "7",
-      "sessions": "10",
-      "screenPageViews": "19"
+      "sessions": "12",
+      "screenPageViews": "22"
     }
   ],
   "all_pages_with_titles": [
@@ -478,16 +484,24 @@
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
       "screenPageViews": "38",
       "activeUsers": "16",
-      "avgDuration": "433.897426",
-      "bounceRate": "0.3783783783783784"
+      "avgDuration": "434.29890340540544",
+      "bounceRate": "0.35135135135135137"
     },
     {
       "pagePath": "/tailor",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "23",
+      "screenPageViews": "24",
       "activeUsers": "2",
-      "avgDuration": "596.63012776190476",
-      "bounceRate": "0.19047619047619047"
+      "avgDuration": "557.30400226086954",
+      "bounceRate": "0.2608695652173913"
+    },
+    {
+      "pagePath": "/dashboard",
+      "pageTitle": "WadeCV - AI-Powered CV Tailoring",
+      "screenPageViews": "13",
+      "activeUsers": "2",
+      "avgDuration": "145.61405307692308",
+      "bounceRate": "0.15384615384615385"
     },
     {
       "pagePath": "/auth/login",
@@ -498,20 +512,12 @@
       "bounceRate": "0.15384615384615385"
     },
     {
-      "pagePath": "/dashboard",
-      "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "12",
-      "activeUsers": "2",
-      "avgDuration": "157.7485575",
-      "bounceRate": "0.083333333333333329"
-    },
-    {
       "pagePath": "/applications",
       "pageTitle": "WadeCV - AI-Powered CV Tailoring",
-      "screenPageViews": "8",
+      "screenPageViews": "9",
       "activeUsers": "2",
-      "avgDuration": "90.774582285714274",
-      "bounceRate": "0"
+      "avgDuration": "79.4277595",
+      "bounceRate": "0.125"
     },
     {
       "pagePath": "/ats/lever",
@@ -586,7 +592,7 @@
     },
     {
       "source": "(direct)",
-      "sessions": "18",
+      "sessions": "20",
       "activeUsers": "11"
     },
     {
@@ -597,7 +603,7 @@
     {
       "source": "(not set)",
       "sessions": "2",
-      "activeUsers": "2"
+      "activeUsers": "1"
     },
     {
       "source": "chatgpt.com",

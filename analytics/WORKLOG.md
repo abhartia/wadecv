@@ -4,6 +4,103 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 
 ---
 
+## 2026-04-26 — Session 26: `/digital-marketing-resume` Pillar + 3 Cluster Overhauls (2nd-Largest Cluster)
+
+### Data Pulled
+- [x] GA4 → 18 active users / 54 sessions (-0 / +2 vs S25), product events flat (cv_section_edited 36, dashboard_viewed 23, cv_download 18, cv_tailor_started 14 — still 1 power user). Referrers: Stripe 24 (still misclassified), Direct 20, Google 5, chatgpt.com 2, fb 2. Organic Search 2.
+- [x] GSC → **399 impressions (-6 vs S25, -1.5%), 50 pages, 50 queries, 2 clicks (1 mobile / 1 desktop, USA + Canada).** Daily 2026-04-23 = pos **16.8 / 16 impr** (held). Daily 2026-04-24 = **22.8 / 4 impr** (newest day). Weekly floor still <25.
+- [x] Trends → **3rd consecutive clean pull** since S24 urllib3 fix. wobo ai +89,850%, cv builder free uk +165,700%, claude ai +550%, resume.io +350%, novoresume +170%, kickresume reviews +110%, customize resume up. Top US states for `ai resume builder`: DC, Kansas, Delaware, Maryland, Arizona.
+
+### Key Findings
+- **`/skills/digital-marketing` is the 2nd-largest single page on site** — 74 impr / pos 68.7. Query-page mapping: `digital marketing cv` alone = **30 impressions / pos 66.7** (3× the next biggest single query on the entire site, customer-service-skills-for-cv at 10). The skills page is already maximally rich (S15 overhaul: 2787 chars / 8 FAQs / 12 bullets) — same structural ceiling that customer-service hit before S25 pillar.
+- **Cluster diagnostic confirms playbook fit.** `/jobs/marketing-manager` = 317 chars / 0 FAQ / 5 responsibilities. `/jobs/digital-marketing-manager` = 564 chars / 1 FAQ / 6 responsibilities. `/resume-bullets/marketing-manager` = 183 chars / 0 FAQ / 3 bullets. No `/digital-marketing-resume` pillar exists. Exact thin-page diagnostic that has converted 9+ prior times.
+- **`/skills/python-developer` (10i pos 67.5)** dropped out of GSC top-50 today. `/resume-bullets/frontend-developer` (1i pos 2) entered. Likely python-developer rotated below the 50-row cap rather than de-indexed (S17 overhaul, structurally rich) — needs higher row-limit pull to confirm. Queued.
+- **`/jobs/accountant` confirmed indexing** at 2i pos 98 (was 0 before S23 overhaul). `/skills/accountant` continues at 25i pos 72.1 — S23 cluster diffraction working.
+- **`/customer-service-resume` (S25 pillar)** not yet in GSC top-50. Indexing window 2026-04-30. Patience.
+- **`/ats/lever` 0-click anomaly = 24 consecutive days** (69 impr / pos 7.9 / 0 clicks). Crosses S25 threshold rule again — deferred today for the bigger marketing-pillar bet but queued S27.
+- **Career-change page-1 0-click cluster persists** — `/career-change/{admin-to-product-manager,military-to-project-manager,sales-to-customer-success,retail-to-corporate}` all rank pos 3-6.5 with 0 clicks. Likely SERP-feature crowding. Needs SERP audit, not content. Queued.
+- **No drop-everything trend signal** that beats the GSC impression-concentration argument. Largest rising (wobo, claude, resume.io, flowcv) already covered.
+
+### Changes Made
+
+#### 1. `/digital-marketing-resume` pillar page (HIGH IMPACT — big bet of session)
+**File created:** `frontend/src/app/(resources)/digital-marketing-resume/page.tsx` (~530 lines)
+- H1: "Digital Marketing CV & Resume Guide 2026 — Skills, Bullets & Templates by Channel"
+- Article + FAQPage JSON-LD
+- 5-step exact CV structure (headline / core skills / professional experience / tools+certs+languages / education+additional)
+- 6-role benchmark table with metric stack and vocabulary per level (Coordinator → Specialist → Manager → Senior/Performance → Director / VP → CMO)
+- 6 bullet formulas with worked examples (Paid acquisition, SEO/organic, Lifecycle/CRM, Demand-gen funnel, Brand/category, Growth/experimentation)
+- 6 platform clusters with 50+ named tools (Analytics & attribution / Marketing automation & CRM / Paid media / SEO & content / AI & MarTech & no-code / Lifecycle & CDP & personalisation & experimentation)
+- 6-metric dictionary (CAC, ROAS / iROAS, MQL/SQL/SQO, pipeline & ARR contribution, conversion / CTR / organic position, retention & lifecycle)
+- 4-paragraph "what's changed in 2026" prose (AI fluency, warehouse-native stack, incrementality / MMM, AI-drafted resume detection) linking to /humanize-ai-resume
+- 8 common mistakes
+- 8-entry FAQ
+- 2 InlineCta blocks (variant="skills" + variant="career-change", reused — no new variant needed)
+- CrossCategoryLinks with 8 contextLinks deep-linking to `/skills/digital-marketing`, `/resume-bullets/marketing-manager`, `/resume-bullets/digital-marketing`, `/jobs/marketing-manager`, `/jobs/digital-marketing-manager`, `/career-change`, `/ats-resume-checker`, `/humanize-ai-resume`
+
+#### 2. `/jobs/marketing-manager` deep overhaul
+**File changed:** `frontend/content/seo/jobs.json`
+- Body: 317 → ~3,800 chars (track-by-track playbook: demand gen / performance / lifecycle / content / brand; AI-workflow framing; warehouse-native stack)
+- Title: "Marketing Manager Job Description & Resume Guide" → "Marketing Manager CV & Resume Guide 2026 — Skills, Metrics & Keywords by Track"
+- Responsibilities: 5 → 12, Required skills: 5 → 10
+- Salary: 1-line generic → 4-line US/UK with stage-specific equity bands and city premiums
+- careerPath: 4 → 7 (Coordinator/Specialist → CMO)
+- Resume keywords: 10 → **61** (warehouse-native stack, marketing automation tier, attribution sophistication, AI workflow tools)
+- FAQ: 0 → 8, commonMistakes: 0 → 8, interviewTips: added 5
+
+#### 3. `/jobs/digital-marketing-manager` deep overhaul
+**File changed:** `frontend/content/seo/jobs.json`
+- Body: 564 → ~3,200 chars (warehouse-native stack expectations, attribution sophistication ladder, AI-workflow named-by-tool, programmatic SEO at scale)
+- Title: "Digital Marketing Manager – Job Description & Resume Guide" → "Digital Marketing Manager CV & Resume Guide 2026 — Skills, Stack, Metrics & Keywords"
+- Responsibilities: 6 → 12, Required skills: 6 → 10 (named platforms by tier and module)
+- Salary: 1-line → 4-line US/UK with FAANG-tier and DTC premiums
+- careerPath: 6 → 8 (added Performance Marketing Lead, Group/Principal)
+- Resume keywords: 15 → **70** (warehouse stack, named ad platforms by capability, lifecycle platforms, experimentation, ABM, AI workflow tools, attribution)
+- FAQ: 1 → 8, commonMistakes: 3 → 8, interviewTips: 3 → 6
+
+#### 4. `/resume-bullets/marketing-manager` deep overhaul
+**File changed:** `frontend/content/seo/resume-bullets.json`
+- Body: 183 → ~4,800 chars (5 summary/objective templates from Coordinator → Director/VP with full text; AI-workflow framing; warehouse stack)
+- Title: "Marketing Manager Resume Bullet Points" → "Marketing Manager Resume Bullet Points & Summary Examples (2026)"
+- bulletExamples: 3 → **16** (paid acquisition, lifecycle re-architecture, programmatic SEO, demand-gen funnel, geo-holdout incrementality, AI content engine, ABM enrichment, brand/category, growth experimentation, MAP migration, warehouse stack build, DTC, team leadership, budget defence, ICP/lead-scoring, hiring)
+- impactFormulas: 2 → 5 (channel+spend+ROAS, programmatic+scale+outcome, lifecycle+audience+outcome, demand-gen funnel, experimentation+confidence)
+- 0 → 7 FAQs, 0 → 8 commonMistakes, relatedSlugs added
+
+#### 5. Wiring
+- `frontend/src/app/sitemap.ts` — `/digital-marketing-resume` at priority 0.9
+- `frontend/src/components/seo/cross-category-links.tsx` — added to CATEGORY_HUBS (15 hubs total). ~190+ new internal links from every SEO detail page into the pillar.
+- (Reused existing `skills` and `career-change` InlineCta variants — no new variant. Same pattern as S25 customer-service.)
+
+#### 6. Build + preview verified
+- `npm run build`: exit 0
+- `/digital-marketing-resume` prerendered at `.next/server/app/digital-marketing-resume.html` and confirmed in built sitemap.xml
+- Preview localhost:3000/digital-marketing-resume returns 200, 254KB HTML, 9 H2 sections, Article + FAQPage JSON-LD both present, 34 internal anchor links, no console errors
+- All 4 cluster pages render at 200: pillar (254KB) + jobs/marketing-manager (202KB) + jobs/digital-marketing-manager (218KB) + resume-bullets/marketing-manager (110KB)
+
+### Not Yet Done (For Future Sessions)
+- [ ] Monitor `/digital-marketing-resume` indexing (2026-05-01+)
+- [ ] Monitor `/jobs/marketing-manager` + `/jobs/digital-marketing-manager` + `/resume-bullets/marketing-manager` lift (2026-05-01+)
+- [ ] Monitor whether `/skills/digital-marketing` position breaks below 68.7 once pillar diffracts impressions (that is the entire goal of the pillar)
+- [ ] Monitor `/customer-service-resume` indexing (2026-04-30+)
+- [ ] Monitor `/jobs/customer-service-representative` + `/resume-bullets/customer-service` lift (S25, 2026-04-30+)
+- [ ] Monitor `/wadecv-vs-resume-io` (S24, 2026-04-29+)
+- [ ] Monitor `/jobs/accountant` (now 2i pos 98) and `/resume-bullets/accountant` continued lift (S23)
+- [ ] **S27 priority: radical retitle of `/ats/lever`** — 24 consecutive days at pos 7.9 / 69 impr / 0 clicks. Deferred for marketing-pillar bet today.
+- [ ] **S27 priority: kickresume cluster** — `kickresume reviews` +110%, `is kickresume free` +100%, no `/wadecv-vs-kickresume` page yet (only listicle row). Queued S25 → S26 → S27.
+- [ ] **S27 priority: novoresume comparison page** — +170% rising, no page yet
+- [ ] Investigate `/career-change/{admin-to-product-manager,military-to-project-manager,sales-to-customer-success,retail-to-corporate}` 0-click on page-1 ranks (needs SERP-feature audit, not content)
+- [ ] Investigate why `/skills/python-developer` (10i pos 67.5) dropped out of GSC top-50 today (likely cap rotation, not de-index)
+- [ ] Consider 4th pillar in S28+ if marketing pillar drives lift — candidates: `/product-management-resume`, `/software-engineer-resume`, `/data-science-resume`, `/sales-resume`
+- [ ] Complete IB cluster — Citadel, Jane Street, Apollo, Blackstone, KKR, Evercore, Centerview, Lazard, PJT
+- [ ] Complete consulting cluster — PwC, EY, KPMG, Strategy&, EY-Parthenon
+- [ ] "cv builder app" +350% signal — PWA landing page candidate (held 7 sessions)
+- [ ] Investigate why `/wadecv-vs-teal` still NOT indexed after 18+ days
+- [ ] Fix pre-existing duplicate-key warnings on `/ats` and `/career-change` index pages
+- [ ] `signup_start` from organic still 0 after 19+ days of InlineCta instrumentation
+- [ ] Extend `pull_gsc.py` rowLimit from 50 to 200 so dropped/cluster pages aren't capped (queued S25 → S26 → S27)
+
+---
+
 ## 2026-04-25 — Session 25: `/customer-service-resume` Pillar + 2 Cluster Overhauls (Largest Volume Cluster)
 
 ### Data Pulled
