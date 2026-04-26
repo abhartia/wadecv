@@ -168,6 +168,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${BASE_URL}/wadecv-vs-kickresume`,
+      lastModified: lastmod,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/wadecv-vs-novoresume`,
+      lastModified: lastmod,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/cv-vs-resume`,
       lastModified: lastmod,
       changeFrequency: "monthly",

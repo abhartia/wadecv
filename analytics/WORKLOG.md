@@ -77,27 +77,91 @@ This log tracks all changes made based on analytics insights. Daily agents shoul
 - Preview localhost:3000/digital-marketing-resume returns 200, 254KB HTML, 9 H2 sections, Article + FAQPage JSON-LD both present, 34 internal anchor links, no console errors
 - All 4 cluster pages render at 200: pillar (254KB) + jobs/marketing-manager (202KB) + jobs/digital-marketing-manager (218KB) + resume-bullets/marketing-manager (110KB)
 
+### Backlog Sweep (same session, after main bet) — Cleared 6 long-standing items
+
+User directive: act on every actionable queued item now so S27 starts on fresh data, not carried backlog.
+
+#### A. `/ats/lever` radical retitle (24-day 0-click anomaly cleared)
+**Files changed:**
+- `frontend/src/lib/seo-content.ts` — added optional `customTitle` and `customH1` fields to `AtsEntry` interface (allows surgical retitles without breaking the default dynamic title pattern)
+- `frontend/src/app/(resources)/ats/[slug]/page.tsx` — `generateMetadata()` and `<h1>` both honour the override when present, fall back to `"How to Pass {name} ATS Screening (2026 Guide)"` and `"Resume for {name} ATS"` respectively
+- `frontend/content/seo/ats.json` — `lever` entry: `customTitle: "Pass Lever ATS — Tailor Your Resume Free in 60 Seconds (2026)"`, `customH1: "Pass Lever ATS: Tailor Your Resume in 60 Seconds (Free)"`, retitled `metaDescription` to lead with the tool framing rather than the guide framing
+
+**Hypothesis:** "lever" search intent has been navigational (users want lever.co); a guide-framed title can't win CTR against a tool-framed competitor SERP. New title signals WadeCV is a tool, not a guide, with a 60-second time bound and the word "Free". Monitor over 7-14 days for CTR change at pos 7.9.
+
+#### B. `/wadecv-vs-teal` refresh (deferred 18+ days from indexing)
+**File changed:** `frontend/src/app/(resources)/wadecv-vs-teal/page.tsx`
+- Title: "WadeCV vs Teal: Which AI Resume Builder Is Better in 2026?" → "WadeCV vs Teal Resume Builder 2026 — Tailoring AI vs Job Tracker"
+- H1 retitled to match (more category-positioning, less rhetorical question)
+- `dateModified`: 2026-04-06 → 2026-04-26 (freshness signal)
+- Added `InlineCta variant="job"` block before FAQ — page lacked one (Jobscan, Resume.io and other indexed comparison pages all have InlineCta)
+- Intro paragraph: added pricing context ($9-29/mo vs free pay-per-use) for SERP snippet quality
+
+#### C. `/wadecv-vs-kickresume` new comparison page (`kickresume reviews` +110%, `is kickresume free` +100% trends)
+**File created:** `frontend/src/app/(resources)/wadecv-vs-kickresume/page.tsx`
+- 13-row feature comparison (one honest "Kickresume wins" on templates to avoid false-stacking)
+- 8-row "When Kickresume is the better choice" + "When WadeCV is the better choice" framing
+- 9-entry FAQ targeting `kickresume reviews`, `is kickresume free`, ATS coverage, AI Writer scope, career-changers, combined workflow, competitor-category positioning
+- Article + FAQPage JSON-LD, InlineCta mid-page, datePublished/dateModified = 2026-04-26
+- 5-paragraph "verdict" prose section with cross-link to /best-ai-resume-builder-2026
+
+#### D. `/wadecv-vs-novoresume` new comparison page (`novoresume` +170% trends)
+**File created:** `frontend/src/app/(resources)/wadecv-vs-novoresume/page.tsx`
+- Same 13-row + 9-entry FAQ + JSON-LD + InlineCta + verdict structure
+- One "Novoresume wins" (templates) and one explicit "Tie" (international/EU CV) — preserves credibility
+- FAQ targets `is novoresume free`, ATS coverage of minimalist templates, AI scope (template-driven content vs GPT-powered), competitor positioning
+- datePublished/dateModified = 2026-04-26
+
+#### E. `pull_gsc.py` rowLimit cap raised (queued 3 sessions; structural diagnostic blocker)
+**File changed:** `analytics/pull_gsc.py`
+- queries dimension: rowLimit 50 → 200
+- pages dimension: rowLimit 50 → 200
+- query×page, daily-trend, geo dimensions: rowLimit 100 → 250
+- Effect: next session's pull will see dropped/rotating pages like `/skills/python-developer` and small clusters that are currently capped invisibly
+
+#### F. Duplicate-key warnings on `/ats` and `/career-change` — VERIFIED resolved
+- Reproduction attempt failed: dev server console shows zero warnings on both index pages and detail pages
+- Slugs verified unique in both ats.json and career-change.json (9/9 and 20/20)
+- Build output (npm run build) shows no warnings beyond inferred-workspace-root notice
+- Conclusion: warnings were transient (likely Fast Refresh artefacts during prior development) — closing the queue item rather than chasing a non-reproducing bug
+
+#### G. Wiring (both new comparisons)
+- `frontend/src/app/sitemap.ts` — `/wadecv-vs-kickresume` and `/wadecv-vs-novoresume` at priority 0.9
+- `frontend/src/components/seo/cross-category-links.tsx` — both added to TOOL_COMPARISONS array (now 11 entries — surfaces 2 new internal links from every SEO detail page on the site)
+
+#### H. Build + preview verified (full session, both bet + sweep)
+- `npm run build`: exit 0, both new comparison pages prerendered (`.next/server/app/wadecv-vs-kickresume.html`, `.next/server/app/wadecv-vs-novoresume.html`)
+- Preview localhost: all changed pages return 200
+  - `/ats/lever`: title "Pass Lever ATS — Tailor Your Resume Free in 60 Seconds (2026) | WadeCV", h1 matches override, 95KB
+  - `/wadecv-vs-teal`: new H1 confirmed, InlineCta verified rendered, 125KB
+  - `/wadecv-vs-kickresume`: 200 OK, 165KB, 6 H2s, Article + FAQPage JSON-LD both present
+  - `/wadecv-vs-novoresume`: 200 OK, 161KB, 6 H2s, Article + FAQPage JSON-LD both present
+- No console errors, no React warnings
+
 ### Not Yet Done (For Future Sessions)
+
+Monitoring-only (no action available, just observe):
 - [ ] Monitor `/digital-marketing-resume` indexing (2026-05-01+)
 - [ ] Monitor `/jobs/marketing-manager` + `/jobs/digital-marketing-manager` + `/resume-bullets/marketing-manager` lift (2026-05-01+)
-- [ ] Monitor whether `/skills/digital-marketing` position breaks below 68.7 once pillar diffracts impressions (that is the entire goal of the pillar)
+- [ ] Monitor whether `/skills/digital-marketing` position breaks below 68.7 once pillar diffracts impressions
+- [ ] Monitor `/wadecv-vs-kickresume` and `/wadecv-vs-novoresume` indexing (2026-05-01+)
+- [ ] Monitor `/wadecv-vs-teal` indexing post-refresh (2026-04-30+)
+- [ ] Monitor `/ats/lever` CTR after retitle — current 0/69 at pos 7.9 (window opens 2026-04-30+)
 - [ ] Monitor `/customer-service-resume` indexing (2026-04-30+)
 - [ ] Monitor `/jobs/customer-service-representative` + `/resume-bullets/customer-service` lift (S25, 2026-04-30+)
 - [ ] Monitor `/wadecv-vs-resume-io` (S24, 2026-04-29+)
-- [ ] Monitor `/jobs/accountant` (now 2i pos 98) and `/resume-bullets/accountant` continued lift (S23)
-- [ ] **S27 priority: radical retitle of `/ats/lever`** — 24 consecutive days at pos 7.9 / 69 impr / 0 clicks. Deferred for marketing-pillar bet today.
-- [ ] **S27 priority: kickresume cluster** — `kickresume reviews` +110%, `is kickresume free` +100%, no `/wadecv-vs-kickresume` page yet (only listicle row). Queued S25 → S26 → S27.
-- [ ] **S27 priority: novoresume comparison page** — +170% rising, no page yet
-- [ ] Investigate `/career-change/{admin-to-product-manager,military-to-project-manager,sales-to-customer-success,retail-to-corporate}` 0-click on page-1 ranks (needs SERP-feature audit, not content)
-- [ ] Investigate why `/skills/python-developer` (10i pos 67.5) dropped out of GSC top-50 today (likely cap rotation, not de-index)
-- [ ] Consider 4th pillar in S28+ if marketing pillar drives lift — candidates: `/product-management-resume`, `/software-engineer-resume`, `/data-science-resume`, `/sales-resume`
+- [ ] Monitor `/jobs/accountant` (2i pos 98) and `/resume-bullets/accountant` continued lift (S23)
+- [ ] Monitor `signup_start` from organic — still 0 after 19+ days
+
+Investigative (require fresh data — S27 will have 200-row GSC pull to use):
+- [ ] Diagnose `/skills/python-developer` rank — extended row-limit pull will reveal whether it rotated below the cap or actually de-indexed
+- [ ] SERP-feature audit for `/career-change/{admin-to-product-manager,military-to-project-manager,sales-to-customer-success,retail-to-corporate}` 0-click page-1 ranks
+
+Future bets (act when fresh data warrants):
+- [ ] Consider 4th pillar — candidates by data: `/product-management-resume`, `/software-engineer-resume`, `/data-science-resume`, `/sales-resume`
 - [ ] Complete IB cluster — Citadel, Jane Street, Apollo, Blackstone, KKR, Evercore, Centerview, Lazard, PJT
 - [ ] Complete consulting cluster — PwC, EY, KPMG, Strategy&, EY-Parthenon
-- [ ] "cv builder app" +350% signal — PWA landing page candidate (held 7 sessions)
-- [ ] Investigate why `/wadecv-vs-teal` still NOT indexed after 18+ days
-- [ ] Fix pre-existing duplicate-key warnings on `/ats` and `/career-change` index pages
-- [ ] `signup_start` from organic still 0 after 19+ days of InlineCta instrumentation
-- [ ] Extend `pull_gsc.py` rowLimit from 50 to 200 so dropped/cluster pages aren't capped (queued S25 → S26 → S27)
+- [ ] "cv builder app" +350% signal — PWA landing page candidate
 
 ---
 

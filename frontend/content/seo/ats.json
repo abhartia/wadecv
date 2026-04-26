@@ -102,7 +102,9 @@
   {
     "slug": "lever",
     "name": "Lever",
-    "metaDescription": "Lever ATS resume guide for 2026: how Lever parses, scores, and surfaces your resume to recruiters. Exact formatting rules, keyword tips, and common mistakes to avoid.",
+    "customTitle": "Pass Lever ATS — Tailor Your Resume Free in 60 Seconds (2026)",
+    "customH1": "Pass Lever ATS: Tailor Your Resume in 60 Seconds (Free)",
+    "metaDescription": "Pass Lever ATS in 2026 — paste any Lever (lever.co) job URL and WadeCV tailors your resume to the exact role in 60 seconds. Free to start, no credit card. Plus the parsing rules, formatting and keyword tips Lever recruiters search for.",
     "intro": "Lever (now part of Employ Inc.) powers recruiting at thousands of companies, from high-growth startups like Spotify and Netflix to mid-market firms across every industry. Unlike older ATS platforms, Lever combines applicant tracking with a built-in CRM, meaning your resume lives in a searchable talent pool long after you apply. Optimizing for Lever is about both passing the initial screen and being discoverable when future roles open.",
     "parsingRules": [
       "Lever uses an integrated parsing engine that extracts your resume into structured candidate profiles — name, email, current title, experience history, education, and skills are mapped to individual fields.",

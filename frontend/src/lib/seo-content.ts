@@ -71,6 +71,11 @@ export interface ResumeBulletEntry {
 export interface AtsEntry {
   slug: string;
   name: string;
+  /** Optional override for `<title>` and `<h1>`. Use when the default
+   * "How to Pass {name} ATS Screening (2026 Guide)" reads as navigational
+   * intent (e.g. /ats/lever where searches for "lever" want lever.co). */
+  customTitle?: string;
+  customH1?: string;
   metaDescription: string;
   intro: string;
   parsingRules: string[];

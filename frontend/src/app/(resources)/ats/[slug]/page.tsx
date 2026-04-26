@@ -18,16 +18,18 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const entry = getAtsBySlug(slug);
   if (!entry) return { title: "ATS Guide Not Found | WadeCV" };
+  const defaultTitle = `How to Pass ${entry.name} ATS Screening (2026 Guide)`;
+  const title = entry.customTitle ?? defaultTitle;
   return {
-    title: `How to Pass ${entry.name} ATS Screening (2026 Guide) | WadeCV`,
+    title: `${title} | WadeCV`,
     description: entry.metaDescription,
     openGraph: {
-      title: `How to Pass ${entry.name} ATS Screening (2026 Guide)`,
+      title,
       description: entry.metaDescription,
     },
     twitter: {
       card: "summary",
-      title: `How to Pass ${entry.name} ATS Screening (2026 Guide)`,
+      title,
       description: entry.metaDescription,
     },
   };
@@ -78,7 +80,9 @@ export default async function AtsPage({ params }: Props) {
           }),
         }}
       />
-      <h1 className="text-3xl font-bold mb-4">Resume for {entry.name} ATS</h1>
+      <h1 className="text-3xl font-bold mb-4">
+        {entry.customH1 ?? `Resume for ${entry.name} ATS`}
+      </h1>
       <p className="text-muted-foreground mb-6">{entry.intro}</p>
 
       <section className="mb-8">

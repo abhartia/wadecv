@@ -43,6 +43,8 @@ const TOOL_COMPARISONS: CrossLink[] = [
   { href: "/wadecv-vs-enhancv", label: "WadeCV vs Enhancv" },
   { href: "/wadecv-vs-resumeai", label: "WadeCV vs ResumeAI by Wonsulting" },
   { href: "/wadecv-vs-resume-io", label: "WadeCV vs Resume.io" },
+  { href: "/wadecv-vs-kickresume", label: "WadeCV vs Kickresume" },
+  { href: "/wadecv-vs-novoresume", label: "WadeCV vs Novoresume" },
 ];
 
 type Props = {

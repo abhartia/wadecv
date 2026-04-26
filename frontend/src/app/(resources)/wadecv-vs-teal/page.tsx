@@ -2,25 +2,26 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SeoCta } from "@/components/seo/seo-cta";
 import { CrossCategoryLinks } from "@/components/seo/cross-category-links";
+import { InlineCta } from "@/components/seo/inline-cta";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ||
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://wadecv.com");
 
 export const metadata = {
-  title: "WadeCV vs Teal: Which AI Resume Builder Is Better in 2026? | WadeCV",
+  title: "WadeCV vs Teal Resume Builder 2026 — Tailoring AI vs Job Tracker | WadeCV",
   description:
-    "WadeCV vs Teal head-to-head: ATS optimization, job-description tailoring, pricing, and features compared. Find out which AI resume tool is right for your job search.",
+    "WadeCV vs Teal head-to-head 2026: full-resume tailoring AI vs job-pipeline tracker. Compare AI tailoring, ATS scoring, pricing (free pay-per-use vs $9-29/mo), DOCX export and workflow fit. Free to start — no credit card.",
   openGraph: {
-    title: "WadeCV vs Teal: Which AI Resume Builder Is Better in 2026?",
+    title: "WadeCV vs Teal Resume Builder 2026 — Tailoring AI vs Job Tracker",
     description:
-      "WadeCV vs Teal head-to-head: ATS optimization, job-description tailoring, pricing, and features compared.",
+      "Full-resume tailoring AI vs job-pipeline tracker. Compare AI tailoring, ATS scoring, pricing, DOCX export and workflow fit.",
   },
   twitter: {
     card: "summary" as const,
-    title: "WadeCV vs Teal: Which AI Resume Builder Is Better in 2026?",
+    title: "WadeCV vs Teal Resume Builder 2026",
     description:
-      "WadeCV vs Teal: ATS optimization, tailoring, pricing, and features compared side-by-side.",
+      "Full-resume tailoring AI vs job-pipeline tracker — pricing, ATS, tailoring and workflow compared.",
   },
 };
 
@@ -159,7 +160,7 @@ export default function TealComparisonPage() {
               "@id": `${BASE_URL}/wadecv-vs-teal`,
             },
             datePublished: "2026-04-06",
-            dateModified: "2026-04-06",
+            dateModified: "2026-04-26",
           }),
         }}
       />
@@ -179,15 +180,16 @@ export default function TealComparisonPage() {
       />
 
       <h1 className="text-3xl font-bold mb-4">
-        WadeCV vs Teal: Which AI Resume Builder Is Better in 2026?
+        WadeCV vs Teal Resume Builder 2026 — Tailoring AI vs Job Tracker
       </h1>
 
       <p className="text-muted-foreground mb-6">
-        Teal and WadeCV are both AI-powered tools for job seekers — but they solve different
-        problems. Teal is built around resume creation, keyword tracking, and job pipeline
-        management. WadeCV is built for one specific high-value task: taking your existing resume
-        and tailoring it to a specific job description, automatically. Here&apos;s the side-by-side
-        breakdown.
+        Teal and WadeCV are both AI-powered tools for job seekers in 2026 — but they solve different
+        problems. Teal is built around resume creation, keyword tracking and job pipeline management
+        (Chrome extension + dashboard, $9-29/month). WadeCV is built for one specific high-value
+        task: taking your existing resume and tailoring it to a specific job description,
+        automatically (free to start, pay-per-use). Here&apos;s the side-by-side breakdown of
+        feature, pricing, ATS coverage and workflow fit.
       </p>
 
       <section className="mb-8">
@@ -287,6 +289,8 @@ export default function TealComparisonPage() {
           </p>
         </div>
       </section>
+
+      <InlineCta variant="job" slug="teal-comparison" />
 
       <section className="mb-8">
         <h2 className="text-xl font-semibold mb-4">Frequently asked questions</h2>
