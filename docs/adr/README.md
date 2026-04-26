@@ -15,3 +15,4 @@ Numbering is sequential. Status is one of `Proposed`, `Accepted`,
 | [0003](0003-feature-flags-in-db.md) | Feature flags in Postgres, not a vendor | Accepted |
 | [0004](0004-security-headers.md) | Baseline security response headers | Accepted |
 | [0005](0005-stripe-webhook-idempotency.md) | Stripe webhook idempotency | Accepted |
+| [0006](0006-resend-webhook-signature-verification.md) | Resend inbound-support webhook signature verification | Accepted |

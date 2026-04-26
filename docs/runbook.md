@@ -96,6 +96,21 @@ docker run --rm postgres:16 psql --version
 alembic upgrade head && alembic downgrade -1 && alembic upgrade head
 ```
 
+### Resend inbound-support webhook returns 401
+
+The endpoint verifies a Svix HMAC signature. Either the `RESEND_WEBHOOK_SECRET`
+env var is wrong/missing on the App Service slot, or the request didn't
+come from Resend. Check:
+
+1. Confirm the secret in Resend's dashboard matches the App Service config
+   (it's the per-endpoint secret in the form `whsec_<base64>`).
+2. Look for `resend_webhook_signature_invalid` in the backend logs — the
+   `reason=` tag tells you whether it was a missing header, expired
+   timestamp, or a true signature mismatch.
+3. In production, an unset secret causes the app to refuse to start with
+   `Missing required production settings: resend_webhook_secret`. Add it
+   to App Service config and restart.
+
 ### Stripe webhook stops working after a deploy
 
 The slot swap changes the public URL's backing container. Confirm the

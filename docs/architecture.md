@@ -153,6 +153,16 @@ Not yet set: `Content-Security-Policy`. A meaningful CSP for this app needs a
 nonce-based middleware pass (Next inline hydration script, GA4, Sentry ingest,
 Stripe.js, Lob). Tracked as a separate ADR-worthy change.
 
+## Webhook authentication
+
+| Source | Verification | Where |
+|--------|--------------|-------|
+| Stripe | `stripe.Webhook.construct_event` (HMAC + timestamp) | [`backend/app/routers/webhook.py`](../backend/app/routers/webhook.py) — see [ADR 0005](adr/0005-stripe-webhook-idempotency.md) |
+| Resend (Svix) | Stdlib HMAC-SHA256, 5-min replay window, rotation-aware | [`backend/app/utils/svix_signature.py`](../backend/app/utils/svix_signature.py) — see [ADR 0006](adr/0006-resend-webhook-signature-verification.md) |
+
+Both inbound integrations authenticate at the edge before the handler does
+any work. Production refuses to boot if either secret is missing.
+
 ## Scaling limits known today
 
 - **Pool size** is `settings.db_pool_size` (default 10) + `max_overflow=20`
